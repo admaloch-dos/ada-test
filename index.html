@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+
+  <!------------------------------------------- Everything will live in header before #view tag ------------------------------------->
+
+
+  <script src="./early-script.js"></script>
+  <link rel="stylesheet" href="./files/fonts/font-awesome-4.7.0/css/font-awesome.css">
+
+  <link rel="stylesheet" href="./files/css/roundslider.min.css">
+
+  <link rel="stylesheet" href="./files/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./files/css/cookie_style.css">
+
+  <script src="./files/js/jquery-3.5.1.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="./files/js/CookieScript.js"></script>
+  <script src="./files/js/popper.min.js"></script>
+
+  <script src="./files/js/tippy-bundle.umd.min.js"></script>
+
+  <script src="./files/js/jquery.cookie.min.js"></script>
+  <script src="./files/js/js.cookie.min.js"></script>
+  <script src="./files/js/bootstrap.min.js"></script>
+
+  <script src="./files/js/roundslider.min.js"></script>
+
+  <script src="./files/js/CookieScript.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+  <div class="main">
+    <div id="view">
+      <div id="tail" style="left: 0px; top: 1034px;"></div>
+      <!---------------------------------------------------- Popups,modal,toast(toast script) below will live inside ul#Right_Nav; script for ADA_widget will live outside ul#Right_Nav ----------------------------------------------------->
+      <a class="nav-link " href="#!" id="ADA_trigger" title="Accessibility Menu"><i class="fa fa-universal-access"
+          aria-hidden="true"></i></a>
+      <!-- The Modal -->
+      <div id="ADA_widget" class="ada_modal_test" aria-labelledby="ADA_widget" aria-hidden="true">
+        <!-- Modal content -->
+        <div class="modal_content">
+          <div class="modal_header d-flex align-items-center">
+            <div class="main_icon_holder" id="ada_modal_header_icon">
+              <div class="inner_icon_holder">
+                <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                  alt="Universal Accessibility Icon" />
+              </div>
+            </div>
+            <h5 class="title pl-5">Accessibility Menu</h5>
+            <div class="row" id="modal_header_btns">
+
+              <button onclick="resetAdaWidget()" type="button" class="btn" title="Reset Settings"
+                aria-label="Reset Settings" id="ADA_reset">
+                <i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset
+              </button>
+
+
+
+              <div class="col">
+                <button type="button" class="btn btn-link ADA_close" aria-label="Close" title="Close" role="button">
+                  <i class="fa fa-close" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div><!--modal_header_btns -->
+          </div><!-- modal_header -->
+
+          <div class="modal_body" id="accessibility">
+            <div class="container-fluid">
+              <div class="row justify-content-between">
+                <div class="col-12 col-lg-4" id="SiteMap_option">
+                  <form class="siteMap_form form-inline mb-3">
+
+                    <div class="form-group">
+                      <label class="ada_option_title pl-4" for="Site Map">Site Map
+                        <div class="main_icon_holder" id="site_map_icon">
+                          <div class="inner_icon_holder">
+                            <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                              alt="Site Map Icon" />
+                          </div>
+                        </div>
+                      </label>
+                      <select  class="form-control ml-0 ml-lg-2 col-12 col-lg-7" id="select_page"
+                        onchange="location = this.value;">
+                        <option class="text-center" selected disabled>Florida Memory Navigation</option>
+                        <option value="https://www.floridamemory.com/" style="font-weight:bold;">Homepage</option>
+                        <optgroup label="Discover" id="discover_group">
+                          <option value="https://www.floridamemory.com/discover/">Discover</option>
+                          <option value="https://www.floridamemory.com/discover/photographs/">Photographs</option>
+                          <option value="https://www.floridamemory.com/discover/historical_records/">Historical Records
+                          </option>
+                          <option value="https://www.floridamemory.com/discover/maps/">Maps</option>
+                          <option value="https://www.floridamemory.com/discover/audio/">Audio</option>
+                          <option value="https://www.floridamemory.com/discover/video/">Video</option>
+                        </optgroup>
+
+                        <optgroup label="Learn" id="learn_group">
+                          <option value="https://www.floridamemory.com//learn/">Learn</option>
+                          <option value="https://www.floridamemory.com//learn/about/">About Florida Memory</option>
+                          <option value="https://www.floridamemory.com//learn/classroom/">Classroom</option>
+                          <option value="https://www.floridamemory.com//learn/floridiana/">Floridiana Articles</option>
+                          <option value="https://www.floridamemory.com//learn/exhibits/">Exhbits</option>
+                          <option value="https://www.floridamemory.com//learn/research-tools/">Research Tools</option>
+                        </optgroup>
+
+                        <optgroup label="Share" id="share_group">
+                          <option value="https://www.floridamemory.com//share/">Share</option>
+                          <option value="https://www.floridamemory.com//share/connect/">Connect With Us</option>
+                          <option value="https://www.floridamemory.com//share/donate/">Donate Records</option>
+                          <option value="https://www.floridamemory.com//share/order-info/index.php">Order</option>
+                        </optgroup>
+
+                        <optgroup label="Footer" id="footer_group">
+                        </optgroup>
+                      </select>
+                    </div><!-- form group -->
+                  </form><!-- orientationAdjustments_form -->
+                </div><!-- col-12 col-lg-4 -->
+
+
+
+                <div class="col-12 col-lg-3 align-self-end mb-3">
+                  <button class="btn btn-link" type="button" data-toggle="modal" data-target="#keyboard_shortcuts"
+                    id="keyboard_shortcutsBtn">Keyboard Shortcuts
+                    <div class="main_icon_holder" id="shortcuts_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="KeyBoard Shortcuts Icon" />
+                      </div>
+                    </div>
+                  </button>
+                  <div class="modal fade" id="keyboard_shortcuts" tabindex="-1" aria-labelledby="keyboard_shortcuts"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                      <div class="modal-content">
+                        <div class="modal_header  ">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                          <br>
+
+                          <div class="table-responsive">
+                            <table class="table table-bordered">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th>Description</th>
+                                  <th>Windows</th>
+                                  <th>Mac OS</th>
+                                </tr>
+                              </thead>
+                              <tbody id="myTable">
+                                <tr class="table-secondary">
+                                  <td style="height:25px;"><strong>Toggle widget items</strong></td>
+                                  <td style="height:25px;"></td>
+                                  <td style="height:25px;"></td>
+                                </tr>
+                                <tr>
+                                  <td>Open/Close Menu</td>
+                                  <td>Shift + A</td>
+                                  <td>Shift + A</td>
+                                </tr>
+                                <tr>
+                                  <td>Reset menu</td>
+                                  <td>Shift + Q</td>
+                                  <td>Shift + Q</td>
+                                </tr>
+                                <tr>
+                                  <td>Highlight links on Hover</td>
+                                  <td>Shift + 1</td>
+                                  <td>Shift + 1</td>
+                                </tr>
+                                <tr>
+                                  <td>Highlight all links</td>
+                                  <td>Shift + 2</td>
+                                  <td>Shift + 2</td>
+                                </tr>
+                                <tr>
+                                  <td>Text magnifier</td>
+                                  <td>Shift + 3</td>
+                                  <td>Shift + 3</td>
+                                </tr>
+                                <tr>
+                                  <td>Show image description</td>
+                                  <td>Shift + 4</td>
+                                  <td>Shift + 4</td>
+                                </tr>
+                                <tr>
+                                  <td>Seizure safe</td>
+                                  <td>Shift + 5</td>
+                                  <td>Shift + 5</td>
+                                </tr>
+                                <tr>
+                                  <td>Reading Mask</td>
+                                  <td>Shift + 6</td>
+                                  <td>Shift + 6</td>
+                                </tr>
+                                <tr>
+                                  <td>Reading Guide</td>
+                                  <td>Shift + 7</td>
+                                  <td>Shift + 7</td>
+                                </tr>
+                                <tr>
+                                  <td>Reading Guide</td>
+                                  <td>Shift + 7</td>
+                                  <td>Shift + 7</td>
+                                </tr>
+                                <tr>
+                                  <td>Text to speech</td>
+                                  <td>Shift + 8</td>
+                                  <td>Shift + 8</td>
+                                </tr>
+
+
+
+
+                                <tr class="table-secondary">
+                                  <td style="height:25px;"><strong>Navigation</strong></td>
+                                  <td style="height:25px;"></td>
+                                  <td style="height:25px;"></td>
+                                </tr>
+                                <tr>
+                                  <td>Florida Memory homepage</td>
+                                  <td>Shift + H</td>
+                                  <td>Shift + H</td>
+                                </tr>
+                                <tr>
+                                  <td>Scroll down a frame</td>
+                                  <td>Space or Page Down</td>
+                                  <td>Space or Fn + Down Arrow</td>
+                                </tr>
+                                <tr>
+                                  <td>Scroll up a frame</td>
+                                  <td>Shift + Space or Page Up</td>
+                                  <td>Shift + Space or Fn + Up Arrow</td>
+                                </tr>
+                                <tr>
+                                  <td>Go to bottom of the page</td>
+                                  <td>End</td>
+                                  <td>Cmd + Down Arrow</td>
+                                </tr>
+                                <tr>
+                                  <td>Go to top of the page </td>
+                                  <td>Home</td>
+                                  <td>Cmd + Up Arrow</td>
+                                </tr>
+                                <tr>
+                                  <td>Go back</td>
+                                  <td>Alt + Left Arrow or Backspace</td>
+                                  <td>Cmd + Left Arrow</td>
+                                </tr>
+                                <tr>
+                                  <td>Go forward</td>
+                                  <td>Alt + Right Arrow or Shift + Backspace</td>
+                                  <td>Cmd + Right Arrow</td>
+                                </tr>
+                                <tr>
+                                  <td>Refresh a webpage</td>
+                                  <td>F5</td>
+                                  <td>Cmd + R</td>
+                                </tr>
+                                <tr>
+                                  <td>Refresh a webpage (no cache)</td>
+                                  <td>Ctrl + F5</td>
+                                  <td>Cmd + Shift + R</td>
+                                </tr>
+                                <tr>
+                                  <td>Stop</td>
+                                  <td>Esc</td>
+                                  <td>Esc</td>
+                                </tr>
+                                <tr>
+                                  <td>Toggle full-screen</td>
+                                  <td>F11</td>
+                                  <td>Cmd + Shift + F</td>
+                                </tr>
+                                <tr>
+                                  <td>Zoom in</td>
+                                  <td>Ctrl + +</td>
+                                  <td>Cmd + +</td>
+                                </tr>
+                                <tr>
+                                  <td>Zoom out</td>
+                                  <td>Ctrl + -</td>
+                                  <td>Cmd + -</td>
+                                </tr>
+                                <tr>
+                                  <td>Zoom 100% (default)</td>
+                                  <td>Ctrl + 0</td>
+                                  <td>Cmd + 0</td>
+                                </tr>
+                                <tr>
+                                  <td>Find text</td>
+                                  <td>Ctrl + F</td>
+                                  <td>Cmd + F </td>
+                                </tr>
+                                <tr>
+                                  <td>&nbsp;</td>
+                                  <td>&nbsp;</td>
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="table-secondary">
+                                  <td style="height:25px;"><strong>Tab / Window Management</strong></td>
+                                  <td style="height:25px;"></td>
+                                  <td style="height:25px;"></td>
+                                </tr>
+                                <tr>
+                                  <td>Open a new tab</td>
+                                  <td>Ctrl + T</td>
+                                  <td>Cmd + T</td>
+                                </tr>
+                                <tr>
+                                  <td>Close current tab</td>
+                                  <td>Ctrl + W</td>
+                                  <td>Cmd + W</td>
+                                </tr>
+                                <tr>
+                                  <td>Close all tabs</td>
+                                  <td>Ctrl + Shift + W</td>
+                                  <td>Cmd + Q</td>
+                                </tr>
+                                <tr>
+                                  <td>Close all tabs except the current tab</td>
+                                  <td>Ctrl + Alt + F4 </td>
+                                  <td>Cmd + Opt + W</td>
+                                </tr>
+                                <tr>
+                                  <td>Go to next tab</td>
+                                  <td>Ctrl + Tab</td>
+                                  <td>Control + Tab or Cmd + Shift + Right Arrow</td>
+                                </tr>
+                                <tr>
+                                  <td>Go to previous tab </td>
+                                  <td>Ctrl + Shift + Tab</td>
+                                  <td>Shift + Control + Tab or Cmd + Shift + Left Arrow</td>
+                                </tr>
+                                <tr>
+                                  <td>Go to a specific tab number </td>
+                                  <td>Ctrl + 1-8</td>
+                                  <td>Cmd + 1-8 </td>
+                                </tr>
+                                <tr>
+                                  <td>Go to the last tab</td>
+                                  <td>Ctrl + 9</td>
+                                  <td>Cmd + 9</td>
+                                </tr>
+                                <tr>
+                                  <td>Reopen the last closed tab</td>
+                                  <td>Ctrl + Shift + T</td>
+                                  <td>Cmd + Shift + T </td>
+                                </tr>
+                                <tr>
+                                  <td>Open a new window</td>
+                                  <td>Ctrl + N</td>
+                                  <td>Cmd + N</td>
+                                </tr>
+                                <tr>
+                                  <td>Close current window</td>
+                                  <td>Alt + F4</td>
+                                  <td>Cmd + W</td>
+                                </tr>
+                                <tr>
+                                  <td>Go to next window</td>
+                                  <td>Alt + Tab</td>
+                                  <td>Cmd + Tab</td>
+                                </tr>
+                                <tr>
+                                  <td>Go to previous window </td>
+                                  <td>Alt + Shift + Tab</td>
+                                  <td>Cmd + Shift + Tab</td>
+                                </tr>
+                                <tr>
+                                  <td>Reopen the last closed window</td>
+                                  <td>Ctrl + Shift + N</td>
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                  <td>Open links in a new tab in the background</td>
+                                  <td>Ctrl + Click</td>
+                                  <td>Cmd + Click</td>
+                                </tr>
+                                <tr>
+                                  <td>Open links in a new tab in the foreground</td>
+                                  <td>Ctrl + Shift + Click</td>
+                                  <td>Cmd + Shift + Click</td>
+                                </tr>
+                                <tr>
+                                  <td>Print current webpage</td>
+                                  <td>Ctrl + P</td>
+                                  <td>Cmd + P</td>
+                                </tr>
+                                <tr>
+                                  <td>Save current webpage</td>
+                                  <td>Ctrl + S</td>
+                                  <td>Cmd + S</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div><!--table-responsive-->
+                        </div><!-- modal body -->
+                      </div><!-- modal content -->
+                    </div><!-- modal dialog -->
+                  </div><!--modal-->
+                </div><!-- col-12 col-lg-4 -->
+
+                <div class="col-12 col-lg-3 align-self-end mb-3">
+
+                  <div class="main_icon_holder" id="translate_icon">
+                    <div class="inner_icon_holder">
+                      <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                        alt="Translate Icon" />
+                    </div>
+                  </div>
+
+                  <div id="google_translate_element" title="Translate Florida Memory"></div>
+
+                  <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        layout: google.translate.TranslateElement
+                      }, 'google_translate_element');
+                    }
+                  </script>
+
+                  <script type="text/javascript" src="./files/js/google_translate.js"></script>
+                  <script>
+                    //https://stackoverflow.com/a/36282225/10792033
+                    //Change text of dropdown on Google Translate
+                    $(document).ready(function () {
+                      $('#google_translate_element').bind('DOMNodeInserted', function (event) {
+                        $('.goog-te-menu-value span:first').html('Translate Site');
+                      });
+                    });
+                  </script>
+                </div><!-- col-12 col-lg-2 -->
+
+              </div><!-- row -->
+
+              <script>
+                $(document).ready(function () {
+                  $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function () {
+                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                  });
+                });
+              </script>
+
+
+
+              <div class="row">
+                <div class="col-12 col-lg-6" id="HighlightHover_option">
+                  <div class="ada_toggleContainer" id="HighlightHover">
+                    <div class="ada_content">
+                      <div class="main_icon_holder" id="highlight_icon">
+                        <div class="inner_icon_holder">
+                          <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                            alt="Highlight Hover Icon" />
+                        </div>
+                      </div>
+                      <span class="type ada_option_title">Highlight on Hover</span>
+                      <span class="description">Adds visual emphasis to all hyperlinks on cursor hover</span>
+                    </div><!-- ada_content -->
+
+                    <div class="ada_toggle" style="margin-left:6px;">
+                      <label class="switch" title="Toggle On/Off Highlight Hover">
+                        <input type="checkbox" class="switch-input" id="ToggleHighlightHover" name="HighlightHover">
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div><!-- ada_toggle -->
+                  </div><!-- class="ada_toggleContainer" id="HighlightHover" -->
+                </div><!-- col-12 col-lg-6 -->
+
+
+
+                <div class="col-12 col-lg-6" id="HighlightLinks_option">
+                  <div class="ada_toggleContainer" id="HighlightLinks">
+                    <div class="ada_content">
+                      <div class="main_icon_holder" id="highlighthover_icon">
+                        <div class="inner_icon_holder">
+                          <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                            alt="Highlight Links Icon" />
+                        </div>
+                      </div>
+                      <span class="type ada_option_title">Highlight All Links</span>
+                      <span class="description">Adds visual emphasis to all hyperlinks</span>
+                    </div><!-- ada_content -->
+
+                    <div class="ada_toggle" style="margin-left:6px;">
+                      <label class="switch" title="Toggle On/Off Highlight Links">
+                        <input type="checkbox" class="switch-input" id="ToggleHighlightLinks" name="HighlightLinks">
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div><!-- ada_toggle -->
+                  </div><!-- class="ada_toggleContainer" id="HighlightLinks" -->
+                </div><!-- col-12 col-lg-6 -->
+              </div><!-- row -->
+
+
+
+
+              <div class="row" id="Magnify_options">
+                <div class="col-12 col-lg-6" id="TextMagnifier_option">
+                  <div class="ada_toggleContainer" id="TextMagnifier">
+                    <div class="main_icon_holder" id="textmagnify_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Text Magnifier Icon" />
+                      </div>
+                    </div>
+                    <div class="ada_content">
+                      <span class="type ada_option_title">Text Magnifier</span>
+                      <span class="description">Shows text in larger, high-contrast display</span>
+                    </div><!-- ada_content -->
+
+                    <div class="ada_toggle" style="margin-left:6px;">
+                      <label class="switch" title="Toggle On/Off Text Magnifier">
+                        <input type="checkbox" class="switch-input" id="ToggleTextMagnifier" name="TextMagnifier">
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div><!-- ada_toggle -->
+                  </div><!-- class="ada_toggleContainer" id="TextMagnifier" -->
+                </div><!-- col-12 col-lg-6 -->
+
+
+                <div class="col-12 col-lg-6" id="ImageDescription_option">
+                  <div class="ada_toggleContainer" id="ImageDescription">
+                    <div class="main_icon_holder" id="imagealt_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Image Description Icon" />
+                      </div>
+                    </div>
+                    <div class="ada_content">
+                      <span class="type ada_option_title">Image Description</span>
+                      <span class="description">Shows image alt tags in larger, high-contrast display</span>
+                    </div><!-- ada_content -->
+
+                    <div class="ada_toggle" style="margin-left:6px;">
+                      <label class="switch" title="Toggle On/Off Image Description">
+                        <input type="checkbox" class="switch-input" id="ToggleImageDescription" name="ImageDescription">
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div><!-- ada_toggle -->
+                  </div><!-- class="ada_toggleContainer" id="TextMagnifier" -->
+                </div><!-- col-12 col-lg-6 -->
+              </div><!-- row -->
+
+
+
+
+
+              <div class="row" id="FontSize_option">
+                <div class="col-12 col-lg-3">
+                  <form class="fontsize_form">
+                    <div class="main_icon_holder" id="fontsize_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Font Size Icon" />
+                      </div>
+                    </div>
+                    <h6 class="ada_option_title">Change Font-Size</h6>
+                    <div class="form-check">
+                      <ul class="modal-btn-options">
+                        <li id="FS_Default" class="active"><a href="#!" class="FontSizeOptions FontSizeDefault">
+                            <div class="title">Default</div>
+                          </a>
+                        </li>
+
+                        <li id="FS_Medium"><a href="#!" class="FontSizeOptions FontSizeMedium">
+                            <div class="title">Large</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!-- form check -->
+                  </form>
+                </div><!-- col-12 col-lg-3 -->
+
+
+                <div class="col-12 col-lg-5 mx-auto" id="FontFamily_option">
+                  <form class="font_type_form">
+                    <div class="main_icon_holder" id="fonttype_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Font Family Icon" />
+                      </div>
+                    </div>
+                    <h6 class="ada_option_title">Change Font-Family</h6>
+                    <div class="form-check">
+                      <ul class="modal-btn-options">
+                        <li id="FT_Default" class="active"><a href="#!" class="FontTypeOptions FontTypeDefault">
+                            <div class="title">Muli</div>
+                          </a>
+                        </li>
+
+                        <li id="FT_Dyslexic"><a href="#!" class="FontTypeOptions FontTypeDyslexic">
+                            <div class="title">Open-Dyslexic</div>
+                          </a>
+                        </li>
+
+                        <li id="FT_Baskerville"><a href="#!" class="FontTypeOptions FontTypeBaskerville">
+                            <div class="title">Libre Baskerville</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!-- form check -->
+                  </form>
+                </div><!-- col-12 col-lg-6 -->
+
+
+                <div class="col-12 col-lg-3" id="Cursor_option">
+                  <form class="cursorSwap_form">
+                    <div class="main_icon_holder" id="cursor_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Large Cursor" />
+                      </div>
+                    </div>
+                    <h6 class="ada_option_title">Change Cursor</h6>
+                    <div class="form-check">
+                      <ul class="modal-btn-options">
+                        <li id="Cur_Default" class="active"><a href="#!" class="CursorOptions Cursor_Default">
+                            <div class="title">Default</div>
+                          </a>
+                        </li>
+
+                        <li id="Cur_Enlarge"><a href="#!" class="CursorOptions Cursor_Enlarge_option">
+                            <div class="title">Large</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!-- form check -->
+                  </form>
+                </div><!-- col-12 col-lg-3 -->
+              </div><!-- row -->
+
+
+
+
+              <div id="text-selects" class="row">
+                <div class="col-12 col-lg-4 text-center" id="LetterSpacing_option">
+                  <form>
+                    <div class="form-group">
+                      <div class="form-group-heading">
+                        <div class="main_icon_holder" id="letterspace_icon">
+                          <div class="inner_icon_holder">
+                            <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                              alt="Letter Spacing" />
+                          </div>
+                        </div>
+                        <span class="ada_option_title font-weight-bold" for="exampleFormControlSelect1">Change Letter
+                          Spacing</span>
+                      </div>
+                      <select class="form-control" name="letter_spacing" id="letter_spacing">
+                        <option value="inherit" selected>Normal</option>
+                        <option value="2px">2px</option>
+                        <option value="3px">3px</option>
+                        <option value="5px">5px</option>
+                      </select>
+                    </div>
+                  </form>
+
+                </div><!-- col-12 col-lg-4 -->
+
+
+                <div class="col-12 col-lg-4 text-center" id="WordSpacing_option">
+                  <form>
+                    <div class="form-group">
+                      <div class="form-group-heading">
+                        <div class="main_icon_holder" id="wordspace_icon">
+                          <div class="inner_icon_holder">
+                            <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                              alt="Word Spacing" />
+                          </div>
+                        </div>
+                        <span class="ada_option_title font-weight-bold" for="exampleFormControlSelect1">Change Word
+                          Spacing</span>
+                      </div>
+                      <select class="form-control" name="word_spacing" id="word_spacing">
+                        <option value="inherit" selected>Normal</option>
+                        <option value="2px">2px</option>
+                        <option value="3px">3px</option>
+                        <option value="5px">5px</option>
+                      </select>
+                    </div>
+                  </form>
+                </div><!-- col-12 col-lg-4 -->
+
+
+                <div class="col-12 col-lg-4 text-center" id="LineHeight_option">
+                  <form>
+                    <div class="form-group">
+                      <div class="form-group-heading">
+                        <div class="main_icon_holder" id="lineheight_icon">
+                          <div class="inner_icon_holder">
+                            <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                              alt="Line Height" />
+                          </div>
+                        </div>
+                        <span class="ada_option_title font-weight-bold" for="exampleFormControlSelect1">Change Line
+                          Height</span>
+                      </div>
+                      <select class="form-control" name="line_height" id="line_height">
+                        <option value="inherit" selected>Normal</option>
+                        <option value="1.6">1.6</option>
+                        <option value="2.6">2.6</option>
+                        <option value="3">3</option>
+                      </select>
+                    </div>
+                  </form>
+                </div><!-- col-12 col-lg-6 -->
+              </div><!-- row -->
+
+
+
+
+              <div class="row" style="padding-bottom:10px;">
+                <div class="col-12 col-lg-6" id="BackgroundColor_option">
+                  <form class="bg_form">
+                    <div class="main_icon_holder" id="bgcircle_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Highlight Hover Icon" />
+                      </div>
+                    </div>
+                    <h6 class="ada_option_title pl-0 pl-lg-5 mb-3 mt-3">Website Color Presets</h6>
+                    <div class="form-check">
+                      <ul class="text-center modal-btn-options">
+                        <li id="DefaultBG_option" class="active">
+                          <a href="#!" class="backgroundOptions defaultBackground">
+                            <div class="title">Default</div>
+                          </a>
+                        </li>
+
+                        <li id="DarkContrastBG_option" class="">
+                          <a href="#!" class="backgroundOptions DarkContrastBackground">
+                            <div class="title">Dark Contrast</div>
+                          </a>
+                        </li>
+
+                        <li id="DesaturateBG_option" class="">
+                          <a href="#!" class="backgroundOptions DesaturateBackground">
+                            <div class="title">Desaturate</div>
+                          </a>
+                        </li>
+
+                        <br>
+
+                        <li id="InvertBG_option" class="">
+                          <a href="#!" class="backgroundOptions InvertBackground">
+                            <div class="title">Invert</div>
+                          </a>
+                        </li>
+
+                        <li id="HighSaturationBG_option" class="">
+                          <a href="#!" class="backgroundOptions HighSaturationBackground">
+                            <div class="title">High Saturation</div>
+                          </a>
+                        </li>
+
+                        <li id="LowSaturationBG_option" class="">
+                          <a href="#!" class="backgroundOptions LowSaturationBackground">
+                            <div class="title">Low Saturation</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!-- form check -->
+                  </form><!-- bg_form -->
+
+
+
+
+                </div><!-- col-12 col-lg-4 Change Background Color-->
+
+
+                <div class="col-12 col-lg-6" id="ColorAdjust_option">
+                  <form class="color_picker_form">
+                    <div class="main_icon_holder" id="paint_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Highlight Hover Icon" />
+                      </div>
+                    </div>
+                    <h6 class="ada_option_title mb-3 mt-3 pl-0 pl-lg-5">Adjust Colors</h6>
+
+                    <div class="form-group">
+                      <label class="ada_option_title" for="Background Color">
+                        Background Color
+                      </label>
+                      <input type="color" class="color_swatch" id="background_color" title="Choose Background Color"
+                        value="#ffffff">
+                      <span class="hexVal" id="bg_hexVal">#ffffff</span>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="ada_option_title" for="Text Color">
+                        Text Color
+                      </label>
+                      <input type="color" class="color_swatch" id="text_color" title="Choose Text Color"
+                        value="#212529">
+                      <span class="hexVal" id="txt_hexVal">#212529</span>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="ada_option_title" for="Link Color">
+                        Link Color
+                      </label>
+                      <input type="color" class="color_swatch" id="link_color" title="Choose Link Color"
+                        value="#3863FF">
+                      <span class="hexVal" id="link_hexVal">#3863FF</span>
+                    </div>
+                  </form>
+
+
+                  <div class="row d-flex justify-content-center no-gutters pr-4" id="color_pickerBtns">
+                    <!--<div class="col-12 col-lg-3">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                </div>-->
+                    <button id="remove_cookie" class="btn btn-secondary ada-btn" role="button" type="button"
+                      title="Reset Adjustments Colors">Reset Colors</button>
+                    <button type="button" class="btn btn-secondary ada-btn" id="OpenContrastModal" role="button"
+                      title="Check Contrast">Check Contrast</button>
+
+                  </div><!-- row -->
+
+
+                  <div class="toast toast_close" id="ContrastRatingModal">
+                    <div class="toast-header">
+                      <div class="btn-group dropup">
+                        <button class="btn btn-link ada_guidelines dropdown-toggle"
+                          aria-label="Accessibility Guidelines" title="Accessibility Guidelines" role="button"
+                          type="button" data-toggle="dropdown" aria-expanded="false">
+                          <span aria-hidden="true"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+                        </button>
+
+                        <div class="dropdown-menu" id="wcagDropdown">
+                          Both links and body text must have at least 4.5:1 contrast with the background (3:1 for large
+                          text) to meet WCAG 2 Level AA. <a
+                            href="https://webaim.org/resources/linkcontrastchecker/">Link
+                            Contrast Checker <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                          <br /><br />
+                          Report a problem: contact us at number or email
+                        </div><!-- dropdown-menu wcagDropdown-->
+                      </div><!--btn-group dropup-->
+
+                      <button class="CloseContrastModal btn btn-link" aria-label="Close Checker" role="button"
+                        type="button">
+                        <span aria-hidden="true"><i class="fa fa-close" aria-hidden="true"></i></span>
+                      </button>
+                    </div>
+                    <div class="toast-body">
+                      <div id="defaultContainer">
+                        <div class="pass">Background to Text Contrast: 21</div>
+                        <div class="pass">Background to Link Contrast: 4.97</div>
+                        <div class="pass">Text to Link Contrast: 4.22</div>
+                      </div><!--defaultContainer-->
+
+                      <div class="contrast_values">
+                        <div id="textBackRatioContainer"></div>
+                        <div id="linkBackRatioContainer"></div>
+                        <div id="linkTextRatioContainer"></div>
+                      </div><!--contrast-values-->
+                    </div><!-- toast-body -->
+                  </div> <!-- toast -->
+
+
+                  <script>
+                    $(document).ready(function () {
+                      $("#OpenContrastModal").click(function () {
+                        $('#ContrastRatingModal').toggleClass("toast_close");
+                      });
+
+                      $(".CloseContrastModal").click(function () {
+                        $('#ContrastRatingModal').addClass("toast_close");
+                      });
+                    });
+                  </script>
+
+                </div><!-- col-12 col-lg-5 -->
+              </div><!-- row -->
+
+
+
+
+              <div class="row">
+                <div class="col-12 col-lg-4" id="SeizureSafe_option">
+                  <div class="ada_toggleContainer" id="SeizureSafe">
+                    <div class="main_icon_holder" id="seizure_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Seizure Safe Icon" />
+                      </div>
+                    </div>
+                    <div class="ada_content">
+                      <span class="type ada_option_title">Seizure Safe</span>
+                      <span class="description">Optimized to reduce risk of reflex seizures and photosensitive epilepsy,
+                        by
+                        reducing color and removing flashes</span>
+                    </div><!-- ada_content -->
+
+                    <div class="ada_toggle" style="margin-left:6px;">
+                      <label class="switch" title="Toggle On/Off Seizure Safe Profile"
+                        aria-label="Toggle On/Off Seizure Safe Profile">
+                        <input type="checkbox" class="switch-input" id="ToggleSeizure" name="SeizureSafe">
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div><!-- ada_toggle -->
+                  </div><!-- class="ada_toggleContainer" id="SeizureSafe" -->
+                </div><!-- col-12 col-lg-4 -->
+
+
+                <div class="col-12 col-lg-4" id="ReadingMask_option">
+                  <div class="ada_toggleContainer" id="ReadingMask">
+                    <div class="main_icon_holder" id="mask_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Reading Mask Icon" />
+                      </div>
+                    </div>
+                    <div class="main_icon_holder" id="cursor2_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Reading Mask Icon" />
+                      </div>
+                    </div>
+                    <div class="ada_content">
+                      <span class="type ada_option_title">Reading Mask</span>
+                      <span class="description">More focus and fewer distractions</span>
+                    </div><!-- ada_content -->
+
+                    <div class="ada_toggle" style="margin-left:6px;">
+                      <label class="switch" title="Toggle On/Off Reading Mask">
+                        <input type="checkbox" class="switch-input" id="ToggleReadingMask" name="ReadingMask">
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div><!-- ada_toggle -->
+                  </div><!-- class="ada_toggleContainer" id="ReadingMask" -->
+                </div><!-- col-12 col-lg-4 -->
+
+
+
+                <div class="col-12 col-lg-4" id="ReadingGuide_option">
+                  <div class="ada_toggleContainer" id="ReadingGuide">
+                    <div class="main_icon_holder" id="guide_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Reading Guide Icon" />
+                      </div>
+                    </div>
+                    <div class="main_icon_holder" id="cursor3_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Reading Guide Icon" />
+                      </div>
+                    </div>
+                    <div class="ada_content">
+                      <span class="type ada_option_title">Reading Guide</span>
+                      <span class="description">Converts the cursor into a horizontal reading guide</span>
+                    </div><!-- ada_content -->
+
+                    <div class="ada_toggle" style="margin-left:6px;">
+                      <label class="switch" title="Toggle On/Off Reading Guide">
+                        <input type="checkbox" class="switch-input" id="ToggleReadingGuide" name="CursorGuide">
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div><!-- ada_toggle -->
+                  </div><!-- class="ada_toggleContainer" id="ReadingGuide" -->
+                </div><!-- col-12 col-lg-4 -->
+              </div><!-- row -->
+
+
+
+
+              <div class="row" id="TTS_option">
+                <div class="col-12 col-lg-5">
+                  <div class="ada_toggleContainer" id="TTS_click">
+                    <div class="main_icon_holder" id="tts_icon">
+                      <div class="inner_icon_holder">
+                        <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                          alt="Text-to-Speech Icon" />
+                      </div>
+                    </div>
+                    <div class="ada_content">
+                      <span class="type ada_option_title">Text-to-Speech </span>
+                      <!-- A -->
+                      <!-- <div id="tooltip_template" class="toast toast_close">
+                        <div class="tooltip_arrow"></div>
+                        <div class="toast-body">
+                          Enable: <span class="shortcut_tooltip_key">Shift</span> <span
+                            class="shortcut_tooltip_plus">+</span> <span class="shortcut_tooltip_key">.</span>
+                          <br>
+                          <br>
+                          Disable: <span class="shortcut_tooltip_key">Shift</span> <span
+                            class="shortcut_tooltip_plus">+</span> <span class="shortcut_tooltip_key">x</span>
+                        </div>
+                      </div> -->
+
+                      <span class="description">Reads aloud all paragraphs with settings for voice, loudness, speed, and
+                        tone</span>
+                    </div><!-- ada_content -->
+
+                    <div class="ada_toggle" style="margin-left:6px;">
+                      <label class="switch" title="Toggle On/Off Text-to-Speech">
+                        <input type="checkbox" class="switch-input" id="ToggleTTS_click" name="TTS_click_enabled">
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div><!-- ada_toggle -->
+                  </div><!-- class="ada_toggleContainer" id="SeizureSafe" -->
+                </div><!-- col-12 col-lg-6 -->
+
+
+                <div class="col-12 col-lg-6">
+                  <div id="TTS_Utterance">
+                    <form class="form-inline mb-4">
+                      <label for="voice" class="ada_option_title mr-2">Select Voice:</label>
+                      <select class="custom-select" name="voice" id="voice"></select>
+                    </form>
+
+                    <div id="volume"></div>
+                    <div id="rate"></div>
+                    <div id="pitch"></div>
+                  </div><!--TTS_Utterance-->
+                  <div class="col-12 text-center mb-4">
+                    <button id="reset-voice-btn" class="btn btn-secondary ada-btn ">Reset Voice Settings</button>
+                  </div>
+                </div><!-- col-12 col-lg-6 -->
+              </div><!-- row -->
+
+              <div class="row py-3" id="contact_section">
+                <div class="col-12">
+                  <div class="main_icon_holder" id="email_icon">
+                    <div class="inner_icon_holder">
+                      <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                        alt="Email Icon" />
+                    </div>
+                  </div>
+                  <p class="m-0 pl-0 pl-lg-5" style="word-break: break-all;">For questions and concerns, email us at <a
+                      href="mailto:FloridaMemory@dos.myflorida.com">FloridaMemory@dos.myflorida.com</a></p>
+                </div>
+              </div><!-- row -->
+            </div><!-- container fluid -->
+          </div><!-- modal_body -->
+
+
+        </div><!-- modal_content -->
+
+      </div><!-- id="ADA_widget" class="ada_modal_test" -->
+
+
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+
+
+      <div class="container mt-5">
+
+
+
+        <div class="row">
+
+
+          <div class="col-12 col-lg-8 ml-lg-auto">
+            <h1 class="subheader">About These Records</h1>
+            <h2 class="subheader">About These Records</h2>
+            <h3 class="subheader">About These Records</h3>
+            <h4 class="subheader">About These Records</h4>
+            <h5 class="subheader">About These Records</h5>
+            <h6 class="subheader">About These Records</h6>
+            <h6 class="subheader">One More</h6>
+            <button>Hello</button>
+
+            <p>Florida became a United States territory in 1821, but it did not become a state until 1845. During the
+              territorial years, Florida's government derived its authority from the federal government rather than from
+              a
+              state constitution, and many of its key officers were appointed rather than elected.</p>
+
+            <p>The legislature initially consisted of only 13 members in one chamber, all chosen by the President of the
+              United States. Florida voters began choosing their own legislators in 1826, and in 1838 Congress
+              established
+              a
+              second legislative chamber, the Florida Senate. By the time Florida became a state in 1845, the
+              territory's
+              two-house legislature had grown to almost 50 elected representatives.</p>
+
+            <p>This collection contains more than 3,000 records documenting the work of Florida's territorial
+              legislators
+              from their first meeting in <span><a href="www.floridamemory.com">Pensacola</a></span> in 1822 to their
+              final
+              meeting in Tallahassee in 1845, after which a new
+              state government took control of Florida's affairs.</p>
+
+            <p>The records include drafts of bills and resolutions, committee reports, petitions from citizens and
+              correspondence with officials from the executive branch.</p>
+
+            <p>Florida was a young territory whose citizens were eager to build up infrastructure, grow the population
+              and
+              support profitable industries. These records discuss roads, ferries, bridges, banking, the creation of new
+              counties, relations with local Native Americans and requests to incorporate businesses and institutions
+              are
+              some of the most prominent subjects.</p>
+
+            <div class="buffer"></div>
+
+
+
+            <h4 class="subheader">Research Hints</h4>
+
+            <p>Use the search box to find records involving specific individuals, communities or topics. You may also
+              use
+              the index to browse the records by topic, county or year.</p>
+
+            <p>When searching for specific people, bear in mind that some names may be spelled differently in these
+              records.
+              Rodgers could be Rogers, for example, or O'Neal could be O'Neill. Try multiple spellings of names to get
+              the
+              best results.</p>
+
+            <img class="img-fluid"
+              src="https://www.floridamemory.com/learn/research-tools/guides/military/military-default.png"
+              alt="military photo" width="300">
+            <a href="www.floridamemory.com"><img class="img-fluid"
+                src="https://www.floridamemory.com/discover/historical_records/territorial-legislative/collections_territorial-council-square.png"
+                alt="territorial photo"></a>
+
+            <p>Also, remember that Florida's county boundaries have changed many times over the years as new counties
+              were
+              created. <a href="https://www.floridamemory.com/items/show/322986">This map</a> documents those changes
+              over
+              time and can help you choose
+              the right county for your search.</p>
+
+          </div>
+        </div><!-- row -->
+      </div><!-- container -->
+
+      <nav class="navbar Footer">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10">
+
+            <div class="row d-flex justify-content-center align-items-center m-6">
+
+
+
+            </div>
+
+
+
+            <div class="row text-center justify-content-center mt-4">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 px-lg-5">
+                <p class="FM_statement"><span>Florida Memory</span> is a digital outreach program providing free online
+                  access to select archival records from collections housed in the State Library and Archives of
+                  Florida.
+                  Florida Memory digitizes materials that illuminate the state's history and culture.
+                </p>
+
+                <nav class="nav flex-column affiliates">
+                  <li><a class="footer-link-style nav-link" href="http://dos.myflorida.com/">Florida Department of
+                      State</a>
+                  </li>
+                  <li><a class="footer-link-style nav-link" href="http://dos.myflorida.com/library-archives/">Division
+                      of
+                      Library &amp; Information Services</a></li>
+                  <li><a class="footer-link-style nav-link"
+                      href="http://dos.myflorida.com/library-archives/about-us/about-the-state-archives-of-florida/">State
+                      Archives of Florida</a></li>
+                </nav>
+              </div>
+
+              <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 px-md-4 px-lg-5 borderLeftRight">
+                <h4 class="columnTitle mt-5 mt-md-5 mt-lg-0">Additional Links</h4>
+                <nav class="nav flex-column additional_Links">
+                  <a class="footer-link-style nav-link active" href="/learn/about/">About Us</a>
+                  <a class="footer-link-style nav-link" href="/share/connect/">Connect With Us</a>
+                  <a class="footer-link-style nav-link" href="/learn/about/disclaimer.php">Disclaimer</a>
+                  <a class="footer-link-style nav-link" href="http://archivescatalog.info.florida.gov/default.asp">State
+                    Archives Online Catalog</a>
+                  <a class="footer-link-style nav-link" href="http://fslt.ent.sirsi.net/client/en_US/statelibrary">State
+                    Library Online Catalog</a>
+                  <a class="footer-link-style nav-link" href="https://askalibrarian.org/">Ask A Librarian</a>
+                  <a class="footer-link-style nav-link" href="http://dos.myflorida.com/accessibility/">Accessibility
+                    Statement</a>
+                </nav>
+              </div>
+
+              <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 px-md-4 px-lg-5">
+                <h4 class="columnTitle mt-5 mt-md-5 mt-lg-0">Follow Us</h4>
+                <nav class="nav socialMedia d-flex justify-content-center flex-nowrap">
+                  <a class="footer-icon-color nav-link" href="https://www.facebook.com/statearchivesofflorida/"
+                    title="Facebook"><i class="fa fa-facebook aria-hidden=" true""=""></i></a>
+                  <a class="footer-icon-color nav-link"
+                    href="https://twitter.com/FLMemory?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Eprofile%3AFLMemory&amp;ref_url=https%3A%2F%2Fwww.floridamemory.com%2Fconnect%2Fsocial-media.php"
+                    title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  <a class="footer-icon-color nav-link" href="https://www.instagram.com/floridamemory/"
+                    title="Instagram"><i class="fa fa-instagram aria-hidden=" true""=""></i></a>
+                  <a class="footer-icon-color nav-link" href="https://www.youtube.com/user/FloridaMemory"
+                    title="Youtube"><i class="fa fa-youtube-play aria-hidden=" true""=""></i></a>
+                  <a class="footer-icon-color nav-link" href="http://www.flickr.com/photos/floridamemory/"
+                    title="Flickr"><i class="fa fa-flickr aria-hidden=" true""=""></i></a>
+                  <!--<a class="footer-link-style nav-link wdlIcon" href="https://www.wdl.org/en/search/?institution=state-library-and-archives-of-florida&qla=en" title="World Digital Library"><img class="defaultWDL" src="/themes/florida_memory/images/logos/wdl-64.png" alt="Connect with us on World Digital Library" width="30"><img class="invertWDL" src="/themes/florida_memory/images/logos/wdl-64-invert.png" alt="Connect with us on World Digital Library" width="30"><img class="highcontrastWDL" src="/themes/florida_memory/images/logos/wdl-64-highcontrast.png" alt="Connect with us on World Digital Library" width="30">
+          </a>-->
+                  <!--<a class="footer-link-style nav-link blogIcon" href="https://www.floridamemory.com/blog" title="Blog"><img class="defaultBlog" src="/themes/florida_memory/images/logos/blog-64.png" alt="Blog" width="30"><img class="invertBlog" src="/themes/florida_memory/images/logos/blog-64-invert.png" alt="Blog" width="30"><img class="highcontrastBlog" src="/themes/florida_memory/images/logos/blog-64-highcontrast.png" alt="Blog" width="30"></a>-->
+                </nav>
+
+
+
+              </div>
+            </div>
+
+            <div class="row mt-5 justify-content-center fmp-informative">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-8 mx-auto">
+                <p class="text-center">Florida Memory is funded under the provisions of the Library Services and
+                  Technology
+                  Act from the Institute of Museum and Library Services.
+                  Florida's LSTA program is administered by the Department of State's <a class="footer-link-style"
+                    href="http://dos.myflorida.com/library-archives/">Division of Library and Information Services</a>.
+                </p>
+                <p class="text-center">For FY2022-23, the percentage of total costs for the Florida Memory program
+                  financed
+                  with federal money is 66%; the federal dollar amount to be spent on the program is $646,422. This
+                  program
+                  does not receive any non-governmental funding.</p>
+
+
+              </div>
+            </div>
+          </div>
+      </nav>
+
+    </div>
+
+
+    <div class="reading-mask" id="top_mask" style="top: -556px;"></div>
+    <div class="reading-mask" id="bottom_mask" style="top: 464px;"></div>
+
+
+    <!----------------- Text Magnifier ---------------------->
+    <div id="text_magnify" style="left: -20px; top: 404px;"></div>
+
+
+
+    <!----------------- Image Description Magnifier ---------------------->
+    <div id="ImageDescription_magnify" style="left: 20px; top: 384px;"></div>
+
+
+
+    <!-- end main -->
+  </div>
+
+
+  <!------------------------------------------------------------------------- ADD TO FOOTER FILE -------------------------------------------------------------------->
+
+
+
+  <script src="color-picker.js"></script>
+  <script src="script.js"></script>
+  <script src="color-presets.js"></script>
+</body>
+
+</html>
