@@ -2,6 +2,10 @@ body {
   overflow-x: hidden;
 }
 
+/* html {
+  font-size: 1.2rem;
+} */
+
 #ADA_trigger {
 
   position: fixed;
@@ -19,7 +23,7 @@ body {
 
 /* The Modal (background) */
 .ada_modal_test {
-  display: none;
+  display: block;
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
@@ -29,9 +33,9 @@ body {
   top: 0;
   width: 100%;
   /* Full width */
-  height: 100%;
+  height: 90vh;
   /* Full height */
-  overflow: auto;
+
   /* Enable scroll if needed */
   background-color: rgb(0, 0, 0);
   /* Fallback color */
@@ -54,31 +58,42 @@ body {
 
 }
 
-.ADA_close i  {
+.ADA_close {
+  position: absolute;
+  top: -10px;
+  right: -7px;
+}
+
+.ADA_close i {
   transition: all .2s ease-in-out;
 }
+
 .ADA_close i:hover {
-  color: rgba(255, 255, 255, 0.8)!important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 /* Modal Content */
 .ada_modal_test .modal_content {
+
   position: absolute;
   top: 47%;
   left: 50%;
+  width: 95%;
+  height: 83vh;
+
   transform: translate(-50%, -50%);
   background-color: #fefefe;
   margin: auto;
   border: none;
   border-radius: .3rem;
-  width: 100%;
-  max-width: 1290px;
-  height: 100%;
-  max-height: 750px;
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-@media screen and (max-width:992px) {
+
+
+
+/* @media screen and (max-width:992px) {
   .ada_modal_test .modal_content {
     max-width: 500px;
     max-height: 500px;
@@ -97,12 +112,22 @@ body {
     max-width: 320px;
     max-height: 450px;
   }
-}
+} */
 
 .ada_modal_test .modal_content .modal_header {
   padding: 1rem 1rem;
   border-bottom: 1px solid #dee2e6;
   background: #5D2D1F;
+  color: white;
+  border: none;
+
+
+}
+
+.ada_modal_test .modal_content .key-short-header {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  background: #343a40;
   color: white;
   border: none;
   display: -ms-flexbox;
@@ -118,7 +143,9 @@ body {
   margin-bottom: 0;
 }
 
-#modal_header_btns button {
+
+
+.modal_header button {
 
   opacity: 1;
 
@@ -128,6 +155,14 @@ body {
 
   color: white;
 }
+
+.modal_header button:hover {
+  color: white;
+}
+
+
+
+
 
 /* The Close Button */
 .ada_modal_test .close_modal {
@@ -151,9 +186,7 @@ body {
   font-family: Muli;
 }
 
-.form-group-heading {
-  margin: 20px 0;
-}
+
 
 html.translated-ltr #ADA_widget .modal_content .form-group-heading {
   display: flex;
@@ -216,8 +249,8 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
 
 .ada_modal_test .modal_body .row {
   background: white;
-  border-radius: 0.25rem;
-  margin-top: 10px;
+  border-radius: 0.5rem;
+  margin: 10px 10px;
   border: 1px solid #c9c2c2;
 }
 
@@ -228,6 +261,12 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
 .ada_modal_test .modal_body .row:last-of-type {
   padding-bottom: 10px;
 }
+
+/* .ada_toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 
 .ada_toggleContainer {
   display: flex;
@@ -244,7 +283,15 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
 #SeizureSafe .ada_content,
 #ReadingMask .ada_content,
 #ReadingGuide .ada_content {
-  width: 385px !important;
+  width: 350px !important;
+}
+
+
+#HighlightHover,
+#HighlightLinks,
+#TextMagnifier,
+#ImageDescription {
+  max-width: 400px;
 }
 
 @media screen and (min-width:992px) {
@@ -255,15 +302,21 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   }
 
   #HighlightHover_option .ada_toggleContainer {
-    border-right: 1px solid gainsboro;
+
     width: 580px;
   }
 
   #TextMagnifier_option .ada_toggleContainer {
-    border-right: 1px solid gainsboro;
+
     width: 580px;
   }
 }
+
+/* #select_page, .goog-te-combo {
+  max-width: 400px;
+} */
+
+
 
 .ada_toggleContainer .ada_content .type {
   display: block;
@@ -286,18 +339,16 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   height: 50px;
   position: absolute;
   overflow: hidden;
+  top: -25px;
+
 }
 
-.inner_icon_holder {
+/* .inner_icon_holder {
   overflow: hidden;
   position: absolute;
-}
+} */
 
-#ada_modal_header_icon {
-  width: 70px;
-  height: 70px;
 
-}
 
 #ada_modal_header_icon .inner_icon_holder {
   overflow: hidden;
@@ -316,18 +367,21 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
 }
 
 .close-modal {
-font-size: 1.1em;
-transition: all .3s ease-in-out;
--webkit-user-select: none; /* Safari */
--ms-user-select: none; /* IE 10 and IE 11 */
-user-select: none; /* Standard syntax */
+  font-size: 1.1em;
+  transition: all .3s ease-in-out;
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
 }
 
 .close-modal:hover {
-color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
 
 
-  }
+}
 
 #site_map_icon {
   width: 50px;
@@ -500,6 +554,7 @@ color: rgba(255, 255, 255, 0.8);
   height: 50px;
   left: 20.5px;
   top: 6px;
+
 }
 
 #fonttype_icon .inner_icon_holder {
@@ -507,6 +562,7 @@ color: rgba(255, 255, 255, 0.8);
   width: 500px;
   height: 110px;
   position: absolute;
+
 }
 
 #fonttype_icon .inner_icon_holder img {
@@ -514,6 +570,7 @@ color: rgba(255, 255, 255, 0.8);
   top: -30px;
   clip-path: inset(31% 66% 33% 17%);
   left: -4.9rem;
+
 }
 
 #cursor_icon {
@@ -521,6 +578,7 @@ color: rgba(255, 255, 255, 0.8);
   height: 50px;
   left: 16px;
   top: 18px;
+
 }
 
 #cursor_icon .inner_icon_holder {
@@ -540,8 +598,68 @@ color: rgba(255, 255, 255, 0.8);
 #letterspace_icon {
   width: 50px;
   height: 50px;
-  left: 75px;
-  top: 5px;
+  left: 35px;
+  top: 4px;
+}
+
+#wordspace_icon {
+  width: 77px;
+  height: 55px;
+  left: 5px;
+  top: 7px;
+}
+
+#lineheight_icon {
+  width: 50px;
+  height: 50px;
+  left: 55px;
+  top: 11px;
+}
+
+@media screen and (min-width:1700px) {
+  #letterspace_icon {
+    width: 50px;
+    height: 50px;
+    left: 50px;
+    top: 7px;
+  }
+
+  #wordspace_icon {
+    width: 77px;
+    height: 55px;
+    left: 23px;
+    top: 10px;
+  }
+
+  #lineheight_icon {
+    width: 50px;
+    height: 50px;
+    left: 75px;
+    top: 14px;
+  }
+}
+
+@media screen and (min-width:2000px) {
+  #letterspace_icon {
+    width: 50px;
+    height: 50px;
+    left: 75px;
+    top: 7px;
+  }
+
+  #wordspace_icon {
+    width: 77px;
+    height: 55px;
+    left: 46px;
+    top: 10px;
+  }
+
+  #lineheight_icon {
+    width: 50px;
+    height: 50px;
+    left: 100px;
+    top: 14px;
+  }
 }
 
 #letterspace_icon .inner_icon_holder {
@@ -558,12 +676,7 @@ color: rgba(255, 255, 255, 0.8);
   left: -15.6rem;
 }
 
-#wordspace_icon {
-  width: 77px;
-  height: 55px;
-  left: 50px;
-  top: 8px;
-}
+
 
 #wordspace_icon .inner_icon_holder {
   overflow: hidden;
@@ -579,12 +692,7 @@ color: rgba(255, 255, 255, 0.8);
   left: -26.9rem;
 }
 
-#lineheight_icon {
-  width: 50px;
-  height: 50px;
-  left: 95px;
-  top: 10px;
-}
+
 
 #lineheight_icon .inner_icon_holder {
   overflow: hidden;
@@ -956,6 +1064,7 @@ html.translated-ltr #wordspace_icon {
 .goog-te-combo {
   cursor: pointer;
 }
+
 /************************************************************ Keyboard Shortcuts ************************************************************/
 @media screen and (max-width:992px) {
   #keyboard_shortcutsBtn {
@@ -1365,6 +1474,7 @@ html.translated-ltr #tooltip_template {
   border: #003f88 solid 1px;
   opacity: 0.8;
 }
+
 .audio_state button i {
   font-size: 20px;
 }
@@ -1611,6 +1721,13 @@ a {
   font-size: 17px;
 }
 
+#ADA_widget .modal_body #BackgroundColor_option ul li {
+
+  width: 138px !important;
+  height: 80px !important;
+
+}
+
 
 /************************************************************ Font Size Form ************************************************************/
 @media screen and (min-width:992px) {
@@ -1678,9 +1795,7 @@ a {
 
 
 /************************************************************ Font Type Form ************************************************************/
-#ADA_widget .modal_body .font_type_form {
-  max-width: 530px;
-}
+
 
 @media screen and (min-width:992px) {
   #ADA_widget .modal_body .font_type_form h6.ada_option_title {
@@ -2006,10 +2121,31 @@ body.BaskervilleFont {
   background-color: #EBE5E3 !important;
   border-radius: 0.25rem;
   padding: 20px;
-  width: 180px;
-  height: 115px;
+  width: 152px;
+  height: 100px;
   text-align: center;
 
+}
+
+
+@media screen and (min-width:1200px) {
+  #ADA_widget .modal_body .color_picker_form .form-group {
+
+    width: 190px;
+    height: 115px;
+
+
+  }
+}
+
+@media screen and (min-width:1500px) {
+  #ADA_widget .modal_body .color_picker_form .form-group {
+
+    width: 200px;
+    height: 185px;
+
+
+  }
 }
 
 .hexVal {
@@ -2073,40 +2209,58 @@ body.BaskervilleFont {
 }
 
 
+.close {
+  color: white;
+}
 
+.close:hover {
+  color: rgba(255, 255, 255, 0.8)
+}
 
 
 .ada-btn {
   background-color: #EBE5E3 !important;
   color: #000 !important;
-padding: 8px 40px;
-  margin: 0 0 !important;
+  padding: 8px 40px;
+
 }
+
+@media screen and (min-width:514px) {
+
+  .ada-btn {
+
+    margin: 0 0 !important;
+  }
+}
+
+
 .ada-btn:hover {
   background-color: #5D2D1F !important;
   color: #ffffff !important;
 }
 
-#remove_cookie {
-  -webkit-border-radius: 5px 0px 0px 5px !important;
-  border-radius: 5px 0px 0px 5px !important;
-}
+@media screen and (min-width:514px) {
+  #remove_cookie {
+    -webkit-border-radius: 5px 0px 0px 5px !important;
+    border-radius: 5px 0px 0px 5px !important;
+  }
 
-#OpenContrastModal {
-  -webkit-border-radius: 0px 5px 5px 0px !important;
-  border-radius: 0px 5px 5px 0px !important;
-}
-
-@media screen and (max-width:576px) {
-  #color_pickerBtns button.btn:first-of-type {
-    margin-bottom: 10px;
+  #OpenContrastModal {
+    -webkit-border-radius: 0px 5px 5px 0px !important;
+    border-radius: 0px 5px 5px 0px !important;
   }
 }
+
+
+
+
+
 
 .toast_close {
   opacity: 0 !important;
   display: none !important;
 }
+
 
 .toast i {
   color: #fff;
@@ -2364,27 +2518,30 @@ padding: 8px 40px;
 
 
 
-.highcontrast #ADA_widget .modal_body ul li.active, .highcontrast #ADA_widget .modal_body ul li:hover {
- border: #5D2D1F solid 2px;
+.highcontrast #ADA_widget .modal_body ul li.active,
+.highcontrast #ADA_widget .modal_body ul li:hover {
+  border: #5D2D1F solid 2px;
 
- box-shadow: none;
+  box-shadow: none;
 }
 
 .highcontrast .ada-btn:hover {
-color: #fff!important;
-background-color: #262626 !important;
+  color: #fff !important;
+  background-color: #262626 !important;
 
 }
 
-.highcontrast #ADA_widget .modal_body ul li  {
+.highcontrast #ADA_widget .modal_body ul li {
   transition: all .3s ease-in-out;
 }
 
 .highcontrast #ADA_widget .modal_body ul li div {
   transition: all .3s ease-in-out;
 }
-.highcontrast #ADA_widget .modal_body ul li:hover div, .highcontrast #ADA_widget .modal_body ul li.active div {
-  color: rgba(255, 255, 255, 0.8)!important;
+
+.highcontrast #ADA_widget .modal_body ul li:hover div,
+.highcontrast #ADA_widget .modal_body ul li.active div {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 
@@ -2445,24 +2602,27 @@ background-color: #262626 !important;
   border-color: #363636;
 }
 
-.desaturated  .ada-btn:hover {
-  color: #fff!important;
-  background-color: #363636  !important;
+.desaturated .ada-btn:hover {
+  color: #fff !important;
+  background-color: #363636 !important;
 
-  }
+}
 
 
 
- .desaturated #ADA_widget .modal_body ul li.active, .desaturated #ADA_widget .modal_body ul li:hover {
-  border: #b5e2fa solid 2px!important;
+.desaturated #ADA_widget .modal_body ul li.active,
+.desaturated #ADA_widget .modal_body ul li:hover {
+  border: #b5e2fa solid 2px !important;
   box-shadow: none;
- }
+}
 
- .desaturated #ADA_widget .modal_body ul li div {
+.desaturated #ADA_widget .modal_body ul li div {
   transition: all .3s ease-in-out;
 }
-.desaturated #ADA_widget .modal_body ul li:hover div, .desaturated #ADA_widget .modal_body ul li.active div {
-  color: rgba(255, 255, 255, 0.8)!important;
+
+.desaturated #ADA_widget .modal_body ul li:hover div,
+.desaturated #ADA_widget .modal_body ul li.active div {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .desaturated #ADA_reset {
@@ -2618,19 +2778,19 @@ background-color: #262626 !important;
   color: #FF9E66 !important;
   background-color: #262626 !important;
 
-  }
+}
 
-  .inverted #ADA_reset {
-    border: #2C2C2C solid 1px !important;
+.inverted #ADA_reset {
+  border: #2C2C2C solid 1px !important;
 
 
-  }
+}
 
-  .inverted #ADA_reset:hover {
-    border: #FFF solid 1px !important;
-    background-color: #2C2C2C !important;
+.inverted #ADA_reset:hover {
+  border: #FFF solid 1px !important;
+  background-color: #2C2C2C !important;
 
-  }
+}
 
 /************************************************************ High Saturation ************************************************************/
 .highsaturation {
@@ -2708,7 +2868,7 @@ div#google_translate_element:before {
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 1.75rem 0.375rem 0.75rem;
-  font-size: 12pt!important;
+  font-size: 12pt !important;
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
@@ -2945,4 +3105,153 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
 .inverted a:hover {
   color: #FF9E66 !important;
   text-decoration: underline;
+}
+
+/* .modal_content .col-12:hover {
+background-color: lightgray;
+} */
+
+
+@media screen and (min-width:768px) {
+  .modal_header .main_icon_holder {
+    margin-top: 12px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media screen and (min-width:1200px) {
+
+
+  #ADA_widget .modal_content .ada_option_title {
+    font-size: 19px;
+  }
+
+  .ada_toggleContainer .ada_content .description {
+    font-size: 17px;
+  }
+
+  #ADA_widget .modal_body ul li {
+
+    width: 138px !important;
+    height: 90px !important;
+    background-color: #EBE5E3 !important;
+    border-radius: 0.25rem;
+    border: 2px solid transparent;
+    margin-bottom: 5px;
+  }
+
+  #ADA_widget .modal_body ul li a div.title {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (min-width:1500px) {
+
+
+  #ADA_widget .modal_content .ada_option_title {
+    font-size: 21px;
+  }
+
+  .ada_toggleContainer .ada_content .description {
+    font-size: 18px;
+  }
+
+  #ADA_widget .modal_body ul li {
+
+    width: 138px !important;
+    height: 90px !important;
+    background-color: #EBE5E3 !important;
+    border-radius: 0.25rem;
+    border: 2px solid transparent;
+    margin-bottom: 5px;
+    flex-wrap: nowrap;
+  }
+
+  #ADA_widget .modal_body ul li a div.title {
+    font-size: 15px;
+  }
+
+}
+
+.modal_body .col-12 {
+  transition: all .3s ease-in-out;
+}
+
+
+
+#HighlightHover .description {
+  max-width: 250px;
+}
+
+
+
+@media screen and (min-width:760px) {
+  #ADA_widget .modal_body #BackgroundColor_option ul li {
+    width: 158px !important;
+    height: 90px !important;
+  }
+}
+@media screen and (min-width:1700px) {
+  #ADA_widget .modal_body #BackgroundColor_option ul li {
+    width: 170px !important;
+    height: 100px !important;
+  }
+
+  #ADA_reset {
+    font-size: 24px!important;
+  }
+  .modal_header button {
+    font-size: 25px;
+  }
+}
+
+
+
+
+
+
+
+@media screen and (min-width:412px) {
+  .ada_modal_test .modal_content {
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    height: 87vh;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .ada_modal_test .modal_content {
+    top: 52%;
+    left: 50%;
+    width: 95%;
+    height: 90vh;
+  }
+}
+
+@media screen and (min-width:1000px) {
+  .ada_modal_test .modal_content {
+    top: 52%;
+    left: 50%;
+    width: 90%;
+    height: 90vh;
+  }
+}
+
+@media screen and (min-width:1400px) {
+  .ada_modal_test .modal_content {
+    width: 75%;
+    height: 80vh;
+  }
+}
+
+@media screen and (min-width:1700px) {
+  .ada_modal_test .modal_content {
+    width: 70%;
+    height: 80vh;
+  }
 }

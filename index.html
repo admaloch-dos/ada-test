@@ -55,39 +55,55 @@
       <div id="ADA_widget" class="ada_modal_test" aria-labelledby="ADA_widget" aria-hidden="true">
         <!-- Modal content -->
         <div class="modal_content">
-          <div class="modal_header d-flex align-items-center">
-            <div class="main_icon_holder" id="ada_modal_header_icon">
-              <div class="inner_icon_holder">
-                <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
-                  alt="Universal Accessibility Icon" />
-              </div>
-            </div>
-            <h5 class="title pl-5">Accessibility Menu</h5>
-            <div class="row" id="modal_header_btns">
 
-              <button onclick="resetAdaWidget()" type="button" class="btn" title="Reset Settings"
-                aria-label="Reset Settings" id="ADA_reset">
-                <i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset
+          <div class="modal_header">
+
+
+
+            <div class="row">
+              <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
+                <div class="main_icon_holder" id="ada_modal_header_icon">
+                  <div class="inner_icon_holder ">
+                    <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
+                      alt="Universal Accessibility Icon" />
+                  </div>
+                </div>
+                <h5 class="title ml-md-5">Accessibility Menu</h5>
+              </div>
+              <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
+                <button onclick="resetAdaWidget()" type="button" class="btn mr-md-4" title="Reset Settings"
+                  aria-label="Reset Settings" id="ADA_reset">
+                  <i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset
+                </button>
+
+              </div>
+
+              <button type="button" class="btn btn-link ADA_close" aria-label="Close" title="Close" role="button">
+                <i class="fa fa-close" aria-hidden="true"></i>
               </button>
 
 
 
-              <div class="col">
-                <button type="button" class="btn btn-link ADA_close" aria-label="Close" title="Close" role="button">
-                  <i class="fa fa-close" aria-hidden="true"></i>
-                </button>
-              </div>
-            </div><!--modal_header_btns -->
+
+
+
+
+
+
+
+            </div>
+
+
           </div><!-- modal_header -->
 
           <div class="modal_body" id="accessibility">
             <div class="container-fluid">
-              <div class="row justify-content-between">
+              <div class="row justify-content-between align-items-center menu-selects pb-1">
                 <div class="col-12 col-lg-4" id="SiteMap_option">
-                  <form class="siteMap_form form-inline mb-3">
+                  <form class="siteMap_form form-inline mb-3  d-flex justify-content-center">
 
-                    <div class="form-group">
-                      <label class="ada_option_title pl-4" for="Site Map">Site Map
+                    <div class="form-group mb-0 w-100">
+                      <label class="ada_option_title pl-lg-4 d-none d-lg-block" for="Site Map">
                         <div class="main_icon_holder" id="site_map_icon">
                           <div class="inner_icon_holder">
                             <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
@@ -95,7 +111,7 @@
                           </div>
                         </div>
                       </label>
-                      <select  class="form-control ml-0 ml-lg-2 col-12 col-lg-7" id="select_page"
+                      <select class="form-control ml-0 ml-lg-2 col-12 col-lg-7" id="select_page"
                         onchange="location = this.value;">
                         <option class="text-center" selected disabled>Florida Memory Navigation</option>
                         <option value="https://www.floridamemory.com/" style="font-weight:bold;">Homepage</option>
@@ -134,7 +150,7 @@
 
 
 
-                <div class="col-12 col-lg-3 align-self-end mb-3">
+                <div class="col-12 col-lg-4">
                   <button class="btn btn-link" type="button" data-toggle="modal" data-target="#keyboard_shortcuts"
                     id="keyboard_shortcutsBtn">Keyboard Shortcuts
                     <div class="main_icon_holder" id="shortcuts_icon">
@@ -420,7 +436,7 @@
                   </div><!--modal-->
                 </div><!-- col-12 col-lg-4 -->
 
-                <div class="col-12 col-lg-3 align-self-end mb-3">
+                <div class="col-12 col-lg-4 ">
 
                   <div class="main_icon_holder" id="translate_icon">
                     <div class="inner_icon_holder">
@@ -468,7 +484,8 @@
 
 
               <div class="row">
-                <div class="col-12 col-lg-6" id="HighlightHover_option">
+                <div class="col-12 col-lg-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start "
+                  id="HighlightHover_option">
                   <div class="ada_toggleContainer" id="HighlightHover">
                     <div class="ada_content">
                       <div class="main_icon_holder" id="highlight_icon">
@@ -477,8 +494,9 @@
                             alt="Highlight Hover Icon" />
                         </div>
                       </div>
-                      <span class="type ada_option_title">Highlight on Hover</span>
-                      <span class="description">Adds visual emphasis to all hyperlinks on cursor hover</span>
+                      <span class="type ada_option_title text-sm-center text-lg-left">Highlight on Hover</span>
+                      <span class="description text-sm-center text-lg-left">Adds visual emphasis to all hyperlinks on
+                        cursor hover</span>
                     </div><!-- ada_content -->
 
                     <div class="ada_toggle" style="margin-left:6px;">
@@ -493,7 +511,8 @@
 
 
 
-                <div class="col-12 col-lg-6" id="HighlightLinks_option">
+                <div class="col-12 col-lg-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start "
+                  id="HighlightLinks_option">
                   <div class="ada_toggleContainer" id="HighlightLinks">
                     <div class="ada_content">
                       <div class="main_icon_holder" id="highlighthover_icon">
@@ -502,8 +521,9 @@
                             alt="Highlight Links Icon" />
                         </div>
                       </div>
-                      <span class="type ada_option_title">Highlight All Links</span>
-                      <span class="description">Adds visual emphasis to all hyperlinks</span>
+                      <span class="type ada_option_title text-sm-center text-lg-left">Highlight All Links</span>
+                      <span class="description text-sm-center text-lg-left">Adds visual emphasis to all
+                        hyperlinks</span>
                     </div><!-- ada_content -->
 
                     <div class="ada_toggle" style="margin-left:6px;">
@@ -521,7 +541,8 @@
 
 
               <div class="row" id="Magnify_options">
-                <div class="col-12 col-lg-6" id="TextMagnifier_option">
+                <div class="col-12 col-lg-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start"
+                  id="TextMagnifier_option">
                   <div class="ada_toggleContainer" id="TextMagnifier">
                     <div class="main_icon_holder" id="textmagnify_icon">
                       <div class="inner_icon_holder">
@@ -545,7 +566,8 @@
                 </div><!-- col-12 col-lg-6 -->
 
 
-                <div class="col-12 col-lg-6" id="ImageDescription_option">
+                <div class="col-12 col-lg-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start"
+                  id="ImageDescription_option">
                   <div class="ada_toggleContainer" id="ImageDescription">
                     <div class="main_icon_holder" id="imagealt_icon">
                       <div class="inner_icon_holder">
@@ -573,8 +595,8 @@
 
 
 
-              <div class="row" id="FontSize_option">
-                <div class="col-12 col-lg-3">
+              <div class="row text-center " id="FontSize_option">
+                <div class="col-12 col-lg-4">
                   <form class="fontsize_form">
                     <div class="main_icon_holder" id="fontsize_icon">
                       <div class="inner_icon_holder">
@@ -582,7 +604,7 @@
                           alt="Font Size Icon" />
                       </div>
                     </div>
-                    <h6 class="ada_option_title">Change Font-Size</h6>
+                    <h6 class="ada_option_title text-lg-left">Change Font-Size</h6>
                     <div class="form-check">
                       <ul class="modal-btn-options">
                         <li id="FS_Default" class="active"><a href="#!" class="FontSizeOptions FontSizeDefault">
@@ -600,7 +622,7 @@
                 </div><!-- col-12 col-lg-3 -->
 
 
-                <div class="col-12 col-lg-5 mx-auto" id="FontFamily_option">
+                <div class="col-12 col-lg-4 mx-auto" id="FontFamily_option">
                   <form class="font_type_form">
                     <div class="main_icon_holder" id="fonttype_icon">
                       <div class="inner_icon_holder">
@@ -608,7 +630,7 @@
                           alt="Font Family Icon" />
                       </div>
                     </div>
-                    <h6 class="ada_option_title">Change Font-Family</h6>
+                    <h6 class="ada_option_title text-lg-left">Change Font-Family</h6>
                     <div class="form-check">
                       <ul class="modal-btn-options">
                         <li id="FT_Default" class="active"><a href="#!" class="FontTypeOptions FontTypeDefault">
@@ -631,7 +653,7 @@
                 </div><!-- col-12 col-lg-6 -->
 
 
-                <div class="col-12 col-lg-3" id="Cursor_option">
+                <div class="col-12 col-lg-4" id="Cursor_option">
                   <form class="cursorSwap_form">
                     <div class="main_icon_holder" id="cursor_icon">
                       <div class="inner_icon_holder">
@@ -639,7 +661,7 @@
                           alt="Large Cursor" />
                       </div>
                     </div>
-                    <h6 class="ada_option_title">Change Cursor</h6>
+                    <h6 class="ada_option_title text-lg-left">Change Cursor</h6>
                     <div class="form-check">
                       <ul class="modal-btn-options">
                         <li id="Cur_Default" class="active"><a href="#!" class="CursorOptions Cursor_Default">
@@ -663,8 +685,8 @@
               <div id="text-selects" class="row">
                 <div class="col-12 col-lg-4 text-center" id="LetterSpacing_option">
                   <form>
-                    <div class="form-group">
-                      <div class="form-group-heading">
+                    <div class="form-group mb-0 mb-lg-3">
+                      <div class="form-group-heading mb-1 mb-lg-4 ">
                         <div class="main_icon_holder" id="letterspace_icon">
                           <div class="inner_icon_holder">
                             <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
@@ -688,8 +710,8 @@
 
                 <div class="col-12 col-lg-4 text-center" id="WordSpacing_option">
                   <form>
-                    <div class="form-group">
-                      <div class="form-group-heading">
+                    <div class="form-group mb-0 mb-lg-3">
+                      <div class="form-group-heading mb-1 mb-lg-4">
                         <div class="main_icon_holder" id="wordspace_icon">
                           <div class="inner_icon_holder">
                             <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
@@ -712,8 +734,8 @@
 
                 <div class="col-12 col-lg-4 text-center" id="LineHeight_option">
                   <form>
-                    <div class="form-group">
-                      <div class="form-group-heading">
+                    <div class="form-group mb-4 mb-lg-3">
+                      <div class="form-group-heading mb-1 mb-lg-4">
                         <div class="main_icon_holder" id="lineheight_icon">
                           <div class="inner_icon_holder">
                             <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
@@ -737,7 +759,7 @@
 
 
 
-              <div class="row" style="padding-bottom:10px;">
+              <div class="row">
                 <div class="col-12 col-lg-6" id="BackgroundColor_option">
                   <form class="bg_form">
                     <div class="main_icon_holder" id="bgcircle_icon">
@@ -746,7 +768,8 @@
                           alt="Highlight Hover Icon" />
                       </div>
                     </div>
-                    <h6 class="ada_option_title pl-0 pl-lg-5 mb-3 mt-3">Website Color Presets</h6>
+                    <h6 class="ada_option_title pl-0 pl-lg-5 mb-3 mt-3 text-center text-lg-left">Website Color Presets
+                    </h6>
                     <div class="form-check">
                       <ul class="text-center modal-btn-options">
                         <li id="DefaultBG_option" class="active">
@@ -767,7 +790,7 @@
                           </a>
                         </li>
 
-                        <br>
+                        <br class="d-none d-lg-block">
 
                         <li id="InvertBG_option" class="">
                           <a href="#!" class="backgroundOptions InvertBackground">
@@ -797,16 +820,16 @@
 
 
                 <div class="col-12 col-lg-6" id="ColorAdjust_option">
-                  <form class="color_picker_form">
+                  <form class="color_picker_form text-center">
                     <div class="main_icon_holder" id="paint_icon">
                       <div class="inner_icon_holder">
                         <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
                           alt="Highlight Hover Icon" />
                       </div>
                     </div>
-                    <h6 class="ada_option_title mb-3 mt-3 pl-0 pl-lg-5">Adjust Colors</h6>
+                    <h6 class="ada_option_title mb-3 mt-3 pl-0 pl-lg-5 text-lg-left">Adjust Colors</h6>
 
-                    <div class="form-group">
+                    <div class="form-group ">
                       <label class="ada_option_title" for="Background Color">
                         Background Color
                       </label>
@@ -835,14 +858,14 @@
                   </form>
 
 
-                  <div class="row d-flex justify-content-center no-gutters pr-4" id="color_pickerBtns">
+                  <div class="row d-flex justify-content-center no-gutters mb-4" id="color_pickerBtns">
                     <!--<div class="col-12 col-lg-3">
                                 </div>
                                 <div class="col-12 col-lg-4">
                                 </div>-->
-                    <button id="remove_cookie" class="btn btn-secondary ada-btn" role="button" type="button"
+                    <button id="remove_cookie" class="btn btn-secondary ada-btn mb-2" role="button" type="button"
                       title="Reset Adjustments Colors">Reset Colors</button>
-                    <button type="button" class="btn btn-secondary ada-btn" id="OpenContrastModal" role="button"
+                    <button type="button" class="btn btn-secondary ada-btn mb-3" id="OpenContrastModal" role="button"
                       title="Check Contrast">Check Contrast</button>
 
                   </div><!-- row -->
@@ -906,9 +929,10 @@
 
 
 
-              <div class="row">
-                <div class="col-12 col-lg-4" id="SeizureSafe_option">
-                  <div class="ada_toggleContainer" id="SeizureSafe">
+              <div class="row ">
+                <div class="col-12 col-lg-4 " id="SeizureSafe_option">
+                  <div class="ada_toggleContainer  d-flex justify-content-start justify-content-sm-center"
+                    id="SeizureSafe">
                     <div class="main_icon_holder" id="seizure_icon">
                       <div class="inner_icon_holder">
                         <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
@@ -916,8 +940,9 @@
                       </div>
                     </div>
                     <div class="ada_content">
-                      <span class="type ada_option_title">Seizure Safe</span>
-                      <span class="description">Optimized to reduce risk of reflex seizures and photosensitive epilepsy,
+                      <span class="type ada_option_title text-sm-center text-lg-left">Seizure Safe</span>
+                      <span class="description text-sm-center text-lg-left">Optimized to reduce risk of reflex seizures
+                        and photosensitive epilepsy,
                         by
                         reducing color and removing flashes</span>
                     </div><!-- ada_content -->
@@ -935,7 +960,7 @@
 
 
                 <div class="col-12 col-lg-4" id="ReadingMask_option">
-                  <div class="ada_toggleContainer" id="ReadingMask">
+                  <div class="ada_toggleContainer justify-content-start justify-content-sm-center" id="ReadingMask">
                     <div class="main_icon_holder" id="mask_icon">
                       <div class="inner_icon_holder">
                         <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
@@ -966,7 +991,7 @@
 
 
                 <div class="col-12 col-lg-4" id="ReadingGuide_option">
-                  <div class="ada_toggleContainer" id="ReadingGuide">
+                  <div class="ada_toggleContainer " id="ReadingGuide">
                     <div class="main_icon_holder" id="guide_icon">
                       <div class="inner_icon_holder">
                         <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
@@ -999,16 +1024,16 @@
 
 
               <div class="row" id="TTS_option">
-                <div class="col-12 col-lg-5">
-                  <div class="ada_toggleContainer" id="TTS_click">
+                <div class="col-12 col-lg-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start  ">
+                  <div class="ada_toggleContainer " id="TTS_click">
                     <div class="main_icon_holder" id="tts_icon">
                       <div class="inner_icon_holder">
                         <img class="img-fluid accessibility_icons" src="./files/img/accessibility-icons5.png"
                           alt="Text-to-Speech Icon" />
                       </div>
                     </div>
-                    <div class="ada_content">
-                      <span class="type ada_option_title">Text-to-Speech </span>
+                    <div class="ada_content text-sm-center text-lg-left">
+                      <span class=" ada_option_title ">Text-to-Speech </span>
                       <!-- A -->
                       <!-- <div id="tooltip_template" class="toast toast_close">
                         <div class="tooltip_arrow"></div>
@@ -1022,7 +1047,8 @@
                         </div>
                       </div> -->
 
-                      <span class="description">Reads aloud all paragraphs with settings for voice, loudness, speed, and
+                      <span class="description ">Reads aloud all paragraphs with settings for voice, loudness, speed,
+                        and
                         tone</span>
                     </div><!-- ada_content -->
 
@@ -1062,7 +1088,7 @@
                         alt="Email Icon" />
                     </div>
                   </div>
-                  <p class="m-0 pl-0 pl-lg-5" style="word-break: break-all;">For questions and concerns, email us at <a
+                  <p class="m-0 pl-0 pl-lg-5 " style="word-break: break-all;">For questions and concerns, email us at <a
                       href="mailto:FloridaMemory@dos.myflorida.com">FloridaMemory@dos.myflorida.com</a></p>
                 </div>
               </div><!-- row -->

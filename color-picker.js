@@ -249,18 +249,18 @@ $(document).ready(function () {
         return rgb2hex(this.css(colorProp));
     };
 
-    const setBackgroundColor = (color) => {
-        $('body').css('background-color', color);
-        $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + color + '!important');
-        $('#Scroll_btn').attr('style', 'background-color: ' + color + '!important');
-        $('#footerFeat_container, .Footer').css('background-color', color);
-        $('#menudropdown .card-body').css('background-color', color);
-        var hexBackgroundColor = $('body').cssAsHex('background-color');
-        $("#bg_hexVal").html(hexBackgroundColor);
+    // const setBackgroundColor = (color) => {
+    //     $('body').css('background-color', color);
+    //     $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + color + '!important');
+    //     $('#Scroll_btn').attr('style', 'background-color: ' + color + '!important');
+    //     $('#footerFeat_container, .Footer').css('background-color', color);
+    //     $('#menudropdown .card-body').css('background-color', color);
+    //     var hexBackgroundColor = $('body').cssAsHex('background-color');
+    //     $("#bg_hexVal").html(hexBackgroundColor);
 
-        $.cookie.raw = true; //to bypass the default cookie value which is encoded/decoded when writing/reading
-        $.cookie('BackgroundColorCookie', color);
-    }
+    //     $.cookie.raw = true; //to bypass the default cookie value which is encoded/decoded when writing/reading
+    //     $.cookie('BackgroundColorCookie', color);
+    // }
 
 
 
@@ -294,31 +294,30 @@ $(document).ready(function () {
         $.cookie.raw = true;
     }
 
+//TextColorCookie
+$('#text_color').on("change", function(){
+    var text_color = $('#page *').css('color');
+    $('#view *').not('#ADA_widget, #ADA_widget *').css('color', text_color);
+    $('.SearchForm .input-group .input-group-append #submit_search').css('color', text_color);
+    $('#footerFeat_container, .Footer').css('color', text_color);
+    var hexTextColor = $('#view *').cssAsHex('color');
+    $("#txt_hexVal").html(hexTextColor);
 
-    //TextColorCookie
-    $('#text_color').on("change", function () {
-        var text_color = ('body *').css('color');
-        $('p, :header, span, button, td').not('a, #ADA_widget, #ADA_widget *').css('color', text_color);
-        // $('.SearchForm .input-group .input-group-append #submit_search').css('color', text_color);
-        // $('#footerFeat_container, .Footer').css('color', text_color);
-        var hexTextColor = $('p, :header, span, button, td').cssAsHex('color');
-        $("#txt_hexVal").html(hexTextColor);
+    $.cookie.raw = true;
+    $.cookie('TextColorCookie',text_color);
+});
+ if( $.cookie('TextColorCookie') != undefined) {
+     $('#view *').not('#ADA_widget, #ADA_widget *').css('color', $.cookie('TextColorCookie'));
+     $('.SearchForm .input-group .input-group-append #submit_search').css('color', $.cookie('TextColorCookie'));
+     $('#footerFeat_container, .Footer').css('color', $.cookie('TextColorCookie'));
 
-        $.cookie.raw = true;
-        $.cookie('TextColorCookie', text_color);
-    });
-    if ($.cookie('TextColorCookie') != undefined) {
-        $('p, :header, span, button, td').not('a, #ADA_widget, #ADA_widget *').css('color', $.cookie('TextColorCookie'));
-        // $('.SearchForm .input-group .input-group-append #submit_search').css('color', $.cookie('TextColorCookie'));
-        // $('#footerFeat_container, .Footer').css('color', $.cookie('TextColorCookie'));
-
-        var hexTextColor = $('body *').cssAsHex('color');
-        $('#text_color').attr('value', hexTextColor);
-        $("#txt_hexVal").html(hexTextColor);
+    var hexTextColor = $('#page *').cssAsHex('color');
+    $('#text_color').attr('value', hexTextColor);
+    $("#txt_hexVal").html(hexTextColor);
 
 
-        $.cookie.raw = true;
-    }
+    $.cookie.raw = true;
+ }
 
 
     //LinkColorCookie

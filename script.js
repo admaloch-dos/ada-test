@@ -468,6 +468,7 @@ $(function () {
       $("body").addClass("ReadingMask_ON");
       $("#top_mask").fadeIn()
       $("#bottom_mask").fadeIn()
+
     } else {
 
       $("body").removeClass("ReadingMask_ON");
@@ -1390,7 +1391,7 @@ setTimeout(() => {
     setTimeout(() => {
       preventPageScroll()
       console.log('prevented scroll on page load')
-    }, 400);
+    }, 500);
 
   }
 }, 100);
