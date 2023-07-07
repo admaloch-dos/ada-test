@@ -943,20 +943,14 @@ $(document).ready(function () {
 
 const displayModal = () => {
   const overlay = document.querySelector('#ADA_widget')
-  console.log(overlay.style.display)
   if (overlay.style.display !== "flex") {
-
     $("#ADA_widget").css('opacity', '0');
     $("#ADA_widget").css("display", "flex")
     $("#ADA_widget").fadeTo(0, 1);
-
     $(".modal_content").fadeToggle(0);
   } else {
-
     $("#ADA_widget").fadeTo(400, 0);
-
     $(".modal_content").fadeToggle(400);
-
     setTimeout(() => {
       $("#ADA_widget").css("display", "none")
     }, 600);
@@ -1072,7 +1066,7 @@ $(document).bind('mousemove', function (e) {
 
   // console.log(e.pageY)
   $('#top_mask').css({
-    top: e.pageY - 1450
+    top: e.pageY - 1350
   });
 
   $('#bottom_mask').css({
@@ -1305,9 +1299,11 @@ const keyTogglerFunc = (itemId, itemClass) => {
 function resetAdaOnKey() {
   deleteCookies()
   const adaWidget = document.querySelector('#ADA_widget')
-  if (adaWidget.style.display === 'block') {
+  if (adaWidget.style.display === 'flex') {
+    console.log('reloading on key bring in modal')
     sessionStorage.setItem("reloadingOnKeyModal", "true");
   } else {
+    console.log('reloading on key - dont bring modal')
     sessionStorage.setItem("reloadingOnKey", "true");
   }
   $("body").fadeOut()
