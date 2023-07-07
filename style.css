@@ -23,9 +23,11 @@ body {
 
 /* The Modal (background) */
 .ada_modal_test {
-  display: block;
+  overflow: hidden;
+
   /* Hidden by default */
   position: fixed;
+  transition: 0.5s all ease-in;
   /* Stay in place */
   z-index: 2000;
   /* Sit on top */
@@ -33,7 +35,8 @@ body {
   top: 0;
   width: 100%;
   /* Full width */
-  height: 90vh;
+  height: 100%;
+  max-height: 100vh;
   /* Full height */
 
   /* Enable scroll if needed */
@@ -41,27 +44,98 @@ body {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
 }
+
+/* Modal Content */
+.ada_modal_test .modal_content {
+  position: absolute;
+
+  background-color: #fefefe;
+  margin: auto;
+  border: none;
+
+  border-radius: .3rem !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+
+  width: 100%;
+
+  height: 100%;
+
+
+
+}
+
+
+
+@media screen and (min-width:768px) {
+  .ada_modal_test .modal_content {
+    width: 90%;
+    height: 93%;
+  }
+}
+
+/* @media screen and (min-width:992px) {
+  .ada_modal_test .modal_content {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .ada_modal_test .modal_content {
+    width: 85%;
+    height: 88%;
+  }
+} */
+*/
 
 /* reset btn */
 #ADA_reset {
   border: #5D2D1F solid 1px !important;
   padding: 5px 10px !important;
-  font-size: 18px !important;
+  font-size: 15px !important;
   transition: all .3s ease-in-out !important;
+  opacity: 1;
+
+  text-shadow: none;
+  font-size: 20px;
+
+
+  color: white;
 
 }
 
 #ADA_reset:hover {
   border: #FFF solid 1px !important;
   background-color: #5D2D1F !important;
+  color: white;
+}
 
+.modal_header button {
+
+  opacity: 1;
+
+  text-shadow: none;
+  font-size: 18px;
+
+
+  color: white;
+}
+
+.modal_header button:hover {
+  color: white;
 }
 
 .ADA_close {
   position: absolute;
-  top: -10px;
-  right: -7px;
+  top: -5px;
+  right: 0px;
 }
 
 .ADA_close i {
@@ -72,23 +146,7 @@ body {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* Modal Content */
-.ada_modal_test .modal_content {
 
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  width: 95%;
-  height: 83vh;
-
-  transform: translate(-50%, -50%);
-  background-color: #fefefe;
-  margin: auto;
-  border: none;
-  border-radius: .3rem;
-
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 
 
@@ -145,20 +203,7 @@ body {
 
 
 
-.modal_header button {
 
-  opacity: 1;
-
-  text-shadow: none;
-  font-size: 20px;
-
-
-  color: white;
-}
-
-.modal_header button:hover {
-  color: white;
-}
 
 
 
@@ -3119,6 +3164,19 @@ background-color: lightgray;
 
   .title {
     font-size: 1.5rem;
+
+  }
+
+  #main-modal-title {
+    margin-left: 50px !important;
+  }
+
+}
+
+@media screen and (min-width:992px) {
+
+  #main-modal-title {
+    margin-left: 70px !important;
   }
 
 }
@@ -3195,6 +3253,7 @@ background-color: lightgray;
     height: 90px !important;
   }
 }
+
 @media screen and (min-width:1700px) {
   #ADA_widget .modal_body #BackgroundColor_option ul li {
     width: 170px !important;
@@ -3202,56 +3261,10 @@ background-color: lightgray;
   }
 
   #ADA_reset {
-    font-size: 24px!important;
+    font-size: 20px !important;
   }
+
   .modal_header button {
     font-size: 25px;
-  }
-}
-
-
-
-
-
-
-
-@media screen and (min-width:412px) {
-  .ada_modal_test .modal_content {
-    top: 50%;
-    left: 50%;
-    width: 95%;
-    height: 87vh;
-  }
-}
-
-@media screen and (min-width:768px) {
-  .ada_modal_test .modal_content {
-    top: 52%;
-    left: 50%;
-    width: 95%;
-    height: 90vh;
-  }
-}
-
-@media screen and (min-width:1000px) {
-  .ada_modal_test .modal_content {
-    top: 52%;
-    left: 50%;
-    width: 90%;
-    height: 90vh;
-  }
-}
-
-@media screen and (min-width:1400px) {
-  .ada_modal_test .modal_content {
-    width: 75%;
-    height: 80vh;
-  }
-}
-
-@media screen and (min-width:1700px) {
-  .ada_modal_test .modal_content {
-    width: 70%;
-    height: 80vh;
   }
 }
