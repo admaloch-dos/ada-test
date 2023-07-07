@@ -1072,7 +1072,7 @@ $(document).bind('mousemove', function (e) {
 
   // console.log(e.pageY)
   $('#top_mask').css({
-    top: e.pageY - 1350
+    top: e.pageY - 1450
   });
 
   $('#bottom_mask').css({
