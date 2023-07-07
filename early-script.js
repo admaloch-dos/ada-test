@@ -1,3 +1,5 @@
+
+
 function deleteCookies() {
     var Cookies = document.cookie.split(';');
 
@@ -18,11 +20,11 @@ window.onload = function () {
 
     if (reloading) {
         sessionStorage.removeItem("reloading");
-      $("#ADA_widget").fadeIn('fast')
+        displayModal()
     }
     if (reloadingOnKeyModal) {
         sessionStorage.removeItem("reloadingOnKeyModal");
-      $("#ADA_widget").fadeIn('fast')
+        displayModal()
     }
     if (reloadingOnKey) {
         sessionStorage.removeItem("reloadingOnKey");

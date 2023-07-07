@@ -182,54 +182,8 @@ $(document).ready(function () {
 $(document).ready(function () {
   $("#ADA_widget #FS_Default").addClass("active");
 });
-//FOR FONT SIZE CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
-//https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
-$(function () {
-  $('#ADA_widget .fontsize_form .form-check ul li').click(function () {
-    $(this).addClass('active').siblings().removeClass('active');
-  });
-});
-
-$(document).ready(function () {
-  // Cookie for FontSizeMedium
-  // Check (onLoad) if FontSizeCookie is there and set the class to body if it is
-  // Add active class to li
-  if ($.cookie('FontSizeCookie') == "yes") {
-    $("#ADA_widget #FS_Medium").addClass("active");
-    $("body").addClass("fontSizeMedium");
-    $("#ADA_widget #FS_Default").removeClass("active");
-  }
 
 
-  // When 'a.FontSizeMedium' is clicked remove DesaturatedBackgroundCookie and set FontSizeCookie
-  // When input is clicked save cookie for 30days
-  $("#ADA_widget a.FontSizeMedium").click(function () {
-    if ($.cookie('FontSizeCookie') == "undefined" || $.cookie('FontSizeCookie') == "no") {
-      $.cookie('FontSizeCookie', 'yes', {
-        expires: 30,
-        path: '/'
-      });
-      $("body").addClass("fontSizeMedium");
-
-    } else {
-      $.cookie('FontSizeCookie', 'yes', {
-        expires: 30,
-        path: '/'
-      });
-      $("body").addClass("fontSizeMedium");
-    }
-  });
-
-  //When 'a.FontSizeDefault' is clicked, removes 'fontSizeMedium' and erases FontSizeCookie
-  $("#ADA_widget a.FontSizeDefault").click(function () {
-    $('body').removeClass('fontSizeMedium');
-    if ($.cookie('FontSizeCookie') == "yes") {
-      $.cookie("FontSizeCookie", null, {
-        path: '/'
-      });
-    }
-  });
-});
 
 
 /////COOKIE SETTING FOR FONT TYPE
@@ -987,7 +941,27 @@ $(document).ready(function () {
 }); //end of doc ready
 
 
+const displayModal = () => {
+  const overlay = document.querySelector('#ADA_widget')
+  console.log(overlay.style.display)
+  if (overlay.style.display !== "flex") {
 
+    $("#ADA_widget").css('opacity', '0');
+    $("#ADA_widget").css("display", "flex")
+    $("#ADA_widget").fadeTo(0, 1);
+
+    $(".modal_content").fadeToggle(0);
+  } else {
+
+    $("#ADA_widget").fadeTo(400, 0);
+
+    $(".modal_content").fadeToggle(400);
+
+    setTimeout(() => {
+      $("#ADA_widget").css("display", "none")
+    }, 600);
+  }
+}
 
 
 
@@ -1009,13 +983,18 @@ var CloseADA_widget = document.getElementsByClassName("ADA_close")[0];
 
 // When the user clicks the button, open the ADA_widget
 OpenADA_widget.onclick = function () {
-  $("#ADA_widget").fadeIn()
+
+  displayModal()
+
+
 }
+
+
 
 // When the user clicks on <span> (x), close the ADA_widget
 CloseADA_widget.onclick = function () {
   // ADA_widget.style.display = "none";
-  $("#ADA_widget").fadeOut()
+  displayModal()
   // $("body").css("overflow", "auto");
 }
 
@@ -1023,7 +1002,7 @@ CloseADA_widget.onclick = function () {
 window.onclick = function (event) {
   if (event.target == ADA_widget) {
     // ADA_widget.style.display = "none";
-    $("#ADA_widget").fadeOut()
+    displayModal()
     // $("body").css("overflow", "auto");
     // $(".modal-backdrop").css("display", "none");
     // $("#keyboard_shortcuts").css("display", "none");
@@ -1352,7 +1331,8 @@ document.addEventListener('keydown', (event) => {
     name === '&' && keyTogglerFunc('#ToggleReadingGuide')
     name === '*' && keyTogglerFunc('#ToggleTTS_click')
     name === 'Q' && resetAdaOnKey()
-    name === 'A' && $("#ADA_widget").fadeToggle()
+    name === 'A' && displayModal()
+
 
   } else {
     return;
