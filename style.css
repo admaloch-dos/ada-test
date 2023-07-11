@@ -59,17 +59,19 @@ body {
   margin: auto;
   border: none;
 
-  border-radius: 30px !important;
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
   height: 100%;
+  padding-bottom: 20px;
 }
 
 .ada_modal_test .modal_body {
+
   padding: 1rem 0rem;
   background: #EBE5E3;
   overflow: auto;
-  height: 92%;
+  height: 93%;
 }
 
 @media screen and (min-width:500px) {
@@ -1815,13 +1817,14 @@ a {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 118px;
-  height: 70px;
+  width: 120px !important;
+  height: 60px !important;
   background-color: #EBE5E3 !important;
   border-radius: 0.25rem;
   border: 2px solid transparent;
   margin-bottom: 5px;
 }
+
 
 #ADA_widget .modal_body .fontsize_form ul li:hover {
   border-color: #5D2D1F;
@@ -2088,41 +2091,9 @@ body.BaskervilleFont {
   font-size: 24px;
 } */
 
-.fontSizeMedium p,
-.fontSizeMedium a,
-.fontSizeMedium button,
-.fontSizeMedium div {
-  font-size: 22px !important;
-}
 
 
-.fontSizeMedium h1 {
-  font-size: 50px !important;
-}
 
-.fontSizeMedium h2 {
-  font-size: 45px !important;
-}
-
-.fontSizeMedium h3 {
-  font-size: 40px !important;
-}
-
-.fontSizeMedium h4 {
-  font-size: 35px !important;
-}
-
-.fontSizeMedium h5 {
-  font-size: 30px !important;
-}
-
-.fontSizeMedium h6 {
-  font-size: 25px !important;
-}
-
-.fontSizeMedium .ada_toggleContainer .switch-handle {
-  top: 10px !important;
-}
 
 
 
@@ -2228,7 +2199,7 @@ body.BaskervilleFont {
   padding: 10px 20px;
   width: 152px;
   height: 120px;
-  max-height: 115px;
+
   text-align: center;
 
 }
@@ -3155,9 +3126,6 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
   color: #5D2D1F !important;
 }
 
-#contact_section p {
-  word-break: break-all;
-}
 
 .inverted #contact_section p {
   color: white;
@@ -3228,15 +3196,6 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
 background-color: lightgray;
 } */
 
-#ADA_widget .modal_body ul li {
-
-  width: 100px !important;
-  height: 60px !important;
-  background-color: #EBE5E3 !important;
-  border-radius: 0.25rem;
-  border: 2px solid transparent;
-  margin-bottom: 5px;
-}
 
 
 
@@ -3292,7 +3251,7 @@ background-color: lightgray;
   }
 
   #ADA_widget .modal_body ul li a div.title {
-    font-size: 16px !important;
+    font-size: 16px;
   }
 }
 
