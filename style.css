@@ -2967,7 +2967,7 @@ div#google_translate_element:before {
   background-repeat: no-repeat;
   background-position: 9px 13px;
   left: 25px;
-  display: block;
+  display: none;
 }
 
 @media screen and (min-width:500px) {
