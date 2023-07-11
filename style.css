@@ -59,10 +59,10 @@ body {
   margin: auto;
   border: none;
 
-  border-radius: .3rem !important;
+  border-radius: 30px !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
-  height: 100%;
+  height: 97%;
 }
 
 .ada_modal_test .modal_body {
@@ -72,6 +72,13 @@ body {
   height: 92%;
 }
 
+@media screen and (min-width:500px) {
+  .ada_modal_test .modal_content {
+    width: 97%;
+    height: 95%;
+
+  }
+}
 
 
 @media screen and (min-width:768px) {
@@ -88,6 +95,7 @@ body {
     height: 95%;
   }
 }
+
 @media screen and (min-width:1200px) {
   .ada_modal_test .modal_content {
     width: 87%;
@@ -97,6 +105,7 @@ body {
 
 
 }
+
 @media screen and (min-width:1700px) {
   .ada_modal_test .modal_content {
     width: 65%;
@@ -2108,7 +2117,7 @@ body.BaskervilleFont {
 }
 
 .fontSizeMedium .ada_toggleContainer .switch-handle {
-  top: 10px!important;
+  top: 10px !important;
 }
 
 
