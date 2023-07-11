@@ -1060,7 +1060,7 @@ $(function () {
 
 
 
-//////////// Reading Mask ////////////////////
+//////////// Reading Mask ///////////////////
 //More focus & fewer distractions
 $(document).bind('mousemove', function (e) {
 
@@ -1077,21 +1077,32 @@ $(document).bind('mousemove', function (e) {
 
 
 
+let textMagY =  120;
 
+document.addEventListener('scroll', () => {
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
 
+  if (window.scrollY >= scrollableHeight) {
+    textMagY =  150
+  } else if (window.scrollY === 0) {
+    textMagY =  20
+  } else {
+    textMagY =  120
+  }
+})
 
 
 //////////// Text Magnify ///////////////////
 $(document).on('mousemove', function (e) {
   $('#text_magnify').css({
-    left: e.pageX - 40,
-    top: e.pageY + 20
+    left: e.pageX + 50,
+    top: e.pageY - textMagY
   });
 });
 
 
 
-//////////// Text Magnify ///////////////////
+////////////image description magnify///////////////////
 $(document).on('mousemove', function (e) {
   $('#ImageDescription_magnify').css({
     left: e.pageX,
