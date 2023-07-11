@@ -1281,9 +1281,7 @@ html.translated-ltr #wordspace_icon {
 
 
 /****************** TTS ******************/
-#TTS_click .ada_option_title {
-  width: 112px;
-}
+
 
 #TTS_Utterance {
   padding-left: 15px;
