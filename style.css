@@ -62,7 +62,7 @@ body {
   border-radius: 30px !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
-  height: 97%;
+  height: 100%;
 }
 
 .ada_modal_test .modal_body {
@@ -197,13 +197,18 @@ body {
 } */
 
 .ada_modal_test .modal_content .modal_header {
-  padding: 1rem 1rem;
+  padding: 1rem 1rem 0rem 1rem;
   border-bottom: 1px solid #dee2e6;
   background: #5D2D1F;
   color: white;
   border: none;
 
+}
 
+@media screen and (min-width:500px) {
+  .ada_modal_test .modal_content .modal_header {
+    padding: 1rem 1rem 1rem 1rem;
+  }
 }
 
 .ada_modal_test .modal_content .key-short-header {
@@ -336,6 +341,7 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   display: flex;
   padding: 20px 0;
 }
+
 
 @media screen and (min-width:992px) {
   .ada_toggleContainer .ada_content {
@@ -1785,12 +1791,12 @@ a {
   font-size: 17px;
 }
 
-#ADA_widget .modal_body #BackgroundColor_option ul li {
+/* #ADA_widget .modal_body #BackgroundColor_option ul li {
 
   width: 138px !important;
   height: 80px !important;
 
-}
+} */
 
 
 /************************************************************ Font Size Form ************************************************************/
@@ -1806,7 +1812,7 @@ a {
   margin-left: 0;
 }
 
-#ADA_widget .modal_body .fontsize_form ul li {
+#ADA_widget .modal_body ul li {
   display: inline-flex;
   position: relative;
   justify-content: center;
@@ -2963,6 +2969,15 @@ div#google_translate_element:before {
   background-repeat: no-repeat;
   background-position: 9px 13px;
   left: 25px;
+  display: block;
+}
+
+@media screen and (min-width:500px) {
+
+  div#google_translate_element:before {
+
+    display: block;
+  }
 }
 
 .goog-te-combo {
@@ -3213,10 +3228,27 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
 background-color: lightgray;
 } */
 
+#ADA_widget .modal_body ul li {
+
+  width: 100px !important;
+  height: 60px !important;
+  background-color: #EBE5E3 !important;
+  border-radius: 0.25rem;
+  border: 2px solid transparent;
+  margin-bottom: 5px;
+}
+
+
+
 
 @media screen and (min-width:768px) {
   .modal_header .main_icon_holder {
     margin-top: 12px;
+  }
+
+  #ADA_widget .modal_body ul li {
+    width: 117px !important;
+    height: 75px !important;
   }
 
   .title {
@@ -3307,10 +3339,10 @@ background-color: lightgray;
 
 
 @media screen and (min-width:1700px) {
-  #ADA_widget .modal_body #BackgroundColor_option ul li {
+  /* #ADA_widget .modal_body #BackgroundColor_option ul li {
     width: 158px !important;
     height: 100px !important;
-  }
+  } */
 
   #ADA_reset {
     font-size: 20px !important;
