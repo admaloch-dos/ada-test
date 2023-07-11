@@ -1066,11 +1066,11 @@ $(document).bind('mousemove', function (e) {
 
   // console.log(e.pageY)
   $('#top_mask').css({
-    top: e.pageY - 1350
+    top: e.pageY - 1300
   });
 
   $('#bottom_mask').css({
-    top: e.pageY + 60
+    top: e.pageY + 20
   });
 
 });
