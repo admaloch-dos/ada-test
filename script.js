@@ -1060,7 +1060,7 @@ $(function () {
 
 
 
-//////////// Reading Mask ///////////////////
+//////////// Reading Mask ////////////////////
 //More focus & fewer distractions
 $(document).bind('mousemove', function (e) {
 
