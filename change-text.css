@@ -49,6 +49,13 @@
     display: none;
 }
 
+.fontSizeMedium #ADA_widget .modal_body ul li {
+
+    width: 135px!important;
+    height: 80px!important;
+
+  }
+
 @media screen and (min-width:786px) {
 
     .fontSizeMedium p,
@@ -101,7 +108,12 @@
 }
 
 @media screen and (min-width:1200px) {
+    .fontSizeMedium #ADA_widget .modal_body ul li {
 
+        width: 155px!important;
+        height: 100px!important;
+
+      }
     .fontSizeMedium p,
     .fontSizeMedium a,
     .fontSizeMedium button,
@@ -152,4 +164,6 @@
 
 
 }
+
+
 

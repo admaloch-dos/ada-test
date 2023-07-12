@@ -90,14 +90,14 @@ $(document).ready(function () {
             var TextMagnify = $(this).text();
             $("#text_magnify").text(TextMagnify);
             //$("body").addClass("TextMagnifier");
-            $('#text_magnify').attr('style', 'display: block!important');
+            $('#text_magnify').fadeIn()
             /*$("#text_magnify").css({
               "display": "block",
               "opacity": "1"});
               */
             //If #text_magnify is empty, hide
             if ($('#text_magnify').is(':empty')) {
-              console.log('this is empty')
+
               //$("body").removeClass("TextMagnifier");
               $('#text_magnify').attr('style', 'display: none!important');
               // $('#text_magnify').css({
@@ -108,6 +108,8 @@ $(document).ready(function () {
           function (e) {
             //do the mouseleave things here...
             $('#text_magnify').attr('style', 'display: none!important');
+
+
             //$("body").removeClass("TextMagnifier");
             /*$("#text_magnify").css({
               "display": "none",
@@ -759,8 +761,7 @@ $(document).ready(function () {
 
   });
 
-  const resetVoiceBtn = document.querySelector('#reset-voice-btn')
-  resetVoiceBtn.addEventListener('click', () => {
+  const resetVoiceSettings = () => {
     $("#volume").roundSlider({
       value: 5
     });
@@ -770,7 +771,16 @@ $(document).ready(function () {
     $("#pitch").roundSlider({
       value: 5
     });
+  }
+
+
+
+  const resetVoiceBtn = document.querySelector('#reset-voice-btn')
+  resetVoiceBtn.addEventListener('click', () => {
+    resetVoiceSettings()
     resetSpeech()
+    $("#voice").val($("#voice option:first").val());
+
   })
 
 
@@ -828,7 +838,7 @@ $(document).ready(function () {
     voiceList.forEach(function (voice, i) {
 
       //Returns Microsoft Mark, Microsoft Zira & Google US English
-      if (i !== 1 && i !== 2 && i !== 4) return;
+      // if (i !== 1 && i !== 2 && i !== 4) return;
 
       // Create a new option element.
       var option = document.createElement('option');
@@ -854,18 +864,12 @@ $(document).ready(function () {
     initSpeechSynthesis();
   });
 
-  /*
-  $(document).on('click','#ToggleTTS_click',function(){
-    var Option1 = $(this).is(':checked');
-    if (Option1) {
-      //console.log(Option1);
-      $(".audio_state").css("display", "flex");
-    }
-    else{
-      $(".audio_state").css("display", "none");
-    }
+  $("#voice").on("change", function () {
+    resetSpeech()
+    resetVoiceSettings()
   });
-  */
+
+
 
 
   $('<div class="audio_state">\
@@ -1091,7 +1095,7 @@ $(document).bind('mousemove', function (e) {
 
   // console.log(e.pageY)
   $('#top_mask').css({
-    top: e.pageY - 1420
+    top: e.pageY - 1300
   });
 
   $('#bottom_mask').css({
