@@ -784,36 +784,9 @@ $(document).ready(function () {
   })
 
 
-
   $("#volume input").addClass("volume_selector");
   $("#rate input").addClass("rate_selector");
   $("#pitch input").addClass("pitch_selector");
-
-  // $('<div class="main_icon_holder" id="question_icon"><div class="inner_icon_holder" id="keydownTip"><img class="img-fluid accessibility_icons" src="/files/img/accessibility-icons5.png" alt="Information Icon" /></div></div>').prependTo("#volume");
-  // $("#volume > .main_icon_holder").addClass("volumeTip");
-  // tippy(".volumeTip", {
-  //   content: "Set the volume that the text will be spoken.<br><br>The minimum value is 0.<br />The maximum value is 1.<br />The default value is 0.5.<br /><br />Increments of 0.1",
-  //   allowHTML: true,
-  // });
-
-  // $('<div class="main_icon_holder" id="question_icon"><div class="inner_icon_holder" id="keydownTip"><img class="img-fluid accessibility_icons" src="/files/img/accessibility-icons5.png" alt="Information Icon" /></div></div>').prependTo("#rate");
-  // $("#rate > .main_icon_holder").addClass("rateTip");
-  // tippy(".rateTip", {
-  //   content: "Set the speed that the text will be spoken.<br><br>The minimum value is 0.1.<br />The maximum value is 10.<br />The default value is 1.2.<br /><br />Increments of 0.1",
-  //   allowHTML: true,
-  // });
-
-  // $('<div class="main_icon_holder" id="question_icon"><div class="inner_icon_holder" id="keydownTip"><img class="img-fluid accessibility_icons" src="/files/img/accessibility-icons5.png" alt="Information Icon" /></div></div>').prependTo("#pitch");
-  // $("#pitch > .main_icon_holder").addClass("pitchTip");
-  // tippy(".pitchTip", {
-  //   content: "Set the volume that the pitch will be spoken.<br><br>The minimum value is 0.<br />The maximum value is 2.<br />The default value is 1.<br />The default value is 1.2.<br /><br />Increments of 0.1",
-  //   allowHTML: true,
-  // });
-
-  // $(".volumeTip").wrapAll("<div class='tippyIcon'></div>");
-  // $(".rateTip").wrapAll("<div class='tippyIcon'></div>");
-  // $(".pitchTip").wrapAll("<div class='tippyIcon'></div>");
-
 
 
   $("<span class='headings'>Volume</span>").appendTo("#volume");

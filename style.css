@@ -436,6 +436,15 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   left: -13.7rem;
   opacity: 1;
   filter: invert(1);
+display: none;
+}
+
+@media screen and (min-width:320px) {
+
+  #ada_modal_header_icon .inner_icon_holder img {
+
+  display: block;
+  }
 }
 
 .close-modal {
@@ -1824,6 +1833,7 @@ a {
   border: 2px solid transparent;
   margin-bottom: 5px;
 }
+
 
 
 #ADA_widget .modal_body .fontsize_form ul li:hover {
