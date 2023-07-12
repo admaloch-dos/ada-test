@@ -1,13 +1,6 @@
 
 
-function deleteCookies() {
-    var Cookies = document.cookie.split(';');
 
-    // set 1 Jan, 1970 expiry for every cookies
-    for (var i = 0; i < Cookies.length; i++)
-        document.cookie = Cookies[i] + "=;expires=" + new Date(0).toUTCString();
-    // showCookies();
-}
 
 
 
@@ -28,12 +21,12 @@ window.onload = function () {
     }
     if (reloadingOnKey) {
         sessionStorage.removeItem("reloadingOnKey");
-        
+
     }
 }
 
 function resetAdaWidget() {
-    deleteCookies()
+    removeAllCookies()
     sessionStorage.setItem("reloading", "true");
     $("body").fadeOut()
     setTimeout(() => {

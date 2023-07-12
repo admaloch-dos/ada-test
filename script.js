@@ -97,6 +97,7 @@ $(document).ready(function () {
               */
             //If #text_magnify is empty, hide
             if ($('#text_magnify').is(':empty')) {
+              console.log('this is empty')
               //$("body").removeClass("TextMagnifier");
               $('#text_magnify').attr('style', 'display: none!important');
               // $('#text_magnify').css({
@@ -114,6 +115,10 @@ $(document).ready(function () {
           }
 
         );//end of hover
+        $(window).scroll(function () {
+          $('#text_magnify').attr('style', 'display: none!important');
+
+        });
 
       }// end of if
       else {
@@ -135,14 +140,25 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
+
   //Letter Spacing
   var selectedVal = $.cookie("LetterSpaceVal");
   if (selectedVal) {
     $("#letter_spacing").val(selectedVal);
     $("#letter_spacing").prop("selected", true);
-    $(".main *").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selectedVal); //Selects everything inside #view except ada modal and header
-
+    $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selectedVal); //Selects everything inside #view except ada modal and header
+    $(".Footer").css("letter-spacing", selectedVal);
   }
+  $("#letter_spacing").on("change", function () {
+    var selection1 = $(this).val();
+    $(selection1).prop("selected", true);
+    $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
+    $(".Footer").css("letter-spacing", selection1);
+    $.cookie("LetterSpaceVal", selection1, {
+      expires: 30,
+      path: '/'
+    })
+  });
 
 
 
@@ -151,9 +167,18 @@ $(document).ready(function () {
   if (selectedVal2) {
     $("#word_spacing").val(selectedVal2);
     $("#word_spacing").prop("selected", true);
-    $(".main *").not('#ADA_widget, #ADA_widget *').css("word-spacing", selectedVal2); //Selects everything inside #view except ada modal and header
-
+    $("#view p").not('#ADA_widget, #ADA_widget *').css("word-spacing", selectedVal2); //Selects everything inside #view except ada modal and header
   }
+  $("#word_spacing").on("change", function () {
+    var selection2 = $(this).val();
+    $(selection2).prop("selected", true);
+    $("#view p").not('#ADA_widget, #ADA_widget *').css("#word_spacing", selection2); //Selects everything inside #view except ada modal and header
+    $(".Footer").css("#word_spacing", selection2);
+    $.cookie("WordSpaceVal", selection2, {
+      expires: 30,
+      path: '/'
+    })
+  });
 
 
 
@@ -1072,33 +1097,10 @@ $(document).bind('mousemove', function (e) {
   $('#bottom_mask').css({
     top: e.pageY + 20
   });
-
 });
 
 
 
-let textMagY =  120;
-
-document.addEventListener('scroll', () => {
-  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
-
-  if (window.scrollY >= scrollableHeight) {
-    textMagY =  150
-  } else if (window.scrollY === 0) {
-    textMagY =  20
-  } else {
-    textMagY =  120
-  }
-})
-
-
-//////////// Text Magnify ///////////////////
-$(document).on('mousemove', function (e) {
-  $('#text_magnify').css({
-    left: e.pageX + 50,
-    top: e.pageY - textMagY
-  });
-});
 
 
 
@@ -1307,8 +1309,44 @@ const keyTogglerFunc = (itemId, itemClass) => {
 
 }
 
+const removeAllCookies = () => {
+  $.removeCookie('BackgroundColorCookie');
+  $.removeCookie('TextColorCookie');
+  $.removeCookie('LinkColorCookie');
+  $.removeCookie('TextMagnifier');
+  $.removeCookie('HighlightLinks');
+  $.removeCookie('ImageDescription');
+  $.removeCookie('HighlightHover');
+  $.removeCookie('FontSizeCookie');
+  $.removeCookie('FM_FontSizeCookie');
+  $.removeCookie('BaskervilleFontCookie');
+  $.removeCookie('DyslexicFontCookie');
+  $.removeCookie('FM_FontTypeCookie');
+  $.removeCookie('CursorEnlargeCookie');
+
+  $.removeCookie('DarkContrastBackgroundCookie');
+  $.removeCookie('LowSaturationBackgroundCookie');
+  $.removeCookie('InvertBackgroundCookie');
+  $.removeCookie('HighSaturationBackgroundCookie');
+  $.removeCookie('FM_DesaturatedBackgroundCookie');
+  $.removeCookie('DesaturatedBackgroundCookie');
+  $.removeCookie('FM_InvertBackgroundCookie');
+  $.removeCookie('FM_DarkContrastCookie');
+  $.removeCookie('SeizureSafe');
+  $.removeCookie('ReadingMask');
+  $.removeCookie('CursorGuide');
+  $.removeCookie('TTS_click_enabled');
+  $.removeCookie('LinpageHeightVal');
+  $.removeCookie('WordSpaceVal');
+  $.removeCookie('LetterSpaceVal');
+
+
+
+}
+
+
 function resetAdaOnKey() {
-  deleteCookies()
+  removeAllCookies()
   const adaWidget = document.querySelector('#ADA_widget')
   if (adaWidget.style.display === 'flex') {
     console.log('reloading on key bring in modal')
