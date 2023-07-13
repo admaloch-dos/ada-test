@@ -116,7 +116,7 @@
 @media screen and (max-width:460px) {
     #ADA_widget .modal_body ul li {
         height: 50px !important;
-        width: 95px !important;
+        width: 100px !important;
 
     }
 }

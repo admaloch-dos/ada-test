@@ -776,15 +776,24 @@ $(document).ready(function () {
     });
   }
 
-
+  const resetVoiceDefault = () => {
+    if ($("#voice option[value='Microsoft David - English (United States)']").length > 0) {
+      console.log('david was found')
+      return $("#voice").val('Microsoft David - English (United States)');
+    } else {
+      console.log('david was not found')
+      return $("#voice").val($("#voice option:first").val());
+    }
+  }
 
 
 
   const resetVoiceBtn = document.querySelector('#reset-voice-btn')
   resetVoiceBtn.addEventListener('click', () => {
+    $.removeCookie('voiceCookie');
     resetVoiceSettings()
     resetSpeech()
-    $("#voice").val('Microsoft David - English (United States)');
+    resetVoiceDefault()
 
   })
 
@@ -859,7 +868,7 @@ $(document).ready(function () {
       let cookieValue = $.cookie("voiceCookie")
       $("#voice").val(cookieValue)
     } else {
-      $("#voice").val('Microsoft David - English (United States)');
+      resetVoiceDefault()
     }
   }, 500);
 
