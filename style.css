@@ -341,7 +341,7 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
 
 .ada_toggleContainer {
   display: flex;
-  padding: 20px 0;
+  padding: 20px 20px 0px 20px;
 }
 
 
@@ -1297,12 +1297,18 @@ html.translated-ltr #wordspace_icon {
 #TTS_Utterance {
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 15px;
+
   text-align: center;
   margin: 0 auto;
   display: block;
   width: 100%;
 }
+@media screen and (min-width:768px) {
+  #TTS_Utterance {
+padding-top: 20px;
+  }
+}
+
 
 #TTS_Utterance .form-inline {
   justify-content: center;
@@ -1364,10 +1370,18 @@ html.translated-ltr #tooltip_template {
 }
 
 .rs-control {
-  display: inline-block;
+  display: none;
   margin-right: 20px;
   margin-bottom: 50px;
 }
+
+@media screen and (min-width:768px) {
+  .rs-control {
+    display: inline-block;
+
+  }
+}
+
 
 .rs-control .headings {
   display: block;
@@ -2152,8 +2166,7 @@ body.BaskervilleFont {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 115px;
-  height: 70px;
+
   background-color: #EBE5E3 !important;
   border-radius: 0.25rem;
   border: 2px solid transparent;
