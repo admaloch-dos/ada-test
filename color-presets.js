@@ -81,10 +81,7 @@ $(document).ready(function () {
             path: '/'
         });
         if ($.cookie('DarkContrastBackgroundCookie') == "undefined" || $.cookie('DarkContrastBackgroundCookie') == "no") {
-            $.cookie('DarkContrastBackgroundCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('DarkContrastBackgroundCookie', 'yes', { path: '/' });
             $("body").addClass("highcontrast");
             $('body').removeClass('desaturated');
             $('body').removeClass('inverted');
@@ -92,10 +89,7 @@ $(document).ready(function () {
             $("html").removeClass("lowsaturation");
 
         } else {
-            $.cookie('DarkContrastBackgroundCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('DarkContrastBackgroundCookie', 'yes', { path: '/' });
             $("body").addClass("highcontrast");
             $('body').removeClass('desaturated');
             $('body').removeClass('inverted');
@@ -195,10 +189,7 @@ $(document).ready(function () {
             path: '/'
         });
         if ($.cookie('DesaturatedBackgroundCookie') == "undefined" || $.cookie('DesaturatedBackgroundCookie') == "no") {
-            $.cookie('DesaturatedBackgroundCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('DesaturatedBackgroundCookie', 'yes', { path: '/' });
             $("body").addClass("desaturated");
             $('body').removeClass('highcontrast');
             $('body').removeClass('inverted');
@@ -206,10 +197,7 @@ $(document).ready(function () {
             $("html").removeClass("lowsaturation");
 
         } else {
-            $.cookie('DesaturatedBackgroundCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('DesaturatedBackgroundCookie', 'yes', { path: '/' });
             $("body").addClass("desaturated");
             $('body').removeClass('highcontrast');
             $('body').removeClass('inverted');
@@ -303,10 +291,7 @@ $(document).ready(function () {
         });
 
         if ($.cookie('HighSaturationBackgroundCookie') == "undefined" || $.cookie('HighSaturationBackgroundCookie') == "no") {
-            $.cookie('HighSaturationBackgroundCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('HighSaturationBackgroundCookie', 'yes', { path: '/' });
             $("html").addClass("highsaturation");
             $("body").removeClass("desaturated");
             $('body').removeClass('highcontrast');
@@ -314,10 +299,7 @@ $(document).ready(function () {
             $("html").removeClass("lowsaturation");
 
         } else {
-            $.cookie('HighSaturationBackgroundCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('HighSaturationBackgroundCookie', 'yes', { path: '/' });
             $("html").addClass("highsaturation");
             $("body").removeClass("desaturated");
             $('body').removeClass('highcontrast');
@@ -416,10 +398,7 @@ $(document).ready(function () {
         });
 
         if ($.cookie('LowSaturationBackgroundCookie') == "undefined" || $.cookie('LowSaturationBackgroundCookie') == "no") {
-            $.cookie('LowSaturationBackgroundCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('LowSaturationBackgroundCookie', 'yes', { path: '/' });
             $("html").addClass("lowsaturation");
             $("html").removeClass("highsaturation");
             $("body").removeClass("desaturated");
@@ -427,10 +406,7 @@ $(document).ready(function () {
             $('body').removeClass('inverted');
 
         } else {
-            $.cookie('LowSaturationBackgroundCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('LowSaturationBackgroundCookie', 'yes', { path: '/' });
             $("html").addClass("lowsaturation");
             $("html").removeClass("highsaturation");
             $("body").removeClass("desaturated");
@@ -530,10 +506,7 @@ $(document).ready(function () {
             path: '/'
         });
         if ($.cookie('InvertBackgroundCookie') == "undefined" || $.cookie('InvertBackgroundCookie') == "no") {
-            $.cookie('InvertBackgroundCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('InvertBackgroundCookie', 'yes', { path: '/' });
             $("body").addClass("inverted");
             $('body').removeClass('highcontrast');
             $('body').removeClass('desaturated');
@@ -541,10 +514,7 @@ $(document).ready(function () {
             $("html").removeClass("lowsaturation");
 
         } else {
-            $.cookie('InvertBackgroundCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('InvertBackgroundCookie', 'yes', { path: '/' });
             $("body").addClass("inverted");
             $('body').removeClass('highcontrast');
             $('body').removeClass('desaturated');

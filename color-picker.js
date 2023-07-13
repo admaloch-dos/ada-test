@@ -64,17 +64,7 @@ const takeTwoColors = (c1, c2) => {
     }
 };
 
-/*
-$(".color_swatch").on("change", function(){
-  //Set cookie on input change
-  $('body').css('background-color',cache.bgColor.value);
-  $.cookie('ColorPickerCookie', 'yes', {
-    expires: 30,
-    path: '/'
-  })
 
-});
-*/
 
 const onInputChange = (e) => {
     const value = e.target.value;

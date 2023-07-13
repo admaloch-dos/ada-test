@@ -1,3 +1,7 @@
+$(document).ready(function () {
+    $("#ADA_widget #FS_Default").addClass("active");
+});
+
 const modalSwitchButton = document.querySelector('.switch-handle')
 
 //FOR FONT SIZE CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
@@ -25,17 +29,11 @@ $(document).ready(function () {
     $("#ADA_widget a.FontSizeMedium").click(function () {
 
         if ($.cookie('FontSizeCookie') == "undefined" || $.cookie('FontSizeCookie') == "no") {
-            $.cookie('FontSizeCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('FontSizeCookie', 'yes', { path: '/' });
             $("body").addClass("fontSizeMedium");
 
         } else {
-            $.cookie('FontSizeCookie', 'yes', {
-                expires: 30,
-                path: '/'
-            });
+            $.cookie('FontSizeCookie', 'yes', { path: '/' });
             $("body").addClass("fontSizeMedium");
         }
     });

@@ -133,10 +133,7 @@ $(document).ready(function () {
   // event management
   $("input.switch-input[type=checkbox]").change(function () {
     var name = $(this).attr("name");
-    $.cookie(name, $(this).prop('checked'), {
-      path: '/',
-      expires: 30
-    });
+    $.cookie(name, $(this).prop('checked'), { path: '/', })
   });
 });
 
@@ -156,10 +153,7 @@ $(document).ready(function () {
     $(selection1).prop("selected", true);
     $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
     $(".Footer").css("letter-spacing", selection1);
-    $.cookie("LetterSpaceVal", selection1, {
-      expires: 30,
-      path: '/'
-    })
+    $.cookie("LetterSpaceVal", selection1, { path: '/' })
   });
 
 
@@ -176,10 +170,7 @@ $(document).ready(function () {
     $(selection2).prop("selected", true);
     $("#view p").not('#ADA_widget, #ADA_widget *').css("#word_spacing", selection2); //Selects everything inside #view except ada modal and header
     $(".Footer").css("#word_spacing", selection2);
-    $.cookie("WordSpaceVal", selection2, {
-      expires: 30,
-      path: '/'
-    })
+    $.cookie("WordSpaceVal", selection2, { path: '/' })
   });
 
 
@@ -197,18 +188,13 @@ $(document).ready(function () {
     $(selection3).prop("selected", true);
     $("#view p").not('#ADA_widget, #ADA_widget *').css("line-height", selection3); //Selects everything inside #view except ada modal and header
     $(".Footer").css("line-height", selection3);
-    $.cookie("LinpageHeightVal", selection3, {
-      expires: 30,
-      path: '/'
-    })
+    $.cookie("LinpageHeightVal", selection3, { path: '/' })
   });
 });
 
 
 
-$(document).ready(function () {
-  $("#ADA_widget #FS_Default").addClass("active");
-});
+
 
 
 
@@ -250,18 +236,12 @@ $(document).ready(function () {
       path: '/'
     });
     if ($.cookie('DyslexicFontCookie') == "undefined" || $.cookie('DyslexicFontCookie') == "no") {
-      $.cookie('DyslexicFontCookie', 'yes', {
-        expires: 30,
-        path: '/'
-      });
+      $.cookie('DyslexicFontCookie', 'yes', { path: '/' });
       $("body").addClass("DyslexicFont");
       $('body').removeClass('BaskervilleFont');
 
     } else {
-      $.cookie('DyslexicFontCookie', 'yes', {
-        expires: 30,
-        path: '/'
-      });
+      $.cookie('DyslexicFontCookie', 'yes', { path: '/' });
       $("body").addClass("DyslexicFont");
       $('body').removeClass('BaskervilleFont');
     }
@@ -272,14 +252,10 @@ $(document).ready(function () {
     $('body').removeClass('DyslexicFont');
     $('body').removeClass('BaskervilleFont');
     if ($.cookie('DyslexicFontCookie') == "yes") {
-      $.cookie("DyslexicFontCookie", null, {
-        path: '/'
-      });
+      $.cookie("DyslexicFontCookie", null, { path: '/' });
     }
     if ($.cookie('BaskervilleFontCookie') == "yes") {
-      $.cookie("BaskervilleFontCookie", null, {
-        path: '/'
-      });
+      $.cookie("BaskervilleFontCookie", null, { path: '/' });
     }
   });
 });
@@ -297,9 +273,7 @@ $(document).ready(function () {
 
     $.cookie('DyslexicFontCookie') == "no";
     $.cookie('DyslexicFontCookie') == "undefined";
-    $.cookie("DyslexicFontCookie", null, {
-      path: '/'
-    });
+    $.cookie("DyslexicFontCookie", null, { path: '/' });
   }
 
   // When input is clicked save cookie for 30days
@@ -308,18 +282,12 @@ $(document).ready(function () {
       path: '/'
     });
     if ($.cookie('BaskervilleFontCookie') == "undefined" || $.cookie('BaskervilleFontCookie') == "no") {
-      $.cookie('BaskervilleFontCookie', 'yes', {
-        expires: 30,
-        path: '/'
-      });
+      $.cookie('BaskervilleFontCookie', 'yes', { path: '/' });
       $("body").addClass("BaskervilleFont");
       $('body').removeClass('DyslexicFont');
 
     } else {
-      $.cookie('BaskervilleFontCookie', 'yes', {
-        expires: 30,
-        path: '/'
-      });
+      $.cookie('BaskervilleFontCookie', 'yes', { path: '/' });
       $("body").addClass("BaskervilleFont");
       $('body').removeClass('DyslexicFont');
     }
@@ -330,14 +298,10 @@ $(document).ready(function () {
     $('body').removeClass('DyslexicFont');
     $('body').removeClass('BaskervilleFont');
     if ($.cookie('BaskervilleFontCookie') == "yes") {
-      $.cookie("BaskervilleFontCookie", null, {
-        path: '/'
-      });
+      $.cookie("BaskervilleFontCookie", null, { path: '/' });
     }
     if ($.cookie('DyslexicFontCookie') == "yes") {
-      $.cookie("DyslexicFontCookie", null, {
-        path: '/'
-      });
+      $.cookie("DyslexicFontCookie", null, { path: '/' });
     }
   });
 });
@@ -371,17 +335,11 @@ $(document).ready(function () {
   // When input is clicked save cookie for 30days
   $("#ADA_widget a.Cursor_Enlarge_option").click(function () {
     if ($.cookie('CursorEnlargeCookie') == "undefined" || $.cookie('CursorEnlargeCookie') == "no") {
-      $.cookie('CursorEnlargeCookie', 'yes', {
-        expires: 30,
-        path: '/'
-      });
+      $.cookie('CursorEnlargeCookie', 'yes', { path: '/' });
       $("body").addClass("Cursor_Enlarge");
 
     } else {
-      $.cookie('CursorEnlargeCookie', 'yes', {
-        expires: 30,
-        path: '/'
-      });
+      $.cookie('CursorEnlargeCookie', 'yes', { path: '/' });
       $("body").addClass("Cursor_Enlarge");
     }
   });
@@ -396,6 +354,33 @@ $(document).ready(function () {
     }
   });
 });
+
+$(".rs-handle").on("change", function () {
+  console.log('this changed')
+});
+
+
+// $(document).ready(function () {
+
+//   //Letter Spacing
+//   var speechVol = $.cookie("speechVolCookie");
+//   var speechRate = $.cookie("speechRateCookie");
+//   var speechPitch = $.cookie("speechPitchCookie");
+//   if (selectedVal) {
+//     $("#letter_spacing").val(selectedVal);
+//     $("#letter_spacing").prop("selected", true);
+//     $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selectedVal); //Selects everything inside #view except ada modal and header
+//     $(".Footer").css("letter-spacing", selectedVal);
+//   }
+//   $("#letter_spacing").on("change", function () {
+//     var selection1 = $(this).val();
+//     $(selection1).prop("selected", true);
+//     $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
+//     $(".Footer").css("letter-spacing", selection1);
+//     $.cookie("LetterSpaceVal", selection1, { path: '/' })
+//   });
+
+// })
 
 
 
@@ -704,6 +689,19 @@ $(document).ready(function () {
     synth.cancel();
   }
 
+  var speechVol = $.cookie("speechVolCookie");
+  var speechRate = $.cookie("speechRateCookie");
+  var speechPitch = $.cookie("speechPitchCookie");
+
+  const getCookieVal = (cookie) => {
+    let value = 5
+    if ($.cookie(cookie)) {
+      value = $.cookie(cookie)
+    }
+    return value
+  }
+  let volValue = getCookieVal(speechVol)
+
   getMobileOperatingSystem();
   // roundSlider.js -- https://roundsliderui.com/
   $("#volume").roundSlider({
@@ -711,7 +709,7 @@ $(document).ready(function () {
     radius: 60,
     showTooltip: true,
     width: 10,
-    value: 5,
+    value: volValue.speechVol ? volValue.speechVol : 5,
     step: 1,
     handleSize: 0,
     max: 10,
@@ -720,6 +718,8 @@ $(document).ready(function () {
     circleShape: "half-top",
     change: function (e) {
       resetSpeech()
+      $.cookie("speechVol", e.value, { path: '/' })
+
     }
 
   });
@@ -730,7 +730,7 @@ $(document).ready(function () {
     radius: 60,
     showTooltip: true,
     width: 10,
-    value: 5,
+    value: volValue.speechRate ? volValue.speechRate : 5,
     step: 1,
     handleSize: 0,
     max: 10,
@@ -739,6 +739,7 @@ $(document).ready(function () {
     circleShape: "half-top",
     change: function (e) {
       resetSpeech()
+      $.cookie("speechRate", e.value, { path: '/' })
     }
 
   });
@@ -748,7 +749,7 @@ $(document).ready(function () {
     radius: 60,
     showTooltip: true,
     width: 10,
-    value: 5,
+    value: volValue.speechPitch ? volValue.speechPitch : 5,
     step: 1,
     handleSize: 0,
     max: 10,
@@ -757,9 +758,11 @@ $(document).ready(function () {
     circleShape: "half-top",
     change: function (e) {
       resetSpeech()
+      $.cookie("speechPitch", e.value, { path: '/' })
     }
 
   });
+
 
   const resetVoiceSettings = () => {
     $("#volume").roundSlider({
@@ -775,11 +778,13 @@ $(document).ready(function () {
 
 
 
+
+
   const resetVoiceBtn = document.querySelector('#reset-voice-btn')
   resetVoiceBtn.addEventListener('click', () => {
     resetVoiceSettings()
     resetSpeech()
-    $("#voice").val($("#voice option:first").val());
+    $("#voice").val('Microsoft David - English (United States)');
 
   })
 
@@ -822,6 +827,7 @@ $(document).ready(function () {
 
       // Add the option to the voice selector.
       voiceSelect.appendChild(option);
+
     });
   }
 
@@ -837,10 +843,26 @@ $(document).ready(function () {
     initSpeechSynthesis();
   });
 
-  $("#voice").on("change", function () {
+  $("#voice").on("change", function (e) {
     resetSpeech()
-    resetVoiceSettings()
+
+    let currVoice = $('#voice').find(":selected").text();
+
+    var voiceCookie = $.cookie("speechVoiceCookie");
+    $.cookie("voiceCookie", currVoice, { path: '/' })
   });
+
+
+
+  setTimeout(() => {
+    if ($.cookie("voiceCookie")) {
+      let cookieValue = $.cookie("voiceCookie")
+      $("#voice").val(cookieValue)
+    } else {
+      $("#voice").val('Microsoft David - English (United States)');
+    }
+  }, 500);
+
 
 
 
@@ -1316,6 +1338,10 @@ const removeAllCookies = () => {
   $.removeCookie('LinpageHeightVal');
   $.removeCookie('WordSpaceVal');
   $.removeCookie('LetterSpaceVal');
+  $.removeCookie('speechPitch');
+  $.removeCookie('speechRate');
+  $.removeCookie('speechVol');
+  $.removeCookie('voiceCookie');
 
 
 
