@@ -972,12 +972,15 @@ const displayModal = () => {
     $("#ADA_widget").css("display", "flex")
     $("#ADA_widget").fadeTo(0, 1);
     $(".modal_content").fadeToggle(0);
+    document.body.classList.add("prevent-body-overflow");
   } else {
     $("#ADA_widget").fadeTo(400, 0);
     $(".modal_content").fadeToggle(400);
     setTimeout(() => {
       $("#ADA_widget").css("display", "none")
+      document.body.classList.remove("prevent-body-overflow");
     }, 600);
+
   }
 }
 
@@ -1424,3 +1427,30 @@ setTimeout(() => {
   }
 }, 100);
 
+var hasTouchScreen = false;
+
+if ("maxTouchPoints" in navigator) {
+  hasTouchScreen = navigator.maxTouchPoints > 0;
+} else if ("msMaxTouchPoints" in navigator) {
+  hasTouchScreen = navigator.msMaxTouchPoints > 0;
+} else {
+  var mQ = window.matchMedia && matchMedia("(pointer:coarse)");
+  if (mQ && mQ.media === "(pointer:coarse)") {
+    hasTouchScreen = !!mQ.matches;
+  } else if ('orientation' in window) {
+    hasTouchScreen = true; // deprecated, but good fallback
+  } else {
+    // Only as a last resort, fall back to user agent sniffing
+    var UA = navigator.userAgent;
+    hasTouchScreen = (
+      /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(UA) ||
+      /\b(Android|Windows Phone|iPad|iPod)\b/i.test(UA)
+    );
+  }
+}
+
+if (hasTouchScreen) {
+  console.log('this is a touch screen')
+} else {
+  console.log('this is a desktop')
+}
