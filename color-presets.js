@@ -6,24 +6,7 @@
 
 
 
-const resetBackgroundClicker = () => {
-    let bgColor = cache.bgColor.value
-    let textColor = cache.textColor.value
-    let linkColor = cache.linkColor.value
-    if (bgColor !== "#ffffff" || textColor !== "#212529" || linkColor !== "#3863ff") {
-        $.removeCookie('BackgroundColorCookie');
-        $.removeCookie('TextColorCookie');
-        $.removeCookie('LinkColorCookie');
-        //alert("Cookie Removed!");
 
-
-        sessionStorage.setItem("reloading", "true");
-        $("body").fadeOut()
-        setTimeout(() => {
-            document.location.reload();
-        }, 200);
-    }
-}
 
 
 $(document).ready(function () {

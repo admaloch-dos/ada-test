@@ -25,6 +25,7 @@
 // console.log(height)
 
 
+
 $(document).keydown(function (e) {
   if (e.shiftKey && e.which == 72) { // Shift + h
     window.location.replace("https://www.floridamemory.com/");
@@ -34,108 +35,7 @@ $(document).keydown(function (e) {
   }
 });
 
-//https://stackoverflow.com/questions/13936865/jquery-save-checkbox-state-on-click-in-cookie
-$(document).ready(function () {
 
-
-  // read the current/previous setting
-  $("input.switch-input[type=checkbox]").each(function () {
-    //get name of input
-    var name = $(this).attr('name');
-    if ($.cookie(name) && $.cookie(name) == "true") {
-      $(this).prop('checked', $.cookie(name));
-      $("body").addClass(name);
-
-
-      //If ToggleTTS_click is checked
-      if ($('[id="ToggleTTS_click"]').is(':checked')) {
-        $("body").addClass("TTS_click_enabled");
-
-      }
-
-      //If ToggleSeizure is checked add name value to html, not body
-      if ($('[id="ToggleSeizure"]').is(':checked')) {
-        $("html").addClass(name);
-        $("body").removeClass(name);
-
-      }
-
-      //If ToggleReadingMask is checked
-      if ($('[id="ToggleReadingMask"]').is(':checked')) {
-        $("body").addClass(name);
-        $("body").addClass("ReadingMask_ON");
-        $("#top_mask").fadeIn('slow')
-        $("#bottom_mask").fadeIn('slow')
-      }
-
-      //If ToggleReadingGuide is checked
-      if ($('[id="ToggleReadingGuide"]').is(':checked')) {
-        $("body").addClass(name);
-        //$("body").addClass("ReadingMask_ON");
-        //$("#top_mask").css("display", "block");
-        //$("#bottom_mask").css("display", "block");
-      }
-
-      //If ToggleTextMagnifier is checked
-      if ($('[id="ToggleTextMagnifier"]').is(':checked')) {
-        $("body").addClass(name);
-        $("body").addClass("TextMagnifier");
-        $('[id="ToggleZoom"]').prop('checked', false);
-        $('#text_magnify').attr('style', 'display: block!important');
-        $('p, a, :header, span, button, td').hover(
-          function (e) {
-
-            //do the mouseenter things here...
-            //Gets text inside element tag and copies into #text_magnify div
-            var TextMagnify = $(this).text();
-            $("#text_magnify").text(TextMagnify);
-            //$("body").addClass("TextMagnifier");
-            $('#text_magnify').fadeIn()
-            /*$("#text_magnify").css({
-              "display": "block",
-              "opacity": "1"});
-              */
-            //If #text_magnify is empty, hide
-            if ($('#text_magnify').is(':empty')) {
-
-              //$("body").removeClass("TextMagnifier");
-              $('#text_magnify').attr('style', 'display: none!important');
-              // $('#text_magnify').css({
-              //"opacity": "0"});
-            }
-
-          },
-          function (e) {
-            //do the mouseleave things here...
-            $('#text_magnify').attr('style', 'display: none!important');
-
-
-            //$("body").removeClass("TextMagnifier");
-            /*$("#text_magnify").css({
-              "display": "none",
-              "opacity": "0"});*/
-          }
-
-        );//end of hover
-        $(window).scroll(function () {
-          $('#text_magnify').attr('style', 'display: none!important');
-
-        });
-
-      }// end of if
-      else {
-        $("body").removeClass("TextMagnifier");
-        $('#text_magnify').attr('style', 'display: none!important');
-      }
-    }// end of if
-
-  });//end of each
-  // event management
-  $("input.switch-input[type=checkbox]").change(function () {
-    var name = $(this).attr("name");
-    $.cookie(name, $(this).prop('checked'), { path: '/', })
-  });
-});
 
 
 $(document).ready(function () {
@@ -528,66 +428,7 @@ $(function () {
 
 
 
-// Toggle Text Magnifier
-$(function () {
-  $('[id="ToggleTextMagnifier"]').change(function () {
 
-    if ($(this).is(':checked')) {
-      console.log('this is checked')
-      $("body").addClass("TextMagnifier");
-      $('#text_magnify').attr('style', 'display: none!important');
-      $('p, a, :header, span, button, td').hover(
-        function (e) {
-          console.log('show text')
-          //do the mouseenter things here...
-          //Gets text inside element tag and copies into #text_magnify div
-
-          var TextMagnify = $(this).text();
-          $("#text_magnify").text(TextMagnify);
-          //$("body").addClass("TextMagnifier");
-          $('#text_magnify').attr('style', 'display: block!important');
-          /*
-          $("#text_magnify").css({
-            "display": "block",
-            "opacity": "1"});
-            */
-
-          //If #text_magnify is empty, hide
-          if ($('#text_magnify').is(':empty')) {
-            //$('#text_magnify').css({
-            //"opacity": "0"});
-            //$("body").removeClass("TextMagnifier");
-            $('#text_magnify').attr('style', 'display: none!important');
-          }
-        },
-        function (e) {
-          //do the mouseleave things here...
-          $('#text_magnify').attr('style', 'display: none!important');
-          //$("body").removeClass("TextMagnifier");
-          /*$("#text_magnify").css({
-            "display": "none",
-            "opacity": "0"});
-            */
-        }
-      ); //end of hover
-
-      //$('[id="ToggleZoom"]').prop('checked',false);
-    } else {
-      console.log('this isnt checked')
-      $("body").removeClass("TextMagnifier");
-      $('p, a, :header, span, button, td').hover(
-        function (e) {
-          //do the mouseleave things here...
-
-          $('#text_magnify').attr('style', 'display: none!important');
-          /*$("#text_magnify").css({
-            "display": "none",
-            "opacity": "0"});
-            */
-        });
-    } //end of else
-  }); //end of change
-}); // end of function
 
 
 
@@ -778,10 +619,10 @@ $(document).ready(function () {
 
   const resetVoiceDefault = () => {
     if ($("#voice option[value='Microsoft David - English (United States)']").length > 0) {
-      console.log('david was found')
+
       return $("#voice").val('Microsoft David - English (United States)');
     } else {
-      console.log('david was not found')
+
       return $("#voice").val($("#voice option:first").val());
     }
   }
@@ -950,7 +791,7 @@ $(document).ready(function () {
 
 
   $("#ADA_trigger").click(function () {
-
+    $("#ADA_trigger").fadeOut();
     resetSpeech()
   });
 
@@ -974,6 +815,9 @@ $(document).ready(function () {
 }); //end of doc ready
 
 
+
+
+
 const displayModal = () => {
   const overlay = document.querySelector('#ADA_widget')
   if (overlay.style.display !== "flex") {
@@ -982,13 +826,17 @@ const displayModal = () => {
     $("#ADA_widget").fadeTo(0, 1);
     $(".modal_content").fadeToggle(0);
     document.body.classList.add("prevent-body-overflow");
+    $(".modal_body").scrollTop(0);
+
+
+
   } else {
     $("#ADA_widget").fadeTo(400, 0);
     $(".modal_content").fadeToggle(400);
     setTimeout(() => {
       $("#ADA_widget").css("display", "none")
       document.body.classList.remove("prevent-body-overflow");
-    }, 600);
+    }, 800);
 
   }
 }
@@ -1013,18 +861,19 @@ var CloseADA_widget = document.getElementsByClassName("ADA_close")[0];
 
 // When the user clicks the button, open the ADA_widget
 OpenADA_widget.onclick = function () {
-
   displayModal()
-
-
 }
-
-
 
 // When the user clicks on <span> (x), close the ADA_widget
 CloseADA_widget.onclick = function () {
   // ADA_widget.style.display = "none";
   displayModal()
+
+  setTimeout(() => {
+    $("#ADA_trigger").fadeIn('slow');
+  }, 800);
+
+
   // $("body").css("overflow", "auto");
 }
 
@@ -1033,19 +882,15 @@ window.onclick = function (event) {
   if (event.target == ADA_widget) {
     // ADA_widget.style.display = "none";
     displayModal()
+
+    setTimeout(() => {
+      $("#ADA_trigger").fadeIn('slow');
+    }, 800);
     // $("body").css("overflow", "auto");
     // $(".modal-backdrop").css("display", "none");
     // $("#keyboard_shortcuts").css("display", "none");
   }
 }
-
-// $(document).keydown(function (e) {
-//   if (e.shiftKey && e.which == 65) { // Shift + a
-//     $("#ADA_widget").fadeIn()
-//   }
-// });
-
-
 
 const preventPageScroll = () => {
   var top = 0
@@ -1086,15 +931,9 @@ $(function () {
 
     } else {
       console.log('reading mask not checked')
-
     }
   });
 });
-
-
-
-
-
 
 //////////// Reading Mask ///////////////////
 //More focus & fewer distractions
@@ -1111,10 +950,6 @@ $(document).bind('mousemove', function (e) {
 });
 
 
-
-
-
-
 ////////////image description magnify///////////////////
 $(document).on('mousemove', function (e) {
   $('#ImageDescription_magnify').css({
@@ -1122,202 +957,14 @@ $(document).on('mousemove', function (e) {
     top: e.pageY
   });
 });
-/*
-//https://stackoverflow.com/a/52119191/10792033
-// passing value from one input to another
-$(document).ready(function () {
-$("#input1").keyup(function () {
-var value = $(this).val();
-$("#volume > input").val(value);
-$("#volume > .rs-tooltip-text").text(value);
 
-$.cookie('myCookie', $el1.val(), {
-expires: 365
-});
-});
-
-var $el1 = $("#input1").val($.cookie("myCookie"));
-
-});
-*/
-
-
-// //////////// Resets  ///////////////////
-//old reset but replaced by reset cookies function
-// $("#ADA_reset").click(function () {
-//   console.log('this worked')
-//   $('.modal_body input').prop('checked', false);
-//   $("#page").removeClass("SeizureSafe");
-//   $("body").removeClass("HighlightHover");
-//   $("body").removeClass("fontSizeMedium");
-//   $("body").removeClass("HighlightLinks");
-//   $("body").removeClass("ReadingMask_ON");
-//   $("body").removeClass("TTS_hover_enabled");
-//   $("body").removeClass("TTS_click_enabled");
-//   $("#top_mask").css("display", "none");
-//   $("#bottom_mask").css("display", "none");
-//   $("#page").css("letter-spacing", "normal");
-//   $("#page").css("word-spacing", "normal");
-//   $("#page").css("line-height", "normal");
-//   $("select option[value='Normal']").prop("selected", true);
-//   $('#page *').hover(
-//     function (e) {
-//       $("#text_magnify").css({
-//         "display": "none",
-//         "opacity": "0"
-//       });
-//     });
-//   window.speechSynthesis.cancel();
-//   $(".audio_state").css("display", "none");
-//   $("#volume").roundSlider({ value: 5 });
-//   $("#rate").roundSlider({ value: 5 });
-//   $("#pitch").roundSlider({ value: 5 });
-
-//   // cache.bgColor.value = "#ffffff";
-//   // cache.textColor.value = "#212529";
-//   // cache.linkColor.value = "#006CE0";
-
-
-//   const rsArrow = document.querySelectorAll('.rs-bar')
-//   rsArrow.forEach(arrow => {
-//     arrow.addEventListener('clicked', () => {
-//       console.log('this worked!!!')
-//     })
-//   })
-
-
-
-//   /* // Clear cookies
-
-//   Set cookie on input change
-//   $.cookie('FM_ColorPickerCookie') == "no";
-//   $.cookie('FM_ColorPickerCookie') == "undefined";
-//   $.cookie("FM_ColorPickerCookie", null, {
-//     path: '/'
-//   })
-//   */
-
-// });// end of reset
-
-//////////// Resets  ///////////////////
-// $("#ADA_reset").click(function () {
-
-//   // $('.modal_body input').prop('checked', false);
-
-
-//   // $(".modal-btn-options > li:first-child").addClass("active").siblings().removeClass('active');
-
-
-
-//   // $("body").removeClass("DyslexicFont");
-//   // $('body').removeClass('BaskervilleFont');
-
-//   // $("body").removeClass("highcontrast");
-//   // $('body').removeClass('desaturated');
-//   // $('body').removeClass('inverted');
-//   // $("html").removeClass("highsaturation");
-//   // $("html").removeClass("lowsaturation");
-
-//   // $("body").removeClass("Cursor_Enlarge");
-//   // $("html").removeClass("SeizureSafe");
-//   // $("body").removeClass("HighlightHover");
-//   // $("body").removeClass("fontSizeMedium");
-//   // $("body").removeClass("HighlightLinks");
-//   // $("body").removeClass("ReadingMask_ON");
-//   // $("#top_mask").css("display", "none");
-//   // $("#bottom_mask").css("display", "none");
-//   // $("body").removeClass("CursorGuide");
-//   // $("body").removeClass("TTS_hover_enabled");
-//   // $("body").removeClass("TTS_click_enabled");
-//   // $("#text-selects select option[value='inherit']").prop("selected", true).trigger('change');
-
-
-
-//   // $("body").removeClass("ImageDescription");
-//   // $('img[alt], .feature .img[alt], i.fa[alt]').hover(
-//   //   function (e) {
-//   //     //do the mouseleave things here...
-//   //     $('#ImageDescription_magnify').attr('style', 'display: none!important');
-//   //     $('#ImageDescription_magnify').attr('style', 'opacity: 0!important');
-
-//   //   });
-//   // $("body").removeClass("TextMagnifier");
-//   // $('#navContainer li > a,\
-//   //             #navContainer p,\
-//   //             #view p, \
-//   //             #view li, \
-//   //             #view ul li a, \
-//   //             #view :header, \
-//   //             #view :button, \
-//   //             #view a, \
-//   //             #view #openNavBtn,\
-//   //             #view .Item_Pager .pagination .page-item a.page-link > span,\
-//   //             #view .Item_Pager .pagination .page-item a.page-link,\
-//   //             #view .feature .feature_item, \
-//   //             #main_navbar #Left_Nav .nav-item.dropdown .nav-link.dropdown-toggle\
-//   //             #header_links_container ul li.radio_program a, \
-//   //             #ADA_widget .modal_content .ada_option_title,\
-//   //             #ADA_widget .modal_content .description,\
-//   //             #ADA_widget .rs-tooltip,\
-//   //             .navbar.Footer p, \
-//   //             .navbar.Footer .additional_Links a, \
-//   //             .navbar.Footer h4.columnTitle').hover(
-//   //   function (e) {
-//   //     $('#text_magnify').attr('style', 'display: none!important');
-//   //   });
-
-
-
-
-//   // window.speechSynthesis.cancel();
-//   // $(".audio_state").css("display", "none");
-//   // $("#volume").roundSlider({ value: 5 });
-//   // $("#rate").roundSlider({ value: 5 });
-//   // $("#pitch").roundSlider({ value: 5 });
-
-
-
-
-//   // const rsArrow = document.querySelectorAll('.rs-bar')
-//   // rsArrow.forEach(arrow => {
-//   //   arrow.addEventListener('clicked', () => {
-//   //     console.log('this worked!!!')
-//   //   })
-//   // })
-
-//   // function to delete cookies
-
-//   deleteCookies()
-
-
-
-//   /* // Clear cookies
-
-//   Set cookie on input change
-//   $.cookie('FM_ColorPickerCookie') == "no";
-//   $.cookie('FM_ColorPickerCookie') == "undefined";
-//   $.cookie("FM_ColorPickerCookie", null, {
-//     path: '/'
-//   })
-//   */
-
-// });// end of reset
 
 const keyTogglerFunc = (itemId, itemClass) => {
-
   if ($(itemId).is(':checked')) {
-
-
     $(itemId).prop('checked', false).trigger('change');
-
-
-
   } else {
-
     $(itemId).prop('checked', true).trigger('change');
-
   }
-
 }
 
 const removeAllCookies = () => {
@@ -1334,7 +981,6 @@ const removeAllCookies = () => {
   $.removeCookie('DyslexicFontCookie');
   $.removeCookie('FM_FontTypeCookie');
   $.removeCookie('CursorEnlargeCookie');
-
   $.removeCookie('DarkContrastBackgroundCookie');
   $.removeCookie('LowSaturationBackgroundCookie');
   $.removeCookie('InvertBackgroundCookie');
@@ -1354,9 +1000,6 @@ const removeAllCookies = () => {
   $.removeCookie('speechRate');
   $.removeCookie('speechVol');
   $.removeCookie('voiceCookie');
-
-
-
 }
 
 
@@ -1364,11 +1007,9 @@ function resetAdaOnKey() {
   removeAllCookies()
   const adaWidget = document.querySelector('#ADA_widget')
   if (adaWidget.style.display === 'flex') {
-    console.log('reloading on key bring in modal')
-    sessionStorage.setItem("reloadingOnKeyModal", "true");
+    sessionStorage.setItem("reloadModalOpen", "true");
   } else {
-    console.log('reloading on key - dont bring modal')
-    sessionStorage.setItem("reloadingOnKey", "true");
+    sessionStorage.setItem("reloadModalClosed", "true");
   }
   $("body").fadeOut()
   setTimeout(() => {
@@ -1390,7 +1031,11 @@ document.addEventListener('keydown', (event) => {
     name === "^" && keyTogglerFunc('#ToggleReadingMask')
     name === '&' && keyTogglerFunc('#ToggleReadingGuide')
     name === '*' && keyTogglerFunc('#ToggleTTS_click')
-    name === 'Q' && resetAdaOnKey()
+    if (name === 'Q') {
+
+
+      resetAdaOnKey()
+    }
     name === 'A' && displayModal()
 
 

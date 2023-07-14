@@ -7,7 +7,32 @@ let config = {
 
 let cache = {};
 
+// function to remove background color cookies and reload page
+const resetBackgroundClicker = () => {
+    let bgColor = cache.bgColor.value
+    let textColor = cache.textColor.value
+    let linkColor = cache.linkColor.value
+    if (bgColor !== "#ffffff" || textColor !== "#212529" || linkColor !== "#3863ff") {
+        $.removeCookie('BackgroundColorCookie');
+        $.removeCookie('TextColorCookie');
+        $.removeCookie('LinkColorCookie');
+        //alert("Cookie Removed!");
+        sessionStorage.setItem("reloadModalOpen", "true");
+        var scrollPosition = $(".modal_body").scrollTop();
+        sessionStorage.setItem("scrollPosition", scrollPosition);
 
+        $("body").fadeOut()
+        setTimeout(() => {
+            document.location.reload();
+        }, 200);
+    }
+}
+
+//https://www.jquery-az.com/how-to-create-read-and-remove-jquery-cookies-with-3-demos/
+$("#remove_cookie").click(function () {
+    resetBackgroundClicker()
+
+});
 
 const setupCache = () => {
     cache.bgColor = document.querySelector('#background_color');
@@ -67,6 +92,23 @@ const takeTwoColors = (c1, c2) => {
 
 
 const onInputChange = (e) => {
+
+
+    if ($('body').hasClass('highcontrast') || $('body').hasClass('inverted') || $('body').hasClass('desaturated')) {
+        $("body").removeClass("highcontrast inverted desaturated")
+        $.removeCookie('InvertBackgroundCookie');
+        $.removeCookie('FM_InvertBackgroundCookie');
+        $.removeCookie('DarkContrastBackgroundCookie');
+        $.removeCookie('FM_DarkContrastCookie');
+        $.removeCookie('DesaturatedBackgroundCookie');
+        $.removeCookie('FM_DesaturatedBackgroundCookie');
+
+        $("#DefaultBG_option").addClass('active').siblings().removeClass('active');
+    } else {
+        console.log('it does not have it')
+    }
+
+
     const value = e.target.value;
     // console.log(value);
 
@@ -95,7 +137,7 @@ const onInputChange = (e) => {
     const linkColor = hexToRGB(cache.linkColor.value);
 
     //Switch selectors to #view, .Footer
-    $('#view *').not('#ADA_widget, #ADA_widget *').not('#ADA_widget, #ADA_widget *').css('color', cache.textColor.value);
+    $('#view *').not('#ADA_widget, #ADA_widget *').css('color', cache.textColor.value);
     $('.SearchForm .input-group .input-group-append #submit_search').css('color', cache.textColor.value);
     $('#footerFeat_container, .Footer').css('color', cache.textColor.value);
 
@@ -165,6 +207,10 @@ const onInputChange = (e) => {
     cache.BgtoLink.innerHTML = bgLinkCcontrastValues;
     cache.TexttoLink.innerHTML = textLinkcontrastValues;
 
+
+
+
+
 };
 
 const addEventListeners = () => {
@@ -218,114 +264,109 @@ const resetColors = (color, bgColor, linkColor) => {
 
 
 ///////////////////////////////////////////////////////////////////// NOTE: Switch selectors to #view, .Footer
-  ///////////////////////////////////////////////////////////////////// NOTE: Switch selectors to #view, .Footer
-  $(document).ready(function() {
+///////////////////////////////////////////////////////////////////// NOTE: Switch selectors to #view, .Footer
+$(document).ready(function () {
 
     //https://stackoverflow.com/a/43384649/10792033
     // RGB TO HEX
-    $.fn.cssAsHex = function(colorProp) {
+    $.fn.cssAsHex = function (colorProp) {
 
-      var hexDigits = '0123456789abcdef';
+        var hexDigits = '0123456789abcdef';
 
-      function hex(x) {
-        return isNaN(x) ? '00' : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
-      };
+        function hex(x) {
+            return isNaN(x) ? '00' : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
+        };
 
-      // Convert RGB color to Hex format
-      function rgb2hex(rgb) {
-        var rgbRegex = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-        return '#' + hex(rgbRegex[1]) + hex(rgbRegex[2]) + hex(rgbRegex[3]);
-      };
+        // Convert RGB color to Hex format
+        function rgb2hex(rgb) {
+            var rgbRegex = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+            return '#' + hex(rgbRegex[1]) + hex(rgbRegex[2]) + hex(rgbRegex[3]);
+        };
 
-      return rgb2hex(this.css(colorProp));
+        return rgb2hex(this.css(colorProp));
     };
 
 
 
     //BackgroundColorCookie
-    $('#background_color').on("change", function() {
-      var background_color = $('body').css('background-color');
-      $('body').css('background-color', background_color);
-      $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + background_color + '!important');
-      $('#Scroll_btn').attr('style', 'background-color: ' + background_color + '!important');
-      $('#footerFeat_container, .Footer').css('background-color', background_color);
-      $('#menudropdown .card-body').css('background-color', background_color);
-      var hexBackgroundColor = $('body').cssAsHex('background-color');
-      $("#bg_hexVal").html(hexBackgroundColor);
+    $('#background_color').on("change", function () {
+        var background_color = $('body').css('background-color');
+        $('body').css('background-color', background_color);
+        $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + background_color + '!important');
+        $('#Scroll_btn').attr('style', 'background-color: ' + background_color + '!important');
+        $('#footerFeat_container, .Footer').css('background-color', background_color);
+        $('#menudropdown .card-body').css('background-color', background_color);
+        var hexBackgroundColor = $('body').cssAsHex('background-color');
+        $("#bg_hexVal").html(hexBackgroundColor);
 
-      $.cookie.raw = true; //to bypass the default cookie value which is encoded/decoded when writing/reading
-      $.cookie('BackgroundColorCookie', background_color);
+        $.cookie.raw = true; //to bypass the default cookie value which is encoded/decoded when writing/reading
+        $.cookie('BackgroundColorCookie', background_color);
     });
     if ($.cookie('BackgroundColorCookie') != undefined) {
-      $('body').css('background-color', $.cookie('BackgroundColorCookie'));
-      $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + $.cookie('BackgroundColorCookie') + '!important');
-      $('#Scroll_btn').attr('style', 'background-color: ' + $.cookie('BackgroundColorCookie') + '!important');
-      $('#footerFeat_container, .Footer').css('background-color', $.cookie('BackgroundColorCookie'));
-      $('#menudropdown .card-body').css('background-color', $.cookie('BackgroundColorCookie'));
+        $('body').css('background-color', $.cookie('BackgroundColorCookie'));
+        $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + $.cookie('BackgroundColorCookie') + '!important');
+        $('#Scroll_btn').attr('style', 'background-color: ' + $.cookie('BackgroundColorCookie') + '!important');
+        $('#footerFeat_container, .Footer').css('background-color', $.cookie('BackgroundColorCookie'));
+        $('#menudropdown .card-body').css('background-color', $.cookie('BackgroundColorCookie'));
 
-      var hexBackgroundColor = $('body').cssAsHex('background-color');
-      $('#background_color').attr('value', hexBackgroundColor);
-      $("#bg_hexVal").html(hexBackgroundColor);
+        var hexBackgroundColor = $('body').cssAsHex('background-color');
+        $('#background_color').attr('value', hexBackgroundColor);
+        $("#bg_hexVal").html(hexBackgroundColor);
 
 
-      $.cookie.raw = true;
+        $.cookie.raw = true;
     }
 
 
     //TextColorCookie
-    $('#text_color').on("change", function() {
-      var text_color = $('#view *').css('color');
-      $('#view *').not('#ADA_widget, #ADA_widget *').css('color', text_color);
-      $('.SearchForm .input-group .input-group-append #submit_search').css('color', text_color);
-      $('#footerFeat_container, .Footer').css('color', text_color);
-      var hexTextColor = $('#view *').cssAsHex('color');
-      $("#txt_hexVal").html(hexTextColor);
+    $('#text_color').on("change", function () {
+        var text_color = $('#view *').css('color');
+        $('#view *').not('#ADA_widget, #ADA_widget *').css('color', text_color);
+        $('.SearchForm .input-group .input-group-append #submit_search').css('color', text_color);
+        $('#footerFeat_container, .Footer').css('color', text_color);
+        var hexTextColor = $('#view *').cssAsHex('color');
+        $("#txt_hexVal").html(hexTextColor);
 
-      $.cookie.raw = true;
-      $.cookie('TextColorCookie', text_color);
+        $.cookie.raw = true;
+        $.cookie('TextColorCookie', text_color);
     });
     if ($.cookie('TextColorCookie') != undefined) {
-      $('#view *').not('#ADA_widget, #ADA_widget *').css('color', $.cookie('TextColorCookie'));
-      $('.SearchForm .input-group .input-group-append #submit_search').css('color', $.cookie('TextColorCookie'));
-      $('#footerFeat_container, .Footer').css('color', $.cookie('TextColorCookie'));
+        $('#view *').not('#ADA_widget, #ADA_widget *').css('color', $.cookie('TextColorCookie'));
+        $('.SearchForm .input-group .input-group-append #submit_search').css('color', $.cookie('TextColorCookie'));
+        $('#footerFeat_container, .Footer').css('color', $.cookie('TextColorCookie'));
 
-      var hexTextColor = $('#view *').cssAsHex('color');
-      $('#text_color').attr('value', hexTextColor);
-      $("#txt_hexVal").html(hexTextColor);
+        var hexTextColor = $('#view *').cssAsHex('color');
+        $('#text_color').attr('value', hexTextColor);
+        $("#txt_hexVal").html(hexTextColor);
 
 
-      $.cookie.raw = true;
+        $.cookie.raw = true;
     }
 
 
     //LinkColorCookie
-    $('#link_color').on("change", function() {
-      var link_color = $('body a').css('color');
-      $('body a').not("#ADA_widget a").attr('style', 'color: ' + link_color + '!important');
-      var hexLinkColor = $('body a').cssAsHex('color');
-      $("#link_hexVal").html(hexLinkColor);
+    $('#link_color').on("change", function () {
+        var link_color = $('body a').css('color');
+        $('body a').not("#ADA_widget a").attr('style', 'color: ' + link_color + '!important');
+        var hexLinkColor = $('body a').cssAsHex('color');
+        $("#link_hexVal").html(hexLinkColor);
 
-      $.cookie.raw = true;
-      $.cookie('LinkColorCookie', link_color);
+        $.cookie.raw = true;
+        $.cookie('LinkColorCookie', link_color);
     });
     if ($.cookie('LinkColorCookie') != undefined) {
-      $('body a').not("#ADA_widget a").attr('style', 'color: ' + $.cookie('LinkColorCookie') + '!important');
+        $('body a').not("#ADA_widget a").attr('style', 'color: ' + $.cookie('LinkColorCookie') + '!important');
 
-      var hexLinkColor = $('body a').cssAsHex('color');
-      $('#link_color').attr('value', hexLinkColor);
-      $("#link_hexVal").html(hexLinkColor);
+        var hexLinkColor = $('body a').cssAsHex('color');
+        $('#link_color').attr('value', hexLinkColor);
+        $("#link_hexVal").html(hexLinkColor);
 
-      $.cookie.raw = true;
+        $.cookie.raw = true;
     }
 
-    //https://www.jquery-az.com/how-to-create-read-and-remove-jquery-cookies-with-3-demos/
-    $("#remove_cookie").click(function() {
-      $.removeCookie('BackgroundColorCookie');
-      $.removeCookie('TextColorCookie');
-      $.removeCookie('LinkColorCookie');
-      //alert("Cookie Removed!");
-      location.reload(true);
-    });
 
 
-  }); //end doc ready
+
+
+
+}); //end doc ready
