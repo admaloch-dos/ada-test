@@ -818,28 +818,6 @@ $(document).ready(function () {
 
 
 
-const displayModal = () => {
-  const overlay = document.querySelector('#ADA_widget')
-  if (overlay.style.display !== "flex") {
-    $("#ADA_widget").css('opacity', '0');
-    $("#ADA_widget").css("display", "flex")
-    $("#ADA_widget").fadeTo(0, 1);
-    $(".modal_content").fadeToggle(0);
-    document.body.classList.add("prevent-body-overflow");
-    $(".modal_body").scrollTop(0);
-
-
-
-  } else {
-    $("#ADA_widget").fadeTo(400, 0);
-    $(".modal_content").fadeToggle(400);
-    setTimeout(() => {
-      $("#ADA_widget").css("display", "none")
-      document.body.classList.remove("prevent-body-overflow");
-    }, 800);
-
-  }
-}
 
 
 
@@ -1003,20 +981,17 @@ const removeAllCookies = () => {
 }
 
 
-function resetAdaOnKey() {
-  removeAllCookies()
-  const adaWidget = document.querySelector('#ADA_widget')
-  if (adaWidget.style.display === 'flex') {
-    sessionStorage.setItem("reloadModalOpen", "true");
-  } else {
-    sessionStorage.setItem("reloadModalClosed", "true");
-  }
-  $("body").fadeOut()
-  setTimeout(() => {
-    document.location.reload();
-  }, 200);
 
-}
+
+// function resetAdaModal() {
+//   removeAllCookies()
+//   storeMainScrollPosition()
+//   sessionStorage.setItem("reloadModalOpen", "true");
+//   $("body").fadeOut()
+//   setTimeout(() => {
+//       document.location.reload();
+//   }, 200);
+// }
 
 // toggle reading mask on ctrl + m
 document.addEventListener('keydown', (event) => {
@@ -1034,7 +1009,7 @@ document.addEventListener('keydown', (event) => {
     if (name === 'Q') {
 
 
-      resetAdaOnKey()
+      resetAdaModal()
     }
     name === 'A' && displayModal()
 

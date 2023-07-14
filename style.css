@@ -19,7 +19,7 @@ body {
 } */
 
 #ADA_trigger {
-  color: black;
+  color: #8d99ae;
   position: fixed;
   z-index: 20;
   right: 0;
@@ -1084,6 +1084,10 @@ html.translated-ltr #wordspace_icon {
 .inverted .accessibility_icons {
   filter: invert(100%);
   opacity: 75%;
+}
+
+.highcontrast #ADA_trigger {
+  color: #fff;
 }
 
 
@@ -2760,6 +2764,10 @@ body.BaskervilleFont {
   border: #FFF solid 1px !important;
   background-color: #2C2C2C !important;
 
+}
+
+.desaturated  #ADA_trigger {
+  color: #d9d9d9!important;
 }
 
 

@@ -18,8 +18,8 @@ const resetBackgroundClicker = () => {
         $.removeCookie('LinkColorCookie');
         //alert("Cookie Removed!");
         sessionStorage.setItem("reloadModalOpen", "true");
-        var scrollPosition = $(".modal_body").scrollTop();
-        sessionStorage.setItem("scrollPosition", scrollPosition);
+        var modalScrollPosition = $(".modal_body").scrollTop();
+        sessionStorage.setItem("modalScrollPosition", modalScrollPosition);
 
         $("body").fadeOut()
         setTimeout(() => {
