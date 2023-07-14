@@ -3264,6 +3264,11 @@ background-color: lightgray;
     height: 75px !important;
   }
 
+  #ADA_widget .modal_body .bg_form ul li {
+    width: 140px !important;
+    height: 85px !important;
+  }
+
   .title {
     font-size: 1.5rem;
 
@@ -3303,6 +3308,10 @@ background-color: lightgray;
     border: 2px solid transparent;
     margin-bottom: 5px;
   }
+  #ADA_widget .modal_body .bg_form ul li {
+    width: 145px !important;
+    height: 90px !important;
+  }
 
   #ADA_widget .modal_body ul li a div.title {
     font-size: 16px;
@@ -3329,6 +3338,11 @@ background-color: lightgray;
     border: 2px solid transparent;
     margin-bottom: 5px;
     flex-wrap: nowrap;
+  }
+
+  #ADA_widget .modal_body .bg_form ul li {
+    width: 155px !important;
+    height: 100px !important;
   }
 
   #ADA_widget .modal_body ul li a div.title {
