@@ -1,5 +1,5 @@
 body {
-  overflow-x: hidden;
+  overflow-x: hidden!important;
 
 }
 
@@ -2248,7 +2248,7 @@ body.BaskervilleFont {
   border-radius: 0.25rem;
   padding: 10px 20px;
   width: 152px;
-  height: 150px;
+  height: 130px;
 
   text-align: center;
 
@@ -2257,11 +2257,8 @@ body.BaskervilleFont {
 
 @media screen and (min-width:1200px) {
   #ADA_widget .modal_body .color_picker_form .form-group {
-
     width: 190px;
-    height: 160px;
-
-
+    height: 140px;
   }
 }
 
@@ -2269,7 +2266,7 @@ body.BaskervilleFont {
   #ADA_widget .modal_body .color_picker_form .form-group {
 
     width: 200px;
-    height: 160px;
+    height: 140px;
 
 
   }
@@ -2766,8 +2763,8 @@ body.BaskervilleFont {
 
 }
 
-.desaturated  #ADA_trigger {
-  color: #d9d9d9!important;
+.desaturated #ADA_trigger {
+  color: #d9d9d9 !important;
 }
 
 
@@ -3147,6 +3144,35 @@ html.translated-ltr #ADA_widget .modal_body #BackgroundColor_option .bg_form ul 
   width: 30% !important;
 }
 
+.DyslexicFont #ADA_widget .modal_body .color_picker_form .form-group,
+.BaskervilleFont #ADA_widget .modal_body .color_picker_form .form-group {
+  padding: 10px 5px;
+  width: 152px;
+  height: 130px;
+}
+
+
+@media screen and (min-width:1200px) {
+
+  .DyslexicFont #ADA_widget .modal_body .color_picker_form .form-group,
+  .BaskervilleFont #ADA_widget .modal_body .color_picker_form .form-group {
+    width: 190px;
+    height: 140px;
+  }
+}
+
+@media screen and (min-width:1500px) {
+
+  .DyslexicFont #ADA_widget .modal_body .color_picker_form .form-group,
+  .BaskervilleFont #ADA_widget .modal_body .color_picker_form .form-group {
+
+    width: 200px;
+    height: 165px;
+
+
+  }
+}
+
 
 
 html.translated-ltr .fontSizeMedium #accessibility .form-check ul li {
@@ -3300,16 +3326,24 @@ background-color: lightgray;
   }
 
   #ADA_widget .modal_body ul li {
-
     width: 108px !important;
     height: 90px !important;
-    background-color: #EBE5E3 !important;
-    border-radius: 0.25rem;
-    border: 2px solid transparent;
-    margin-bottom: 5px;
   }
+
   #ADA_widget .modal_body .bg_form ul li {
     width: 145px !important;
+    height: 90px !important;
+  }
+
+
+  #ADA_widget .modal_body #FontSize_option ul li,
+  #ADA_widget .modal_body #Cursor_option ul li {
+    width: 138px !important;
+    height: 90px !important;
+  }
+
+  #ADA_widget .modal_body #FontFamily_option ul li {
+    width: 105px !important;
     height: 90px !important;
   }
 
@@ -3333,17 +3367,26 @@ background-color: lightgray;
 
     width: 118px !important;
     height: 90px !important;
-    background-color: #EBE5E3 !important;
-    border-radius: 0.25rem;
-    border: 2px solid transparent;
-    margin-bottom: 5px;
-    flex-wrap: nowrap;
+
+  }
+
+  #ADA_widget .modal_body #FontSize_option ul li,
+  #ADA_widget .modal_body #Cursor_option ul li {
+    width: 148px !important;
+    height: 100px !important;
+  }
+
+  #ADA_widget .modal_body #FontFamily_option ul li {
+    width: 115px !important;
+    height: 100px !important;
   }
 
   #ADA_widget .modal_body .bg_form ul li {
     width: 155px !important;
     height: 100px !important;
   }
+
+
 
   #ADA_widget .modal_body ul li a div.title {
     font-size: 15px;
@@ -3377,5 +3420,16 @@ background-color: lightgray;
 
   .modal_header button {
     font-size: 25px;
+  }
+
+  #ADA_widget .modal_body #FontSize_option ul li,
+  #ADA_widget .modal_body #Cursor_option ul li {
+    width: 158px !important;
+    height: 100px !important;
+  }
+
+  #ADA_widget .modal_body #FontFamily_option ul li {
+    width: 115px !important;
+    height: 100px !important;
   }
 }

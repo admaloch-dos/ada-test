@@ -1,31 +1,3 @@
-// function getOffset(el) {
-//   const rect = el.getBoundingClientRect();
-//   return {
-//     left: rect.left + window.scrollX,
-//     top: rect.top + window.scrollY
-//   };
-// }
-
-// $(window).scroll(function () {
-//   const main = document.querySelector('.main')
-// const coords = getOffset(main)
-
-//   console.log(coords)
-//   if ($(window).scrollTop() >= 740) {
-//     $(window).scrollTop(740);
-//   }
-// });
-
-// var body = document.body,
-//   html = document.documentElement;
-
-// var height = Math.max(body.scrollHeight, body.offsetHeight,
-//   html.clientHeight, html.scrollHeight, html.offsetHeight);
-
-// console.log(height)
-
-
-
 $(document).keydown(function (e) {
   if (e.shiftKey && e.which == 72) { // Shift + h
     window.location.replace("https://www.floridamemory.com/");
@@ -35,11 +7,7 @@ $(document).keydown(function (e) {
   }
 });
 
-
-
-
 $(document).ready(function () {
-
   //Letter Spacing
   var selectedVal = $.cookie("LetterSpaceVal");
   if (selectedVal) {
@@ -56,8 +24,6 @@ $(document).ready(function () {
     $.cookie("LetterSpaceVal", selection1, { path: '/' })
   });
 
-
-
   //Word Spacing
   var selectedVal2 = $.cookie("WordSpaceVal");
   if (selectedVal2) {
@@ -72,8 +38,6 @@ $(document).ready(function () {
     $(".Footer").css("#word_spacing", selection2);
     $.cookie("WordSpaceVal", selection2, { path: '/' })
   });
-
-
 
   //Line Height
   var selectedVal3 = $.cookie("LinpageHeightVal");
@@ -91,13 +55,6 @@ $(document).ready(function () {
     $.cookie("LinpageHeightVal", selection3, { path: '/' })
   });
 });
-
-
-
-
-
-
-
 
 /////COOKIE SETTING FOR FONT TYPE
 $(document).ready(function () {
@@ -121,14 +78,12 @@ $(document).ready(function () {
     $('body').removeClass('BaskervilleFont');
     $("#ADA_widget #FT_Default").removeClass("active");
     $("#ADA_widget #FT_Baskerville").removeClass("active");
-
     $.cookie('BaskervilleFontCookie') == "no";
     $.cookie('BaskervilleFontCookie') == "undefined";
     $.cookie("BaskervilleFontCookie", null, {
       path: '/'
     });
   }
-
 
   // When input is clicked save cookie for 30days
   $("#ADA_widget a.FontTypeDyslexic").click(function () {
@@ -170,7 +125,6 @@ $(document).ready(function () {
     $("#ADA_widget #FT_Default").removeClass("active");
     $("#ADA_widget #FT_Dyslexic").removeClass("active");
     $('body').removeClass('DyslexicFont');
-
     $.cookie('DyslexicFontCookie') == "no";
     $.cookie('DyslexicFontCookie') == "undefined";
     $.cookie("DyslexicFontCookie", null, { path: '/' });
@@ -206,11 +160,10 @@ $(document).ready(function () {
   });
 });
 
-
-
 $(document).ready(function () {
   $("#ADA_widget #Cur_Default").addClass("active");
 });
+
 //FOR Cursor_Enlarge -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
 //https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
 $(function () {
@@ -218,8 +171,6 @@ $(function () {
     $(this).addClass('active').siblings().removeClass('active');
   });
 });
-
-
 
 // Cookie for CursorEnlarge
 $(document).ready(function () {
@@ -231,13 +182,11 @@ $(document).ready(function () {
     $("#ADA_widget #Cur_Default").removeClass("active");
   }
 
-
   // When input is clicked save cookie for 30days
   $("#ADA_widget a.Cursor_Enlarge_option").click(function () {
     if ($.cookie('CursorEnlargeCookie') == "undefined" || $.cookie('CursorEnlargeCookie') == "no") {
       $.cookie('CursorEnlargeCookie', 'yes', { path: '/' });
       $("body").addClass("Cursor_Enlarge");
-
     } else {
       $.cookie('CursorEnlargeCookie', 'yes', { path: '/' });
       $("body").addClass("Cursor_Enlarge");
@@ -259,39 +208,12 @@ $(".rs-handle").on("change", function () {
   console.log('this changed')
 });
 
-
-// $(document).ready(function () {
-
-//   //Letter Spacing
-//   var speechVol = $.cookie("speechVolCookie");
-//   var speechRate = $.cookie("speechRateCookie");
-//   var speechPitch = $.cookie("speechPitchCookie");
-//   if (selectedVal) {
-//     $("#letter_spacing").val(selectedVal);
-//     $("#letter_spacing").prop("selected", true);
-//     $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selectedVal); //Selects everything inside #view except ada modal and header
-//     $(".Footer").css("letter-spacing", selectedVal);
-//   }
-//   $("#letter_spacing").on("change", function () {
-//     var selection1 = $(this).val();
-//     $(selection1).prop("selected", true);
-//     $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
-//     $(".Footer").css("letter-spacing", selection1);
-//     $.cookie("LetterSpaceVal", selection1, { path: '/' })
-//   });
-
-// })
-
-
-
 $(document).bind('mousemove', function (e) {
   $('#tail').css({
     left: 0,
     top: e.pageY - 20
   });
 });
-
-
 
 // JavaScript Document
 $(document).ready(function () {
@@ -306,16 +228,10 @@ $(function () {
   });
 });
 
-
-
-
-
 // Toggle Seizure
 $(function () {
   $('[id="ToggleSeizure"]').change(function () {
-
     if ($(this).is(':checked')) {
-
       $(this).next(".switch-label").attr("data-state", "Toggled On");
       $("html").addClass("SeizureSafe");
     } else {
@@ -324,26 +240,20 @@ $(function () {
   });
 });
 
-
 // Toggle Reading Mask
 $(function () {
   $('[id="ToggleReadingMask"]').change(function () {
-
     if ($(this).is(':checked')) {
-
       $("body").addClass("ReadingMask_ON");
       $("#top_mask").fadeIn()
       $("#bottom_mask").fadeIn()
-
     } else {
-
       $("body").removeClass("ReadingMask_ON");
       $("#top_mask").fadeOut()
       $("#bottom_mask").fadeOut()
     }
   });
 });
-
 
 // Toggle Reading Guide
 $(function () {
@@ -352,13 +262,11 @@ $(function () {
       $("#tail").hide()
       $("body").addClass("CursorGuide");
       $("#tail").fadeIn(500)
-
     } else {
       $("#tail").fadeOut(500)
       setTimeout(() => {
         $("body").removeClass("CursorGuide");
       }, 500);
-
     }
   });
 });
@@ -374,7 +282,6 @@ $(function () {
   });
 });
 
-
 // Toggle Highlight Links
 $(function () {
   $('[id="ToggleHighlightLinks"]').change(function () {
@@ -385,7 +292,6 @@ $(function () {
     }
   });
 });
-
 
 // Toggle Image Description
 $(function () {
@@ -399,7 +305,6 @@ $(function () {
           $("#ImageDescription_magnify").text(ImageDescription);
           $('#ImageDescription_magnify').attr('style', 'display: block!important');
           $('#ImageDescription_magnify').attr('style', 'opacity: 1!important');
-
           //If #text_magnify is empty, hide
           if ($('#ImageDescription_magnify').is(':empty')) {
             $('#ImageDescription_magnify').attr('style', 'display: none!important');
@@ -412,7 +317,6 @@ $(function () {
           $('#ImageDescription_magnify').attr('style', 'opacity: 0!important');
         }
       );
-
     } else {
       $("body").removeClass("ImageDescription");
       $('img[alt], .feature .img[alt], i.fa[alt]').hover(
@@ -425,59 +329,25 @@ $(function () {
   }); //end of change
 }); // end of function
 
-
-
-
-
-
-
-
 // Toggle Text-to-Speech click
 $(function () {
   $('[id="ToggleTTS_click"]').change(function () {
     if ($(this).is(':checked')) {
-
       $(".audio_state").hide()
       $("body").addClass("TTS_click_enabled");
       $(".audio_state").fadeIn(600)
-
-
     } else {
       $(".audio_state").fadeOut(500)
       setTimeout(() => {
         $("body").removeClass("TTS_click_enabled");
         $.cookie('TTS_click_enabled', 'false');
       }, 500);
-
-
     }
   });
 });
 
-
-// $(document).keydown(function (e) {
-//   if (e.shiftKey && e.which == 110) { // Shift + .(on num board)
-//     $('[id="ToggleTTS_click"]').prop('checked', true);
-//     $("body").addClass("TTS_click_enabled");
-//     $.cookie('TTS_click_enabled', 'true');
-//   }
-//   if (e.shiftKey && e.which == 190) { // Shift + .
-//     $('[id="ToggleTTS_click"]').prop('checked', true);
-//     $("body").addClass("TTS_click_enabled");
-//     $.cookie('TTS_click_enabled', 'true');
-//   }
-//   if (e.shiftKey && e.which == 88) { // Shift + x
-//     $('[id="ToggleTTS_click"]').prop('checked', false);
-//     $("body").removeClass("TTS_click_enabled");
-//     $.cookie('TTS_click_enabled', 'false');
-//   }
-// });
-
-
-
 $(document).ready(function () {
   ////////////////// Page Structure ///////////////////
-
   // !-- -- -- -- -- --Footer-- -- -- -- -- - >
   var output2 = "";
   $('.navbar.Footer nav.affiliates li a, .navbar.Footer nav.additional_Links a').each(function () {
@@ -487,15 +357,12 @@ $(document).ready(function () {
     $("#select_page #footer_group").html(output2);
   });
 
-
-
   //////////// Change Letter Spacing ///////////////////
   $("#letter_spacing").on('change', function () {
     var getLetterSpace = $(this).val();
     $("#view *").not('#ADA_widget, #ADA_widget *').css("letter-spacing", getLetterSpace); //Selects everything inside #view except ada modal and header
     $(".Footer").css("letter-spacing", getLetterSpace);
   });
-
 
   //////////// Change Word Spacing ///////////////////
   $("#word_spacing").on('change', function () {
@@ -504,20 +371,13 @@ $(document).ready(function () {
     $(".Footer").css("word-spacing", getWordSpace);
   });
 
-
-
-
-
-
   /////////////////////////////////////////////////////////  TEXT TO SPEECH - with on click //////////////////////////////////////////////////////////////
   //Hides TTS on Android Devices
   function getMobileOperatingSystem() {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
     if (userAgent.match(/Android/i)) {
       //return 'Android';
       $('#TTS_option').hide();
-
     }
   }
 
@@ -560,9 +420,7 @@ $(document).ready(function () {
     change: function (e) {
       resetSpeech()
       $.cookie("speechVol", e.value, { path: '/' })
-
     }
-
   });
 
 
@@ -582,7 +440,6 @@ $(document).ready(function () {
       resetSpeech()
       $.cookie("speechRate", e.value, { path: '/' })
     }
-
   });
 
   $("#pitch").roundSlider({
@@ -601,7 +458,6 @@ $(document).ready(function () {
       resetSpeech()
       $.cookie("speechPitch", e.value, { path: '/' })
     }
-
   });
 
 
@@ -619,15 +475,11 @@ $(document).ready(function () {
 
   const resetVoiceDefault = () => {
     if ($("#voice option[value='Microsoft David - English (United States)']").length > 0) {
-
       return $("#voice").val('Microsoft David - English (United States)');
     } else {
-
       return $("#voice").val($("#voice option:first").val());
     }
   }
-
-
 
   const resetVoiceBtn = document.querySelector('#reset-voice-btn')
   resetVoiceBtn.addEventListener('click', () => {
@@ -635,15 +487,11 @@ $(document).ready(function () {
     resetVoiceSettings()
     resetSpeech()
     resetVoiceDefault()
-
   })
-
 
   $("#volume input").addClass("volume_selector");
   $("#rate input").addClass("rate_selector");
   $("#pitch input").addClass("pitch_selector");
-
-
   $("<span class='headings'>Volume</span>").appendTo("#volume");
   $("<span class='headings'>Rate</span>").appendTo("#rate");
   $("<span class='headings'>Pitch</span>").appendTo("#pitch");
@@ -661,23 +509,15 @@ $(document).ready(function () {
   function loadVoices() {
     // Fetch the available voices.
     var voiceList = speechSynthesis.getVoices();
-
     // Loop through each of the voices.
     voiceList.forEach(function (voice, i) {
-
-      //Returns Microsoft Mark, Microsoft Zira & Google US English
-      // if (i !== 1 && i !== 2 && i !== 4) return;
-
       // Create a new option element.
       var option = document.createElement('option');
-
       // Set the options value and text.
       option.value = voice.name;
       option.innerHTML = voice.name;
-
       // Add the option to the voice selector.
       voiceSelect.appendChild(option);
-
     });
   }
 
@@ -695,14 +535,10 @@ $(document).ready(function () {
 
   $("#voice").on("change", function (e) {
     resetSpeech()
-
     let currVoice = $('#voice').find(":selected").text();
-
     var voiceCookie = $.cookie("speechVoiceCookie");
     $.cookie("voiceCookie", currVoice, { path: '/' })
   });
-
-
 
   setTimeout(() => {
     if ($.cookie("voiceCookie")) {
@@ -713,20 +549,10 @@ $(document).ready(function () {
     }
   }, 500);
 
-
-
-
-
   $('<div class="audio_state">\
   <button class="play audio-inactive btn " title="Play"><i class="fa fa-play" aria-hidden="true"></i></button>\
   <button class="stop btn " title="Cancel"><i class="fa fa-refresh" aria-hidden="true"></i> Reset</button>\
   </div>').insertAfter("p");
-  /*
-  <button role="button" type="button" class="play btn btn-danger" title="Play"><i class="fa fa-volume-up" aria-hidden="true"></i></button>\
-  <button role="button" type="button" class="pause btn btn-danger" title="Pause"><i class="fa fa-pause" aria-hidden="true"></i></button>\
-  <button role="button" type="button" class="resume btn btn-danger" title="Resume"><i class="fa fa-refresh" aria-hidden="true"></i></button>\
-  <button role="button" type="button" class="stop btn btn-danger" title="Cancel"><i class="fa fa-stop" aria-hidden="true"></i></button>\
-  */
 
   //https://stackoverflow.com/a/30361156/10792033
   //Wrapping groups of adjacent siblings
@@ -781,17 +607,13 @@ $(document).ready(function () {
     });
   });
 
-
-
   //Global Cancels Speech on reset button
   $(".stop").on("click", function () {
     resetSpeech()
   });
 
-
-
   $("#ADA_trigger").click(function () {
-    $("#ADA_trigger").fadeOut();
+
     resetSpeech()
   });
 
@@ -799,7 +621,6 @@ $(document).ready(function () {
   window.onbeforeunload = function (e) {
     resetSpeech()
   };
-
 
   function initSpeechSynthesis() {
     if (!('speechSynthesis' in window)) {
@@ -809,17 +630,7 @@ $(document).ready(function () {
     ssu = new SpeechSynthesisUtterance();
     ssu.lang = 'en-US';
   };
-
-  // reset all when vol/pitch/rate are changed
-
 }); //end of doc ready
-
-
-
-
-
-
-
 
 $(document).ready(function () {
   $("#keydownTip").click(function () {
@@ -847,9 +658,7 @@ CloseADA_widget.onclick = function () {
   // ADA_widget.style.display = "none";
   displayModal()
 
-  setTimeout(() => {
-    $("#ADA_trigger").fadeIn('slow');
-  }, 800);
+
 
 
   // $("body").css("overflow", "auto");
@@ -861,9 +670,7 @@ window.onclick = function (event) {
     // ADA_widget.style.display = "none";
     displayModal()
 
-    setTimeout(() => {
-      $("#ADA_trigger").fadeIn('slow');
-    }, 800);
+
     // $("body").css("overflow", "auto");
     // $(".modal-backdrop").css("display", "none");
     // $("#keyboard_shortcuts").css("display", "none");
@@ -945,53 +752,7 @@ const keyTogglerFunc = (itemId, itemClass) => {
   }
 }
 
-const removeAllCookies = () => {
-  $.removeCookie('BackgroundColorCookie');
-  $.removeCookie('TextColorCookie');
-  $.removeCookie('LinkColorCookie');
-  $.removeCookie('TextMagnifier');
-  $.removeCookie('HighlightLinks');
-  $.removeCookie('ImageDescription');
-  $.removeCookie('HighlightHover');
-  $.removeCookie('FontSizeCookie');
-  $.removeCookie('FM_FontSizeCookie');
-  $.removeCookie('BaskervilleFontCookie');
-  $.removeCookie('DyslexicFontCookie');
-  $.removeCookie('FM_FontTypeCookie');
-  $.removeCookie('CursorEnlargeCookie');
-  $.removeCookie('DarkContrastBackgroundCookie');
-  $.removeCookie('LowSaturationBackgroundCookie');
-  $.removeCookie('InvertBackgroundCookie');
-  $.removeCookie('HighSaturationBackgroundCookie');
-  $.removeCookie('FM_DesaturatedBackgroundCookie');
-  $.removeCookie('DesaturatedBackgroundCookie');
-  $.removeCookie('FM_InvertBackgroundCookie');
-  $.removeCookie('FM_DarkContrastCookie');
-  $.removeCookie('SeizureSafe');
-  $.removeCookie('ReadingMask');
-  $.removeCookie('CursorGuide');
-  $.removeCookie('TTS_click_enabled');
-  $.removeCookie('LinpageHeightVal');
-  $.removeCookie('WordSpaceVal');
-  $.removeCookie('LetterSpaceVal');
-  $.removeCookie('speechPitch');
-  $.removeCookie('speechRate');
-  $.removeCookie('speechVol');
-  $.removeCookie('voiceCookie');
-}
 
-
-
-
-// function resetAdaModal() {
-//   removeAllCookies()
-//   storeMainScrollPosition()
-//   sessionStorage.setItem("reloadModalOpen", "true");
-//   $("body").fadeOut()
-//   setTimeout(() => {
-//       document.location.reload();
-//   }, 200);
-// }
 
 // toggle reading mask on ctrl + m
 document.addEventListener('keydown', (event) => {
@@ -1007,11 +768,12 @@ document.addEventListener('keydown', (event) => {
     name === '&' && keyTogglerFunc('#ToggleReadingGuide')
     name === '*' && keyTogglerFunc('#ToggleTTS_click')
     if (name === 'Q') {
-
-
       resetAdaModal()
     }
-    name === 'A' && displayModal()
+    if(name === 'A') {
+      displayModal()
+
+    }
 
 
   } else {
@@ -1019,28 +781,6 @@ document.addEventListener('keydown', (event) => {
   }
 }, false);
 
-
-
-
-// $(document).ready(function(){
-//   var top = window.innerHeight.offset().top;
-//   $(document).scrollTop(top);
-//   var pageHeight = window.innerHeight;
-//   var bottom = top + pageHeight - $(window).height();
-//   $(document).on("scroll", function(e){
-//       var windowScrollTop = $(window).scrollTop();
-//       if(windowScrollTop < top){
-//           console.log("not allowed");
-//           $(document).scrollTop(top);
-//       }
-//       else if(windowScrollTop > bottom){
-//           $(document).scrollTop(bottom);
-//       }
-//       else{
-//           console.log("allowed");
-//       }
-//   });
-// });
 
 setTimeout(() => {
   if (document.body.classList.contains('ReadingMask_ON')) {
