@@ -39,9 +39,23 @@ const storeMainScrollPosition = () => {
     sessionStorage.setItem("mainScrollPosition", mainScrollPosition);
 }
 
+const storeModalScrollPosition = () => {
+    var modalScrollPosition = $(".modal_body").scrollTop();
+    sessionStorage.setItem("modalScrollPosition", modalScrollPosition);
+}
+
+const modalDisplayOpenOrClose = () => {
+    const adaWidget = document.querySelector('#ADA_widget')
+    if (adaWidget.style.display === 'flex') {
+        sessionStorage.setItem("reloadModalOpen", "true");
+    } else {
+        sessionStorage.setItem("reloadModalClosed", "true");
+    }
+}
+
 const forceReload = () => {
+
     $("body").fadeOut()
-    storeMainScrollPosition()
     setTimeout(() => {
         document.location.reload();
     }, 200);
@@ -57,22 +71,22 @@ const resetBackgroundClicker = () => {
         $.removeCookie('TextColorCookie');
         $.removeCookie('LinkColorCookie');
         //alert("Cookie Removed!");
-        var modalScrollPosition = $(".modal_body").scrollTop();
-        sessionStorage.setItem("modalScrollPosition", modalScrollPosition);
+        storeModalScrollPosition()
+        storeMainScrollPosition()
         sessionStorage.setItem("reloadModalOpen", "true");
         forceReload()
     }
 }
 
+// complete reset- all cookies removed and refresh - runs on reset button and shift-q
 function resetAdaModal() {
     console.log('reset done and stored scroll')
     removeAllCookies()
     const adaWidget = document.querySelector('#ADA_widget')
     if (adaWidget.style.display === 'flex') {
         sessionStorage.setItem("reloadModalOpen", "true");
-    } else {
-        sessionStorage.setItem("reloadModalClosed", "true");
     }
+    storeMainScrollPosition()
     forceReload()
 }
 
@@ -82,10 +96,7 @@ function resetAdaModal() {
 const displayModal = () => {
     const overlay = document.querySelector('#ADA_widget')
     if (overlay.style.display !== "flex") {
-
-
         $("#ADA_trigger").fadeOut(700);
-
         $("#ADA_widget").css('opacity', '0');
         $("#ADA_widget").css("display", "flex")
         $("#ADA_widget").fadeTo(0, 1);
@@ -108,32 +119,10 @@ const displayModal = () => {
     }
 }
 
-const reloadStorageFunc = () => {
-    if (sessionStorage.reloadModalOpen) {
-        sessionStorage.removeItem("reloadModalOpen");
-        displayModal()
-        if (sessionStorage.modalScrollPosition) {
-            $(".modal_body").scrollTop(sessionStorage.getItem("modalScrollPosition"));
-        }
-    } else {
-        sessionStorage.removeItem("reloadModalClosed");
-    }
-    sessionStorage.removeItem("modalScrollPosition");
-}
 
-window.onload = function () {
-    if (sessionStorage.getItem("mainScrollPosition") !== "0") {
-        const scrollPosition = sessionStorage.getItem("mainScrollPosition")
-        $("html, body").scrollTop(scrollPosition);
-        sessionStorage.removeItem("mainScrollPosition")
-        setTimeout(() => reloadStorageFunc(), 500);
 
-        console.log('it is not 0')
-    } else {
-        reloadStorageFunc()
-        console.log('it is 0')
-    }
-}
+
+
 
 
 

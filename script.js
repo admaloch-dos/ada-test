@@ -336,6 +336,12 @@ $(function () {
       $(".audio_state").hide()
       $("body").addClass("TTS_click_enabled");
       $(".audio_state").fadeIn(600)
+      if ($('#ToggleReadingMask').is(':checked')) {
+        storeModalScrollPosition()
+        modalDisplayOpenOrClose()
+        forceReload()
+      }
+
     } else {
       $(".audio_state").fadeOut(500)
       setTimeout(() => {
@@ -345,6 +351,9 @@ $(function () {
     }
   });
 });
+
+
+
 
 $(document).ready(function () {
   ////////////////// Page Structure ///////////////////
@@ -710,12 +719,15 @@ window.addEventListener("resize", (event) => {
 $(function () {
   $('#ToggleReadingMask').change(function () {
     if ($('#ToggleReadingMask').is(':checked')) {
-      console.log('reading mask checked')
       window.scrollTo(0, 0);
       preventPageScroll()
-
+      if ($('#ToggleTTS_click').is(':checked')) {
+        storeModalScrollPosition()
+        modalDisplayOpenOrClose()
+        forceReload()
+      }
     } else {
-      console.log('reading mask not checked')
+      return;
     }
   });
 });
@@ -767,14 +779,8 @@ document.addEventListener('keydown', (event) => {
     name === "^" && keyTogglerFunc('#ToggleReadingMask')
     name === '&' && keyTogglerFunc('#ToggleReadingGuide')
     name === '*' && keyTogglerFunc('#ToggleTTS_click')
-    if (name === 'Q') {
-      resetAdaModal()
-    }
-    if(name === 'A') {
-      displayModal()
-
-    }
-
+    name === 'Q' && resetAdaModal()
+    name === 'A' && displayModal()
 
   } else {
     return;
