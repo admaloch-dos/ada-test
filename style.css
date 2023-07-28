@@ -1,5 +1,5 @@
 body {
-  overflow-x: hidden!important;
+  overflow-x: hidden !important;
 
 }
 
@@ -85,6 +85,104 @@ body {
   padding-bottom: 20px;
 }
 
+/* .rs-bar {
+  display: none !important;
+} */
+
+
+/* all button selector */
+.button-icon {
+  border: #000 solid 1px;
+  color: #000;
+  border-radius: 100%;
+  cursor: pointer;
+transition: all .2s ease-in-out;
+  z-index: 50;
+  opacity: .5;
+
+}
+
+.button-icon:hover {
+  border: #000 solid 1px;
+  background-color: #5D2D1F;
+  color: white;
+  opacity: 1;
+}
+
+/* speech button selector values */
+.speech-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#volume-minus-icon {
+  position: relative;
+  left: 29px;
+  bottom: 2px;
+
+}
+
+#volume-plus-icon {
+  position: relative;
+  right: 50px;
+  bottom: 2px;
+
+}
+
+#rate-minus-icon,
+#pitch-minus-icon {
+  position: relative;
+  left: 40px;
+  bottom: 2px;
+
+}
+
+#rate-plus-icon,
+#pitch-plus-icon {
+  position: relative;
+  right: 60px;
+  bottom: 2px;
+
+}
+
+/* position for next to number */
+/* #speech-minus-icon {
+  position: relative;
+  left: 50px;
+  bottom: 29px;
+
+}
+
+#speech-plus-icon {
+  position: relative;
+  right: 71px;
+  bottom: 28px;
+
+} */
+
+/* letter spacing btn value selectors */
+.spacing-container {
+  width: 100%;
+
+}
+.spacing-icon {
+  width: 35px;
+  height: 35px;
+}
+
+
+.spacing-value {
+  font-size: 25px;
+  border: black solid 1px;
+  margin: 0 10px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
+
+}
 .ada_modal_test .modal_body {
 
   padding: 1rem 0rem;
@@ -1317,6 +1415,7 @@ html.translated-ltr #wordspace_icon {
 }
 
 
+
 /****************** TTS ******************/
 
 
@@ -2057,9 +2156,7 @@ a {
   font-family: "LibreBaskervilleRegular";
   src: url("./files/fonts/LibreBaskerville-Regular.eot");
   src: url("./files/fonts/LibreBaskerville-Regular.eot?#iefix") format('embedded-opentype'),
-    url("./files/fonts/LibreBaskerville-Regular.woff2") format('woff2'),
-    url("./files/fonts/LibreBaskerville-Regular.woff") format('woff'),
-    url("./files/fonts/LibreBaskerville-Regular.otf") format('opentype'),
+
     url("./files/fonts/LibreBaskerville-Regular.ttf") format('truetype');
   font-weight: 500;
   font-style: normal;
@@ -2083,6 +2180,7 @@ body.BaskervilleFont {
 .BaskervilleFont section,
 .BaskervilleFont div {
   font-family: 'LibreBaskervilleRegular', sans-serif;
+  font-weight: bold;
 }
 
 .BaskervilleFont .Item_Pager .pagination .page-item .page-link {
@@ -3223,16 +3321,30 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
 }
 
 
+
+
+
+
+
 /************************************************************ Highlight Links ************************************************************/
 .HighlightLinks a {
-  border: black solid 3px;
+  border: #3863FF solid 3px !important;
+  padding: 4px !important;
   text-decoration: underline !important;
+  color: #3863ff !important;
+  background-color: white !important;
+}
 
+.HighlightLinks .modal_content .title {
+  color: #3863ff !important;
+}
+
+.HighlightLinks #ADA_widget .modal_body .form-check ul li.active a {
+  background-color: lightgray !important;
 }
 
 /************************************************************ Highlight Links on Hover ************************************************************/
 .HighlightHover a {
-  transition: all .3s ease-in-out;
   padding: 5px 8px;
 
 }
@@ -3242,6 +3354,18 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
   color: white !important;
   background-color: #000 !important;
 
+}
+
+.HighlightHover .modal_content li:hover .title {
+  color: white !important;
+}
+
+.HighlightHover .modal_content li .title {
+  transition: .3s;
+}
+
+.HighlightHover .modal_content li.active:hover .title {
+  color: #3863ff !important;
 }
 
 

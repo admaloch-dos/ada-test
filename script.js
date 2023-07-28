@@ -7,158 +7,56 @@ $(document).keydown(function (e) {
   }
 });
 
-$(document).ready(function () {
-  //Letter Spacing
-  var selectedVal = $.cookie("LetterSpaceVal");
-  if (selectedVal) {
-    $("#letter_spacing").val(selectedVal);
-    $("#letter_spacing").prop("selected", true);
-    $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selectedVal); //Selects everything inside #view except ada modal and header
-    $(".Footer").css("letter-spacing", selectedVal);
-  }
-  $("#letter_spacing").on("change", function () {
-    var selection1 = $(this).val();
-    $(selection1).prop("selected", true);
-    $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
-    $(".Footer").css("letter-spacing", selection1);
-    $.cookie("LetterSpaceVal", selection1, { path: '/' })
-  });
+// $(document).ready(function () {
+//   //Letter Spacing
+//   var selectedVal = $.cookie("LetterSpaceVal");
+//   if (selectedVal) {
+//     $("#letter_spacing").val(selectedVal);
+//     $("#letter_spacing").prop("selected", true);
+//     $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selectedVal); //Selects everything inside #view except ada modal and header
+//     $(".Footer").css("letter-spacing", selectedVal);
+//   }
+//   $("#letter_spacing").on("change", function () {
+//     var selection1 = $(this).val();
+//     $(selection1).prop("selected", true);
+//     $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
+//     $(".Footer").css("letter-spacing", selection1);
+//     $.cookie("LetterSpaceVal", selection1, { path: '/' })
+//   });
 
-  //Word Spacing
-  var selectedVal2 = $.cookie("WordSpaceVal");
-  if (selectedVal2) {
-    $("#word_spacing").val(selectedVal2);
-    $("#word_spacing").prop("selected", true);
-    $("#view p").not('#ADA_widget, #ADA_widget *').css("word-spacing", selectedVal2); //Selects everything inside #view except ada modal and header
-  }
-  $("#word_spacing").on("change", function () {
-    var selection2 = $(this).val();
-    $(selection2).prop("selected", true);
-    $("#view p").not('#ADA_widget, #ADA_widget *').css("#word_spacing", selection2); //Selects everything inside #view except ada modal and header
-    $(".Footer").css("#word_spacing", selection2);
-    $.cookie("WordSpaceVal", selection2, { path: '/' })
-  });
+//   //Word Spacing
+//   var selectedVal2 = $.cookie("WordSpaceVal");
+//   if (selectedVal2) {
+//     $("#word_spacing").val(selectedVal2);
+//     $("#word_spacing").prop("selected", true);
+//     $("#view p").not('#ADA_widget, #ADA_widget *').css("word-spacing", selectedVal2); //Selects everything inside #view except ada modal and header
+//   }
+//   $("#word_spacing").on("change", function () {
+//     var selection2 = $(this).val();
+//     $(selection2).prop("selected", true);
+//     $("#view p").not('#ADA_widget, #ADA_widget *').css("#word_spacing", selection2); //Selects everything inside #view except ada modal and header
+//     $(".Footer").css("#word_spacing", selection2);
+//     $.cookie("WordSpaceVal", selection2, { path: '/' })
+//   });
 
-  //Line Height
-  var selectedVal3 = $.cookie("LinpageHeightVal");
-  if (selectedVal3) {
-    $("#line_height").val(selectedVal3);
-    $("#line_height").prop("selected", true);
-    $("#view p").not('#ADA_widget, #ADA_widget *').css("line-height", selectedVal3); //Selects everything inside #view except ada modal and header
-    $(".Footer").css("line-height", selectedVal3);
-  }
-  $("#line_height").on("change", function () {
-    var selection3 = $(this).val();
-    $(selection3).prop("selected", true);
-    $("#view p").not('#ADA_widget, #ADA_widget *').css("line-height", selection3); //Selects everything inside #view except ada modal and header
-    $(".Footer").css("line-height", selection3);
-    $.cookie("LinpageHeightVal", selection3, { path: '/' })
-  });
-});
+//   //Line Height
+//   var selectedVal3 = $.cookie("LinpageHeightVal");
+//   if (selectedVal3) {
+//     $("#line_height").val(selectedVal3);
+//     $("#line_height").prop("selected", true);
+//     $("#view p").not('#ADA_widget, #ADA_widget *').css("line-height", selectedVal3); //Selects everything inside #view except ada modal and header
+//     $(".Footer").css("line-height", selectedVal3);
+//   }
+//   $("#line_height").on("change", function () {
+//     var selection3 = $(this).val();
+//     $(selection3).prop("selected", true);
+//     $("#view p").not('#ADA_widget, #ADA_widget *').css("line-height", selection3); //Selects everything inside #view except ada modal and header
+//     $(".Footer").css("line-height", selection3);
+//     $.cookie("LinpageHeightVal", selection3, { path: '/' })
+//   });
+// });
 
-/////COOKIE SETTING FOR FONT TYPE
-$(document).ready(function () {
-  $("#ADA_widget #FT_Default").addClass("active");
-});
-//FOR FONT TYPE CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
-//https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
-$(function () {
-  $('#ADA_widget .font_type_form .form-check ul li').click(function () {
-    $(this).addClass('active').siblings().removeClass('active');
-  });
-});
 
-$(document).ready(function () {
-  // Cookie for DyslexicFontCookie
-  // Check (onLoad) if DyslexicFontCookie is there and set the class to body if it is
-  // Add active class to li
-  if ($.cookie('DyslexicFontCookie') == "yes") {
-    $("#ADA_widget #FT_Dyslexic").addClass("active");
-    $("body").addClass("DyslexicFont");
-    $('body').removeClass('BaskervilleFont');
-    $("#ADA_widget #FT_Default").removeClass("active");
-    $("#ADA_widget #FT_Baskerville").removeClass("active");
-    $.cookie('BaskervilleFontCookie') == "no";
-    $.cookie('BaskervilleFontCookie') == "undefined";
-    $.cookie("BaskervilleFontCookie", null, {
-      path: '/'
-    });
-  }
-
-  // When input is clicked save cookie for 30days
-  $("#ADA_widget a.FontTypeDyslexic").click(function () {
-    $.cookie("BaskervilleFontCookie", null, {
-      path: '/'
-    });
-    if ($.cookie('DyslexicFontCookie') == "undefined" || $.cookie('DyslexicFontCookie') == "no") {
-      $.cookie('DyslexicFontCookie', 'yes', { path: '/' });
-      $("body").addClass("DyslexicFont");
-      $('body').removeClass('BaskervilleFont');
-
-    } else {
-      $.cookie('DyslexicFontCookie', 'yes', { path: '/' });
-      $("body").addClass("DyslexicFont");
-      $('body').removeClass('BaskervilleFont');
-    }
-  });
-
-  //When 'a.FontTypeDefault' is clicked, removes 'DyslexicFont' and erases FontTypeCookie
-  $("#ADA_widget a.FontTypeDefault").click(function () {
-    $('body').removeClass('DyslexicFont');
-    $('body').removeClass('BaskervilleFont');
-    if ($.cookie('DyslexicFontCookie') == "yes") {
-      $.cookie("DyslexicFontCookie", null, { path: '/' });
-    }
-    if ($.cookie('BaskervilleFontCookie') == "yes") {
-      $.cookie("BaskervilleFontCookie", null, { path: '/' });
-    }
-  });
-});
-
-$(document).ready(function () {
-  // Cookie for BaskervilleFontCookie
-  // Check (onLoad) if BaskervilleFontCookie is there and set the class to body if it is
-  // Add active class to li
-  if ($.cookie('BaskervilleFontCookie') == "yes") {
-    $("#ADA_widget #FT_Baskerville").addClass("active");
-    $("body").addClass("BaskervilleFont");
-    $("#ADA_widget #FT_Default").removeClass("active");
-    $("#ADA_widget #FT_Dyslexic").removeClass("active");
-    $('body').removeClass('DyslexicFont');
-    $.cookie('DyslexicFontCookie') == "no";
-    $.cookie('DyslexicFontCookie') == "undefined";
-    $.cookie("DyslexicFontCookie", null, { path: '/' });
-  }
-
-  // When input is clicked save cookie for 30days
-  $("#ADA_widget a.FontTypeBaskerville").click(function () {
-    $.cookie("DyslexicFontCookie", null, {
-      path: '/'
-    });
-    if ($.cookie('BaskervilleFontCookie') == "undefined" || $.cookie('BaskervilleFontCookie') == "no") {
-      $.cookie('BaskervilleFontCookie', 'yes', { path: '/' });
-      $("body").addClass("BaskervilleFont");
-      $('body').removeClass('DyslexicFont');
-
-    } else {
-      $.cookie('BaskervilleFontCookie', 'yes', { path: '/' });
-      $("body").addClass("BaskervilleFont");
-      $('body').removeClass('DyslexicFont');
-    }
-  });
-
-  //When 'a.FontTypeDefault' is clicked, removes 'DyslexicFont' and erases FontTypeCookie
-  $("#ADA_widget a.FontTypeDefault").click(function () {
-    $('body').removeClass('DyslexicFont');
-    $('body').removeClass('BaskervilleFont');
-    if ($.cookie('BaskervilleFontCookie') == "yes") {
-      $.cookie("BaskervilleFontCookie", null, { path: '/' });
-    }
-    if ($.cookie('DyslexicFontCookie') == "yes") {
-      $.cookie("DyslexicFontCookie", null, { path: '/' });
-    }
-  });
-});
 
 $(document).ready(function () {
   $("#ADA_widget #Cur_Default").addClass("active");
@@ -204,9 +102,7 @@ $(document).ready(function () {
   });
 });
 
-$(".rs-handle").on("change", function () {
-  console.log('this changed')
-});
+
 
 $(document).bind('mousemove', function (e) {
   $('#tail').css({
@@ -355,291 +251,8 @@ $(function () {
 
 
 
-$(document).ready(function () {
-  ////////////////// Page Structure ///////////////////
-  // !-- -- -- -- -- --Footer-- -- -- -- -- - >
-  var output2 = "";
-  $('.navbar.Footer nav.affiliates li a, .navbar.Footer nav.additional_Links a').each(function () {
-    var source2 = $(this).attr("href");
-    var text2 = $(this).text();
-    output2 += '<option value="' + source2 + '">' + text2 + '</option>';
-    $("#select_page #footer_group").html(output2);
-  });
-
-  //////////// Change Letter Spacing ///////////////////
-  $("#letter_spacing").on('change', function () {
-    var getLetterSpace = $(this).val();
-    $("#view *").not('#ADA_widget, #ADA_widget *').css("letter-spacing", getLetterSpace); //Selects everything inside #view except ada modal and header
-    $(".Footer").css("letter-spacing", getLetterSpace);
-  });
-
-  //////////// Change Word Spacing ///////////////////
-  $("#word_spacing").on('change', function () {
-    var getWordSpace = $(this).val();
-    $("#view *").not('#ADA_widget, #ADA_widget *').css("word-spacing", getWordSpace); //Selects everything inside #view except ada modal and header
-    $(".Footer").css("word-spacing", getWordSpace);
-  });
-
-  /////////////////////////////////////////////////////////  TEXT TO SPEECH - with on click //////////////////////////////////////////////////////////////
-  //Hides TTS on Android Devices
-  function getMobileOperatingSystem() {
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (userAgent.match(/Android/i)) {
-      //return 'Android';
-      $('#TTS_option').hide();
-    }
-  }
-
-  const resetSpeech = () => {
-    $('.curr-active-item').removeClass('curr-active-item')
-    $('.play').removeClass('audio-playing audio-paused')
-    $('.play').addClass('audio-inactive')
-    $('.play').find('.fa').removeClass('fa-pause')
-    $('.play').find('.fa').addClass('fa-play ')
-    synth.cancel();
-  }
-
-  var speechVol = $.cookie("speechVolCookie");
-  var speechRate = $.cookie("speechRateCookie");
-  var speechPitch = $.cookie("speechPitchCookie");
-
-  const getCookieVal = (cookie) => {
-    let value = 5
-    if ($.cookie(cookie)) {
-      value = $.cookie(cookie)
-    }
-    return value
-  }
-  let volValue = getCookieVal(speechVol)
-
-  getMobileOperatingSystem();
-  // roundSlider.js -- https://roundsliderui.com/
-  $("#volume").roundSlider({
-    sliderType: "min-range",
-    radius: 60,
-    showTooltip: true,
-    width: 10,
-    value: volValue.speechVol ? volValue.speechVol : 5,
-    step: 1,
-    handleSize: 0,
-    max: 10,
-    min: 0,
-    handleShape: "square",
-    circleShape: "half-top",
-    change: function (e) {
-      resetSpeech()
-      $.cookie("speechVol", e.value, { path: '/' })
-    }
-  });
 
 
-  $("#rate").roundSlider({
-    sliderType: "min-range",
-    radius: 60,
-    showTooltip: true,
-    width: 10,
-    value: volValue.speechRate ? volValue.speechRate : 5,
-    step: 1,
-    handleSize: 0,
-    max: 10,
-    min: 0,
-    handleShape: "square",
-    circleShape: "half-top",
-    change: function (e) {
-      resetSpeech()
-      $.cookie("speechRate", e.value, { path: '/' })
-    }
-  });
-
-  $("#pitch").roundSlider({
-    sliderType: "min-range",
-    radius: 60,
-    showTooltip: true,
-    width: 10,
-    value: volValue.speechPitch ? volValue.speechPitch : 5,
-    step: 1,
-    handleSize: 0,
-    max: 10,
-    min: 0,
-    handleShape: "square",
-    circleShape: "half-top",
-    change: function (e) {
-      resetSpeech()
-      $.cookie("speechPitch", e.value, { path: '/' })
-    }
-  });
-
-
-  const resetVoiceSettings = () => {
-    $("#volume").roundSlider({
-      value: 5
-    });
-    $("#rate").roundSlider({
-      value: 5
-    });
-    $("#pitch").roundSlider({
-      value: 5
-    });
-  }
-
-  const resetVoiceDefault = () => {
-    if ($("#voice option[value='Microsoft David - English (United States)']").length > 0) {
-      return $("#voice").val('Microsoft David - English (United States)');
-    } else {
-      return $("#voice").val($("#voice option:first").val());
-    }
-  }
-
-  const resetVoiceBtn = document.querySelector('#reset-voice-btn')
-  resetVoiceBtn.addEventListener('click', () => {
-    $.removeCookie('voiceCookie');
-    resetVoiceSettings()
-    resetSpeech()
-    resetVoiceDefault()
-  })
-
-  $("#volume input").addClass("volume_selector");
-  $("#rate input").addClass("rate_selector");
-  $("#pitch input").addClass("pitch_selector");
-  $("<span class='headings'>Volume</span>").appendTo("#volume");
-  $("<span class='headings'>Rate</span>").appendTo("#rate");
-  $("<span class='headings'>Pitch</span>").appendTo("#pitch");
-
-
-  let ssu;
-  let voices;
-  var synth = window.speechSynthesis;
-  var voiceSelect = document.getElementById('voice');
-  var volumeInput = document.querySelector('.volume_selector');
-  var rateInput = document.querySelector('.rate_selector');
-  var pitchInput = document.querySelector('.pitch_selector');
-
-  // Fetch the list of voices and populate the voice options.
-  function loadVoices() {
-    // Fetch the available voices.
-    var voiceList = speechSynthesis.getVoices();
-    // Loop through each of the voices.
-    voiceList.forEach(function (voice, i) {
-      // Create a new option element.
-      var option = document.createElement('option');
-      // Set the options value and text.
-      option.value = voice.name;
-      option.innerHTML = voice.name;
-      // Add the option to the voice selector.
-      voiceSelect.appendChild(option);
-    });
-  }
-
-  // Execute loadVoices.
-  loadVoices();
-
-  // Chrome loads voices asynchronously.
-  synth.onvoiceschanged = function (e) {
-    loadVoices();
-  };
-
-  $(document).ready(function () {
-    initSpeechSynthesis();
-  });
-
-  $("#voice").on("change", function (e) {
-    resetSpeech()
-    let currVoice = $('#voice').find(":selected").text();
-    var voiceCookie = $.cookie("speechVoiceCookie");
-    $.cookie("voiceCookie", currVoice, { path: '/' })
-  });
-
-  setTimeout(() => {
-    if ($.cookie("voiceCookie")) {
-      let cookieValue = $.cookie("voiceCookie")
-      $("#voice").val(cookieValue)
-    } else {
-      resetVoiceDefault()
-    }
-  }, 500);
-
-  $('<div class="audio_state">\
-  <button class="play audio-inactive btn " title="Play"><i class="fa fa-play" aria-hidden="true"></i></button>\
-  <button class="stop btn " title="Cancel"><i class="fa fa-refresh" aria-hidden="true"></i> Reset</button>\
-  </div>').insertAfter("p");
-
-  //https://stackoverflow.com/a/30361156/10792033
-  //Wrapping groups of adjacent siblings
-  $('div.audio_state').each(function () {
-    $(this)
-      .prev()
-      .addBack()
-      .wrapAll('<section class="TTS_content"></section>');
-  });
-
-
-  /***** ON Play CLICK *****/
-  $('div.audio_state .play').each(function (index) {
-    $(this).click(function () {
-      if (!$(this).hasClass('curr-active-item')) {
-        resetSpeech()
-        $(this).addClass('curr-active-item')
-      }
-      $(this).find('.fa').removeClass('fa-pause')
-      $(this).find('.fa').addClass('fa-play ')
-      if ($(this).hasClass('audio-playing')) {
-        $(this).removeClass('audio-inactive audio-playing')
-        $(this).addClass('audio-paused')
-        synth.pause()
-      } else {
-        $(this).find('.fa').removeClass('fa-play');
-        $(this).find('.fa').addClass('fa-pause');
-        if ($(this).hasClass('audio-inactive')) {
-          $('.play').removeClass('audio-inactive audio-paused')
-          synth.cancel();
-          ssu.text = $(this).parent("div.audio_state").prev("p").text();
-          ssu.volume = parseFloat(volumeInput.value / 10);
-          ssu.rate = parseFloat(rateInput.value / 5);
-          ssu.pitch = parseFloat(pitchInput.value / 5);
-          if (voiceSelect.value) {
-            ssu.voice = speechSynthesis.getVoices().filter(function (voice) {
-              return voice.name == voiceSelect.value;
-            })[0];
-          }
-          $(this).addClass('audio-playing')
-          synth.speak(ssu);
-          ssu.addEventListener("end", (event) => {
-            resetSpeech()
-          });
-        } else if ($(this).hasClass('audio-paused')) {
-
-          $(this).removeClass('audio-inactive audio-paused')
-          $(this).addClass('audio-playing')
-          synth.resume()
-        }
-      }
-    });
-  });
-
-  //Global Cancels Speech on reset button
-  $(".stop").on("click", function () {
-    resetSpeech()
-  });
-
-  $("#ADA_trigger").click(function () {
-
-    resetSpeech()
-  });
-
-  // Cancels all utterances if the user leaves the site.
-  window.onbeforeunload = function (e) {
-    resetSpeech()
-  };
-
-  function initSpeechSynthesis() {
-    if (!('speechSynthesis' in window)) {
-      alert("Sorry, your browser doesn't support text to speech!");
-      return;
-    }
-    ssu = new SpeechSynthesisUtterance();
-    ssu.lang = 'en-US';
-  };
-}); //end of doc ready
 
 $(document).ready(function () {
   $("#keydownTip").click(function () {
