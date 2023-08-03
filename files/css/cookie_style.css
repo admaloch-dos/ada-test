@@ -4,7 +4,7 @@
 /************************************** CURSOR GUIDE SETTINGS ***********************************/
 .CursorGuide *,
 .CursorGuide *:hover {
-	cursor: url('/themes/florida_memory/images/large-cursor.png'), auto !important;
+	cursor: url('../files/img/large-cursor.png'), auto !important;
 }
 
 .CursorGuide #tail {
@@ -25,7 +25,7 @@
 	height: 8px;
 	background-color: #000;
 
-	z-index: 5000;
+	z-index: 500;
 
 }
 
@@ -521,36 +521,36 @@ body.inverted {
 /************************************** CURSOR SWAP SETTINGS ***********************************/
 /*https://icons8.com/icons/set/cursor-arrow*/
 body.CursorSwap {
-	cursor: url('/themes/florida_memory/images/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), auto;
 }
 
 .CursorSwap *,
 .CursorSwap *:hover {
-	cursor: url('/themes/florida_memory/images/large-cursor.png'), auto !important;
+	cursor: url('../img/large-cursor.png'), auto !important;
 }
 
 .CursorSwap a:-webkit-any-link {
-	cursor: url('/themes/florida_memory/images/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), auto;
 }
 
 .CursorSwap #ada_dropdown label {
-	cursor: url('/themes/florida_memory/images/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), auto;
 }
 
 .CursorSwap #accessibility .form-check-input {
-	cursor: url('/themes/florida_memory/images/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), auto;
 }
 
 .CursorSwap #Scroll_btn,
 .CursorSwap #Scroll_btn:hover {
-	cursor: url('/themes/florida_memory/images/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), auto;
 }
 
 .CursorSwap [type=button]:not(:disabled),
 .CursorSwap [type=reset]:not(:disabled),
 .CursorSwap [type=submit]:not(:disabled),
 .CursorSwap button:not(:disabled) {
-	cursor: url('/themes/florida_memory/images/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), auto;
 }
 
 
@@ -558,12 +558,12 @@ body.CursorSwap {
 /************************************** FONT TYPE SWAP SETTINGS ***********************************/
 @font-face {
 	font-family: "OpenDyslexicRegular";
-	src: url("/themes/florida_memory/fonts/OpenDyslexic-Regular.eot");
-	src: url("/themes/florida_memory/fonts/OpenDyslexic-Regular.eot?#iefix") format('embedded-opentype'),
-		url("/themes/florida_memory/fonts/OpenDyslexic-Regular.woff2") format('woff2'),
-		url("/themes/florida_memory/fonts/OpenDyslexic-Regular.woff") format('woff'),
-		url("/themes/florida_memory/fonts/OpenDyslexic-Regular.otf") format('opentype'),
-		url("/themes/florida_memory/fonts/OpenDyslexic-Regular.ttf") format('truetype');
+	src: url("../fonts/OpenDyslexic-Regular.eot");
+	src: url("../fonts/OpenDyslexic-Regular.eot?#iefix") format('embedded-opentype'),
+
+
+		url("../fonts/OpenDyslexic-Regular.otf") format('opentype'),
+		url("../fonts/OpenDyslexic-Regular.ttf") format('truetype');
 	font-weight: 500;
 	font-style: normal;
 }
