@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-  <title>Document</title>
+  <title>New Select</title>
 
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
@@ -52,8 +52,16 @@
     <div id="view">
       <div id="tail" style="left: 0px; top: 1034px;"></div>
       <!---------------------------------------------------- Popups,modal,toast(toast script) below will live inside ul#Right_Nav; script for ADA_widget will live outside ul#Right_Nav ----------------------------------------------------->
-      <a class="nav-link " href="#!" id="ADA_trigger" title="Accessibility Menu"><i class="fa fa-universal-access"
-          aria-hidden="true"></i></a>
+      <div id="ada-triggers" class="ada-triggers">
+        <div id="widget-controls" class="widget-controls">
+          <ul id="widget-list" class="list-unstyled mt-2">
+
+          </ul>
+        </div>
+        <a class="nav-link " href="#!" id="ADA_trigger" title="Accessibility Menu"><i class="fa fa-universal-access"
+            aria-hidden="true"></i></a>
+      </div>
+
       <!-- The Modal -->
       <div id="ADA_widget" class="ada_modal_test" aria-labelledby="ADA_widget" aria-hidden="true">
         <!-- Modal content -->
@@ -652,7 +660,7 @@
                         </li>
 
                         <li id="FT_Baskerville"><a href="#!" class="FontTypeOptions FontTypeBaskerville">
-                            <div class="title">Libre Baskerville</div>
+                            <div class="title libre-font">Libre Baskerville</div>
                           </a>
                         </li>
                       </ul>
@@ -693,7 +701,7 @@
               <div id="text-selects" class="row">
                 <div class="col-12 col-lg-4 text-center" id="LetterSpacing_option">
                   <form>
-                    <div class="form-group mb-0 mb-lg-3">
+                    <div class="form-group mb-0 mb-lg-3 delete-select-icon">
                       <div class="form-group-heading mb-1 mb-lg-4 ">
                         <div class="main_icon_holder" id="letterspace_icon">
                           <div class="inner_icon_holder">
@@ -704,26 +712,24 @@
                         <h6 class="ada_option_title font-weight-bold" for="exampleFormControlSelect1">Change Letter
                           Spacing</h6>
                       </div>
-                      <!-- <select class="form-control" name="letter_spacing" id="letter_spacing">
-                        <option value="inherit" selected>Normal</option>
-                        <option value="2px">2px</option>
-                        <option value="3px">3px</option>
-                        <option value="4px">4px</option>
-                        <option value="5px">5px</option>
-                        <option value="6px">6px</option>
-                        <option value="7px">7px</option>
-                        <option value="8px">8px</option>
-                        <option value="9px">9px</option>
-                        <option value="10px">10px</option>
-                      </select> -->
-                      <div id="letter-spacing-container"
-                        class="spacing-container d-flex justify-content-center align-items-center">
+                      <div class="input-container d-flex justify-content-center align-items-center">
                         <svg class="letter-spacing-icon spacing-icon button-icon minus-icon"
                           xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                           class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
-                        <div class="spacing-value"><span id="letter-spacing-num" class="spacing-num"></span></div>
+                        <select class="spacing-value " name="letter_spacing" id="letter_spacing">
+
+                          <option selected value="inherit">2</option>
+                          <option value="3px">3</option>
+                          <option value="4px">4</option>
+                          <option value="5px">5</option>
+                          <option value="6px">6</option>
+                          <option value="7px">7</option>
+                          <option value="8px">8</option>
+                          <option value="9px">9</option>
+                          <option value="10px">10</option>
+                        </select>
                         <svg class="letter-spacing-icon spacing-icon button-icon plus-icon"
                           xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                           class="bi bi-plus" viewBox="0 0 16 16">
@@ -751,28 +757,26 @@
                         <h6 class="ada_option_title font-weight-bold" for="exampleFormControlSelect1">Change Word
                           Spacing</h6>
                       </div>
-                      <!-- <select class="form-control" name="word_spacing" id="word_spacing">
-                        <option value="inherit" selected>Normal</option>
-                        <option value="2px">2px</option>
-                        <option value="3px">3px</option>
-                        <option value="4px">4px</option>
-                        <option value="5px">5px</option>
-                        <option value="6px">6px</option>
-                        <option value="7px">7px</option>
-                        <option value="8px">8px</option>
-                        <option value="9px">9px</option>
-                        <option value="10px">10px</option>
-
-
-                      </select> -->
-                      <div id="word-spacing-container"
-                        class="spacing-container d-flex justify-content-center align-items-center">
+                      <div class="input-container d-flex justify-content-center align-items-center">
                         <svg class="word-spacing-icon spacing-icon button-icon minus-icon"
                           xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                           class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
-                        <div class="spacing-value"><span id="word-spacing-num" class="spacing-num"></span></div>
+                        <select class="spacing-value" name="word_spacing" id="word_spacing">
+
+                          <option value="inherit" selected>2</option>
+                          <option value="3px">3</option>
+                          <option value="4px">4</option>
+                          <option value="5px">5</option>
+                          <option value="6px">6</option>
+                          <option value="7px">7</option>
+                          <option value="8px">8</option>
+                          <option value="9px">9</option>
+                          <option value="10px">10</option>
+
+
+                        </select>
                         <svg class="word-spacing-icon spacing-icon button-icon plus-icon"
                           xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                           class="bi bi-plus" viewBox="0 0 16 16">
@@ -798,14 +802,24 @@
                         <h6 class="ada_option_title font-weight-bold" for="exampleFormControlSelect1">Change Line
                           Height</h6>
                       </div>
-                      <div id="line-height-container"
-                        class="spacing-container d-flex justify-content-center align-items-center">
+                      <div class="input-container d-flex justify-content-center align-items-center">
                         <svg class="line-height-icon spacing-icon button-icon minus-icon"
                           xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                           class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
-                        <div class="spacing-value"><span id="line-height-num" class="spacing-num"></span></div>
+                        <select class="spacing-value" name="line_height" id="line_height">
+
+                          <option value="inherit" selected>2</option>
+                          <option value="1.9">3</option>
+                          <option value="2.1">4</option>
+                          <option value="2.3">5</option>
+                          <option value="2.5">6</option>
+                          <option value="2.7">7</option>
+                          <option value="2.9">8</option>
+                          <option value="3.1">9</option>
+                          <option value="3.3">10</option>
+                        </select>
                         <svg class="line-height-icon spacing-icon button-icon plus-icon"
                           xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                           class="bi bi-plus" viewBox="0 0 16 16">
@@ -1136,50 +1150,60 @@
                       <label for="voice" class="ada_option_title mr-2">Select Voice:</label>
                       <select class="custom-select" name="voice" id="voice"></select>
                     </form>
+                    <div class="round-sliders d-flex justify-content-center align-items-center flex-wrap">
+                      <div class="round-slider">
+                        <svg id="volume-minus-icon"
+                          class="button-icon volume-minus-icon speech-volume speech-minus-icon speech-icon"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-dash" viewBox="0 0 16 16">
+                          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                        </svg>
+                        <div id="volume"></div>
+                        <svg id="volume-plus-icon"
+                          class="button-icon volume-plus-icon speech-volume speech-plus-icon speech-icon"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-plus" viewBox="0 0 16 16">
+                          <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
+                      </div>
 
-                    <svg id="volume-minus-icon"
-                      class="button-icon volume-minus-icon speech-volume speech-minus-icon speech-icon"
-                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash"
-                      viewBox="0 0 16 16">
-                      <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                    </svg>
-                    <div id="volume"></div>
-                    <svg id="volume-plus-icon"
-                      class="button-icon volume-plus-icon speech-volume speech-plus-icon speech-icon"
-                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus"
-                      viewBox="0 0 16 16">
-                      <path
-                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                    </svg>
+                      <div class="round-slider">
+                        <svg id="rate-minus-icon"
+                          class="button-icon rate-minus-icon speech-rate speech-minus-icon speech-icon"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-dash" viewBox="0 0 16 16">
+                          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                        </svg>
+                        <div id="rate"></div>
+                        <svg id="rate-plus-icon"
+                          class="button-icon rate-plus-icon speech-rate speech-plus-icon speech-icon"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-plus" viewBox="0 0 16 16">
+                          <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
+                      </div>
 
-                    <svg id="rate-minus-icon"
-                      class="button-icon rate-minus-icon speech-rate speech-minus-icon speech-icon"
-                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash"
-                      viewBox="0 0 16 16">
-                      <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                    </svg>
-                    <div id="rate"></div>
-                    <svg id="rate-plus-icon" class="button-icon rate-plus-icon speech-rate speech-plus-icon speech-icon"
-                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus"
-                      viewBox="0 0 16 16">
-                      <path
-                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                    </svg>
+                      <div class="round-slider">
+                        <svg id="pitch-minus-icon"
+                          class="button-icon pitch-minus-icon speech-pitch speech-minus-icon speech-icon"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-dash" viewBox="0 0 16 16">
+                          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                        </svg>
+                        <div id="pitch"></div>
+                        <svg id="pitch-plus-icon"
+                          class="button-icon pitch-plus-icon speech-pitch speech-plus-icon speech-icon"
+                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-plus" viewBox="0 0 16 16">
+                          <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
+                      </div>
 
-                    <svg id="pitch-minus-icon"
-                      class="button-icon pitch-minus-icon speech-pitch speech-minus-icon speech-icon"
-                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash"
-                      viewBox="0 0 16 16">
-                      <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                    </svg>
-                    <div id="pitch"></div>
-                    <svg id="pitch-plus-icon"
-                      class="button-icon pitch-plus-icon speech-pitch speech-plus-icon speech-icon"
-                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus"
-                      viewBox="0 0 16 16">
-                      <path
-                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                    </svg>
+                    </div>
+
 
                   </div><!--TTS_Utterance-->
                   <div class="col-12 text-center mb-4 d-none d-md-block">
@@ -1686,6 +1710,7 @@
   <script src="text-magnify.js"></script>
   <script src="speech.js"></script>
   <script src="color-presets.js"></script>
+  <script src="isWidgetActive.js"></script>
   <script src="late-script.js"></script>
 </body>
 

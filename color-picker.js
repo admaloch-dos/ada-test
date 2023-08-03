@@ -73,16 +73,21 @@ const takeTwoColors = (c1, c2) => {
 
 
 const onInputChange = (e) => {
-
+    widgetItemObj.textColorCookie = true
+    widgetItemObj.backColorCookie = true
+    widgetItemObj.linkColorCookie = true
+    addWidgetControls('ColorPicker', 'Custom colors')
+    
+    checkIfWidgetActive()
 
     if ($('body').hasClass('highcontrast') || $('body').hasClass('inverted') || $('body').hasClass('desaturated')) {
         $("body").removeClass("highcontrast inverted desaturated")
         $.removeCookie('InvertBackgroundCookie');
-        $.removeCookie('FM_InvertBackgroundCookie');
+        $.removeCookie('InvertBackgroundCookie');
         $.removeCookie('DarkContrastBackgroundCookie');
-        $.removeCookie('FM_DarkContrastCookie');
+        $.removeCookie('DarkContrastBackgroundCookie');
         $.removeCookie('DesaturatedBackgroundCookie');
-        $.removeCookie('FM_DesaturatedBackgroundCookie');
+        $.removeCookie('DesaturatedBackgroundCookie');
 
         $("#DefaultBG_option").addClass('active').siblings().removeClass('active');
     } else {

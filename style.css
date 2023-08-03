@@ -18,24 +18,106 @@ body {
   font-size: 1.2rem;
 } */
 
-#ADA_trigger {
-  color: #8d99ae;
+#ada-triggers {
   position: fixed;
-  z-index: 20;
-  right: 0;
+  z-index: 1000;
+  right: 1%;
   bottom: 7%;
-  border-radius: 20px;
+  /* border: red solid 1px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#ada-triggers li {
+  padding: 0 10px;
+}
+
+#widget-controls {
+  border: black solid 2px;
+  border-radius: 10px;
+
+  background-color: white;
+}
+
+/* .close-item {
+
+  opacity: .5;
+  transition: .2s ease-in-out all;
 
 }
+
+.close-item:hover {
+  opacity: 1;
+  cursor: pointer;
+
+} */
+
+
+
+#ADA_trigger {
+  color: #8d99ae;
+  border-radius: 20px;
+  border: none !important;
+
+}
+
+
 
 #ADA_trigger i {
   font-size: 50px;
   transition: transform .3s ease-in-out;
+  border-radius: 20px;
+
+  z-index: 100;
+  border: none !important;
 }
 
 #ADA_trigger i:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 
+
+}
+
+#widget-list li {
+  letter-spacing: 2px !important;
+  word-spacing: 2px !important;
+  line-height: 1 !important;
+  font-size: 14px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  font-weight: 600 !important;
+
+  justify-content: start;
+  align-items: center;
+}
+
+.fade-in {
+  opacity: .7;
+  transition: .15s ease-in-out all;
+  cursor: pointer;
+}
+
+.fade-in:hover {
+  opacity: 1;
+}
+
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-iteration-count: 1;
+  animation-duration: 1000ms;
 }
 
 
@@ -90,13 +172,15 @@ body {
 } */
 
 
+
+
 /* all button selector */
 .button-icon {
   border: #000 solid 1px;
   color: #000;
   border-radius: 100%;
   cursor: pointer;
-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
   z-index: 50;
   opacity: .5;
 
@@ -119,14 +203,12 @@ transition: all .2s ease-in-out;
   position: relative;
   left: 29px;
   bottom: 2px;
-
 }
 
 #volume-plus-icon {
   position: relative;
   right: 50px;
   bottom: 2px;
-
 }
 
 #rate-minus-icon,
@@ -137,12 +219,61 @@ transition: all .2s ease-in-out;
 
 }
 
+.accessibility_icons,
+.ada_option_title,
+.round-sliders,
+.round-slider {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
 #rate-plus-icon,
 #pitch-plus-icon {
   position: relative;
   right: 60px;
   bottom: 2px;
 
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.fontSizeMedium #volume-minus-icon {
+  left: 19px;
+}
+
+.fontSizeMedium #volume-plus-icon {
+  right: 40px;
+}
+
+.fontSizeMedium #rate-minus-icon,
+.fontSizeMedium #pitch-minus-icon {
+  left: 30px;
+}
+
+.fontSizeMedium #rate-plus-icon,
+.fontSizeMedium #pitch-plus-icon {
+  right: 50px;
+}
+
+.fontSizeMedium .libre-font {
+  font-size: 15px !important;
 }
 
 /* position for next to number */
@@ -160,15 +291,37 @@ transition: all .2s ease-in-out;
 
 } */
 
+/* get rid of default html icon on selects for spacing etc.. */
+#text-selects select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-overflow: '';
+}
+
+#LetterSpacing_option select {
+  text-indent: 6px;
+}
+
+#WordSpacing_option select {
+  text-indent: 6px;
+}
+
+#LineHeight_option select {
+  text-indent: 6px;
+}
+
 /* letter spacing btn value selectors */
 .spacing-container {
   width: 100%;
 
 }
+
 .spacing-icon {
   width: 35px;
   height: 35px;
 }
+
+
 
 
 .spacing-value {
@@ -177,12 +330,16 @@ transition: all .2s ease-in-out;
   margin: 0 10px;
   padding: 5px 15px;
   border-radius: 10px;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
 
 
 }
+
 .ada_modal_test .modal_body {
 
   padding: 1rem 0rem;
@@ -1853,7 +2010,7 @@ body.Cursor_Enlarge {
   pointer-events: none;
   width: 100%;
   height: 100%;
-  z-index: 100000000000000000000;
+  z-index: 500;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -2781,6 +2938,21 @@ body.BaskervilleFont {
 
 }
 
+.highcontrast .button-icon {
+  border: #000 solid 1px;
+  color: #000;
+  background-color: white;
+  opacity: .5;
+
+}
+
+.highcontrast .button-icon:hover {
+  border: #000 solid 1px;
+  color: #000;
+  background-color: white;
+  opacity: 1;
+}
+
 /************************************************************ Desaturate ************************************************************/
 .desaturated #ADA_widget .modal_content .modal_header {
   background-color: #363636;
@@ -2866,6 +3038,15 @@ body.BaskervilleFont {
 }
 
 
+
+.desaturated .button-icon:hover {
+  border: #000 solid 1px;
+  color: #fff;
+  background-color: #363636;
+  opacity: 1;
+}
+
+
 /************************************************************ Invert ************************************************************/
 .inverted h1,
 .inverted h2,
@@ -2944,8 +3125,8 @@ body.BaskervilleFont {
 }
 
 .inverted #ADA_widget .modal_content .modal_body .rs-tooltip.edit {
-  background: white;
-  color: black;
+
+  color: #fff;
 }
 
 .inverted #ADA_widget .modal_content .modal_body .tippyIcon,
@@ -3018,6 +3199,21 @@ body.BaskervilleFont {
   border: #FFF solid 1px !important;
   background-color: #2C2C2C !important;
 
+}
+
+.inverted .button-icon {
+  border: #000 solid 1px;
+  color: #000;
+  background-color: white;
+  opacity: .5;
+
+}
+
+.inverted .button-icon:hover {
+  border: #000 solid 1px;
+  color: #000;
+  background-color: white;
+  opacity: 1;
 }
 
 /************************************************************ High Saturation ************************************************************/
@@ -3335,6 +3531,11 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
   background-color: white !important;
 }
 
+
+
+
+
+
 .HighlightLinks .modal_content .title {
   color: #3863ff !important;
 }
@@ -3355,6 +3556,7 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
   background-color: #000 !important;
 
 }
+
 
 .HighlightHover .modal_content li:hover .title {
   color: white !important;

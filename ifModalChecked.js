@@ -116,13 +116,16 @@ $(document).ready(function () {
 $(function () {
   $('[id="ToggleTextMagnifier"]').change(function () {
 
+
+
     if ($(this).is(':checked')) {
+
 
       $("body").addClass("TextMagnifier");
       $('#text_magnify').attr('style', 'display: none!important');
       $('p, a, :header, span, button, td').hover(
         function (e) {
-          console.log('show text')
+
           //do the mouseenter things here...
           //Gets text inside element tag and copies into #text_magnify div
 
@@ -138,7 +141,7 @@ $(function () {
 
           //If #text_magnify is empty, hide
           if ($('#text_magnify').is(':empty')) {
-            console.log('empty')
+
             //$('#text_magnify').css({
             //"opacity": "0"});
             //$("body").removeClass("TextMagnifier");
@@ -149,7 +152,7 @@ $(function () {
           }
         },
         function (e) {
-          console.log('empty')
+
           //do the mouseleave things here...
           $('#text_magnify').attr('style', 'display: none!important');
 
@@ -159,7 +162,7 @@ $(function () {
           });
         }
       ); //end of hover
-
+      addWidgetControls('ToggleTextMagnifier', 'Text magnify')
       //$('[id="ToggleZoom"]').prop('checked',false);
     } else {
 
@@ -174,6 +177,10 @@ $(function () {
             "opacity": "0"});
             */
         });
+        removeWidgetControls(['ToggleTextMagnifier'])
     } //end of else
+
+    widgetItemObj.textMagCookie = !widgetItemObj.textMagCookie
+    checkIfWidgetActive()
   }); //end of change
 }); // end of function

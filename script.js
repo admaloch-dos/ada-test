@@ -7,54 +7,9 @@ $(document).keydown(function (e) {
   }
 });
 
-// $(document).ready(function () {
-//   //Letter Spacing
-//   var selectedVal = $.cookie("LetterSpaceVal");
-//   if (selectedVal) {
-//     $("#letter_spacing").val(selectedVal);
-//     $("#letter_spacing").prop("selected", true);
-//     $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selectedVal); //Selects everything inside #view except ada modal and header
-//     $(".Footer").css("letter-spacing", selectedVal);
-//   }
-//   $("#letter_spacing").on("change", function () {
-//     var selection1 = $(this).val();
-//     $(selection1).prop("selected", true);
-//     $("#view p").not('#ADA_widget, #ADA_widget *').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
-//     $(".Footer").css("letter-spacing", selection1);
-//     $.cookie("LetterSpaceVal", selection1, { path: '/' })
-//   });
 
-//   //Word Spacing
-//   var selectedVal2 = $.cookie("WordSpaceVal");
-//   if (selectedVal2) {
-//     $("#word_spacing").val(selectedVal2);
-//     $("#word_spacing").prop("selected", true);
-//     $("#view p").not('#ADA_widget, #ADA_widget *').css("word-spacing", selectedVal2); //Selects everything inside #view except ada modal and header
-//   }
-//   $("#word_spacing").on("change", function () {
-//     var selection2 = $(this).val();
-//     $(selection2).prop("selected", true);
-//     $("#view p").not('#ADA_widget, #ADA_widget *').css("#word_spacing", selection2); //Selects everything inside #view except ada modal and header
-//     $(".Footer").css("#word_spacing", selection2);
-//     $.cookie("WordSpaceVal", selection2, { path: '/' })
-//   });
 
-//   //Line Height
-//   var selectedVal3 = $.cookie("LinpageHeightVal");
-//   if (selectedVal3) {
-//     $("#line_height").val(selectedVal3);
-//     $("#line_height").prop("selected", true);
-//     $("#view p").not('#ADA_widget, #ADA_widget *').css("line-height", selectedVal3); //Selects everything inside #view except ada modal and header
-//     $(".Footer").css("line-height", selectedVal3);
-//   }
-//   $("#line_height").on("change", function () {
-//     var selection3 = $(this).val();
-//     $(selection3).prop("selected", true);
-//     $("#view p").not('#ADA_widget, #ADA_widget *').css("line-height", selection3); //Selects everything inside #view except ada modal and header
-//     $(".Footer").css("line-height", selection3);
-//     $.cookie("LinpageHeightVal", selection3, { path: '/' })
-//   });
-// });
+
 
 
 
@@ -88,8 +43,13 @@ $(document).ready(function () {
     } else {
       $.cookie('CursorEnlargeCookie', 'yes', { path: '/' });
       $("body").addClass("Cursor_Enlarge");
+      addWidgetControls('Cursor_Enlarge_option', 'Change cursor')
     }
+    widgetItemObj.cursorCookie = true
+    checkIfWidgetActive()
   });
+
+
 
   //When 'a.Cursor_Default' is clicked, removes 'CursorEnlarge' and erases CursorEnlargeCookie
   $("#ADA_widget a.Cursor_Default").click(function () {
@@ -98,7 +58,10 @@ $(document).ready(function () {
       $.cookie("CursorEnlargeCookie", null, {
         path: '/'
       });
+      removeWidgetControls(['Cursor_Enlarge_option'])
     }
+    widgetItemObj.cursorCookie = false
+    checkIfWidgetActive()
   });
 });
 
@@ -130,9 +93,14 @@ $(function () {
     if ($(this).is(':checked')) {
       $(this).next(".switch-label").attr("data-state", "Toggled On");
       $("html").addClass("SeizureSafe");
+      addWidgetControls('ToggleSeizure', 'Seizure safe')
     } else {
       $("html").removeClass("SeizureSafe");
+      removeWidgetControls(['ToggleSeizure'])
     }
+    widgetItemObj.seizureCookie = !widgetItemObj.seizureCookie
+
+    checkIfWidgetActive()
   });
 });
 
@@ -143,11 +111,16 @@ $(function () {
       $("body").addClass("ReadingMask_ON");
       $("#top_mask").fadeIn()
       $("#bottom_mask").fadeIn()
+      addWidgetControls('ToggleReadingMask', 'Reading mask')
     } else {
       $("body").removeClass("ReadingMask_ON");
       $("#top_mask").fadeOut()
       $("#bottom_mask").fadeOut()
+      removeWidgetControls(['ToggleReadingMask'])
     }
+    widgetItemObj.readingMaskCookie = !widgetItemObj.readingMaskCookie
+
+    checkIfWidgetActive()
   });
 });
 
@@ -158,24 +131,38 @@ $(function () {
       $("#tail").hide()
       $("body").addClass("CursorGuide");
       $("#tail").fadeIn(500)
+      addWidgetControls('ToggleReadingGuide', 'Reading guide')
     } else {
       $("#tail").fadeOut(500)
       setTimeout(() => {
-        $("body").removeClass("CursorGuide");
+        $("body").removeClass('ToggleReadingGuide');
       }, 500);
+      removeWidgetControls(['ToggleReadingGuide'])
     }
+    widgetItemObj.cursorGuideCookie = !widgetItemObj.cursorGuideCookie
+
+    checkIfWidgetActive()
   });
 });
+
 
 // Toggle Highlight Hover
 $(function () {
   $('[id="ToggleHighlightHover"]').change(function () {
+    let isHighlightHover = false
     if ($(this).is(':checked')) {
       $("body").addClass("HighlightHover");
+      addWidgetControls('ToggleHighlightHover', 'Highlight on hover')
     } else {
       $("body").removeClass("HighlightHover");
+      removeWidgetControls(['ToggleHighlightHover'])
     }
+
+    widgetItemObj.highlightCookie = !widgetItemObj.highlightCookie
+
+    checkIfWidgetActive()
   });
+
 });
 
 // Toggle Highlight Links
@@ -183,9 +170,14 @@ $(function () {
   $('[id="ToggleHighlightLinks"]').change(function () {
     if ($(this).is(':checked')) {
       $("body").addClass("HighlightLinks");
+      addWidgetControls('ToggleHighlightLinks', 'Highlight all links')
     } else {
       $("body").removeClass("HighlightLinks");
+      removeWidgetControls(['ToggleHighlightLinks'])
     }
+    widgetItemObj.outlineCookie = !widgetItemObj.outlineCookie
+
+    checkIfWidgetActive()
   });
 });
 
@@ -213,6 +205,7 @@ $(function () {
           $('#ImageDescription_magnify').attr('style', 'opacity: 0!important');
         }
       );
+      addWidgetControls('ToggleImageDescription', 'Image description')
     } else {
       $("body").removeClass("ImageDescription");
       $('img[alt], .feature .img[alt], i.fa[alt]').hover(
@@ -221,7 +214,11 @@ $(function () {
           $('#ImageDescription_magnify').attr('style', 'display: none!important');
           $('#ImageDescription_magnify').attr('style', 'opacity: 0!important');
         });
+      removeWidgetControls(['ToggleImageDescription'])
     } //end of else
+    widgetItemObj.imgCookie = !widgetItemObj.imgCookie
+
+    checkIfWidgetActive()
   }); //end of change
 }); // end of function
 
@@ -237,14 +234,18 @@ $(function () {
         modalDisplayOpenOrClose()
         forceReload()
       }
-
+      addWidgetControls('ToggleTTS_click', 'Text to speech')
     } else {
       $(".audio_state").fadeOut(500)
       setTimeout(() => {
         $("body").removeClass("TTS_click_enabled");
         $.cookie('TTS_click_enabled', 'false');
       }, 500);
+      removeWidgetControls(['ToggleTTS_click'])
     }
+    widgetItemObj.speechCookie = !widgetItemObj.speechCookie
+
+    checkIfWidgetActive()
   });
 });
 
@@ -369,7 +370,7 @@ $(document).on('mousemove', function (e) {
 });
 
 
-const keyTogglerFunc = (itemId, itemClass) => {
+const keyTogglerFunc = (itemId) => {
   if ($(itemId).is(':checked')) {
     $(itemId).prop('checked', false).trigger('change');
   } else {
@@ -437,8 +438,3 @@ if ("maxTouchPoints" in navigator) {
   }
 }
 
-if (hasTouchScreen) {
-  console.log('this is a touch screen')
-} else {
-  console.log('this is a desktop')
-}

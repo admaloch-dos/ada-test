@@ -46,6 +46,7 @@ $(document).ready(function () {
     }
 
 
+
     // When 'a.DarkContrastBackground' is clicked remove other background cookies
     $("#ADA_widget a.DarkContrastBackground").click(function () {
 
@@ -78,7 +79,12 @@ $(document).ready(function () {
             $('body').removeClass('inverted');
             $("html").removeClass("highsaturation");
             $("html").removeClass("lowsaturation");
+            addWidgetControls('DarkContrastBackground', 'Dark contrast preset')
+            removeWidgetControls(['DesaturateBackground', 'HighSaturationBackground', 'LowSaturationBackground', 'InvertBackground'])
+
         }
+        widgetItemObj.darkSatCookie = true
+        checkIfWidgetActive()
     });
 
     //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
@@ -113,6 +119,14 @@ $(document).ready(function () {
                 path: '/'
             });
         }
+        widgetItemObj.lowSatCookie = false
+        widgetItemObj.highSatCookie = false
+        widgetItemObj.invertCookie = false
+        widgetItemObj.desatCookie = false
+        widgetItemObj.darkSatCookie = false
+        checkIfWidgetActive()
+
+
     });
 }); // end of doc ready
 
@@ -186,7 +200,12 @@ $(document).ready(function () {
             $('body').removeClass('inverted');
             $("html").removeClass("highsaturation");
             $("html").removeClass("lowsaturation");
+            addWidgetControls('DesaturateBackground', 'Desaturate preset')
+            removeWidgetControls(['DarkContrastBackground', 'HighSaturationBackground', 'LowSaturationBackground', 'InvertBackground'])
+
         }
+        widgetItemObj.desatCookie = true
+        checkIfWidgetActive()
     });
 
     //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
@@ -288,7 +307,11 @@ $(document).ready(function () {
             $('body').removeClass('highcontrast');
             $('body').removeClass('inverted');
             $("html").removeClass("lowsaturation");
+            addWidgetControls('HighSaturationBackground', 'High saturation')
+            removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'LowSaturationBackground', 'InvertBackground'])
         }
+        widgetItemObj.highSatCookie = true
+        checkIfWidgetActive()
     });
 
     //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
@@ -395,7 +418,11 @@ $(document).ready(function () {
             $("body").removeClass("desaturated");
             $('body').removeClass('highcontrast');
             $('body').removeClass('inverted');
+            addWidgetControls('LowSaturationBackground', 'Low saturation')
+            removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'HighSaturationBackground', 'InvertBackground'])
         }
+        widgetItemObj.lowSatCookie = true
+        checkIfWidgetActive()
     });
 
     //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
@@ -503,7 +530,11 @@ $(document).ready(function () {
             $('body').removeClass('desaturated');
             $("html").removeClass("highsaturation");
             $("html").removeClass("lowsaturation");
+            addWidgetControls('InvertBackground', 'Inverted preset')
+            removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'HighSaturationBackground', 'LowSaturationBackground'])
         }
+        widgetItemObj.invertCookie = true
+        checkIfWidgetActive()
     });
 
     //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
@@ -538,5 +569,6 @@ $(document).ready(function () {
                 path: '/'
             });
         }
+        removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'HighSaturationBackground', 'LowSaturationBackground', 'InvertBackground'])
     });
 });

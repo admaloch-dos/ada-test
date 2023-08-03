@@ -1,4 +1,4 @@
-
+// functino to reset all cookies
 const removeAllCookies = () => {
     $.removeCookie('BackgroundColorCookie');
     $.removeCookie('TextColorCookie');
@@ -8,7 +8,7 @@ const removeAllCookies = () => {
     $.removeCookie('ImageDescription');
     $.removeCookie('HighlightHover');
     $.removeCookie('FontSizeCookie');
-    $.removeCookie('FM_FontSizeCookie');
+    $.removeCookie('FontSizeCookie');
     $.removeCookie('BaskervilleFontCookie');
     $.removeCookie('DyslexicFontCookie');
     $.removeCookie('FM_FontTypeCookie');
@@ -17,10 +17,10 @@ const removeAllCookies = () => {
     $.removeCookie('LowSaturationBackgroundCookie');
     $.removeCookie('InvertBackgroundCookie');
     $.removeCookie('HighSaturationBackgroundCookie');
-    $.removeCookie('FM_DesaturatedBackgroundCookie');
     $.removeCookie('DesaturatedBackgroundCookie');
-    $.removeCookie('FM_InvertBackgroundCookie');
-    $.removeCookie('FM_DarkContrastCookie');
+    $.removeCookie('DesaturatedBackgroundCookie');
+    $.removeCookie('InvertBackgroundCookie');
+    $.removeCookie('DarkContrastBackgroundCookie');
     $.removeCookie('SeizureSafe');
     $.removeCookie('ReadingMask');
     $.removeCookie('CursorGuide');
@@ -33,6 +33,36 @@ const removeAllCookies = () => {
     $.removeCookie('speechVol');
     $.removeCookie('voiceCookie');
 }
+
+let widgetItemObj = {
+    highlightCookie: false,
+    outlineCookie: false,
+    textMagCookie: false,
+    imgCookie: false,
+    fontSizeCookie: false,
+    cursorCookie: false,
+    fontTypeCookie: false,
+    lineHeightCookie: false,
+    wordSpaceCookie: false,
+    letterSpaceCookie: false,
+    lowSatCookie: false,
+    highSatCookie: false,
+    invertCookie: false,
+    desatCookie: false,
+    darkSatCookie: false,
+    textColorCookie: false,
+    backColorCookie: false,
+    linkColorCookie: false,
+    seizureCookie: false,
+    readingMaskCookie: false,
+    cursorGuideCookie: false,
+    speechCookie: false,
+    dyslexicFont: false,
+    baskervilleFont: false
+}
+
+
+
 
 const storeMainScrollPosition = () => {
     var mainScrollPosition = $("html, body").scrollTop();
@@ -75,6 +105,7 @@ const resetBackgroundClicker = () => {
         storeMainScrollPosition()
         sessionStorage.setItem("reloadModalOpen", "true");
         forceReload()
+        removeWidgetControls(['ColorPicker'])
     }
 }
 
@@ -96,7 +127,7 @@ function resetAdaModal() {
 const displayModal = () => {
     const overlay = document.querySelector('#ADA_widget')
     if (overlay.style.display !== "flex") {
-        $("#ADA_trigger").fadeOut(700);
+        $("#ada-triggers").fadeOut(700);
         $("#ADA_widget").css('opacity', '0');
         $("#ADA_widget").css("display", "flex")
         $("#ADA_widget").fadeTo(0, 1);
@@ -111,7 +142,7 @@ const displayModal = () => {
         setTimeout(() => {
             $("#ADA_widget").css("display", "none")
             document.body.classList.remove("prevent-body-overflow");
-            $("#ADA_trigger").fadeIn();
+            $("#ada-triggers").fadeIn();
             $('body').css("overflow", "auto");
         }, 800);
 

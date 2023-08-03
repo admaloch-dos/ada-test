@@ -1,3 +1,16 @@
+const restoreDefaultOnClick = (itemClass, cookie, widgetItemTrue, removeItemArr, defaultLocation) => {
+    $('body').removeClass(itemClass);
+    if ($.cookie(cookie) == "yes") {
+        $.cookie(cookie, null, {
+            path: '/'
+        });
+    }
+    widgetItemTrue = false
+    checkIfWidgetActive()
+    removeWidgetControls(removeItemArr)
+    $(defaultLocation).addClass('active').siblings().removeClass('active');
+}
+
 $(document).ready(function () {
     $("#ADA_widget #FS_Default").addClass("active");
 });
@@ -6,11 +19,15 @@ const modalSwitchButton = document.querySelector('.switch-handle')
 
 //FOR FONT SIZE CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
 //https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
-$(function () {
-    $('#ADA_widget .fontsize_form .form-check ul li').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-    });
-});
+// const removeOnDefaultClick = () => {
+
+//     $('#ADA_widget .fontsize_form .form-check ul li').click(function () {
+//         $(this).addClass('active').siblings().removeClass('active');
+//         $('#ADA_widget #FS_Default').addClass('active').siblings().removeClass('active');
+//     });
+
+// }
+// removeOnDefaultClick()
 
 $(document).ready(function () {
     // Cookie for FontSizeMedium
@@ -35,16 +52,30 @@ $(document).ready(function () {
         } else {
             $.cookie('FontSizeCookie', 'yes', { path: '/' });
             $("body").addClass("fontSizeMedium");
+            console.log('this just ran')
+            addWidgetControls('FontSizeMedium', 'Change font size')
+            widgetItemObj.fontSizeCookie = true
+            checkIfWidgetActive()
         }
+
     });
+
+
 
     //When 'a.FontSizeDefault' is clicked, removes 'fontSizeMedium' and erases FontSizeCookie
     $("#ADA_widget a.FontSizeDefault").click(function () {
-        $('body').removeClass('fontSizeMedium');
-        if ($.cookie('FontSizeCookie') == "yes") {
-            $.cookie("FontSizeCookie", null, {
-                path: '/'
-            });
-        }
+        // $('body').removeClass('fontSizeMedium');
+        // if ($.cookie('FontSizeCookie') == "yes") {
+        //     $.cookie("FontSizeCookie", null, {
+        //         path: '/'
+        //     });
+        // }
+        // removeWidgetControls(['FontSizeMedium'])
+        // widgetItemObj.fontSizeCookie = false
+        // checkIfWidgetActive()
+        restoreDefaultOnClick('fontSizeMedium', 'FontSizeCookie', widgetItemObj.fontSizeCookie, ['FontSizeMedium'], '#ADA_widget #FS_Default')
+
+
     });
+
 });
