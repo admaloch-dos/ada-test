@@ -12,30 +12,30 @@ const isCookieActive = (input, value) => {
 
 const areCookiesSet = () => {
     let updateCookies = widgetItemObj
-    updateCookies.highlightCookie = isCookieActive($.cookie("HighlightHover"), 'false')
-    updateCookies.outlineCookie = isCookieActive($.cookie("HighlightLinks"), 'false')
-    updateCookies.textMagCookie = isCookieActive($.cookie("TextMagnifier"), 'false')
-    updateCookies.imgCookie = isCookieActive($.cookie("ImageDescription"), 'false')
-    updateCookies.fontSizeCookie = isCookieActive($.cookie("FontSizeCookie"), 'null')
-    updateCookies.cursorCookie = isCookieActive($.cookie("CursorEnlargeCookie"), 'null')
-    updateCookies.fontTypeCookie = isCookieActive($.cookie("FM_FontTypeCookie"), 'null')
-    updateCookies.lineHeightCookie = isCookieActive($.cookie("LinpageHeightVal"), 'inherit')
-    updateCookies.wordSpaceCookie = isCookieActive($.cookie("WordSpaceVal"), 'inherit')
-    updateCookies.letterSpaceCookie = isCookieActive($.cookie("LetterSpaceVal"), 'inherit')
-    updateCookies.lowSatCookie = isCookieActive($.cookie("LowSaturationBackgroundCookie"), 'null')
-    updateCookies.highSatCookie = isCookieActive($.cookie("HighSaturationBackgroundCookie"), 'null')
-    updateCookies.invertCookie = isCookieActive($.cookie("InvertBackgroundCookie"), 'null')
-    updateCookies.desatCookie = isCookieActive($.cookie("DesaturatedBackgroundCookie"), 'null')
-    updateCookies.darkSatCookie = isCookieActive($.cookie("DarkContrastBackgroundCookie"), 'null')
-    updateCookies.textColorCookie = isCookieActive($.cookie("TextColorCookie"), 'false')
-    updateCookies.backColorCookie = isCookieActive($.cookie("BackgroundColorCookie"), 'false')
-    updateCookies.linkColorCookie = isCookieActive($.cookie("LinkColorCookie"), 'false')
-    updateCookies.seizureCookie = isCookieActive($.cookie("SeizureSafe"), 'false')
-    updateCookies.readingMaskCookie = isCookieActive($.cookie("ReadingMask"), 'false')
-    updateCookies.cursorGuideCookie = isCookieActive($.cookie("CursorGuide"), 'false')
-    updateCookies.speechCookie = isCookieActive($.cookie("TTS_click_enabled"), 'false')
-    updateCookies.baskervilleFont = isCookieActive($.cookie("BaskervilleFontCookie"), 'null')
-    updateCookies.dyslexicFont = isCookieActive($.cookie("DyslexicFontCookie"), 'null')
+    updateCookies.isHighlighted = isCookieActive($.cookie("HighlightHover"), 'false')
+    updateCookies.isOutlined = isCookieActive($.cookie("HighlightLinks"), 'false')
+    updateCookies.isTextMag = isCookieActive($.cookie("TextMagnifier"), 'false')
+    updateCookies.isImgMag = isCookieActive($.cookie("ImageDescription"), 'false')
+    updateCookies.isFontBig = isCookieActive($.cookie("FontSizeCookie"), 'null')
+    updateCookies.isCursorBig = isCookieActive($.cookie("CursorEnlargeCookie"), 'null')
+    updateCookies.isFontChanged = isCookieActive($.cookie("FM_FontTypeCookie"), 'null')
+    updateCookies.isLineHeightChanged = isCookieActive($.cookie("LinpageHeightVal"), 'inherit')
+    updateCookies.isWordSpaceChanged = isCookieActive($.cookie("WordSpaceVal"), 'inherit')
+    updateCookies.isLetterSpaceChanged = isCookieActive($.cookie("LetterSpaceVal"), 'inherit')
+    updateCookies.isLowSat = isCookieActive($.cookie("LowSaturationBackgroundCookie"), 'null')
+    updateCookies.isHighSat = isCookieActive($.cookie("HighSaturationBackgroundCookie"), 'null')
+    updateCookies.isInverted = isCookieActive($.cookie("InvertBackgroundCookie"), 'null')
+    updateCookies.isDesaturated = isCookieActive($.cookie("DesaturatedBackgroundCookie"), 'null')
+    updateCookies.isDarkContrast = isCookieActive($.cookie("DarkContrastBackgroundCookie"), 'null')
+    updateCookies.isTextChanged = isCookieActive($.cookie("TextColorCookie"), 'false')
+    updateCookies.isBackColorChanged = isCookieActive($.cookie("BackgroundColorCookie"), 'false')
+    updateCookies.isLinkColorChanged = isCookieActive($.cookie("LinkColorCookie"), 'false')
+    updateCookies.isSeizureSafe = isCookieActive($.cookie("SeizureSafe"), 'false')
+    updateCookies.isReadingMask = isCookieActive($.cookie("ReadingMask"), 'false')
+    updateCookies.isReadingGuide = isCookieActive($.cookie("CursorGuide"), 'false')
+    updateCookies.isSpeech = isCookieActive($.cookie("TTS_click_enabled"), 'false')
+    updateCookies.isBaskervilleFont = isCookieActive($.cookie("BaskervilleFontCookie"), 'null')
+    updateCookies.isDyslexicFont = isCookieActive($.cookie("DyslexicFontCookie"), 'null')
     return updateCookies
 }
 
@@ -99,7 +99,8 @@ const removeWidgetControls = (itemArr) => {
             $(`li.${item}`).remove();
         }, 300);
     });
-
+    checkIfWidgetActive()
+    console.log(widgetItemObj)
 }
 
 
@@ -114,64 +115,93 @@ const closeItemHandler = (closeItems) => {
                     colorPresetToDefault()
                 }
             }
-            const itemArr = ['ToggleHighlightHover', 'ToggleHighlightLinks', 'ToggleTextMagnifier', 'ToggleImageDescription', 'ToggleSeizure', 'ToggleReadingMask', 'ToggleReadingGuide', 'ToggleTTS_click']
-            // turnItemOff(item, 'ToggleHighlightHover', '#ToggleHighlightHover')
-            for (let i = 0; i < itemArr.length; i++) {
-                if (item.classList.contains(itemArr[i])) {
-                    $(`#${itemArr[i]}`).prop('checked', false).trigger('change')
-                }
+
+            item.classList.contains('ToggleHighlightLinks') && $('#ToggleHighlightLinks').prop('checked', false).trigger('change')
+            item.classList.contains('ToggleReadingMask') && $('#ToggleReadingMask').prop('checked', false).trigger('change')
+            item.classList.contains('ToggleTTS_click') && $('#ToggleTTS_click').prop('checked', false).trigger('change')
+            item.classList.contains('ToggleImageDescription') && $('#ToggleImageDescription').prop('checked', false).trigger('change')
+
+            if (item.classList.contains('ToggleHighlightHover')) {
+                $('#ToggleHighlightHover').prop('checked', false).trigger('change')
+                widgetItemObj.isHighlighted = false
             }
-            item.classList.contains('FontSizeMedium') && restoreDefaultOnClick('fontSizeMedium', 'FontSizeCookie', widgetItemObj.fontSizeCookie, ['FontSizeMedium'], '#ADA_widget #FS_Default')
-            item.classList.contains('Cursor_Enlarge_option') && restoreDefaultOnClick('Cursor_Enlarge', 'CursorEnlargeCookie', widgetItemObj.cursorCookie, ['Cursor_Enlarge_option'], '#ADA_widget #Cur_Default')
+
+            if (item.classList.contains('ToggleSeizure')) {
+                $('#ToggleSeizure').prop('checked', false).trigger('change')
+                widgetItemObj.isSeizureSafe = false
+            }
+
+            if (item.classList.contains('ToggleTextMagnifier')) {
+                $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
+                widgetItemObj.isTextMag = false
+            }
+
+            if (item.classList.contains('ToggleReadingGuide')) {
+                $('#ToggleReadingGuide').prop('checked', false).trigger('change')
+                widgetItemObj.isReadingGuide = false
+            }
+
+            if (item.classList.contains('FontSizeMedium')) {
+                restoreDefaultOnClick('fontSizeMedium', 'FontSizeCookie', widgetItemObj.isFontBig, ['FontSizeMedium'], '#ADA_widget #FS_Default')
+                widgetItemObj.isFontBig = false
+            }
+
+            if (item.classList.contains('Cursor_Enlarge_option')) {
+                restoreDefaultOnClick('Cursor_Enlarge', 'CursorEnlargeCookie', widgetItemObj.isCursorBig, ['Cursor_Enlarge_option'], '#ADA_widget #Cur_Default')
+                widgetItemObj.isCursorBig = false
+            }
             item.classList.contains('ColorPicker') && resetBackgroundClicker()
             item.classList.contains('letter_spacing') && restoreSpacingDefault('#letter_spacing', ['letter_spacing'])
             item.classList.contains('word_spacing') && restoreSpacingDefault('#word_spacing', ['word_spacing'])
             item.classList.contains('line_height') && restoreSpacingDefault('#line_height', ['line_height'])
 
             if (item.classList.contains('FontTypeDyslexic')) {
-                restoreDefaultOnClick('DyslexicFont', 'DyslexicFontCookie', widgetItemObj.dyslexicFont, ['FontTypeDyslexic', 'FontTypeBaskerville'], '#ADA_widget #FT_Default')
+                restoreDefaultOnClick('DyslexicFont', 'DyslexicFontCookie', widgetItemObj.isDyslexicFont, ['FontTypeDyslexic', 'FontTypeBaskerville'], '#ADA_widget #FT_Default')
                 $.cookie('FM_FontTypeCookie', null, { path: '/' });
+                widgetItemObj.isDyslexicFont = false
+                widgetItemObj.isFontChanged = false
             }
             if (item.classList.contains('FontTypeBaskerville')) {
-                restoreDefaultOnClick('BaskervilleFont', 'BaskervilleFontCookie', widgetItemObj.baskervilleFont, ['FontTypeDyslexic', 'FontTypeBaskerville'], '#ADA_widget #FT_Default')
+                restoreDefaultOnClick('BaskervilleFont', 'BaskervilleFontCookie', widgetItemObj.isBaskervilleFont, ['FontTypeDyslexic', 'FontTypeBaskerville'], '#ADA_widget #FT_Default')
                 $.cookie('FM_FontTypeCookie', null, { path: '/' });
+                widgetItemObj.isBaskervilleFont = false
+                widgetItemObj.isFontChanged = false
             }
 
         })
     })
-    console.log(widgetItemObj)
-    console.log('is widget active', isWidgetActive)
+
+
 }
 
 
 const addWidgetControlsOnLoad = () => {
-    widgetItemObj.highlightCookie && addWidgetControls('ToggleHighlightHover', 'Highlight on hover')
-    widgetItemObj.outlineCookie && addWidgetControls('ToggleHighlightLinks', 'Highlight all links')
-    widgetItemObj.textMagCookie && addWidgetControls('ToggleTextMagnifier', 'Magnify text')
-    widgetItemObj.imgCookie && addWidgetControls('ToggleImageDescription', 'Image description')
-    widgetItemObj.seizureCookie && addWidgetControls('ToggleSeizure', 'Seizure safe')
-    widgetItemObj.readingMaskCookie && addWidgetControls('ToggleReadingMask', 'Reading mask')
-    widgetItemObj.cursorGuideCookie && addWidgetControls('ToggleReadingGuide', 'Reading guide')
-    widgetItemObj.speechCookie && addWidgetControls('ToggleTTS_click', 'Text to speech')
-    widgetItemObj.letterSpaceCookie && addWidgetControls('letter_spacing', 'Letter spacing')
-    widgetItemObj.wordSpaceCookie && addWidgetControls('word_spacing', 'Word spacing')
-    widgetItemObj.lineHeightCookie && addWidgetControls('line_height', 'Line height')
-    if (widgetItemObj.backColorCookie || widgetItemObj.textColorCookie || widgetItemObj.linkColorCookie) {
+    widgetItemObj.isHighlighted && addWidgetControls('ToggleHighlightHover', 'Highlight on hover')
+    widgetItemObj.isOutlined && addWidgetControls('ToggleHighlightLinks', 'Highlight all links')
+    widgetItemObj.isTextMag && addWidgetControls('ToggleTextMagnifier', 'Magnify text')
+    widgetItemObj.isImgMag && addWidgetControls('ToggleImageDescription', 'Image description')
+    widgetItemObj.isSeizureSafe && addWidgetControls('ToggleSeizure', 'Seizure safe')
+    widgetItemObj.isReadingMask && addWidgetControls('ToggleReadingMask', 'Reading mask')
+    widgetItemObj.isReadingGuide && addWidgetControls('ToggleReadingGuide', 'Reading guide')
+    widgetItemObj.isSpeech && addWidgetControls('ToggleTTS_click', 'Text to speech')
+    widgetItemObj.isLetterSpaceChanged && addWidgetControls('letter_spacing', 'Letter spacing')
+    widgetItemObj.isWordSpaceChanged && addWidgetControls('word_spacing', 'Word spacing')
+    widgetItemObj.isLineHeightChanged && addWidgetControls('line_height', 'Line height')
+    if (widgetItemObj.isBackColorChanged || widgetItemObj.isTextChanged || widgetItemObj.isLinkColorChanged) {
         addWidgetControls('ColorPicker', 'Custom colors')
     }
-    widgetItemObj.darkSatCookie && addWidgetControls('DarkContrastBackground', 'Dark contrast preset')
-    widgetItemObj.desatCookie && addWidgetControls('DesaturateBackground', 'Desaturate preset')
-    widgetItemObj.highSatCookie && addWidgetControls('HighSaturationBackground', 'High saturation')
-    widgetItemObj.lowSatCookie && addWidgetControls('LowSaturationBackground', 'Low saturation')
-    widgetItemObj.invertCookie && addWidgetControls('InvertBackground', 'Inverted preset')
-    widgetItemObj.fontSizeCookie && addWidgetControls('FontSizeMedium', 'Change font size')
-    widgetItemObj.dyslexicFont && addWidgetControls('FontTypeDyslexic', 'Open-dyslexic font')
-    widgetItemObj.baskervilleFont && addWidgetControls('FontTypeBaskerville', 'Libre-baskerville font')
-    widgetItemObj.cursorCookie && addWidgetControls('Cursor_Enlarge_option', 'Change cursor')
+    widgetItemObj.isDarkContrast && addWidgetControls('DarkContrastBackground', 'Dark contrast preset')
+    widgetItemObj.isDesaturated && addWidgetControls('DesaturateBackground', 'Desaturate preset')
+    widgetItemObj.isHighSat && addWidgetControls('HighSaturationBackground', 'High saturation')
+    widgetItemObj.isLowSat && addWidgetControls('LowSaturationBackground', 'Low saturation')
+    widgetItemObj.isInverted && addWidgetControls('InvertBackground', 'Inverted preset')
+    widgetItemObj.isFontBig && addWidgetControls('FontSizeMedium', 'Change font size')
+    widgetItemObj.isDyslexicFont && addWidgetControls('FontTypeDyslexic', 'Open-dyslexic font')
+    widgetItemObj.isBaskervilleFont && addWidgetControls('FontTypeBaskerville', 'Libre-baskerville font')
+    widgetItemObj.isCursorBig && addWidgetControls('Cursor_Enlarge_option', 'Change cursor')
 
 
 }
 addWidgetControlsOnLoad()
-
 
 

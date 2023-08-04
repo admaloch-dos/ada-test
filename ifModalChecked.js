@@ -177,10 +177,10 @@ $(function () {
             "opacity": "0"});
             */
         });
-        removeWidgetControls(['ToggleTextMagnifier'])
+      removeWidgetControls(['ToggleTextMagnifier'])
     } //end of else
 
-    widgetItemObj.textMagCookie = !widgetItemObj.textMagCookie
+    widgetItemObj.isTextMag = !widgetItemObj.isTextMag
     checkIfWidgetActive()
   }); //end of change
 }); // end of function

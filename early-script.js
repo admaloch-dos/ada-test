@@ -8,7 +8,7 @@ const removeAllCookies = () => {
     $.removeCookie('ImageDescription');
     $.removeCookie('HighlightHover');
     $.removeCookie('FontSizeCookie');
-    $.removeCookie('FontSizeCookie');
+
     $.removeCookie('BaskervilleFontCookie');
     $.removeCookie('DyslexicFontCookie');
     $.removeCookie('FM_FontTypeCookie');
@@ -35,30 +35,34 @@ const removeAllCookies = () => {
 }
 
 let widgetItemObj = {
-    highlightCookie: false,
-    outlineCookie: false,
-    textMagCookie: false,
-    imgCookie: false,
-    fontSizeCookie: false,
-    cursorCookie: false,
-    fontTypeCookie: false,
-    lineHeightCookie: false,
-    wordSpaceCookie: false,
-    letterSpaceCookie: false,
-    lowSatCookie: false,
-    highSatCookie: false,
-    invertCookie: false,
-    desatCookie: false,
-    darkSatCookie: false,
-    textColorCookie: false,
-    backColorCookie: false,
-    linkColorCookie: false,
-    seizureCookie: false,
-    readingMaskCookie: false,
-    cursorGuideCookie: false,
-    speechCookie: false,
-    dyslexicFont: false,
-    baskervilleFont: false
+    isHighlighted: false,
+    isOutlined: false,
+    isTextMag: false,
+    isImgMag: false,
+    isFontBig: false,
+    isFontChanged: false,
+    isCursorBig: false,
+    isLineHeightChanged: false,
+    isWordSpaceChanged: false,
+    isLetterSpaceChanged: false,
+
+    isDarkContrast: false,
+    isDesaturated: false,
+    isInverted: false,
+    isHighSat: false,
+    isLowSat: false,
+
+
+    isTextChanged: false,
+    isBackColorChanged: false,
+    isLinkColorChanged: false,
+
+    isSeizureSafe: false,
+    isReadingMask: false,
+    isReadingGuide: false,
+    isSpeech: false,
+    isDyslexicFont: false,
+    isBaskervilleFont: false
 }
 
 

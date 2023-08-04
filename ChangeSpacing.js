@@ -61,7 +61,7 @@ $(document).ready(function () {
         $.cookie("LetterSpaceVal", selection1, { path: '/' })
         changeIndent(selection1, '10px', '#LetterSpacing_option select')
         console.log(selection1)
-        widgetItemObj.letterSpaceCookie = selection1 === 'inherit' ? false : true
+        widgetItemObj.isLetterSpaceChanged = selection1 === 'inherit' ? false : true
         selection1 === 'inherit' ? removeWidgetControls(['letter_spacing']) : addWidgetControls('letter_spacing', 'Letter spacing')
 
 
@@ -83,7 +83,7 @@ $(document).ready(function () {
         $(".Footer").css("#word_spacing", selection2);
         $.cookie("WordSpaceVal", selection2, { path: '/' })
         changeIndent(selection2, '10px', '#WordSpacing_option select')
-        widgetItemObj.wordSpaceCookie = selection2 === 'inherit' ? false : true
+        widgetItemObj.isWordSpaceChanged = selection2 === 'inherit' ? false : true
         selection2 === 'inherit' ? removeWidgetControls(['word_spacing']) : addWidgetControls('word_spacing', 'Word spacing')
         checkIfWidgetActive()
 
@@ -108,7 +108,7 @@ $(document).ready(function () {
 
         changeIndent(selection3, '3.3', '#LineHeight_option select')
         console.log(selection3)
-        widgetItemObj.lineHeightCookie = selection3 === 'inherit' ? false : true
+        widgetItemObj.isLineHeightChanged = selection3 === 'inherit' ? false : true
         checkIfWidgetActive()
         selection3 === 'inherit' ? removeWidgetControls(['line_height']) : addWidgetControls('line_height', 'Line height')
 

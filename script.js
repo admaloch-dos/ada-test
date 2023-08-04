@@ -50,7 +50,7 @@ $(function () {
       $("html").removeClass("SeizureSafe");
       removeWidgetControls(['ToggleSeizure'])
     }
-    widgetItemObj.seizureCookie = !widgetItemObj.seizureCookie
+    widgetItemObj.isSeizureSafe = !widgetItemObj.isSeizureSafe
 
     checkIfWidgetActive()
   });
@@ -70,7 +70,7 @@ $(function () {
       $("#bottom_mask").fadeOut()
       removeWidgetControls(['ToggleReadingMask'])
     }
-    widgetItemObj.readingMaskCookie = !widgetItemObj.readingMaskCookie
+    widgetItemObj.isReadingMask = !widgetItemObj.isReadingMask
 
     checkIfWidgetActive()
   });
@@ -84,14 +84,16 @@ $(function () {
       $("body").addClass("CursorGuide");
       $("#tail").fadeIn(500)
       addWidgetControls('ToggleReadingGuide', 'Reading guide')
+      widgetItemObj.isReadingGuide = true
     } else {
       $("#tail").fadeOut(500)
       setTimeout(() => {
         $("body").removeClass('ToggleReadingGuide');
       }, 500);
       removeWidgetControls(['ToggleReadingGuide'])
+      widgetItemObj.isReadingGuide = false
     }
-    widgetItemObj.cursorGuideCookie = !widgetItemObj.cursorGuideCookie
+
 
     checkIfWidgetActive()
   });
@@ -110,7 +112,7 @@ $(function () {
       removeWidgetControls(['ToggleHighlightHover'])
     }
 
-    widgetItemObj.highlightCookie = !widgetItemObj.highlightCookie
+    widgetItemObj.isHighlighted = !widgetItemObj.isHighlighted
 
     checkIfWidgetActive()
   });
@@ -127,7 +129,7 @@ $(function () {
       $("body").removeClass("HighlightLinks");
       removeWidgetControls(['ToggleHighlightLinks'])
     }
-    widgetItemObj.outlineCookie = !widgetItemObj.outlineCookie
+    widgetItemObj.isOutlined = !widgetItemObj.isOutlined
 
     checkIfWidgetActive()
   });
@@ -168,7 +170,7 @@ $(function () {
         });
       removeWidgetControls(['ToggleImageDescription'])
     } //end of else
-    widgetItemObj.imgCookie = !widgetItemObj.imgCookie
+    widgetItemObj.isImgMag = !widgetItemObj.isImgMag
 
     checkIfWidgetActive()
   }); //end of change
@@ -195,7 +197,7 @@ $(function () {
       }, 500);
       removeWidgetControls(['ToggleTTS_click'])
     }
-    widgetItemObj.speechCookie = !widgetItemObj.speechCookie
+    widgetItemObj.isSpeech = !widgetItemObj.isSpeech
 
     checkIfWidgetActive()
   });
@@ -390,3 +392,16 @@ if ("maxTouchPoints" in navigator) {
   }
 }
 
+// click item return to default
+const restoreDefaultOnClick = (itemClass, cookie, widgetItemTrue, removeItemArr, defaultLocation) => {
+  $('body').removeClass(itemClass);
+  if ($.cookie(cookie) == "yes") {
+    $.cookie(cookie, null, {
+      path: '/'
+    });
+  }
+  widgetItemTrue = false
+  checkIfWidgetActive()
+  removeWidgetControls(removeItemArr)
+  $(defaultLocation).addClass('active').siblings().removeClass('active');
+}

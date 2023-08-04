@@ -73,11 +73,11 @@ const takeTwoColors = (c1, c2) => {
 
 
 const onInputChange = (e) => {
-    widgetItemObj.textColorCookie = true
-    widgetItemObj.backColorCookie = true
-    widgetItemObj.linkColorCookie = true
+    widgetItemObj.isTextChanged = true
+    widgetItemObj.isBackColorChanged = true
+    widgetItemObj.isLinkColorChanged = true
     addWidgetControls('ColorPicker', 'Custom colors')
-    
+
     checkIfWidgetActive()
 
     if ($('body').hasClass('highcontrast') || $('body').hasClass('inverted') || $('body').hasClass('desaturated')) {
@@ -90,6 +90,13 @@ const onInputChange = (e) => {
         $.removeCookie('DesaturatedBackgroundCookie');
 
         $("#DefaultBG_option").addClass('active').siblings().removeClass('active');
+        removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'InvertBackground'])
+        // makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
+
+        widgetItemObj.isDarkContrast = false
+        widgetItemObj.isDesaturated = false
+        widgetItemObj.isInverted = false
+
     } else {
         console.log('it does not have it')
     }

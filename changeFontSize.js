@@ -1,15 +1,4 @@
-const restoreDefaultOnClick = (itemClass, cookie, widgetItemTrue, removeItemArr, defaultLocation) => {
-    $('body').removeClass(itemClass);
-    if ($.cookie(cookie) == "yes") {
-        $.cookie(cookie, null, {
-            path: '/'
-        });
-    }
-    widgetItemTrue = false
-    checkIfWidgetActive()
-    removeWidgetControls(removeItemArr)
-    $(defaultLocation).addClass('active').siblings().removeClass('active');
-}
+
 
 $(document).ready(function () {
     $("#ADA_widget #FS_Default").addClass("active");
@@ -54,7 +43,7 @@ $(document).ready(function () {
             $("body").addClass("fontSizeMedium");
             console.log('this just ran')
             addWidgetControls('FontSizeMedium', 'Change font size')
-            widgetItemObj.fontSizeCookie = true
+            widgetItemObj.isFontBig = true
             checkIfWidgetActive()
         }
 
@@ -71,11 +60,14 @@ $(document).ready(function () {
         //     });
         // }
         // removeWidgetControls(['FontSizeMedium'])
-        // widgetItemObj.fontSizeCookie = false
+        // widgetItemObj.isFontBig = false
         // checkIfWidgetActive()
-        restoreDefaultOnClick('fontSizeMedium', 'FontSizeCookie', widgetItemObj.fontSizeCookie, ['FontSizeMedium'], '#ADA_widget #FS_Default')
+        restoreDefaultOnClick('fontSizeMedium', 'FontSizeCookie', widgetItemObj.isFontBig, ['FontSizeMedium'], '#ADA_widget #FS_Default')
 
-
+        widgetItemObj.isFontBig = false
+        console.log(widgetItemObj)
     });
 
 });
+
+// console.log(widgetItemObj.isFontBig)

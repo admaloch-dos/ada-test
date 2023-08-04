@@ -49,7 +49,7 @@ $(document).ready(function () {
       removeWidgetControls(['FontTypeBaskerville'])
     }
 
-    widgetItemObj.fontTypeCookie = true
+    widgetItemObj.isFontChanged = true
     checkIfWidgetActive()
 
   });
@@ -64,7 +64,7 @@ $(document).ready(function () {
     if ($.cookie('BaskervilleFontCookie') == "yes") {
       $.cookie("BaskervilleFontCookie", null, { path: '/' });
     }
-    widgetItemObj.fontTypeCookie = false
+    widgetItemObj.isFontChanged = false
     checkIfWidgetActive()
   });
 });
@@ -104,7 +104,7 @@ $(document).ready(function () {
     }
     $.cookie('FM_FontTypeCookie', 'yes', { path: '/' });
 
-    widgetItemObj.fontTypeCookie = true
+    widgetItemObj.isFontChanged = true
     checkIfWidgetActive()
 
 
@@ -126,7 +126,9 @@ $(document).ready(function () {
     // removeWidgetControls(['FontTypeDyslexic', 'FontTypeBaskerville'])
     // checkIfWidgetActive()
     restoreDefaultOnClick('DyslexicFont', 'DyslexicFontCookie', widgetItemObj.dyslexicFont, ['FontTypeDyslexic', 'FontTypeBaskerville'], '#ADA_widget #FT_Default')
-    restoreDefaultOnClick('BaskervilleFont', 'BaskervilleFontCookie', widgetItemObj.baskervilleFont, ['FontTypeDyslexic', 'FontTypeBaskerville'], '#ADA_widget #FT_Default')
+    restoreDefaultOnClick('BaskervilleFont', 'BaskervilleFontCookie', widgetItemObj.isBaskervilleFont, ['FontTypeDyslexic', 'FontTypeBaskerville'], '#ADA_widget #FT_Default')
+    widgetItemObj.isDyslexicFont = false
+    widgetItemObj.isBaskervilleFont = false
   });
 });
 
