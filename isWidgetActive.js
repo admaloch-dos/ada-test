@@ -102,29 +102,31 @@ const removeWidgetControls = (itemArr) => {
 
 }
 
-const itemArr = ['ToggleHighlightHover', 'ToggleHighlightLinks', 'ToggleTextMagnifier', 'ToggleImageDescription', 'ToggleSeizure', 'ToggleReadingMask', 'ToggleReadingGuide', 'ToggleTTS_click']
+
 
 const closeItemHandler = (closeItems) => {
     closeItems.forEach(item => {
         item.addEventListener('click', (e) => {
             // e.stopPropagation()
+            let colorPreArr = ['DarkContrastBackground', 'DesaturateBackground', 'InvertBackground', 'HighSaturationBackground', 'LowSaturationBackground']
+            for (let i = 0; i < colorPreArr.length; i++) {
+                if (item.classList.contains(colorPreArr[i])) {
+                    colorPresetToDefault()
+                }
+            }
+            const itemArr = ['ToggleHighlightHover', 'ToggleHighlightLinks', 'ToggleTextMagnifier', 'ToggleImageDescription', 'ToggleSeizure', 'ToggleReadingMask', 'ToggleReadingGuide', 'ToggleTTS_click']
             // turnItemOff(item, 'ToggleHighlightHover', '#ToggleHighlightHover')
-            // for (let i = 0; i < itemArr.length; i++) {
-            //     if (item.classList.contains(itemArr[i])) {
-            //         $(`#${itemArr[i]}`).prop('checked', false).trigger('change')
-            //     }
-            // }
-            item.classList.contains('ToggleHighlightHover') && $('#ToggleHighlightHover').prop('checked', false).trigger('change')
-            item.classList.contains('ToggleHighlightLinks') && $('#ToggleHighlightLinks').prop('checked', false).trigger('change')
-            item.classList.contains('ToggleTextMagnifier') && $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
-            item.classList.contains('ToggleImageDescription') && $('#ToggleImageDescription').prop('checked', false).trigger('change')
-            item.classList.contains('ToggleSeizure') && $('#ToggleSeizure').prop('checked', false).trigger('change')
-            item.classList.contains('ToggleReadingMask') && $('#ToggleReadingMask').prop('checked', false).trigger('change')
-            item.classList.contains('ToggleReadingGuide') && $('#ToggleReadingGuide').prop('checked', false).trigger('change')
-            item.classList.contains('ToggleTTS_click') && $('#ToggleTTS_click').prop('checked', false).trigger('change')
+            for (let i = 0; i < itemArr.length; i++) {
+                if (item.classList.contains(itemArr[i])) {
+                    $(`#${itemArr[i]}`).prop('checked', false).trigger('change')
+                }
+            }
             item.classList.contains('FontSizeMedium') && restoreDefaultOnClick('fontSizeMedium', 'FontSizeCookie', widgetItemObj.fontSizeCookie, ['FontSizeMedium'], '#ADA_widget #FS_Default')
-            
-
+            item.classList.contains('Cursor_Enlarge_option') && restoreDefaultOnClick('Cursor_Enlarge', 'CursorEnlargeCookie', widgetItemObj.cursorCookie, ['Cursor_Enlarge_option'], '#ADA_widget #Cur_Default')
+            item.classList.contains('ColorPicker') && resetBackgroundClicker()
+            item.classList.contains('letter_spacing') && restoreSpacingDefault('#letter_spacing', ['letter_spacing'])
+            item.classList.contains('word_spacing') && restoreSpacingDefault('#word_spacing', ['word_spacing'])
+            item.classList.contains('line_height') && restoreSpacingDefault('#line_height', ['line_height'])
 
             if (item.classList.contains('FontTypeDyslexic')) {
                 restoreDefaultOnClick('DyslexicFont', 'DyslexicFontCookie', widgetItemObj.dyslexicFont, ['FontTypeDyslexic', 'FontTypeBaskerville'], '#ADA_widget #FT_Default')
@@ -135,9 +137,10 @@ const closeItemHandler = (closeItems) => {
                 $.cookie('FM_FontTypeCookie', null, { path: '/' });
             }
 
-
         })
     })
+    console.log(widgetItemObj)
+    console.log('is widget active', isWidgetActive)
 }
 
 

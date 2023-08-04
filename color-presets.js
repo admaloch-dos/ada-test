@@ -1,10 +1,50 @@
-
+const updateColorPresetBoolean = (presetArr) => {
+    for (let i = 0; i < presetArr.length; i++) {
+        widgetItemObj.presetArr[i] = false
+    }
+}
 
 
 //   cache.textColor.value = "#212529";
 //   cache.linkColor.value = "#3863FF";)
 
+const colorPresetToDefault = () => {
+    $('body').removeClass('inverted');
+    $('body').removeClass('highcontrast');
+    $('body').removeClass('desaturated');
+    $("html").removeClass("highsaturation");
+    $("html").removeClass("lowsaturation");
+    if ($.cookie('InvertBackgroundCookie') == "yes") {
+        $.cookie("InvertBackgroundCookie", null, {
+            path: '/'
+        });
+    }
+    if ($.cookie('DesaturatedBackgroundCookie') == "yes") {
+        $.cookie("DesaturatedBackgroundCookie", null, {
+            path: '/'
+        });
+    }
+    if ($.cookie('DarkContrastBackgroundCookie') == "yes") {
+        $.cookie("DarkContrastBackgroundCookie", null, {
+            path: '/'
+        });
+    }
+    if ($.cookie('HighSaturationBackgroundCookie') == "yes") {
+        $.cookie("HighSaturationBackgroundCookie", null, {
+            path: '/'
+        });
+    }
+    if ($.cookie('LowSaturationBackgroundCookie') == "yes") {
+        $.cookie("LowSaturationBackgroundCookie", null, {
+            path: '/'
+        });
+    }
+    $("#DefaultBG_option").addClass('active').siblings().removeClass('active');
+    removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'HighSaturationBackground', 'LowSaturationBackground', 'InvertBackground'])
+    updateColorPresetBoolean(['DarkContrastBackground', 'DesaturateBackground', 'HighSaturationBackground', 'LowSaturationBackground', 'InvertBackground'])
+    checkIfWidgetActive()
 
+}
 
 
 
@@ -84,6 +124,7 @@ $(document).ready(function () {
 
         }
         widgetItemObj.darkSatCookie = true
+        
         checkIfWidgetActive()
     });
 
@@ -537,6 +578,8 @@ $(document).ready(function () {
         checkIfWidgetActive()
     });
 
+
+
     //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
     $("#ADA_widget a.defaultBackground").click(function () {
         $('body').removeClass('inverted');
@@ -570,5 +613,6 @@ $(document).ready(function () {
             });
         }
         removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'HighSaturationBackground', 'LowSaturationBackground', 'InvertBackground'])
+
     });
 });

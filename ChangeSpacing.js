@@ -34,6 +34,13 @@ const changeIndent = (value, amount, select) => {
     }
 }
 
+const restoreSpacingDefault = (itemId, removeItemArr) => {
+    // $(itemId).val($(`${itemId} option:first`).val()).triggerChange()
+    $(itemId).prop("selectedIndex", 0).trigger('change');
+    checkIfWidgetActive()
+    removeWidgetControls(removeItemArr)
+}
+
 
 $(document).ready(function () {
     // Letter Spacing

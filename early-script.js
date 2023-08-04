@@ -64,6 +64,8 @@ let widgetItemObj = {
 
 
 
+
+
 const storeMainScrollPosition = () => {
     var mainScrollPosition = $("html, body").scrollTop();
     sessionStorage.setItem("mainScrollPosition", mainScrollPosition);
@@ -103,7 +105,9 @@ const resetBackgroundClicker = () => {
         //alert("Cookie Removed!");
         storeModalScrollPosition()
         storeMainScrollPosition()
-        sessionStorage.setItem("reloadModalOpen", "true");
+        if (document.querySelector('#ADA_widget').style.display === 'flex') {
+            sessionStorage.setItem("reloadModalOpen", "true");
+        }
         forceReload()
         removeWidgetControls(['ColorPicker'])
     }
@@ -113,8 +117,8 @@ const resetBackgroundClicker = () => {
 function resetAdaModal() {
     console.log('reset done and stored scroll')
     removeAllCookies()
-    const adaWidget = document.querySelector('#ADA_widget')
-    if (adaWidget.style.display === 'flex') {
+
+    if (document.querySelector('#ADA_widget').style.display === 'flex') {
         sessionStorage.setItem("reloadModalOpen", "true");
     }
     storeMainScrollPosition()
