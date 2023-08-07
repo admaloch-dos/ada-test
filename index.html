@@ -25,7 +25,6 @@
   <script src="./files/js/jquery-3.5.1.min.js"></script>
 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="widget-list.css">
   <link rel="stylesheet" href="change-text.css">
   <link rel="stylesheet" href="media-query.css">
   <script src="./files/js/CookieScript.js"></script>
@@ -54,19 +53,13 @@
       <div id="tail" style="left: 0px; top: 1034px;"></div>
       <!---------------------------------------------------- Popups,modal,toast(toast script) below will live inside ul#Right_Nav; script for ADA_widget will live outside ul#Right_Nav ----------------------------------------------------->
       <div id="ada-triggers" class="ada-triggers">
+        <div id="widget-controls" class="widget-controls">
+          <ul id="widget-list" class="list-unstyled mt-2">
 
-        <ul id="widget-list" class="list-unstyled mt-2"></ul>
-        <div class=" d-flex justify-content-center align-items-center" id="ADA_trigger" title="Accessibility Menu">
-          <div class=" widget-icons d-flex flex-column d-none">
-            <i id="toggle-ada-list" class="fa fa-angle-up"></i>
-            <i id="reset-ada" class="fa fa-refresh  reset-ada" aria-hidden="true"></i>
-          </div>
-
-          <i id="ADA_check_icon" class="fa fa-solid fa-check"></i>
-          <i id="ADA_icon" class="fa fa-universal-access" aria-hidden="true"></i>
-
+          </ul>
         </div>
-
+        <a class="nav-link " href="#!" id="ADA_trigger" title="Accessibility Menu"><i class="fa fa-universal-access"
+            aria-hidden="true"></i></a>
       </div>
 
       <!-- The Modal -->
@@ -87,7 +80,7 @@
                   </div>
                 </div>
                 <h5 id="main-modal-title" class="title ml-md-5">Accessibility Menu</h5>
-
+                <h1 id="test-text">Hello</h1>
               </div>
               <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
                 <button onclick="resetAdaModal()" type="button" class="btn mr-md-4" title="Reset Settings"
