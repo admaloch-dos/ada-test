@@ -45,17 +45,48 @@ widgetItemObj = areCookiesSet()
 const checkIfWidgetActive = () => {
     if (Object.values(widgetItemObj).indexOf(true) > -1) {
         isWidgetActive = true
+
         $('#widget-controls').fadeIn()
+        $('#ADA_check_icon').fadeIn()
+        $('#toggle-ada-list, #reset-ada').fadeIn()
+
+        $('#ADA_icon').css("margin-left", "5px");
+
 
     } else {
         isWidgetActive = false
 
         $('#widget-controls').fadeOut()
+        $('#ADA_check_icon').fadeOut()
+        $('#toggle-ada-list, #reset-ada').fadeOut()
+       $('#ADA_icon').css("margin-left", "20px") 
+
+
     }
 
 }
 checkIfWidgetActive()
 
+// // add controls to widget on change for each item
+// const addWidgetControls = (item, text) => {
+//     const widgetList = document.querySelector('#widget-list')
+//     const currItem = document.querySelector(`.${item}`)
+//     if (currItem) {
+//         $(currItem).fadeOut()
+//         setTimeout(() => {
+//             $(currItem).remove();
+//         }, 450);
+
+//         console.log('item removed')
+//     } else {
+//         console.log('item added')
+//         const listItem = document.createElement('li')
+//         listItem.classList.add(item, 'fade-in')
+//         listItem.innerHTML = `<i class="fa fa-close close-item"></i> ${text}`
+//         widgetList.append(listItem)
+//     }
+// }
+// add controls to widget on change for each item
 
 const addWidgetControls = (item, text) => {
     const widgetList = document.querySelector('#widget-list')
@@ -63,12 +94,14 @@ const addWidgetControls = (item, text) => {
 
         const listItem = document.createElement('li')
         listItem.classList.add(item, 'fade-in', 'close-list-items')
-        listItem.innerHTML = `<i class="fa fa-close close-item"></i> ${text}`
+        listItem.innerHTML = `<p>${text} <i class="fa fa-close close-item-icon" aria-hidden="true"></i></p>`
         widgetList.append(listItem)
     }
     let closeItems = document.querySelectorAll('.close-list-items')
     closeItemHandler(closeItems)
 }
+
+
 
 
 const removeWidgetControls = (itemArr) => {
@@ -87,6 +120,12 @@ const removeWidgetControls = (itemArr) => {
 
 const closeItemHandler = (closeItems) => {
     closeItems.forEach(item => {
+        // item.addEventListener('mouseenter', () => {
+        //     item.getElementsByTagName('i')[0].classList.remove('d-none')
+        // })
+        // item.addEventListener('mouseleave', () => {
+        //     item.getElementsByTagName('i')[0].classList.add('d-none')
+        // })
         item.addEventListener('click', (e) => {
             // e.stopPropagation()
             let colorPreArr = ['DarkContrastBackground', 'DesaturateBackground', 'InvertBackground', 'HighSaturationBackground', 'LowSaturationBackground']

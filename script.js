@@ -220,7 +220,7 @@ $(document).ready(function () {
 var ADA_widget = document.getElementById("ADA_widget");
 
 // Get the button that opens the ADA_widget
-var OpenADA_widget = document.getElementById("ADA_trigger");
+var OpenADA_widget = document.getElementById("ADA_icon");
 
 // Get the <span> element that closes the ADA_widget
 var CloseADA_widget = document.getElementsByClassName("ADA_close")[0];
@@ -405,3 +405,25 @@ const restoreDefaultOnClick = (itemClass, cookie, widgetItemTrue, removeItemArr,
   removeWidgetControls(removeItemArr)
   $(defaultLocation).addClass('active').siblings().removeClass('active');
 }
+
+
+let toggleWidgetList = document.getElementById('toggle-ada-list')
+toggleWidgetList.addEventListener('click', () => {
+  if (toggleWidgetList.classList.contains('fa-angle-up')) {
+    $("#toggle-ada-list").removeClass("fa-angle-up");
+    $("#toggle-ada-list").addClass("fa-angle-down");
+    
+
+    $("#widget-list").fadeOut()
+  } else {
+    $("#toggle-ada-list").removeClass("fa-angle-down");
+    $("#toggle-ada-list").addClass("fa-angle-up");
+    $("#widget-list").fadeIn()
+  }
+})
+
+let resetIcon = document.getElementById('reset-ada')
+
+resetIcon.addEventListener('click', () => {
+  resetAdaModal()
+})

@@ -18,70 +18,20 @@ body {
   font-size: 1.2rem;
 } */
 
-#ada-triggers {
-  position: fixed;
-  z-index: 1000;
-  left: 1%;
-  bottom: 7%;
-  /* border: red solid 1px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 
-}
 
-#ada-triggers li {
+/* #ada-triggers li {
   padding: 0 10px;
-  color: #023e8a;
 }
 
 #widget-controls {
-  border: #023e8a solid 2px;
+  border: black solid 2px;
   border-radius: 10px;
-  box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.14);
+
   background-color: white;
-margin-bottom: 10px;
-}
-
-/* .close-item {
-
-  opacity: .5;
-  transition: .2s ease-in-out all;
-
-}
-
-.close-item:hover {
-  opacity: 1;
-  cursor: pointer;
-
-} */
-
-
-
-#ADA_trigger {
-  /* color: #8d99ae; */
-  border-radius: 20px;
-  border: none !important;
-
 }
 
 
-
-#ADA_trigger i {
-  font-size: 50px;
-  transition: transform .1s ease-in-out;
-  border-radius: 20px;
-
-  z-index: 100;
-  border: none !important;
-}
-
-#ADA_trigger i:hover {
-  transform: scale(1.05);
-
-
-}
 
 #widget-list li {
   letter-spacing: 2px !important;
@@ -98,30 +48,14 @@ margin-bottom: 10px;
 .fade-in {
   opacity: .7;
   /* transition: .15s ease-in-out all; */
-  cursor: pointer;
-}
+  /* cursor: pointer; */
+/* } */
 
 .fade-in:hover {
   opacity: 1;
 }
 
 
-
-/* @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  animation-name: fade-in;
-  animation-iteration-count: 1;
-  animation-duration: 1000ms;
-} */
 
 
 
@@ -1344,7 +1278,7 @@ html.translated-ltr #wordspace_icon {
   opacity: 75%;
 }
 
-.highcontrast #ADA_trigger {
+.highcontrast #ADA_icon {
   color: #fff;
 }
 
@@ -3036,7 +2970,7 @@ body.BaskervilleFont {
 
 }
 
-.desaturated #ADA_trigger {
+.desaturated #ADA_icon {
   color: #d9d9d9 !important;
 }
 
@@ -3557,8 +3491,14 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
   /* background-color: #CB520F !important; */
   color: white !important;
   background-color: #000 !important;
-
 }
+
+/* .HighlightHover #ADA_trigger:hover {
+  background-color: none!important;
+} */
+
+
+
 
 
 .HighlightHover .modal_content li:hover .title {

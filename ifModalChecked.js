@@ -46,7 +46,7 @@ $(document).ready(function () {
         $("body").addClass("TextMagnifier");
         $('[id="ToggleZoom"]').prop('checked', false);
         $('#text_magnify').attr('style', 'display: block!important');
-        $('p, a, :header, span, button, td').hover(
+        $('p, a, :header, span, button, td').not('#ada-triggers, #ada-triggers ul, #ada-triggers ul li, #ada-triggers *').hover(
           function (e) {
 
             //do the mouseenter things here...
@@ -123,7 +123,7 @@ $(function () {
 
       $("body").addClass("TextMagnifier");
       $('#text_magnify').attr('style', 'display: none!important');
-      $('p, a, :header, span, button, td').hover(
+      $('p, a, :header, span, button, td').not('#ada-triggers, #ada-triggers ul, #ada-triggers ul li, #ada-triggers *').hover(
         function (e) {
 
           //do the mouseenter things here...
@@ -167,7 +167,7 @@ $(function () {
     } else {
 
       $("body").removeClass("TextMagnifier");
-      $('p, a, :header, span, button, td').hover(
+      $('p, a, :header, span, button, td').not('#ada-triggers, #ada-triggers ul, #ada-triggers ul li, #ada-triggers *').hover(
         function (e) {
           //do the mouseleave things here...
 
