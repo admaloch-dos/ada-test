@@ -56,26 +56,6 @@ const checkIfWidgetActive = () => {
 }
 checkIfWidgetActive()
 
-// // add controls to widget on change for each item
-// const addWidgetControls = (item, text) => {
-//     const widgetList = document.querySelector('#widget-list')
-//     const currItem = document.querySelector(`.${item}`)
-//     if (currItem) {
-//         $(currItem).fadeOut()
-//         setTimeout(() => {
-//             $(currItem).remove();
-//         }, 450);
-
-//         console.log('item removed')
-//     } else {
-//         console.log('item added')
-//         const listItem = document.createElement('li')
-//         listItem.classList.add(item, 'fade-in')
-//         listItem.innerHTML = `<i class="fa fa-close close-item"></i> ${text}`
-//         widgetList.append(listItem)
-//     }
-// }
-// add controls to widget on change for each item
 
 const addWidgetControls = (item, text) => {
     const widgetList = document.querySelector('#widget-list')
