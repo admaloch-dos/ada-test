@@ -321,6 +321,7 @@ $(function () {
                 forceReload()
             }
             addWidgetControls('ToggleTTS_click', 'Text to speech')
+            widgetItemObj.isSpeech = true
         } else {
             $(".audio_state").fadeOut(500)
             setTimeout(() => {
@@ -328,9 +329,8 @@ $(function () {
                 $.cookie('TTS_click_enabled', 'false');
             }, 500);
             removeWidgetControls(['ToggleTTS_click'])
+            widgetItemObj.isSpeech = false
         }
-        widgetItemObj.isSpeech = !widgetItemObj.isSpeech
-
         checkIfWidgetActive()
     });
 });

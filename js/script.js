@@ -56,19 +56,7 @@ window.onclick = function (event) {
   }
 }
 
-// click item return to default
-const restoreDefaultOnClick = (itemClass, cookie, widgetItemTrue, removeItemArr, defaultLocation) => {
-  $('body').removeClass(itemClass);
-  if ($.cookie(cookie) == "yes") {
-    $.cookie(cookie, null, {
-      path: '/'
-    });
-  }
-  widgetItemTrue = false
-  checkIfWidgetActive()
-  removeWidgetControls(removeItemArr)
-  $(defaultLocation).addClass('active').siblings().removeClass('active');
-}
+
 
 // widget list icon listeners
 let toggleWidgetList = document.getElementById('toggle-ada-list')
@@ -84,10 +72,7 @@ toggleWidgetList.addEventListener('click', () => {
   }
 })
 
-let resetIcon = document.getElementById('reset-ada')
-resetIcon.addEventListener('click', () => {
-  resetAdaModal()
-})
+
 
 
 const areCookiesSet = () => {
@@ -107,7 +92,7 @@ const areCookiesSet = () => {
   updateCookies.isInverted = isCookieActive($.cookie("InvertBackgroundCookie"), 'null')
   updateCookies.isDesaturated = isCookieActive($.cookie("DesaturatedBackgroundCookie"), 'null')
   updateCookies.isDarkContrast = isCookieActive($.cookie("DarkContrastBackgroundCookie"), 'null')
-  updateCookies.isTextChanged = isCookieActive($.cookie("TextColorCookie"), 'false')
+  updateCookies.isTextColorChanged = isCookieActive($.cookie("TextColorCookie"), 'false')
   updateCookies.isBackColorChanged = isCookieActive($.cookie("BackgroundColorCookie"), 'false')
   updateCookies.isLinkColorChanged = isCookieActive($.cookie("LinkColorCookie"), 'false')
   updateCookies.isSeizureSafe = isCookieActive($.cookie("SeizureSafe"), 'false')

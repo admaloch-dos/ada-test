@@ -3,25 +3,16 @@ const removeAllCookies = () => {
     for (let i = 0; i < cookiesArr.length; i++) {
         $.removeCookie(cookiesArr[i]);
     }
-  }
+}
 
-  const isCookieActive = (input, value) => {
+const isCookieActive = (input, value) => {
     if (input && input !== value) {
         return true
     } else {
         return false
     }
-  }
-
-// complete reset- all cookies removed and refresh - runs on reset button and shift-q
-function resetAdaModal() {
-    removeAllCookies()
-    if (document.querySelector('#ADA_widget').style.display === 'flex') {
-        sessionStorage.setItem("reloadModalOpen", "true");
-    }
-    storeMainScrollPosition()
-    forceReload()
 }
+
 
 const displayModal = () => {
     const overlay = document.querySelector('#ADA_widget')

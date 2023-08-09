@@ -2,15 +2,39 @@
 $(document).ready(function () {
   $("#ADA_widget #FT_Default").addClass("active");
 });
+
+
+/////COOKIE SETTING FOR FONT TYPE
+$(document).ready(function () {
+  $("#FT_Default").addClass("active");
+});
 //FOR FONT TYPE CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
 //https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
-// $(function () {
-//   $('#ADA_widget .font_type_form .form-check ul li').click(function () {
-//     $(this).addClass('active').siblings().removeClass('active');
-//   });
-// });
+$(function () {
+  $('.font_type_form .form-check ul li').click(function () {
+      $(this).addClass('active').siblings().removeClass('active');
+  });
+});
 
 
+
+const restoreDefaultFontType = () => {
+  $('body').removeClass('DyslexicFont');
+  $('body').removeClass('BaskervilleFont');
+  $('#FT_Default').addClass('active').siblings().removeClass('active');
+  if ($.cookie('BaskervilleFontCookie') == "yes") {
+    $.cookie("BaskervilleFontCookie", null, { path: '/' });
+
+  }
+  if ($.cookie('DyslexicFontCookie') == "yes") {
+    $.cookie("DyslexicFontCookie", null, { path: '/' });
+  }
+  widgetItemObj.isDyslexicFont = false
+  widgetItemObj.isBaskervilleFont = false
+  removeWidgetControls(['FontTypeDyslexic', 'FontTypeBaskerville'])
+
+  checkIfWidgetActive()
+}
 
 
 $(document).ready(function () {
@@ -45,28 +69,18 @@ $(document).ready(function () {
       $.cookie('DyslexicFontCookie', 'yes', { path: '/' });
       $("body").addClass("DyslexicFont");
       $('body').removeClass('BaskervilleFont');
-      addWidgetControls('FontTypeDyslexic', 'Open-dyslexic font')
-      removeWidgetControls(['FontTypeBaskerville'])
-    }
 
-    widgetItemObj.isFontChanged = true
+    }
+    addWidgetControls('FontTypeDyslexic', 'Open-dyslexic font')
+    removeWidgetControls(['FontTypeBaskerville'])
+    widgetItemObj.isBaskervilleFont = false
+    widgetItemObj.isDyslexicFont = true
     checkIfWidgetActive()
 
   });
 
-  //When 'a.FontTypeDefault' is clicked, removes 'DyslexicFont' and erases FontTypeCookie
-  $("#ADA_widget a.FontTypeDefault").click(function () {
-    $('body').removeClass('DyslexicFont');
-    $('body').removeClass('BaskervilleFont');
-    if ($.cookie('DyslexicFontCookie') == "yes") {
-      $.cookie("DyslexicFontCookie", null, { path: '/' });
-    }
-    if ($.cookie('BaskervilleFontCookie') == "yes") {
-      $.cookie("BaskervilleFontCookie", null, { path: '/' });
-    }
-    widgetItemObj.isFontChanged = false
-    checkIfWidgetActive()
-  });
+
+
 });
 
 $(document).ready(function () {
@@ -99,12 +113,12 @@ $(document).ready(function () {
       $.cookie('BaskervilleFontCookie', 'yes', { path: '/' });
       $("body").addClass("BaskervilleFont");
       $('body').removeClass('DyslexicFont');
-      addWidgetControls('FontTypeBaskerville', 'Libre-baskerville font')
-      removeWidgetControls(['FontTypeDyslexic'])
-    }
-    $.cookie('FM_FontTypeCookie', 'yes', { path: '/' });
 
-    widgetItemObj.isFontChanged = true
+    }
+    addWidgetControls('FontTypeBaskerville', 'Libre-baskerville font')
+    removeWidgetControls(['FontTypeDyslexic'])
+    widgetItemObj.isBaskervilleFont = true
+    widgetItemObj.isDyslexicFont = false
     checkIfWidgetActive()
 
 
@@ -112,23 +126,11 @@ $(document).ready(function () {
 
 
 
+
+
   //When 'a.FontTypeDefault' is clicked, removes 'DyslexicFont' and erases FontTypeCookie
   $("#ADA_widget a.FontTypeDefault").click(function () {
-    // $('body').removeClass('DyslexicFont');
-    // $('body').removeClass('BaskervilleFont');
-    // if ($.cookie('BaskervilleFontCookie') == "yes") {
-    //   $.cookie("BaskervilleFontCookie", null, { path: '/' });
-
-    // }
-    // if ($.cookie('DyslexicFontCookie') == "yes") {
-    //   $.cookie("DyslexicFontCookie", null, { path: '/' });
-    // }
-    // removeWidgetControls(['FontTypeDyslexic', 'FontTypeBaskerville'])
-    // checkIfWidgetActive()
-    restoreDefaultOnClick('DyslexicFont', 'DyslexicFontCookie', widgetItemObj.dyslexicFont, ['FontTypeDyslexic', 'FontTypeBaskerville'], '#ADA_widget #FT_Default')
-    restoreDefaultOnClick('BaskervilleFont', 'BaskervilleFontCookie', widgetItemObj.isBaskervilleFont, ['FontTypeDyslexic', 'FontTypeBaskerville'], '#ADA_widget #FT_Default')
-    widgetItemObj.isDyslexicFont = false
-    widgetItemObj.isBaskervilleFont = false
+   restoreDefaultFontType()
   });
 });
 

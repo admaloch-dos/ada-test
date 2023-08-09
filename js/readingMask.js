@@ -8,13 +8,15 @@ $(function () {
       $("#top_mask").fadeIn()
       $("#bottom_mask").fadeIn()
       addWidgetControls('ToggleReadingMask', 'Reading mask')
+      widgetItemObj.isReadingMask = true
     } else {
       $("body").removeClass("ReadingMask_ON");
       $("#top_mask").fadeOut()
       $("#bottom_mask").fadeOut()
       removeWidgetControls(['ToggleReadingMask'])
+      widgetItemObj.isReadingMask = false
     }
-    widgetItemObj.isReadingMask = !widgetItemObj.isReadingMask
+   
     checkIfWidgetActive()
   });
 });
@@ -94,7 +96,7 @@ setTimeout(() => {
     }, 100);
     setTimeout(() => {
       preventPageScroll()
-    
+
     }, 500);
 
   }

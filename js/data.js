@@ -1,3 +1,5 @@
+let isWidgetActive = false
+
 const cookiesArr = ['BackgroundColorCookie', 'TextColorCookie', 'LinkColorCookie', 'TextMagnifier', 'HighlightLinks', 'ImageDescription', 'HighlightHover', 'FontSizeCookie', 'BaskervilleFontCookie', 'DyslexicFontCookie', 'FM_FontTypeCookie', 'CursorEnlargeCookie', 'DarkContrastBackgroundCookie', 'LowSaturationBackgroundCookie', 'InvertBackgroundCookie', 'HighSaturationBackgroundCookie', 'DesaturatedBackgroundCookie', 'DesaturatedBackgroundCookie', 'InvertBackgroundCookie', 'DarkContrastBackgroundCookie', 'SeizureSafe', 'ReadingMask', 'CursorGuide', 'TTS_click_enabled', 'LinpageHeightVal', 'WordSpaceVal', 'LetterSpaceVal', 'speechPitch', 'speechRate', 'speechVol', 'voiceCookie']
 
 // booleans used to determine if widget is still active
@@ -17,7 +19,7 @@ let widgetItemObj = {
     isInverted: false,
     isHighSat: false,
     isLowSat: false,
-    isTextChanged: false,
+    isTextColorChanged: false,
     isBackColorChanged: false,
     isLinkColorChanged: false,
     isSeizureSafe: false,

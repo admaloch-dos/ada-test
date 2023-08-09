@@ -23,6 +23,7 @@ $(function () {
         }
       );
       addWidgetControls('ToggleImageDescription', 'Image description')
+      widgetItemObj.isImgMag = true
     } else {
       $("body").removeClass("ImageDescription");
       $('img[alt], .feature .img[alt], i.fa[alt]').hover(
@@ -32,8 +33,9 @@ $(function () {
           $('#ImageDescription_magnify').attr('style', 'opacity: 0!important');
         });
       removeWidgetControls(['ToggleImageDescription'])
+      widgetItemObj.isImgMag = false
     } //end of else
-    widgetItemObj.isImgMag = !widgetItemObj.isImgMag
+
 
     checkIfWidgetActive()
   }); //end of change

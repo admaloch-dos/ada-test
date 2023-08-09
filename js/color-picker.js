@@ -2,14 +2,14 @@
 //https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
 $(function () {
     $('#ADA_widget .bg_form .form-check ul li').click(function () {
-      $(this).addClass('active').siblings().removeClass('active');
+        $(this).addClass('active').siblings().removeClass('active');
     });
-  });
+});
 
-  // JavaScript Document
+// JavaScript Document
 $(document).ready(function () {
     $("#ADA_widget #DefaultBG_option").addClass("active");
-  }); // end of doc ready
+}); // end of doc ready
 
 //////////////////////////////////////////////////////////////////////////////// Color Picker ////////////////////////////////////////////////////////////////////////
 let config = {
@@ -24,7 +24,7 @@ let cache = {};
 
 //https://www.jquery-az.com/how-to-create-read-and-remove-jquery-cookies-with-3-demos/
 $("#remove_cookie").click(function () {
-    resetBackgroundClicker()
+    resetColorPicker()
 
 });
 
@@ -86,7 +86,7 @@ const takeTwoColors = (c1, c2) => {
 
 
 const onInputChange = (e) => {
-    widgetItemObj.isTextChanged = true
+    widgetItemObj.isTextColorChanged = true
     widgetItemObj.isBackColorChanged = true
     widgetItemObj.isLinkColorChanged = true
     addWidgetControls('ColorPicker', 'Custom colors')
@@ -111,7 +111,7 @@ const onInputChange = (e) => {
         widgetItemObj.isInverted = false
 
     } else {
-        console.log('it does not have it')
+        // console.log('it does not have it')
     }
 
 
@@ -373,7 +373,7 @@ $(document).ready(function () {
 }); //end doc ready
 
 // function to remove background color cookies and reload page
-const resetBackgroundClicker = () => {
+const resetColorPicker = () => {
     let bgColor = cache.bgColor.value
     let textColor = cache.textColor.value
     let linkColor = cache.linkColor.value
@@ -387,7 +387,8 @@ const resetBackgroundClicker = () => {
         if (document.querySelector('#ADA_widget').style.display === 'flex') {
             sessionStorage.setItem("reloadModalOpen", "true");
         }
-        forceReload()
         removeWidgetControls(['ColorPicker'])
+        forceReload()
+
     }
 }

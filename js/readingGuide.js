@@ -1,25 +1,3 @@
-// Toggle Reading Guide
-$(function () {
-  $('[id="ToggleReadingGuide"]').change(function () {
-    if ($(this).is(':checked')) {
-      $("#tail").hide()
-      $("body").addClass("CursorGuide");
-      $("#tail").fadeIn(500)
-      addWidgetControls('ToggleReadingGuide', 'Reading guide')
-      widgetItemObj.isReadingGuide = true
-    } else {
-      $("#tail").fadeOut(500)
-      setTimeout(() => {
-        $("body").removeClass('CursorGuide');
-      }, 500);
-      removeWidgetControls(['ToggleReadingGuide'])
-      widgetItemObj.isReadingGuide = false
-    }
-
-
-    checkIfWidgetActive()
-  });
-});
 
 $(document).ready(function () {
 
@@ -47,4 +25,28 @@ $(document).ready(function () {
     $.cookie(name, $(this).prop('checked'), { path: '/', })
   });
 });
+
+// Toggle Reading Guide
+$(function () {
+  $('[id="ToggleReadingGuide"]').change(function () {
+    if ($(this).is(':checked')) {
+      $("#tail").hide()
+      $("body").addClass("CursorGuide");
+      $("#tail").fadeIn(500)
+      addWidgetControls('ToggleReadingGuide', 'Reading guide')
+      widgetItemObj.isReadingGuide = true
+    } else {
+      $("#tail").fadeOut(500)
+      setTimeout(() => {
+        $("body").removeClass('CursorGuide');
+      }, 500);
+      removeWidgetControls(['ToggleReadingGuide'])
+      widgetItemObj.isReadingGuide = false
+    }
+
+
+    checkIfWidgetActive()
+  });
+});
+
 

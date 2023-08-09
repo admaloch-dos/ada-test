@@ -2,12 +2,7 @@ const makeColorPresetsFalse = (presetArr) => {
     for (let i = 0; i < presetArr.length; i++) {
         presetArr[i] = false
     }
-
-
 }
-
-
-
 
 //   cache.textColor.value = "#212529";
 //   cache.linkColor.value = "#3863FF";)
@@ -53,11 +48,14 @@ const colorPresetToDefault = () => {
     widgetItemObj.isHighSat = false
     widgetItemObj.isLowSat = false
     checkIfWidgetActive()
-
-
 }
 
-
+$(document).ready(function () {
+    //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
+    $("#ADA_widget a.defaultBackground").click(function () {
+        colorPresetToDefault()
+    });
+}); // end of doc ready
 
 $(document).ready(function () {
     // Cookie for Dark Contrast
@@ -101,7 +99,7 @@ $(document).ready(function () {
     $("#ADA_widget a.DarkContrastBackground").click(function () {
 
 
-        resetBackgroundClicker()
+        resetColorPicker()
         $.cookie("DesaturatedBackgroundCookie", null, {
             path: '/'
         });
@@ -139,47 +137,6 @@ $(document).ready(function () {
 
     });
 
-    //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
-    // $("#ADA_widget a.defaultBackground").click(function () {
-    //     $('body').removeClass('highcontrast');
-    //     $('body').removeClass('desaturated');
-    //     $('body').removeClass('inverted');
-    //     $("html").removeClass("highsaturation");
-    //     $("html").removeClass("lowsaturation");
-    //     if ($.cookie('DarkContrastBackgroundCookie') == "yes") {
-    //         $.cookie("DarkContrastBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('DesaturatedBackgroundCookie') == "yes") {
-    //         $.cookie("DesaturatedBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('InvertBackgroundCookie') == "yes") {
-    //         $.cookie("InvertBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('HighSaturationBackgroundCookie') == "yes") {
-    //         $.cookie("HighSaturationBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('LowSaturationBackgroundCookie') == "yes") {
-    //         $.cookie("LowSaturationBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     widgetItemObj.isLowSat = false
-    //     widgetItemObj.isHighSat = false
-    //     widgetItemObj.isInverted = false
-    //     widgetItemObj.isDesaturated = false
-    //     widgetItemObj.isDarkContrast = false
-    //     checkIfWidgetActive()
-
-
-    // });
 }); // end of doc ready
 
 
@@ -224,7 +181,7 @@ $(document).ready(function () {
     // When 'a.DesaturateBackground' is clicked remove other background cookies
     // When input is clicked save cookie for 30days
     $("#ADA_widget a.DesaturateBackground").click(function () {
-        resetBackgroundClicker()
+        resetColorPicker()
         $.cookie("DarkContrastBackgroundCookie", null, {
             path: '/'
         });
@@ -263,39 +220,7 @@ $(document).ready(function () {
 
     });
 
-    //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
-    // $("#ADA_widget a.defaultBackground").click(function () {
-    //     $('body').removeClass('desaturated');
-    //     $('body').removeClass('highcontrast');
-    //     $('body').removeClass('inverted');
-    //     $("html").removeClass("highsaturation");
-    //     $("html").removeClass("lowsaturation");
-    //     if ($.cookie('DesaturatedBackgroundCookie') == "yes") {
-    //         $.cookie("DesaturatedBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('DarkContrastBackgroundCookie') == "yes") {
-    //         $.cookie("DarkContrastBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('InvertBackgroundCookie') == "yes") {
-    //         $.cookie("InvertBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('HighSaturationBackgroundCookie') == "yes") {
-    //         $.cookie("HighSaturationBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('LowSaturationBackgroundCookie') == "yes") {
-    //         $.cookie("LowSaturationBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    // });
+
 });
 
 
@@ -372,39 +297,7 @@ $(document).ready(function () {
         checkIfWidgetActive()
     });
 
-    //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
-    // $("#ADA_widget a.defaultBackground").click(function () {
-    //     $("html").removeClass("highsaturation");
-    //     $('body').removeClass('desaturated');
-    //     $('body').removeClass('highcontrast');
-    //     $('body').removeClass('inverted');
-    //     $("html").removeClass("lowsaturation");
-    //     if ($.cookie('HighSaturationBackgroundCookie') == "yes") {
-    //         $.cookie("HighSaturationBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('DarkContrastBackgroundCookie') == "yes") {
-    //         $.cookie("DarkContrastBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('InvertBackgroundCookie') == "yes") {
-    //         $.cookie("InvertBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('DesaturatedBackgroundCookie') == "yes") {
-    //         $.cookie("DesaturatedBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('LowSaturationBackgroundCookie') == "yes") {
-    //         $.cookie("LowSaturationBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    // });
+
 });
 
 
@@ -486,39 +379,7 @@ $(document).ready(function () {
         checkIfWidgetActive()
     });
 
-    //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
-    // $("#ADA_widget a.defaultBackground").click(function () {
-    //     $("html").removeClass("lowsaturation");
-    //     $("html").removeClass("highsaturation");
-    //     $('body').removeClass('desaturated');
-    //     $('body').removeClass('highcontrast');
-    //     $('body').removeClass('inverted');
-    //     if ($.cookie('LowSaturationBackgroundCookie') == "yes") {
-    //         $.cookie("LowSaturationBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('DarkContrastBackgroundCookie') == "yes") {
-    //         $.cookie("DarkContrastBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('InvertBackgroundCookie') == "yes") {
-    //         $.cookie("InvertBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('DesaturatedBackgroundCookie') == "yes") {
-    //         $.cookie("DesaturatedBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    //     if ($.cookie('HighSaturationBackgroundCookie') == "yes") {
-    //         $.cookie("HighSaturationBackgroundCookie", null, {
-    //             path: '/'
-    //         });
-    //     }
-    // });
+
 });
 
 
@@ -563,7 +424,7 @@ $(document).ready(function () {
     // When 'a.DesaturateBackground' is clicked remove other background cookies and their related classes
     // When input is clicked save cookie for 30days
     $("#ADA_widget a.InvertBackground").click(function () {
-        resetBackgroundClicker()
+        resetColorPicker()
         $.cookie("DarkContrastBackgroundCookie", null, {
             path: '/'
         });
@@ -603,39 +464,5 @@ $(document).ready(function () {
 
 
 
-    //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
-    $("#ADA_widget a.defaultBackground").click(function () {
-        // $('body').removeClass('inverted');
-        // $('body').removeClass('highcontrast');
-        // $('body').removeClass('desaturated');
-        // $("html").removeClass("highsaturation");
-        // $("html").removeClass("lowsaturation");
-        // if ($.cookie('InvertBackgroundCookie') == "yes") {
-        //     $.cookie("InvertBackgroundCookie", null, {
-        //         path: '/'
-        //     });
-        // }
-        // if ($.cookie('DesaturatedBackgroundCookie') == "yes") {
-        //     $.cookie("DesaturatedBackgroundCookie", null, {
-        //         path: '/'
-        //     });
-        // }
-        // if ($.cookie('DarkContrastBackgroundCookie') == "yes") {
-        //     $.cookie("DarkContrastBackgroundCookie", null, {
-        //         path: '/'
-        //     });
-        // }
-        // if ($.cookie('HighSaturationBackgroundCookie') == "yes") {
-        //     $.cookie("HighSaturationBackgroundCookie", null, {
-        //         path: '/'
-        //     });
-        // }
-        // if ($.cookie('LowSaturationBackgroundCookie') == "yes") {
-        //     $.cookie("LowSaturationBackgroundCookie", null, {
-        //         path: '/'
-        //     });
-        // }
-        // removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'HighSaturationBackground', 'LowSaturationBackground', 'InvertBackground'])
-        colorPresetToDefault()
-    });
+
 });

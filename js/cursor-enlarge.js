@@ -2,13 +2,26 @@ $(document).ready(function () {
   $("#ADA_widget #Cur_Default").addClass("active");
 });
 
-//FOR Cursor_Enlarge -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
-//https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
 $(function () {
-  $('#ADA_widget .cursorSwap_form .form-check ul li').click(function () {
-    $(this).addClass('active').siblings().removeClass('active');
+  $('.cursorSwap_form .form-check ul li').click(function () {
+      $(this).addClass('active').siblings().removeClass('active');
   });
 });
+
+const restoreDefaultCursorSize = () => {
+  $('body').removeClass('Cursor_Enlarge');
+  $('#Cur_Default').addClass('active').siblings().removeClass('active');
+  if ($.cookie('CursorEnlargeCookie') == "yes") {
+    $.cookie("CursorEnlargeCookie", null, {
+      path: '/'
+    });
+  }
+  removeWidgetControls(['Cursor_Enlarge_option'])
+  widgetItemObj.isCursorBig = false
+  checkIfWidgetActive()
+}
+
+
 
 // Cookie for CursorEnlarge
 $(document).ready(function () {
@@ -38,19 +51,7 @@ $(document).ready(function () {
 
   //When 'a.Cursor_Default' is clicked, removes 'CursorEnlarge' and erases CursorEnlargeCookie
   $("#ADA_widget a.Cursor_Default").click(function () {
-    //   $('body').removeClass('Cursor_Enlarge');
-    //   if ($.cookie('CursorEnlargeCookie') == "yes") {
-    //     $.cookie("CursorEnlargeCookie", null, {
-    //       path: '/'
-    //     });
-    //     removeWidgetControls(['Cursor_Enlarge_option'])
-    //   }
-    //   widgetItemObj.isCursorBig = false
-    //   checkIfWidgetActive()
-    restoreDefaultOnClick('Cursor_Enlarge', 'CursorEnlargeCookie', widgetItemObj.isCursorBig, ['Cursor_Enlarge_option'], '#ADA_widget #Cur_Default')
-
-    widgetItemObj.isCursorBig = false
-    checkIfWidgetActive()
+    restoreDefaultCursorSize()
   });
 
 });

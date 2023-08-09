@@ -48,7 +48,7 @@ body {
 .fade-in {
   opacity: .7;
   /* transition: .15s ease-in-out all; */
-  /* cursor: pointer; */
+/* cursor: pointer; */
 /* } */
 
 .fade-in:hover {
@@ -1988,6 +1988,16 @@ a {
   display: block !important;
 }
 
+.TextMagnifier p,
+.TextMagnifier h1,
+.TextMagnifier h2,
+.TextMagnifier h3,
+.TextMagnifier h4,
+.TextMagnifier h5,
+.TextMagnifier h6 {
+  cursor: zoom-in;
+}
+
 #text_magnify {
   display: none !important;
 }
@@ -3472,12 +3482,20 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
 
 
 
-.HighlightLinks .modal_content .title {
+.HighlightLinks .modal_content li a .title {
   color: #3863ff !important;
 }
 
+
+
 .HighlightLinks #ADA_widget .modal_body .form-check ul li.active a {
   background-color: lightgray !important;
+  font-weight: bold;
+
+}
+
+.HighlightLinks .modal_content li.active:hover .title {
+  color: #3863ff !important;
 }
 
 /************************************************************ Highlight Links on Hover ************************************************************/
@@ -3508,9 +3526,7 @@ html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul l
   transition: .3s;
 }
 
-.HighlightHover .modal_content li.active:hover .title {
-  color: #3863ff !important;
-}
+
 
 
 /* code added for the test page... not needed in the end */
