@@ -1,0 +1,122 @@
+@media screen and (max-width:300px) {
+
+    .container-fluid {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #main-modal-title {
+        text-align: center;
+    }
+
+    .ada_toggleContainer .ada_content .description {
+        text-align: center !important;
+    }
+
+
+
+    h5 {
+        font-size: 17px;
+    }
+
+    #ADA_widget .modal_body ul li {
+        height: 40px !important;
+        width: 90px !important;
+
+    }
+
+    .fontSizeMedium #ADA_widget .modal_body ul li {
+
+        width: 100px !important;
+        height: 50px !important;
+
+    }
+
+    .contact-info {
+        overflow-wrap: break-word;
+    }
+
+    .fontSizeMedium p,
+    .fontSizeMedium a,
+    .fontSizeMedium button,
+    .fontSizeMedium div,
+    .fontSizeMedium label,
+    .form-control,
+    .fontSizeMedium .goog-te-combo {
+        font-size: 15px !important;
+    }
+
+
+    .fontSizeMedium h1 {
+        font-size: 43px !important;
+    }
+
+    .fontSizeMedium h2 {
+        font-size: 37px !important;
+    }
+
+    .fontSizeMedium h3 {
+        font-size: 32px !important;
+    }
+
+    .fontSizeMedium h4 {
+        font-size: 27px !important;
+    }
+
+    .fontSizeMedium h5 {
+        font-size: 22px !important;
+    }
+
+    .fontSizeMedium h6 {
+        font-size: 17px !important;
+    }
+
+
+    .fontSizeMedium .ada_toggleContainer .switch-handle {
+        top: 5px !important;
+    }
+
+    .fontSizeMedium .menu-selects {
+        margin-bottom: 10px;
+    }
+
+    .ada_toggleContainer {
+        flex-direction: column;
+    }
+
+    .fontSizeMedium #ADA_widget img {
+        display: none;
+    }
+
+
+
+    .ada_toggleContainer .ada_content .description {
+        display: none;
+    }
+
+    .goog-te-combo {
+        font-size: 12px !important;
+    }
+}
+
+
+@media screen and (max-width:375px) {
+    .contact-info {
+        overflow-wrap: break-word;
+    }
+
+    .container-fluid {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width:460px) {
+    #ADA_widget .modal_body ul li {
+        height: 50px !important;
+        width: 100px !important;
+
+    }
+}
