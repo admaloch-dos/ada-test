@@ -214,164 +214,164 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function () {
-    $("#FS_Default").addClass("active");
-});
-//FOR FONT SIZE CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
-//https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
-$(function () {
-    $('.fontsize_form .form-check ul li').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-    });
-});
+// $(document).ready(function () {
+//     $("#FS_Default").addClass("active");
+// });
+// //FOR FONT SIZE CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
+// //https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
+// $(function () {
+//     $('.fontsize_form .form-check ul li').click(function () {
+//         $(this).addClass('active').siblings().removeClass('active');
+//     });
+// });
 
-$(document).ready(function () {
-    // Cookie for FontSizeMedium
-    // Check (onLoad) if FontSizeCookie is there and set the class to body if it is
-    // Add active class to li
-    if ($.cookie('FontSizeCookie') == "yes") {
-        $("#FS_Medium").addClass("active");
-        $("body").addClass("fontSizeMedium");
-        $("#FS_Default").removeClass("active");
-    }
-
-
-    // When 'a.FontSizeMedium' is clicked remove DesaturatedBackgroundCookie and set FontSizeCookie
-    // When input is clicked save cookie for 30days
-    $("a.FontSizeMedium").click(function () {
-        if ($.cookie('FontSizeCookie') == "undefined" || $.cookie('FontSizeCookie') == "no") {
-            $.cookie('FontSizeCookie', 'yes', { path: '/' });
-            $("body").addClass("fontSizeMedium");
-
-        } else {
-            $.cookie('FontSizeCookie', 'yes', { path: '/' });
-            $("body").addClass("fontSizeMedium");
-        }
-    });
-
-    //When 'a.FontSizeDefault' is clicked, removes 'fontSizeMedium' and erases FontSizeCookie
-    $("a.FontSizeDefault").click(function () {
-        $('body').removeClass('fontSizeMedium');
-        if ($.cookie('FontSizeCookie') == "yes") {
-            $.cookie("FontSizeCookie", null, {
-                path: '/'
-            });
-        }
-    });
-});
+// $(document).ready(function () {
+//     // Cookie for FontSizeMedium
+//     // Check (onLoad) if FontSizeCookie is there and set the class to body if it is
+//     // Add active class to li
+//     if ($.cookie('FontSizeCookie') == "yes") {
+//         $("#FS_Medium").addClass("active");
+//         $("body").addClass("fontSizeMedium");
+//         $("#FS_Default").removeClass("active");
+//     }
 
 
-/////COOKIE SETTING FOR FONT TYPE
-$(document).ready(function () {
-    $("#FT_Default").addClass("active");
-});
-//FOR FONT TYPE CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
-//https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
-$(function () {
-    $('.font_type_form .form-check ul li').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-    });
-});
+//     // When 'a.FontSizeMedium' is clicked remove DesaturatedBackgroundCookie and set FontSizeCookie
+//     // When input is clicked save cookie for 30days
+//     $("a.FontSizeMedium").click(function () {
+//         if ($.cookie('FontSizeCookie') == "undefined" || $.cookie('FontSizeCookie') == "no") {
+//             $.cookie('FontSizeCookie', 'yes', { path: '/' });
+//             $("body").addClass("fontSizeMedium");
 
-$(document).ready(function () {
-    // Cookie for FM_FontTypeCookie
-    // Check (onLoad) if FM_FontTypeCookie is there and set the class to body if it is
-    // Add active class to li
-    if ($.cookie('FM_FontTypeCookie') == "yes") {
-        $("#FT_Dyslexic").addClass("active");
-        $("body").addClass("DyslexicFont");
-        $("#FT_Default").removeClass("active");
-    }
+//         } else {
+//             $.cookie('FontSizeCookie', 'yes', { path: '/' });
+//             $("body").addClass("fontSizeMedium");
+//         }
+//     });
 
-    // When input is clicked save cookie for 30days
-    $("a.FontTypeDyslexic").click(function () {
-        if ($.cookie('FM_FontTypeCookie') == "undefined" || $.cookie('FM_FontTypeCookie') == "no") {
-            $.cookie('FM_FontTypeCookie', 'yes', { path: '/' });
-            $("body").addClass("DyslexicFont");
-
-        } else {
-            $.cookie('FM_FontTypeCookie', 'yes', { path: '/' });
-            $("body").addClass("DyslexicFont");
-        }
-    });
-
-    //When 'a.FontTypeDefault' is clicked, removes 'DyslexicFont' and erases FM_FontTypeCookie
-    $("a.FontTypeDefault").click(function () {
-        $('body').removeClass('DyslexicFont');
-        if ($.cookie('FM_FontTypeCookie') == "yes") {
-            $.cookie("FM_FontTypeCookie", null, {
-                path: '/'
-            });
-        }
-    });
-});
+//     //When 'a.FontSizeDefault' is clicked, removes 'fontSizeMedium' and erases FontSizeCookie
+//     $("a.FontSizeDefault").click(function () {
+//         $('body').removeClass('fontSizeMedium');
+//         if ($.cookie('FontSizeCookie') == "yes") {
+//             $.cookie("FontSizeCookie", null, {
+//                 path: '/'
+//             });
+//         }
+//     });
+// });
 
 
+// /////COOKIE SETTING FOR FONT TYPE
+// $(document).ready(function () {
+//     $("#FT_Default").addClass("active");
+// });
+// //FOR FONT TYPE CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
+// //https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
+// $(function () {
+//     $('.font_type_form .form-check ul li').click(function () {
+//         $(this).addClass('active').siblings().removeClass('active');
+//     });
+// });
 
+// $(document).ready(function () {
+//     // Cookie for FM_FontTypeCookie
+//     // Check (onLoad) if FM_FontTypeCookie is there and set the class to body if it is
+//     // Add active class to li
+//     if ($.cookie('FM_FontTypeCookie') == "yes") {
+//         $("#FT_Dyslexic").addClass("active");
+//         $("body").addClass("DyslexicFont");
+//         $("#FT_Default").removeClass("active");
+//     }
 
-$(document).ready(function () {
-    $("#Cur_Default").addClass("active");
-});
-//FOR CursorSwap -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
-//https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
-$(function () {
-    $('.cursorSwap_form .form-check ul li').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-    });
-});
+//     // When input is clicked save cookie for 30days
+//     $("a.FontTypeDyslexic").click(function () {
+//         if ($.cookie('FM_FontTypeCookie') == "undefined" || $.cookie('FM_FontTypeCookie') == "no") {
+//             $.cookie('FM_FontTypeCookie', 'yes', { path: '/' });
+//             $("body").addClass("DyslexicFont");
+
+//         } else {
+//             $.cookie('FM_FontTypeCookie', 'yes', { path: '/' });
+//             $("body").addClass("DyslexicFont");
+//         }
+//     });
+
+//     //When 'a.FontTypeDefault' is clicked, removes 'DyslexicFont' and erases FM_FontTypeCookie
+//     $("a.FontTypeDefault").click(function () {
+//         $('body').removeClass('DyslexicFont');
+//         if ($.cookie('FM_FontTypeCookie') == "yes") {
+//             $.cookie("FM_FontTypeCookie", null, {
+//                 path: '/'
+//             });
+//         }
+//     });
+// });
 
 
 
-// Cookie for CursorSwap
-$(document).ready(function () {
-    // Check (onLoad) if FM_CursorSwapCookie is there and set the class to body if it is
-    // Add active class to li
-    if ($.cookie('FM_CursorSwapCookie') == "yes") {
-        $("#Cur_Enlarge").addClass("active");
-        $("body").addClass("CursorSwap");
-        $("#Cur_Default").removeClass("active");
-        $('body').removeClass('CursorGuide');
-        $.cookie('FM_CursorReadingGuideCookie') == "no";
-        $.cookie('FM_CursorReadingGuideCookie') == "undefined";
-        $.cookie("FM_CursorReadingGuideCookie", null, {
-            path: '/'
-        });
-    }
+
+// $(document).ready(function () {
+//     $("#Cur_Default").addClass("active");
+// });
+// //FOR CursorSwap -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
+// //https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
+// $(function () {
+//     $('.cursorSwap_form .form-check ul li').click(function () {
+//         $(this).addClass('active').siblings().removeClass('active');
+//     });
+// });
 
 
-    // When input is clicked save cookie for 30days
-    $("a.CursorEnlarge").click(function () {
-        $.cookie("FM_CursorReadingGuideCookie", null, {
-            path: '/'
-        });
-        if ($.cookie('FM_CursorSwapCookie') == "undefined" || $.cookie('FM_CursorSwapCookie') == "no") {
-            $.cookie('FM_CursorSwapCookie', 'yes', { path: '/' });
-            $("body").addClass("CursorSwap");
-            $('body').removeClass('CursorGuide');
 
-        } else {
-            $.cookie('FM_CursorSwapCookie', 'yes', { path: '/' });
-            $("body").addClass("CursorSwap");
-            $('body').removeClass('CursorGuide');
-        }
-    });
+// // Cookie for CursorSwap
+// $(document).ready(function () {
+//     // Check (onLoad) if FM_CursorSwapCookie is there and set the class to body if it is
+//     // Add active class to li
+//     if ($.cookie('FM_CursorSwapCookie') == "yes") {
+//         $("#Cur_Enlarge").addClass("active");
+//         $("body").addClass("CursorSwap");
+//         $("#Cur_Default").removeClass("active");
+//         $('body').removeClass('CursorGuide');
+//         $.cookie('FM_CursorReadingGuideCookie') == "no";
+//         $.cookie('FM_CursorReadingGuideCookie') == "undefined";
+//         $.cookie("FM_CursorReadingGuideCookie", null, {
+//             path: '/'
+//         });
+//     }
 
-    //When 'a.CursorDefault' is clicked, removes 'CursorSwap' and erases FM_CursorSwapCookie
-    $("a.CursorDefault").click(function () {
-        $('body').removeClass('CursorSwap');
-        $('body').removeClass('CursorGuide');
-        if ($.cookie('FM_CursorSwapCookie') == "yes") {
-            $.cookie("FM_CursorSwapCookie", null, {
-                path: '/'
-            });
-        }
-        if ($.cookie('FM_CursorReadingGuideCookie') == "yes") {
-            $.cookie("FM_CursorReadingGuideCookie", null, {
-                path: '/'
-            });
-        }
-    });
-});
+
+//     // When input is clicked save cookie for 30days
+//     $("a.CursorEnlarge").click(function () {
+//         $.cookie("FM_CursorReadingGuideCookie", null, {
+//             path: '/'
+//         });
+//         if ($.cookie('FM_CursorSwapCookie') == "undefined" || $.cookie('FM_CursorSwapCookie') == "no") {
+//             $.cookie('FM_CursorSwapCookie', 'yes', { path: '/' });
+//             $("body").addClass("CursorSwap");
+//             $('body').removeClass('CursorGuide');
+
+//         } else {
+//             $.cookie('FM_CursorSwapCookie', 'yes', { path: '/' });
+//             $("body").addClass("CursorSwap");
+//             $('body').removeClass('CursorGuide');
+//         }
+//     });
+
+//     //When 'a.CursorDefault' is clicked, removes 'CursorSwap' and erases FM_CursorSwapCookie
+//     $("a.CursorDefault").click(function () {
+//         $('body').removeClass('CursorSwap');
+//         $('body').removeClass('CursorGuide');
+//         if ($.cookie('FM_CursorSwapCookie') == "yes") {
+//             $.cookie("FM_CursorSwapCookie", null, {
+//                 path: '/'
+//             });
+//         }
+//         if ($.cookie('FM_CursorReadingGuideCookie') == "yes") {
+//             $.cookie("FM_CursorReadingGuideCookie", null, {
+//                 path: '/'
+//             });
+//         }
+//     });
+// });
 
 
 // Cookie for Reading Guide and CursorSwap
