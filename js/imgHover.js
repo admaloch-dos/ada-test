@@ -2,7 +2,7 @@
 $(function () {
   $('[id="ToggleImageDescription"]').change(function () {
     if ($(this).is(':checked')) {
-      
+
       $("body").addClass("ImageDescription");
       $('img[alt], .feature .img[alt], i.fa[alt]').hover(
         function (e) {

@@ -16,7 +16,7 @@ $(function () {
       removeWidgetControls(['ToggleReadingMask'])
       widgetItemObj.isReadingMask = false
     }
-   
+
     checkIfWidgetActive()
   });
 });

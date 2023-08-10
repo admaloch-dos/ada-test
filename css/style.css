@@ -263,7 +263,7 @@ body {
 
 .spacing-value {
   font-size: 25px;
-  border: black solid 1px;
+  border: black solid 2px;
   margin: 0 10px;
   padding: 5px 15px;
   border-radius: 10px;
@@ -274,8 +274,12 @@ body {
   user-select: none;
   /* Standard syntax */
 
-
 }
+
+
+/* .spacing-value option:checked {
+  background-color: yellow;
+} */
 
 .ada_modal_test .modal_body {
 
@@ -1873,36 +1877,36 @@ html.translated-ltr #tooltip_template {
 /************************************************************ CURSOR ENLARGE ************************************************************/
 /*https://icons8.com/icons/set/cursor-arrow*/
 body.Cursor_Enlarge {
-  cursor: url('../files/img/large-cursor.png'), auto;
+  cursor: url('../files/img/large-cursor.png') 10 3, auto;
 }
 
 .Cursor_Enlarge *,
 .Cursor_Enlarge *:hover {
-  cursor: url('../files/img/large-cursor.png'), auto !important;
+  cursor: url('../files/img/large-cursor.png') 10 3, auto ;
 }
 
 .Cursor_Enlarge a:-webkit-any-link {
-  cursor: url('../files/img/large-cursor.png'), auto;
+  cursor: url('../files/img/large-cursor.png') 10 3, auto;
 }
 
 .Cursor_Enlarge #ada_dropdown label {
-  cursor: url('../files/img/large-cursor.png'), auto;
+  cursor: url('../files/img/large-cursor.png') 10 3, auto;
 }
 
 .Cursor_Enlarge #accessibility .form-check-input {
-  cursor: url('../files/img/large-cursor.png'), auto;
+  cursor: url('../files/img/large-cursor.png') 10 3, auto;
 }
 
 .Cursor_Enlarge #Scroll_btn,
 .Cursor_Enlarge #Scroll_btn:hover {
-  cursor: url('../files/img/large-cursor.png'), auto;
+  cursor: url('../files/img/large-cursor.png') 10 3, auto;
 }
 
 .Cursor_Enlarge [type=button]:not(:disabled),
 .Cursor_Enlarge [type=reset]:not(:disabled),
 .Cursor_Enlarge [type=submit]:not(:disabled),
 .Cursor_Enlarge button:not(:disabled) {
-  cursor: url('../files/img/large-cursor.png'), auto;
+  cursor: url('../files/img/large-cursor.png') 10 3, auto;
 }
 
 
@@ -2901,6 +2905,7 @@ body.BaskervilleFont {
   background-color: white;
   opacity: 1;
 }
+
 
 /************************************************************ Desaturate ************************************************************/
 .desaturated #ADA_widget .modal_content .modal_header {

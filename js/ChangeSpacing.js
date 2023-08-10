@@ -1,7 +1,7 @@
 
 // change css properties for letter/word spacing/lineheight
 const setSpacingCss = (value, css) => {
-    $("#view p").not('#ADA_widget, #ADA_widget *').css(css, value); //Selects everything inside #view except ada modal and header
+    $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css(css, value); //Selects everything inside #view except ada modal and header
     $(".Footer").css(css, value);
 }
 
@@ -26,6 +26,7 @@ spacingIcon.forEach(icon => {
     })
 })
 
+// it looks awkward when select is at 10 so this fixes that
 const changeIndent = (value, amount, select) => {
     if (value !== amount) {
         $(select).css({ "text-indent": "6px" });
@@ -34,6 +35,7 @@ const changeIndent = (value, amount, select) => {
     }
 }
 
+// full restore to default settings
 const restoreSpacingDefault = (itemId, removeItemArr) => {
     // $(itemId).val($(`${itemId} option:first`).val()).triggerChange()
     $(itemId).prop("selectedIndex", 0).trigger('change');
@@ -48,7 +50,7 @@ $(document).ready(function () {
     if (selectedVal) {
         $("#letter_spacing").val(selectedVal);
         $("#letter_spacing").prop("selected", true);
-        $("#view p").not('#ADA_widget, #ADA_widget *, #widget-list li').css("letter-spacing", selectedVal); //Selects everything inside #view except ada modal and header
+        $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("letter-spacing", selectedVal); //Selects everything inside #view except ada modal and header
         $(".Footer").css("letter-spacing", selectedVal);
         changeIndent(selectedVal, '10px', '#LetterSpacing_option select')
     }
@@ -56,7 +58,7 @@ $(document).ready(function () {
         var selection1 = $(this).val();
 
         $(selection1).prop("selected", true);
-        $("#view p").not('#ADA_widget, #ADA_widget *, #widget-list li').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
+        $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
         $(".Footer").css("letter-spacing", selection1);
         $.cookie("LetterSpaceVal", selection1, { path: '/' })
         changeIndent(selection1, '10px', '#LetterSpacing_option select')
@@ -73,13 +75,13 @@ $(document).ready(function () {
     if (selectedVal2) {
         $("#word_spacing").val(selectedVal2);
         $("#word_spacing").prop("selected", true);
-        $("#view p").not('#ADA_widget, #ADA_widget *, #widget-list li').css("word-spacing", selectedVal2); //Selects everything inside #view except ada modal and header
+        $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("word-spacing", selectedVal2); //Selects everything inside #view except ada modal and header
         changeIndent(selectedVal2, '10px', '#WordSpacing_option select')
     }
     $("#word_spacing").on("change", function () {
         var selection2 = $(this).val();
         $(selection2).prop("selected", true);
-        $("#view p").not('#ADA_widget, #ADA_widget *, #widget-list li').css("#word_spacing", selection2); //Selects everything inside #view except ada modal and header
+        $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("#word_spacing", selection2); //Selects everything inside #view except ada modal and header
         $(".Footer").css("#word_spacing", selection2);
         $.cookie("WordSpaceVal", selection2, { path: '/' })
         changeIndent(selection2, '10px', '#WordSpacing_option select')
@@ -94,7 +96,7 @@ $(document).ready(function () {
     if (selectedVal3) {
         $("#line_height").val(selectedVal3);
         $("#line_height").prop("selected", true);
-        $("#view p").not('#ADA_widget, #ADA_widget *, #widget-list li').css("line-height", selectedVal3); //Selects everything inside #view except ada modal and header
+        $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("line-height", selectedVal3); //Selects everything inside #view except ada modal and header
         $(".Footer").css("line-height", selectedVal3);
 
         changeIndent(selectedVal3, '3.3', '#LineHeight_option select')
@@ -102,12 +104,12 @@ $(document).ready(function () {
     $("#line_height").on("change", function () {
         var selection3 = $(this).val();
         $(selection3).prop("selected", true);
-        $("#view p").not('#ADA_widget, #ADA_widget *, #widget-list li').css("line-height", selection3); //Selects everything inside #view except ada modal and header
+        $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("line-height", selection3); //Selects everything inside #view except ada modal and header
         $(".Footer").css("line-height", selection3);
         $.cookie("LinpageHeightVal", selection3, { path: '/' })
 
         changeIndent(selection3, '3.3', '#LineHeight_option select')
-        
+
         widgetItemObj.isLineHeightChanged = selection3 === 'inherit' ? false : true
         checkIfWidgetActive()
         selection3 === 'inherit' ? removeWidgetControls(['line_height']) : addWidgetControls('line_height', 'Line height')
@@ -129,14 +131,14 @@ $(document).ready(function () {
     //////////// Change Letter Spacing ///////////////////
     $("#letter_spacing").on('change', function () {
         var getLetterSpace = $(this).val();
-        $("#view *").not('#ADA_widget, #ADA_widget *').css("letter-spacing", getLetterSpace); //Selects everything inside #view except ada modal and header
+        $("#view *").not('#ADA_widget, #ADA_widget *, i, div').css("letter-spacing", getLetterSpace); //Selects everything inside #view except ada modal and header
         $(".Footer").css("letter-spacing", getLetterSpace);
     });
 
     //////////// Change Word Spacing ///////////////////
     $("#word_spacing").on('change', function () {
         var getWordSpace = $(this).val();
-        $("#view *").not('#ADA_widget, #ADA_widget *').css("word-spacing", getWordSpace); //Selects everything inside #view except ada modal and header
+        $("#view *").not('#ADA_widget, #ADA_widget *, i, div').css("word-spacing", getWordSpace); //Selects everything inside #view except ada modal and header
         $(".Footer").css("word-spacing", getWordSpace);
     });
 
