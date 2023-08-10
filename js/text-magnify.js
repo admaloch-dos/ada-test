@@ -37,7 +37,7 @@ const hoverTextFunc = () => {
         $("#text_magnify").text(TextMagnify);
         timeout = setTimeout(() => {
           $('#text_magnify').show()
-        }, 700);
+        }, 500);
         if ($('#text_magnify').is(':empty') || TextMagnify === '') {
           $('#text_magnify').attr('style', 'display: none!important');
           clearTimeout(timeout)
