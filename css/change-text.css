@@ -51,10 +51,10 @@
 
 .fontSizeMedium #ADA_widget .modal_body ul li {
 
-    width: 135px!important;
-    height: 80px!important;
+    width: 135px !important;
+    height: 80px !important;
 
-  }
+}
 
 @media screen and (min-width:786px) {
 
@@ -110,10 +110,11 @@
 @media screen and (min-width:1200px) {
     .fontSizeMedium #ADA_widget .modal_body ul li {
 
-        width: 155px!important;
-        height: 100px!important;
+        width: 155px !important;
+        height: 100px !important;
 
-      }
+    }
+
     .fontSizeMedium p,
     .fontSizeMedium a,
     .fontSizeMedium button,
@@ -167,3 +168,21 @@
 
 
 
+.fontSizeMedium.TextMagnifier #text_magnify,
+.fontSizeMedium.ImageDescription #ImageDescription_magnify {
+    position: absolute;
+
+    line-height: 1.2;
+    padding: 8px 17px;
+    max-width: 500px;
+    font-size: 1.4em !important;
+    border-radius: 5px;
+
+    pointer-events: none;
+    user-select: none;
+
+
+    z-index: 2000;
+    opacity: 1;
+    display: block !important;
+}

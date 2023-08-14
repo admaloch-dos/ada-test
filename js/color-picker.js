@@ -1,16 +1,24 @@
-//FOR BACKGROUND COLOR CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
-//https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
-$(function () {
-    $('#ADA_widget .bg_form .form-check ul li').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-    });
-});
 
-// JavaScript Document
-$(document).ready(function () {
-    $("#ADA_widget #DefaultBG_option").addClass("active");
-}); // end of doc ready
+// function to remove background color cookies and reload page
+const resetColorPicker = () => {
+    let bgColor = cache.bgColor.value
+    let textColor = cache.textColor.value
+    let linkColor = cache.linkColor.value
+    if (bgColor !== "#ffffff" || textColor !== "#212529" || linkColor !== "#3863ff") {
+        $.removeCookie('BackgroundColorCookie');
+        $.removeCookie('TextColorCookie');
+        $.removeCookie('LinkColorCookie');
+        //alert("Cookie Removed!");
+        storeModalScrollPosition()
+        storeMainScrollPosition()
+        if (document.querySelector('#ADA_widget').style.display === 'flex') {
+            sessionStorage.setItem("reloadModalOpen", "true");
+        }
+        removeWidgetControls(['ColorPicker'])
+        forceReload()
 
+    }
+}
 //////////////////////////////////////////////////////////////////////////////// Color Picker ////////////////////////////////////////////////////////////////////////
 let config = {
     regTextContrast: 5,
@@ -24,7 +32,7 @@ let cache = {};
 
 //https://www.jquery-az.com/how-to-create-read-and-remove-jquery-cookies-with-3-demos/
 $("#remove_cookie").click(function () {
-    resetColorPicker()
+    resetBackgroundClicker()
 
 });
 
@@ -86,7 +94,7 @@ const takeTwoColors = (c1, c2) => {
 
 
 const onInputChange = (e) => {
-    widgetItemObj.isTextColorChanged = true
+    widgetItemObj.isTextChanged = true
     widgetItemObj.isBackColorChanged = true
     widgetItemObj.isLinkColorChanged = true
     addWidgetControls('ColorPicker', 'Custom colors')
@@ -111,7 +119,7 @@ const onInputChange = (e) => {
         widgetItemObj.isInverted = false
 
     } else {
-        // console.log('it does not have it')
+        console.log('it does not have it')
     }
 
 
@@ -370,25 +378,9 @@ $(document).ready(function () {
         $.cookie.raw = true;
     }
 
+
+
+
+
+
 }); //end doc ready
-
-// function to remove background color cookies and reload page
-const resetColorPicker = () => {
-    let bgColor = cache.bgColor.value
-    let textColor = cache.textColor.value
-    let linkColor = cache.linkColor.value
-    if (bgColor !== "#ffffff" || textColor !== "#212529" || linkColor !== "#3863ff") {
-        $.removeCookie('BackgroundColorCookie');
-        $.removeCookie('TextColorCookie');
-        $.removeCookie('LinkColorCookie');
-        //alert("Cookie Removed!");
-        storeModalScrollPosition()
-        storeMainScrollPosition()
-        if (document.querySelector('#ADA_widget').style.display === 'flex') {
-            sessionStorage.setItem("reloadModalOpen", "true");
-        }
-        removeWidgetControls(['ColorPicker'])
-        forceReload()
-
-    }
-}

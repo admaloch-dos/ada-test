@@ -1,3 +1,16 @@
+//FOR BACKGROUND COLOR CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
+//https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
+$(function () {
+  $('#ADA_widget .bg_form .form-check ul li').click(function () {
+      $(this).addClass('active').siblings().removeClass('active');
+  });
+});
+
+// JavaScript Document
+$(document).ready(function () {
+  $("#ADA_widget #DefaultBG_option").addClass("active");
+}); // end of doc ready
+
 // eevent listeners for hover/click for icon that toggles item submenu
 const toggleIcon = document.querySelector('#toggle-ada-list')
 var timeout = null;

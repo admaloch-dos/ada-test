@@ -152,9 +152,7 @@ background-color: transparent;
 
 }
 
-.fontSizeMedium #widget-list li {
-    font-size: 1rem;
-}
+
 
 .reset-ada {
     color: #023e8a;
@@ -176,4 +174,8 @@ background-color: transparent;
     letter-spacing: 1px!important;
     word-spacing: 1px!important;
     line-height: 1.4!important;
+}
+
+#item-delete-footer {
+    border-top: solid lightblue 1px;
 }

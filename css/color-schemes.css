@@ -1,0 +1,1314 @@
+.highcontrast .accessibility_icons {
+    filter: invert(100%);
+    opacity: 75%;
+}
+
+.inverted .accessibility_icons {
+    filter: invert(100%);
+    opacity: 75%;
+}
+
+.highcontrast #ADA_icon {
+    color: #fff;
+}
+
+/************** Seizure Safe **************/
+.SeizureSafe {
+    filter: saturate(50%);
+    -webkit-filter: saturate(50%);
+    -moz-filter: saturate(50%);
+    -ms-filter: saturate(50%);
+    -o-filter: saturate(50%);
+}
+
+/************************************************************ CURSOR ENLARGE ************************************************************/
+/*https://icons8.com/icons/set/cursor-arrow*/
+body.Cursor_Enlarge {
+    cursor: url('../files/img/large-cursor.png') 10 3, auto;
+}
+
+.Cursor_Enlarge *,
+.Cursor_Enlarge *:hover {
+    cursor: url('../files/img/large-cursor.png') 10 3, auto;
+}
+
+.Cursor_Enlarge a:-webkit-any-link {
+    cursor: url('../files/img/large-cursor.png') 10 3, auto;
+}
+
+.Cursor_Enlarge #ada_dropdown label {
+    cursor: url('../files/img/large-cursor.png') 10 3, auto;
+}
+
+.Cursor_Enlarge #accessibility .form-check-input {
+    cursor: url('../files/img/large-cursor.png') 10 3, auto;
+}
+
+.Cursor_Enlarge #Scroll_btn,
+.Cursor_Enlarge #Scroll_btn:hover {
+    cursor: url('../files/img/large-cursor.png') 10 3, auto;
+}
+
+.Cursor_Enlarge [type=button]:not(:disabled),
+.Cursor_Enlarge [type=reset]:not(:disabled),
+.Cursor_Enlarge [type=submit]:not(:disabled),
+.Cursor_Enlarge button:not(:disabled) {
+    cursor: url('../files/img/large-cursor.png') 10 3, auto;
+}
+
+
+/************************************************************ Reading Mask ************************************************************/
+
+/* #top_mask {
+  display: none !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 100000000000000000000;
+  top: 0;
+  bottom: auto;
+  height: 50%;
+}
+
+#bottom_mask {
+  display: none !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 100000000000000000000;
+  top: auto;
+  bottom: 0;
+  height: 50%;
+} */
+
+.reading-mask {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#top_mask {
+    top: 0;
+    bottom: auto;
+
+}
+
+#bottom_mask {
+    top: auto;
+    bottom: 0;
+}
+
+
+
+a {
+    color: #3863FF;
+}
+
+
+
+/************************************************************ Text Magnify ************************************************************/
+.TextMagnifier #text_magnify {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 1);
+    line-height: 1.2;
+    padding: 8px 17px;
+    max-width: 500px;
+    font-size: 22px;
+    border-radius: 5px;
+    color: #fff;
+    pointer-events: none;
+    user-select: none;
+    max-height: 50vh;
+
+
+    z-index: 2000;
+    opacity: 1;
+    display: block !important;
+    -webkit-box-shadow: 1px 0px 5px 3px rgba(0, 0, 0, 0.22);
+    box-shadow: 1px 0px 5px 3px rgba(0, 0, 0, 0.22);
+}
+
+.TextMagnifier p,
+.TextMagnifier h1,
+.TextMagnifier h2,
+.TextMagnifier h3,
+.TextMagnifier h4,
+.TextMagnifier h5,
+.TextMagnifier h6 {
+    cursor: zoom-in;
+}
+
+#text_magnify {
+    display: none !important;
+}
+
+/************************************************************ Image Description Magnify ************************************************************/
+#ImageDescription_magnify {
+    display: none;
+}
+
+.ImageDescription #ImageDescription_magnify {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 1);
+    line-height: 1.2;
+    padding: 8px 17px;
+    max-width: 500px;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+    pointer-events: none;
+    user-select: none;
+    top: 100px;
+    left: 10em;
+    opacity: 0;
+    display: block;
+    z-index: 5000;
+}
+
+
+.ImageDescription img {
+    cursor: zoom-in;
+}
+
+.fontSizeMedium #ADA_widget .modal_body ul li a div.title {
+    font-size: 17px;
+}
+
+/************************************************************ Reading Guide ************************************************************/
+/*in cookie sheet? but override here*/
+
+#view {
+    border: none !important;
+    background-color: #003f88 !important;
+    height: 6px !important;
+    margin-top: 40px !important;
+}
+
+/************************************** FONT TYPE SWAP SETTINGS ***********************************/
+@font-face {
+    font-family: "LibreBaskervilleRegular";
+    src: url("../files/fonts/LibreBaskerville-Regular.eot");
+    src: url("../files/fonts/LibreBaskerville-Regular.eot?#iefix") format('embedded-opentype'),
+
+        url("../files/fonts/LibreBaskerville-Regular.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body.BaskervilleFont {
+    font-family: 'LibreBaskervilleRegular', sans-serif;
+}
+
+.BaskervilleFont *,
+.BaskervilleFont a,
+.BaskervilleFont h1,
+.BaskervilleFont h2,
+.BaskervilleFont h3,
+.BaskervilleFont h4,
+.BaskervilleFont h5,
+.BaskervilleFont h6,
+.BaskervilleFont span,
+.BaskervilleFont ul,
+.BaskervilleFont li,
+.BaskervilleFont section,
+.BaskervilleFont div {
+    font-family: 'LibreBaskervilleRegular', sans-serif;
+    font-weight: bold;
+}
+
+.BaskervilleFont .Item_Pager .pagination .page-item .page-link {
+    font-family: 'LibreBaskervilleRegular', sans-serif;
+}
+
+.BaskervilleFont .content_figure .fig_cap {
+    font-family: 'LibreBaskervilleRegular', sans-serif !important;
+}
+
+.BaskervilleFont i.fa {
+    font-family: 'FontAwesome';
+}
+
+.BaskervilleFont #ADA_widget .modal_content .ada_option_title {
+    font-family: 'LibreBaskervilleRegular', sans-serif !important;
+}
+
+
+
+
+
+/***** FontSizeMedium *****/
+/* .fontSizeMedium #ADA_widget .modal_body form ul li {
+  margin-bottom: 5px;
+}
+
+.fontSizeMedium .ada_toggleContainer .ada_content .description {
+  font-size: 22px;
+}
+
+.fontSizeMedium #ADA_widget .modal_content .ada_option_title {
+  font-size: 22px;
+}
+
+.fontSizeMedium #ADA_widget .modal_content .form-group-heading {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+.fontSizeMedium #ADA_widget .modal_content .form-group-heading .ada_option_title {
+  width: 280px;
+  border: 1px solid transparent;
+  text-align: left;
+}
+
+.fontSizeMedium #wordspace_icon {
+  left: 45px;
+}
+
+.fontSizeMedium #lineheight_icon {
+  left: 85px;
+}
+
+.fontSizeMedium .rs-tooltip-text {
+  font-size: 24px;
+} */
+
+
+
+
+
+
+
+/***** DyslexicFont *****/
+.DyslexicFont #ADA_widget .modal_body form ul li {
+    margin-bottom: 5px;
+}
+
+.DyslexicFont #ADA_widget .modal_content .ada_option_title {
+    font-family: 'OpenDyslexicRegular', sans-serif !important;
+}
+
+/***** DyslexicFont & FontSizeMedium *****/
+.DyslexicFont.fontSizeMedium #ADA_widget .modal_body form ul li {
+    margin-bottom: 5px;
+}
+
+.DyslexicFont.fontSizeMedium #ADA_widget .modal_body .color_picker_form .form-group {
+    width: 195px;
+}
+
+.DyslexicFont #ADA_widget .modal_body .color_picker_form label {
+    font-family: 'OpenDyslexicRegular', sans-serif !important;
+}
+
+.DyslexicFont #ADA_widget .modal_body #BackgroundColor_option .bg_form ul li {
+    width: 135px;
+}
+
+.fontSizeMedium #ADA_widget .modal_body #BackgroundColor_option .bg_form ul li {
+    width: 135px;
+}
+
+
+
+
+/************************************************************ Dark Contrast ************************************************************/
+.highcontrast #ADA_widget .modal_content .modal_header {
+    background-color: #2C2C2C;
+}
+
+.highcontrast #ADA_widget .modal_content .modal_body {
+    background: #262626;
+}
+
+.highcontrast #ADA_widget .modal_content .modal_body .row {
+    border: none;
+    background: #4c4c4c;
+}
+
+.highcontrast #ADA_widget .modal_content .modal_body .row .ada_content .description {
+    color: white;
+}
+
+.highcontrast #ADA_widget .modal_content .modal_body .color_picker_form .form-group,
+.highcontrast #ADA_widget .modal_content .modal_body form ul li {
+    background-color: #262626 !important;
+}
+
+.highcontrast #ADA_widget .modal_content .modal_body .color_picker_form input {
+    border-color: black;
+    outline-color: white;
+}
+
+.highcontrast #ADA_widget .modal_content .modal_body .color_picker_form input:hover {
+    box-shadow: none;
+}
+
+.highcontrast #ADA_widget .modal_content .modal_body #color_pickerBtns button.btn {
+    background-color: #2C2C2C;
+    border-color: #2C2C2C;
+}
+
+.highcontrast #ADA_widget .modal_content .modal_body .rs-handle {
+    border-right-color: white;
+}
+
+.highcontrast #ADA_widget .modal_content .modal_body .rs-handle:after {
+    border-top-color: white;
+}
+
+.highcontrast #ADA_widget .modal_content .modal_body .rs-bg-color {
+    background-color: #4c4c4c;
+}
+
+.highcontrast #ContrastRatingModal {
+    border-color: #000000;
+}
+
+.highcontrast #ContrastRatingModal .toast-header {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.highcontrast #ContrastRatingModal .toast-body {
+    background-color: #303030;
+}
+
+.highcontrast #ADA_widget #keyboard_shortcutsBtn {
+    background-color: #fff;
+    border-color: #2C2C2C;
+}
+
+.highcontrast #keyboard_shortcuts .modal-content {
+    background-color: #000;
+}
+
+.highcontrast #keyboard_shortcuts .modal-header {
+    background-color: #000;
+    border-color: #000;
+}
+
+.highcontrast #keyboard_shortcuts .modal-header button {
+    color: white;
+    opacity: 1;
+}
+
+.highcontrast #keyboard_shortcuts .modal-body {
+    background-color: #303030;
+}
+
+.highcontrast #keyboard_shortcuts .modal-body .table .thead-dark th {
+    background-color: #0c0c0c;
+    border-color: #dee2e6;
+}
+
+.highcontrast #keyboard_shortcuts .modal-body .table .table-secondary,
+.highcontrast #keyboard_shortcuts .modal-body .table .table-secondary>td,
+.table-secondary>th {
+    background-color: #141414;
+}
+
+
+
+.highcontrast #ADA_widget .modal_body ul li.active,
+.highcontrast #ADA_widget .modal_body ul li:hover {
+    border: #5D2D1F solid 2px;
+
+    box-shadow: none;
+}
+
+.highcontrast .ada-btn:hover {
+    color: #fff !important;
+    background-color: #262626 !important;
+
+}
+
+.highcontrast #ADA_widget .modal_body ul li {
+    transition: all .3s ease-in-out;
+}
+
+.highcontrast #ADA_widget .modal_body ul li div {
+    transition: all .3s ease-in-out;
+}
+
+.highcontrast #ADA_widget .modal_body ul li:hover div,
+.highcontrast #ADA_widget .modal_body ul li.active div {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+
+.highcontrast #ADA_reset {
+    border: #2C2C2C solid 1px !important;
+
+
+}
+
+.highcontrast #ADA_reset:hover {
+    border: #FFF solid 1px !important;
+    background-color: #2C2C2C !important;
+
+}
+
+.highcontrast .button-icon {
+    border: #000 solid 1px;
+    color: #000;
+    background-color: white;
+    opacity: .5;
+
+}
+
+.highcontrast .button-icon:hover {
+    border: #000 solid 1px;
+    color: #000;
+    background-color: white;
+    opacity: 1;
+}
+
+.highcontrast .audio_state button {
+    background-color: white;
+    color: black
+}
+
+.highcontrast #ADA_check_icon {
+    background-color: white;
+    color: black;
+    border: black solid 2px;
+}
+
+.highcontrast #volume .rs-range-color,
+.highcontrast #rate .rs-range-color,
+.highcontrast #pitch .rs-range-color {
+    background-color: black;
+}
+
+.highcontrast #volume .rs-path-color,
+.highcontrast #rate .rs-path-color,
+.highcontrast #pitch .rs-path-color {
+    background-color: white;
+}
+
+.highcontrast #toggle-list-info,
+.highcontrast #item-delete-container,
+.highcontrast #reset-ada {
+    color: #000;
+    border: transparent solid 1px;
+}
+
+.highcontrast #reset-ada:hover {
+    background-color: lightgrey;
+
+}
+
+
+
+/************************************************************ Desaturate ************************************************************/
+.desaturated #ADA_widget .modal_content .modal_header {
+    background-color: #363636;
+}
+
+.desaturated #ADA_widget .modal_content .modal_body {
+    background: #C7C7C7;
+}
+
+.desaturated #ADA_widget .modal_content .modal_body .row {
+    border: #C7C7C7;
+    background: #fff;
+}
+
+.desaturated #ADA_widget .modal_content .modal_body .color_picker_form label {
+    color: white;
+}
+
+.desaturated #ADA_widget .modal_content .modal_body .color_picker_form .form-group,
+.desaturated #ADA_widget .modal_content .modal_body form ul li {
+    background-color: #363636 !important;
+}
+
+.desaturated #ADA_widget .modal_content .modal_body form ul li a {
+    color: white !important;
+}
+
+.desaturated #ADA_widget .modal_content .modal_body .color_picker_form input {
+    border-color: black;
+    outline-color: white;
+}
+
+.desaturated #ADA_widget .modal_content .modal_body .color_picker_form .form-group .hexVal {
+    color: white;
+}
+
+.desaturated #ADA_widget .modal_content .modal_body #color_pickerBtns button.btn {
+    background-color: #363636;
+    border-color: #363636;
+}
+
+.desaturated #ContrastRatingModal .toast-header {
+    border-color: #363636;
+}
+
+.desaturated .ada-btn:hover {
+    color: #fff !important;
+    background-color: #363636 !important;
+
+}
+
+
+
+.desaturated #ADA_widget .modal_body ul li.active,
+.desaturated #ADA_widget .modal_body ul li:hover {
+    border: rgba(131, 177, 214, 0.815) solid 2px !important;
+    box-shadow: none;
+}
+
+.desaturated #ADA_widget .modal_body ul li div {
+    transition: all .3s ease-in-out;
+}
+
+.desaturated #ADA_widget .modal_body ul li:hover div,
+.desaturated #ADA_widget .modal_body ul li.active div {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.desaturated #ADA_reset {
+    border: #2C2C2C solid 1px !important;
+
+
+}
+
+.desaturated #ADA_reset:hover {
+    border: #FFF solid 1px !important;
+    background-color: #2C2C2C !important;
+
+}
+
+.desaturated #ADA_icon {
+    color: #363636 !important;
+}
+
+
+
+.desaturated .button-icon:hover {
+    border: #000 solid 1px;
+    color: #fff;
+    background-color: #363636;
+    opacity: 1;
+}
+
+.desaturated #ADA_check_icon,
+.desaturated .audio_state button,
+.desaturated #ContrastRatingModal .toast-header {
+    background-color: #363636 !important;
+}
+
+.desaturated #volume .rs-range-color,
+.desaturated #rate .rs-range-color,
+.desaturated #pitch .rs-range-color {
+    background-color: #363636;
+}
+
+.desaturated #volume .rs-path-color,
+.desaturated #rate .rs-path-color,
+.desaturated #pitch .rs-path-color {
+    background-color: white;
+}
+
+.desaturated .color_swatch {
+    filter: grayscale(100%);
+}
+
+
+.desaturated #toggle-list-info,
+.desaturated #item-delete-container,
+.desaturated #reset-ada {
+    color: #363636;
+    border: tra solid 1px;
+}
+
+.desaturated #reset-ada:hover {
+    background-color: #363636;
+    color: white;
+}
+
+/************************************************************ Invert ************************************************************/
+.inverted h1,
+.inverted h2,
+.inverted h3,
+.inverted h4,
+.inverted h5,
+.inverted h6 {
+    color: #bb9bff !important;
+}
+
+.inverted #ADA_widget .modal_content .modal_header {
+    background-color: #2C2C2C;
+}
+
+.inverted #ADA_widget .modal_content .modal_body {
+    background: #262626;
+}
+
+.inverted #ADA_widget .modal_content .modal_body .row {
+    border: none;
+    background: #4c4c4c;
+}
+
+.inverted #ADA_widget .modal_body form label,
+.inverted #ADA_widget .modal_content .modal_body .ada_toggleContainer .ada_content .type {
+    color: #bb9bff;
+}
+
+.inverted #ADA_widget .modal_content .modal_body .row .ada_content .description {
+    color: white;
+}
+
+.inverted #ADA_widget .modal_body .form-check ul li.active a {
+    color: #FF9E66 !important;
+}
+
+.inverted #ADA_widget .modal_body .form-check ul li.active a div.title:before {
+    content: "\f192";
+    font-family: "FontAwesome";
+    position: absolute;
+    right: 2px;
+    top: -4px;
+    color: #FF9E66 !important;
+}
+
+.inverted #ADA_widget .modal_content .modal_body .color_picker_form .form-group,
+.inverted #ADA_widget .modal_content .modal_body form ul li {
+    background-color: #262626 !important;
+}
+
+.inverted #ADA_widget .modal_content .modal_body .color_picker_form input {
+    border-color: black;
+    outline-color: white;
+}
+
+.inverted #ADA_widget .modal_content .modal_body .color_picker_form input:hover {
+    box-shadow: none;
+}
+
+.inverted #ADA_widget .modal_content .modal_body #color_pickerBtns button.btn {
+    background-color: #262626;
+    border-color: #262626;
+    color: #FF9E66;
+}
+
+.inverted #ADA_widget .modal_content .modal_body .rs-handle {
+    border-right-color: white;
+}
+
+.inverted #ADA_widget .modal_content .modal_body .rs-handle:after {
+    border-top-color: white;
+}
+
+.inverted #ADA_widget .modal_content .modal_body .rs-bg-color {
+    background-color: #4c4c4c;
+}
+
+.inverted #ADA_widget .modal_content .modal_body .rs-tooltip.edit {
+
+    color: #fff;
+}
+
+.inverted #ADA_widget .modal_content .modal_body .tippyIcon,
+.inverted #ADA_widget .modal_content .modal_body .rs-control .headings {
+    color: #bb9bff;
+}
+
+.inverted #ContrastRatingModal {
+    border-color: #151515;
+}
+
+.inverted #ContrastRatingModal .toast-header {
+    background-color: #151515;
+    border-color: #151515;
+}
+
+.inverted #ContrastRatingModal .toast-body {
+    background-color: #303030;
+    color: #b1b1b1;
+}
+
+.inverted #ADA_widget #keyboard_shortcutsBtn {
+    background-color: #262626;
+    border-color: #262626;
+    color: #FF9E66;
+}
+
+.inverted #keyboard_shortcuts .modal-content {
+    background-color: #000;
+}
+
+.inverted #keyboard_shortcuts .modal-header {
+    background-color: #000;
+    border-color: #000;
+}
+
+.inverted #keyboard_shortcuts .modal-header button {
+    color: white;
+    opacity: 1;
+}
+
+.inverted #keyboard_shortcuts .modal-body {
+    background-color: #303030;
+}
+
+.inverted #keyboard_shortcuts .modal-body .table .thead-dark th {
+    background-color: #0c0c0c;
+    border-color: #dee2e6;
+}
+
+.inverted #keyboard_shortcuts .modal-body .table .table-secondary,
+.inverted #keyboard_shortcuts .modal-body .table .table-secondary>td,
+.table-secondary>th {
+    background-color: #141414;
+}
+
+.inverted .ada-btn:hover {
+    color: #FF9E66 !important;
+    background-color: #262626 !important;
+
+}
+
+.inverted #ADA_reset {
+    border: #2C2C2C solid 1px !important;
+
+
+}
+
+.inverted #ADA_reset:hover {
+    border: #FFF solid 1px !important;
+    background-color: #2C2C2C !important;
+
+}
+
+.inverted .button-icon {
+    border: #000 solid 1px;
+    color: #000;
+    background-color: white;
+    opacity: .5;
+
+}
+
+.inverted .button-icon:hover {
+    border: #000 solid 1px;
+    color: #000;
+    background-color: white;
+    opacity: 1;
+}
+
+.inverted .audio_state {
+    filter: invert(100%);
+    opacity: 75%;
+}
+
+.inverted #volume .rs-range-color,
+.inverted #rate .rs-range-color,
+.inverted #pitch .rs-range-color {
+    filter: invert(100%);
+
+}
+
+.inverted #volume .rs-path-color,
+.inverted #rate .rs-path-color,
+.inverted #pitch .rs-path-color {
+    filter: invert(100%);
+
+}
+
+.inverted #reset-ada {
+    border-top: ;
+}
+
+.inverted #ADA_icon,
+.inverted #ADA_check_icon {
+    filter: invert(100%);
+}
+
+.inverted #toggle-list-info,
+.inverted #item-delete-container,
+.inverted .item-delete-footer {
+    filter: invert(100%);
+}
+
+.inverted .item-delete-footer:hover {
+
+    filter: invert(100%);
+}
+
+.inverted.HighlightLinks a:hover {
+    opacity: .8;
+}
+
+
+
+
+/************************************************************ High Saturation ************************************************************/
+.highsaturation {
+    filter: saturate(200%);
+    -webkit-filter: saturate(200%);
+    -moz-filter: saturate(200%);
+    -ms-filter: saturate(200%);
+    -o-filter: saturate(200%);
+}
+
+/************************************************************ Low Saturation ************************************************************/
+.lowsaturation {
+    filter: saturate(50%);
+    -webkit-filter: saturate(50%);
+    -moz-filter: saturate(50%);
+    -ms-filter: saturate(50%);
+    -o-filter: saturate(50%);
+}
+
+
+
+
+.inverted #contact_section p {
+    color: white;
+}
+
+@media screen and (max-width:992px) {
+
+    #ReadingMask_option,
+    #ReadingGuide_option,
+    #HighlightHover_option,
+    #Magnify_options,
+    #Cursor_option {
+        display: none;
+    }
+}
+
+
+
+
+/************************************************************ Google Translate ************************************************************/
+.goog-te-banner-frame.skiptranslate {
+    bottom: 0px !important;
+    top: unset;
+    height: 40px !important;
+    width: 550px !important;
+}
+
+/*hides header
+    .goog-te-menu-frame{
+
+    }
+    .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon {
+      display: none !important;
+    }
+    .goog-tooltip {
+      display: none !important;
+    }
+    .goog-tooltip:hover {
+      display: none !important;
+    }*/
+
+
+/*popup of translated text in english*/
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/*div that holds translated text
+    #goog-gt-tt{
+        display: none !important;
+    }
+    */
+/*Select menu*/
+div#google_translate_element:before {
+    position: absolute;
+    background-image: url(../files/img/google.png) !important;
+    content: ' ';
+    width: 10%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 9px 13px;
+    left: 25px;
+    display: none;
+}
+
+@media screen and (min-width:600px) {
+
+    div#google_translate_element:before {
+
+        display: block;
+    }
+}
+
+.goog-te-combo {
+    display: inline-block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+    font-size: 12pt !important;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    vertical-align: middle;
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 1.25rem;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.goog-te-gadget {
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
+/*.goog-te-gadget-icon{
+        background-image: url(https://www.floridamemory.com/files/img/accessibility-icons5.png) !important;
+        background-position: 25.5rem 8.7rem !important;
+        width: 35px !important;
+        height: 29px !important;
+        background-size: 31rem 4.5rem !important;
+    }
+
+    html.translated-ltr #accessibility .form-check ul li{
+        width: 100%!important;
+        max-width: 150px;
+    }
+
+     .form-check ul li {
+
+    }
+
+
+
+
+    */
+
+
+
+#google_translate_element {
+    height: 42px !important;
+    overflow: hidden !important;
+}
+
+.highcontrast select.goog-te-combo,
+.inverted select.goog-te-combo {
+    background-color: white;
+}
+
+.highcontrast .goog-te-gadget-simple {
+    background-color: white;
+}
+
+
+.inverted .goog-te-gadget-simple {
+    background-color: #fff;
+}
+
+.inverted .goog-te-gadget img {
+    filter: none;
+}
+
+.inverted .goog-te-gadget-simple .goog-te-menu-value span {
+    color: #000 !important;
+}
+
+html.translated-ltr #ADA_widget .modal_body .font_type_form ul li {
+    min-width: 118px;
+    min-height: 70px;
+    height: 100% !important;
+    width: 40% !important;
+}
+
+/* Zulu */
+html[lang=zu] #ADA_widget .modal_body .fontsize_form ul li,
+html[lang=zu] #ADA_widget .modal_body .cursorSwap_form ul li {
+    width: 100% !important;
+    max-width: 150px !important;
+}
+
+html[lang=zu] .fontSizeMedium #ADA_widget .modal_body .fontsize_form ul li,
+html[lang=zu] .fontSizeMedium #ADA_widget .modal_body .cursorSwap_form ul li {
+    width: 100% !important;
+    max-width: 185px !important;
+}
+
+/* Xhosa */
+html[lang='xh'] #ADA_widget .modal_body .fontsize_form ul li {
+    width: 100% !important;
+    max-width: 150px !important;
+}
+
+html[lang='xh'] .fontSizeMedium #ADA_widget .modal_body .fontsize_form ul li,
+html[lang='xh'] .fontSizeMedium #ADA_widget .modal_body .cursorSwap_form ul li {
+    width: 100% !important;
+    max-width: 185px !important;
+}
+
+html.translated-ltr .fontSizeMedium #ADA_widget .modal_body .colorblind_form ul li {
+    width: 100% !important;
+    max-width: 160px;
+}
+
+html.translated-ltr .fontSizeMedium #ADA_widget .modal_body .colorblind_form ul li {
+    width: 100% !important;
+    max-width: 160px;
+    word-break: break-word;
+    height: 80px;
+}
+
+html.translated-ltr .fontSizeMedium #ADA_widget .modal_body #BackgroundColor_option .bg_form ul li {
+    width: 100% !important;
+    max-width: 180px;
+}
+
+html.translated-ltr .DyslexicFont.fontSizeMedium #ADA_widget .modal_body #BackgroundColor_option .bg_form ul li {
+    width: 100% !important;
+    max-width: 185px;
+}
+
+html.translated-ltr .DyslexicFont #ADA_widget .modal_body #BackgroundColor_option .bg_form ul li {
+    width: 100% !important;
+    max-width: 180px;
+}
+
+html.translated-ltr #ADA_widget .modal_body #BackgroundColor_option .bg_form ul li {
+    min-width: 115px;
+    min-height: 70px;
+    height: 100% !important;
+    width: 30% !important;
+}
+
+.DyslexicFont #ADA_widget .modal_body .color_picker_form .form-group,
+.BaskervilleFont #ADA_widget .modal_body .color_picker_form .form-group {
+    padding: 10px 5px;
+    width: 152px;
+    height: 130px;
+}
+
+
+@media screen and (min-width:1200px) {
+
+    .DyslexicFont #ADA_widget .modal_body .color_picker_form .form-group,
+    .BaskervilleFont #ADA_widget .modal_body .color_picker_form .form-group {
+        width: 190px;
+        height: 140px;
+    }
+}
+
+@media screen and (min-width:1500px) {
+
+    .DyslexicFont #ADA_widget .modal_body .color_picker_form .form-group,
+    .BaskervilleFont #ADA_widget .modal_body .color_picker_form .form-group {
+
+        width: 200px;
+        height: 165px;
+
+
+    }
+}
+
+
+
+html.translated-ltr .fontSizeMedium #accessibility .form-check ul li {
+    width: 150px;
+}
+
+html.translated-ltr .DyslexicFont #accessibility .form-check ul li {
+    width: 165px;
+}
+
+html.translated-ltr .fontSizeMedium.DyslexicFont #accessibility .form-check ul li {
+    width: 145px;
+    height: 80px;
+}
+
+
+/************************************************************ Highlight Links ************************************************************/
+.HighlightLinks a {
+    border: #3863FF solid 1px !important;
+    padding: 4px !important;
+
+    color: #3863ff !important;
+    background-color: white !important;
+}
+
+.HighlightLinks #ADA_widget a {
+    border: #3863FF solid 3px !important;
+}
+
+
+body.HighlightLinks.desaturated #ADA_widget ul li a div.title {
+	color: #363636  !important;
+
+}
+
+
+
+.HighlightLinks .modal_content li a .title {
+    color: #3863ff !important;
+}
+
+
+
+/* .HighlightLinks.desaturated #ADA_widget .modal_body ul li.active, .desaturated #ADA_widget .modal_body ul li:hover {
+    border: rgba(211, 211, 211, 0.425) solid 2px !important;
+} */
+
+ .HighlightLinks.desaturated .Footer .nav-link {
+	color: #000 !important;
+}
+ .HighlightLinks.HighlightHover.desaturated .Footer .nav-link:hover {
+	color: #fff !important;
+}
+
+
+.HighlightLinks #ADA_widget .modal_body .form-check ul li.active a {
+    background-color: lightgray !important;
+    font-weight: bold;
+}
+
+body.HighlightLinks.highcontrast .modal_body .form-check ul li.active a {
+    color: black !important;
+}
+
+.HighlightLinks .modal_content li.active:hover .title {
+    color: #3863ff !important;
+}
+
+/************************************************************ Highlight Links on Hover ************************************************************/
+.HighlightHover a {
+    padding: 5px 8px;
+
+}
+
+.HighlightHover a:hover {
+    /* background-color: #CB520F !important; */
+    color: white !important;
+    background-color: #000 !important;
+    border: white solid 1px;
+}
+
+
+
+/* .HighlightHover #ADA_trigger:hover {
+    background-color: none!important;
+  } */
+
+
+
+
+
+.HighlightHover .modal_content li:hover .title {
+    color: white !important;
+}
+
+
+
+.HighlightHover .modal_content li .title {
+    transition: .3s;
+}
+
+.inverted a:hover {
+    color: #FF9E66 !important;
+    text-decoration: underline;
+}
+
+
+#HighlightHover .description {
+    max-width: 250px;
+}
+
+.fontSizeMedium #widget-list li {
+    font-size: 1rem;
+}
+
+@media screen and (max-width:300px) {
+
+
+
+    .fontSizeMedium #ADA_widget .modal_body ul li {
+
+        width: 100px !important;
+        height: 50px !important;
+
+    }
+
+
+
+    .fontSizeMedium p,
+    .fontSizeMedium a,
+    .fontSizeMedium button,
+    .fontSizeMedium div,
+    .fontSizeMedium label,
+    .form-control,
+    .fontSizeMedium .goog-te-combo {
+        font-size: 15px !important;
+    }
+
+
+    .fontSizeMedium h1 {
+        font-size: 43px !important;
+    }
+
+    .fontSizeMedium h2 {
+        font-size: 37px !important;
+    }
+
+    .fontSizeMedium h3 {
+        font-size: 32px !important;
+    }
+
+    .fontSizeMedium h4 {
+        font-size: 27px !important;
+    }
+
+    .fontSizeMedium h5 {
+        font-size: 22px !important;
+    }
+
+    .fontSizeMedium h6 {
+        font-size: 17px !important;
+    }
+
+
+    .fontSizeMedium .ada_toggleContainer .switch-handle {
+        top: 5px !important;
+    }
+
+    .fontSizeMedium .menu-selects {
+        margin-bottom: 10px;
+    }
+
+    .ada_toggleContainer {
+        flex-direction: column;
+    }
+
+    .fontSizeMedium #ADA_widget img {
+        display: none;
+    }
+
+
+
+
+    .goog-te-combo {
+        font-size: 12px !important;
+    }
+}
