@@ -24,7 +24,7 @@ const displayModal = () => {
         $(".modal_content").fadeToggle(0);
         document.body.classList.add("prevent-body-overflow");
         $(".modal_body").scrollTop(0);
-    
+
 
         // $('body').css("overflow", "hidden");
         // $('body').css("overflow", "hidden");
@@ -95,3 +95,5 @@ const changeIndent = (value, amount, select, indentAmt) => {
         $(select).css({ "text-indent": "0px" });
     }
 }
+
+

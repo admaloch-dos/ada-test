@@ -148,7 +148,7 @@ maskOpacityInput.addEventListener('change', () => {
 })
 
 // change mask size
-let yVal = 1300
+let yVal = 1400
 
 var maskSizeCookieVal = $.cookie("readingMaskHeight");
 if (maskSizeCookieVal) {
@@ -162,6 +162,7 @@ maskSizeInputRange.addEventListener('change', () => {
   let newSizeVal = maskSizeInputRange.value
   yVal = newSizeVal
   $.cookie("readingMaskHeight", newSizeVal, { path: '/' })
+  console.log('size changed: value is ', maskSizeInputRange.value)
 })
 
 $(document).bind('mousemove', function (e) {
@@ -203,8 +204,8 @@ const restoreDefaultMaskSettings = () => {
   $("#mask_color").val('#363636');
   $('.reading-mask').css({ "background": '#363636' })
   document.querySelector('#mask_hexVal').innerText = '#363636'
-  yVal = 1300
-  $("#mask-size-input").val(1300);
+  yVal = 1400
+  $("#mask-size-input").val(1400);
   resetMaskSettingsCookies()
 }
 
