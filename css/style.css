@@ -3,9 +3,33 @@ body {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a {
- color: #007bff;
- border: transparent solid 1px;
+  color: #007bff;
+  border: transparent solid 1px;
 }
 
 
@@ -233,11 +257,22 @@ a {
 } */
 
 /* get rid of default html icon on selects for spacing etc.. */
-#text-selects select {
+#text-selects select,
+#ReadingMask_option select {
   -webkit-appearance: none;
   -moz-appearance: none;
   text-overflow: '';
 }
+
+#edit-mask-opacity p {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 
 #LetterSpacing_option select {
   text-indent: 6px;
@@ -250,6 +285,7 @@ a {
 #LineHeight_option select {
   text-indent: 6px;
 }
+
 
 /* letter spacing btn value selectors */
 .spacing-container {
@@ -279,6 +315,31 @@ a {
   /* Standard syntax */
 
 }
+
+.opacity-icons {
+  width: 23px;
+  height: 23px;
+}
+
+.opacity-value {
+  font-size: 20px;
+  border: black solid 2px;
+
+  padding: 4px 9px;
+  border-radius: 10px;
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+
+}
+
+#ReadingMask_option select {
+  text-indent: 5px;
+}
+
 
 
 /* .spacing-value option:checked {
@@ -363,6 +424,11 @@ a {
   border: #FFF solid 1px !important;
   background-color: #5D2D1F !important;
   color: white;
+}
+
+#ADA_reset:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .modal_header button {
@@ -2143,7 +2209,7 @@ html.translated-ltr #tooltip_template {
 /************************************************************ Color Picker ************************************************************/
 
 
-#ADA_widget .modal_body .color_picker_form .form-group {
+#ADA_widget .modal_body #edit-reading-mask .form-group {
   margin-bottom: 1rem;
   display: inline-table;
   background-color: #EBE5E3 !important;
@@ -2155,6 +2221,8 @@ html.translated-ltr #tooltip_template {
   text-align: center;
 
 }
+
+
 
 
 @media screen and (min-width:1200px) {
@@ -2424,6 +2492,8 @@ html.translated-ltr #tooltip_template {
 }
 
 
+
+
 /*************** FOR ACTIVE CLASS ***************/
 #ADA_widget .modal_body .form-check ul li.active {
   background-color: #5D2D1F !important;
@@ -2663,4 +2733,3 @@ background-color: lightgray;
     height: 100px !important;
   }
 }
-

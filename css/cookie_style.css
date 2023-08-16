@@ -29,6 +29,10 @@
 
 }
 
+.highcontrast #tail, .inverted #tail {
+	background-color: #fff;
+}
+
 .highcontrast #ADA_widget .modal_body .form-check ul li.active a,
 .desaturated #ADA_widget .modal_body .form-check ul li.active a,
 .inverted #ADA_widget .modal_body .form-check ul li.active a {
@@ -1371,6 +1375,15 @@ body.HighlightHover.highcontrast .navbar a:hover:not(#ADA_widget) {
 	color: #fff !important;
 }
 
+
+
+.highcontrast.HighlightLinks #ADA_widget li:hover {
+	opacity: .7;
+}
+
+
+
+
 .HighlightHover.highcontrast a:hover,
 .HighlightHover.desaturated a:hover,
 .HighlightHover.inverted a:hover {
@@ -1380,6 +1393,11 @@ body.HighlightHover.highcontrast .navbar a:hover:not(#ADA_widget) {
 	border: white solid 1px !important;
 }
 
-.highcontrast.HighlightLinks #ADA_widget li:hover {
-	opacity: .7;
+.HighlightLinks.inverted a:not(#ADA_widget) {
+	color: #3863FF !important;
+}
+
+
+.HighlightLinks.HighlightHover.inverted a:hover:not(#ADA_widget) {
+	color: #fff !important;
 }

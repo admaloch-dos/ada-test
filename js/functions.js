@@ -24,7 +24,7 @@ const displayModal = () => {
         $(".modal_content").fadeToggle(0);
         document.body.classList.add("prevent-body-overflow");
         $(".modal_body").scrollTop(0);
-        $('body').css("overflow", "hidden");
+        // $('body').css("overflow", "hidden");
     } else {
         $("#ADA_widget").fadeTo(400, 0);
         $(".modal_content").fadeToggle(400);
@@ -32,7 +32,7 @@ const displayModal = () => {
             $("#ADA_widget").css("display", "none")
             document.body.classList.remove("prevent-body-overflow");
             $("#ada-triggers").fadeIn();
-            $('body').css("overflow", "auto");
+            // $('body').css("overflow", "auto");
         }, 800);
     }
 }
@@ -62,4 +62,32 @@ const forceReload = () => {
     setTimeout(() => {
         document.location.reload();
     }, 200);
+}
+
+const selectChangeHandler = (icon, iconClass, itemId) => {
+    if (icon.classList.contains(iconClass)) {
+        if (icon.classList.contains('plus-icon')) {
+            $(itemId).next().prop('selected', true).trigger('change');
+        }
+        if (icon.classList.contains('minus-icon')) {
+            $(itemId).prev().prop('selected', true).trigger('change');
+        }
+
+    }
+}
+
+// document.querySelectorAll('.opacity-icons').forEach(icon => {
+//     icon.addEventListener('click', () => {
+//       selectChangeHandler(icon, 'opacity-icons', '#reading-mask-opacity option:selected')
+
+//     })
+//   })
+
+// it looks awkward when select is at 10 so this fixes that
+const changeIndent = (value, amount, select, indentAmt) => {
+    if (value !== amount) {
+        $(select).css({ "text-indent": indentAmt });
+    } else {
+        $(select).css({ "text-indent": "0px" });
+    }
 }

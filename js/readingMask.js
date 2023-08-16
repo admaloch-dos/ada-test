@@ -22,6 +22,24 @@ $(function () {
 });
 
 
+// //////////// Reading Mask ///////////////////
+// $(document).bind('mousemove', function (e) {
+//   $('#tail').css({
+//     left: 0,
+//     top: e.pageY - 20
+//   });
+// });
+
+// $(document).bind('mousemove', function (e) {
+//   // console.log(e.pageY)
+//   $('#top_mask').css({
+//     top: e.pageY - 1300
+//   });
+//   $('#bottom_mask').css({
+//     top: e.pageY + 20
+//   });
+// });
+
 //////////// Reading Mask ///////////////////
 $(document).bind('mousemove', function (e) {
   $('#tail').css({
@@ -30,15 +48,17 @@ $(document).bind('mousemove', function (e) {
   });
 });
 
-$(document).bind('mousemove', function (e) {
-  // console.log(e.pageY)
-  $('#top_mask').css({
-    top: e.pageY - 1300
-  });
-  $('#bottom_mask').css({
-    top: e.pageY + 20
-  });
-});
+// min 1180 - 1900
+// let vals = [1180, 1252, 1324, ]
+
+// let initArr = Array(10).fill(1180);
+
+// const newArr = initArr.map((x, i) => x + 80 * i)
+// console.log(newArr)
+
+
+
+
 
 
 //fix bugs caused by reading mask
@@ -132,4 +152,97 @@ $(document).ready(function () {
     $.cookie(name, $(this).prop('checked'), { path: '/', })
   });
 });
+
+
+//mask settings
+
+
+// change opacity
+// use arrows
+
+var opacityCookie = $.cookie("readingMaskOpacity");
+if (opacityCookie) {
+  $("#reading-mask-opacity").val(opacityCookie);
+  $(".reading-mask").css({ "opacity": opacityCookie })
+}
+
+document.querySelectorAll('.opacity-icons').forEach(icon => {
+  icon.addEventListener('click', () => {
+    selectChangeHandler(icon, 'opacity-icons', '#reading-mask-opacity option:selected')
+    let newVal = $('#reading-mask-opacity').val();
+    $(".reading-mask").css({ "opacity": newVal })
+    $.cookie("readingMaskOpacity", newVal, { path: '/' })
+    changeIndent(maskOpacityInput.value, '1', '#ReadingMask_option select', '5px')
+  })
+})
+
+const maskOpacityInput = document.getElementById('reading-mask-opacity')
+maskOpacityInput.addEventListener('change', () => {
+  console.log(maskOpacityInput.value)
+  $(".reading-mask").css({ "opacity": maskOpacityInput.value })
+  $.cookie("readingMaskOpacity", maskOpacityInput.value, { path: '/' })
+
+  changeIndent(maskOpacityInput.value, '1', '#ReadingMask_option select', '5px')
+})
+
+// change mask size
+let yVal = 1300
+
+var maskSizeCookieVal = $.cookie("readingMaskHeight");
+if (maskSizeCookieVal) {
+  $("#mask-size-input").val(maskSizeCookieVal);
+  yVal = maskSizeCookieVal
+}
+
+
+const maskSizeInputRange = document.getElementById('mask-size-input')
+maskSizeInputRange.addEventListener('change', () => {
+  let newSizeVal = maskSizeInputRange.value
+  yVal = newSizeVal
+  $.cookie("readingMaskHeight", newSizeVal, { path: '/' })
+})
+
+$(document).bind('mousemove', function (e) {
+  $('#top_mask').css({
+    top: e.pageY - yVal
+  });
+  $('#bottom_mask').css({
+    top: e.pageY + 20
+  });
+});
+
+var maskColorCookieVal = $.cookie("readingMaskColor");
+if (maskColorCookieVal) {
+  $("#mask_color").val(maskColorCookieVal);
+  $('.reading-mask').css({ "background": maskColorCookieVal })
+  document.querySelector('#mask_hexVal').innerText = maskColorCookieVal
+}
+
+
+// change mask color
+const maskColorChangeInput = document.getElementById('mask_color')
+maskColorChangeInput.addEventListener('change', () => {
+  $('.reading-mask').css({ "background": maskColorChangeInput.value })
+  document.querySelector('#mask_hexVal').innerText = maskColorChangeInput.value
+  $.cookie("readingMaskColor", maskColorChangeInput.value, { path: '/' })
+})
+
+//reset cookies
+const resetMaskSettingsCookies = () => {
+  $.removeCookie('readingMaskOpacity');
+  $.removeCookie('readingMaskHeight');
+  $.removeCookie('readingMaskColor');
+}
+
+// restore default
+const restoreDefaultMaskSettings = () => {
+  $('#reading-mask-opacity').val('.5');
+  $(".reading-mask").css({ "opacity": '.5' })
+  $("#mask_color").val('#363636');
+  $('.reading-mask').css({ "background": '#363636' })
+  document.querySelector('#mask_hexVal').innerText = '#363636'
+  yVal = 1300
+  $("#mask-size-input").val(1300);
+  resetMaskSettingsCookies()
+}
 

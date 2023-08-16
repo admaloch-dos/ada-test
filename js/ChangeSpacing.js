@@ -5,20 +5,9 @@ const setSpacingCss = (value, css) => {
     $(".Footer").css(css, value);
 }
 
-const selectChangeHandler = (icon, iconClass, itemId) => {
-    if (icon.classList.contains(iconClass)) {
-        if (icon.classList.contains('plus-icon')) {
-            $(itemId).next().prop('selected', true).change();
-        }
-        if (icon.classList.contains('minus-icon')) {
-            $(itemId).prev().prop('selected', true).change();
-        }
 
-    }
-}
 
-const spacingIcon = document.querySelectorAll('.spacing-icon')
-spacingIcon.forEach(icon => {
+document.querySelectorAll('.spacing-icon').forEach(icon => {
     icon.addEventListener('click', () => {
         selectChangeHandler(icon, 'letter-spacing-icon', '#letter_spacing option:selected')
         selectChangeHandler(icon, 'word-spacing-icon', '#word_spacing option:selected')
@@ -26,14 +15,7 @@ spacingIcon.forEach(icon => {
     })
 })
 
-// it looks awkward when select is at 10 so this fixes that
-const changeIndent = (value, amount, select) => {
-    if (value !== amount) {
-        $(select).css({ "text-indent": "6px" });
-    } else {
-        $(select).css({ "text-indent": "0px" });
-    }
-}
+
 
 // full restore to default settings
 const restoreSpacingDefault = (itemId, removeItemArr) => {
@@ -52,16 +34,16 @@ $(document).ready(function () {
         $("#letter_spacing").prop("selected", true);
         $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("letter-spacing", selectedVal); //Selects everything inside #view except ada modal and header
         $(".Footer").css("letter-spacing", selectedVal);
-        changeIndent(selectedVal, '10px', '#LetterSpacing_option select')
+        changeIndent(selectedVal, '10px', '#LetterSpacing_option select', '6px')
     }
     $("#letter_spacing").on("change", function () {
         var selection1 = $(this).val();
-
+console.log('this just changed')
         $(selection1).prop("selected", true);
         $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
         $(".Footer").css("letter-spacing", selection1);
         $.cookie("LetterSpaceVal", selection1, { path: '/' })
-        changeIndent(selection1, '10px', '#LetterSpacing_option select')
+        changeIndent(selection1, '10px', '#LetterSpacing_option select', '6px')
 
         widgetItemObj.isLetterSpaceChanged = selection1 === 'inherit' ? false : true
         selection1 === 'inherit' ? removeWidgetControls(['letter_spacing']) : addWidgetControls('letter_spacing', 'Letter spacing')
@@ -76,7 +58,7 @@ $(document).ready(function () {
         $("#word_spacing").val(selectedVal2);
         $("#word_spacing").prop("selected", true);
         $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("word-spacing", selectedVal2); //Selects everything inside #view except ada modal and header
-        changeIndent(selectedVal2, '10px', '#WordSpacing_option select')
+        changeIndent(selectedVal2, '10px', '#WordSpacing_option select', '6px')
     }
     $("#word_spacing").on("change", function () {
         var selection2 = $(this).val();
@@ -84,7 +66,7 @@ $(document).ready(function () {
         $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("#word_spacing", selection2); //Selects everything inside #view except ada modal and header
         $(".Footer").css("#word_spacing", selection2);
         $.cookie("WordSpaceVal", selection2, { path: '/' })
-        changeIndent(selection2, '10px', '#WordSpacing_option select')
+        changeIndent(selection2, '10px', '#WordSpacing_option select', '6px')
         widgetItemObj.isWordSpaceChanged = selection2 === 'inherit' ? false : true
         selection2 === 'inherit' ? removeWidgetControls(['word_spacing']) : addWidgetControls('word_spacing', 'Word spacing')
         checkIfWidgetActive()
@@ -99,7 +81,7 @@ $(document).ready(function () {
         $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("line-height", selectedVal3); //Selects everything inside #view except ada modal and header
         $(".Footer").css("line-height", selectedVal3);
 
-        changeIndent(selectedVal3, '3.3', '#LineHeight_option select')
+        changeIndent(selectedVal3, '3.3', '#LineHeight_option select', '6px')
     }
     $("#line_height").on("change", function () {
         var selection3 = $(this).val();
@@ -108,7 +90,7 @@ $(document).ready(function () {
         $(".Footer").css("line-height", selection3);
         $.cookie("LinpageHeightVal", selection3, { path: '/' })
 
-        changeIndent(selection3, '3.3', '#LineHeight_option select')
+        changeIndent(selection3, '3.3', '#LineHeight_option select', '6px')
 
         widgetItemObj.isLineHeightChanged = selection3 === 'inherit' ? false : true
         checkIfWidgetActive()

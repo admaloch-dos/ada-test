@@ -2,7 +2,7 @@
 //https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
 $(function () {
   $('#ADA_widget .bg_form .form-check ul li').click(function () {
-      $(this).addClass('active').siblings().removeClass('active');
+    $(this).addClass('active').siblings().removeClass('active');
   });
 });
 
@@ -118,3 +118,4 @@ const areCookiesSet = () => {
 }
 
 widgetItemObj = areCookiesSet()
+

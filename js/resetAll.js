@@ -1,5 +1,5 @@
 const resetAdaModal = () => {
-    if (isWidgetActive) {
+
         $('#ToggleHighlightHover').prop('checked', false).trigger('change')
         $('#ToggleHighlightLinks').prop('checked', false).trigger('change')
         $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
@@ -18,7 +18,8 @@ const resetAdaModal = () => {
         if (widgetItemObj.isBackColorChanged || widgetItemObj.isTextColorChanged || widgetItemObj.isLinkColorChanged) {
             resetColorPicker()
         }
-    }
+        restoreDefaultMaskSettings()
+    
 }
 
 let resetIcon = document.getElementById('reset-ada')

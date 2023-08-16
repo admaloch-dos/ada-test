@@ -71,9 +71,9 @@
 
 
           <div class="toggle-icon-container">
-            <i id="ADA_check_icon" class="fa fa-solid fa-check"></i>
-            <i id="ADA_icon" class="fa fa-universal-access"></i>
 
+            <i id="ADA_icon" class="fa fa-universal-access"></i>
+            <i id="ADA_check_icon" class="fa fa-solid fa-check"></i>
           </div>
 
 
@@ -81,7 +81,7 @@
         <div id="item-delete-container">
 
           <ul id="widget-list" class="list-unstyled mt-2 mb-2"></ul>
-          <div id="item-delete-footer" >
+          <div id="item-delete-footer">
             <button id="reset-ada" class="w-100 reset-ada">Reset menu &nbsp<i class="fa fa-refresh  "
                 aria-hidden="true"></i></button>
 
@@ -937,7 +937,7 @@
                     <h6 class="ada_option_title mb-3 mt-3 pl-0 pl-lg-5 text-lg-left">Adjust Colors</h6>
 
                     <div class="form-group ">
-                      <label class="ada_option_title" for="Background Color">
+                      <label class="ada_option_title back-color-text" for="Background Color">
                         Background Color
                       </label>
                       <input type="color" class="color_swatch" id="background_color" title="Choose Background Color"
@@ -1048,11 +1048,8 @@
                       </div>
                     </div>
                     <div class="ada_content">
-                      <h6 class="type ada_option_title text-sm-center text-lg-left">Seizure Safe</h6>
-                      <p class="description text-sm-center text-lg-left">Optimize to reduce risk of reflex seizures
-                        and photosensitive epilepsy
-                        by
-                        reducing color and removing flashes</p>
+                      <h6 class="type ada_option_title text-sm-center text-lg-left">Photosensitivity filter</h6>
+                      <p class="description text-sm-center text-lg-left">Reduces color and removes flashes</p>
                     </div><!-- ada_content -->
 
                     <div class="ada_toggle" style="margin-left:6px;">
@@ -1067,7 +1064,7 @@
                 </div><!-- col-12 col-lg-4 -->
 
 
-                <div class="col-12 col-lg-4" id="ReadingMask_option">
+                <div class="col-12 col-lg-4 pb-3" id="ReadingMask_option">
                   <div
                     class="ada_toggleContainer justify-content-start justify-content-sm-center justify-content-lg-start"
                     id="ReadingMask">
@@ -1083,7 +1080,7 @@
                           alt="Reading Mask Icon" />
                       </div>
                     </div>
-                    <div class="ada_content">
+                    <div class="ada_content ">
                       <h6 class="type ada_option_title">Reading Mask</h6>
                       <p class="description">More focus and fewer distractions</p>
                     </div><!-- ada_content -->
@@ -1096,6 +1093,75 @@
                       </label>
                     </div><!-- ada_toggle -->
                   </div><!-- class="ada_toggleContainer" id="ReadingMask" -->
+                  <div id="edit-reading-mask mb-5"
+                    class=" edit-reading-mask d-flex justify-content-center align-items-start">
+
+                    <div id="edit-mask-opacity"
+                      class="input-container d-flex flex-column justify-content-center align-items-center">
+                      <p class="mb-2">Opacity:</p>
+                      <div class="opacity-select d-flex justify-content-center align-items-center">
+                        <svg class="opacity-icons  button-icon minus-icon mr-2" xmlns="http://www.w3.org/2000/svg"
+                          width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                        </svg>
+                        <select class="opacity-value " name="reading-mask-opacity" id="reading-mask-opacity">
+
+                          <option value=".1">1</option>
+                          <option value=".2">2</option>
+                          <option value=".3">3</option>
+                          <option value=".4">4</option>
+                          <option selected value=".5">5</option>
+                          <option value=".6">6</option>
+                          <option value=".7">7</option>
+                          <option value=".8">8</option>
+                          <option value=".9">9</option>
+                          <option value="1">10</option>
+                        </select>
+
+                        <svg class="opacity-icons  button-icon plus-icon ml-2" xmlns="http://www.w3.org/2000/svg"
+                          width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                          <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
+                      </div>
+
+                    </div>
+
+
+
+                    <div id="edit-mask-color"
+                      class="ml-3 mr-3 color_picker_form d-flex flex-column justify-content-center align-items-center">
+
+                      <p class="mb-2" for="mask-color">
+                        Color:
+                      </p>
+                      <!-- <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"> -->
+                      <input type="color" class="color_swatch mb-0 " id="mask_color" title="Choose Link Color"
+                        value="#363636" colorpick-eyedropper-active="true">
+                      <span class="hexVal" id="mask_hexVal">#363636</span>
+                    </div>
+                    <div class="edit-middle-section d-flex flex-column justify-content-center align-items-center">
+                      <div id="edit-mask-size "
+                        class=" d-flex flex-column justify-content-center align-items-center">
+
+                        <label for="customRange" class="form-label mb-0">Size:</label>
+                        <input type="range" class="form-range mask-size-input" step="10" value="1300" min="1180"
+                          max="1900" id="mask-size-input">
+                        <span id="mask-opacity"></span>
+                      </div>
+
+                      <button onclick="restoreDefaultMaskSettings()" id="reset-mask-btn"
+                        class="ada-btn btn btn-secondary" role="button" type="button"
+                        title="Reset Adjustments Colors">Reset mask</button>
+                    </div>
+                  </div>
+
+                  <!-- <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+                    <label for="customRange2" class="form-label">Change opacity</label>
+                    <input type="range" class="form-range" step="10" min="10" max="100" id="mask-opacity-range">
+                    <span id="mask-opacity"></span>
+                  </div> -->
+
                 </div><!-- col-12 col-lg-4 -->
 
 
@@ -1323,6 +1389,27 @@
             <h6 class="subheader">updated - 4: 28 7/15/23 </h6>
             <button>Hello</button>
 
+            <div class="letter-image">
+              <div class="animated-mail">
+                <div class="back-fold"></div>
+                <div class="letter">
+                  <div class="letter-border"></div>
+                  <div class="letter-title"></div>
+                  <div class="letter-context"></div>
+                  <div class="letter-stamp">
+                    <div class="letter-stamp-inner"></div>
+                  </div>
+                </div>
+                <div class="top-fold"></div>
+                <div class="body"></div>
+                <div class="left-fold"></div>
+              </div>
+              <div class="shadow"></div>
+            </div>
+
+
+
+            <a id="transition-test-link" href="#">Tranition test link</a>
             <p>Florida became a United States territory in 1821, but it did not become a state until 1845. During the
               territorial years, Florida's government derived its authority from the federal government rather than from
               a
@@ -1352,6 +1439,33 @@
               counties, relations with local Native Americans and requests to incorporate businesses and institutions
               are
               some of the most prominent subjects.</p>
+
+
+
+
+
+            <div class="card">
+              <div class="flip-card">
+                <div class="flip-front">
+                  <!-- front side of the card -->
+                  <h1>Elpeeda</h1>
+                </div>
+                <div class="flip-back">
+                  <!-- back side of the card -->
+                  <p>
+                    Test if animation works etc.....
+                  </p>
+                  <a href="https://www.youtube.com/@elpeedanet/featured" target="_blank">Follow</a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
 
             <div class="buffer"></div>
 
@@ -1404,72 +1518,86 @@
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search. Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search. Also, remember that Floriupda's county boundaries have changed many
+              times over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
               time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
+              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
+              over the years as new counties
               were
               created. documents those changes
               over
