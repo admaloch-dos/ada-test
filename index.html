@@ -43,7 +43,8 @@
   <script src="./files/js/roundslider.min.js"></script>
 
   <script src="./files/js/CookieScript.js"></script>
-
+  <script type="text/javascript" src="./files/js/google_translate.js"></script>
+  <script src="./js/translate.js"></script>
 
 
 
@@ -498,6 +499,7 @@
 
                   <script type="text/javascript" src="./files/js/google_translate.js"></script>
                   <script>
+
                     //https://stackoverflow.com/a/36282225/10792033
                     //Change text of dropdown on Google Translate
                     $(document).ready(function () {
@@ -1093,18 +1095,18 @@
                       </label>
                     </div><!-- ada_toggle -->
                   </div><!-- class="ada_toggleContainer" id="ReadingMask" -->
-                  <div id="edit-reading-mask mb-5"
-                    class=" edit-reading-mask d-flex justify-content-center align-items-start">
+                  <div id="edit-reading-mask"
+                    class=" edit-reading-mask d-flex justify-content-center align-items-start disable-settings">
 
                     <div id="edit-mask-opacity"
                       class="input-container d-flex flex-column justify-content-center align-items-center">
-                      <p class="mb-2">Opacity:</p>
+                      <div class="mb-2">Opacity:</div>
                       <div class="opacity-select d-flex justify-content-center align-items-center">
                         <svg class="opacity-icons  button-icon minus-icon mr-2" xmlns="http://www.w3.org/2000/svg"
                           width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
-                        <select class="opacity-value " name="reading-mask-opacity" id="reading-mask-opacity">
+                        <select  class=" opacity-value " name="reading-mask-opacity" id="reading-mask-opacity">
 
                           <option value=".1">1</option>
                           <option value=".2">2</option>
@@ -1130,11 +1132,11 @@
 
 
                     <div id="edit-mask-color"
-                      class="ml-3 mr-3 color_picker_form d-flex flex-column justify-content-center align-items-center">
+                      class="ml-4 mr-4 color_picker_form d-flex flex-column justify-content-center align-items-center">
 
-                      <p class="mb-2" for="mask-color">
+                      <div class="mb-2" for="mask-color">
                         Color:
-                      </p>
+                      </div>
                       <!-- <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"> -->
                       <input type="color" class="color_swatch mb-0 " id="mask_color" title="Choose Link Color"
                         value="#363636" colorpick-eyedropper-active="true">
@@ -1240,7 +1242,7 @@
                 </div><!-- col-12 col-lg-6 -->
 
 
-                <div class="col-12 col-lg-6 ">
+                <div id="speech-settings" class="col-12 col-lg-6 ">
                   <div id="TTS_Utterance">
                     <form class="form-inline mb-4">
                       <label for="voice" class="ada_option_title mr-2">Select Voice:</label>
@@ -1745,10 +1747,11 @@
   <script src="./js/speech.js"></script>
   <script src="./js/color-presets.js"></script>
   <script src="./js/color-scheme-fix.js"></script>
-
-  <script src="./js/isWidgetActive.js"></script>
-  <script src="./js/resetAll.js"></script>
   <script src="./js/keyCommands.js"></script>
+  <script src="./js/isWidgetActive.js"></script>
+
+  <script src="./js/resetAll.js"></script>
+
 
 
   <script src="./js/pageLoad.js"></script>

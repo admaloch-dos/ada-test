@@ -7,12 +7,14 @@ $(function () {
       $("body").addClass("ReadingMask_ON");
       $("#top_mask").fadeIn()
       $("#bottom_mask").fadeIn()
+      $("#edit-reading-mask").removeClass("disable-settings");
       addWidgetControls('ToggleReadingMask', 'Reading mask')
       widgetItemObj.isReadingMask = true
     } else {
       $("body").removeClass("ReadingMask_ON");
       $("#top_mask").fadeOut()
       $("#bottom_mask").fadeOut()
+      $("#edit-reading-mask").addClass("disable-settings");
       removeWidgetControls(['ToggleReadingMask'])
       widgetItemObj.isReadingMask = false
     }
@@ -22,24 +24,6 @@ $(function () {
 });
 
 
-// //////////// Reading Mask ///////////////////
-// $(document).bind('mousemove', function (e) {
-//   $('#tail').css({
-//     left: 0,
-//     top: e.pageY - 20
-//   });
-// });
-
-// $(document).bind('mousemove', function (e) {
-//   // console.log(e.pageY)
-//   $('#top_mask').css({
-//     top: e.pageY - 1300
-//   });
-//   $('#bottom_mask').css({
-//     top: e.pageY + 20
-//   });
-// });
-
 //////////// Reading Mask ///////////////////
 $(document).bind('mousemove', function (e) {
   $('#tail').css({
@@ -47,19 +31,6 @@ $(document).bind('mousemove', function (e) {
     top: e.pageY - 20
   });
 });
-
-// min 1180 - 1900
-// let vals = [1180, 1252, 1324, ]
-
-// let initArr = Array(10).fill(1180);
-
-// const newArr = initArr.map((x, i) => x + 80 * i)
-// console.log(newArr)
-
-
-
-
-
 
 //fix bugs caused by reading mask
 const preventPageScroll = () => {
@@ -246,3 +217,6 @@ const restoreDefaultMaskSettings = () => {
   resetMaskSettingsCookies()
 }
 
+// const disableMaskSettings = () =>{
+//   document.getElementById('reading-mask-opacity')
+// }

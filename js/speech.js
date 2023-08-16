@@ -315,6 +315,7 @@ $(function () {
             $(".audio_state").hide()
             $("body").addClass("TTS_click_enabled");
             $(".audio_state").fadeIn(600)
+            // $("#speech-settings").removeClass("disable-settings");
             if ($('#ToggleReadingMask').is(':checked')) {
                 storeModalScrollPosition()
                 modalDisplayOpenOrClose()
@@ -323,6 +324,7 @@ $(function () {
             addWidgetControls('ToggleTTS_click', 'Text to speech')
             widgetItemObj.isSpeech = true
         } else {
+            // $("#speech-settings").addClass("disable-settings");
             $(".audio_state").fadeOut(500)
             setTimeout(() => {
                 $("body").removeClass("TTS_click_enabled");

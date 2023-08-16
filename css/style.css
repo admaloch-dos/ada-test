@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden !important;
+  top: 0px !important;
 
 }
 
@@ -264,7 +265,7 @@ a {
   text-overflow: '';
 }
 
-#edit-mask-opacity p {
+#edit-mask-opacity * {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -340,7 +341,14 @@ a {
   text-indent: 5px;
 }
 
+.disable-settings *,
+.disable-settings span {
+  cursor: pointer;
+  pointer-events: none !important;
+  opacity: .75 !important;
 
+  /* display: none; */
+}
 
 /* .spacing-value option:checked {
   background-color: yellow;
@@ -2733,3 +2741,20 @@ background-color: lightgray;
     height: 100px !important;
   }
 }
+
+
+/* google translate hide extra content */
+.skiptranslate table {
+  display: none !important;
+}
+
+#goog-gt-tt {
+  display: none !important;
+}
+
+.skiptranslate iframe {
+display: none;
+}
+
+
+
