@@ -301,10 +301,18 @@ body.inverted {
 /************************************** DESATURATED SETTINGS ***********************************/
 .desaturated a {
 	color: #505050 !important;
+
+
+}
+
+.desaturated a:not(#ADA_widget a) {
+	text-decoration: underline;
+	font-style: italic;
 }
 
 .desaturated a:hover {
 	color: #505050 !important;
+	opacity: .7;
 }
 
 .desaturated #Scroll_btn {
@@ -448,9 +456,9 @@ body.inverted {
 	background: #505050;
 }
 
-.desaturated .Footer .nav-link {
+/* .desaturated .Footer .nav-link {
 	color: #fff !important;
-}
+} */
 
 .desaturated .fmp-informative a {
 	color: #fff !important;
@@ -521,36 +529,37 @@ body.inverted {
 /************************************** CURSOR SWAP SETTINGS ***********************************/
 /*https://icons8.com/icons/set/cursor-arrow*/
 body.CursorSwap {
-	cursor: url('../img/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), 10 3, auto;
+	;
 }
 
 .CursorSwap *,
 .CursorSwap *:hover {
-	cursor: url('../img/large-cursor.png'), auto !important;
+	cursor: url('../img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap a:-webkit-any-link {
-	cursor: url('../img/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap #ada_dropdown label {
-	cursor: url('../img/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap #accessibility .form-check-input {
-	cursor: url('../img/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap #Scroll_btn,
 .CursorSwap #Scroll_btn:hover {
-	cursor: url('../img/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap [type=button]:not(:disabled),
 .CursorSwap [type=reset]:not(:disabled),
 .CursorSwap [type=submit]:not(:disabled),
 .CursorSwap button:not(:disabled) {
-	cursor: url('../img/large-cursor.png'), auto;
+	cursor: url('../img/large-cursor.png'), 10 3, auto;
 }
 
 
@@ -1168,3 +1177,4 @@ body.highcontrast {
 .highcontrast .table {
 	color: white;
 }
+
