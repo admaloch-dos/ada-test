@@ -528,7 +528,7 @@
 
               <div class="row">
                 <div
-                  class="col-12 col-lg-6 d-none  d-sm-flex justify-content-start justify-content-sm-center justify-content-lg-start "
+                  class="col-12 col-md-6 d-none  d-sm-flex justify-content-start justify-content-sm-center justify-content-lg-start "
                   id="HighlightHover_option">
                   <div class="ada_toggleContainer pb-0" id="HighlightHover">
                     <div class="ada_content">
@@ -551,12 +551,12 @@
                       </label>
                     </div><!-- ada_toggle -->
                   </div><!-- class="ada_toggleContainer" id="HighlightHover" -->
-                </div><!-- col-12 col-lg-6 -->
+                </div><!-- col-12 col-md-6 -->
 
 
 
                 <div
-                  class="col-12 col-lg-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start "
+                  class="col-12 col-md-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start "
                   id="HighlightLinks_option">
                   <div class="ada_toggleContainer" id="HighlightLinks">
                     <div class="ada_content">
@@ -579,7 +579,7 @@
                       </label>
                     </div><!-- ada_toggle -->
                   </div><!-- class="ada_toggleContainer" id="HighlightLinks" -->
-                </div><!-- col-12 col-lg-6 -->
+                </div><!-- col-12 col-md-6 -->
               </div><!-- row -->
 
 
@@ -587,7 +587,7 @@
 
               <div class="row" id="Magnify_options">
                 <div
-                  class="col-12 col-lg-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start"
+                  class="col-12 col-md-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start"
                   id="TextMagnifier_option">
                   <div class="ada_toggleContainer" id="TextMagnifier">
                     <div class="main_icon_holder" id="textmagnify_icon">
@@ -609,11 +609,11 @@
                       </label>
                     </div><!-- ada_toggle -->
                   </div><!-- class="ada_toggleContainer" id="TextMagnifier" -->
-                </div><!-- col-12 col-lg-6 -->
+                </div><!-- col-12 col-md-6 -->
 
 
                 <div
-                  class="col-12 col-lg-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start"
+                  class="col-12 col-md-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start"
                   id="ImageDescription_option">
                   <div class="ada_toggleContainer" id="ImageDescription">
                     <div class="main_icon_holder" id="imagealt_icon">
@@ -729,8 +729,8 @@
 
 
 
-              <div id="text-selects" class="row">
-                <div class="col-12 col-lg-4 text-center" id="LetterSpacing_option">
+              <div id="text-selects" class="row ">
+                <div class="col-12 col-md-4 text-center" id="LetterSpacing_option">
                   <form>
                     <div class="form-group mb-0 mb-lg-3 delete-select-icon">
                       <div class="form-group-heading mb-1 mb-lg-4 ">
@@ -773,10 +773,10 @@
                     </div>
                   </form>
 
-                </div><!-- col-12 col-lg-4 -->
+                </div><!-- col-12 col-md-4 -->
 
 
-                <div class="col-12 col-lg-4 text-center" id="WordSpacing_option">
+                <div class="col-12 col-md-4 text-center" id="WordSpacing_option">
                   <form>
                     <div class="form-group mb-0 mb-lg-3">
                       <div class="form-group-heading mb-1 mb-lg-4">
@@ -818,10 +818,10 @@
                       </div>
                     </div>
                   </form>
-                </div><!-- col-12 col-lg-4 -->
+                </div><!-- col-12 col-md-4 -->
 
 
-                <div class="col-12 col-lg-4 text-center" id="LineHeight_option">
+                <div class="col-12 col-md-4 text-center" id="LineHeight_option">
                   <form>
                     <div class="form-group mb-4 mb-lg-3">
                       <div class="form-group-heading mb-1 mb-lg-4">
@@ -1147,8 +1147,8 @@
                         class=" d-flex flex-column justify-content-center align-items-center">
 
                         <label for="customRange" class="form-label mb-0">Size:</label>
-                        <input type="range" class="form-range mask-size-input" step="10" value="1300" min="1180"
-                          max="1900" id="mask-size-input">
+                        <input type="range" class="form-range mask-size-input" step="10" value="1400" min="1280"
+                          max="2000" id="mask-size-input">
                         <span id="mask-opacity"></span>
                       </div>
 
@@ -1248,7 +1248,7 @@
                       <label for="voice" class="ada_option_title mr-2">Select Voice:</label>
                       <select class="custom-select" name="voice" id="voice"></select>
                     </form>
-                    <div class="round-sliders d-flex justify-content-center align-items-center flex-wrap">
+                    <div class="round-sliders d-none d-md-flex justify-content-center align-items-center flex-wrap">
                       <div class="round-slider">
                         <svg id="volume-minus-icon"
                           class="button-icon volume-minus-icon speech-volume speech-minus-icon speech-icon"
@@ -1748,6 +1748,7 @@
   <script src="./js/color-presets.js"></script>
   <script src="./js/color-scheme-fix.js"></script>
   <script src="./js/keyCommands.js"></script>
+
   <script src="./js/isWidgetActive.js"></script>
 
   <script src="./js/resetAll.js"></script>

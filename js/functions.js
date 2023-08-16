@@ -24,10 +24,14 @@ const displayModal = () => {
         $(".modal_content").fadeToggle(0);
         document.body.classList.add("prevent-body-overflow");
         $(".modal_body").scrollTop(0);
+    
+
+        // $('body').css("overflow", "hidden");
         // $('body').css("overflow", "hidden");
     } else {
         $("#ADA_widget").fadeTo(400, 0);
         $(".modal_content").fadeToggle(400);
+        $('body').css("overflow", "auto");
         setTimeout(() => {
             $("#ADA_widget").css("display", "none")
             document.body.classList.remove("prevent-body-overflow");

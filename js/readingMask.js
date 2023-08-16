@@ -52,31 +52,22 @@ const preventPageScroll = () => {
 }
 
 //prevent page scroll past footer
-$(function () {
-  $('#ToggleReadingMask').change(function () {
-    if ($('#ToggleReadingMask').is(':checked')) {
-      window.scrollTo(0, 0);
-      preventPageScroll()
-      if ($('#ToggleTTS_click').is(':checked')) {
-        storeModalScrollPosition()
-        modalDisplayOpenOrClose()
-        forceReload()
-      }
-    } else {
-      return;
-    }
-  });
-});
+// ^^
 
 // reload on page resize if reading mask is active
 window.addEventListener("resize", (event) => {
+  var timeout = null
   if (document.body.classList.contains('ReadingMask_ON')) {
-    setTimeout(() => {
+
+    timeout = setTimeout(() => {
       location.reload()
-    }, 500);
+    }, 1500);
+
   } else {
+    clearTimeout(timeout)
     return;
   }
+
 });
 
 setTimeout(() => {
