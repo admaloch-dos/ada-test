@@ -343,10 +343,10 @@ a {
 
 .disable-settings *,
 .disable-settings span {
-  cursor: pointer;
+  /* cursor: pointer;
   pointer-events: none !important;
-  opacity: .75 !important;
-
+  opacity: .75 !important; */
+display: none;
   /* display: none; */
 }
 
@@ -2752,9 +2752,9 @@ background-color: lightgray;
   display: none !important;
 }
 
-.skiptranslate iframe {
+/* .skiptranslate iframe {
 display: none;
-}
+} */
 
 
 
