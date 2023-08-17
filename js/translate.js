@@ -18,9 +18,7 @@ function googleTranslateElementInit() {
 
 
 
-  setTimeout(() => {
-    console.log($('.goog-te-combo'))
-  }, 1000);
+
 
   function dismissGoogleTranslate() {
 

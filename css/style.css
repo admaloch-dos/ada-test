@@ -341,14 +341,14 @@ a {
   text-indent: 5px;
 }
 
-.disable-settings *,
+/* .disable-settings *,
 .disable-settings span {
   /* cursor: pointer; */
   pointer-events: none !important;
   opacity: .75 !important;
 
   /* display: none; */
-}
+} */
 
 /* .spacing-value option:checked {
   background-color: yellow;
@@ -2755,3 +2755,7 @@ background-color: lightgray;
 /* .skiptranslate iframe {
 display: none;
 } */
+
+#edit-reading-mask {
+  display: none;
+}

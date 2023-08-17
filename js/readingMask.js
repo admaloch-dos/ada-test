@@ -1,38 +1,11 @@
 
 
-// Toggle Reading Mask
-$(function () {
-  $('[id="ToggleReadingMask"]').change(function () {
-    if ($(this).is(':checked')) {
-      $("body").addClass("ReadingMask_ON");
-      $("#top_mask").fadeIn()
-      $("#bottom_mask").fadeIn()
-      $("#edit-reading-mask").removeClass("disable-settings");
-      addWidgetControls('ToggleReadingMask', 'Reading mask')
-      widgetItemObj.isReadingMask = true
-    } else {
-      $("body").removeClass("ReadingMask_ON");
-      $("#top_mask").fadeOut()
-      $("#bottom_mask").fadeOut()
-      $("#edit-reading-mask").addClass("disable-settings");
-      removeWidgetControls(['ToggleReadingMask'])
-      widgetItemObj.isReadingMask = false
-    }
-
-    checkIfWidgetActive()
-  });
-});
 
 
-//////////// Reading Mask ///////////////////
-$(document).bind('mousemove', function (e) {
-  $('#tail').css({
-    left: 0,
-    top: e.pageY - 20
-  });
-});
 
-//fix bugs caused by reading mask
+
+
+//fix bugs caused by reading mask creating an infinite scroll
 const preventPageScroll = () => {
   var top = 0
   var pageHeight = document.documentElement.scrollHeight;
@@ -51,38 +24,115 @@ const preventPageScroll = () => {
   });
 }
 
-//prevent page scroll past footer
-// ^^
+
+// //prevent page scroll past footer
+// $(function () {
+//   $('#ToggleReadingMask').change(function () {
+//     if ($('#ToggleReadingMask').is(':checked')) {
+//       window.scrollTo(0, 0);
+//       preventPageScroll()
+//       if ($('#ToggleTTS_click').is(':checked')) {
+//         storeModalScrollPosition()
+//         modalDisplayOpenOrClose()
+//         forceReload()
+//       }
+//     } else {
+//       return;
+//     }
+//   });
+// });
+
+
+
+
+const createMaskFunc = (scrollPosition) => {
+  // window.scrollTo(0, 0);
+  $("html, body").animate({ scrollTop: 0 });
+  preventPageScroll()
+  let timeout = 0
+  if (scrollPosition) {
+    setTimeout(() => {
+      $("html, body").animate({ scrollTop: scrollPosition });
+    }, 500);
+    timeout = 1200
+  }
+  setTimeout(() => {
+    $("body").addClass("ReadingMask_ON");
+    $("#top_mask").fadeIn('slow')
+    $("#bottom_mask").fadeIn('slow')
+    addWidgetControls('ToggleReadingMask', 'Reading mask')
+    widgetItemObj.isReadingMask = true
+  }, timeout);
+  console.log('create mask func ran')
+}
+
+
+// function to run when page resized
+const resizeMaskFunc = () => {
+  if (document.body.classList.contains('ReadingMask_ON')) {
+    $("#top_mask").fadeOut()
+    $("#bottom_mask").fadeOut()
+    setTimeout(() => {
+      const scrollPosition = document.documentElement.scrollTop
+      createMaskFunc(scrollPosition)
+    }, 500);
+    // location.reload()
+  }
+}
+
+// on page load
+
+
+// setTimeout(() => {
+//   if (document.body.classList.contains('ReadingMask_ON')) {
+//     $("#top_mask").hide()
+//     $("#bottom_mask").hide()
+//     let cookiePos = sessionStorage.getItem("mainScrollPosition");
+
+//     console.log('main scroll position is', cookiePos)
+
+//     // createMaskFunc()
+
+//   }
+// }, 500);
+
+
+
 
 // reload on page resize if reading mask is active
+var resizeId;
 window.addEventListener("resize", (event) => {
-  var timeout = null
-  if (document.body.classList.contains('ReadingMask_ON')) {
-
-    timeout = setTimeout(() => {
-      location.reload()
-    }, 1500);
-
-  } else {
-    clearTimeout(timeout)
-    return;
-  }
-
+  clearTimeout(resizeId);
+  resizeId = setTimeout(resizeMaskFunc, 500);
 });
 
-setTimeout(() => {
-  if (document.body.classList.contains('ReadingMask_ON')) {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
+// Toggle Reading Mask
+$(function () {
+  $('[id="ToggleReadingMask"]').change(function () {
+    if ($(this).is(':checked')) {
+      const scrollPosition = document.documentElement.scrollTop
+      $("#edit-reading-mask").css("display", "flex").hide().fadeIn()
+      createMaskFunc(scrollPosition)
 
-    }, 100);
-    setTimeout(() => {
-      preventPageScroll()
+      if ($('#ToggleTTS_click').is(':checked')) {
+        storeModalScrollPosition()
+        storeMainScrollPosition()
+        modalDisplayOpenOrClose()
+        forceReload()
+      }
+    } else {
+      $("body").removeClass("ReadingMask_ON");
+      $("#top_mask").fadeOut()
+      $("#bottom_mask").fadeOut()
+      $("#edit-reading-mask").fadeOut()
+      removeWidgetControls(['ToggleReadingMask'])
+      widgetItemObj.isReadingMask = false
+    }
 
-    }, 500);
+    checkIfWidgetActive()
+  });
+});
 
-  }
-}, 100);
 
 $(document).ready(function () {
 
@@ -147,8 +197,16 @@ maskOpacityInput.addEventListener('change', () => {
   changeIndent(maskOpacityInput.value, '1', '#ReadingMask_option select', '5px')
 })
 
+//////////// Reading Mask ///////////////////
+$(document).bind('mousemove', function (e) {
+  $('#tail').css({
+    left: 0,
+    top: e.pageY - 20
+  });
+});
+
 // change mask size
-let yVal = 1400
+let yVal = 1280
 
 var maskSizeCookieVal = $.cookie("readingMaskHeight");
 if (maskSizeCookieVal) {
@@ -170,7 +228,7 @@ $(document).bind('mousemove', function (e) {
     top: e.pageY - yVal
   });
   $('#bottom_mask').css({
-    top: e.pageY + 20
+    top: e.pageY + 10
   });
 });
 
@@ -204,8 +262,8 @@ const restoreDefaultMaskSettings = () => {
   $("#mask_color").val('#363636');
   $('.reading-mask').css({ "background": '#363636' })
   document.querySelector('#mask_hexVal').innerText = '#363636'
-  yVal = 1400
-  $("#mask-size-input").val(1400);
+  yVal = 1270
+  $("#mask-size-input").val(1270);
   resetMaskSettingsCookies()
 }
 

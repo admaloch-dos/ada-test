@@ -45,6 +45,7 @@ const displayModal = () => {
 const storeMainScrollPosition = () => {
     var mainScrollPosition = $("html, body").scrollTop();
     sessionStorage.setItem("mainScrollPosition", mainScrollPosition);
+
 }
 
 const storeModalScrollPosition = () => {
