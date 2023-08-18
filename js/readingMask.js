@@ -27,18 +27,24 @@ const preventPageScroll = () => {
 const createMaskFunc = () => {
   widgetItemObj.isReadingMask = true
   // window.scrollTo(0, 0);
-  setTimeout(() => {
-    $("body").addClass("ReadingMask_ON");
-    $("#top_mask").fadeIn('slow')
-    $("#bottom_mask").fadeIn('slow')
-    addWidgetControls('ToggleReadingMask', 'Reading mask')
-    storeModalScrollPosition()
-    modalDisplayOpenOrClose()
+
+  $("body").addClass("ReadingMask_ON");
+  $("#top_mask").fadeIn('slow')
+  $("#bottom_mask").fadeIn('slow')
+  addWidgetControls('ToggleReadingMask', 'Reading mask')
+  storeModalScrollPosition()
+  modalDisplayOpenOrClose()
+  if ($.cookie("reading-mask-reload") === 'true') {
+    $.cookie("reading-mask-reload", false, { path: '/' });
+    console.log('edit reading mask is true')
     forceReload()
-  }, timeout);
+  }
+
   console.log('create mask func ran')
 
 }
+
+
 
 
 // function to run when page resized
@@ -62,6 +68,7 @@ const resizeMaskFunc = () => {
 setTimeout(() => {
   if (document.body.classList.contains('ReadingMask_ON')) {
     preventPageScroll()
+    $.cookie("reading-mask-reload", false, { path: '/' });
   }
 }, 300);
 
@@ -69,6 +76,7 @@ setTimeout(() => {
 // reload on page resize if reading mask is active
 var resizeId;
 window.addEventListener("resize", (event) => {
+  $.cookie("reading-mask-reload", true, { path: '/' });
   clearTimeout(resizeId);
   resizeId = setTimeout(resizeMaskFunc, 500);
 });
@@ -77,14 +85,22 @@ if ($.cookie("edit-reading-mask") === 'true') {
   $("#edit-reading-mask").css("display", "flex").hide().fadeIn()
 }
 
+let reloadCookie = $.cookie("reading-mask-reload")
+if (!reloadCookie) {
+  $.cookie("reading-mask-reload", true, { path: '/' });
+}
+
 // Toggle Reading Mask
 $(function () {
   $('[id="ToggleReadingMask"]').change(function () {
     if ($(this).is(':checked')) {
+
       const scrollPosition = document.documentElement.scrollTop
       $("#edit-reading-mask").css("display", "flex").hide().fadeIn()
       $.cookie("edit-reading-mask", true, { path: '/' });
+
       createMaskFunc()
+
     } else {
       $("body").removeClass("ReadingMask_ON");
       $("#top_mask").fadeOut()

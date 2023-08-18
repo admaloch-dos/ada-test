@@ -324,9 +324,10 @@ $(function () {
             if ($.cookie('ReadingMask')) {
                 if ($.cookie('ReadingMask') === 'false') {
                     $.removeCookie('ReadingMask');
-                    forceReload()
                     storeModalScrollPosition()
                     modalDisplayOpenOrClose()
+                    forceReload()
+
 
                 }
             }
@@ -335,10 +336,13 @@ $(function () {
         } else {
             if ($.cookie('ReadingMask')) {
                 if ($.cookie('ReadingMask') === 'true') {
-                    forceReload()
+
                     storeModalScrollPosition()
                     modalDisplayOpenOrClose()
+                    forceReload()
+
                 }
+                $.cookie("reading-mask-reload", true, { path: '/' });
             }
             // $("#speech-settings").addClass("disable-settings");
             $(".audio_state").fadeOut(500)
@@ -349,6 +353,7 @@ $(function () {
             removeWidgetControls(['ToggleTTS_click'])
             widgetItemObj.isSpeech = false
         }
+        $.cookie("reading-mask-reload", true, { path: '/' });
         checkIfWidgetActive()
     });
 });
