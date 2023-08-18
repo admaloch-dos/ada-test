@@ -24,57 +24,33 @@ const preventPageScroll = () => {
   });
 }
 
-
-// //prevent page scroll past footer
-// $(function () {
-//   $('#ToggleReadingMask').change(function () {
-//     if ($('#ToggleReadingMask').is(':checked')) {
-//       window.scrollTo(0, 0);
-//       preventPageScroll()
-//       if ($('#ToggleTTS_click').is(':checked')) {
-//         storeModalScrollPosition()
-//         modalDisplayOpenOrClose()
-//         forceReload()
-//       }
-//     } else {
-//       return;
-//     }
-//   });
-// });
-
-
-
-
-const createMaskFunc = (scrollPosition) => {
+const createMaskFunc = () => {
+  widgetItemObj.isReadingMask = true
   // window.scrollTo(0, 0);
-  $("html, body").animate({ scrollTop: 0 });
-  preventPageScroll()
-  let timeout = 0
-  if (scrollPosition) {
-    setTimeout(() => {
-      $("html, body").animate({ scrollTop: scrollPosition });
-    }, 500);
-    timeout = 1200
-  }
   setTimeout(() => {
     $("body").addClass("ReadingMask_ON");
     $("#top_mask").fadeIn('slow')
     $("#bottom_mask").fadeIn('slow')
     addWidgetControls('ToggleReadingMask', 'Reading mask')
-    widgetItemObj.isReadingMask = true
+    storeModalScrollPosition()
+    modalDisplayOpenOrClose()
+    forceReload()
   }, timeout);
   console.log('create mask func ran')
+
 }
 
 
 // function to run when page resized
 const resizeMaskFunc = () => {
   if (document.body.classList.contains('ReadingMask_ON')) {
-    $("#top_mask").fadeOut()
-    $("#bottom_mask").fadeOut()
+    // $("#top_mask").fadeOut()
+    // $("#bottom_mask").fadeOut()
     setTimeout(() => {
-      const scrollPosition = document.documentElement.scrollTop
-      createMaskFunc(scrollPosition)
+      storeModalScrollPosition()
+      modalDisplayOpenOrClose()
+      forceReload()
+      // createMaskFunc()
     }, 500);
     // location.reload()
   }
@@ -83,20 +59,11 @@ const resizeMaskFunc = () => {
 // on page load
 
 
-// setTimeout(() => {
-//   if (document.body.classList.contains('ReadingMask_ON')) {
-//     $("#top_mask").hide()
-//     $("#bottom_mask").hide()
-//     let cookiePos = sessionStorage.getItem("mainScrollPosition");
-
-//     console.log('main scroll position is', cookiePos)
-
-//     // createMaskFunc()
-
-//   }
-// }, 500);
-
-
+setTimeout(() => {
+  if (document.body.classList.contains('ReadingMask_ON')) {
+    preventPageScroll()
+  }
+}, 300);
 
 
 // reload on page resize if reading mask is active
@@ -106,37 +73,32 @@ window.addEventListener("resize", (event) => {
   resizeId = setTimeout(resizeMaskFunc, 500);
 });
 
+if ($.cookie("edit-reading-mask") === 'true') {
+  $("#edit-reading-mask").css("display", "flex").hide().fadeIn()
+}
+
 // Toggle Reading Mask
 $(function () {
   $('[id="ToggleReadingMask"]').change(function () {
     if ($(this).is(':checked')) {
       const scrollPosition = document.documentElement.scrollTop
       $("#edit-reading-mask").css("display", "flex").hide().fadeIn()
-      createMaskFunc(scrollPosition)
-
-      if ($('#ToggleTTS_click').is(':checked')) {
-        storeModalScrollPosition()
-        storeMainScrollPosition()
-        modalDisplayOpenOrClose()
-        forceReload()
-      }
+      $.cookie("edit-reading-mask", true, { path: '/' });
+      createMaskFunc()
     } else {
       $("body").removeClass("ReadingMask_ON");
       $("#top_mask").fadeOut()
       $("#bottom_mask").fadeOut()
       $("#edit-reading-mask").fadeOut()
+      $.cookie("edit-reading-mask", false, { path: '/' });
       removeWidgetControls(['ToggleReadingMask'])
       widgetItemObj.isReadingMask = false
     }
-
     checkIfWidgetActive()
   });
 });
 
-
 $(document).ready(function () {
-
-
   // read the current/previous setting
   $("input.switch-input[type=checkbox]").each(function () {
     //get name of input
@@ -144,9 +106,6 @@ $(document).ready(function () {
     if ($.cookie(name) && $.cookie(name) == "true") {
       $(this).prop('checked', $.cookie(name));
       $("body").addClass(name);
-
-
-
       //If ToggleReadingMask is checked
       if ($('[id="ToggleReadingMask"]').is(':checked')) {
         $("body").addClass(name);
@@ -154,8 +113,6 @@ $(document).ready(function () {
         $("#top_mask").fadeIn('slow')
         $("#bottom_mask").fadeIn('slow')
       }
-
-
     }// end of if
   });//end of each
   // event management
@@ -167,8 +124,6 @@ $(document).ready(function () {
 
 
 //mask settings
-
-
 // change opacity
 // use arrows
 
@@ -197,7 +152,7 @@ maskOpacityInput.addEventListener('change', () => {
   changeIndent(maskOpacityInput.value, '1', '#ReadingMask_option select', '5px')
 })
 
-//////////// Reading Mask ///////////////////
+//////////// Reading Mask size ///////////////////
 $(document).bind('mousemove', function (e) {
   $('#tail').css({
     left: 0,

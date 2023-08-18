@@ -12,7 +12,7 @@ const resetColorPicker = () => {
         storeModalScrollPosition()
         storeMainScrollPosition()
         if (document.querySelector('#ADA_widget').style.display === 'flex') {
-            sessionStorage.setItem("reloadModalOpen", "true");
+            localStorage.setItem("reloadModalOpen", "true");
         }
         removeWidgetControls(['ColorPicker'])
         forceReload()

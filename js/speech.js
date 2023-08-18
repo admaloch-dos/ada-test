@@ -321,9 +321,25 @@ $(function () {
                 modalDisplayOpenOrClose()
                 forceReload()
             }
+            if ($.cookie('ReadingMask')) {
+                if ($.cookie('ReadingMask') === 'false') {
+                    $.removeCookie('ReadingMask');
+                    forceReload()
+                    storeModalScrollPosition()
+                    modalDisplayOpenOrClose()
+
+                }
+            }
             addWidgetControls('ToggleTTS_click', 'Text to speech')
             widgetItemObj.isSpeech = true
         } else {
+            if ($.cookie('ReadingMask')) {
+                if ($.cookie('ReadingMask') === 'true') {
+                    forceReload()
+                    storeModalScrollPosition()
+                    modalDisplayOpenOrClose()
+                }
+            }
             // $("#speech-settings").addClass("disable-settings");
             $(".audio_state").fadeOut(500)
             setTimeout(() => {

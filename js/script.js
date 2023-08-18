@@ -119,6 +119,3 @@ const areCookiesSet = () => {
 
 widgetItemObj = areCookiesSet()
 
-$(document).on("scroll", function (e) {
-  storeMainScrollPosition()
-});

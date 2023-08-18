@@ -44,21 +44,21 @@ const displayModal = () => {
 // store scroll positions for forced pageload/cookie removal
 const storeMainScrollPosition = () => {
     var mainScrollPosition = $("html, body").scrollTop();
-    sessionStorage.setItem("mainScrollPosition", mainScrollPosition);
+    localStorage.setItem("mainScrollPosition", mainScrollPosition);
 
 }
 
 const storeModalScrollPosition = () => {
     var modalScrollPosition = $(".modal_body").scrollTop();
-    sessionStorage.setItem("modalScrollPosition", modalScrollPosition);
+    localStorage.setItem("modalScrollPosition", modalScrollPosition);
 }
 
 const modalDisplayOpenOrClose = () => {
     const adaWidget = document.querySelector('#ADA_widget')
     if (adaWidget.style.display === 'flex') {
-        sessionStorage.setItem("reloadModalOpen", "true");
+        localStorage.setItem("reloadModalOpen", "true");
     } else {
-        sessionStorage.setItem("reloadModalClosed", "true");
+        localStorage.setItem("reloadModalClosed", "true");
     }
 }
 
