@@ -8,6 +8,8 @@ const makeColorPresetsFalse = (presetArr) => {
 //   cache.linkColor.value = "#3863FF";)
 
 const colorPresetToDefault = () => {
+    changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
+    changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
     $('body').removeClass('inverted');
     $('body').removeClass('highcontrast');
     $('body').removeClass('desaturated');
@@ -63,7 +65,8 @@ $(document).ready(function () {
     // If DarkContrastBackgroundCookie is set remove other background cookies and their related classes
     // Add active class to li
     if ($.cookie('DarkContrastBackgroundCookie') == "yes") {
-
+        changeColorPicker('#fff', '.reading-mask', '#mask_hexVal', "#mask_color")
+        changeColorPicker('#fff', '#tail', '#guide_hexVal', "#guide_color")
         $("#ADA_widget #DarkContrastBG_option").addClass("active");
         $("body").addClass("highcontrast");
         $('body').removeClass('desaturated');
@@ -97,7 +100,9 @@ $(document).ready(function () {
 
     // When 'a.DarkContrastBackground' is clicked remove other background cookies
     $("#ADA_widget a.DarkContrastBackground").click(function () {
-
+        $('#tail').css({ "background-color": '#000' })
+        changeColorPicker('#fff', '.reading-mask', '#mask_hexVal', "#mask_color")
+        changeColorPicker('#fff', '#tail', '#guide_hexVal', "#guide_color")
 
         resetColorPicker()
         $.cookie("DesaturatedBackgroundCookie", null, {
@@ -149,6 +154,8 @@ $(document).ready(function () {
     // If DesaturatedBackgroundCookie is set remove other background cookies and their related classes
     // Add active class to li
     if ($.cookie('DesaturatedBackgroundCookie') == "yes") {
+        changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
+        changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
         $("#ADA_widget #DesaturateBG_option").addClass("active");
         $("body").addClass("desaturated");
         $('body').removeClass('highcontrast');
@@ -181,6 +188,8 @@ $(document).ready(function () {
     // When 'a.DesaturateBackground' is clicked remove other background cookies
     // When input is clicked save cookie for 30days
     $("#ADA_widget a.DesaturateBackground").click(function () {
+        changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
+        changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
         resetColorPicker()
         $.cookie("DarkContrastBackgroundCookie", null, {
             path: '/'
@@ -232,6 +241,8 @@ $(document).ready(function () {
     // If DesaturatedBackgroundCookie is set remove other background cookies and their related classes
     // Add active class to li
     if ($.cookie('HighSaturationBackgroundCookie') == "yes") {
+        changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
+        changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
         $("#ADA_widget #HighSaturationBG_option").addClass("active");
         $("html").addClass("highsaturation");
         $('body').removeClass('highcontrast');
@@ -259,6 +270,8 @@ $(document).ready(function () {
     // When 'a.HighSaturationBackground' is clicked remove other background cookies and their related classes
     // When input is clicked save cookie for 30days
     $("#ADA_widget a.HighSaturationBackground").click(function () {
+        changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
+        changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
         $.cookie("DesaturatedBackgroundCookie", null, {
             path: '/'
         });
@@ -309,6 +322,8 @@ $(document).ready(function () {
     // If DesaturatedBackgroundCookie is set remove other background cookies and their related classes
     // Add active class to li
     if ($.cookie('LowSaturationBackgroundCookie') == "yes") {
+        changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
+        changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
         $("#ADA_widget #LowSaturationBG_option").addClass("active");
         $("html").addClass("lowsaturation");
         $("html").removeClass("highsaturation");
@@ -341,6 +356,8 @@ $(document).ready(function () {
     // When 'a.HighSaturationBackground' is clicked remove other background cookies and their related classes
     // When input is clicked save cookie for 30days
     $("#ADA_widget a.LowSaturationBackground").click(function () {
+        changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
+        changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")Q
         $.cookie("DesaturatedBackgroundCookie", null, {
             path: '/'
         });
@@ -391,6 +408,8 @@ $(document).ready(function () {
     // If DesaturatedBackgroundCookie is set removes other background cookies and their related classes
     // Add active class to li
     if ($.cookie('InvertBackgroundCookie') == "yes") {
+        changeColorPicker('#fff', '.reading-mask', '#mask_hexVal', "#mask_color")
+        changeColorPicker('#fff', '#tail', '#guide_hexVal', "#guide_color")
         $("#ADA_widget #InvertBG_option").addClass("active");
         $("body").addClass("inverted");
         $('body').removeClass('highcontrast');
@@ -424,6 +443,8 @@ $(document).ready(function () {
     // When 'a.DesaturateBackground' is clicked remove other background cookies and their related classes
     // When input is clicked save cookie for 30days
     $("#ADA_widget a.InvertBackground").click(function () {
+        changeColorPicker('#fff', '.reading-mask', '#mask_hexVal', "#mask_color")
+        changeColorPicker('#fff', '#tail', '#guide_hexVal', "#guide_color")
         resetColorPicker()
         $.cookie("DarkContrastBackgroundCookie", null, {
             path: '/'

@@ -19,9 +19,12 @@ const resetAdaModal = () => {
         resetColorPicker()
     }
     restoreDefaultMaskSettings()
+    restoreDefaultguideSettings()
     dismissGoogleTranslate()
 
     removeAllCookies()
+
+    $.cookie("reading-mask-reload", false, { path: '/' });
 }
 
 let resetIcon = document.getElementById('reset-ada')

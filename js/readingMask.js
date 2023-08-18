@@ -73,6 +73,8 @@ setTimeout(() => {
 }, 300);
 
 
+
+
 // reload on page resize if reading mask is active
 var resizeId;
 window.addEventListener("resize", (event) => {
@@ -84,6 +86,8 @@ window.addEventListener("resize", (event) => {
 if ($.cookie("edit-reading-mask") === 'true') {
   $("#edit-reading-mask").css("display", "flex").hide().fadeIn()
 }
+
+
 
 let reloadCookie = $.cookie("reading-mask-reload")
 if (!reloadCookie) {
@@ -168,13 +172,7 @@ maskOpacityInput.addEventListener('change', () => {
   changeIndent(maskOpacityInput.value, '1', '#ReadingMask_option select', '5px')
 })
 
-//////////// Reading Mask size ///////////////////
-$(document).bind('mousemove', function (e) {
-  $('#tail').css({
-    left: 0,
-    top: e.pageY - 20
-  });
-});
+
 
 // change mask size
 let yVal = 1280
@@ -205,17 +203,14 @@ $(document).bind('mousemove', function (e) {
 
 var maskColorCookieVal = $.cookie("readingMaskColor");
 if (maskColorCookieVal) {
-  $("#mask_color").val(maskColorCookieVal);
-  $('.reading-mask').css({ "background": maskColorCookieVal })
-  document.querySelector('#mask_hexVal').innerText = maskColorCookieVal
+  changeColorPicker(maskColorCookieVal, '.reading-mask', '#mask_hexVal', "#mask_color")
 }
 
 
 // change mask color
 const maskColorChangeInput = document.getElementById('mask_color')
 maskColorChangeInput.addEventListener('change', () => {
-  $('.reading-mask').css({ "background": maskColorChangeInput.value })
-  document.querySelector('#mask_hexVal').innerText = maskColorChangeInput.value
+  changeColorPicker(maskColorChangeInput.value, '.reading-mask', '#mask_hexVal')
   $.cookie("readingMaskColor", maskColorChangeInput.value, { path: '/' })
 })
 
@@ -230,14 +225,9 @@ const resetMaskSettingsCookies = () => {
 const restoreDefaultMaskSettings = () => {
   $('#reading-mask-opacity').val('.5');
   $(".reading-mask").css({ "opacity": '.5' })
-  $("#mask_color").val('#363636');
-  $('.reading-mask').css({ "background": '#363636' })
-  document.querySelector('#mask_hexVal').innerText = '#363636'
+  changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
   yVal = 1270
   $("#mask-size-input").val(1270);
   resetMaskSettingsCookies()
 }
 
-// const disableMaskSettings = () =>{
-//   document.getElementById('reading-mask-opacity')
-// }

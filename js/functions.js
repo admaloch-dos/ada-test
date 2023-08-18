@@ -98,3 +98,9 @@ const changeIndent = (value, amount, select, indentAmt) => {
 }
 
 
+// change color picker
+const changeColorPicker = (color, cssSelector, hexSelector, inputSelector,) =>{
+    $(cssSelector).css({ "background-color": color })
+    $(hexSelector).text(color);
+    $(inputSelector).val(color);
+  }

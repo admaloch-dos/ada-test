@@ -2217,7 +2217,7 @@ html.translated-ltr #tooltip_template {
 /************************************************************ Color Picker ************************************************************/
 
 
-#ADA_widget .modal_body #edit-reading-mask .form-group {
+#ADA_widget .modal_body #edit-reading-mask .form-group, #ADA_widget .modal_body #edit-reading-guide .form-group {
   margin-bottom: 1rem;
   display: inline-table;
   background-color: #EBE5E3 !important;
@@ -2264,7 +2264,7 @@ html.translated-ltr #tooltip_template {
   font-weight: normal;
 }
 
-#ADA_widget .modal_body .color_picker_form input {
+#ADA_widget .modal_body .color_picker_form input, #ADA_widget .modal_body #edit-guide-color input {
   padding: 0;
   background: transparent;
   border-radius: 50%;
@@ -2323,7 +2323,7 @@ html.translated-ltr #tooltip_template {
 .ada-btn {
   background-color: #EBE5E3 !important;
   color: #000 !important;
-  padding: 8px 40px;
+  padding: 3px 12px;
 
 }
 
@@ -2756,6 +2756,6 @@ background-color: lightgray;
 display: none;
 } */
 
-#edit-reading-mask {
+#edit-reading-mask, #edit-reading-guide {
   display: none;
 }

@@ -14,6 +14,7 @@
 	-o-transform: translate(0px, -40px);
 	-ms-transform: translate(0px, -40px);
 	transform: translate(0px, -40px);
+
 }
 
 #tail {
@@ -23,15 +24,17 @@
 
 	width: 100%;
 	height: 8px;
-	background-color: #000;
+	background-color: #363636;
 
 	z-index: 500;
 
 }
 
-.highcontrast #tail, .inverted #tail {
-	background-color: #fff;
+.CursorGuide p {
+	cursor: default!important
 }
+
+
 
 .highcontrast #ADA_widget .modal_body .form-check ul li.active a,
 .desaturated #ADA_widget .modal_body .form-check ul li.active a,
@@ -534,37 +537,36 @@ body.inverted {
 /************************************** CURSOR SWAP SETTINGS ***********************************/
 /*https://icons8.com/icons/set/cursor-arrow*/
 body.CursorSwap {
-	cursor: url('../img/large-cursor.png'), 10 3, auto;
-	;
+	cursor: url('../files/img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap *,
 .CursorSwap *:hover {
-	cursor: url('../img/large-cursor.png'), 10 3, auto;
+	cursor: url('../files/img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap a:-webkit-any-link {
-	cursor: url('../img/large-cursor.png'), 10 3, auto;
+	cursor: url('../files/img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap #ada_dropdown label {
-	cursor: url('../img/large-cursor.png'), 10 3, auto;
+	cursor: url('../files/img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap #accessibility .form-check-input {
-	cursor: url('../img/large-cursor.png'), 10 3, auto;
+	cursor: url('../files/img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap #Scroll_btn,
 .CursorSwap #Scroll_btn:hover {
-	cursor: url('../img/large-cursor.png'), 10 3, auto;
+	cursor: url('../files/img/large-cursor.png'), 10 3, auto;
 }
 
 .CursorSwap [type=button]:not(:disabled),
 .CursorSwap [type=reset]:not(:disabled),
 .CursorSwap [type=submit]:not(:disabled),
 .CursorSwap button:not(:disabled) {
-	cursor: url('../img/large-cursor.png'), 10 3, auto;
+	cursor: url('../files/img/large-cursor.png'), 10 3, auto;
 }
 
 
@@ -572,12 +574,12 @@ body.CursorSwap {
 /************************************** FONT TYPE SWAP SETTINGS ***********************************/
 @font-face {
 	font-family: "OpenDyslexicRegular";
-	src: url("../fonts/OpenDyslexic-Regular.eot");
-	src: url("../fonts/OpenDyslexic-Regular.eot?#iefix") format('embedded-opentype'),
+	src: url("../files/fonts/OpenDyslexic-Regular.eot");
+	src: url("../files/fonts/OpenDyslexic-Regular.eot?#iefix") format('embedded-opentype'),
 
 
-		url("../fonts/OpenDyslexic-Regular.otf") format('opentype'),
-		url("../fonts/OpenDyslexic-Regular.ttf") format('truetype');
+		url("../files/fonts/OpenDyslexic-Regular.otf") format('opentype'),
+		url("../files/fonts/OpenDyslexic-Regular.ttf") format('truetype');
 	font-weight: 500;
 	font-style: normal;
 }
