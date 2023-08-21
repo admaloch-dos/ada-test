@@ -22,7 +22,7 @@ const displayModal = () => {
         $("#ADA_widget").css("display", "flex")
         $("#ADA_widget").fadeTo(0, 1);
         $(".modal_content").fadeToggle(0);
-        document.body.classList.add("prevent-body-overflow");
+        // document.body.classList.add("prevent-body-overflow");
         $(".modal_body").scrollTop(0);
 
 
@@ -34,7 +34,7 @@ const displayModal = () => {
         $('body').css("overflow", "auto");
         setTimeout(() => {
             $("#ADA_widget").css("display", "none")
-            document.body.classList.remove("prevent-body-overflow");
+            // document.body.classList.remove("prevent-body-overflow");
             $("#ada-triggers").fadeIn();
             // $('body').css("overflow", "auto");
         }, 800);

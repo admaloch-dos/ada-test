@@ -14,11 +14,13 @@ let widgetItemObj = {
     isLineHeightChanged: false,
     isWordSpaceChanged: false,
     isLetterSpaceChanged: false,
+
     isDarkContrast: false,
     isDesaturated: false,
     isInverted: false,
     isHighSat: false,
     isLowSat: false,
+    
     isTextColorChanged: false,
     isBackColorChanged: false,
     isLinkColorChanged: false,

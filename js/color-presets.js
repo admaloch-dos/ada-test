@@ -1,3 +1,5 @@
+// tons of unnecessary duplicated code -- should be refactored to be shorter
+
 const makeColorPresetsFalse = (presetArr) => {
     for (let i = 0; i < presetArr.length; i++) {
         presetArr[i] = false
@@ -313,7 +315,48 @@ $(document).ready(function () {
 
 });
 
+const triggerLowSaturation = () => {
+    changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
+    changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
+    $.cookie("DesaturatedBackgroundCookie", null, {
+        path: '/'
+    });
+    $.cookie("InvertBackgroundCookie", null, {
+        path: '/'
+    });
+    $.cookie("DarkContrastBackgroundCookie", null, {
+        path: '/'
+    });
+    $.cookie("HighSaturationBackgroundCookie", null, {
+        path: '/'
+    });
 
+    if ($.cookie('LowSaturationBackgroundCookie') == "undefined" || $.cookie('LowSaturationBackgroundCookie') == "no") {
+        $.cookie('LowSaturationBackgroundCookie', 'yes', { path: '/' });
+        $("html").addClass("lowsaturation");
+        $("html").removeClass("highsaturation");
+        $("body").removeClass("desaturated");
+        $('body').removeClass('highcontrast');
+        $('body').removeClass('inverted');
+
+    } else {
+        $.cookie('LowSaturationBackgroundCookie', 'yes', { path: '/' });
+        $("html").addClass("lowsaturation");
+        $("html").removeClass("highsaturation");
+        $("body").removeClass("desaturated");
+        $('body').removeClass('highcontrast');
+        $('body').removeClass('inverted');
+
+
+    }
+    addWidgetControls('LowSaturationBackground', 'Low saturation')
+    removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'HighSaturationBackground', 'InvertBackground'])
+    makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isHighSat])
+    widgetItemObj.isLowSat = true
+
+    $("#LowSaturationBG_option").addClass('active').siblings().removeClass('active');
+    checkIfWidgetActive()
+}
 
 
 $(document).ready(function () {
@@ -356,44 +399,7 @@ $(document).ready(function () {
     // When 'a.HighSaturationBackground' is clicked remove other background cookies and their related classes
     // When input is clicked save cookie for 30days
     $("#ADA_widget a.LowSaturationBackground").click(function () {
-        changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
-        changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")Q
-        $.cookie("DesaturatedBackgroundCookie", null, {
-            path: '/'
-        });
-        $.cookie("InvertBackgroundCookie", null, {
-            path: '/'
-        });
-        $.cookie("DarkContrastBackgroundCookie", null, {
-            path: '/'
-        });
-        $.cookie("HighSaturationBackgroundCookie", null, {
-            path: '/'
-        });
-
-        if ($.cookie('LowSaturationBackgroundCookie') == "undefined" || $.cookie('LowSaturationBackgroundCookie') == "no") {
-            $.cookie('LowSaturationBackgroundCookie', 'yes', { path: '/' });
-            $("html").addClass("lowsaturation");
-            $("html").removeClass("highsaturation");
-            $("body").removeClass("desaturated");
-            $('body').removeClass('highcontrast');
-            $('body').removeClass('inverted');
-
-        } else {
-            $.cookie('LowSaturationBackgroundCookie', 'yes', { path: '/' });
-            $("html").addClass("lowsaturation");
-            $("html").removeClass("highsaturation");
-            $("body").removeClass("desaturated");
-            $('body').removeClass('highcontrast');
-            $('body').removeClass('inverted');
-
-
-        }
-        addWidgetControls('LowSaturationBackground', 'Low saturation')
-        removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'HighSaturationBackground', 'InvertBackground'])
-        makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isHighSat])
-        widgetItemObj.isLowSat = true
-        checkIfWidgetActive()
+        triggerLowSaturation()
     });
 
 

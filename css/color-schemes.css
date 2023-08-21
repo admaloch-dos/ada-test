@@ -13,13 +13,8 @@
 }
 
 /************** Seizure Safe **************/
-.SeizureSafe {
-    filter: saturate(50%);
-    -webkit-filter: saturate(50%);
-    -moz-filter: saturate(50%);
-    -ms-filter: saturate(50%);
-    -o-filter: saturate(50%);
-}
+
+
 
 .SeizureSafe * {
 
@@ -28,9 +23,6 @@
     -ms-transition-property: none !important;
     -webkit-transition-property: none !important;
     transition-property: none !important;
-
-
-
     -webkit-animation: none !important;
     -moz-animation: none !important;
     -o-animation: none !important;
@@ -46,8 +38,17 @@
     -ms-transform: none !important;
     -webkit-transform: none !important;
     transform: none !important;
-
 }
+
+/* .SeizureSafe  {
+    filter: saturate(50%);
+    -webkit-filter: saturate(50%);
+    -moz-filter: saturate(50%);
+    -ms-filter: saturate(50%);
+    -o-filter: saturate(50%);
+} */
+
+
 
 /************************************************************ CURSOR ENLARGE ************************************************************/
 /*https://icons8.com/icons/set/cursor-arrow*/
@@ -292,7 +293,8 @@ a {
     color: #3863FF;
 }
 
-#reset-mask-btn, #reset-guide-btn {
+#reset-mask-btn,
+#reset-guide-btn {
 
     padding: 2px 10px !important;
     position: relative;
