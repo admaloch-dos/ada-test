@@ -38,7 +38,7 @@ $(document).ready(function () {
     }
     $("#letter_spacing").on("change", function () {
         var selection1 = $(this).val();
-console.log('this just changed')
+
         $(selection1).prop("selected", true);
         $("#view p").not('#ADA_widget, #ADA_widget *, i, div').css("letter-spacing", selection1); //Selects everything inside #view except ada modal and header
         $(".Footer").css("letter-spacing", selection1);

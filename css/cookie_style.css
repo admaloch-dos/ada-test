@@ -30,8 +30,12 @@
 
 }
 
+.translated-ltr #tail {
+	margin-bottom: 50px;
+}
+
 .CursorGuide p {
-	cursor: default!important
+	cursor: default !important
 }
 
 
@@ -45,7 +49,7 @@
 /************************************** INVERTED SETTINGS ***********************************/
 body.inverted {
 	background-color: #151515;
-	color: #8F8F8F !important;
+	color: #fff !important;
 }
 
 .inverted h1,
@@ -58,7 +62,7 @@ body.inverted {
 }
 
 .inverted .table {
-	color: #8F8F8F;
+	color: #fff;
 }
 
 .inverted img {
@@ -179,7 +183,7 @@ body.inverted {
 
 .inverted .resourcesLink .state_sites.middle::before,
 .inverted .resourcesLink .state_sites.last::before {
-	background-color: #8F8F8F;
+	background-color: #fff;
 	box-shadow: none;
 }
 
@@ -206,11 +210,11 @@ body.inverted {
 }
 
 .inverted #bottom_sites {
-	border-top-color: #8F8F8F;
+	border-top-color: #fff;
 }
 
 .inverted #bottom_sites .list-inline-item+.list-inline-item::before {
-	color: #8F8F8F;
+	color: #fff;
 }
 
 .inverted .SearchForm .input-group .input-group-append #submit_search {
@@ -249,7 +253,7 @@ body.inverted {
 
 .inverted .Footer {
 	background: #000;
-	color: #8F8F8F;
+	color: #fff;
 }
 
 /**** Exhibits, Historical Records ****/
@@ -275,7 +279,7 @@ body.inverted {
 }
 
 .inverted .caption-lead {
-	color: #8F8F8F;
+	color: #fff;
 }
 
 .inverted .Item_Pager .pagination .page-item.active .page-link {
@@ -297,7 +301,7 @@ body.inverted {
 }
 
 .inverted .figure-caption {
-	color: #8F8F8F;
+	color: #fff;
 }
 
 .inverted .content_figure .lead_caption {
@@ -1323,10 +1327,27 @@ body.HighlightHover.highcontrast .navbar a:hover:not(#ADA_widget) {
 	background-color: #363636 !important;
 }
 
-.HighlightHover.HighlightLinks.desaturated #ADA_widget ul li.active a:hover {
-	background-color: darkgray !important;
+
+
+
+/* .HighlightHover.HighlightLinks.desaturated #ADA_widget .modal_body .form-check ul li a:hover {
+	background-color: lightgrey !important;
+} */
+.HighlightLinks.desaturated #ADA_widget .modal_body .form-check ul li a:hover {
+	background-color: lightgrey !important;
 }
 
+.HighlightLinks.HighlightHover.desaturated #ADA_widget .modal_body .form-check ul li a:hover {
+	background-color: #363636 !important;
+}
+
+.HighlightHover.HighlightLinks.highcontrast #ADA_widget .modal_body .form-check ul li a:hover {
+	background-color: #000 !important;
+}
+
+.HighlightHover.HighlightLinks.desaturated #ADA_widget ul li.active a:hover {
+	background-color: #363636 !important;
+}
 
 /* .HighlightHover.desaturated #ADA_widget a:hover:not(#ADA_widget) {
 	background-color: white !important;
@@ -1395,12 +1416,226 @@ body.HighlightHover.highcontrast .navbar a:hover:not(#ADA_widget) {
 	border: white solid 1px !important;
 }
 
-.HighlightLinks.inverted a:not(#ADA_widget) {
+/* .HighlightLinks.inverted a:not(#ADA_widget) {
 	color: #3863FF !important;
 }
 
 
 .HighlightLinks.HighlightHover.inverted a:hover:not(#ADA_widget) {
 	color: #fff !important;
+} */
+.HighlightHover.HighlightLinks.inverted #ADA_widget ul li.active a:hover {
+	background-color: #363636 !important;
+
 }
 
+.HighlightHover.HighlightLinks.inverted #ADA_widget ul li.active a:hover div {
+	color: white !important;
+
+}
+
+.HighlightLinks.inverted a {
+	color: black !important;
+
+}
+
+#ada-triggers {
+	position: fixed !important;
+	z-index: 1000 !important;
+	left: .5% !important;
+	bottom: 1.5% !important;
+	/* border: red solid 1px; */
+
+
+}
+
+.widget-icons {
+	height: 100%;
+}
+
+#ADA_trigger {
+	margin-top: 2px;
+}
+
+
+#toggle-ada-list-container {
+	position: absolute;
+	bottom: 50px;
+	left: 11px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* border: red solid 1px; */
+	height: 30px;
+}
+
+#toggle-ada-list {
+	font-size: 23px;
+	/* max-width: 25px; */
+	/* border: black solid 1px; */
+	/* padding: 5px; */
+	/* border-radius: 20px; */
+	/* margin-left: 5px; */
+
+	display: none;
+
+	cursor: pointer;
+
+	color: #000 !important;
+}
+
+
+
+#toggle-list-info {
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: none;
+	font-size: 15px;
+	color: #023e8a !important;
+	border: #023e8a solid 1px !important;
+	padding: 5px;
+	border-radius: 7px;
+	background-color: white !important;
+	letter-spacing: 2px !important;
+	word-spacing: 2px !important;
+	line-height: 1.2 !important;
+	z-index: 100;
+}
+
+/* .highcontrast #toggle-list-info {
+
+    color: #fff;
+    border: #fff solid 1px;
+
+} */
+
+
+
+.reset-ada:hover {
+	color: white !important;
+	background-color: #3863FF !important;
+	cursor: pointer;
+	text-decoration: none;
+	position: relative;
+
+}
+
+
+
+#ADA_icon {
+	font-size: 50px;
+	transition: all .15s ease-in-out;
+	border-radius: 100px;
+	color: #3863FF !important;
+	z-index: 100;
+	/* border: transparent solid 1px!important; */
+	cursor: pointer;
+	/* margin-left: 5px; */
+	background-color: white !important;
+
+	position: absolute;
+	/* left: 35px; */
+	bottom: 2px;
+}
+
+.highcontrast #ADA_icon {
+
+	background-color: transparent;
+
+}
+
+
+#ADA_check_icon {
+	position: absolute;
+	bottom: 5px;
+	left: 34px;
+
+	font-size: 14px;
+	padding: 2px;
+	color: #fff !important;
+	z-index: 150;
+	border: #fff solid 2px !important;
+	background-color: #023e8a !important;
+
+	border-radius: 20px;
+	display: none;
+}
+
+
+
+#ADA_icon:hover {
+	transform: scale(1.05);
+	/* border: green solid 1px!important; */
+}
+
+#item-delete-container {
+	color: #023e8a !important;
+	margin-left: 60px;
+	margin-bottom: 0;
+	border: #023e8a solid 2px !important;
+	border-radius: 10px;
+	box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.14) !important;
+	background-color: white !important;
+	z-index: 100;
+	display: none;
+	min-width: 170px;
+}
+
+#widget-list li {
+	padding: 0 10px;
+	cursor: pointer !important;
+	color: #023e8a !important;
+}
+
+#widget-list li:hover {
+	padding: 0 10px;
+
+	cursor: pointer !important;
+	text-decoration: underline;
+	opacity: .9;
+
+}
+
+#widget-list i {
+	color: #023e8a !important;@
+}
+
+.reset-ada {
+	color: #023e8a !important;
+	padding: 6px 0;
+	/* font-size: 14px;
+    margin-left: 6px;
+    border: black solid 1px;
+    padding: 5px;
+    border-radius: 20px; */
+	border: none;
+	background-color: white !important;
+	display: none;
+	-webkit-border-radius: 0px 0px 7px 7px;
+	border-radius: 0px 0px 7px 7px;
+
+}
+
+.reset-ada i {
+	color: #023e8a !important;
+}
+
+.reset-ada:hover i {
+	color: #fff !important;
+}
+
+#widget-list li,
+.reset-ada,
+.close-item {
+	letter-spacing: 1px !important;
+	word-spacing: 1px !important;
+	line-height: 1.4 !important;
+}
+
+
+
+#item-delete-footer {
+	border-top: solid lightblue 1px !important;
+}

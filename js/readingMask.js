@@ -36,11 +36,10 @@ const createMaskFunc = () => {
   modalDisplayOpenOrClose()
   if ($.cookie("reading-mask-reload") === 'true') {
     $.cookie("reading-mask-reload", false, { path: '/' });
-    console.log('edit reading mask is true')
+
     forceReload()
   }
 
-  console.log('create mask func ran')
 
 }
 
@@ -165,7 +164,7 @@ document.querySelectorAll('.opacity-icons').forEach(icon => {
 
 const maskOpacityInput = document.getElementById('reading-mask-opacity')
 maskOpacityInput.addEventListener('change', () => {
-  console.log(maskOpacityInput.value)
+
   $(".reading-mask").css({ "opacity": maskOpacityInput.value })
   $.cookie("readingMaskOpacity", maskOpacityInput.value, { path: '/' })
 
@@ -189,7 +188,7 @@ maskSizeInputRange.addEventListener('change', () => {
   let newSizeVal = maskSizeInputRange.value
   yVal = newSizeVal
   $.cookie("readingMaskHeight", newSizeVal, { path: '/' })
-  console.log('size changed: value is ', maskSizeInputRange.value)
+
 })
 
 $(document).bind('mousemove', function (e) {
@@ -223,9 +222,17 @@ const resetMaskSettingsCookies = () => {
 
 // restore default
 const restoreDefaultMaskSettings = () => {
-  $('#reading-mask-opacity').val('.5');
+
+  if (widgetItemObj.isDarkContrast || widgetItemObj.isInverted) {
+    changeColorPicker('#FFFFFF', '.reading-mask', '#mask_hexVal', "#mask_color")
+    $('#reading-mask-opacity').val('.7');
+  $(".reading-mask").css({ "opacity": '.7' })
+  } else {
+    changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
+    $('#reading-mask-opacity').val('.5');
   $(".reading-mask").css({ "opacity": '.5' })
-  changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
+  }
+
   yVal = 1270
   $("#mask-size-input").val(1270);
   resetMaskSettingsCookies()

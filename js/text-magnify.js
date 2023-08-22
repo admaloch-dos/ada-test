@@ -1,3 +1,11 @@
+setTimeout(() => {
+  if ($.cookie('TextMagnifier') == "true") {
+    $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
+    $('#ToggleTextMagnifier').prop('checked', true).trigger('change')
+  }
+}, 100);
+
+
 let textMagY = 120;
 document.addEventListener('scroll', () => {
   const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
@@ -25,16 +33,28 @@ $(document).on('mousemove', function (e) {
 const hoverTextFunc = () => {
   //If ToggleTextMagnifier is checked
   if ($('[id="ToggleTextMagnifier"]').is(':checked')) {
+
     var timeout = null;
     clearTimeout(timeout)
-
+    $('#text_magnify').attr('style', 'opacity: 1!important');
+    $('#text_magnify').attr('style', 'display: none!important');
     $("body").addClass("TextMagnifier");
     $('[id="ToggleZoom"]').prop('checked', false);
+
     // $('#text_magnify').attr('style', 'display: block!important');
     $('p, a, :header, span, button, td').not('#ada-triggers, #ada-triggers ul, #ada-triggers ul li, #ada-triggers *').hover(
       function (e) {
         var TextMagnify = $(this).text();
+
+
+        document.querySelector('#text_magnify').addEventListener('keydown', () => {
+          var $el = $("#text_magnify");
+          $el.scrollTop($el.scrollTop() - 10);
+        })
+
+
         $("#text_magnify").text(TextMagnify);
+
         timeout = setTimeout(() => {
           $('#text_magnify').show()
         }, 500);
@@ -45,7 +65,7 @@ const hoverTextFunc = () => {
       },
       function (e) {
         //do the mouseleave things here...
-        console.log("mouse off")
+   
         $('#text_magnify').attr('style', 'display: none!important');
         clearTimeout(timeout)
       }
@@ -64,7 +84,7 @@ const hoverTextFunc = () => {
     $('#text_magnify').attr('style', 'display: none!important');
     clearTimeout(timeout)
     removeWidgetControls(['ToggleTextMagnifier'])
-      widgetItemObj.isTextMag = false
+    widgetItemObj.isTextMag = false
   }
   checkIfWidgetActive()
 }
@@ -87,7 +107,7 @@ $(document).ready(function () {
 // Toggle Text Magnifier
 $(function () {
   $('[id="ToggleTextMagnifier"]').change(function () {
-   hoverTextFunc()
+    hoverTextFunc()
   }); //end of change
 }); // end of function
 

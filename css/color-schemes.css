@@ -16,7 +16,7 @@
 
 
 
-.SeizureSafe * {
+.SeizureSafe *:not(#tail) {
 
     -o-transition-property: none !important;
     -moz-transition-property: none !important;
@@ -32,7 +32,7 @@
 }
 
 /* removing transformation from widget causes problem */
-.SeizureSafe *:not(#ADA_widget *) {
+.SeizureSafe *:not(#ADA_widget *, #tail) {
     -o-transform: none !important;
     -moz-transform: none !important;
     -ms-transform: none !important;
@@ -175,6 +175,25 @@ body.Cursor_Enlarge {
     -webkit-appearance: none;
     appearance: none;
 }
+.desaturated .form-range::-webkit-slider-thumb {
+    /* background-color: #363636; */
+    filter: grayscale(70%);
+
+
+}
+.highcontrast .form-range::-webkit-slider-thumb {
+    /* background-color: #363636; */
+    background-color: #363636;
+    border: white solid 1px;
+}
+.inverted .form-range::-webkit-slider-thumb {
+    /* background-color: #363636; */
+    /* background-color: #363636; */
+    filter: invert(100%);
+    border: black solid 1px;
+}
+
+
 
 @media (prefers-reduced-motion: reduce) {
     .form-range::-webkit-slider-thumb {
@@ -322,7 +341,7 @@ a {
     color: #fff;
     pointer-events: none;
     user-select: none;
-    max-height: 50vh;
+
 
 
     z-index: 2000;
@@ -364,8 +383,8 @@ a {
     user-select: none;
     top: 100px;
     left: 10em;
-    opacity: 0;
-    display: block;
+
+    display: none;
     z-index: 5000;
 }
 
@@ -540,8 +559,8 @@ body.BaskervilleFont {
 }
 
 .highcontrast #ADA_widget .modal_content .modal_body .color_picker_form input {
-    border-color: black;
-    outline-color: white;
+    border-color: black!important;
+    outline-color: white!important;
 }
 
 .highcontrast #ADA_widget .modal_content .modal_body .color_picker_form input:hover {
@@ -732,9 +751,9 @@ body.BaskervilleFont {
     color: white !important;
 }
 
-.desaturated #ADA_widget .modal_content .modal_body .color_picker_form input {
-    border-color: black;
-    outline-color: white;
+.desaturated #ADA_widget .modal_content .modal_body .color_swatch {
+    border-color: white!important;
+    outline-color: black!important;
 }
 
 .desaturated #ADA_widget .modal_content .modal_body .color_picker_form .form-group .hexVal {
@@ -817,7 +836,7 @@ body.BaskervilleFont {
 }
 
 .desaturated .color_swatch {
-    filter: grayscale(100%);
+    filter: grayscale(50%);
 }
 
 
@@ -825,12 +844,24 @@ body.BaskervilleFont {
 .desaturated #item-delete-container,
 .desaturated #reset-ada {
     color: #363636;
-    border: tra solid 1px;
+
 }
 
 .desaturated #reset-ada:hover {
     background-color: #363636;
     color: white;
+}
+
+.desaturated a:not(#ADA_widget *) {
+    font-style: italic;
+    text-decoration: underline;
+}
+.desaturated a:hover {
+opacity: .7;
+}
+
+.desaturated #ADA_widget a:hover {
+    opacity: .9;
 }
 
 /************************************************************ Invert ************************************************************/
@@ -884,8 +915,8 @@ body.BaskervilleFont {
 }
 
 .inverted #ADA_widget .modal_content .modal_body .color_picker_form input {
-    border-color: black;
-    outline-color: white;
+    border-color: black!important;
+    outline-color: white!important;
 }
 
 .inverted #ADA_widget .modal_content .modal_body .color_picker_form input:hover {
@@ -1045,7 +1076,9 @@ body.BaskervilleFont {
     opacity: .8;
 }
 
-
+.inverted #ADA_widget a:hover {
+    opacity: .9;
+}
 
 
 /************************************************************ High Saturation ************************************************************/
@@ -1279,12 +1312,12 @@ html.translated-ltr .DyslexicFont #ADA_widget .modal_body #BackgroundColor_optio
     max-width: 180px;
 }
 
-html.translated-ltr #ADA_widget .modal_body #BackgroundColor_option .bg_form ul li {
+/* html.translated-ltr #ADA_widget .modal_body #BackgroundColor_option .bg_form ul li {
     min-width: 115px;
     min-height: 70px;
     height: 100% !important;
     width: 30% !important;
-}
+} */
 
 .DyslexicFont #ADA_widget .modal_body .color_picker_form .form-group,
 .BaskervilleFont #ADA_widget .modal_body .color_picker_form .form-group {

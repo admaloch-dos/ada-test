@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
     /////////////////////////////////////////////////////////  TEXT TO SPEECH - with on click //////////////////////////////////////////////////////////////
     //Hides TTS on Android Devices
@@ -131,17 +133,20 @@ $(document).ready(function () {
     })
 
 
+    const fullVoiceReset = () => {
+        $.removeCookie('voiceCookie');
+        resetVoiceSettings()
+        resetSpeech()
+        resetVoiceDefault()
 
+    }
 
 
 
 
     const resetVoiceBtn = document.querySelector('#reset-voice-btn')
     resetVoiceBtn.addEventListener('click', () => {
-        $.removeCookie('voiceCookie');
-        resetVoiceSettings()
-        resetSpeech()
-        resetVoiceDefault()
+        fullVoiceReset()
     })
 
     $("#volume input").addClass("volume_selector");
@@ -151,7 +156,6 @@ $(document).ready(function () {
     $("<span class='headings'>Rate</span>").appendTo("#rate");
     $("<span class='headings'>Pitch</span>").appendTo("#pitch");
 
-
     let ssu;
     let voices;
     var synth = window.speechSynthesis;
@@ -160,27 +164,20 @@ $(document).ready(function () {
     var rateInput = document.querySelector('.rate_selector');
     var pitchInput = document.querySelector('.pitch_selector');
 
-
-
-
     // Fetch the list of voices and populate the voice options.
     function loadVoices() {
         // Fetch the available voices.
+   
         var voiceList = speechSynthesis.getVoices();
-
         // Loop through each of the voices.
         voiceList.forEach(function (voice, i) {
-
-            //Returns Microsoft Mark, Microsoft Zira & Google US English
             if (i !== 0 && i !== 2 && i !== 4 && i !== 5 && i !== 6) return;
-
+            //Returns Microsoft Mark, Microsoft Zira & Google US English
             // Create a new option element.
             var option = document.createElement('option');
-
             // Set the options value and text.
             option.value = voice.name;
             option.innerHTML = voice.name;
-
             // Add the option to the voice selector.
             voiceSelect.appendChild(option);
         });
@@ -188,6 +185,19 @@ $(document).ready(function () {
 
     // Execute loadVoices.
     loadVoices();
+
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     let selectElement = document.querySelector(".goog-te-combo");
+    //     selectElement.addEventListener('change', (event) => {
+    //         loadVoices()
+    //     })
+    // });
+
+
+
+
+
+
 
 
     // Chrome loads voices asynchronously.
@@ -306,6 +316,18 @@ $(document).ready(function () {
         ssu = new SpeechSynthesisUtterance();
         ssu.lang = 'en-US';
     };
+
+
+    document.querySelector('#ADA_reset').addEventListener('click', () => {
+        fullVoiceReset()
+        loadVoices()
+    })
+    document.querySelector('#reset-ada').addEventListener('click', () => {
+        fullVoiceReset()
+        loadVoices()
+    })
+
+
 }); //end of doc ready
 
 // Toggle Text-to-Speech click

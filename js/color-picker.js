@@ -32,7 +32,7 @@ let cache = {};
 
 //https://www.jquery-az.com/how-to-create-read-and-remove-jquery-cookies-with-3-demos/
 $("#remove_cookie").click(function () {
-    resetBackgroundClicker()
+    resetColorPicker()
 
 });
 
@@ -119,7 +119,7 @@ const onInputChange = (e) => {
         widgetItemObj.isInverted = false
 
     } else {
-        console.log('it does not have it')
+
     }
 
 
@@ -305,7 +305,7 @@ $(document).ready(function () {
     //BackgroundColorCookie
     $('#background_color').on("change", function () {
         var background_color = $('body').css('background-color');
-        $('body').css('background-color', background_color);
+        $('body').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *').css('background-color', background_color);
         $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + background_color + '!important');
         $('#Scroll_btn').attr('style', 'background-color: ' + background_color + '!important');
         $('#footerFeat_container, .Footer').css('background-color', background_color);
@@ -317,7 +317,7 @@ $(document).ready(function () {
         $.cookie('BackgroundColorCookie', background_color);
     });
     if ($.cookie('BackgroundColorCookie') != undefined) {
-        $('body').css('background-color', $.cookie('BackgroundColorCookie'));
+        $('body').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *').css('background-color', $.cookie('BackgroundColorCookie'));
         $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + $.cookie('BackgroundColorCookie') + '!important');
         $('#Scroll_btn').attr('style', 'background-color: ' + $.cookie('BackgroundColorCookie') + '!important');
         $('#footerFeat_container, .Footer').css('background-color', $.cookie('BackgroundColorCookie'));
@@ -335,7 +335,7 @@ $(document).ready(function () {
     //TextColorCookie
     $('#text_color').on("change", function () {
         var text_color = $('#view *').css('color');
-        $('#view *').not('#ADA_widget, #ADA_widget *').css('color', text_color);
+        $('#view *').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, #toggle-ada-list-container, #ADA_trigger').css('color', text_color);
         $('.SearchForm .input-group .input-group-append #submit_search').css('color', text_color);
         $('#footerFeat_container, .Footer').css('color', text_color);
         var hexTextColor = $('#view *').cssAsHex('color');
@@ -345,7 +345,7 @@ $(document).ready(function () {
         $.cookie('TextColorCookie', text_color);
     });
     if ($.cookie('TextColorCookie') != undefined) {
-        $('#view *').not('#ADA_widget, #ADA_widget *').css('color', $.cookie('TextColorCookie'));
+        $('#view *').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, #toggle-ada-list-container, #ADA_trigger').css('color', $.cookie('TextColorCookie'));
         $('.SearchForm .input-group .input-group-append #submit_search').css('color', $.cookie('TextColorCookie'));
         $('#footerFeat_container, .Footer').css('color', $.cookie('TextColorCookie'));
 
@@ -361,7 +361,7 @@ $(document).ready(function () {
     //LinkColorCookie
     $('#link_color').on("change", function () {
         var link_color = $('body a').css('color');
-        $('body a').not("#ADA_widget a").attr('style', 'color: ' + link_color + '!important');
+        $('body a').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *').attr('style', 'color: ' + link_color + '!important');
         var hexLinkColor = $('body a').cssAsHex('color');
         $("#link_hexVal").html(hexLinkColor);
 
@@ -369,7 +369,7 @@ $(document).ready(function () {
         $.cookie('LinkColorCookie', link_color);
     });
     if ($.cookie('LinkColorCookie') != undefined) {
-        $('body a').not("#ADA_widget a").attr('style', 'color: ' + $.cookie('LinkColorCookie') + '!important');
+        $('body a').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *').attr('style', 'color: ' + $.cookie('LinkColorCookie') + '!important');
 
         var hexLinkColor = $('body a').cssAsHex('color');
         $('#link_color').attr('value', hexLinkColor);

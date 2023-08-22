@@ -81,12 +81,6 @@ const selectChangeHandler = (icon, iconClass, itemId) => {
     }
 }
 
-// document.querySelectorAll('.opacity-icons').forEach(icon => {
-//     icon.addEventListener('click', () => {
-//       selectChangeHandler(icon, 'opacity-icons', '#reading-mask-opacity option:selected')
-
-//     })
-//   })
 
 // it looks awkward when select is at 10 so this fixes that
 const changeIndent = (value, amount, select, indentAmt) => {
@@ -99,8 +93,17 @@ const changeIndent = (value, amount, select, indentAmt) => {
 
 
 // change color picker
-const changeColorPicker = (color, cssSelector, hexSelector, inputSelector,) =>{
+const changeColorPicker = (color, cssSelector, hexSelector, inputSelector,) => {
+    $(inputSelector).val(color).trigger('change')
     $(cssSelector).css({ "background-color": color })
     $(hexSelector).text(color);
-    $(inputSelector).val(color);
-  }
+
+}
+
+//   to grab elements that are loaded asynchronously ex. google translate
+const isElementLoaded = async selector => {
+    while (document.querySelector(selector) === null) {
+        await new Promise(resolve => requestAnimationFrame(resolve))
+    }
+    return document.querySelector(selector);
+};

@@ -512,7 +512,7 @@
 
               </div><!-- row -->
 
-              <!-- <script>
+              <script>
                 $(document).ready(function () {
                   $("#myInput").on("keyup", function () {
                     var value = $(this).val().toLowerCase();
@@ -522,7 +522,7 @@
                     });
                   });
                 });
-              </script> -->
+              </script>
 
 
 
@@ -1106,7 +1106,7 @@
                           width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
-                        <select  class=" opacity-value " name="reading-mask-opacity" id="reading-mask-opacity">
+                        <select class=" opacity-value " name="reading-mask-opacity" id="reading-mask-opacity">
 
                           <option value=".1">1</option>
                           <option value=".2">2</option>
@@ -1138,13 +1138,12 @@
                         Color:
                       </div>
                       <!-- <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"> -->
-                      <input type="color" class="color_swatch mb-0 reading-color-picker" id="mask_color" title="Choose Link Color"
-                        value="#363636" colorpick-eyedropper-active="true">
+                      <input type="color" class="color_swatch mb-0 reading-color-picker" id="mask_color"
+                        title="Choose Link Color" value="#363636" colorpick-eyedropper-active="true">
                       <span class="hexVal" id="mask_hexVal">#363636</span>
                     </div>
                     <div class="edit-middle-section d-flex flex-column justify-content-center align-items-center">
-                      <div id="edit-mask-size "
-                        class=" d-flex flex-column justify-content-center align-items-center">
+                      <div id="edit-mask-size " class=" d-flex flex-column justify-content-center align-items-center">
 
                         <label for="customRange" class="form-label mb-0">Size:</label>
                         <input type="range" class="form-range mask-size-input" step="10" value="1270" min="1180"
@@ -1196,34 +1195,33 @@
                     </div><!-- ada_toggle -->
                   </div><!-- class="ada_toggleContainer" id="ReadingGuide" -->
                   <div id="edit-reading-guide"
-                  class=" edit-reading-guide justify-content-center align-items-start disable-settings mb-3">
+                    class=" edit-reading-guide justify-content-center align-items-start disable-settings mb-3">
 
-                  <div id="edit-guide-color"
-                    class="ml-4 mr-4 color_picker_form d-flex flex-column justify-content-center align-items-center">
+                    <div id="edit-guide-color"
+                      class="ml-4 mr-4 color_picker_form d-flex flex-column justify-content-center align-items-center">
 
-                    <div class="mb-2" for="guide-color">
-                      Color:
+                      <div class="mb-2" for="guide-color">
+                        Color:
+                      </div>
+                      <!-- <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"> -->
+                      <input type="color" class="color_swatch mb-0 reading-color-picker" id="guide_color"
+                        title="Choose Link Color" value="#363636" colorpick-eyedropper-active="true">
+                      <span class="hexVal" id="guide_hexVal">#363636</span>
                     </div>
-                    <!-- <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"> -->
-                    <input type="color" class="color_swatch mb-0 reading-color-picker" id="guide_color" title="Choose Link Color"
-                      value="#363636" colorpick-eyedropper-active="true">
-                    <span class="hexVal" id="guide_hexVal">#363636</span>
-                  </div>
-                  <div class="edit-middle-section d-flex flex-column justify-content-center align-items-center">
-                    <div id="edit-guide-size "
-                      class=" d-flex flex-column justify-content-center align-items-center">
+                    <div class="edit-middle-section d-flex flex-column justify-content-center align-items-center">
+                      <div id="edit-guide-size " class=" d-flex flex-column justify-content-center align-items-center">
 
-                      <label for="customRange" class="form-label mb-0">Size:</label>
-                      <input type="range" class="form-range guide-size-input" step="5" value="8" min="3"
-                        max="98" id="guide-size-input">
-                      <span id="guide-opacity"></span>
+                        <label for="customRange" class="form-label mb-0">Size:</label>
+                        <input type="range" class="form-range guide-size-input" step="5" value="8" min="3" max="98"
+                          id="guide-size-input">
+                        <span id="guide-opacity"></span>
+                      </div>
+
+                      <button onclick="restoreDefaultguideSettings()" id="reset-guide-btn"
+                        class="ada-btn btn btn-secondary" role="button" type="button"
+                        title="Reset Adjustments Colors">Reset guide</button>
                     </div>
-
-                    <button onclick="restoreDefaultguideSettings()" id="reset-guide-btn"
-                      class="ada-btn btn btn-secondary" role="button" type="button"
-                      title="Reset Adjustments Colors">Reset guide</button>
                   </div>
-                </div>
                 </div><!-- col-12 col-lg-4 -->
               </div><!-- row -->
 
@@ -1544,96 +1542,6 @@
               time and can help you choose
               the right county for your search.</p>
 
-            <p>Also, remember that Floriupda's county boundaries have changed many times over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search. Also, remember that Floriupda's county boundaries have changed many
-              times over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.Also, remember that Floriupda's county boundaries have changed many times
-              over the years as new counties
-              were
-              created. documents those changes
-              over
-              time and can help you choose
-              the right county for your search.</p>
 
 
           </div>
@@ -1774,6 +1682,7 @@
   <script src="./js/highlightHover.js"></script>
   <script src="./js/highlightLinks.js"></script>
   <script src="./js/speech.js"></script>
+  <script src="./js/translate-edit.js"></script>
   <script src="./js/color-presets.js"></script>
   <script src="./js/color-scheme-fix.js"></script>
   <script src="./js/keyCommands.js"></script>

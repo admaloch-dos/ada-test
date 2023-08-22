@@ -20,7 +20,9 @@
 
 
 
-
+.goog-te-gadget a {
+  display: none!important;
+}
 
 
 
