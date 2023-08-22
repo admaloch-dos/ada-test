@@ -24,7 +24,7 @@ body {
 
 
 .goog-te-gadget a {
-  display: none!important;
+  display: none !important;
 }
 
 
@@ -117,6 +117,7 @@ a {
   display: none;
   align-items: center;
   justify-content: center;
+
 }
 
 /* Modal Content */
@@ -125,13 +126,14 @@ a {
   display: none;
   background-color: #fefefe;
   margin: auto;
-  border: none;
+
 
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 95%;
   height: 95%;
   padding-bottom: 20px;
+
 }
 
 /* .rs-bar {
@@ -319,15 +321,17 @@ a {
 }
 
 .opacity-icons {
-  width: 23px;
-  height: 23px;
+  width: 20px;
+  height: 20px;
 }
 
+
+
 .opacity-value {
-  font-size: 20px;
+  font-size: 15px;
   border: black solid 2px;
 
-  padding: 4px 9px;
+  padding: 4px 7px;
   border-radius: 10px;
   -webkit-user-select: none;
   /* Safari */
@@ -339,9 +343,63 @@ a {
 }
 
 #ReadingMask_option select {
-  text-indent: 5px;
+  text-indent: 4px;
 }
 
+@media screen and (min-width:1200px) {
+  .opacity-icons {
+    width: 25px;
+    height: 25px;
+  }
+
+  .opacity-value {
+    font-size: 23px;
+    padding: 4px 8px;
+  }
+
+  #ReadingMask_option select {
+    text-indent: 7px;
+  }
+
+  #reset-mask-btn,
+  #reset-guide-btn {
+    font-size: 14px !important;
+    padding: 2px 9px !important;
+
+    top: 5px;
+
+  }
+}
+
+@media screen and (min-width:1400px) {
+  #edit-mask-color {
+    padding-left: 20px;
+    padding-right: 25px;
+  }
+  #reset-mask-btn,
+  #reset-guide-btn {
+    font-size: 16px !important;
+    padding: 2px 9px !important;
+
+    top: 10px!important;
+
+  }
+  #ADA_widget .modal_body .color_picker_form input,
+#ADA_widget .modal_body #edit-guide-color input {
+  padding: 0;
+  background: transparent;
+  border-radius: 50%;
+  height: 40px!important;
+  width: 40px!important;
+  outline: 2px solid #5D2D1F;
+
+  border-width: 3px;
+  border-color: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+
+}
+}
 
 
 /* .spacing-value option:checked {
@@ -354,6 +412,14 @@ a {
   background: #EBE5E3;
   overflow: auto;
   height: 93%;
+}
+
+@media screen and (min-width:400px) {
+  .ada_modal_test .modal_content {
+    width: 85%;
+    height: 90%;
+    padding-bottom: 0px;
+  }
 }
 
 @media screen and (min-width:500px) {
@@ -421,6 +487,15 @@ a {
   color: white;
 
 }
+
+@media screen and (min-width:1200px) {
+  #ADA_reset {
+    font-size: 18px !important;
+  }
+
+
+}
+
 
 #ADA_reset:hover {
   border: #FFF solid 1px !important;
@@ -543,7 +618,7 @@ a {
 
 #ADA_widget .modal_content .ada_option_title {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
   font-family: Muli;
 }
 
@@ -678,7 +753,10 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   max-width: 400px;
 } */
 
-
+.disable {
+  pointer-events: none;
+  opacity: .7;
+}
 
 .ada_toggleContainer .ada_content .type {
   display: block;
@@ -692,7 +770,10 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   font-size: 14px;
   color: #3e465d;
   margin-top: 7px;
+  max-width: 300px;
 }
+
+
 
 
 /************** ICONS ***************************/
@@ -1840,10 +1921,20 @@ html.translated-ltr #tooltip_template {
 .audio_state button {
   margin: 10px 1px;
   padding: 5px 10px;
-  background: #003f88;
-  border: #072ac8 solid 1px;
+  background: #003f88 !important;
+  border: #072ac8 solid 1px !important;
   transition: 0.2s ease-in-out;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8) !important;
+
+
+}
+
+.audio_state button i {
+
+  background: #003f88 !important;
+  border: #072ac8 solid 1px !important;
+  transition: 0.2s ease-in-out;
+  color: rgba(255, 255, 255, 0.8) !important;
 
 
 }
@@ -2211,7 +2302,8 @@ html.translated-ltr #tooltip_template {
 /************************************************************ Color Picker ************************************************************/
 
 
-#ADA_widget .modal_body #edit-reading-mask .form-group, #ADA_widget .modal_body #edit-reading-guide .form-group {
+#ADA_widget .modal_body #edit-reading-mask .form-group,
+#ADA_widget .modal_body #edit-reading-guide .form-group {
   margin-bottom: 1rem;
   display: inline-table;
   background-color: #EBE5E3 !important;
@@ -2258,7 +2350,8 @@ html.translated-ltr #tooltip_template {
   font-weight: normal;
 }
 
-#ADA_widget .modal_body .color_picker_form input, #ADA_widget .modal_body #edit-guide-color input {
+#ADA_widget .modal_body .color_picker_form input,
+#ADA_widget .modal_body #edit-guide-color input {
   padding: 0;
   background: transparent;
   border-radius: 50%;
@@ -2272,6 +2365,25 @@ html.translated-ltr #tooltip_template {
   transition: all 0.5s;
 
 }
+
+/* @media screen and (min-width:1500px) {
+  #ADA_widget .modal_body .color_picker_form input,
+  #ADA_widget .modal_body #edit-guide-color input {
+    padding: 0;
+    background: transparent;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    outline: 2px solid #5D2D1F;
+
+    border-width: 3px;
+    border-color: #fff;
+    cursor: pointer;
+    transition: all 0.5s;
+
+  }
+
+} */
 
 #ADA_widget .modal_body .color_picker_form input:hover {
   box-shadow: 0px 3px 5px #979797;
@@ -2750,6 +2862,7 @@ background-color: lightgray;
 display: none;
 } */
 
-#edit-reading-mask, #edit-reading-guide {
+#edit-reading-mask,
+#edit-reading-guide {
   display: none;
 }

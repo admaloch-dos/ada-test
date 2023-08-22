@@ -335,7 +335,7 @@ $(document).ready(function () {
     //TextColorCookie
     $('#text_color').on("change", function () {
         var text_color = $('#view *').css('color');
-        $('#view *').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, #toggle-ada-list-container, #ADA_trigger').css('color', text_color);
+        $('#view *').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, #toggle-ada-list-container, #ADA_trigger, .audio_state button').css('color', text_color);
         $('.SearchForm .input-group .input-group-append #submit_search').css('color', text_color);
         $('#footerFeat_container, .Footer').css('color', text_color);
         var hexTextColor = $('#view *').cssAsHex('color');
@@ -345,7 +345,7 @@ $(document).ready(function () {
         $.cookie('TextColorCookie', text_color);
     });
     if ($.cookie('TextColorCookie') != undefined) {
-        $('#view *').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, #toggle-ada-list-container, #ADA_trigger').css('color', $.cookie('TextColorCookie'));
+        $('#view *').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, #toggle-ada-list-container, #ADA_trigger, .audio_state button').css('color', $.cookie('TextColorCookie'));
         $('.SearchForm .input-group .input-group-append #submit_search').css('color', $.cookie('TextColorCookie'));
         $('#footerFeat_container, .Footer').css('color', $.cookie('TextColorCookie'));
 

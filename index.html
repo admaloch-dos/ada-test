@@ -114,7 +114,7 @@
               <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
                 <button onclick="resetAdaModal()" type="button" class="btn mr-md-4" title="Reset Settings"
                   aria-label="Reset Settings" id="ADA_reset">
-                  <i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset
+                  <i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset Settings
                 </button>
 
               </div>
@@ -538,18 +538,22 @@
                             alt="Highlight Hover Icon" />
                         </div>
                       </div>
-                      <h6 class="type ada_option_title text-sm-center text-lg-left">Highlight on Hover</h6>
+                      <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                        <h6 class="type ada_option_title text-sm-center text-lg-left mr-2 mr-lg-4">Highlight on Hover</h6>
+                        <div class="ada_toggle" style="margin-left:6px;">
+                          <label class="switch" title="Toggle On/Off Highlight Hover">
+                            <input type="checkbox" class="switch-input" id="ToggleHighlightHover" name="HighlightHover">
+                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                            <span class="switch-handle"></span>
+                          </label>
+                        </div><!-- ada_toggle -->
+                      </div>
+
                       <p class="description text-sm-center text-lg-left">Adds visual emphasis to all hyperlinks on
                         cursor hover</p>
                     </div><!-- ada_content -->
 
-                    <div class="ada_toggle" style="margin-left:6px;">
-                      <label class="switch" title="Toggle On/Off Highlight Hover">
-                        <input type="checkbox" class="switch-input" id="ToggleHighlightHover" name="HighlightHover">
-                        <span class="switch-label" data-on="On" data-off="Off"></span>
-                        <span class="switch-handle"></span>
-                      </label>
-                    </div><!-- ada_toggle -->
+
                   </div><!-- class="ada_toggleContainer" id="HighlightHover" -->
                 </div><!-- col-12 col-md-6 -->
 
@@ -566,18 +570,22 @@
                             alt="Highlight Links Icon" />
                         </div>
                       </div>
-                      <h6 class="type ada_option_title text-center text-sm-center text-lg-left">Outline All Links</h6>
-                      <p class="description text-sm-center text-lg-left">Adds visual emphasis to all
+                      <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                        <h6 class="type ada_option_title text-center text-lg-left mr-2 mr-lg-4">Outline All Links</h6>
+                        <div class="ada_toggle" style="margin-left:6px;">
+                          <label class="switch" title="Toggle On/Off Highlight Links">
+                            <input type="checkbox" class="switch-input" id="ToggleHighlightLinks" name="HighlightLinks">
+                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                            <span class="switch-handle"></span>
+                          </label>
+                        </div><!-- ada_toggle -->
+                      </div>
+
+                      <p class="description text-center text-lg-left">Adds visual emphasis to all
                         hyperlinks</p>
                     </div><!-- ada_content -->
 
-                    <div class="ada_toggle" style="margin-left:6px;">
-                      <label class="switch" title="Toggle On/Off Highlight Links">
-                        <input type="checkbox" class="switch-input" id="ToggleHighlightLinks" name="HighlightLinks">
-                        <span class="switch-label" data-on="On" data-off="Off"></span>
-                        <span class="switch-handle"></span>
-                      </label>
-                    </div><!-- ada_toggle -->
+
                   </div><!-- class="ada_toggleContainer" id="HighlightLinks" -->
                 </div><!-- col-12 col-md-6 -->
               </div><!-- row -->
@@ -597,17 +605,21 @@
                       </div>
                     </div>
                     <div class="ada_content">
-                      <h6 class="type ada_option_title">Text Magnifier</h6>
+                      <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                        <h6 class="type ada_option_title mr-2 mr-lg-4">Text Magnifier</h6>
+                        <div class="ada_toggle" style="margin-left:6px;">
+                          <label class="switch" title="Toggle On/Off Text Magnifier">
+                            <input type="checkbox" class="switch-input" id="ToggleTextMagnifier" name="TextMagnifier">
+                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                            <span class="switch-handle"></span>
+                          </label>
+                        </div><!-- ada_toggle -->
+                      </div>
+
                       <p class="description">Shows text in larger, high-contrast display</p>
                     </div><!-- ada_content -->
 
-                    <div class="ada_toggle" style="margin-left:6px;">
-                      <label class="switch" title="Toggle On/Off Text Magnifier">
-                        <input type="checkbox" class="switch-input" id="ToggleTextMagnifier" name="TextMagnifier">
-                        <span class="switch-label" data-on="On" data-off="Off"></span>
-                        <span class="switch-handle"></span>
-                      </label>
-                    </div><!-- ada_toggle -->
+
                   </div><!-- class="ada_toggleContainer" id="TextMagnifier" -->
                 </div><!-- col-12 col-md-6 -->
 
@@ -623,17 +635,22 @@
                       </div>
                     </div>
                     <div class="ada_content">
-                      <h6 class="type ada_option_title">Image Description</h6>
+                      <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                        <h6 class="type ada_option_title mr-2 mr-lg-4">Image Description</h6>
+                        <div class="ada_toggle" style="margin-left:6px;">
+                          <label class="switch" title="Toggle On/Off Image Description">
+                            <input type="checkbox" class="switch-input" id="ToggleImageDescription"
+                              name="ImageDescription">
+                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                            <span class="switch-handle"></span>
+                          </label>
+                        </div><!-- ada_toggle -->
+                      </div>
+
                       <p class="description">Shows image alt tags in larger, high-contrast display</p>
                     </div><!-- ada_content -->
 
-                    <div class="ada_toggle" style="margin-left:6px;">
-                      <label class="switch" title="Toggle On/Off Image Description">
-                        <input type="checkbox" class="switch-input" id="ToggleImageDescription" name="ImageDescription">
-                        <span class="switch-label" data-on="On" data-off="Off"></span>
-                        <span class="switch-handle"></span>
-                      </label>
-                    </div><!-- ada_toggle -->
+
                   </div><!-- class="ada_toggleContainer" id="TextMagnifier" -->
                 </div><!-- col-12 col-lg-6 -->
               </div><!-- row -->
@@ -973,7 +990,7 @@
                                 <div class="col-12 col-lg-4">
                                 </div>-->
                     <button id="remove_cookie" class="btn btn-secondary ada-btn mb-2" role="button" type="button"
-                      title="Reset Adjustments Colors">Reset Colors</button>
+                      title="Reset Adjustments Colors"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset Colors</button>
                     <button type="button" class="btn btn-secondary ada-btn mb-3" id="OpenContrastModal" role="button"
                       title="Check Contrast">Check Contrast</button>
 
@@ -1050,18 +1067,22 @@
                       </div>
                     </div>
                     <div class="ada_content">
-                      <h6 class="type ada_option_title text-sm-center text-lg-left">Photosensitivity filter</h6>
-                      <p class="description text-sm-center text-lg-left">Reduces color and removes flashes</p>
+                      <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                        <h6 class="type ada_option_title text-center text-lg-left mr-0 mr-lg-4">Photosensitivity filter</h6>
+                        <div class="ada_toggle" style="margin-left:6px;">
+                          <label class="switch" title="Toggle On/Off Seizure Safe Profile"
+                            aria-label="Toggle On/Off Seizure Safe Profile">
+                            <input type="checkbox" class="switch-input" id="ToggleSeizure" name="SeizureSafe">
+                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                            <span class="switch-handle"></span>
+                          </label>
+                        </div><!-- ada_toggle -->
+                      </div>
+
+                      <p class="description text-center text-lg-left">Reduces color and removes flashes</p>
                     </div><!-- ada_content -->
 
-                    <div class="ada_toggle" style="margin-left:6px;">
-                      <label class="switch" title="Toggle On/Off Seizure Safe Profile"
-                        aria-label="Toggle On/Off Seizure Safe Profile">
-                        <input type="checkbox" class="switch-input" id="ToggleSeizure" name="SeizureSafe">
-                        <span class="switch-label" data-on="On" data-off="Off"></span>
-                        <span class="switch-handle"></span>
-                      </label>
-                    </div><!-- ada_toggle -->
+
                   </div><!-- class="ada_toggleContainer" id="SeizureSafe" -->
                 </div><!-- col-12 col-lg-4 -->
 
@@ -1083,17 +1104,21 @@
                       </div>
                     </div>
                     <div class="ada_content ">
-                      <h6 class="type ada_option_title">Reading Mask</h6>
+                      <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                        <h6 class="type ada_option_title mr-2 mr-lg-4">Reading Mask</h6>
+                        <div class="ada_toggle" style="margin-left:6px;">
+                          <label class="switch" title="Toggle On/Off Reading Mask">
+                            <input type="checkbox" class="switch-input" id="ToggleReadingMask" name="ReadingMask">
+                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                            <span class="switch-handle"></span>
+                          </label>
+                        </div><!-- ada_toggle -->
+                      </div>
+
                       <p class="description">More focus and fewer distractions</p>
                     </div><!-- ada_content -->
 
-                    <div class="ada_toggle" style="margin-left:6px;">
-                      <label class="switch" title="Toggle On/Off Reading Mask">
-                        <input type="checkbox" class="switch-input" id="ToggleReadingMask" name="ReadingMask">
-                        <span class="switch-label" data-on="On" data-off="Off"></span>
-                        <span class="switch-handle"></span>
-                      </label>
-                    </div><!-- ada_toggle -->
+
                   </div><!-- class="ada_toggleContainer" id="ReadingMask" -->
                   <div id="edit-reading-mask"
                     class=" edit-reading-mask justify-content-center align-items-start disable-settings">
@@ -1132,7 +1157,7 @@
 
 
                     <div id="edit-mask-color"
-                      class="ml-4 mr-4 color_picker_form d-flex flex-column justify-content-center align-items-center">
+                      class="  color_picker_form d-flex flex-column justify-content-center align-items-center">
 
                       <div class="mb-2" for="mask-color">
                         Color:
@@ -1153,8 +1178,9 @@
 
                       <button onclick="restoreDefaultMaskSettings()" id="reset-mask-btn"
                         class="ada-btn btn btn-secondary" role="button" type="button"
-                        title="Reset Adjustments Colors">Reset mask</button>
+                        title="Reset Adjustments Colors"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset Mask</button>
                     </div>
+
                   </div>
 
                   <!-- <div class="col-12 d-flex flex-column justify-content-center align-items-center">
@@ -1182,17 +1208,21 @@
                       </div>
                     </div>
                     <div class="ada_content">
-                      <h6 class="type ada_option_title">Reading Guide</h6>
+                      <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                        <h6 class="type ada_option_title mr-2 mr-lg-4">Reading Guide</h6>
+                        <div class="ada_toggle" style="margin-left:6px;">
+                          <label class="switch" title="Toggle On/Off Reading Guide">
+                            <input type="checkbox" class="switch-input" id="ToggleReadingGuide" name="CursorGuide">
+                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                            <span class="switch-handle"></span>
+                          </label>
+                        </div><!-- ada_toggle -->
+                      </div>
+
                       <p class="description">Converts the cursor into a horizontal reading guide</p>
                     </div><!-- ada_content -->
 
-                    <div class="ada_toggle" style="margin-left:6px;">
-                      <label class="switch" title="Toggle On/Off Reading Guide">
-                        <input type="checkbox" class="switch-input" id="ToggleReadingGuide" name="CursorGuide">
-                        <span class="switch-label" data-on="On" data-off="Off"></span>
-                        <span class="switch-handle"></span>
-                      </label>
-                    </div><!-- ada_toggle -->
+
                   </div><!-- class="ada_toggleContainer" id="ReadingGuide" -->
                   <div id="edit-reading-guide"
                     class=" edit-reading-guide justify-content-center align-items-start disable-settings mb-3">
@@ -1219,7 +1249,7 @@
 
                       <button onclick="restoreDefaultguideSettings()" id="reset-guide-btn"
                         class="ada-btn btn btn-secondary" role="button" type="button"
-                        title="Reset Adjustments Colors">Reset guide</button>
+                        title="Reset Adjustments Colors"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset Guide</button>
                     </div>
                   </div>
                 </div><!-- col-12 col-lg-4 -->
@@ -1230,7 +1260,7 @@
 
               <div class="row d-flex" id="TTS_option">
                 <div
-                  class="col-12 col-lg-6 d-flex justify-content-start justify-content-sm-center justify-content-lg-start  ">
+                  class="col-12 col-lg-4 d-flex justify-content-start justify-content-sm-center justify-content-lg-start  ">
                   <div class="ada_toggleContainer " id="TTS_click">
                     <div class="main_icon_holder" id="tts_icon">
                       <div class="inner_icon_holder">
@@ -1239,7 +1269,18 @@
                       </div>
                     </div>
                     <div class="ada_content text-sm-center text-lg-left">
-                      <h6 class=" ada_option_title ">Text-to-Speech </h6>
+                      <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                        <h6 class=" ada_option_title mr-2 mr-lg-4">Text-to-Speech </h6>
+                        <div class="ada_toggle " style="margin-left:6px;">
+                          <label class="switch" title="Toggle On/Off Text-to-Speech">
+                            <input type="checkbox" class="switch-input" id="ToggleTTS_click" name="TTS_click_enabled">
+                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                            <span class="switch-handle"></span>
+                          </label>
+                        </div><!-- ada_toggle -->
+                      </div>
+
+
                       <!-- A -->
                       <!-- <div id="tooltip_template" class="toast toast_close">
                         <div class="tooltip_arrow"></div>
@@ -1258,21 +1299,15 @@
                         tone</p>
                     </div><!-- ada_content -->
 
-                    <div class="ada_toggle" style="margin-left:6px;">
-                      <label class="switch" title="Toggle On/Off Text-to-Speech">
-                        <input type="checkbox" class="switch-input" id="ToggleTTS_click" name="TTS_click_enabled">
-                        <span class="switch-label" data-on="On" data-off="Off"></span>
-                        <span class="switch-handle"></span>
-                      </label>
-                    </div><!-- ada_toggle -->
+
                   </div><!-- class="ada_toggleContainer" id="SeizureSafe" -->
                 </div><!-- col-12 col-lg-6 -->
 
 
-                <div id="speech-settings" class="col-12 col-lg-6 ">
+                <div id="speech-settings" class="col-12 col-lg-8 disable">
                   <div id="TTS_Utterance">
                     <form class="form-inline mb-4">
-                      <label for="voice" class="ada_option_title mr-2">Select Voice:</label>
+                      <label for="voice" class="ada_option_title mr-2 mr-lg-4">Select Voice:</label>
                       <select class="custom-select" name="voice" id="voice"></select>
                     </form>
                     <div class="round-sliders d-none d-md-flex justify-content-center align-items-center flex-wrap">
@@ -1332,7 +1367,7 @@
 
                   </div><!--TTS_Utterance-->
                   <div class="col-12 text-center mb-4 d-none d-md-block">
-                    <button id="reset-voice-btn" class="btn btn-secondary ada-btn ">Reset Voice Settings</button>
+                    <button id="reset-voice-btn" class="btn btn-secondary ada-btn "><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset Voice Settings</button>
                   </div>
                 </div><!-- col-12 col-lg-6 -->
               </div><!-- row -->

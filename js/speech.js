@@ -167,7 +167,7 @@ $(document).ready(function () {
     // Fetch the list of voices and populate the voice options.
     function loadVoices() {
         // Fetch the available voices.
-   
+
         var voiceList = speechSynthesis.getVoices();
         // Loop through each of the voices.
         voiceList.forEach(function (voice, i) {
@@ -330,6 +330,10 @@ $(document).ready(function () {
 
 }); //end of doc ready
 
+if ($.cookie('TTS_click_enabled') == "true") {
+    $("#speech-settings").removeClass("disable");
+}
+
 // Toggle Text-to-Speech click
 $(function () {
     $('[id="ToggleTTS_click"]').change(function () {
@@ -337,6 +341,7 @@ $(function () {
             $(".audio_state").hide()
             $("body").addClass("TTS_click_enabled");
             $(".audio_state").fadeIn(600)
+            $("#speech-settings").removeClass("disable");
             // $("#speech-settings").removeClass("disable-settings");
             if ($('#ToggleReadingMask').is(':checked')) {
                 storeModalScrollPosition()
@@ -349,13 +354,12 @@ $(function () {
                     storeModalScrollPosition()
                     modalDisplayOpenOrClose()
                     forceReload()
-
-
                 }
             }
             addWidgetControls('ToggleTTS_click', 'Text to speech')
             widgetItemObj.isSpeech = true
         } else {
+            $("#speech-settings").addClass("disable");
             if ($.cookie('ReadingMask')) {
                 if ($.cookie('ReadingMask') === 'true') {
 
@@ -391,6 +395,7 @@ $(document).ready(function () {
         if ($.cookie(name) && $.cookie(name) == "true") {
             $(this).prop('checked', $.cookie(name));
             $("body").addClass(name);
+
             //If ToggleTTS_click is checked
             if ($('[id="ToggleTTS_click"]').is(':checked')) {
                 $("body").addClass("TTS_click_enabled");

@@ -25,8 +25,12 @@ const displayModal = () => {
         // document.body.classList.add("prevent-body-overflow");
 
         $(".modal_body").scrollTop(0);
+
         document.body.style.overflow = "hidden"; // ADD THIS LINE
         document.body.style.height = "100%"; // ADD THIS LINE
+        document.body.style.paddingRight = "15px"; // ADD THIS LINE
+
+
 
 
         // $('body').css("overflow", "hidden");
@@ -34,14 +38,16 @@ const displayModal = () => {
     } else {
         $("#ADA_widget").fadeTo(400, 0);
         $(".modal_content").fadeToggle(400);
-        document.body.style.overflow = "auto"; // ADD THIS LINE
-        document.body.style.height = "auto"; // ADD THIS LINE
+
         setTimeout(() => {
+            document.body.style.overflow = "auto"; // ADD THIS LINE
+            document.body.style.height = "auto"; // ADD THIS LINE
+            document.body.style.paddingRight = "0"; // ADD THIS LINE
             $("#ADA_widget").css("display", "none")
             // document.body.classList.remove("prevent-body-overflow");
             $("#ada-triggers").fadeIn();
             // $('body').css("overflow", "auto");
-            $('body').css("overflow", "auto");
+
         }, 800);
     }
 }

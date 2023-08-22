@@ -152,13 +152,31 @@ if (opacityCookie) {
   $(".reading-mask").css({ "opacity": opacityCookie })
 }
 
+let indentAmount = '3px'
+
+
+
+window.addEventListener('resize', function (event) {
+  if (window.innerWidth > 1200) {
+    indentAmount = '6px'
+  } else {
+    indentAmount = '3px'
+  }
+
+  console.log(indentAmount)
+}, true);
+
+
+
+
+
 document.querySelectorAll('.opacity-icons').forEach(icon => {
   icon.addEventListener('click', () => {
     selectChangeHandler(icon, 'opacity-icons', '#reading-mask-opacity option:selected')
     let newVal = $('#reading-mask-opacity').val();
     $(".reading-mask").css({ "opacity": newVal })
     $.cookie("readingMaskOpacity", newVal, { path: '/' })
-    changeIndent(maskOpacityInput.value, '1', '#ReadingMask_option select', '5px')
+    changeIndent(maskOpacityInput.value, '1', '#ReadingMask_option select', indentAmount)
   })
 })
 
@@ -168,7 +186,7 @@ maskOpacityInput.addEventListener('change', () => {
   $(".reading-mask").css({ "opacity": maskOpacityInput.value })
   $.cookie("readingMaskOpacity", maskOpacityInput.value, { path: '/' })
 
-  changeIndent(maskOpacityInput.value, '1', '#ReadingMask_option select', '5px')
+  changeIndent(maskOpacityInput.value, '1', '#ReadingMask_option select', indentAmount)
 })
 
 
@@ -226,11 +244,11 @@ const restoreDefaultMaskSettings = () => {
   if (widgetItemObj.isDarkContrast || widgetItemObj.isInverted) {
     changeColorPicker('#FFFFFF', '.reading-mask', '#mask_hexVal', "#mask_color")
     $('#reading-mask-opacity').val('.7');
-  $(".reading-mask").css({ "opacity": '.7' })
+    $(".reading-mask").css({ "opacity": '.7' })
   } else {
     changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
     $('#reading-mask-opacity').val('.5');
-  $(".reading-mask").css({ "opacity": '.5' })
+    $(".reading-mask").css({ "opacity": '.5' })
   }
 
   yVal = 1270
