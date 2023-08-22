@@ -23,7 +23,10 @@ const displayModal = () => {
         $("#ADA_widget").fadeTo(0, 1);
         $(".modal_content").fadeToggle(0);
         // document.body.classList.add("prevent-body-overflow");
+
         $(".modal_body").scrollTop(0);
+        document.body.style.overflow = "hidden"; // ADD THIS LINE
+        document.body.style.height = "100%"; // ADD THIS LINE
 
 
         // $('body').css("overflow", "hidden");
@@ -31,12 +34,14 @@ const displayModal = () => {
     } else {
         $("#ADA_widget").fadeTo(400, 0);
         $(".modal_content").fadeToggle(400);
-        $('body').css("overflow", "auto");
+        document.body.style.overflow = "auto"; // ADD THIS LINE
+        document.body.style.height = "auto"; // ADD THIS LINE
         setTimeout(() => {
             $("#ADA_widget").css("display", "none")
             // document.body.classList.remove("prevent-body-overflow");
             $("#ada-triggers").fadeIn();
             // $('body').css("overflow", "auto");
+            $('body').css("overflow", "auto");
         }, 800);
     }
 }
