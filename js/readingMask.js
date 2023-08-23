@@ -106,6 +106,7 @@ $(function () {
 
     } else {
       $("body").removeClass("ReadingMask_ON");
+      $("body").removeClass("ReadingMask ");
       $("#top_mask").fadeOut()
       $("#bottom_mask").fadeOut()
       $("#edit-reading-mask").fadeOut()

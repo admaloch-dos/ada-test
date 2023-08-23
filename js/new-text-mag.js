@@ -1,13 +1,3 @@
-
-if ($.cookie('TextMagnifier') == "true") {
-  $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
-
-  $('#ToggleTextMagnifier').prop('checked', true).trigger('change')
-
-}
-
-
-
 let textMagY = 120;
 document.addEventListener('scroll', () => {
   const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
@@ -56,7 +46,7 @@ const hoverTextFunc = () => {
 
         timeout = setTimeout(() => {
           $('#text_magnify').show()
-        }, 500);
+        }, 700);
         if ($('#text_magnify').is(':empty') || TextMagnify === '') {
           $('#text_magnify').attr('style', 'display: none!important');
           clearTimeout(timeout)
@@ -88,7 +78,20 @@ const hoverTextFunc = () => {
   checkIfWidgetActive()
 }
 
-
+$(document).ready(function () {
+  $("input.switch-input[type=checkbox]").each(function () {
+    var name = $(this).attr('name');
+    if ($.cookie(name) && $.cookie(name) == "true") {
+      $(this).prop('checked', $.cookie(name));
+      $("body").addClass(name);
+      hoverTextFunc()
+    }
+  });
+  $("input.switch-input[type=checkbox]").change(function () {
+    var name = $(this).attr("name");
+    $.cookie(name, $(this).prop('checked'), { path: '/', })
+  });
+});
 
 // Toggle Text Magnifier
 $(function () {
@@ -96,24 +99,3 @@ $(function () {
     hoverTextFunc()
   }); //end of change
 }); // end of function
-
-
-
-$(document).ready(function () {
-  // read the current/previous setting
-  $("input.switch-input[type=checkbox]").each(function () {
-    //get name of input
-    var name = $(this).attr('name');
-    if ($.cookie(name) && $.cookie(name) == "true") {
-      $(this).prop('checked', $.cookie(name));
-      $("body").addClass(name);
-      //If ToggleTextMagnifier is checked
-      hoverTextFunc()
-    }// end of if
-  });//end of each
-  // event management
-  $("input.switch-input[type=checkbox]").change(function () {
-    var name = $(this).attr("name");
-    $.cookie(name, $(this).prop('checked'), { path: '/', })
-  });
-});

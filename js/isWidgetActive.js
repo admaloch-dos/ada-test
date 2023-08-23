@@ -53,7 +53,6 @@ const removeWidgetControls = (itemArr) => {
 const closeItemHandler = (closeItems) => {
     closeItems.forEach(item => {
         item.addEventListener('click', (e) => {
-
             item.classList.contains('ToggleHighlightHover') && $('#ToggleHighlightHover').prop('checked', false).trigger('change')
             item.classList.contains('ToggleHighlightLinks') && $('#ToggleHighlightLinks').prop('checked', false).trigger('change')
             item.classList.contains('ToggleTextMagnifier') && $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
@@ -62,12 +61,19 @@ const closeItemHandler = (closeItems) => {
             item.classList.contains('ToggleReadingMask') && $('#ToggleReadingMask').prop('checked', false).trigger('change')
             item.classList.contains('ToggleReadingGuide') && $('#ToggleReadingGuide').prop('checked', false).trigger('change')
             item.classList.contains('ToggleTTS_click') && $('#ToggleTTS_click').prop('checked', false).trigger('change')
-            item.classList.contains('FontSizeMedium') && restoreDefaultFontSize()
             item.classList.contains('ColorPicker') && resetColorPicker()
             item.classList.contains('letter_spacing') && restoreSpacingDefault('#letter_spacing', ['letter_spacing'])
             item.classList.contains('word_spacing') && restoreSpacingDefault('#word_spacing', ['word_spacing'])
             item.classList.contains('line_height') && restoreSpacingDefault('#line_height', ['line_height'])
             item.classList.contains('Cursor_Enlarge_option') && restoreDefaultCursorSize()
+            item.classList.contains('FontSizeMedium') && restoreDefaultFontSize()
+
+
+
+            // item.classList.contains('google-translate') && restoreDefaultFontSize()
+
+
+
             let colorPreArr = ['DarkContrastBackground', 'DesaturateBackground', 'InvertBackground', 'HighSaturationBackground', 'LowSaturationBackground']
             for (let i = 0; i < colorPreArr.length; i++) {
                 if (item.classList.contains(colorPreArr[i])) {
@@ -85,18 +91,16 @@ const closeItemHandler = (closeItems) => {
 const addWidgetControlsOnLoad = () => {
     widgetItemObj.isHighlighted && addWidgetControls('ToggleHighlightHover', 'Highlight on hover')
     widgetItemObj.isOutlined && addWidgetControls('ToggleHighlightLinks', 'Highlight all links')
-
-
-
+    widgetItemObj.isTextMag && addWidgetControls('ToggleTextMagnifier', 'Magnify text')
     widgetItemObj.isImgMag && addWidgetControls('ToggleImageDescription', 'Image description')
-    widgetItemObj.isSeizureSafe && addWidgetControls('ToggleSeizure', 'Seizure safe')
+    widgetItemObj.isSeizureSafe && addWidgetControls('ToggleSeizure', 'Photosensitivity filter')
     widgetItemObj.isReadingMask && addWidgetControls('ToggleReadingMask', 'Reading mask')
     widgetItemObj.isReadingGuide && addWidgetControls('ToggleReadingGuide', 'Reading guide')
     widgetItemObj.isSpeech && addWidgetControls('ToggleTTS_click', 'Text to speech')
     widgetItemObj.isLetterSpaceChanged && addWidgetControls('letter_spacing', 'Letter spacing')
     widgetItemObj.isWordSpaceChanged && addWidgetControls('word_spacing', 'Word spacing')
     widgetItemObj.isLineHeightChanged && addWidgetControls('line_height', 'Line height')
-    if (widgetItemObj.isBackColorChanged || widgetItemObj.isTextColorChanged || widgetItemObj.isLinkColorChanged) {
+    if (widgetItemObj.isBackColorChanged || widgetItemObj.isTextChanged || widgetItemObj.isLinkColorChanged) {
         addWidgetControls('ColorPicker', 'Custom colors')
     }
     widgetItemObj.isDarkContrast && addWidgetControls('DarkContrastBackground', 'Dark contrast preset')
@@ -108,6 +112,9 @@ const addWidgetControlsOnLoad = () => {
     widgetItemObj.isDyslexicFont && addWidgetControls('FontTypeDyslexic', 'Open-dyslexic font')
     widgetItemObj.isBaskervilleFont && addWidgetControls('FontTypeBaskerville', 'Libre-baskerville font')
     widgetItemObj.isCursorBig && addWidgetControls('Cursor_Enlarge_option', 'Change cursor')
-    widgetItemObj.isTextMag && addWidgetControls('ToggleTextMagnifier', 'Magnify text')
 }
 addWidgetControlsOnLoad()
+
+
+
+

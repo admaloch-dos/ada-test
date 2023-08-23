@@ -20,7 +20,7 @@ let widgetItemObj = {
     isInverted: false,
     isHighSat: false,
     isLowSat: false,
-    
+
     isTextColorChanged: false,
     isBackColorChanged: false,
     isLinkColorChanged: false,
@@ -29,7 +29,8 @@ let widgetItemObj = {
     isReadingGuide: false,
     isSpeech: false,
     isDyslexicFont: false,
-    isBaskervilleFont: false
+    isBaskervilleFont: false,
+    isTranslated: false,
 }
 
 // const itemArr = [
