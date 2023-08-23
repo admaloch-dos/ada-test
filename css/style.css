@@ -2858,11 +2858,14 @@ background-color: lightgray;
   display: none !important;
 }
 
-/* .skiptranslate iframe {
-display: none;
-} */
+
 
 #edit-reading-mask,
 #edit-reading-guide {
   display: none;
 }
+
+.skiptranslate iframe, .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+  display: none;
+  }
+

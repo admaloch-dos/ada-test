@@ -1,9 +1,11 @@
-setTimeout(() => {
-  if ($.cookie('ImageDescription') == "true") {
-    $('#ToggleImageDescription').prop('checked', false).trigger('change')
-    $('#ToggleImageDescription').prop('checked', true).trigger('change')
-  }
-}, 100);
+// setTimeout(() => {
+//   if ($.cookie('ImageDescription') == "true") {
+//     $('#ToggleImageDescription').prop('checked', false).trigger('change')
+
+//     $('#ToggleImageDescription').prop('checked', true).trigger('change')
+//     widgetItemObj.isImgMag = true
+//   }
+// }, 100);
 
 
 

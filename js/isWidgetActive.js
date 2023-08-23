@@ -35,6 +35,7 @@ const addWidgetControls = (item, text) => {
     closeItemHandler(closeItems)
     // console.log('isWidgetActive = ', isWidgetActive)
     // console.log('widgetItemObj = ', widgetItemObj)
+
 }
 
 const removeWidgetControls = (itemArr) => {
@@ -52,7 +53,7 @@ const removeWidgetControls = (itemArr) => {
 const closeItemHandler = (closeItems) => {
     closeItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            e.stopPropagation()
+
             item.classList.contains('ToggleHighlightHover') && $('#ToggleHighlightHover').prop('checked', false).trigger('change')
             item.classList.contains('ToggleHighlightLinks') && $('#ToggleHighlightLinks').prop('checked', false).trigger('change')
             item.classList.contains('ToggleTextMagnifier') && $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
@@ -84,7 +85,9 @@ const closeItemHandler = (closeItems) => {
 const addWidgetControlsOnLoad = () => {
     widgetItemObj.isHighlighted && addWidgetControls('ToggleHighlightHover', 'Highlight on hover')
     widgetItemObj.isOutlined && addWidgetControls('ToggleHighlightLinks', 'Highlight all links')
-    widgetItemObj.isTextMag && addWidgetControls('ToggleTextMagnifier', 'Magnify text')
+
+
+
     widgetItemObj.isImgMag && addWidgetControls('ToggleImageDescription', 'Image description')
     widgetItemObj.isSeizureSafe && addWidgetControls('ToggleSeizure', 'Seizure safe')
     widgetItemObj.isReadingMask && addWidgetControls('ToggleReadingMask', 'Reading mask')
@@ -105,5 +108,6 @@ const addWidgetControlsOnLoad = () => {
     widgetItemObj.isDyslexicFont && addWidgetControls('FontTypeDyslexic', 'Open-dyslexic font')
     widgetItemObj.isBaskervilleFont && addWidgetControls('FontTypeBaskerville', 'Libre-baskerville font')
     widgetItemObj.isCursorBig && addWidgetControls('Cursor_Enlarge_option', 'Change cursor')
+    widgetItemObj.isTextMag && addWidgetControls('ToggleTextMagnifier', 'Magnify text')
 }
 addWidgetControlsOnLoad()

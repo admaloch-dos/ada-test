@@ -43,6 +43,7 @@ $(function () {
       widgetItemObj.isReadingGuide = true
     } else {
       $("#edit-reading-guide").fadeOut()
+      $.cookie("edit-reading-guide", false, { path: '/' });
       $("#tail").fadeOut(500)
       setTimeout(() => {
         $("body").removeClass('CursorGuide');

@@ -1,9 +1,9 @@
-setTimeout(() => {
-  if ($.cookie('TextMagnifier') == "true") {
-    $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
-    $('#ToggleTextMagnifier').prop('checked', true).trigger('change')
-  }
-}, 100);
+// setTimeout(() => {
+//   if ($.cookie('TextMagnifier') == "true") {
+//     $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
+//     $('#ToggleTextMagnifier').prop('checked', true).trigger('change')
+//   }
+// }, 100);
 
 
 let textMagY = 120;
@@ -65,7 +65,7 @@ const hoverTextFunc = () => {
       },
       function (e) {
         //do the mouseleave things here...
-   
+
         $('#text_magnify').attr('style', 'display: none!important');
         clearTimeout(timeout)
       }

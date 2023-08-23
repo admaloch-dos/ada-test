@@ -34,9 +34,16 @@
 	margin-bottom: 50px;
 }
 
-.CursorGuide p {
-	cursor: default !important
+.CursorGuide p, .ReadingMask_ON p {
+	cursor: default !important;
 }
+
+
+.CursorGuide.Cursor_Enlarge p, .ReadingMask_ON.Cursor_Enlarge p {
+	cursor: url('../files/img/large-cursor.png') 10 3, auto!important;
+}
+
+
 
 
 

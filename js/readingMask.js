@@ -163,7 +163,7 @@ window.addEventListener('resize', function (event) {
     indentAmount = '3px'
   }
 
-  console.log(indentAmount)
+
 }, true);
 
 
