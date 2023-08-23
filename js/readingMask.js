@@ -205,6 +205,7 @@ if (maskSizeCookieVal) {
 const maskSizeInputRange = document.getElementById('mask-size-input')
 maskSizeInputRange.addEventListener('change', () => {
   let newSizeVal = maskSizeInputRange.value
+  console.log(newSizeVal)
   yVal = newSizeVal
   $.cookie("readingMaskHeight", newSizeVal, { path: '/' })
 
