@@ -193,7 +193,7 @@ maskOpacityInput.addEventListener('change', () => {
 
 
 // change mask size
-let yVal = 1280
+let yVal = 1370Q
 
 var maskSizeCookieVal = $.cookie("readingMaskHeight");
 if (maskSizeCookieVal) {
