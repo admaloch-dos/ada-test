@@ -193,7 +193,7 @@ maskOpacityInput.addEventListener('change', () => {
 
 
 // change mask size
-let yVal = 1370Q
+let yVal = 1370
 
 var maskSizeCookieVal = $.cookie("readingMaskHeight");
 if (maskSizeCookieVal) {
@@ -253,8 +253,8 @@ const restoreDefaultMaskSettings = () => {
     $(".reading-mask").css({ "opacity": '.5' })
   }
 
-  yVal = 1270
-  $("#mask-size-input").val(1270);
+  yVal = 1370
+  $("#mask-size-input").val(1370);
   resetMaskSettingsCookies()
 }
 
