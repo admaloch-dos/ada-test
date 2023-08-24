@@ -34,11 +34,10 @@ const createMaskFunc = () => {
   addWidgetControls('ToggleReadingMask', 'Reading mask')
   storeModalScrollPosition()
   modalDisplayOpenOrClose()
-  if ($.cookie("reading-mask-reload") === 'true') {
-    $.cookie("reading-mask-reload", false, { path: '/' });
 
-    forceReload()
-  }
+
+  forceReload()
+
 
 
 }
