@@ -755,7 +755,7 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
 
 .disable {
   pointer-events: none;
-  opacity: .7;
+  opacity: .5;
 }
 
 .ada_toggleContainer .ada_content .type {

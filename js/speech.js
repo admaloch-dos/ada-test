@@ -343,33 +343,33 @@ $(function () {
             $(".audio_state").fadeIn(600)
             $("#speech-settings").removeClass("disable");
             // $("#speech-settings").removeClass("disable-settings");
-            // if ($('#ToggleReadingMask').is(':checked')) {
-            //     storeModalScrollPosition()
-            //     modalDisplayOpenOrClose()
-            //     forceReload()
-            // }
-            // if ($.cookie('ReadingMask')) {
-            //     if ($.cookie('ReadingMask') === 'false') {
-            //         $.removeCookie('ReadingMask');
-            //         storeModalScrollPosition()
-            //         modalDisplayOpenOrClose()
-            //         forceReload()
-            //     }
-            // }
+            if ($('#ToggleReadingMask').is(':checked')) {
+                storeModalScrollPosition()
+                modalDisplayOpenOrClose()
+                forceReload()
+            }
+            if ($.cookie('ReadingMask')) {
+                if ($.cookie('ReadingMask') === 'false') {
+                    $.removeCookie('ReadingMask');
+                    storeModalScrollPosition()
+                    modalDisplayOpenOrClose()
+                    forceReload()
+                }
+            }
             addWidgetControls('ToggleTTS_click', 'Text to speech')
             widgetItemObj.isSpeech = true
         } else {
             $("#speech-settings").addClass("disable");
-            // if ($.cookie('ReadingMask')) {
-            //     if ($.cookie('ReadingMask') === 'true') {
+            if ($.cookie('ReadingMask')) {
+                if ($.cookie('ReadingMask') === 'true') {
 
-            //         storeModalScrollPosition()
-            //         modalDisplayOpenOrClose()
-            //         forceReload()
+                    storeModalScrollPosition()
+                    modalDisplayOpenOrClose()
+                    forceReload()
 
-            //     }
-            //     $.cookie("reading-mask-reload", true, { path: '/' });
-            // }
+                }
+                $.cookie("reading-mask-reload", true, { path: '/' });
+            }
             // $("#speech-settings").addClass("disable-settings");
             $(".audio_state").fadeOut(500)
             setTimeout(() => {

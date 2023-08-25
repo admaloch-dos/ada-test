@@ -8,6 +8,20 @@ if ($.cookie('TextMagnifier') == "true") {
 
 
 
+
+let magnifyScheme = {
+    color: 'rgb(255,255,255)',
+    backGroundColor: 'rgb(54,54,54)',
+    size: '22px',
+
+}
+
+
+
+
+
+
+
 let textMagY = 120;
 document.addEventListener('scroll', () => {
   const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
@@ -53,6 +67,7 @@ const hoverTextFunc = () => {
 
 
         $("#text_magnify").text(TextMagnify);
+        $('#text_magnify').css({ 'color': magnifyScheme.color, 'background-color': magnifyScheme.backGroundColor, 'font-size': magnifyScheme.size });
 
         timeout = setTimeout(() => {
           $('#text_magnify').show()
@@ -117,3 +132,4 @@ $(document).ready(function () {
     $.cookie(name, $(this).prop('checked'), { path: '/', })
   });
 });
+

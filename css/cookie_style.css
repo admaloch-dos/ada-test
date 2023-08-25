@@ -1241,13 +1241,13 @@ body.HighlightHover.highcontrast .navbar a:hover:not(#ADA_widget) {
 	background-color: rgba(169, 169, 169, 0.493) !important;
 }
 
-.highcontrast.TextMagnifier #text_magnify,
+/* .highcontrast.TextMagnifier #text_magnify,
 .inverted.TextMagnifier #text_magnify,
 .highcontrast.ImageDescription #ImageDescription_magnify,
 .inverted.ImageDescription #ImageDescription_magnify {
 	background-color: #fff;
 	color: #000;
-}
+} */
 
 
 

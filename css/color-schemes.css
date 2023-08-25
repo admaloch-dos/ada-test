@@ -313,7 +313,7 @@ a {
 }
 
 #reset-mask-btn,
-#reset-guide-btn {
+#reset-guide-btn, #reset-text-magnify-btn  {
 font-size: 13px;
     padding: 2px 5px !important;
     position: relative;
@@ -339,26 +339,28 @@ font-size: 12px;
 
 
 /************************************************************ Text Magnify ************************************************************/
+
+/* /* black back - FFFF00, 00FF00 00FFFF  FF8AFF  yellow, green cyan magenta*/
+
+/* black background - white, yellow, light blue  */
 .TextMagnifier #text_magnify {
     position: absolute;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgb(54,54,54);
     line-height: 1.2;
     padding: 8px 17px;
-    max-width: 500px;
+    max-width: 1100px;
     font-size: 22px;
     border-radius: 5px;
-    color: #fff;
+    color: rgb(255,255,255);
     pointer-events: none;
     user-select: none;
-
-
-
     z-index: 2000;
     opacity: 1;
     display: block !important;
     -webkit-box-shadow: 1px 0px 5px 3px rgba(0, 0, 0, 0.22);
     box-shadow: 1px 0px 5px 3px rgba(0, 0, 0, 0.22);
 }
+
 
 .TextMagnifier p,
 .TextMagnifier h1,

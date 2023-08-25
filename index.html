@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="./css/media-query.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/color-schemes.css">
+  <link rel="stylesheet" href="./css/text-magnify-colors.css">
 
   <link rel="stylesheet" href="./css/change-text.css">
   <link rel="stylesheet" href="./css/cookie_style.css">
@@ -550,8 +551,8 @@
                         </div><!-- ada_toggle -->
                       </div>
 
-                      <p class="description text-sm-center text-lg-left">Adds visual emphasis to all hyperlinks on
-                        cursor hover</p>
+                      <p class="description text-sm-center text-lg-left">Adds visual emphasis to all hyperlinks when
+                        hovering</p>
                     </div><!-- ada_content -->
 
 
@@ -574,7 +575,7 @@
                       <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
                         <h6 class="type ada_option_title text-center text-lg-left mr-2 mr-lg-4">Outline All Links</h6>
                         <div class="ada_toggle" style="margin-left:6px;">
-                          <label class="switch" title="Toggle On/Off Highlight Links">
+                          <label class="switch" title="Toggle On/Off Outline Links">
                             <input type="checkbox" class="switch-input" id="ToggleHighlightLinks" name="HighlightLinks">
                             <span class="switch-label" data-on="On" data-off="Off"></span>
                             <span class="switch-handle"></span>
@@ -605,20 +606,74 @@
                           alt="Text Magnifier Icon" />
                       </div>
                     </div>
-                    <div class="ada_content">
-                      <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
-                        <h6 class="type ada_option_title mr-2 mr-lg-4">Text Magnifier</h6>
-                        <div class="ada_toggle" style="margin-left:6px;">
-                          <label class="switch" title="Toggle On/Off Text Magnifier">
-                            <input type="checkbox" class="switch-input" id="ToggleTextMagnifier" name="TextMagnifier">
-                            <span class="switch-label" data-on="On" data-off="Off"></span>
-                            <span class="switch-handle"></span>
-                          </label>
-                        </div><!-- ada_toggle -->
+                    <div class="text-magnify-container d-flex flex-column">
+                      <div class="ada_content">
+                        <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                          <h6 class="type ada_option_title mr-2 mr-lg-4">Text Magnifier</h6>
+                          <div class="ada_toggle" style="margin-left:6px;">
+                            <label class="switch" title="Toggle On/Off Text Magnifier">
+                              <input type="checkbox" class="switch-input" id="ToggleTextMagnifier" name="TextMagnifier">
+                              <span class="switch-label" data-on="On" data-off="Off"></span>
+                              <span class="switch-handle"></span>
+                            </label>
+                          </div><!-- ada_toggle -->
+                        </div>
+
+                        <p class="description">Displays text larger and in high-contrast</p>
+                      </div><!-- ada_content -->
+
+
+
+                      <div id="edit-text-magnify"
+                        class=" edit-text-magnify d-flex justify-content-center align-items-center">
+
+                        <div class="edit-text-magnify-color">
+                          <div id="text-magnifier-preview" class="text-magnifier-preview">
+                            <p>Text magnifier preview</p>
+                          </div>
+                          <div class="text-magnify-color-title text-center">
+                            <p class="mb-0">Color Presets:</p>
+                          </div>
+                          <div class="d-flex justify-content-center text-mag-row1">
+                            <div data-id="magnify1" class="active text-magnify-color-swatch "></div>
+                            <div data-id="magnify2" class="text-magnify-color-swatch "></div>
+                            <div data-id="magnify3" class="text-magnify-color-swatch "></div>
+                          </div>
+                          <div class="d-flex justify-content-center text-mag-row2">
+                            <div data-id="magnify4" class="text-magnify-color-swatch "></div>
+                            <div data-id="magnify5" class="text-magnify-color-swatch "></div>
+                            <div data-id="magnify6" class="text-magnify-color-swatch "></div>
+                          </div>
+
+
+
+
+
+
+
+
+                        </div>
+                        <div class="edit-mask-size d-flex flex-column justify-content-center align-items-center">
+                          <div id="edit-text-magnify-size "
+                            class=" d-flex flex-column justify-content-center align-items-center">
+
+                            <label for="customRange" class="form-label mb-0">Size:</label>
+                            <input type="range" class="form-range text-magnify-size-input" step="5" value="22" min="22"
+                              max="68" id="text-magnify-size-input">
+                            <span id="text-magnify-opacity"></span>
+                          </div>
+
+                          <button onclick="restoreDefaultMagnifySettings()" id="reset-text-magnify-btn"
+                            class="ada-btn btn btn-secondary" role="button" type="button"
+                            title="Reset Adjustments Colors"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset
+                            text magnifier</button>
+                        </div>
                       </div>
 
-                      <p class="description">Shows text in larger, high-contrast display</p>
-                    </div><!-- ada_content -->
+
+
+                    </div>
+
 
 
                   </div><!-- class="ada_toggleContainer" id="TextMagnifier" -->
@@ -648,7 +703,52 @@
                         </div><!-- ada_toggle -->
                       </div>
 
-                      <p class="description">Shows image alt tags in larger, high-contrast display</p>
+                      <p class="description">Displays image information (alt tag) larger and in high-contrast</p>
+                      <div id="edit-text-magnify"
+                      class=" edit-text-magnify d-flex justify-content-center align-items-center">
+
+                      <div class="edit-text-magnify-color">
+                        <div id="text-magnifier-preview" class="text-magnifier-preview">
+                          <p>Text magnifier preview</p>
+                        </div>
+                        <div class="text-magnify-color-title text-center">
+                          <p class="mb-0">Color Presets:</p>
+                        </div>
+                        <div class="d-flex justify-content-center text-mag-row1">
+                          <div data-id="magnify1" class="active text-magnify-color-swatch "></div>
+                          <div data-id="magnify2" class="text-magnify-color-swatch "></div>
+                          <div data-id="magnify3" class="text-magnify-color-swatch "></div>
+                        </div>
+                        <div class="d-flex justify-content-center text-mag-row2">
+                          <div data-id="magnify4" class="text-magnify-color-swatch "></div>
+                          <div data-id="magnify5" class="text-magnify-color-swatch "></div>
+                          <div data-id="magnify6" class="text-magnify-color-swatch "></div>
+                        </div>
+
+
+
+
+
+
+
+
+                      </div>
+                      <div class="edit-mask-size d-flex flex-column justify-content-center align-items-center">
+                        <div id="edit-text-magnify-size "
+                          class=" d-flex flex-column justify-content-center align-items-center">
+
+                          <label for="customRange" class="form-label mb-0">Size:</label>
+                          <input type="range" class="form-range text-magnify-size-input" step="5" value="22" min="22"
+                            max="68" id="text-magnify-size-input">
+                          <span id="text-magnify-opacity"></span>
+                        </div>
+
+                        <button onclick="restoreDefaultMagnifySettings()" id="reset-text-magnify-btn"
+                          class="ada-btn btn btn-secondary" role="button" type="button"
+                          title="Reset Adjustments Colors"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset
+                          text magnifier</button>
+                      </div>
+                    </div>
                     </div><!-- ada_content -->
 
 
@@ -669,7 +769,7 @@
                           alt="Font Size Icon" />
                       </div>
                     </div>
-                    <h6 class="ada_option_title text-lg-left">Change Font-Size</h6>
+                    <h6 class="ada_option_title text-lg-left">Change Font Size</h6>
                     <div class="form-check">
                       <ul class="modal-btn-options">
                         <li id="FS_Default" class="active"><a href="#!" class="FontSizeOptions FontSizeDefault">
@@ -695,7 +795,7 @@
                           alt="Font Family Icon" />
                       </div>
                     </div>
-                    <h6 class="ada_option_title text-lg-left">Change Font-Family</h6>
+                    <h6 class="ada_option_title text-lg-left">Change Font Family</h6>
                     <div class="form-check">
                       <ul class="modal-btn-options">
                         <li id="FT_Default" class="active"><a href="#!" class="FontTypeOptions FontTypeDefault">
@@ -726,7 +826,7 @@
                           alt="Large Cursor" />
                       </div>
                     </div>
-                    <h6 class="ada_option_title text-lg-left">Change Cursor</h6>
+                    <h6 class="ada_option_title text-lg-left">Change Cursor Size</h6>
                     <div class="form-check">
                       <ul class="modal-btn-options">
                         <li id="Cur_Default" class="active"><a href="#!" class="CursorOptions Cursor_Default">
@@ -763,8 +863,8 @@
                       </div>
                       <div class="input-container d-flex justify-content-center align-items-center">
                         <svg class="letter-spacing-icon spacing-icon button-icon minus-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-dash" viewBox="0 0 16 16">
+                          aria-labelledby="decrease letter spacing" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
                         <select class="spacing-value " name="letter_spacing" id="letter_spacing">
@@ -781,8 +881,8 @@
                         </select>
 
                         <svg class="letter-spacing-icon spacing-icon button-icon plus-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-plus" viewBox="0 0 16 16">
+                          aria-labelledby="increase letter spacing" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                           <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
@@ -809,8 +909,8 @@
                       </div>
                       <div class="input-container d-flex justify-content-center align-items-center">
                         <svg class="word-spacing-icon spacing-icon button-icon minus-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-dash" viewBox="0 0 16 16">
+                          aria-labelledby="decrease word spacing" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
                         <select class="spacing-value" name="word_spacing" id="word_spacing">
@@ -828,8 +928,8 @@
 
                         </select>
                         <svg class="word-spacing-icon spacing-icon button-icon plus-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-plus" viewBox="0 0 16 16">
+                          aria-labelledby="increase word spacing" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                           <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
@@ -854,8 +954,8 @@
                       </div>
                       <div class="input-container d-flex justify-content-center align-items-center">
                         <svg class="line-height-icon spacing-icon button-icon minus-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-dash" viewBox="0 0 16 16">
+                          aria-labelledby="decrease line height" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
                         <select class="spacing-value" name="line_height" id="line_height">
@@ -871,8 +971,8 @@
                           <option value="3.3">10</option>
                         </select>
                         <svg class="line-height-icon spacing-icon button-icon plus-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-plus" viewBox="0 0 16 16">
+                          aria-labelledby="increase line height" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                           <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
@@ -1070,11 +1170,11 @@
                     </div>
                     <div class="ada_content">
                       <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
-                        <h6 class="type ada_option_title text-center text-lg-left mr-0 mr-lg-4">Photosensitivity filter
+                        <h6 class="type ada_option_title text-center text-lg-left mr-0 mr-lg-4">Photosensitivity Filter
                         </h6>
                         <div class="ada_toggle" style="margin-left:6px;">
-                          <label class="switch" title="Toggle On/Off Seizure Safe Profile"
-                            aria-label="Toggle On/Off Seizure Safe Profile">
+                          <label class="switch" title="Toggle On/Off Photosensitivity Filter"
+                            aria-label="Toggle On/Off Photosensitivity Filter">
                             <input type="checkbox" class="switch-input" id="ToggleSeizure" name="SeizureSafe">
                             <span class="switch-label" data-on="On" data-off="Off"></span>
                             <span class="switch-handle"></span>
@@ -1118,7 +1218,7 @@
                         </div><!-- ada_toggle -->
                       </div>
 
-                      <p class="description">More focus and fewer distractions</p>
+                      <p class="description">Adds a horizontal reading mask</p>
                     </div><!-- ada_content -->
 
 
@@ -1131,7 +1231,8 @@
                       <div class="mb-2">Opacity:</div>
                       <div class="opacity-select d-flex justify-content-center align-items-center">
                         <svg class="opacity-icons  button-icon minus-icon mr-2" xmlns="http://www.w3.org/2000/svg"
-                          width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                          aria-labelledby="decrease mask opacity" width="16" height="16" fill="currentColor"
+                          class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
                         <select class=" opacity-value " name="reading-mask-opacity" id="reading-mask-opacity">
@@ -1149,7 +1250,8 @@
                         </select>
 
                         <svg class="opacity-icons  button-icon plus-icon ml-2" xmlns="http://www.w3.org/2000/svg"
-                          width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                          aria-labelledby="increase mask opacity" width="16" height="16" fill="currentColor"
+                          class="bi bi-plus" viewBox="0 0 16 16">
                           <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
@@ -1174,7 +1276,7 @@
                       <div id="edit-mask-size " class=" d-flex flex-column justify-content-center align-items-center">
 
                         <label for="customRange" class="form-label mb-0">Size:</label>
-                        <input type="range" class="form-range mask-size-input" step="10" value="1370" min="1290"
+                        <input type="range" class="form-range mask-size-input" step="10" value="1270" min="1180"
                           max="1900" id="mask-size-input">
                         <span id="mask-opacity"></span>
                       </div>
@@ -1223,7 +1325,7 @@
                         </div><!-- ada_toggle -->
                       </div>
 
-                      <p class="description">Converts the cursor into a horizontal reading guide</p>
+                      <p class="description">Adds a horizontal reading guide</p>
                     </div><!-- ada_content -->
 
 
@@ -1319,15 +1421,15 @@
                       <div class="round-slider">
                         <svg id="volume-minus-icon"
                           class="button-icon volume-minus-icon speech-volume speech-minus-icon speech-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-dash" viewBox="0 0 16 16">
+                          aria-labelledby="decrease speech volume" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
                         <div id="volume"></div>
                         <svg id="volume-plus-icon"
                           class="button-icon volume-plus-icon speech-volume speech-plus-icon speech-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-plus" viewBox="0 0 16 16">
+                          aria-labelledby="increase speech volume" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                           <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
@@ -1336,15 +1438,15 @@
                       <div class="round-slider">
                         <svg id="rate-minus-icon"
                           class="button-icon rate-minus-icon speech-rate speech-minus-icon speech-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-dash" viewBox="0 0 16 16">
+                          aria-labelledby="decrease speech rate" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
                         <div id="rate"></div>
                         <svg id="rate-plus-icon"
                           class="button-icon rate-plus-icon speech-rate speech-plus-icon speech-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-plus" viewBox="0 0 16 16">
+                          aria-labelledby="increase speech rate" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                           <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
@@ -1353,15 +1455,15 @@
                       <div class="round-slider">
                         <svg id="pitch-minus-icon"
                           class="button-icon pitch-minus-icon speech-pitch speech-minus-icon speech-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-dash" viewBox="0 0 16 16">
+                          aria-labelledby="decrease speech pitch" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                         </svg>
                         <div id="pitch"></div>
                         <svg id="pitch-plus-icon"
                           class="button-icon pitch-plus-icon speech-pitch speech-plus-icon speech-icon"
-                          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                          class="bi bi-plus" viewBox="0 0 16 16">
+                          aria-labelledby="increase speech pitch" xmlns="http://www.w3.org/2000/svg" width="16"
+                          height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                           <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
@@ -1456,7 +1558,7 @@
             <h4 class="subheader">About These Records</h4>
             <h5 class="subheader">About These Records</h5>
             <h6 class="subheader">About These Records</h6>
-
+            <h6 class="subheader">updated - 4: 28 7/15/23 </h6>
             <button>Hello</button>
 
             <div class="letter-image">
@@ -1716,6 +1818,7 @@
   <script src="./js/ChangeSpacing.js"></script>
   <!-- <script src="./js/ifModalChecked.js"></script> -->
   <script src="./js/text-magnify.js"></script>
+  <script src="./js/edit-magnify.js"></script>
   <script src="./js/readingMask.js"></script>
   <script src="./js/readingGuide.js"></script>
   <script src="./js/imgHover.js"></script>
