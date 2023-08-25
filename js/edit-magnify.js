@@ -4,17 +4,20 @@ const textMagColorControls = (colors, preview, cssObj) => {
     colorPresets.forEach(preset => {
 
         preset.addEventListener('mouseenter', () => {
-            let hoverColor = $(preset).css("background-color");
-            let hoverBackGroundColor = $(preset).css("border-color");
-            $(preview).css({ 'color': hoverColor, 'background-color': hoverBackGroundColor, 'border-color': hoverColor });
-
+            let color = $(preset).css("background-color");
+            let backGroundColor = $(preset).css("border-color");
+            $(preview).css({ 'color': color, 'background-color': backGroundColor, 'border-color': color });
+            timeout = setTimeout(() => {
+                $(preview).show()
+            }, 300);
         })
         preset.addEventListener('mouseleave', () => {
-            $(preview).css({ 'color': cssObj.color, 'background-color': cssObj.backGroundColor, 'border-color': cssObj.color });
+            $(preview).hide()
+            clearTimeout(timeout)
         })
         preset.addEventListener('click', () => {
 
-
+            $(preview).hide()
             cssObj.color = $(preset).css("background-color");
             cssObj.backGroundColor = $(preset).css("border-color");
             // console.log('color is', color, 'background is', backGroundColor)
@@ -22,7 +25,6 @@ const textMagColorControls = (colors, preview, cssObj) => {
                 items.classList.remove('active')
             })
             preset.classList.add('active')
-            $(preview).css({ 'color': cssObj.color, 'background-color': cssObj.backGroundColor, 'border-color': cssObj.color });
             $.cookie(colors.slice(1), preset.id, { path: '/' })
 
         })
@@ -50,13 +52,13 @@ const restoreMagColorDefault = (type, colors, cssObj) => {
 }
 
 // text and image mag SIZE control
-const textMagSizeControls = (input, preview, cssObj) => {
+const textMagSizeControls = (input, cssObj) => {
     const textMagSizeInput = document.querySelector(input)
     textMagSizeInput.addEventListener('change', () => {
         let updatedPxSize = `${textMagSizeInput.value}px`
         cssObj.size = updatedPxSize;
         $.cookie(input.slice(1), updatedPxSize, { path: '/' })
-        $(preview).css("fontSize", updatedPxSize);
+
     })
 }
 
@@ -83,30 +85,28 @@ restoreDefaultImageSettings = () => {
 
 // text magnifier
 textMagColorControls('.text-magnify-color-swatch', '.text-magnifier-preview', textMagObj)
-textMagSizeControls('.text-magnify-size-input', '.text-magnifier-preview', textMagObj)
+textMagSizeControls('.text-magnify-size-input', textMagObj)
 
 //img description
 textMagColorControls('.img-magnify-color-swatch', '.img-magnifier-preview', imgMagObj)
-textMagSizeControls('.img-magnify-size-input', '.img-magnifier-preview', imgMagObj)
+textMagSizeControls('.img-magnify-size-input', imgMagObj)
 
 // cookies
 
-// if ($.cookie("text-magnify-color-swatch")) {
-//     let cookieVal = $.cookie("text-magnify-color-swatch")
-//     let cookieIdVal = `#${cookieVal}`
-//     textMagObj.color = $(cookieIdVal).css("background-color");
-//     textMagObj.backGroundColor = $(cookieIdVal).css("border-color");
-// }
+if ($.cookie("text-magnify-color-swatch")) {
+    let cookieVal = $.cookie("text-magnify-color-swatch")
+    let cookieIdVal = `#${cookieVal}`
+    textMagObj.color = $(cookieIdVal).css("background-color");
+    textMagObj.backGroundColor = $(cookieIdVal).css("border-color");
+}
 
 // func to handle cookies for text and img size and color
-const magnifyCookieHandler = (type, cookie, preview, obj) => {
+const magnifyCookieHandler = (type, cookie, obj) => {
     if ($.cookie(cookie.slice(1))) {
         let cookieVal = $.cookie(cookie.slice(1))
         if (type === 'size') {
             obj.size = cookieVal
-
             $(cookie).val(parseInt(cookieVal)).change();
-            $(preview).css("fontSize", obj.size);
         } else {
             const colorPresets = document.querySelectorAll(cookie)
             colorPresets.forEach(items => {
@@ -116,15 +116,14 @@ const magnifyCookieHandler = (type, cookie, preview, obj) => {
             document.querySelector(cookieIdVal).classList.add('active')
             obj.color = $(cookieIdVal).css("background-color");
             obj.backGroundColor = $(cookieIdVal).css("border-color");
-            $(preview).css({ 'color': obj.color, 'background-color': obj.backGroundColor, 'border-color': obj.color });
         }
     }
 }
 
-magnifyCookieHandler('size', '.text-magnify-size-input', '.text-magnifier-preview', textMagObj)
-magnifyCookieHandler('size', '.img-magnify-size-input', '.img-magnifier-preview', imgMagObj)
-magnifyCookieHandler('color', '.text-magnify-color-swatch', '.text-magnifier-preview', textMagObj)
-magnifyCookieHandler('color', '.img-magnify-color-swatch', '.img-magnifier-preview', imgMagObj)
+magnifyCookieHandler('size', '.text-magnify-size-input', textMagObj)
+magnifyCookieHandler('size', '.img-magnify-size-input', imgMagObj)
+magnifyCookieHandler('color', '.text-magnify-color-swatch', textMagObj)
+magnifyCookieHandler('color', '.img-magnify-color-swatch', imgMagObj)
 
 
 
