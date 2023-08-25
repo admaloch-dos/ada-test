@@ -9,11 +9,10 @@ if ($.cookie('TextMagnifier') == "true") {
 
 
 
-let magnifyScheme = {
-    color: 'rgb(255,255,255)',
-    backGroundColor: 'rgb(54,54,54)',
-    size: '22px',
-
+let textMagObj = {
+  color: 'rgb(255,255,255)',
+  backGroundColor: 'rgb(54,54,54)',
+  size: '22px',
 }
 
 
@@ -49,7 +48,8 @@ $(document).on('mousemove', function (e) {
 const hoverTextFunc = () => {
   //If ToggleTextMagnifier is checked
   if ($('[id="ToggleTextMagnifier"]').is(':checked')) {
-
+    $('#edit-text-magnify').css("display", "flex").hide().fadeIn();
+    $('.text-mag-preview-container').css("display", "flex").hide().fadeIn();
     var timeout = null;
     clearTimeout(timeout)
     $('#text_magnify').attr('style', 'opacity: 1!important');
@@ -58,7 +58,7 @@ const hoverTextFunc = () => {
     $('[id="ToggleZoom"]').prop('checked', false);
 
     // $('#text_magnify').attr('style', 'display: block!important');
-    $('p, a, :header, span, button, td').not('#ada-triggers, #ada-triggers ul, #ada-triggers ul li, #ada-triggers *').hover(
+    $('p, a, :header, span, button, td').not('#ada-triggers, #ada-triggers ul, #ada-triggers ul li, #ada-triggers *, #reset-text-magnify-btn, #reset-img-magnify-btn').hover(
       function (e) {
         var TextMagnify = $(this).text();
 
@@ -67,7 +67,7 @@ const hoverTextFunc = () => {
 
 
         $("#text_magnify").text(TextMagnify);
-        $('#text_magnify').css({ 'color': magnifyScheme.color, 'background-color': magnifyScheme.backGroundColor, 'font-size': magnifyScheme.size });
+        $('#text_magnify').css({ 'color': textMagObj.color, 'background-color': textMagObj.backGroundColor, 'font-size': textMagObj.size });
 
         timeout = setTimeout(() => {
           $('#text_magnify').show()
@@ -94,6 +94,8 @@ const hoverTextFunc = () => {
   }// if not checked
 
   else {
+    $('#edit-text-magnify').fadeOut()
+    $('.text-mag-preview-container').fadeOut()
     $("body").removeClass("TextMagnifier");
     $('#text_magnify').attr('style', 'display: none!important');
     clearTimeout(timeout)

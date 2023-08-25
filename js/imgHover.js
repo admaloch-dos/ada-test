@@ -10,8 +10,18 @@ if ($.cookie('ImageDescription') == "true") {
 
 }
 
+
+let imgMagObj = {
+  color: 'rgb(255,255,255)',
+  backGroundColor: 'rgb(54,54,54)',
+  size: '22px',
+}
+
+
 const imgMagFunc = () => {
   if ($('[id="ToggleImageDescription"]').is(':checked')) {
+    $('#edit-img-magnify').css("display", "flex").hide().fadeIn();
+    $('.img-mag-preview-container').css("display", "flex").hide().fadeIn();
     $('#ImageDescription_magnify').attr('style', 'opacity: 1!important');
     $('#ImageDescription_magnify').attr('style', 'display: none!important');
     $("body").addClass("ImageDescription");
@@ -22,6 +32,9 @@ const imgMagFunc = () => {
         var ImageDescription = $(this).attr("alt");
         $("#ImageDescription_magnify").text(ImageDescription);
         $('#ImageDescription_magnify').show()
+
+        $('#ImageDescription_magnify').css({ 'color': imgMagObj.color, 'background-color': imgMagObj.backGroundColor, 'font-size': imgMagObj.size });
+
         //If #text_magnify is empty, hide
         if ($('#ImageDescription_magnify').is(':empty') || ImageDescription === '') {
           $('#ImageDescription_magnify').attr('style', 'display: none!important');
@@ -38,6 +51,8 @@ const imgMagFunc = () => {
     addWidgetControls('ToggleImageDescription', 'Image description')
     widgetItemObj.isImgMag = true
   } else {
+    $('#edit-img-magnify').fadeOut()
+    $('.img-mag-preview-container').fadeOut()
     $("body").removeClass("ImageDescription");
     $('img[alt], .feature .img[alt], i.fa[alt]').hover(
       function (e) {

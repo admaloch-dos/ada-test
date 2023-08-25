@@ -1,51 +1,141 @@
-// var delay = function (elem, callback) {
+// text and image magnifier COLOR control
+const textMagColorControls = (colors, preview, cssObj) => {
+    const colorPresets = document.querySelectorAll(colors)
+    colorPresets.forEach(preset => {
 
-//     elem.onmouseover = function() {
-//         // Set timeout to be a timer which will invoke callback after 1s
-//         timeout = setTimeout(callback, 1000);
-//     };
+        preset.addEventListener('mouseenter', () => {
+            let hoverColor = $(preset).css("background-color");
+            let hoverBackGroundColor = $(preset).css("border-color");
+            $(preview).css({ 'color': hoverColor, 'background-color': hoverBackGroundColor, 'border-color': hoverColor });
 
-//     elem.onmouseout = function() {
-//         // Clear any timers set to timeout
-//         clearTimeout(timeout);
-//     }
-// };
-
-const textMagnifyPresets = document.querySelectorAll('.text-magnify-color-swatch')
-textMagnifyPresets.forEach(preset => {
-var timeout= null
-    preset.addEventListener('mouseenter', () => {
-        let color = $(preset).css("background-color");
-        let backGroundColor = $(preset).css("border-color");
-        $('.text-magnifier-preview').css({ 'color': color, 'background-color': backGroundColor, 'border-color': color });
-         timeout = setTimeout(() => {
-            $('.text-magnifier-preview').show()
-        }, 300);
-
-    })
-    preset.addEventListener('mouseleave', () => {
-        $('.text-magnifier-preview').hide()
-        clearTimeout(timeout)
-    })
-    preset.addEventListener('click', () => {
-        $('.text-magnifier-preview').hide()
-        magnifyScheme.color = $(preset).css("background-color");
-        magnifyScheme.backGroundColor = $(preset).css("border-color");
-        // console.log('color is', color, 'background is', backGroundColor)
-        document.querySelectorAll('.text-magnify-color-swatch').forEach(items => {
-            items.classList.remove('active')
         })
-        preset.classList.add('active')
+        preset.addEventListener('mouseleave', () => {
+            $(preview).css({ 'color': cssObj.color, 'background-color': cssObj.backGroundColor, 'border-color': cssObj.color });
+        })
+        preset.addEventListener('click', () => {
 
+
+            cssObj.color = $(preset).css("background-color");
+            cssObj.backGroundColor = $(preset).css("border-color");
+            // console.log('color is', color, 'background is', backGroundColor)
+            colorPresets.forEach(items => {
+                items.classList.remove('active')
+            })
+            preset.classList.add('active')
+            $(preview).css({ 'color': cssObj.color, 'background-color': cssObj.backGroundColor, 'border-color': cssObj.color });
+            $.cookie(colors.slice(1), preset.id, { path: '/' })
+
+        })
     })
+}
 
-})
+const restoreMagColorDefault = (type, colors, cssObj) => {
+    const colorPresets = document.querySelectorAll(colors)
+    colorPresets.forEach(items => {
+        items.classList.remove('active')
+    })
+    let newId = null
+    if ($.cookie('DarkContrastBackgroundCookie') == "yes" || $.cookie('InvertBackgroundCookie') == "yes") {
+        newId = `#${type}-mag-color-4`
+        cssObj.color = '#363636';
+        cssObj.backGroundColor = '#ffffff';
+    } else {
+        newId = `#${type}-mag-color-1`
+        cssObj.color = 'rgb(255,255,255)';
+        cssObj.backGroundColor = 'rgb(54,54,54)';
+    }
+    document.querySelector(newId).classList.add('active')
+    $.cookie(colors.slice(1), newId.slice(1), { path: '/' })
 
-// edit size
-const textMagSizeInput = document.querySelector('.text-magnify-size-input')
-textMagSizeInput.addEventListener('change', () => {
-    console.log('size value is', textMagSizeInput.value)
-    let updatedPxSize = `${textMagSizeInput.value}px`
-    magnifyScheme.size = updatedPxSize;
+}
 
-})
+// text and image mag SIZE control
+const textMagSizeControls = (input, preview, cssObj) => {
+    const textMagSizeInput = document.querySelector(input)
+    textMagSizeInput.addEventListener('change', () => {
+        let updatedPxSize = `${textMagSizeInput.value}px`
+        cssObj.size = updatedPxSize;
+        $.cookie(input.slice(1), updatedPxSize, { path: '/' })
+        $(preview).css("fontSize", updatedPxSize);
+    })
+}
+
+
+
+
+
+
+const restoreDefaultMagnify = (type, colors, sizeInput, cssObj) => {
+    restoreMagColorDefault(type, colors, cssObj)
+    cssObj.size = '22px'
+    $(sizeInput).val(22).change();
+    $.cookie(sizeInput.slice(1), '22px', { path: '/' })
+    console.log('size restore default input', sizeInput)
+}
+
+
+restoreDefaultTextMagSettings = () => {
+    restoreDefaultMagnify('text', '.text-magnify-color-swatch', '.text-magnify-size-input', textMagObj)
+}
+restoreDefaultImageSettings = () => {
+    restoreDefaultMagnify('img', '.img-magnify-color-swatch', '.img-magnify-size-input', imgMagObj)
+}
+
+// text magnifier
+textMagColorControls('.text-magnify-color-swatch', '.text-magnifier-preview', textMagObj)
+textMagSizeControls('.text-magnify-size-input', '.text-magnifier-preview', textMagObj)
+
+//img description
+textMagColorControls('.img-magnify-color-swatch', '.img-magnifier-preview', imgMagObj)
+textMagSizeControls('.img-magnify-size-input', '.img-magnifier-preview', imgMagObj)
+
+// cookies
+
+// if ($.cookie("text-magnify-color-swatch")) {
+//     let cookieVal = $.cookie("text-magnify-color-swatch")
+//     let cookieIdVal = `#${cookieVal}`
+//     textMagObj.color = $(cookieIdVal).css("background-color");
+//     textMagObj.backGroundColor = $(cookieIdVal).css("border-color");
+// }
+
+// func to handle cookies for text and img size and color
+const magnifyCookieHandler = (type, cookie, preview, obj) => {
+    if ($.cookie(cookie.slice(1))) {
+        let cookieVal = $.cookie(cookie.slice(1))
+        if (type === 'size') {
+            obj.size = cookieVal
+
+            $(cookie).val(parseInt(cookieVal)).change();
+            $(preview).css("fontSize", obj.size);
+        } else {
+            const colorPresets = document.querySelectorAll(cookie)
+            colorPresets.forEach(items => {
+                items.classList.remove('active')
+            })
+            let cookieIdVal = `#${cookieVal}`
+            document.querySelector(cookieIdVal).classList.add('active')
+            obj.color = $(cookieIdVal).css("background-color");
+            obj.backGroundColor = $(cookieIdVal).css("border-color");
+            $(preview).css({ 'color': obj.color, 'background-color': obj.backGroundColor, 'border-color': obj.color });
+        }
+    }
+}
+
+magnifyCookieHandler('size', '.text-magnify-size-input', '.text-magnifier-preview', textMagObj)
+magnifyCookieHandler('size', '.img-magnify-size-input', '.img-magnifier-preview', imgMagObj)
+magnifyCookieHandler('color', '.text-magnify-color-swatch', '.text-magnifier-preview', textMagObj)
+magnifyCookieHandler('color', '.img-magnify-color-swatch', '.img-magnifier-preview', imgMagObj)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

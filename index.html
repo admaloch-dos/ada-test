@@ -625,24 +625,26 @@
 
 
                       <div id="edit-text-magnify"
-                        class=" edit-text-magnify d-flex justify-content-center align-items-center">
+                        class=" edit-text-magnify ">
 
                         <div class="edit-text-magnify-color">
-                          <div id="text-magnifier-preview" class="text-magnifier-preview">
-                            <p>Text magnifier preview</p>
-                          </div>
+
                           <div class="text-magnify-color-title text-center">
                             <p class="mb-0">Color Presets:</p>
                           </div>
-                          <div class="d-flex justify-content-center text-mag-row1">
-                            <div data-id="magnify1" class="active text-magnify-color-swatch "></div>
-                            <div data-id="magnify2" class="text-magnify-color-swatch "></div>
-                            <div data-id="magnify3" class="text-magnify-color-swatch "></div>
+                          <div class="d-flex justify-content-center text-mag-row1 text-presets">
+                            <div id="text-mag-color-1"
+                              class="active text-magnify-color-swatch magnify-color-presets light-text-background-default">
+                            </div>
+                            <div id="text-mag-color-2" class="text-magnify-color-swatch magnify-color-presets "></div>
+                            <div id="text-mag-color-3" class="text-magnify-color-swatch magnify-color-presets "></div>
                           </div>
-                          <div class="d-flex justify-content-center text-mag-row2">
-                            <div data-id="magnify4" class="text-magnify-color-swatch "></div>
-                            <div data-id="magnify5" class="text-magnify-color-swatch "></div>
-                            <div data-id="magnify6" class="text-magnify-color-swatch "></div>
+                          <div class="d-flex justify-content-center text-mag-row2 text-presets">
+                            <div id="text-mag-color-4"
+                              class="text-magnify-color-swatch magnify-color-presets dark-text-background-default">
+                            </div>
+                            <div id="text-mag-color-5" class="text-magnify-color-swatch magnify-color-presets "></div>
+                            <div id="text-mag-color-6" class="text-magnify-color-swatch magnify-color-presets "></div>
                           </div>
 
 
@@ -663,10 +665,15 @@
                             <span id="text-magnify-opacity"></span>
                           </div>
 
-                          <button onclick="restoreDefaultMagnifySettings()" id="reset-text-magnify-btn"
+                          <button onclick="restoreDefaultTextMagSettings()" id="reset-text-magnify-btn"
                             class="ada-btn btn btn-secondary" role="button" type="button"
                             title="Reset Adjustments Colors"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset
                             text magnifier</button>
+                        </div>
+                      </div>
+                      <div class="text-mag-preview-container">
+                        <div id="text-magnifier-preview" class="text-magnifier-preview">
+                          <p>Text magnifier preview</p>
                         </div>
                       </div>
 
@@ -704,51 +711,58 @@
                       </div>
 
                       <p class="description">Displays image information (alt tag) larger and in high-contrast</p>
-                      <div id="edit-text-magnify"
-                      class=" edit-text-magnify d-flex justify-content-center align-items-center">
+                      <div id="edit-img-magnify"
+                        class=" edit-img-magnify ">
 
-                      <div class="edit-text-magnify-color">
-                        <div id="text-magnifier-preview" class="text-magnifier-preview">
-                          <p>Text magnifier preview</p>
+                        <div class="edit-img-magnify-color">
+
+                          <div class="img-magnify-color-title text-center">
+                            <p class="mb-0">Color Presets:</p>
+                          </div>
+                          <div class="d-flex justify-content-center text-mag-row1 img-presets">
+                            <div id="img-mag-color-1"
+                              class="active img-magnify-color-swatch magnify-color-presets light-img-background-default">
+                            </div>
+                            <div id="img-mag-color-2" class="img-magnify-color-swatch magnify-color-presets "></div>
+                            <div id="img-mag-color-3" class="img-magnify-color-swatch magnify-color-presets "></div>
+                          </div>
+                          <div class="d-flex justify-content-center text-mag-row2 img-presets">
+                            <div id="img-mag-color-4"
+                              class="img-magnify-color-swatch magnify-color-presets dark-img-background-default"></div>
+                            <div id="img-mag-color-5" class="img-magnify-color-swatch magnify-color-presets "></div>
+                            <div id="img-mag-color-6" class="img-magnify-color-swatch magnify-color-presets "></div>
+                          </div>
+
+
+
+
+
+
+
+
                         </div>
-                        <div class="text-magnify-color-title text-center">
-                          <p class="mb-0">Color Presets:</p>
+                        <div class="edit-mask-size d-flex flex-column justify-content-center align-items-center">
+                          <div id="edit-text-magnify-size "
+                            class=" d-flex flex-column justify-content-center align-items-center">
+
+                            <label for="customRange" class="form-label mb-0">Size:</label>
+                            <input type="range" class="form-range img-magnify-size-input" step="1" value="22" min="22"
+                              max="68" id="img-magnify-size-input">
+                            <span id="text-magnify-opacity"></span>
+                          </div>
+
+                          <button onclick="restoreDefaultImageSettings()" id="reset-text-magnify-btn"
+                            class="ada-btn btn btn-secondary" role="button" type="button"
+                            title="Reset Adjustments Colors"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset
+                            Settings</button>
                         </div>
-                        <div class="d-flex justify-content-center text-mag-row1">
-                          <div data-id="magnify1" class="active text-magnify-color-swatch "></div>
-                          <div data-id="magnify2" class="text-magnify-color-swatch "></div>
-                          <div data-id="magnify3" class="text-magnify-color-swatch "></div>
-                        </div>
-                        <div class="d-flex justify-content-center text-mag-row2">
-                          <div data-id="magnify4" class="text-magnify-color-swatch "></div>
-                          <div data-id="magnify5" class="text-magnify-color-swatch "></div>
-                          <div data-id="magnify6" class="text-magnify-color-swatch "></div>
-                        </div>
-
-
-
-
-
-
-
-
                       </div>
-                      <div class="edit-mask-size d-flex flex-column justify-content-center align-items-center">
-                        <div id="edit-text-magnify-size "
-                          class=" d-flex flex-column justify-content-center align-items-center">
-
-                          <label for="customRange" class="form-label mb-0">Size:</label>
-                          <input type="range" class="form-range text-magnify-size-input" step="5" value="22" min="22"
-                            max="68" id="text-magnify-size-input">
-                          <span id="text-magnify-opacity"></span>
+                      <div class="img-mag-preview-container">
+                        <div id="img-magnifier-preview" class="img-magnifier-preview">
+                          <p>Image description preview</p>
                         </div>
-
-                        <button onclick="restoreDefaultMagnifySettings()" id="reset-text-magnify-btn"
-                          class="ada-btn btn btn-secondary" role="button" type="button"
-                          title="Reset Adjustments Colors"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset
-                          text magnifier</button>
                       </div>
-                    </div>
+
                     </div><!-- ada_content -->
 
 
@@ -1818,10 +1832,11 @@
   <script src="./js/ChangeSpacing.js"></script>
   <!-- <script src="./js/ifModalChecked.js"></script> -->
   <script src="./js/text-magnify.js"></script>
+  <script src="./js/imgHover.js"></script>
   <script src="./js/edit-magnify.js"></script>
   <script src="./js/readingMask.js"></script>
   <script src="./js/readingGuide.js"></script>
-  <script src="./js/imgHover.js"></script>
+
   <script src="./js/seizure.js"></script>
   <script src="./js/highlightHover.js"></script>
   <script src="./js/highlightLinks.js"></script>

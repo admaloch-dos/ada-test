@@ -23,7 +23,8 @@ const resetAdaModal = () => {
     dismissGoogleTranslate()
 
     removeAllCookies()
-
+    restoreDefaultMagnify('text', '.text-magnify-color-swatch', '#text-magnify-size-input', textMagObj)
+    restoreDefaultMagnify('img', '.img-magnify-color-swatch', '#img-magnify-size-input', imgMagObj)
     $.cookie("reading-mask-reload", false, { path: '/' });
 }
 

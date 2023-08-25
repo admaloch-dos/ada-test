@@ -12,6 +12,7 @@ const makeColorPresetsFalse = (presetArr) => {
 const colorPresetToDefault = () => {
     changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
     changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
+
     $('#reading-mask-opacity').val('.5');
     $(".reading-mask").css({ "opacity": '.5' })
     $('body').removeClass('inverted');
@@ -53,6 +54,8 @@ const colorPresetToDefault = () => {
     widgetItemObj.isInverted = false
     widgetItemObj.isHighSat = false
     widgetItemObj.isLowSat = false
+    restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+    restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
     checkIfWidgetActive()
 }
 
@@ -74,6 +77,7 @@ $(document).ready(function () {
     if ($.cookie('DarkContrastBackgroundCookie') == "yes") {
         changeColorPicker('#ffffff', '.reading-mask', '#mask_hexVal', "#mask_color")
         changeColorPicker('#ffffff', '#tail', '#guide_hexVal', "#guide_color")
+
         $('#reading-mask-opacity').val('.7');
         $(".reading-mask").css({ "opacity": '.7' })
         $("#ADA_widget #DarkContrastBG_option").addClass("active");
@@ -103,6 +107,8 @@ $(document).ready(function () {
         $.cookie("LowSaturationBackgroundCookie", null, {
             path: '/'
         });
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
     }
 
 
@@ -112,6 +118,7 @@ $(document).ready(function () {
         $('#tail').css({ "background-color": '#000' })
         changeColorPicker('#ffffff', '.reading-mask', '#mask_hexVal', "#mask_color")
         changeColorPicker('#ffffff', '#tail', '#guide_hexVal', "#guide_color")
+
         $('#reading-mask-opacity').val('.7');
         $(".reading-mask").css({ "opacity": '.7' })
 
@@ -149,6 +156,8 @@ $(document).ready(function () {
         removeWidgetControls(['DesaturateBackground', 'HighSaturationBackground', 'LowSaturationBackground', 'InvertBackground'])
         makeColorPresetsFalse([widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
         widgetItemObj.isDarkContrast = true
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
         checkIfWidgetActive()
 
     });
@@ -167,6 +176,7 @@ $(document).ready(function () {
     if ($.cookie('DesaturatedBackgroundCookie') == "yes") {
         changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
         changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
+
         $('#reading-mask-opacity').val('.5');
         $(".reading-mask").css({ "opacity": '.5' })
         $("#ADA_widget #DesaturateBG_option").addClass("active");
@@ -196,6 +206,8 @@ $(document).ready(function () {
         $.cookie("LowSaturationBackgroundCookie", null, {
             path: '/'
         });
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
     }
 
     // When 'a.DesaturateBackground' is clicked remove other background cookies
@@ -203,6 +215,7 @@ $(document).ready(function () {
     $("#ADA_widget a.DesaturateBackground").click(function () {
         changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
         changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
+
         $('#reading-mask-opacity').val('.5');
         $(".reading-mask").css({ "opacity": '.5' })
         resetColorPicker()
@@ -241,6 +254,8 @@ $(document).ready(function () {
         makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isInverted, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
         widgetItemObj.isDesaturated = true
         checkIfWidgetActive()
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
 
     });
 
@@ -258,6 +273,7 @@ $(document).ready(function () {
     if ($.cookie('HighSaturationBackgroundCookie') == "yes") {
         changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
         changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
+
         $('#reading-mask-opacity').val('.5');
         $(".reading-mask").css({ "opacity": '.5' })
         $("#ADA_widget #HighSaturationBG_option").addClass("active");
@@ -282,6 +298,8 @@ $(document).ready(function () {
         $.cookie("DesaturatedBackgroundCookie", null, {
             path: '/'
         });
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
     }
 
     // When 'a.HighSaturationBackground' is clicked remove other background cookies and their related classes
@@ -289,6 +307,7 @@ $(document).ready(function () {
     $("#ADA_widget a.HighSaturationBackground").click(function () {
         changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
         changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
+
         $('#reading-mask-opacity').val('.5');
         $(".reading-mask").css({ "opacity": '.5' })
         $.cookie("DesaturatedBackgroundCookie", null, {
@@ -327,6 +346,8 @@ $(document).ready(function () {
         makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isLowSat])
         widgetItemObj.isHighSat = true
         checkIfWidgetActive()
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
     });
 
 
@@ -341,6 +362,7 @@ $(document).ready(function () {
     if ($.cookie('LowSaturationBackgroundCookie') == "yes") {
         changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
         changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
+
         $('#reading-mask-opacity').val('.5');
         $(".reading-mask").css({ "opacity": '.5' })
         $("#ADA_widget #LowSaturationBG_option").addClass("active");
@@ -370,6 +392,8 @@ $(document).ready(function () {
         $.cookie("HighSaturationBackgroundCookie", null, {
             path: '/'
         });
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
     }
 
     // When 'a.HighSaturationBackground' is clicked remove other background cookies and their related classes
@@ -377,6 +401,7 @@ $(document).ready(function () {
     $("#ADA_widget a.LowSaturationBackground").click(function () {
         changeColorPicker('#363636', '.reading-mask', '#mask_hexVal', "#mask_color")
         changeColorPicker('#363636', '#tail', '#guide_hexVal', "#guide_color")
+
         $('#reading-mask-opacity').val('.5');
         $(".reading-mask").css({ "opacity": '.5' })
         $.cookie("DesaturatedBackgroundCookie", null, {
@@ -417,6 +442,8 @@ $(document).ready(function () {
 
         $("#LowSaturationBG_option").addClass('active').siblings().removeClass('active');
         checkIfWidgetActive()
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
     });
 
 
@@ -433,6 +460,7 @@ $(document).ready(function () {
     if ($.cookie('InvertBackgroundCookie') == "yes") {
         changeColorPicker('#ffffff', '.reading-mask', '#mask_hexVal', "#mask_color")
         changeColorPicker('#ffffff', '#tail', '#guide_hexVal', "#guide_color")
+
         $('#reading-mask-opacity').val('.7');
         $(".reading-mask").css({ "opacity": '.7' })
         $("#ADA_widget #InvertBG_option").addClass("active");
@@ -463,6 +491,8 @@ $(document).ready(function () {
         $.cookie("LowSaturationBackgroundCookie", null, {
             path: '/'
         });
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
     }
 
     // When 'a.DesaturateBackground' is clicked remove other background cookies and their related classes
@@ -470,6 +500,7 @@ $(document).ready(function () {
     $("#ADA_widget a.InvertBackground").click(function () {
         changeColorPicker('#ffffff', '.reading-mask', '#mask_hexVal', "#mask_color")
         changeColorPicker('#ffffff', '#tail', '#guide_hexVal', "#guide_color")
+
         $('#reading-mask-opacity').val('.7');
         $(".reading-mask").css({ "opacity": '.7' })
         resetColorPicker()
@@ -508,6 +539,8 @@ $(document).ready(function () {
         makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
         widgetItemObj.isInverted = true
         checkIfWidgetActive()
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
     });
 
 
