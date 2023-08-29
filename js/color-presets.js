@@ -54,8 +54,8 @@ const colorPresetToDefault = () => {
     widgetItemObj.isInverted = false
     widgetItemObj.isHighSat = false
     widgetItemObj.isLowSat = false
-    restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-    restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+    restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+    restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
     checkIfWidgetActive()
 }
 
@@ -107,8 +107,8 @@ $(document).ready(function () {
         $.cookie("LowSaturationBackgroundCookie", null, {
             path: '/'
         });
-        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
     }
 
 
@@ -156,8 +156,8 @@ $(document).ready(function () {
         removeWidgetControls(['DesaturateBackground', 'HighSaturationBackground', 'LowSaturationBackground', 'InvertBackground'])
         makeColorPresetsFalse([widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
         widgetItemObj.isDarkContrast = true
-        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
         checkIfWidgetActive()
 
     });
@@ -206,8 +206,8 @@ $(document).ready(function () {
         $.cookie("LowSaturationBackgroundCookie", null, {
             path: '/'
         });
-        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
     }
 
     // When 'a.DesaturateBackground' is clicked remove other background cookies
@@ -254,8 +254,8 @@ $(document).ready(function () {
         makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isInverted, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
         widgetItemObj.isDesaturated = true
         checkIfWidgetActive()
-        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
 
     });
 
@@ -298,8 +298,8 @@ $(document).ready(function () {
         $.cookie("DesaturatedBackgroundCookie", null, {
             path: '/'
         });
-        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
     }
 
     // When 'a.HighSaturationBackground' is clicked remove other background cookies and their related classes
@@ -346,8 +346,8 @@ $(document).ready(function () {
         makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isLowSat])
         widgetItemObj.isHighSat = true
         checkIfWidgetActive()
-        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
     });
 
 
@@ -392,8 +392,8 @@ $(document).ready(function () {
         $.cookie("HighSaturationBackgroundCookie", null, {
             path: '/'
         });
-        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
     }
 
     // When 'a.HighSaturationBackground' is clicked remove other background cookies and their related classes
@@ -442,8 +442,8 @@ $(document).ready(function () {
 
         $("#LowSaturationBG_option").addClass('active').siblings().removeClass('active');
         checkIfWidgetActive()
-        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
     });
 
 
@@ -491,8 +491,8 @@ $(document).ready(function () {
         $.cookie("LowSaturationBackgroundCookie", null, {
             path: '/'
         });
-        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
     }
 
     // When 'a.DesaturateBackground' is clicked remove other background cookies and their related classes
@@ -539,8 +539,8 @@ $(document).ready(function () {
         makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
         widgetItemObj.isInverted = true
         checkIfWidgetActive()
-        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj)
-        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj)
+        restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
+        restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
     });
 
 

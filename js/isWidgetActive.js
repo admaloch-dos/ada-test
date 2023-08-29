@@ -3,20 +3,15 @@
 const checkIfWidgetActive = () => {
     if (Object.values(widgetItemObj).indexOf(true) > -1) {
         isWidgetActive = true
-
         $('#ADA_check_icon').fadeIn()
         $('#toggle-ada-list, #reset-ada').fadeIn()
-
-
     } else {
         isWidgetActive = false
-
         $('#ADA_check_icon').fadeOut()
         $('#toggle-ada-list, #reset-ada, #item-delete-container').fadeOut()
         $("#toggle-ada-list").removeClass("fa-toggle-on");
         $("#toggle-ada-list").addClass("fa-toggle-off");
-
-
+        $.removeCookie('deleteContainerActive');
     }
     // console.log('isWidgetActive just ran and it is currently', isWidgetActive)
 }
@@ -25,7 +20,6 @@ checkIfWidgetActive()
 const addWidgetControls = (item, text) => {
     const widgetList = document.querySelector('#widget-list')
     if (!document.querySelector(`li.${item}`)) {
-
         const listItem = document.createElement('li')
         listItem.classList.add(item, 'fade-in', 'close-list-items')
         listItem.innerHTML = `<i class="fa fa-close close-item"></i> ${text}`
@@ -33,9 +27,6 @@ const addWidgetControls = (item, text) => {
     }
     let closeItems = document.querySelectorAll('.close-list-items')
     closeItemHandler(closeItems)
-    // console.log('isWidgetActive = ', isWidgetActive)
-    // console.log('widgetItemObj = ', widgetItemObj)
-
 }
 
 const removeWidgetControls = (itemArr) => {
@@ -46,8 +37,6 @@ const removeWidgetControls = (itemArr) => {
         }, 300);
     });
     checkIfWidgetActive()
-    // console.log('isWidgetActive = ', isWidgetActive)
-    // console.log('widgetItemObj = ', widgetItemObj)
 }
 
 const closeItemHandler = (closeItems) => {
@@ -67,13 +56,12 @@ const closeItemHandler = (closeItems) => {
             item.classList.contains('line_height') && restoreSpacingDefault('#line_height', ['line_height'])
             item.classList.contains('Cursor_Enlarge_option') && restoreDefaultCursorSize()
             item.classList.contains('FontSizeMedium') && restoreDefaultFontSize()
-
-
-
+            if (item.classList.contains('google-translate')) {
+                dismissGoogleTranslate()
+                removeWidgetControls(['google-translate'])
+                widgetItemObj.isTranslated = false
+            }
             // item.classList.contains('google-translate') && restoreDefaultFontSize()
-
-
-
             let colorPreArr = ['DarkContrastBackground', 'DesaturateBackground', 'InvertBackground', 'HighSaturationBackground', 'LowSaturationBackground']
             for (let i = 0; i < colorPreArr.length; i++) {
                 if (item.classList.contains(colorPreArr[i])) {
@@ -83,9 +71,9 @@ const closeItemHandler = (closeItems) => {
             if (item.classList.contains('FontTypeDyslexic') || item.classList.contains('FontTypeBaskerville')) {
                 restoreDefaultFontType()
             }
+            checkIfWidgetActive()
         })
     })
-
 }
 
 const addWidgetControlsOnLoad = () => {
@@ -114,7 +102,3 @@ const addWidgetControlsOnLoad = () => {
     widgetItemObj.isCursorBig && addWidgetControls('Cursor_Enlarge_option', 'Change cursor')
 }
 addWidgetControlsOnLoad()
-
-
-
-

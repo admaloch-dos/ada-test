@@ -40,14 +40,13 @@ function dismissGoogleTranslate() {
   }
 }
 
-// setTimeout(() => {
-//   let langSelect = document.querySelector('.goog-te-combo')
-//   console.log(langSelect.value)
-// }, 1000);
+// selection1 === 'inherit' ? removeWidgetControls(['letter_spacing']) : addWidgetControls('letter_spacing', 'Letter spacing')
 
 
-
-
+// $(".goog-te-combo").on("change", function () {
+//   var currentVal = $(this).val();
+//   console.log(currentVal)
+// });
 
 
 

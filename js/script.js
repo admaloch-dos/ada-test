@@ -69,6 +69,9 @@ window.onclick = function (event) {
   }
 }
 
+// const toggleDeleteItemList = () =>{
+
+// }
 
 
 // widget list icon listeners
@@ -78,13 +81,23 @@ toggleWidgetList.addEventListener('click', () => {
     $("#toggle-ada-list").removeClass("fa-toggle-on");
     $("#toggle-ada-list").addClass("fa-toggle-off");
     $("#item-delete-container").fadeOut()
+    $.removeCookie('deleteContainerActive');
   } else {
     $("#toggle-ada-list").removeClass("fa-toggle-off");
     $("#toggle-ada-list").addClass("fa-toggle-on");
     $("#item-delete-container").fadeIn()
+    $.cookie("deleteContainerActive", 'true', { path: '/' });
   }
 })
 
+
+
+if ($.cookie("deleteContainerActive")) {
+  console.log('it is')
+  $("#toggle-ada-list").removeClass("fa-toggle-off");
+    $("#toggle-ada-list").addClass("fa-toggle-on");
+    $("#item-delete-container").fadeIn()
+}
 
 
 
