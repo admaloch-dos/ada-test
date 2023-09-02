@@ -118,3 +118,4 @@ const isElementLoaded = async selector => {
     }
     return document.querySelector(selector);
 };
+

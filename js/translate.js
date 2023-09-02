@@ -20,25 +20,8 @@ $(document).ready(function () {
 
 
 
-function dismissGoogleTranslate() {
 
-  // find `iframe` element with GoogleTranslate select and buttons
-  var iframe = document.getElementsByClassName('goog-te-banner-frame')[0]
-    || document.getElementById(':1.container');
-  if (!iframe) return;
 
-  // search all buttons from the retrieved iframe
-  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-  var restore_el = innerDoc.getElementsByTagName("button");
-
-  // fire `click` event on the `restore` button, that `Shows the origin`
-  for (var i = 0; i < restore_el.length; i++) {
-    if (restore_el[i].id.indexOf("restore") >= 0) {
-      restore_el[i].click();
-      return;
-    }
-  }
-}
 
 // selection1 === 'inherit' ? removeWidgetControls(['letter_spacing']) : addWidgetControls('letter_spacing', 'Letter spacing')
 

@@ -1,3 +1,5 @@
+
+
 const resetAdaModal = () => {
 
     $('#ToggleHighlightHover').prop('checked', false).trigger('change')
@@ -34,3 +36,5 @@ let resetIcon = document.getElementById('reset-ada')
 resetIcon.addEventListener('click', () => {
     resetAdaModal()
 })
+
+

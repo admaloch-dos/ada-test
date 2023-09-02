@@ -58,8 +58,7 @@ const closeItemHandler = (closeItems) => {
             item.classList.contains('FontSizeMedium') && restoreDefaultFontSize()
             if (item.classList.contains('google-translate')) {
                 dismissGoogleTranslate()
-                removeWidgetControls(['google-translate'])
-                widgetItemObj.isTranslated = false
+
             }
             // item.classList.contains('google-translate') && restoreDefaultFontSize()
             let colorPreArr = ['DarkContrastBackground', 'DesaturateBackground', 'InvertBackground', 'HighSaturationBackground', 'LowSaturationBackground']

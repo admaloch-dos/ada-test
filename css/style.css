@@ -4,7 +4,9 @@
 
 } */
 
-
+/* replaced
+#5D2D1F
+*/
 
 
 body {
@@ -14,8 +16,19 @@ body {
 
 
 
+:root {
+  --dark-blue: #142E69;
+  --light-blue: #caf0f8;
+  --blue: #0000E6;
+  --light-grey: #dee2e6;
+
+}
+
+/* background-color: var(--light-grey); */
 
 
+
+/* #EBE5E3 */
 
 
 
@@ -120,6 +133,7 @@ a {
 
 }
 
+
 /* Modal Content */
 .ada_modal_test .modal_content {
   position: absolute;
@@ -136,11 +150,86 @@ a {
 
 }
 
+/* //d-flex justify-content-center justify-content-lg-start align-items-center flex-nowrap */
+/*
+@media screen and (min-width:1000px) {
+  .ada_content p {
+    margin-left: 5rem;
+  }
+} */
+
+
+.ada_toggle label {
+  margin-bottom: 0 !important;
+}
+
+.ada-links-toggle-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.ada-toggle-container {
+  margin-bottom: 0 !important;
+}
+
 /* .rs-bar {
   display: none !important;
 } */
 
+#ADA_widget .ada-section-container {
+  background-color: white;
+  /* border: darkblue solid 1px; */
+  border-radius: 10px;
+  width: 98.5%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: .25em;
 
+}
+
+
+
+@media screen and (min-width:500px) {
+  #ADA_widget .ada-section-container {
+
+    padding: 1em;
+
+  }
+}
+
+
+
+#ada-keyboard-shortcuts {
+  height: 100%;
+  position: relative;
+  right: 7px
+}
+
+
+
+.ada-icon-style {
+  height: 30px;
+  width: 30px;
+}
+
+@media screen and (min-width:1000px) {
+  .ada-icon-style {
+    height: 40px;
+    width: 40px;
+  }
+  #ColorAdjust_option .ada-icon-style {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+#ColorAdjust_option .ada-icon-style {
+  width: 25px;
+  height: 25px;
+}
 
 
 /* all button selector */
@@ -157,9 +246,80 @@ a {
 
 .button-icon:hover {
   border: #000 solid 1px;
-  background-color: #5D2D1F;
+  background-color: var(--dark-blue);
   color: white;
   opacity: 1;
+}
+
+#main-modal-title {
+  font-size: 18px;
+}
+
+#ada-logo-icon {
+  height: 50px;
+  width: 50px;
+  margin-bottom: .25rem;
+}
+
+.ada-section-header {
+  font-size: 19px;
+  margin-left: 20px;
+  padding-top: .5rem;
+  padding-bottom: .2rem;
+}
+
+#SeizureSafe .ada_option_title {
+  overflow-wrap: break-word;
+}
+
+.ada_option_title {
+  font-weight: bold;
+  font-size: 17px;
+  font-family: Muli;
+  white-space: nowrap;
+  margin: 0 .5em;
+}
+
+.ada-setting-title {
+  font-size: 15px;
+  font-weight: 400;
+
+}
+
+@media screen and (min-width:1200px) {
+  #main-modal-title {
+    font-size: 24px;
+  }
+
+  .ada-section-header {
+    font-size: 22px;
+  }
+
+  .ada_option_title {
+    font-size: 19px;
+  }
+
+  .ada-setting-title {
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-width:1700px) {
+  #main-modal-title {
+    font-size: 27px;
+  }
+
+  .ada-section-header {
+    font-size: 25px;
+  }
+
+  .ada_option_title {
+    font-size: 22px;
+  }
+
+  .ada-setting-title {
+    font-size: 18px;
+  }
 }
 
 /* speech button selector values */
@@ -376,29 +536,31 @@ a {
     padding-left: 20px;
     padding-right: 25px;
   }
+
   #reset-mask-btn,
   #reset-guide-btn {
     font-size: 16px !important;
     padding: 2px 9px !important;
 
-    top: 10px!important;
+    top: 10px !important;
 
   }
+
   #ADA_widget .modal_body .color_picker_form input,
-#ADA_widget .modal_body #edit-guide-color input {
-  padding: 0;
-  background: transparent;
-  border-radius: 50%;
-  height: 40px!important;
-  width: 40px!important;
-  outline: 2px solid #5D2D1F;
+  #ADA_widget .modal_body #edit-guide-color input {
+    padding: 0;
+    background: transparent;
+    border-radius: 50%;
+    height: 40px !important;
+    width: 40px !important;
+    outline: 2px solid var(--dark-blue);
 
-  border-width: 3px;
-  border-color: #fff;
-  cursor: pointer;
-  transition: all 0.5s;
+    border-width: 3px;
+    border-color: #fff;
+    cursor: pointer;
+    transition: all 0.5s;
 
-}
+  }
 }
 
 
@@ -458,14 +620,20 @@ a {
 
 @media screen and (min-width:1500px) {
   .ada_modal_test .modal_content {
-    width: 82%;
+    width: 70%;
     height: 85%;
   }
 }
 
 @media screen and (min-width:1800px) {
   .ada_modal_test .modal_content {
-    width: 65%;
+    width: 60%;
+    height: 85%;
+  }
+}
+@media screen and (min-width:2200px) {
+  .ada_modal_test .modal_content {
+    width: 50%;
     height: 85%;
   }
 }
@@ -474,7 +642,7 @@ a {
 
 /* reset btn */
 #ADA_reset {
-  border: #5D2D1F solid 1px !important;
+  border: var(--dark-blue) solid 1px !important;
   padding: 5px 10px !important;
   font-size: 15px !important;
   transition: all .3s ease-in-out !important;
@@ -483,23 +651,30 @@ a {
   text-shadow: none;
   font-size: 20px;
 
-
+  position: relative;
+  bottom: .75rem;
   color: white;
+}
 
+@media screen and (min-width:768px) {
+  #ADA_reset {
+
+    position: inherit;
+    bottom: .0;
+
+  }
 }
 
 @media screen and (min-width:1200px) {
   #ADA_reset {
     font-size: 18px !important;
   }
-
-
 }
 
 
 #ADA_reset:hover {
   border: #FFF solid 1px !important;
-  background-color: #5D2D1F !important;
+  background-color: var(--dark-blue) !important;
   color: white;
 }
 
@@ -566,7 +741,7 @@ a {
 .ada_modal_test .modal_content .modal_header {
   padding: 1rem 1rem 0rem 1rem;
   border-bottom: 1px solid #dee2e6;
-  background: #5D2D1F;
+  background: var(--dark-blue);
   color: white;
   border: none;
 
@@ -616,11 +791,7 @@ a {
 
 
 
-#ADA_widget .modal_content .ada_option_title {
-  font-weight: bold;
-  font-size: 17px;
-  font-family: Muli;
-}
+
 
 
 
@@ -694,9 +865,9 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   margin-top: 0;
 }
 
-.ada_modal_test .modal_body .row:last-of-type {
+/* .ada_modal_test .modal_body .row:last-of-type {
   padding-bottom: 10px;
-}
+} */
 
 /* .ada_toggle {
   display: flex;
@@ -705,38 +876,36 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
 } */
 
 .ada_toggleContainer {
-  display: flex;
-  padding: 20px 20px 0px 20px;
+
+  /* padding: 20px 20px 0px 20px; */
 }
 
 
-@media screen and (min-width:992px) {
+
+
+/* @media screen and (min-width:992px) {
   .ada_toggleContainer .ada_content {
     padding-left: 3rem;
     width: 400px;
   }
-}
+} */
 
-#SeizureSafe .ada_content,
+/* #SeizureSafe .ada_content,
 #ReadingMask .ada_content,
 #ReadingGuide .ada_content {
   width: 350px !important;
-}
+} */
 
 
-#HighlightHover,
+/* #HighlightHover,
 #HighlightLinks,
 #TextMagnifier,
 #ImageDescription {
   max-width: 400px;
-}
+} */
 
-@media screen and (min-width:992px) {
-  #ReadingMask_option {
-    border: 1px solid gainsboro;
-    border-bottom: none;
-    border-top: none;
-  }
+/* @media screen and (min-width:992px) {
+
 
   #HighlightHover_option .ada_toggleContainer {
 
@@ -747,11 +916,18 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
 
     width: 580px;
   }
-}
+} */
 
 /* #select_page, .goog-te-combo {
   max-width: 400px;
 } */
+
+.ada_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .disable {
   pointer-events: none;
@@ -760,7 +936,7 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
 
 .ada_toggleContainer .ada_content .type {
   display: block;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.2;
   font-weight: bold;
 }
@@ -1449,6 +1625,10 @@ html.translated-ltr #wordspace_icon {
   }
 }
 
+#siteMap_form {
+  width: 100% !important;
+}
+
 @media screen and (max-width:992px) {
 
   /*	#SiteMap_option .siteMap_form > .form-group{
@@ -1494,15 +1674,23 @@ html.translated-ltr #wordspace_icon {
 
 
 /************************************************************ Sitemap ************************************************************/
-@media screen and (min-width:992px) {
+/* @media screen and (min-width:992px) {
   #SiteMap_option select {
     width: 350px;
   }
+} */
+
+#navigation-selects {
+  padding: 1.5em .25em;
 }
 
 
 #select_page {
   cursor: pointer;
+}
+
+#text-selects .section-title {
+  margin: 1rem 0;
 }
 
 #keyboard_shortcutsBtn {
@@ -1513,18 +1701,85 @@ html.translated-ltr #wordspace_icon {
   cursor: pointer;
 }
 
-/************************************************************ Keyboard Shortcuts ************************************************************/
-@media screen and (max-width:992px) {
-  #keyboard_shortcutsBtn {
-    display: none;
+#select_page {
+  width: 100%;
+  max-width: 350px;
+  /* min-width: 650px; */
+}
+
+#ada-language-presets {
+  border: none;
+  /* width: 100%; */
+}
+
+.ada-language-btn-container {
+  /* border: solid red 1px; */
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+}
+
+.ada-language-btn {
+  padding: .5rem .5rem;
+  cursor: pointer;
+  /* max-width: 150px;
+  min-width: 100px; */
+  width: 110px;
+  margin-bottom: 1rem;
+  border: rgba(181, 226, 250, .2) solid 1px;
+  background-color: rgba(181, 226, 250, .2);
+  /* opacity: .8; */
+  border-radius: 20px;
+  /* max-width: 100px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s ease-in-out all;
+}
+
+@media screen and (min-width:400px) {
+  .ada-language-btn {
+    padding: .5rem 1rem;
+    width: 140px;
   }
 }
+
+@media screen and (min-width:600px) {
+  .ada-language-btn {
+    padding: .5rem 1rem;
+    width: 140px;
+  }
+}
+
+@media screen and (min-width:1400px) {
+  .ada-language-btn {
+    padding: .5rem 1.5rem;
+    width: 200px;
+  }
+}
+
+.ada-language-btn:hover {
+
+  transform: scale(1.1);
+  border: rgba(181, 226, 250, .5) solid 1px;
+  background-color: rgba(181, 226, 250, .5);
+}
+
+.language-icons {
+  width: 25px;
+  height: 25px;
+  margin-right: 3px;
+  border-radius: 20px;
+}
+
+/************************************************************ Keyboard Shortcuts ************************************************************/
+
 
 #keyboard_shortcutsBtn {
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0;
-  max-width: 300px;
+  max-width: 375px;
   border: 1px solid #ced4da;
   border-radius: 1.25rem;
   color: initial;
@@ -1641,9 +1896,6 @@ html.translated-ltr #wordspace_icon {
   background: white;
 }
 
-.ada_modal_test .modal_body form {
-  margin-top: 20px;
-}
 
 .ada_modal_test .modal_body select.form-control {
   border-radius: 1.25rem;
@@ -1920,14 +2172,14 @@ html.translated-ltr #tooltip_template {
 
 .audio_state button {
   margin: 10px 1px;
-  padding: 5px 10px;
+  padding: 0px 3px;
   background: #003f88 !important;
   border: #072ac8 solid 1px !important;
   transition: 0.2s ease-in-out;
   color: rgba(255, 255, 255, 0.8) !important;
-
-
 }
+
+
 
 .audio_state button i {
 
@@ -1938,6 +2190,8 @@ html.translated-ltr #tooltip_template {
 
 
 }
+
+
 
 .audio_state button:hover {
 
@@ -1948,7 +2202,19 @@ html.translated-ltr #tooltip_template {
 }
 
 .audio_state button i {
-  font-size: 20px;
+  font-size: 13px;
+}
+
+@media screen and (min-width:768px) {
+  .audio_state button {
+    margin: 10px 1px;
+    padding: 5px 10px;
+
+  }
+
+  .audio_state button i {
+    font-size: 20px;
+  }
 }
 
 
@@ -2062,7 +2328,7 @@ html.translated-ltr #tooltip_template {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 120px !important;
+  width: 80px !important;
   height: 60px !important;
   background-color: #EBE5E3 !important;
   border-radius: 0.25rem;
@@ -2073,7 +2339,7 @@ html.translated-ltr #tooltip_template {
 
 
 #ADA_widget .modal_body .fontsize_form ul li:hover {
-  border-color: #5D2D1F;
+  border-color: var(--dark-blue);
 }
 
 #ADA_widget .modal_body .fontsize_form ul li a {
@@ -2114,11 +2380,7 @@ html.translated-ltr #tooltip_template {
 /************************************************************ Font Type Form ************************************************************/
 
 
-@media screen and (min-width:992px) {
-  #ADA_widget .modal_body .font_type_form h6.ada_option_title {
-    padding-left: 4.5rem;
-  }
-}
+
 
 #ADA_widget .modal_body .font_type_form ul {
   list-style: none;
@@ -2140,7 +2402,7 @@ html.translated-ltr #tooltip_template {
 }
 
 #ADA_widget .modal_body .font_type_form ul li:hover {
-  border-color: #5D2D1F;
+  border-color: var(--dark-blue);
 }
 
 #ADA_widget .modal_body .font_type_form ul li a {
@@ -2178,9 +2440,7 @@ html.translated-ltr #tooltip_template {
 
 
 /************************************************************ Cursor Swap & Reading Guide Form ************************************************************/
-#ADA_widget .modal_body .cursorSwap_form h6.ada_option_title {
-  padding-left: 2.5rem;
-}
+
 
 #ADA_widget .modal_body .cursorSwap_form ul {
   list-style: none;
@@ -2202,7 +2462,7 @@ html.translated-ltr #tooltip_template {
 }
 
 #ADA_widget .modal_body .cursorSwap_form ul li:hover {
-  border-color: #5D2D1F;
+  border-color: var(--dark-blue);
 }
 
 #ADA_widget .modal_body .cursorSwap_form ul li a {
@@ -2262,7 +2522,7 @@ html.translated-ltr #tooltip_template {
 }
 
 #ADA_widget .modal_body .bg_form ul li:hover {
-  border-color: #5D2D1F;
+  border-color: var(--dark-blue);
 }
 
 #ADA_widget .modal_body .bg_form ul li a {
@@ -2291,7 +2551,13 @@ html.translated-ltr #tooltip_template {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  padding: 20px;
+  /* padding: 20px; */
+}
+
+#ADA_widget .modal_body .bg_form ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #ADA_widget .modal_body .bg_form ul li a div.title:before {
@@ -2319,10 +2585,10 @@ html.translated-ltr #tooltip_template {
 
 
 
-@media screen and (min-width:1200px) {
+/*/* @media screen and (min-width:1200px) {
   #ADA_widget .modal_body .color_picker_form .form-group {
     width: 190px;
-    height: 140px;
+    height: 120px;
   }
 }
 
@@ -2330,11 +2596,11 @@ html.translated-ltr #tooltip_template {
   #ADA_widget .modal_body .color_picker_form .form-group {
 
     width: 200px;
-    height: 140px;
+    height: 120px;
 
 
   }
-}
+} */
 
 .hexVal {
   display: block;
@@ -2357,7 +2623,7 @@ html.translated-ltr #tooltip_template {
   border-radius: 50%;
   height: 40px;
   width: 40px;
-  outline: 2px solid #5D2D1F;
+  outline: 2px solid var(--dark-blue);
 
   border-width: 3px;
   border-color: #fff;
@@ -2374,7 +2640,7 @@ html.translated-ltr #tooltip_template {
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    outline: 2px solid #5D2D1F;
+    outline: 2px solid var(--dark-blue);
 
     border-width: 3px;
     border-color: #fff;
@@ -2445,7 +2711,7 @@ html.translated-ltr #tooltip_template {
 
 
 .ada-btn:hover {
-  background-color: #5D2D1F !important;
+  background-color: var(--dark-blue) !important;
   color: #ffffff !important;
 }
 
@@ -2504,7 +2770,7 @@ html.translated-ltr #tooltip_template {
 
 
 #ContrastRatingModal .toast-header {
-  background: #5D2D1F;
+  background: var(--dark-blue);
   padding: 0 0.75rem;
   display: -ms-flexbox;
   display: flex;
@@ -2610,7 +2876,7 @@ html.translated-ltr #tooltip_template {
 
 /*************** FOR ACTIVE CLASS ***************/
 #ADA_widget .modal_body .form-check ul li.active {
-  background-color: #5D2D1F !important;
+  background-color: var(--dark-blue) !important;
 }
 
 #ADA_widget .modal_body .form-check ul li.active a {
@@ -2640,7 +2906,7 @@ html.translated-ltr #tooltip_template {
 }
 
 .form-check ul li:hover {
-  border: #5D2D1F solid 2px !important;
+  border: var(--dark-blue) solid 2px !important;
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -2649,7 +2915,7 @@ html.translated-ltr #tooltip_template {
 }
 
 .form-check a:hover {
-  color: #5D2D1F !important;
+  color: var(--dark-blue) !important;
 }
 
 
@@ -2703,13 +2969,13 @@ background-color: lightgray;
   }
 
   #ADA_widget .modal_body ul li {
-    width: 117px !important;
+    width: 95px !important;
     height: 75px !important;
   }
 
   #ADA_widget .modal_body .bg_form ul li {
-    width: 140px !important;
-    height: 85px !important;
+    width: 100px !important;
+    height: 75px !important;
   }
 
   .title {
@@ -2717,26 +2983,15 @@ background-color: lightgray;
 
   }
 
-  #main-modal-title {
-    margin-left: 50px !important;
-  }
 
 }
 
-@media screen and (min-width:992px) {
 
-  #main-modal-title {
-    margin-left: 70px !important;
-  }
-
-}
 
 @media screen and (min-width:1200px) {
 
 
-  #ADA_widget .modal_content .ada_option_title {
-    font-size: 19px;
-  }
+
 
   .ada_toggleContainer .ada_content .description {
     font-size: 17px;
@@ -2748,19 +3003,19 @@ background-color: lightgray;
   }
 
   #ADA_widget .modal_body .bg_form ul li {
-    width: 145px !important;
-    height: 90px !important;
+    width: 115px !important;
+    height: 80px !important;
   }
 
 
   #ADA_widget .modal_body #FontSize_option ul li,
   #ADA_widget .modal_body #Cursor_option ul li {
-    width: 138px !important;
+    width: 108px !important;
     height: 90px !important;
   }
 
   #ADA_widget .modal_body #FontFamily_option ul li {
-    width: 105px !important;
+    width: 95px !important;
     height: 90px !important;
   }
 
@@ -2772,36 +3027,17 @@ background-color: lightgray;
 @media screen and (min-width:1500px) {
 
 
-  #ADA_widget .modal_content .ada_option_title {
-    font-size: 21px;
-  }
+
 
   .ada_toggleContainer .ada_content .description {
     font-size: 18px;
   }
 
-  #ADA_widget .modal_body ul li {
 
-    width: 118px !important;
-    height: 90px !important;
 
-  }
 
-  #ADA_widget .modal_body #FontSize_option ul li,
-  #ADA_widget .modal_body #Cursor_option ul li {
-    width: 148px !important;
-    height: 100px !important;
-  }
 
-  #ADA_widget .modal_body #FontFamily_option ul li {
-    width: 115px !important;
-    height: 100px !important;
-  }
 
-  #ADA_widget .modal_body .bg_form ul li {
-    width: 155px !important;
-    height: 100px !important;
-  }
 
 
 
@@ -2836,16 +3072,7 @@ background-color: lightgray;
     font-size: 25px;
   }
 
-  #ADA_widget .modal_body #FontSize_option ul li,
-  #ADA_widget .modal_body #Cursor_option ul li {
-    width: 158px !important;
-    height: 100px !important;
-  }
 
-  #ADA_widget .modal_body #FontFamily_option ul li {
-    width: 115px !important;
-    height: 100px !important;
-  }
 }
 
 
@@ -2865,7 +3092,32 @@ background-color: lightgray;
   display: none;
 }
 
-.skiptranslate iframe, .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+.skiptranslate iframe,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
   display: none;
+}
+
+.goog-te-combo {
+  max-width: 600px;
+  /* width: 800px; */
+
+}
+
+@media screen and (min-width:768px) {
+  .goog-te-combo {
+    width: 400px;
+    /* width: 800px; */
+
+  }
+}
+@media screen and (min-width:1200px) {
+  .goog-te-combo {
+    width: 600px;
+    /* width: 800px; */
+
   }
 
+  #SeizureSafe_option {
+    margin-left: 3rem;
+  }
+}
