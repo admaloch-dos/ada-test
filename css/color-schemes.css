@@ -278,7 +278,8 @@ body.Cursor_Enlarge {
 #ADA_widget .modal_body .color_picker_form .form-group {
     margin-bottom: 1rem;
     display: inline-table;
-    background-color: lightgray;
+    background-color: var(--color-3);
+    ;
     border-radius: 0.25rem;
     padding: 10px;
     width: 100px;
@@ -287,6 +288,16 @@ body.Cursor_Enlarge {
     text-align: center;
 
 }
+
+/* #remove_cookie {
+    margin-bottom: 10px;
+}
+
+@media (min-width: 438px) {
+    #remove_cookie {
+        margin-bottom: 0px;
+    }
+} */
 
 /* .back-color-text {
     font-size: 12px;
@@ -299,6 +310,7 @@ body.Cursor_Enlarge {
         height: 130px;
     }
 }
+
 @media (min-width: 1500px) {
 
     #ADA_widget .modal_body .color_picker_form .form-group {
@@ -340,7 +352,7 @@ font-size: 12px;
 } */
 
 /* #reset-mask-btn:hover {
-    background-color: var(--dark-blue) !important;
+    background-color: var(--color-1) !important;
     color: #ffffff !important;
 } */
 
@@ -656,7 +668,7 @@ body.BaskervilleFont {
 
 .highcontrast #ADA_widget .modal_body ul li.active,
 .highcontrast #ADA_widget .modal_body ul li:hover {
-    border: var(--dark-blue) solid 2px;
+    border: var(--color-1) solid 2px;
 
     box-shadow: none;
 }

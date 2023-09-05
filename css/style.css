@@ -15,24 +15,45 @@ body {
 }
 
 
-
 :root {
-  --dark-blue: #142E69;
-  --light-blue: #caf0f8;
+  --color-1: #142E69;
+  --color-2: #f8f9fa;
+
+  --color-3: rgba(220, 220, 221, .35);
+  --color-4: rgba(171, 196, 255, .2);
+  --color-5: #e9ecef;
+  --color-6: rgba(171, 196, 255, .7);
+
   --blue: #0000E6;
-  --light-grey: #dee2e6;
 
 }
 
-/* background-color: var(--light-grey); */
+/* background-color: var(--color-3); */
 
 
 
-/* #EBE5E3 */
+/* var(--color-3);*/
 
 
+@media screen and (min-width:992px) {
 
+  #link-emphasis,
+  #Magnify_options,
+  #FontSize_option,
+  #text-selects,
+  #text-reading-assistance,
+  #TTS_option,
+  #contact_section,
+  #language-options,
+  #navigation-selects,
+  #color-schemes,
+  #contact_section {
+    padding: 1rem;
+    /* background-color: var(--color-4); */
+  }
+}
 
+/* #link-emphasis,  */
 
 
 
@@ -127,7 +148,7 @@ a {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
-  display: none;
+  display: block;
   align-items: center;
   justify-content: center;
 
@@ -137,7 +158,7 @@ a {
 /* Modal Content */
 .ada_modal_test .modal_content {
   position: absolute;
-  display: none;
+  display: block;
   background-color: #fefefe;
   margin: auto;
 
@@ -151,12 +172,24 @@ a {
 }
 
 /* //d-flex justify-content-center justify-content-lg-start align-items-center flex-nowrap */
-/*
+
 @media screen and (min-width:1000px) {
   .ada_content p {
     margin-left: 5rem;
   }
-} */
+}
+
+.ada_content {
+  padding: 1rem 0;
+}
+
+@media screen and (min-width:500px) {
+  .ada_content {
+    padding: 1rem 1rem;
+  }
+}
+
+
 
 
 .ada_toggle label {
@@ -171,15 +204,25 @@ a {
 
 .ada-toggle-container {
   margin-bottom: 0 !important;
+  margin-left: 0 !important;
 }
+
+
+@media screen and (min-width:992px) {
+  #SeizureSafe_option {
+    position: relative;
+    right: 9px;
+  }
+}
+
 
 /* .rs-bar {
   display: none !important;
 } */
 
 #ADA_widget .ada-section-container {
-  background-color: white;
-  /* border: darkblue solid 1px; */
+  background-color: var(--color-2);
+  border: var(--color-1) solid 1px;
   border-radius: 10px;
   width: 98.5%;
   margin: 0 auto;
@@ -211,25 +254,70 @@ a {
 
 
 .ada-icon-style {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
 }
 
-@media screen and (min-width:1000px) {
-  .ada-icon-style {
-    height: 40px;
-    width: 40px;
-  }
-  #ColorAdjust_option .ada-icon-style {
-    width: 35px;
-    height: 35px;
-  }
+#language-options .ada-icon-style {
+  /* width: 25px;
+  height: 25px; */
+  position: relative;
+  top: 2px;
 }
 
 #ColorAdjust_option .ada-icon-style {
   width: 25px;
   height: 25px;
 }
+
+#site-color-presets .ada-icon-style {
+  height: 39px;
+  width: 39px;
+  position: relative;
+  bottom: 1px;
+}
+
+#site-color-presets .ada_option_title {
+  position: relative;
+  right: 9px;
+}
+
+#LineHeight_option .ada_option_title {
+  margin-left: 0 !important;
+}
+
+#LetterSpacing_option .ada-icon-style {
+  position: relative;
+  bottom: 2px;
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width:1000px) {
+  .ada-icon-style {
+    height: 40px;
+    width: 40px;
+  }
+
+  #ColorAdjust_option .ada-icon-style {
+    width: 33px;
+    height: 33px;
+  }
+
+  #site-color-presets .ada-icon-style {
+    height: 43px;
+    width: 43px;
+    position: relative;
+    bottom: 1px;
+  }
+}
+
+
 
 
 /* all button selector */
@@ -246,7 +334,7 @@ a {
 
 .button-icon:hover {
   border: #000 solid 1px;
-  background-color: var(--dark-blue);
+  background-color: var(--color-1);
   color: white;
   opacity: 1;
 }
@@ -553,7 +641,7 @@ a {
     border-radius: 50%;
     height: 40px !important;
     width: 40px !important;
-    outline: 2px solid var(--dark-blue);
+    outline: 2px solid var(--color-1);
 
     border-width: 3px;
     border-color: #fff;
@@ -571,7 +659,7 @@ a {
 .ada_modal_test .modal_body {
 
   padding: 1rem 0rem;
-  background: #EBE5E3;
+  background: var(--color-5);
   overflow: auto;
   height: 93%;
 }
@@ -602,7 +690,7 @@ a {
 
   .ada_modal_test .modal_body {
     padding: 1rem 0rem;
-    background: #EBE5E3;
+
     overflow: auto;
     height: 95%;
   }
@@ -627,13 +715,14 @@ a {
 
 @media screen and (min-width:1800px) {
   .ada_modal_test .modal_content {
-    width: 60%;
+    width: 68%;
     height: 85%;
   }
 }
-@media screen and (min-width:2200px) {
+
+@media screen and (min-width:2100px) {
   .ada_modal_test .modal_content {
-    width: 50%;
+    width: 60%;
     height: 85%;
   }
 }
@@ -642,7 +731,7 @@ a {
 
 /* reset btn */
 #ADA_reset {
-  border: var(--dark-blue) solid 1px !important;
+  border: var(--color-1) solid 1px !important;
   padding: 5px 10px !important;
   font-size: 15px !important;
   transition: all .3s ease-in-out !important;
@@ -674,7 +763,7 @@ a {
 
 #ADA_reset:hover {
   border: #FFF solid 1px !important;
-  background-color: var(--dark-blue) !important;
+  background-color: var(--color-1) !important;
   color: white;
 }
 
@@ -741,7 +830,7 @@ a {
 .ada_modal_test .modal_content .modal_header {
   padding: 1rem 1rem 0rem 1rem;
   border-bottom: 1px solid #dee2e6;
-  background: var(--dark-blue);
+  background: var(--color-1);
   color: white;
   border: none;
 
@@ -791,7 +880,10 @@ a {
 
 
 
-
+#alt-filter-text {
+  position: relative;
+  bottom: 15px!important;
+}
 
 
 
@@ -922,12 +1014,12 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   max-width: 400px;
 } */
 
-.ada_content {
+/* .ada_content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .disable {
   pointer-events: none;
@@ -1726,8 +1818,8 @@ html.translated-ltr #wordspace_icon {
   min-width: 100px; */
   width: 110px;
   margin-bottom: 1rem;
-  border: rgba(181, 226, 250, .2) solid 1px;
-  background-color: rgba(181, 226, 250, .2);
+  border: var(--color-4) solid 1px;
+  background-color: var(--color-4);
   /* opacity: .8; */
   border-radius: 20px;
   /* max-width: 100px; */
@@ -1735,6 +1827,13 @@ html.translated-ltr #wordspace_icon {
   justify-content: center;
   align-items: center;
   transition: .2s ease-in-out all;
+}
+
+.ada-language-btn:hover {
+
+  transform: scale(1.1);
+  border: var(--color-6) solid 1px;
+  background-color: var(--color-6);
 }
 
 @media screen and (min-width:400px) {
@@ -1758,12 +1857,7 @@ html.translated-ltr #wordspace_icon {
   }
 }
 
-.ada-language-btn:hover {
 
-  transform: scale(1.1);
-  border: rgba(181, 226, 250, .5) solid 1px;
-  background-color: rgba(181, 226, 250, .5);
-}
 
 .language-icons {
   width: 25px;
@@ -2330,7 +2424,8 @@ html.translated-ltr #tooltip_template {
   align-items: center;
   width: 80px !important;
   height: 60px !important;
-  background-color: #EBE5E3 !important;
+  background-color: var(--color-3);
+  !important;
   border-radius: 0.25rem;
   border: 2px solid transparent;
   margin-bottom: 5px;
@@ -2339,7 +2434,7 @@ html.translated-ltr #tooltip_template {
 
 
 #ADA_widget .modal_body .fontsize_form ul li:hover {
-  border-color: var(--dark-blue);
+  border-color: var(--color-1);
 }
 
 #ADA_widget .modal_body .fontsize_form ul li a {
@@ -2395,14 +2490,15 @@ html.translated-ltr #tooltip_template {
   align-items: center;
   width: 118px;
   height: 70px;
-  background-color: #EBE5E3 !important;
+  background-color: var(--color-3);
+  !important;
   border-radius: 0.25rem;
   border: 2px solid transparent;
   margin-bottom: 5px;
 }
 
 #ADA_widget .modal_body .font_type_form ul li:hover {
-  border-color: var(--dark-blue);
+  border-color: var(--color-1);
 }
 
 #ADA_widget .modal_body .font_type_form ul li a {
@@ -2455,14 +2551,15 @@ html.translated-ltr #tooltip_template {
   align-items: center;
   width: 118px;
   height: 70px;
-  background-color: #EBE5E3 !important;
+  background-color: var(--color-3);
+  !important;
   border-radius: 0.25rem;
   border: 2px solid transparent;
   margin-bottom: 5px;
 }
 
 #ADA_widget .modal_body .cursorSwap_form ul li:hover {
-  border-color: var(--dark-blue);
+  border-color: var(--color-1);
 }
 
 #ADA_widget .modal_body .cursorSwap_form ul li a {
@@ -2515,14 +2612,15 @@ html.translated-ltr #tooltip_template {
   justify-content: center;
   align-items: center;
 
-  background-color: #EBE5E3 !important;
+  background-color: var(--color-3);
+  !important;
   border-radius: 0.25rem;
   border: 2px solid transparent;
   margin-bottom: 5px;
 }
 
 #ADA_widget .modal_body .bg_form ul li:hover {
-  border-color: var(--dark-blue);
+  border-color: var(--color-1);
 }
 
 #ADA_widget .modal_body .bg_form ul li a {
@@ -2572,7 +2670,8 @@ html.translated-ltr #tooltip_template {
 #ADA_widget .modal_body #edit-reading-guide .form-group {
   margin-bottom: 1rem;
   display: inline-table;
-  background-color: #EBE5E3 !important;
+  background-color: var(--color-3);
+  !important;
   border-radius: 0.25rem;
   padding: 10px 20px;
   width: 152px;
@@ -2623,7 +2722,7 @@ html.translated-ltr #tooltip_template {
   border-radius: 50%;
   height: 40px;
   width: 40px;
-  outline: 2px solid var(--dark-blue);
+  outline: 2px solid var(--color-1);
 
   border-width: 3px;
   border-color: #fff;
@@ -2640,7 +2739,7 @@ html.translated-ltr #tooltip_template {
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    outline: 2px solid var(--dark-blue);
+    outline: 2px solid var(--color-1);
 
     border-width: 3px;
     border-color: #fff;
@@ -2693,7 +2792,8 @@ html.translated-ltr #tooltip_template {
 
 
 .ada-btn {
-  background-color: #EBE5E3 !important;
+  background-color: var(--color-3);
+  !important;
   color: #000 !important;
   padding: 3px 12px;
 
@@ -2711,7 +2811,7 @@ html.translated-ltr #tooltip_template {
 
 
 .ada-btn:hover {
-  background-color: var(--dark-blue) !important;
+  background-color: var(--color-1) !important;
   color: #ffffff !important;
 }
 
@@ -2770,7 +2870,7 @@ html.translated-ltr #tooltip_template {
 
 
 #ContrastRatingModal .toast-header {
-  background: var(--dark-blue);
+  background: var(--color-1);
   padding: 0 0.75rem;
   display: -ms-flexbox;
   display: flex;
@@ -2876,7 +2976,7 @@ html.translated-ltr #tooltip_template {
 
 /*************** FOR ACTIVE CLASS ***************/
 #ADA_widget .modal_body .form-check ul li.active {
-  background-color: var(--dark-blue) !important;
+  background-color: var(--color-1) !important;
 }
 
 #ADA_widget .modal_body .form-check ul li.active a {
@@ -2906,7 +3006,7 @@ html.translated-ltr #tooltip_template {
 }
 
 .form-check ul li:hover {
-  border: var(--dark-blue) solid 2px !important;
+  border: var(--color-1) solid 2px !important;
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -2915,7 +3015,7 @@ html.translated-ltr #tooltip_template {
 }
 
 .form-check a:hover {
-  color: var(--dark-blue) !important;
+  color: var(--color-1) !important;
 }
 
 
@@ -3110,6 +3210,7 @@ background-color: lightgray;
 
   }
 }
+
 @media screen and (min-width:1200px) {
   .goog-te-combo {
     width: 600px;
@@ -3117,7 +3218,7 @@ background-color: lightgray;
 
   }
 
-  #SeizureSafe_option {
+  /* #SeizureSafe_option {
     margin-left: 3rem;
-  }
+  } */
 }
