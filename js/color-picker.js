@@ -98,9 +98,7 @@ const onInputChange = (e) => {
     widgetItemObj.isBackColorChanged = true
     widgetItemObj.isLinkColorChanged = true
     addWidgetControls('ColorPicker', 'Custom colors')
-
     checkIfWidgetActive()
-
     if ($('body').hasClass('highcontrast') || $('body').hasClass('inverted') || $('body').hasClass('desaturated')) {
         $("body").removeClass("highcontrast inverted desaturated")
         $.removeCookie('InvertBackgroundCookie');
@@ -109,11 +107,9 @@ const onInputChange = (e) => {
         $.removeCookie('DarkContrastBackgroundCookie');
         $.removeCookie('DesaturatedBackgroundCookie');
         $.removeCookie('DesaturatedBackgroundCookie');
-
         $("#DefaultBG_option").addClass('active').siblings().removeClass('active');
         removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'InvertBackground'])
         // makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
-
         widgetItemObj.isDarkContrast = false
         widgetItemObj.isDesaturated = false
         widgetItemObj.isInverted = false
@@ -172,57 +168,32 @@ const onInputChange = (e) => {
 
 
     let resultMsg = ``;
-    // console.log();
-    if (
-        (bgTextContrast >= 4.5) && (bgLinkContrast >= 4.5) && (textLinkContrast >= config.linkContrast)
-    ) {
-        //resultMsg = `✅ w00t! all good!`;
+    console.log();
+
+    if (bgTextContrast >= 4.5) {
         $(cache.BgtoText).attr('class', 'pass').text('Pass');
-        $(cache.BgtoLink).attr('class', 'pass').text('Pass');
-        $(cache.TexttoLink).attr('class', 'pass').text('Pass');
-    } else if (
-        (bgTextContrast >= 4.5) && (bgLinkContrast >= 4.5) && (textLinkContrast < 3.1)
-    ) {
-        //resultMsg = `Your link and text colors have enough contrast from the background, but not each other`;
-        $(cache.TexttoLink).attr('class', 'fail').text('Fail');
+    } else if (bgTextContrast <= 4.5) {
         $(cache.BgtoText).attr('class', 'fail').text('Fail');
+    }
+    if (bgLinkContrast >= 4.5) {
         $(cache.BgtoLink).attr('class', 'pass').text('Pass');
-    } else if (
-        (bgTextContrast < 4.5) && (bgLinkContrast >= 4.5)
-    ) {
-        //resultMsg = `Your text color doesn't have enough contrast with the background. You should fix that before worrying about the link color.`;
-        $(cache.BgtoText).attr('class', 'fail').text('Fail');
-        $(cache.BgtoLink).attr('class', 'pass').text('Pass');
-        $(cache.TexttoLink).attr('class', 'pass').text('Pass');
-    } else if (
-        (bgTextContrast < 4.5) && (bgLinkContrast < 4.5)
-    ) {
-        //resultMsg = `Both your text and link colors don't have enough contrast with the background.`;
-        $(cache.TexttoLink).attr('class', 'fail').text('Fail');
-        $(cache.BgtoText).attr('class', 'fail').text('Fail');
-        $(cache.BgtoLink).attr('class', 'pass').text('Pass');
-    } else if (
-        (bgTextContrast >= 4.5) && (bgLinkContrast < 4.5)
-    ) {
-        //resultMsg = `Your link color doesn't have enough contrast with the background. You should fix that before worrying about the link color's contrast with the text.`;
+    } else if (bgLinkContrast <= 4.5) {
         $(cache.BgtoLink).attr('class', 'fail').text('Fail');
-        $(cache.BgtoText).attr('class', 'pass').text('Pass');
+    }
+    if (textLinkContrast >= 3) {
         $(cache.TexttoLink).attr('class', 'pass').text('Pass');
+    } else if (textLinkContrast <= 3) {
+        $(cache.TexttoLink).attr('class', 'fail').text('Fail');
     }
 
-    //Prints resultMsg to p.result_Contrast
-    //cache.result.textContent = resultMsg;
 
-    const bgTextcontrastValues = `Background to Text Contrast: ${bgTextContrast}`;
-    const bgLinkCcontrastValues = `Background to Link Contrast: ${bgLinkContrast}`;
-    const textLinkcontrastValues = `Text to Link Contrast: ${textLinkContrast}`;
+    const bgTextcontrastValues = `Text to background contrast: ${bgTextContrast}`;
+    const bgLinkCcontrastValues = `Link to background contrast: ${bgLinkContrast}`;
+    const textLinkcontrastValues = `Link to text contrast: ${textLinkContrast}`;
 
     cache.BgtoText.innerHTML = bgTextcontrastValues;
     cache.BgtoLink.innerHTML = bgLinkCcontrastValues;
     cache.TexttoLink.innerHTML = textLinkcontrastValues;
-
-
-
 
 
 };
@@ -239,11 +210,7 @@ const init = () => {
     addEventListeners();
 }
 init();
-// $("#ADA_reset").click(function () {
-//   cache.bgColor.value = "#ffffff";
-//   cache.textColor.value = "#212529";
-//   cache.linkColor.value = "#3863FF";
-// });
+
 
 
 

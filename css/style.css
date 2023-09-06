@@ -14,15 +14,16 @@ body {
 
 }
 
-
+/* #e9ecef; */
 :root {
   --color-1: #142E69;
   --color-2: #f8f9fa;
 
   --color-3: rgba(220, 220, 221, .35);
   --color-4: rgba(171, 196, 255, .2);
-  --color-5: #e9ecef;
+  --color-5: #edf2fb;
   --color-6: rgba(171, 196, 255, .7);
+  --color-7: rgba(0, 0, 230, .025);
 
   --blue: #0000E6;
 
@@ -34,21 +35,28 @@ body {
 
 /* var(--color-3);*/
 
+.ada-sub-section,
+.ada-section-container {
+
+  /* background-color: var(--color-4); */
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.05);
+
+}
+
+/* .ada-sub-section  {
+  transition: .3s ease-in-out all;
+background-color: var(--color-7)!important;
+}
+
+.ada-sub-section:hover {
+  background-color: var(--color-7)!important;
+} */
 
 @media screen and (min-width:992px) {
 
-  #link-emphasis,
-  #Magnify_options,
-  #FontSize_option,
-  #text-selects,
-  #text-reading-assistance,
-  #TTS_option,
-  #contact_section,
-  #language-options,
-  #navigation-selects,
-  #color-schemes,
-  #contact_section {
-    padding: 1rem;
+  .ada-sub-section {
+    padding: 1.2rem 1rem 1rem 1rem;
     /* background-color: var(--color-4); */
   }
 }
@@ -148,17 +156,20 @@ a {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
-  display: block;
+  display: none;
   align-items: center;
   justify-content: center;
 
 }
 
+.form-check {
+  padding-left: 0 !important;
+}
 
 /* Modal Content */
 .ada_modal_test .modal_content {
   position: absolute;
-  display: block;
+  display: none;
   background-color: #fefefe;
   margin: auto;
 
@@ -173,11 +184,11 @@ a {
 
 /* //d-flex justify-content-center justify-content-lg-start align-items-center flex-nowrap */
 
-@media screen and (min-width:1000px) {
+/* @media screen and (min-width:1000px) {
   .ada_content p {
     margin-left: 5rem;
   }
-}
+} */
 
 .ada_content {
   padding: 1rem 0;
@@ -261,8 +272,8 @@ a {
 #language-options .ada-icon-style {
   /* width: 25px;
   height: 25px; */
-  position: relative;
-  top: 2px;
+margin-left: 2px;
+margin-top: 2px;
 }
 
 #ColorAdjust_option .ada-icon-style {
@@ -290,6 +301,7 @@ a {
   position: relative;
   bottom: 2px;
 }
+
 
 
 
@@ -619,7 +631,7 @@ a {
   }
 }
 
-@media screen and (min-width:1400px) {
+@media screen and (min-width:1300px) {
   #edit-mask-color {
     padding-left: 20px;
     padding-right: 25px;
@@ -639,8 +651,8 @@ a {
     padding: 0;
     background: transparent;
     border-radius: 50%;
-    height: 40px !important;
-    width: 40px !important;
+    height: 50px !important;
+    width: 50px !important;
     outline: 2px solid var(--color-1);
 
     border-width: 3px;
@@ -882,7 +894,7 @@ a {
 
 #alt-filter-text {
   position: relative;
-  bottom: 15px!important;
+  bottom: 15px !important;
 }
 
 
@@ -967,10 +979,6 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   align-items: center;
 } */
 
-.ada_toggleContainer {
-
-  /* padding: 20px 20px 0px 20px; */
-}
 
 
 
@@ -996,7 +1004,7 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   max-width: 400px;
 } */
 
-/* @media screen and (min-width:992px) {
+@media screen and (min-width:992px) {
 
 
   #HighlightHover_option .ada_toggleContainer {
@@ -1008,11 +1016,11 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
 
     width: 580px;
   }
-} */
+}
 
 /* #select_page, .goog-te-combo {
   max-width: 400px;
-} */
+}
 
 /* .ada_content {
   display: flex;
@@ -1785,6 +1793,22 @@ html.translated-ltr #wordspace_icon {
   margin: 1rem 0;
 }
 
+#text-selects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width:1000px) {
+  #text-selects {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 #keyboard_shortcutsBtn {
   text-decoration: none;
 }
@@ -2275,15 +2299,7 @@ html.translated-ltr #tooltip_template {
 
 
 
-.audio_state button i {
 
-  background: #003f88 !important;
-  border: #072ac8 solid 1px !important;
-  transition: 0.2s ease-in-out;
-  color: rgba(255, 255, 255, 0.8) !important;
-
-
-}
 
 
 
@@ -2425,7 +2441,7 @@ html.translated-ltr #tooltip_template {
   width: 80px !important;
   height: 60px !important;
   background-color: var(--color-3);
-  !important;
+
   border-radius: 0.25rem;
   border: 2px solid transparent;
   margin-bottom: 5px;
@@ -2671,7 +2687,7 @@ html.translated-ltr #tooltip_template {
   margin-bottom: 1rem;
   display: inline-table;
   background-color: var(--color-3);
-  !important;
+
   border-radius: 0.25rem;
   padding: 10px 20px;
   width: 152px;
@@ -2681,6 +2697,103 @@ html.translated-ltr #tooltip_template {
 
 }
 
+#ADA_widget .modal_body #FontSize_option ul li {
+  width: 70px !important;
+  height: 60px !important;
+}
+
+#FontSize_option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+@media screen and (min-width:500px) {
+  #ADA_widget .modal_body .color_picker_form .form-group {
+    width: 130px !important;
+    height: 120px !important;
+  }
+
+  #ADA_widget .modal_body ul li {
+    width: 100px !important;
+    height: 90px !important;
+  }
+
+  #ADA_widget .modal_body #FontSize_option ul li {
+    width: 120px !important;
+    height: 80px !important;
+  }
+}
+
+@media screen and (min-width:700px) {
+  #ADA_widget .modal_body .color_picker_form .form-group {
+    width: 140px !important;
+    height: 130px !important;
+  }
+
+  #ADA_widget .modal_body ul li {
+    width: 150px !important;
+    height: 90px !important;
+  }
+
+  #ADA_widget .modal_body #FontSize_option ul li {
+    width: 150px !important;
+    height: 90px !important;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  #FontSize_option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+  }
+
+  #ADA_widget .modal_body #FontSize_option ul li {
+    width: 130px !important;
+    height: 100px !important;
+  }
+
+}
+
+@media screen and (min-width:1300px) {
+  #ADA_widget .modal_body .color_picker_form .form-group {
+    padding-top: 20px !important;
+    width: 180px !important;
+    height: 160px !important;
+  }
+
+  #ADA_widget .modal_body ul li {
+    width: 140px !important;
+    height: 95px !important;
+  }
+
+
+}
+
+@media screen and (min-width:1800px) {
+  /* #ADA_widget .modal_body .color_picker_form .form-group {
+    padding-top: 30px !important;
+    width: 200px !important;
+    height: 170px !important;
+  } */
+
+  #ADA_widget .modal_body ul li {
+    width: 160px !important;
+    height: 110px !important;
+  }
+
+  #ADA_widget .modal_body #FontSize_option ul li {
+    width: 140px !important;
+    height: 100px !important;
+  }
+}
 
 
 
@@ -2850,20 +2963,24 @@ html.translated-ltr #tooltip_template {
   opacity: 1;
   display: block;
   position: absolute;
-  top: -3%;
-  right: 15px;
+  bottom: 10rem;
+  /* left: 14rem; */
+  /* right: 15px; */
   background: white !important;
   max-width: 330px !important;
   width: 100%;
   overflow: visible;
+  border-radius: 10px;
+  border: var(--color-4) solid 6px;
+
 }
 
-@media screen and (max-width:576px) {
+/* @media screen and (max-width:576px) {
   #ContrastRatingModal {
     top: 52% !important;
     right: 0px !important;
   }
-}
+} */
 
 /* The Open Button */
 
@@ -2878,7 +2995,10 @@ html.translated-ltr #tooltip_template {
   align-items: center;
   justify-content: space-between;
   background-clip: padding-box;
-  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  -webkit-border-radius: 10px 10px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+  /* border-bottom: 1px solid var(--color-3); */
+
 }
 
 
@@ -2934,22 +3054,34 @@ html.translated-ltr #tooltip_template {
 }
 
 #ColorAdjust_option #wcagDropdown {
-  opacity: 1 !important;
+
+  padding: 1rem;
+
   position: absolute;
-  top: -9rem !important;
-  right: 7rem !important;
-  color: white !important;
+  top: -7rem !important;
+  right: -1.1rem !important;
+  color: #363636 !important;
   overflow: hidden !important;
   width: 350px !important;
-  background-color: #1a1a1a !important;
-  height: 125px !important;
-  top: -7.5rem !important;
+  background-color: white !important;
+  border: var(--color-1) solid 2px;
+  border-radius: 10px;
+  height: 100px !important;
+
   font-size: 14px !important;
 }
 
-#ColorAdjust_option #wcagDropdown a {
+#ColorAdjust_option #wcagDropdown a,
+#ColorAdjust_option #wcagDropdown i {
   text-decoration: underline;
-  color: white;
+  color: #3863FF;
+  transition: .2s ease-in-out;
+}
+#ColorAdjust_option #wcagDropdown a:hover,
+#ColorAdjust_option #wcagDropdown a:hover i {
+
+  color: #A03737;
+
 }
 
 #ColorAdjust_option #wcagDropdown>.tooltip_arrow {
@@ -2959,6 +3091,7 @@ html.translated-ltr #tooltip_template {
   height: 0.4rem;
   bottom: -6px;
   left: 8.8rem;
+
 }
 
 #ColorAdjust_option #wcagDropdown>.tooltip_arrow::before {
@@ -3068,15 +3201,9 @@ background-color: lightgray;
     margin-top: 12px;
   }
 
-  #ADA_widget .modal_body ul li {
-    width: 95px !important;
-    height: 75px !important;
-  }
 
-  #ADA_widget .modal_body .bg_form ul li {
-    width: 100px !important;
-    height: 75px !important;
-  }
+
+
 
   .title {
     font-size: 1.5rem;
@@ -3097,27 +3224,7 @@ background-color: lightgray;
     font-size: 17px;
   }
 
-  #ADA_widget .modal_body ul li {
-    width: 108px !important;
-    height: 90px !important;
-  }
 
-  #ADA_widget .modal_body .bg_form ul li {
-    width: 115px !important;
-    height: 80px !important;
-  }
-
-
-  #ADA_widget .modal_body #FontSize_option ul li,
-  #ADA_widget .modal_body #Cursor_option ul li {
-    width: 108px !important;
-    height: 90px !important;
-  }
-
-  #ADA_widget .modal_body #FontFamily_option ul li {
-    width: 95px !important;
-    height: 90px !important;
-  }
 
   #ADA_widget .modal_body ul li a div.title {
     font-size: 16px;
@@ -3221,4 +3328,12 @@ background-color: lightgray;
   /* #SeizureSafe_option {
     margin-left: 3rem;
   } */
+}
+
+#contact_section a {
+  color: #3863FF;
+}
+
+#contact_section a:hover {
+  color: #A03737;
 }

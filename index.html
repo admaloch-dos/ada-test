@@ -123,7 +123,8 @@
               <section id="navigation-section" class="ada-section-container mt-2">
 
                 <h2 class="ada-section-header">Navigation and Links</h2>
-                <div id="navigation-selects" class="row justify-content-between align-items-center menu-selects ">
+                <div id="navigation-selects"
+                  class="row justify-content-between align-items-center menu-selects ada-sub-section">
 
                   <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-3 mb-lg-0"
                     id=" SiteMap_option">
@@ -465,10 +466,10 @@
 
                 </div><!-- row -->
 
-                <div id="link-emphasis" class="row">
+                <div id="link-emphasis" class="row ada-sub-section">
 
                   <section id="HighlightHover_option"
-                    class=" col-12 col-md-6 d-none  d-md-flex justify-content-center  ">
+                    class=" col-12 col-md-6 d-none  d-md-flex justify-content-center justify-content-lg-start ">
                     <div class="ada_toggleContainer pb-0" id="HighlightHover">
                       <div class="ada_content">
                         <div class="ada-links-toggle-container justify-content-center justify-content-lg-start ">
@@ -528,7 +529,7 @@
               <section id="site-appearance-section" class="ada-section-container mt-4">
 
                 <h2 class="ada-section-header">Website Appearance</h2>
-                <div id="color-schemes" class="row pt-4">
+                <div id="color-schemes" class="row pt-4 ada-sub-section">
                   <div class="col-12 col-lg-6  " id="color-scheme-presets">
 
                     <section
@@ -564,7 +565,7 @@
                       </div><!-- class="ada_toggleContainer" id="SeizureSafe" -->
                     </section><!-- col-12 col-lg-4 -->
 
-                    <form class="bg_form" id="site-color-presets">
+                    <section class="bg_form" id="site-color-presets">
 
 
                       <div
@@ -617,13 +618,13 @@
                           </li>
                         </ul>
                       </div><!-- form check -->
-                    </form><!-- bg_form -->
+                    </section><!-- bg_form -->
 
                   </div><!-- col-12 col-lg-4 Change Background Color-->
 
                   <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center"
                     id="ColorAdjust_option">
-                    <form class="color_picker_form text-center">
+                    <section class="color_picker_form text-center">
 
                       <div
                         class="section-title mb-3 d-flex justify-content-center justify-content-lg-start align-items-center">
@@ -648,8 +649,8 @@
                           Text
                         </label>
                         <input type="color" class="color_swatch" id="text_color" title="Choose Text Color"
-                          value="#212529">
-                        <span class="hexVal" id="txt_hexVal">#212529</span>
+                          value="#000000">
+                        <span class="hexVal" id="txt_hexVal">#000000</span>
                       </div>
 
                       <div class="form-group">
@@ -660,7 +661,7 @@
                           value="#3863FF">
                         <span class="hexVal" id="link_hexVal">#3863FF</span>
                       </div>
-                    </form>
+                    </section>
 
 
                     <div class="row d-flex flex-row flex-wrap justify-content-center mb-4" id="color_pickerBtns">
@@ -669,44 +670,42 @@
                                 <div class="col-12 col-lg-4">
                                 </div>-->
                       <button id="remove_cookie" class="btn btn-secondary ada-btn mb-2 " role="button" type="button"
-                        title="Reset Adjustments Colors"><i class="fa fa-refresh mr-2" aria-hidden="true"></i>Reset
+                        title="Reset Adjustments Colors"><i class="fa fa-refresh mr-2 " aria-hidden="true"></i>Reset
                         Colors</button>
-                      <button type="button" class="btn btn-secondary ada-btn mb-2" id="OpenContrastModal" role="button"
+                      <button type="button" class="btn btn-secondary ada-btn mb-2 wcag-modal-remove-selector" id="OpenContrastModal" role="button"
                         title="Check Contrast">Check Contrast</button>
 
                     </div><!-- row -->
 
 
-                    <div class="toast toast_close" id="ContrastRatingModal">
+                    <div class="toast toast_close wcag-modal-remove-selector" id="ContrastRatingModal">
                       <div class="toast-header">
-                        <div class="btn-group dropup">
-                          <button class="btn btn-link ada_guidelines dropdown-toggle"
-                            aria-label="Accessibility Guidelines" title="Accessibility Guidelines" role="button"
-                            type="button" data-toggle="dropdown" aria-expanded="false">
-                            <span aria-hidden="true"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
-                          </button>
 
-                          <div class="dropdown-menu" id="wcagDropdown">
-                            Both links and body text must have at least 4.5:1 contrast with the background (3:1 for
-                            large
-                            text) to meet WCAG 2 Level AA. <a
-                              href="https://webaim.org/resources/linkcontrastchecker/">Link
-                              Contrast Checker <i class="fa fa-external-link" aria-hidden="true"></i></a>
-                            <br /><br />
-                            Report a problem: contact us at number or email
-                          </div><!-- dropdown-menu wcagDropdown-->
-                        </div><!--btn-group dropup-->
 
-                        <button class="CloseContrastModal btn btn-link" aria-label="Close Checker" role="button"
+                        <span aria-hidden="true"><i id="ada-contrast-info-toggle"
+                            class="fa fa-question-circle wcag-popup-info-remove-selector" aria-hidden="true"></i></span>
+
+
+                        <div class="d-none  wcag-popup-info-remove-selector" id="wcagDropdown">
+                          Both links and body text must have at least 4.5:1 contrast with the background (3:1 for
+                          large
+                          text) to meet WCAG 2 Level AA. <a
+                            href="https://webaim.org/resources/linkcontrastchecker/">Link
+                            Contrast Checker <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                        </div><!-- dropdown-menu wcagDropdown-->
+
+
+                        <button class="CloseContrastModal  btn btn-link" aria-label="Close Checker" role="button"
                           type="button">
-                          <span aria-hidden="true"><i class="fa fa-close" aria-hidden="true"></i></span>
+                          <span aria-hidden="true"><i class="fa fa-close contrast-rating-modal"
+                              aria-hidden="true"></i></span>
                         </button>
                       </div>
                       <div class="toast-body">
                         <div id="defaultContainer">
-                          <div class="pass">Background to Text Contrast: 21</div>
-                          <div class="pass">Background to Link Contrast: 4.97</div>
-                          <div class="pass">Text to Link Contrast: 4.22</div>
+                          <div class="pass">Text to background contrast: 21</div>
+                          <div class="pass">Link to background contrast: 4.77</div>
+                          <div class="pass">Link to text contrast: 4.39</div>
                         </div><!--defaultContainer-->
 
                         <div class="contrast_values">
@@ -718,17 +717,7 @@
                     </div> <!-- toast -->
 
 
-                    <!-- <script>
-                    $(document).ready(function () {
-                      $("#OpenContrastModal").click(function () {
-                        $('#ContrastRatingModal').toggleClass("toast_close");
-                      });
 
-                      $(".CloseContrastModal").click(function () {
-                        $('#ContrastRatingModal').addClass("toast_close");
-                      });
-                    });
-                  </script> -->
 
                   </div><!-- col-12 col-lg-5 -->
                 </div><!-- row -->
@@ -737,10 +726,12 @@
 
                 <h2 class="ada-section-header">Text and Readability</h2>
 
-                <section class="row d-flex flex-column align-items-center" id="language-options">
+                <section class="row d-flex flex-column align-items-center ada-sub-section" id="language-options">
                   <h3 class="ada_option_title mb-2 mt-3">Change Language:</h3>
                   <div id="ada-translate-select" class="d-flex justify-content-center align-items-center mb-4">
-                    <img class="img-fluid ada-icon-style mr-2" src="./files/img/translate.png" alt="Translate Icon" />
+                    <img class="img-fluid ada-icon-style" src="./files/img/translate.png" alt="Translate Icon" />
+                    <!-- <img id="ada-google-icon" class="img-fluid ada-icon-style" src="./files/img/google.png" alt="Translate Icon" /> -->
+
                     <div id="google_translate_element" title="Translate Florida Memory"></div>
                   </div>
 
@@ -854,7 +845,7 @@
 
 
 
-                <div id="Magnify_options" class="row">
+                <div id="Magnify_options" class="row ada-sub-section">
 
                   <section
                     class=" col-12 col-md-6 d-none  d-sm-flex justify-content-start justify-content-sm-center justify-content-lg-start "
@@ -1049,35 +1040,35 @@
 
 
 
-                <div class="row text-center pt-4 d-flex justify-content-center align-items-center" id="FontSize_option">
+                <div class="row text-center pt-4 ada-sub-section" id="FontSize_option">
 
-                    <form class="fontsize_form">
-
-
-                      <div
-                        class="section-title  d-flex justify-content-center justify-content-lg-start align-items-center">
-                        <img class="img-fluid ada-icon-style" src="./files/img/font-sizet.png" alt="Font Size Icon" />
-                        <h3 class="ada_option_title text-lg-left">Change Font Size</h3>
-                      </div>
-
-                      <div class="form-check">
-                        <ul class="modal-btn-options">
-                          <li id="FS_Default" class="active"><a href="#!" class="FontSizeOptions FontSizeDefault">
-                              <div class="title">Default</div>
-                            </a>
-                          </li>
-
-                          <li id="FS_Medium"><a href="#!" class="FontSizeOptions FontSizeMedium">
-                              <div class="title">Large</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div><!-- form check -->
-                    </form>
+                  <section class="fontsize_form">
 
 
+                    <div
+                      class="section-title  d-flex justify-content-center justify-content-lg-start align-items-center">
+                      <img class="img-fluid ada-icon-style" src="./files/img/font-sizet.png" alt="Font Size Icon" />
+                      <h3 class="ada_option_title text-lg-left">Change Font Size</h3>
+                    </div>
 
-                  <div class="  " id="FontFamily_option">
+                    <div class="form-check">
+                      <ul class="modal-btn-options">
+                        <li id="FS_Default" class="active"><a href="#!" class="FontSizeOptions FontSizeDefault">
+                            <div class="title">Default</div>
+                          </a>
+                        </li>
+
+                        <li id="FS_Medium"><a href="#!" class="FontSizeOptions FontSizeMedium">
+                            <div class="title">Large</div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div><!-- form check -->
+                  </section>
+
+
+
+                  <section class="  ml-5 mr-5" id="FontFamily_option">
                     <form class="font_type_form">
 
                       <div
@@ -1105,10 +1096,10 @@
                         </ul>
                       </div><!-- form check -->
                     </form>
-                  </div><!--  col-lg-6 -->
+                  </section><!--  col-lg-6 -->
 
 
-                  <div class=" " id="Cursor_option">
+                  <section class=" " id="Cursor_option">
                     <form class="cursorSwap_form">
                       <div
                         class="section-title d-flex justify-content-center justify-content-lg-start align-items-center">
@@ -1131,19 +1122,18 @@
                         </ul>
                       </div><!-- form check -->
                     </form>
-                  </div><!-- col-12 col-lg-3 -->
+                  </section><!-- col-12 col-lg-3 -->
                 </div><!-- row -->
 
 
 
 
-                <div id="text-selects" class="row ">
-                  <div class="col-12 col-md-4 text-center" id="LetterSpacing_option">
+                <div id="text-selects" class="row ada-sub-section">
+                  <section class="col-12 col-md-4 text-center" id="LetterSpacing_option">
                     <form>
                       <div class="form-group mb-0 mb-lg-3 delete-select-icon">
                         <div class="form-group-heading mb-1 mb-lg-4 ">
-                          <div
-                            class="section-title d-flex justify-content-center justify-content-lg-start align-items-center">
+                          <div class="section-title d-flex justify-content-center align-items-center">
                             <img class="img-fluid ada-icon-style" src="./files/img/letter-spacing.png"
                               alt="Change letter spacing" />
                             <h3 class="ada_option_title" for="exampleFormControlSelect1">Change Letter
@@ -1181,16 +1171,15 @@
                       </div>
                     </form>
 
-                  </div><!-- col-12 col-md-4 -->
+                  </section><!-- col-12 col-md-4 -->
 
 
-                  <div class="col-12 col-md-4 text-center" id="WordSpacing_option">
+                  <section class="col-12 col-md-4 text-center" id="WordSpacing_option">
                     <form>
                       <div class="form-group mb-0 mb-lg-3">
                         <div class="form-group-heading mb-1 mb-lg-4">
 
-                          <div
-                            class="section-title d-flex justify-content-center justify-content-lg-start align-items-center">
+                          <div class="section-title d-flex justify-content-center  align-items-center">
                             <img class="img-fluid ada-icon-style" src="./files/img/word-spacing.png"
                               alt="Change word spacing" />
                             <h3 class="ada_option_title" for="exampleFormControlSelect1">Change Word
@@ -1228,16 +1217,15 @@
                         </div>
                       </div>
                     </form>
-                  </div><!-- col-12 col-md-4 -->
+                  </section><!-- col-12 col-md-4 -->
 
 
-                  <div class="col-12 col-md-4 text-center" id="LineHeight_option">
+                  <section class="col-12 col-md-4 text-center" id="LineHeight_option">
                     <form>
                       <div class="form-group mb-4 mb-lg-3">
                         <div class="form-group-heading mb-1 mb-lg-4">
 
-                          <div
-                            class="section-title d-flex justify-content-center justify-content-lg-start align-items-center">
+                          <div class="section-title d-flex justify-content-center  align-items-center">
                             <img class="img-fluid ada-icon-style" src="./files/img/line-spacing.png"
                               alt="Change word spacing" />
                             <h3 class="ada_option_title font-weight-bold">Change Line
@@ -1273,7 +1261,7 @@
                         </div>
                       </div>
                     </form>
-                  </div><!-- col-12 col-lg-6 -->
+                  </section><!-- col-12 col-lg-6 -->
                 </div><!-- row -->
 
 
@@ -1284,7 +1272,7 @@
 
 
 
-                <div id="text-reading-assistance" class="row d-none d-md-flex pt-4 pb-3">
+                <div id="text-reading-assistance" class="row d-none d-md-flex pt-4 pb-3 ada-sub-section">
 
 
 
@@ -1321,7 +1309,7 @@
 
                     </div><!-- class="ada_toggleContainer" id="ReadingMask" -->
                     <div id="edit-reading-mask"
-                      class=" edit-reading-mask justify-content-center align-items-start disable-settings">
+                      class=" edit-reading-mask justify-content-start align-items-start disable-settings">
 
                       <div id="edit-mask-opacity"
                         class="input-container d-flex flex-column justify-content-center align-items-center">
@@ -1429,7 +1417,7 @@
 
                     </div><!-- class="ada_toggleContainer" id="ReadingGuide" -->
                     <div id="edit-reading-guide"
-                      class=" edit-reading-guide justify-content-center align-items-start disable-settings mb-3">
+                      class=" edit-reading-guide justify-content-start align-items-start disable-settings mb-3">
 
                       <div id="edit-guide-color"
                         class="ml-4 mr-4 color_picker_form d-flex flex-column justify-content-center align-items-center">
@@ -1464,7 +1452,7 @@
 
 
 
-                <section class="row d-flex pt-4" id="TTS_option">
+                <section class="row d-flex pt-4 ada-sub-section" id="TTS_option">
                   <div class="col-12 col-lg-4 d-flex justify-content-center   ">
                     <div class="ada_toggleContainer " id="TTS_click">
 
@@ -1578,8 +1566,7 @@
                 </section><!-- row -->
 
               </section>
-              <footer id="contact_section"
-                class="row  mt-4 mb-2 ada-section-container text-center">
+              <footer id="contact_section" class="row  mt-4 mb-2 ada-section-container text-center ada-sub-section">
                 <div id="ada-statement" class=" d-flex justify-content-center">
                   <a href="https://dos.myflorida.com/accessibility/">Florida Memory Accessibility Statement</a>
                 </div>
@@ -1920,6 +1907,7 @@
   <script src="./js/changeFontSize.js"></script>
   <script src="./js/ChangeFontType.js"></script>
   <script src="./js/cursor-enlarge.js"></script>
+  <script src="./js/contrast-modal.js"></script>
 
   <script src="./js/ChangeSpacing.js"></script>
   <!-- <script src="./js/ifModalChecked.js"></script> -->
@@ -1935,7 +1923,6 @@
   <script src="./js/speech.js"></script>
 
   <script src="./js/color-presets.js"></script>
-  <script src="./js/color-scheme-fix.js"></script>
   <script src="./js/keyCommands.js"></script>
 
   <script src="./js/isWidgetActive.js"></script>

@@ -17,11 +17,7 @@
         font-size: 17px;
     }
 
-    #ADA_widget .modal_body ul li {
-        height: 40px !important;
-        width: 90px !important;
 
-    }
 
 
 
@@ -53,11 +49,5 @@
     }
 }
 
-@media screen and (max-width:460px) {
-    #ADA_widget .modal_body ul li {
-        height: 50px !important;
-        width: 100px !important;
 
-    }
-}
 

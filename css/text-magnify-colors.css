@@ -2,7 +2,7 @@
 .edit-img-magnify {
     margin-bottom: 20px;
     display: none;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -75,7 +75,7 @@
 .img-mag-preview-container {
 
     display: none;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     margin-bottom: 1em;
 }

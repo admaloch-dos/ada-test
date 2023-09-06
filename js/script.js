@@ -6,6 +6,10 @@ $(function () {
   });
 });
 
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
 // JavaScript Document
 $(document).ready(function () {
   $("#ADA_widget #DefaultBG_option").addClass("active");

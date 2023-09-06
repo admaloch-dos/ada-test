@@ -1,9 +1,9 @@
-.highcontrast .accessibility_icons {
+.highcontrast .ada-icon-style {
     filter: invert(100%);
     opacity: 75%;
 }
 
-.inverted .accessibility_icons {
+.inverted .ada-icon-style {
     filter: invert(100%);
     opacity: 75%;
 }
@@ -303,7 +303,7 @@ body.Cursor_Enlarge {
     font-size: 12px;
 } */
 
-@media (min-width: 1000px) {
+@media (min-width: 500px) {
 
     #ADA_widget .modal_body .color_picker_form .form-group {
         width: 130px;
@@ -352,7 +352,7 @@ font-size: 12px;
 } */
 
 /* #reset-mask-btn:hover {
-    background-color: var(--color-1) !important;
+    background-color: var(--dark-blue) !important;
     color: #ffffff !important;
 } */
 
@@ -536,7 +536,7 @@ body.BaskervilleFont {
 
 
 /***** DyslexicFont *****/
-.DyslexicFont #ADA_widget .modal_body form ul li {
+.DyslexicFont #ADA_widget .modal_body ul li {
     margin-bottom: 5px;
 }
 
@@ -545,7 +545,7 @@ body.BaskervilleFont {
 }
 
 /***** DyslexicFont & FontSizeMedium *****/
-.DyslexicFont.fontSizeMedium #ADA_widget .modal_body form ul li {
+.DyslexicFont.fontSizeMedium #ADA_widget .modal_body ul li {
     margin-bottom: 5px;
 }
 
@@ -587,7 +587,7 @@ body.BaskervilleFont {
 }
 
 .highcontrast #ADA_widget .modal_content .modal_body .color_picker_form .form-group,
-.highcontrast #ADA_widget .modal_content .modal_body form ul li {
+.highcontrast #ADA_widget .modal_content .modal_body ul li {
     background-color: #262626 !important;
 }
 
@@ -600,9 +600,10 @@ body.BaskervilleFont {
     box-shadow: none;
 }
 
-.highcontrast #ADA_widget .modal_content .modal_body #color_pickerBtns button.btn {
-    background-color: #2C2C2C;
-    border-color: #2C2C2C;
+.highcontrast #ADA_widget .modal_content .modal_body button {
+    background-color: white;
+    /* color: white!important; */
+    border-color: var(--color-3);
 }
 
 .highcontrast #ADA_widget .modal_content .modal_body .rs-handle {
@@ -668,7 +669,7 @@ body.BaskervilleFont {
 
 .highcontrast #ADA_widget .modal_body ul li.active,
 .highcontrast #ADA_widget .modal_body ul li:hover {
-    border: var(--color-1) solid 2px;
+    border: var(--dark-blue) solid 2px;
 
     box-shadow: none;
 }
@@ -721,9 +722,12 @@ body.BaskervilleFont {
 }
 
 .highcontrast .audio_state button {
-    background-color: white;
-    color: black
+    background-color: white !important;
+    color: black !important;
+    border: black solid 1px !important;
 }
+
+
 
 .highcontrast #ADA_check_icon {
     background-color: white;
@@ -756,6 +760,18 @@ body.BaskervilleFont {
 }
 
 
+.highcontrast #ADA_widget .ada-section-container {
+    background-color: #363636 !important;
+}
+
+.highcontrast .ada-section-container {
+    border: #adb5bd solid 1px !important;
+}
+
+.highcontrast .ada-language-btn:hover {
+    background-color: #363636 !important;
+    border: white solid 1px;
+}
 
 /************************************************************ Desaturate ************************************************************/
 .desaturated #ADA_widget .modal_content .modal_header {
@@ -776,11 +792,11 @@ body.BaskervilleFont {
 }
 
 .desaturated #ADA_widget .modal_content .modal_body .color_picker_form .form-group,
-.desaturated #ADA_widget .modal_content .modal_body form ul li {
+.desaturated #ADA_widget .modal_content .modal_body ul li {
     background-color: #363636 !important;
 }
 
-.desaturated #ADA_widget .modal_content .modal_body form ul li a {
+.desaturated #ADA_widget .modal_content .modal_body ul li a {
     color: white !important;
 }
 
@@ -794,8 +810,8 @@ body.BaskervilleFont {
 }
 
 .desaturated #ADA_widget .modal_content .modal_body #color_pickerBtns button.btn {
-    background-color: #363636;
-    border-color: #363636;
+    background-color: var(--color-3);
+    border-color: var(--color-3);
 }
 
 .desaturated #ContrastRatingModal .toast-header {
@@ -898,6 +914,26 @@ body.BaskervilleFont {
     opacity: .9;
 }
 
+.desaturated .ada-language-btn {
+    background-color: var(--color-3) !important;
+    border: white solid 1px;
+}
+
+.desaturated #contact_section a {
+    font-style: italic;
+    text-decoration: underline;
+    transition: opacity .2s ease-in-out;
+}
+
+.desaturated #contact_section a:hover {
+    color: #A03737;
+    opacity: .7;
+}
+
+.desaturated .audio_state button {
+    border: black solid 1px !important;
+}
+
 /************************************************************ Invert ************************************************************/
 .inverted h1,
 .inverted h2,
@@ -944,7 +980,7 @@ body.BaskervilleFont {
 }
 
 .inverted #ADA_widget .modal_content .modal_body .color_picker_form .form-group,
-.inverted #ADA_widget .modal_content .modal_body form ul li {
+.inverted #ADA_widget .modal_content .modal_body ul li {
     background-color: #262626 !important;
 }
 
@@ -958,8 +994,8 @@ body.BaskervilleFont {
 }
 
 .inverted #ADA_widget .modal_content .modal_body #color_pickerBtns button.btn {
-    background-color: #262626;
-    border-color: #262626;
+    background-color: var(--color-3);
+    border-color: var(--color-3);
     color: #FF9E66;
 }
 
@@ -1000,9 +1036,9 @@ body.BaskervilleFont {
 }
 
 .inverted #ADA_widget #keyboard_shortcutsBtn {
-    background-color: #262626;
+    background-color: #fff;
     border-color: #262626;
-    color: #FF9E66;
+    color: black;
 }
 
 .inverted #keyboard_shortcuts .modal-content {
@@ -1110,6 +1146,22 @@ body.BaskervilleFont {
 
 .inverted #ADA_widget a:hover {
     opacity: .9;
+}
+
+.inverted #ADA_widget .ada-section-container {
+    background-color: #363636 !important;
+}
+
+.inverted .ada-setting-title {
+    color: #bb9bff !important;
+}
+
+.inverted #ADA_reset {
+    color: #FF9E66 !important;
+}
+
+.inverted #ADA_reset:hover {
+    border: #FF9E66 solid 1px !important;
 }
 
 
