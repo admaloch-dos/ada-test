@@ -45,18 +45,108 @@
     height: 45px !important;
 }
 
-.fontSizeMedium #ADA_widget img {
+/* .fontSizeMedium #ADA_widget img {
     display: none;
+} */
+
+
+/* in widget */
+.fontSizeMedium #ADA_widget p,
+.fontSizeMedium #ADA_widget a,
+.fontSizeMedium #ADA_widget button,
+.fontSizeMedium #ADA_widget div,
+.fontSizeMedium #ADA_widget label,
+.form-control,
+.fontSizeMedium #ADA_widget .goog-te-combo {
+    font-size: 17px !important;
 }
+
+
+.fontSizeMedium #ADA_widget h1 {
+    font-size: 20px !important;
+}
+
+.fontSizeMedium.DyslexicFont #ADA_widget h1,
+.fontSizeMedium.BaskervilleFont #ADA_widget h1 {
+    font-size: 17px !important;
+}
+
+/* .fontSizeMedium #main-modal-title {
+    font-size: 13px!important;
+} */
+
+.fontSizeMedium #ADA_widget h2 {
+    font-size: 22px !important;
+}
+
+.fontSizeMedium #ADA_widget h3 {
+    font-size: 19px !important;
+}
+
+.fontSizeMedium #ADA_widget h4 {
+    font-size: 18px !important;
+}
+
+.fontSizeMedium #ADA_widget h5 {
+    font-size: 17px !important;
+}
+
+.fontSizeMedium #ADA_widget h6 {
+    font-size: 16px !important;
+}
+
+.fontSizeMedium #ADA_widget .ada_toggleContainer .switch-handle {
+    top: 4px !important;
+}
+
+.fontSizeMedium #ADA_widget .menu-selects {
+    margin-bottom: 10px;
+}
+
 
 .fontSizeMedium #ADA_widget .modal_body ul li {
 
-    width: 135px !important;
+    width: 125px !important;
     height: 80px !important;
 
 }
 
-@media screen and (min-width:786px) {
+.fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
+    width: 125px !important;
+    height: 80px !important;
+}
+
+.fontSizeMedium .ada-language-btn span {
+    font-size: 13px !important;
+}
+
+.goog-te-combo {
+    margin-bottom: 1rem !important;
+}
+
+@media screen and (max-width:500px) {
+    .fontSizeMedium .ada_modal_test .modal_content {
+        width: 92%;
+        height: 90%;
+        padding-bottom: 2rem;
+
+    }
+}
+
+/* .fontSizeMedium #ADA_widget #google_translate_element {
+    height: 45px !important;
+} */
+
+
+
+/* .fontSizeMedium #ADA_widget #ADA_widget .modal_body ul li {
+
+    width: 135px !important;
+    height: 80px !important;
+
+} */
+
+@media screen and (min-width:900px) {
 
     .fontSizeMedium p,
     .fontSizeMedium a,
@@ -71,11 +161,11 @@
 
 
     .fontSizeMedium h1 {
-        font-size: 47px !important;
+        font-size: 40px !important;
     }
 
     .fontSizeMedium h2 {
-        font-size: 42px !important;
+        font-size: 40px !important;
     }
 
     .fontSizeMedium h3 {
@@ -99,12 +189,89 @@
     }
 
     .fontSizeMedium #ADA_widget .modal_body .color_picker_form .form-group {
-        height: 170px !important;
+        height: 150px !important;
     }
 
     .fontSizeMedium #google_translate_element {
         height: 47px !important;
     }
+
+    /* in widget */
+.fontSizeMedium #ADA_widget p,
+.fontSizeMedium #ADA_widget a,
+.fontSizeMedium #ADA_widget button,
+.fontSizeMedium #ADA_widget div,
+.fontSizeMedium #ADA_widget label,
+.form-control,
+.fontSizeMedium #ADA_widget .goog-te-combo {
+    font-size: 20px !important;
+}
+
+
+.fontSizeMedium #ADA_widget h1 {
+    font-size: 25px !important;
+}
+
+
+.fontSizeMedium.DyslexicFont #ADA_widget h1,
+.fontSizeMedium.BaskervilleFont #ADA_widget h1 {
+    font-size: 21px !important;
+}
+
+/* .fontSizeMedium #main-modal-title {
+    font-size: 13px!important;
+} */
+
+.fontSizeMedium #ADA_widget h2 {
+    font-size: 25px !important;
+}
+
+.fontSizeMedium #ADA_widget h3 {
+    font-size: 22px !important;
+}
+
+.fontSizeMedium #ADA_widget h4 {
+    font-size: 20px !important;
+}
+
+.fontSizeMedium #ADA_widget h5 {
+    font-size: 19px !important;
+}
+
+.fontSizeMedium #ADA_widget h6 {
+    font-size: 18px !important;
+}
+
+.fontSizeMedium #ADA_widget .ada_toggleContainer .switch-handle {
+    top: 6px !important;
+}
+
+.fontSizeMedium #ADA_widget .menu-selects {
+    margin-bottom: 10px;
+}
+
+
+.fontSizeMedium #ADA_widget .modal_body ul li {
+
+    width: 170px !important;
+    height: 110px !important;
+
+}
+
+.fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
+    width: 170px !important;
+    height: 110px !important;
+}
+
+.fontSizeMedium .ada-language-btn span {
+    font-size: 20px !important;
+}
+
+.goog-te-combo {
+    margin-bottom: 1rem !important;
+}
+
+
 }
 
 @media screen and (min-width:1200px) {
@@ -162,6 +329,228 @@
     .fontSizeMedium #google_translate_element {
         height: 52px !important;
     }
+
+   /* in widget */
+   .fontSizeMedium #ADA_widget p,
+   .fontSizeMedium #ADA_widget a,
+   .fontSizeMedium #ADA_widget button,
+   .fontSizeMedium #ADA_widget div,
+   .fontSizeMedium #ADA_widget label,
+   .form-control,
+   .fontSizeMedium #ADA_widget .goog-te-combo {
+       font-size: 22px !important;
+   }
+
+
+   .fontSizeMedium #ADA_widget h1 {
+       font-size: 35px !important;
+   }
+
+
+   .fontSizeMedium.DyslexicFont #ADA_widget h1,
+   .fontSizeMedium.BaskervilleFont #ADA_widget h1 {
+       font-size: 30px !important;
+   }
+
+   /* .fontSizeMedium #main-modal-title {
+       font-size: 13px!important;
+   } */
+
+   .fontSizeMedium #ADA_widget h2 {
+       font-size: 30px !important;
+   }
+
+   .fontSizeMedium #ADA_widget h3 {
+       font-size: 21px !important;
+   }
+
+   .fontSizeMedium #ADA_widget h4 {
+       font-size: 26px !important;
+   }
+
+   .fontSizeMedium #ADA_widget h5 {
+       font-size: 22px !important;
+   }
+
+   .fontSizeMedium #ADA_widget h6 {
+       font-size: 21px !important;
+   }
+
+   .fontSizeMedium #ADA_widget .ada_toggleContainer .switch-handle {
+       top: 10px !important;
+   }
+
+   .fontSizeMedium #ADA_widget .menu-selects {
+       margin-bottom: 10px;
+   }
+
+
+   .fontSizeMedium #ADA_widget .modal_body ul li {
+
+       width: 170px !important;
+       height: 110px !important;
+
+   }
+
+   .fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
+       width: 170px !important;
+       height: 110px !important;
+   }
+
+   .fontSizeMedium .ada-language-btn span {
+       font-size: 18px !important;
+   }
+
+   .goog-te-combo {
+       margin-bottom: 1rem !important;
+   }
+   .fontSizeMedium #ADA_widget .modal_body .color_picker_form .form-group {
+    height: 190px !important;
+    width: 190px!important;
+    padding-top: 30px;
+}
+}
+
+@media screen and (min-width:1800px) {
+
+    /* in widget */
+    .fontSizeMedium #ADA_widget p,
+    .fontSizeMedium #ADA_widget a,
+    .fontSizeMedium #ADA_widget button,
+    .fontSizeMedium #ADA_widget div,
+    .fontSizeMedium #ADA_widget label,
+    .form-control,
+    .fontSizeMedium #ADA_widget .goog-te-combo {
+        font-size: 20px !important;
+    }
+
+
+    .fontSizeMedium #ADA_widget h1 {
+        font-size: 20px !important;
+    }
+
+    .fontSizeMedium #ADA_widget h2 {
+        font-size: 27px !important;
+    }
+
+    .fontSizeMedium #ADA_widget h3 {
+        font-size: 25px !important;
+    }
+
+    .fontSizeMedium #ADA_widget h4 {
+        font-size: 22px !important;
+    }
+
+    .fontSizeMedium #ADA_widget h5 {
+        font-size: 20px !important;
+    }
+
+    .fontSizeMedium #ADA_widget h6 {
+        font-size: 20px !important;
+    }
+
+    .fontSizeMedium #ADA_widget .ada_toggleContainer .switch-handle {
+        top: 7px !important;
+    }
+
+    .fontSizeMedium #ADA_widget .menu-selects {
+        margin-bottom: 10px;
+    }
+
+    .fontSizeMedium #ADA_widget #google_translate_element {
+        height: 45px !important;
+    }
+
+    .fontSizeMedium #ADA_widget #ADA_widget img {
+        display: none;
+    }
+
+    .fontSizeMedium #ADA_widget #ADA_widget .modal_body ul li {
+
+        width: 135px !important;
+        height: 80px !important;
+
+    }
+
+    /* in widget */
+   .fontSizeMedium #ADA_widget p,
+   .fontSizeMedium #ADA_widget a,
+   .fontSizeMedium #ADA_widget button,
+   .fontSizeMedium #ADA_widget div,
+   .fontSizeMedium #ADA_widget label,
+   .form-control,
+   .fontSizeMedium #ADA_widget .goog-te-combo {
+       font-size: 23px !important;
+   }
+
+
+   .fontSizeMedium #ADA_widget h1 {
+       font-size: 33px !important;
+   }
+
+
+   .fontSizeMedium.DyslexicFont #ADA_widget h1,
+   .fontSizeMedium.BaskervilleFont #ADA_widget h1 {
+       font-size: 33px !important;
+   }
+
+   /* .fontSizeMedium #main-modal-title {
+       font-size: 13px!important;
+   } */
+
+   .fontSizeMedium #ADA_widget h2 {
+       font-size: 29px !important;
+   }
+
+   .fontSizeMedium #ADA_widget h3 {
+       font-size: 26px !important;
+   }
+
+   .fontSizeMedium #ADA_widget h4 {
+       font-size: 24px !important;
+   }
+
+   .fontSizeMedium #ADA_widget h5 {
+       font-size: 22px !important;
+   }
+
+   .fontSizeMedium #ADA_widget h6 {
+       font-size: 21px !important;
+   }
+
+   .fontSizeMedium #ADA_widget .ada_toggleContainer .switch-handle {
+       top: 10px !important;
+   }
+
+   .fontSizeMedium #ADA_widget .menu-selects {
+       margin-bottom: 10px;
+   }
+
+
+   .fontSizeMedium #ADA_widget .modal_body ul li {
+
+       width: 170px !important;
+       height: 110px !important;
+
+   }
+
+   .fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
+       width: 170px !important;
+       height: 110px !important;
+   }
+
+   .fontSizeMedium .ada-language-btn span {
+       font-size: 23px !important;
+   }
+
+   .goog-te-combo {
+       margin-bottom: 1rem !important;
+   }
+   .fontSizeMedium #ADA_widget .modal_body .color_picker_form .form-group {
+    height: 190px !important;
+    width: 190px!important;
+    padding-top: 30px;
+}
 
 
 }
