@@ -14,31 +14,55 @@ body {
 
 }
 
+/* rgba(220, 220, 221, .35); */
+
 /* #e9ecef; */
 :root {
-  --color-1: #142E69;
-  --color-2: #f8f9fa;
-
-  --color-3: rgba(220, 220, 221, .35);
-  --color-4: rgba(171, 196, 255, .2);
-  --color-5: #edf2fb;
-  --color-6: rgba(171, 196, 255, .7);
-  --color-7: rgba(0, 0, 230, .025);
-
+  --dark-blue: #142E69;
+  --light-blue: #edf2fb;
+  --med-blue: rgba(171, 196, 255, .7);
   --blue: #0000E6;
-
+  --med-dark-blue: #81a4cd;
+  --light-grey: #f8f9fa;
+  --grey: rgba(220, 220, 221, .35);
+  --dark-purple: #b8bedd;
+  --beige: #f1edee;
+  --color: #f1edee;
 }
 
-/* background-color: var(--color-3); */
+.ada_modal_test .modal_body {
 
+  padding: 1rem 0rem;
+  background: var(--dark-purple);
+  overflow: auto;
+  height: 93%;
+}
 
+#ADA_widget .ada-section-container {
+  background-color: var(--light-blue);
+  border: var(--dark-blue) solid 1px;
+  border-radius: 10px;
+  width: 98.5%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: .25em;
+}
 
-/* var(--color-3);*/
+.ada-sub-section {
+  border: var(--dark-blue) solid 1px!important;
+}
+
+#contact_section {
+  background-color: white!important;
+}
+
 
 .ada-sub-section,
 .ada-section-container {
 
-  /* background-color: var(--color-4); */
+  /* background-color: var(--light-blue); */
   -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.05);
   box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.05);
 
@@ -57,7 +81,7 @@ background-color: var(--color-7)!important;
 
   .ada-sub-section {
     padding: 1.2rem 1rem 1rem 1rem;
-    /* background-color: var(--color-4); */
+    /* background-color: var(--light-blue); */
   }
 }
 
@@ -177,8 +201,8 @@ a {
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 95%;
-  height: 95%;
-  padding-bottom: 20px;
+  height: 93%;
+  padding-bottom: 4rem;
 
 }
 
@@ -231,18 +255,7 @@ a {
   display: none !important;
 } */
 
-#ADA_widget .ada-section-container {
-  background-color: var(--color-2);
-  border: var(--color-1) solid 1px;
-  border-radius: 10px;
-  width: 98.5%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: .25em;
 
-}
 
 
 
@@ -272,8 +285,8 @@ a {
 #language-options .ada-icon-style {
   /* width: 25px;
   height: 25px; */
-margin-left: 2px;
-margin-top: 2px;
+  margin-right: .5rem;
+  margin-top: 2px;
 }
 
 #ColorAdjust_option .ada-icon-style {
@@ -303,10 +316,14 @@ margin-top: 2px;
 }
 
 
+#TextMagnifier .ada-icon-style {
+  margin-bottom: .5rem;
+}
 
 
-
-
+#Cursor_option h3 {
+  margin-left: 0;
+}
 
 
 
@@ -346,7 +363,7 @@ margin-top: 2px;
 
 .button-icon:hover {
   border: #000 solid 1px;
-  background-color: var(--color-1);
+  background-color: var(--dark-blue);
   color: white;
   opacity: 1;
 }
@@ -653,7 +670,7 @@ margin-top: 2px;
     border-radius: 50%;
     height: 50px !important;
     width: 50px !important;
-    outline: 2px solid var(--color-1);
+    outline: 2px solid var(--dark-blue);
 
     border-width: 3px;
     border-color: #fff;
@@ -668,19 +685,13 @@ margin-top: 2px;
   background-color: yellow;
 } */
 
-.ada_modal_test .modal_body {
 
-  padding: 1rem 0rem;
-  background: var(--color-5);
-  overflow: auto;
-  height: 93%;
-}
 
 @media screen and (min-width:400px) {
   .ada_modal_test .modal_content {
     width: 85%;
     height: 90%;
-    padding-bottom: 0px;
+    padding-bottom: 2rem;
   }
 }
 
@@ -743,7 +754,7 @@ margin-top: 2px;
 
 /* reset btn */
 #ADA_reset {
-  border: var(--color-1) solid 1px !important;
+  border: var(--dark-blue) solid 1px !important;
   padding: 5px 10px !important;
   font-size: 15px !important;
   transition: all .3s ease-in-out !important;
@@ -775,7 +786,7 @@ margin-top: 2px;
 
 #ADA_reset:hover {
   border: #FFF solid 1px !important;
-  background-color: var(--color-1) !important;
+  background-color: var(--dark-blue) !important;
   color: white;
 }
 
@@ -842,7 +853,7 @@ margin-top: 2px;
 .ada_modal_test .modal_content .modal_header {
   padding: 1rem 1rem 0rem 1rem;
   border-bottom: 1px solid #dee2e6;
-  background: var(--color-1);
+  background: var(--dark-blue);
   color: white;
   border: none;
 
@@ -1842,8 +1853,8 @@ html.translated-ltr #wordspace_icon {
   min-width: 100px; */
   width: 110px;
   margin-bottom: 1rem;
-  border: var(--color-4) solid 1px;
-  background-color: var(--color-4);
+  border: var(--light-blue) solid 1px;
+  background-color: var(--light-blue);
   /* opacity: .8; */
   border-radius: 20px;
   /* max-width: 100px; */
@@ -1856,8 +1867,8 @@ html.translated-ltr #wordspace_icon {
 .ada-language-btn:hover {
 
   transform: scale(1.1);
-  border: var(--color-6) solid 1px;
-  background-color: var(--color-6);
+  border: var(--med-blue) solid 1px;
+  background-color: var(--med-blue);
 }
 
 @media screen and (min-width:400px) {
@@ -2440,7 +2451,7 @@ html.translated-ltr #tooltip_template {
   align-items: center;
   width: 80px !important;
   height: 60px !important;
-  background-color: var(--color-3);
+  background-color: var(--grey);
 
   border-radius: 0.25rem;
   border: 2px solid transparent;
@@ -2450,7 +2461,7 @@ html.translated-ltr #tooltip_template {
 
 
 #ADA_widget .modal_body .fontsize_form ul li:hover {
-  border-color: var(--color-1);
+  border-color: var(--dark-blue);
 }
 
 #ADA_widget .modal_body .fontsize_form ul li a {
@@ -2506,15 +2517,15 @@ html.translated-ltr #tooltip_template {
   align-items: center;
   width: 118px;
   height: 70px;
-  background-color: var(--color-3);
-  !important;
+  background-color: var(--grey);
+
   border-radius: 0.25rem;
   border: 2px solid transparent;
   margin-bottom: 5px;
 }
 
 #ADA_widget .modal_body .font_type_form ul li:hover {
-  border-color: var(--color-1);
+  border-color: var(--dark-blue);
 }
 
 #ADA_widget .modal_body .font_type_form ul li a {
@@ -2567,7 +2578,7 @@ html.translated-ltr #tooltip_template {
   align-items: center;
   width: 118px;
   height: 70px;
-  background-color: var(--color-3);
+  background-color: var(--grey);
   !important;
   border-radius: 0.25rem;
   border: 2px solid transparent;
@@ -2575,7 +2586,7 @@ html.translated-ltr #tooltip_template {
 }
 
 #ADA_widget .modal_body .cursorSwap_form ul li:hover {
-  border-color: var(--color-1);
+  border-color: var(--dark-blue);
 }
 
 #ADA_widget .modal_body .cursorSwap_form ul li a {
@@ -2628,7 +2639,7 @@ html.translated-ltr #tooltip_template {
   justify-content: center;
   align-items: center;
 
-  background-color: var(--color-3);
+  background-color: var(--grey);
   !important;
   border-radius: 0.25rem;
   border: 2px solid transparent;
@@ -2636,7 +2647,7 @@ html.translated-ltr #tooltip_template {
 }
 
 #ADA_widget .modal_body .bg_form ul li:hover {
-  border-color: var(--color-1);
+  border-color: var(--dark-blue);
 }
 
 #ADA_widget .modal_body .bg_form ul li a {
@@ -2686,7 +2697,7 @@ html.translated-ltr #tooltip_template {
 #ADA_widget .modal_body #edit-reading-guide .form-group {
   margin-bottom: 1rem;
   display: inline-table;
-  background-color: var(--color-3);
+  background-color: var(--grey);
 
   border-radius: 0.25rem;
   padding: 10px 20px;
@@ -2835,7 +2846,7 @@ html.translated-ltr #tooltip_template {
   border-radius: 50%;
   height: 40px;
   width: 40px;
-  outline: 2px solid var(--color-1);
+  outline: 2px solid var(--dark-blue);
 
   border-width: 3px;
   border-color: #fff;
@@ -2852,7 +2863,7 @@ html.translated-ltr #tooltip_template {
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    outline: 2px solid var(--color-1);
+    outline: 2px solid var(--dark-blue);
 
     border-width: 3px;
     border-color: #fff;
@@ -2905,7 +2916,7 @@ html.translated-ltr #tooltip_template {
 
 
 .ada-btn {
-  background-color: var(--color-3);
+  background-color: var(--grey);
   !important;
   color: #000 !important;
   padding: 3px 12px;
@@ -2924,7 +2935,7 @@ html.translated-ltr #tooltip_template {
 
 
 .ada-btn:hover {
-  background-color: var(--color-1) !important;
+  background-color: var(--dark-blue) !important;
   color: #ffffff !important;
 }
 
@@ -2971,7 +2982,7 @@ html.translated-ltr #tooltip_template {
   width: 100%;
   overflow: visible;
   border-radius: 10px;
-  border: var(--color-4) solid 6px;
+  border: var(--dark-blue) solid 3px;
 
 }
 
@@ -2987,7 +2998,7 @@ html.translated-ltr #tooltip_template {
 
 
 #ContrastRatingModal .toast-header {
-  background: var(--color-1);
+  background: var(--dark-blue);
   padding: 0 0.75rem;
   display: -ms-flexbox;
   display: flex;
@@ -2997,7 +3008,7 @@ html.translated-ltr #tooltip_template {
   background-clip: padding-box;
   -webkit-border-radius: 10px 10px 0px 0px;
   border-radius: 5px 5px 0px 0px;
-  /* border-bottom: 1px solid var(--color-3); */
+  /* border-bottom: 1px solid var(--grey); */
 
 }
 
@@ -3064,7 +3075,7 @@ html.translated-ltr #tooltip_template {
   overflow: hidden !important;
   width: 350px !important;
   background-color: white !important;
-  border: var(--color-1) solid 2px;
+  border: var(--dark-blue) solid 2px;
   border-radius: 10px;
   height: 100px !important;
 
@@ -3077,6 +3088,7 @@ html.translated-ltr #tooltip_template {
   color: #3863FF;
   transition: .2s ease-in-out;
 }
+
 #ColorAdjust_option #wcagDropdown a:hover,
 #ColorAdjust_option #wcagDropdown a:hover i {
 
@@ -3109,7 +3121,7 @@ html.translated-ltr #tooltip_template {
 
 /*************** FOR ACTIVE CLASS ***************/
 #ADA_widget .modal_body .form-check ul li.active {
-  background-color: var(--color-1) !important;
+  background-color: var(--dark-blue) !important;
 }
 
 #ADA_widget .modal_body .form-check ul li.active a {
@@ -3139,7 +3151,7 @@ html.translated-ltr #tooltip_template {
 }
 
 .form-check ul li:hover {
-  border: var(--color-1) solid 2px !important;
+  border: var(--dark-blue) solid 2px !important;
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -3148,7 +3160,7 @@ html.translated-ltr #tooltip_template {
 }
 
 .form-check a:hover {
-  color: var(--color-1) !important;
+  color: var(--dark-blue) !important;
 }
 
 

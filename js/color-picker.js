@@ -4,7 +4,7 @@ const resetColorPicker = () => {
     let bgColor = cache.bgColor.value
     let textColor = cache.textColor.value
     let linkColor = cache.linkColor.value
-    if (bgColor !== "#ffffff" || textColor !== "#212529" || linkColor !== "#3863ff") {
+    if (bgColor !== "#ffffff" || textColor !== "#000000" || linkColor !== "#3863ff") {
         $.removeCookie('BackgroundColorCookie');
         $.removeCookie('TextColorCookie');
         $.removeCookie('LinkColorCookie');

@@ -1,11 +1,11 @@
 .highcontrast .ada-icon-style {
     filter: invert(100%);
-    opacity: 75%;
+    opacity: 100%;
 }
 
 .inverted .ada-icon-style {
     filter: invert(100%);
-    opacity: 75%;
+    opacity: 100%;
 }
 
 .highcontrast #ADA_icon {
@@ -278,7 +278,7 @@ body.Cursor_Enlarge {
 #ADA_widget .modal_body .color_picker_form .form-group {
     margin-bottom: 1rem;
     display: inline-table;
-    background-color: var(--color-3);
+    background-color: var(--grey);
     ;
     border-radius: 0.25rem;
     padding: 10px;
@@ -601,9 +601,9 @@ body.BaskervilleFont {
 }
 
 .highcontrast #ADA_widget .modal_content .modal_body button {
-    background-color: white;
+
     /* color: white!important; */
-    border-color: var(--color-3);
+
 }
 
 .highcontrast #ADA_widget .modal_content .modal_body .rs-handle {
@@ -619,7 +619,7 @@ body.BaskervilleFont {
 }
 
 .highcontrast #ContrastRatingModal {
-    border-color: #000000;
+    border-color: #fff;
 }
 
 .highcontrast #ContrastRatingModal .toast-header {
@@ -768,6 +768,11 @@ body.BaskervilleFont {
     border: #adb5bd solid 1px !important;
 }
 
+.highcontrast .ada-language-btn {
+    background-color: #363636 !important;
+    border: white solid 1px;
+}
+
 .highcontrast .ada-language-btn:hover {
     background-color: #363636 !important;
     border: white solid 1px;
@@ -810,8 +815,8 @@ body.BaskervilleFont {
 }
 
 .desaturated #ADA_widget .modal_content .modal_body #color_pickerBtns button.btn {
-    background-color: var(--color-3);
-    border-color: var(--color-3);
+    background-color: var(--grey);
+    border-color: var(--grey);
 }
 
 .desaturated #ContrastRatingModal .toast-header {
@@ -915,7 +920,7 @@ body.BaskervilleFont {
 }
 
 .desaturated .ada-language-btn {
-    background-color: var(--color-3) !important;
+    background-color: var(--grey) !important;
     border: white solid 1px;
 }
 
@@ -932,6 +937,21 @@ body.BaskervilleFont {
 
 .desaturated .audio_state button {
     border: black solid 1px !important;
+}
+
+.desaturated .ada-language-btn {
+border: black solid 1px;
+background-color: black!important;
+color: white;
+}
+
+.desaturated .ada-language-btn:hover {
+background-color: var(--light-grey)!important;
+color: black;
+}
+
+.desaturated .ada-section-container {
+    background-color: var(--light-grey)!important;
 }
 
 /************************************************************ Invert ************************************************************/
@@ -994,8 +1014,8 @@ body.BaskervilleFont {
 }
 
 .inverted #ADA_widget .modal_content .modal_body #color_pickerBtns button.btn {
-    background-color: var(--color-3);
-    border-color: var(--color-3);
+    background-color: var(--grey);
+    border-color: var(--grey);
     color: #FF9E66;
 }
 
@@ -1162,6 +1182,21 @@ body.BaskervilleFont {
 
 .inverted #ADA_reset:hover {
     border: #FF9E66 solid 1px !important;
+}
+
+.inverted .ada-language-btn {
+    background-color: #363636 !important;
+    border: white solid 1px;
+    color: #FF9E66 ;
+}
+
+.inverted .ada-language-btn:hover {
+    background-color: #363636 !important;
+    border: white solid 1px;
+}
+
+.inverted .ada-contrast-info-toggle {
+    color: orange!important;
 }
 
 
