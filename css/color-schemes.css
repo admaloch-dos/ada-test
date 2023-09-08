@@ -574,7 +574,8 @@ body.BaskervilleFont {
 }
 
 .highcontrast #ADA_widget .modal_content .modal_body {
-    background: #262626;
+    background: var(--dark-grey);
+    border-bottom: var(--dark-grey) solid 15px !important;
 }
 
 .highcontrast #ADA_widget .modal_content .modal_body .row {
@@ -774,9 +775,43 @@ body.BaskervilleFont {
 }
 
 .highcontrast .ada-language-btn:hover {
-    background-color: #363636 !important;
+    background-color: var(--light-grey) !important;
+    color: #363636;
     border: white solid 1px;
 }
+
+.highcontrast .ada-sub-section {
+    /* background: white; */
+
+    margin: 0px 5px;
+    border-left: 2px solid var(--light-grey) !important;
+    border-right: 2px solid var(--light-grey) !important;
+
+
+}
+
+.highcontrast #navigation-selects,
+.highcontrast #photo-filter,
+.highcontrast #language-options {
+    border-top: 2px solid var(--light-grey) !important;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+.highcontrast #link-emphasis,
+.highcontrast #color-schemes,
+.highcontrast #TTS_option {
+    border-bottom: 2px solid var(--light-grey) !important;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.highcontrast #ADA_widget .ada-section-container {
+    border: var(--light-grey) !important;
+}
+
+
 
 /************************************************************ Desaturate ************************************************************/
 .desaturated #ADA_widget .modal_content .modal_header {
@@ -940,18 +975,49 @@ body.BaskervilleFont {
 }
 
 .desaturated .ada-language-btn {
-border: black solid 1px;
-background-color: black!important;
-color: white;
+    border: black solid 1px;
+    background-color: black !important;
+    color: white;
 }
 
 .desaturated .ada-language-btn:hover {
-background-color: var(--light-grey)!important;
-color: black;
+    background-color: var(--light-grey) !important;
+    color: black;
 }
 
 .desaturated .ada-section-container {
-    background-color: var(--light-grey)!important;
+    background-color: var(--light-grey) !important;
+}
+
+.desaturated #navigation-selects,
+.desaturated #photo-filter,
+.desaturated #language-options {
+    border-top: 2px solid #363636 !important;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+.desaturated #link-emphasis,
+.desaturated #color-schemes,
+.desaturated #TTS_option {
+    border-bottom: 2px solid #363636 !important;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.desaturated #ADA_widget .ada-section-container {
+    border: #363636 !important;
+}
+
+.desaturated .ada-sub-section {
+    /* background: white; */
+
+    margin: 0px 5px;
+    border-left: 2px solid #363636 !important;
+    border-right: 2px solid #363636 !important;
+
+
 }
 
 /************************************************************ Invert ************************************************************/
@@ -970,6 +1036,7 @@ color: black;
 
 .inverted #ADA_widget .modal_content .modal_body {
     background: #262626;
+    border-bottom: #262626 solid 15px !important;
 }
 
 .inverted #ADA_widget .modal_content .modal_body .row {
@@ -1187,7 +1254,7 @@ color: black;
 .inverted .ada-language-btn {
     background-color: #363636 !important;
     border: white solid 1px;
-    color: #FF9E66 ;
+    color: #FF9E66;
 }
 
 .inverted .ada-language-btn:hover {
@@ -1196,7 +1263,43 @@ color: black;
 }
 
 .inverted .ada-contrast-info-toggle {
-    color: orange!important;
+    color: orange !important;
+}
+
+.inverted .ada-sub-section {
+    /* background: white; */
+
+    margin: 0px 5px;
+    border-left: 2px solid var(--light-grey) !important;
+    border-right: 2px solid var(--light-grey) !important;
+
+
+}
+
+.inverted #navigation-selects,
+.inverted #photo-filter,
+.inverted #language-options {
+    border-top: 2px solid var(--light-grey) !important;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+.inverted #link-emphasis,
+.inverted #color-schemes,
+.inverted #TTS_option {
+    border-bottom: 2px solid var(--light-grey) !important;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.inverted #ADA_widget .ada-section-container {
+    border: var(--light-grey) !important;
+}
+
+.inverted .ada-language-btn:hover {
+    background-color: var(--grey)!important;
+   color: var(--off-white)!important;
 }
 
 
@@ -1535,6 +1638,24 @@ body.HighlightLinks.highcontrast .modal_body .form-check ul li.active a {
 .HighlightLinks .modal_content li.active:hover .title {
     color: #3863ff !important;
 }
+
+.HighlightLinks .ada-language-btn {
+    color: #3863ff !important;
+    background-color: #fff !important;
+    border: #3863ff solid 3px !important;
+}
+
+.HighlightLinks .ada-language-btn:hover {
+    -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.HighlightHover .ada-language-btn:hover {
+    background-color: #363636!important;
+    color: #fff!important;
+
+}
+
 
 /************************************************************ Highlight Links on Hover ************************************************************/
 .HighlightHover a {

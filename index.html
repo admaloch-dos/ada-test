@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-  <title>current ada</title>
+  <title>current- test mask</title>
 
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
@@ -16,7 +16,11 @@
 
 
   <link rel="stylesheet" href="./files/fonts/font-awesome-4.7.0/css/font-awesome.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Archivo+Narrow&family=Chivo&family=Crimson+Text&family=Fira+Sans&family=Inconsolata&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin&family=Playfair+Display&family=Poppins&family=Raleway&family=Roboto&family=Rubik&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./files/css/roundslider.min.css">
 
   <link rel="stylesheet" href="./files/css/bootstrap.min.css">
@@ -120,7 +124,7 @@
           <div class="modal_body" id="accessibility">
             <div class="container-fluid">
 
-              <section id="navigation-section" class="ada-section-container mt-2">
+              <section id="navigation-section" class="ada-section-container">
 
                 <h2 class="ada-section-header">Navigation and Links</h2>
                 <div id="navigation-selects"
@@ -528,46 +532,49 @@
 
                 </div><!-- row -->
               </section>
-              <section id="site-appearance-section" class="ada-section-container mt-4">
+              <section id="site-appearance-section" class="ada-section-container">
 
                 <h2 class="ada-section-header">Website Appearance</h2>
-                <div id="color-schemes" class="row pt-4 ada-sub-section">
+
+                <div id="photo-filter" class="row ada-sub-section">
+                  <section class="ada-toggle-container col-12  d-flex justify-content-center justify-content-lg-start"
+                    id="SeizureSafe_option">
+                    <div class="ada_toggleContainer pb-0" id="SeizureSafe">
+                      <div class="ada_content">
+                        <div class="d-flex justify-content-center justify-content-lg-start align-items-center">
+                          <img class="img-fluid ada-icon-style" src="./files/img/photo-sensitive.png"
+                            alt="Seizure Safe Icon" />
+                          <h3 class="type ada_option_title text-sm-center text-lg-left ">Photosensitivity Filter </h3>
+
+                          <div class=" ada_toggle">
+                            <label class="switch" title="Toggle On/Off Photosensitivity Filter"
+                              aria-label="Toggle On/Off Photosensitivity Filter">
+                              <input type="checkbox" class="switch-input" id="ToggleSeizure" name="SeizureSafe">
+                              <span class="switch-label" data-on="On" data-off="Off"></span>
+                              <span class="switch-handle"></span>
+                            </label>
+                          </div><!-- ada_toggle -->
+
+                        </div>
+                        <div class="ada-p-container d-flex justify-content-start">
+                          <p class="description text-center text-lg-left">Reduces color and removes flashes</p>
+                        </div>
+                      </div><!-- ada_content -->
+                    </div><!-- class="ada_toggleContainer" id="SeizureSafe" -->
+                  </section><!-- col-12 col-lg-4 -->
+                </div>
+
+                <div id="color-schemes" class="row pt-3 ada-sub-section">
+
+
+
+
+
                   <div class="col-12 col-lg-6  " id="color-scheme-presets">
 
-                    <section
-                      class="ada-toggle-container col-12 col-lg-4 d-flex justify-content-center justify-content-lg-start"
-                      id="SeizureSafe_option">
-                      <div class="ada_toggleContainer pb-0" id="SeizureSafe">
-                        <div class="ada_content">
-                          <div class="d-flex justify-content-center mb-2 justify-content-lg-start align-items-center">
-                            <img class="img-fluid ada-icon-style" src="./files/img/photo-sensitive.png"
-                              alt="Seizure Safe Icon" />
-                            <h3 class="type ada_option_title text-sm-center text-lg-left ">Photosensitivity <span
-                                class="d-none d-sm-inline">Filter</span>
 
-                            </h3>
 
-                            <div class=" ada_toggle">
-                              <label class="switch" title="Toggle On/Off Photosensitivity Filter"
-                                aria-label="Toggle On/Off Photosensitivity Filter">
-                                <input type="checkbox" class="switch-input" id="ToggleSeizure" name="SeizureSafe">
-                                <span class="switch-label" data-on="On" data-off="Off"></span>
-                                <span class="switch-handle"></span>
-                              </label>
-                            </div><!-- ada_toggle -->
-
-                          </div>
-                          <h3 id="alt-filter-text" class="type ada_option_title text-center d-sm-none mr-5">
-                            Filter
-                          </h3>
-                          <div class="ada-p-container d-flex justify-content-center">
-                            <p class="description text-center text-lg-left">Reduces color and removes flashes</p>
-                          </div>
-                        </div><!-- ada_content -->
-                      </div><!-- class="ada_toggleContainer" id="SeizureSafe" -->
-                    </section><!-- col-12 col-lg-4 -->
-
-                    <section class="bg_form" id="site-color-presets">
+                    <section class="bg_form " id="site-color-presets">
 
 
                       <div
@@ -578,7 +585,7 @@
                         </h3>
                       </div>
 
-                      <div class="form-check">
+                      <div class="form-check d-flex justify-content-center justify-content-lg-start flex-nowrap">
                         <ul class="text-center modal-btn-options">
                           <li id="DefaultBG_option" class="active">
                             <a href="#!" class="backgroundOptions defaultBackground">
@@ -724,7 +731,7 @@
                   </div><!-- col-12 col-lg-5 -->
                 </div><!-- row -->
               </section>
-              <section id="text-readability-section" class="ada-section-container mt-4">
+              <section id="text-readability-section" class="ada-section-container">
 
                 <h2 class="ada-section-header">Text and Readability</h2>
 
@@ -792,7 +799,7 @@
                       <div id="tl" class="ada-language-btn">
                         <img class="language-icons" src="./files/img/language/filipino-tagalog.png"
                           alt="filipino/tagalog translator button">
-                        <span>Tagalog</span>
+                        <span>Filipino</span>
                       </div>
                     </div>
                     <div class="ada-language-btn-container col-6 col-sm-4 col-md-3">
@@ -1042,7 +1049,7 @@
 
 
 
-                <div class="row text-center pt-4 ada-sub-section" id="FontSize_option">
+                <div class="row text-center pt-3 ada-sub-section" id="FontSize_option">
 
                   <section class="fontsize_form">
 
@@ -1130,7 +1137,7 @@
 
 
 
-                <div id="text-selects" class="row ada-sub-section">
+                <div id="text-selects" class="row ada-sub-section pt-2">
                   <section class="col-12 col-md-4 text-center" id="LetterSpacing_option">
                     <form>
                       <div class="form-group mb-0 mb-lg-3 delete-select-icon">
@@ -1454,7 +1461,7 @@
 
 
 
-                <section class="row d-flex pt-4 ada-sub-section" id="TTS_option">
+                <section class="row d-flex pt-1 ada-sub-section" id="TTS_option">
                   <div class="col-12 col-lg-4 d-flex justify-content-center   ">
                     <div class="ada_toggleContainer " id="TTS_click">
 
@@ -1488,7 +1495,8 @@
                         </div>
                       </div> -->
 
-                        <p class="description text-center text-lg-left">Reads aloud all paragraphs with settings for voice, loudness, speed,
+                        <p class="description text-center text-lg-left">Reads aloud all paragraphs with settings for
+                          voice, loudness, speed,
                           and
                           tone</p>
                       </div><!-- ada_content -->
@@ -1562,13 +1570,14 @@
                     </div><!--TTS_Utterance-->
                     <div class="col-12 text-center mb-4 d-none d-md-block">
                       <button id="reset-voice-btn" class="btn btn-secondary ada-btn "><i class="fa fa-refresh mr-2"
-                          aria-hidden="true"></i>Reset Voice Settings</button>
+                          aria-hidden="tFrue"></i>Reset Voice Settings</button>
                     </div>
                   </div><!-- col-12 col-lg-6 -->
                 </section><!-- row -->
 
               </section>
-              <footer id="contact_section" class="row  mt-4 mb-2 ada-section-container text-center ada-sub-section">
+
+              <footer id="contact_section" class="row ada-section-container text-center ada-sub-section">
                 <div id="ada-statement" class=" d-flex justify-content-center">
                   <a href="https://dos.myflorida.com/accessibility/">Florida Memory Accessibility Statement</a>
                 </div>
@@ -1583,7 +1592,13 @@
                 </div>
 
               </footer><!-- row -->
+              <div class="ada-fixed-footer-content">
+                <i class="fa fa-solid fa-arrow-up"></i>
+              </div>
             </div><!-- container fluid -->
+
+
+
           </div><!-- modal_body -->
 
 
@@ -1647,8 +1662,8 @@
             <h3 class="subheader">About These Records</h3>
             <h4 class="subheader">About These Records</h4>
             <h5 class="subheader">About These Records</h5>
-            <h3 class="subheader">About These Records</h3>
-            <h3 class="subheader">updated - 4: 28 7/15/23 </h3>
+            <h6 class="subheader">About These Records</h6>
+
             <button>Hello</button>
 
             <div class="letter-image">
