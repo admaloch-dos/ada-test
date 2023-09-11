@@ -106,15 +106,15 @@
 
 .fontSizeMedium #ADA_widget .modal_body ul li {
 
-    width: 125px !important;
-    height: 80px !important;
+width: 130px!important;
+    height: 60px !important;
 
 }
 
-.fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
+/* .foc:\Users\ADMaloch\Documents\vsc files\resources\app\out\vs\code\electron-sandbox\workbench\workbench.htmlntSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
     width: 125px !important;
     height: 80px !important;
-}
+} */
 
 .fontSizeMedium .ada-language-btn span {
     font-size: 13px !important;
@@ -251,17 +251,12 @@
 }
 
 
-.fontSizeMedium #ADA_widget .modal_body ul li {
 
+
+/* .fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
     width: 170px !important;
     height: 110px !important;
-
-}
-
-.fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
-    width: 170px !important;
-    height: 110px !important;
-}
+} */
 
 .fontSizeMedium .ada-language-btn span {
     font-size: 20px !important;
@@ -277,8 +272,8 @@
 @media screen and (min-width:1200px) {
     .fontSizeMedium #ADA_widget .modal_body ul li {
 
-        width: 155px !important;
-        height: 100px !important;
+        width: 130px!important;
+        height: 80px !important;
 
     }
 
@@ -385,17 +380,17 @@
    }
 
 
-   .fontSizeMedium #ADA_widget .modal_body ul li {
+   /* .fontSizeMedium #ADA_widget .modal_body ul li {
 
        width: 170px !important;
        height: 110px !important;
 
-   }
+   } */
 
-   .fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
+   /* .fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
        width: 170px !important;
        height: 110px !important;
-   }
+   } */
 
    .fontSizeMedium .ada-language-btn span {
        font-size: 18px !important;
@@ -404,11 +399,11 @@
    .goog-te-combo {
        margin-bottom: 1rem !important;
    }
-   .fontSizeMedium #ADA_widget .modal_body .color_picker_form .form-group {
+   /* .fontSizeMedium #ADA_widget .modal_body .color_picker_form .form-group {
     height: 190px !important;
     width: 190px!important;
     padding-top: 30px;
-}
+} */
 }
 
 @media screen and (min-width:1800px) {
@@ -529,15 +524,17 @@
 
    .fontSizeMedium #ADA_widget .modal_body ul li {
 
-       width: 170px !important;
-       height: 110px !important;
+    width: 150px!important;
+       /* height: 110px !important;
 
    }
 
-   .fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
+   
+
+   /* .fontSizeMedium #ADA_widget .modal_body #FontSize_option ul li {
        width: 170px !important;
        height: 110px !important;
-   }
+   } */
 
    .fontSizeMedium .ada-language-btn span {
        font-size: 23px !important;

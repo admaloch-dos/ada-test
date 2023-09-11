@@ -1,12 +1,23 @@
-
 body {
   overflow-x: hidden;
+}
+
+@media screen and (max-width:500px) {
+  html {
+    overflow-x: hidden;
+  }
 }
 
 body {
   position: relative
 }
 
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 :root {
   --font1: 'Alegreya Sans', sans-serif;
@@ -79,8 +90,8 @@ body {
   font-family: var(--font7)
 }
 
-#ADA_widget h2 {
-  font-family: var(--fon3)
+/* #ADA_widget h2 {
+  font-family: var(--font3)
 }
 
 #ADA_widget h3 {
@@ -97,7 +108,7 @@ body {
 #ADA_widget label,
 #ADA_widget select {
   font-family: var(--font9)
-}
+} */
 
 
 
@@ -116,6 +127,8 @@ body {
 #select_page,
 #keyboard_shortcutsBtn {
   border: var(--dark-blue) solid 1px !important;
+  padding: 0!important;
+  font-size: 14px!important;
 }
 
 /* @media screen and (min-width:500px) {
@@ -125,6 +138,58 @@ body {
   }
 } */
 
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 
 
@@ -152,7 +217,9 @@ body {
   border-bottom: var(--med-grey) solid 1px !important;
 }
 
-
+#Magnify_options .audio_state {
+  display: none!important;
+}
 
 /* .ada-sub-section  {
   transition: .3s ease-in-out all;
@@ -283,7 +350,7 @@ a {
   margin: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
-  height: 100%;
+  height: 90%;
   padding-bottom: 4rem;
   /* overflow-x: hidden; */
 }
@@ -818,7 +885,7 @@ a {
 @media screen and (min-width:400px) {
   .ada_modal_test .modal_content {
     width: 90%;
-    height: 90%;
+    height: 88%;
     padding-bottom: 2rem;
 
   }
@@ -827,7 +894,7 @@ a {
 @media screen and (min-width:500px) {
   .ada_modal_test .modal_content {
     width: 90%;
-    height: 85%;
+    height: 80%;
     margin-bottom: 1rem;
   }
 }
@@ -836,7 +903,7 @@ a {
 @media screen and (min-width:768px) {
   .ada_modal_test .modal_content {
     width: 85%;
-    height: 90%;
+    height: 75%;
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -852,7 +919,7 @@ a {
 @media screen and (min-width:900px) {
   .ada_modal_test .modal_content {
     width: 85%;
-    height: 90%;
+    height: 75%;
 
   }
 
@@ -867,7 +934,7 @@ a {
 @media screen and (min-width:1200px) {
   .ada_modal_test .modal_content {
     width: 87%;
-    height: 85%;
+    height: 80%;
 
   }
 
@@ -877,7 +944,7 @@ a {
 @media screen and (min-width:1500px) {
   .ada_modal_test .modal_content {
     width: 80%;
-    height: 85%;
+    height: 80%;
   }
 }
 
@@ -1006,6 +1073,12 @@ a {
 
 @media screen and (min-width:500px) {
   .ada_modal_test .modal_content .modal_header {
+    padding: 1rem 1rem 0 1rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .ada_modal_test .modal_content .modal_header {
     padding: 1rem;
   }
 }
@@ -1081,38 +1154,73 @@ html.translated-ltr #ADA_widget .modal_content .form-group-heading .ada_option_t
   */
 /************************** SCROLLER **********************/
 /* width */
-.ada_modal_test .modal_body::-webkit-scrollbar {
+.ada_modal_test .modal_body::-webkit-scrollbar,
+#ada-keyboard-shortcuts .modal-body::-webkit-scrollbar {
   width: 8px;
   height: 8px;
   background: #ddd;
 }
 
 /* Track */
-.ada_modal_test .modal_body::-webkit-scrollbar-track {
+.ada_modal_test .modal_body::-webkit-scrollbar-track,
+#ada-keyboard-shortcuts .modal-body::-webkit-scrollbar-track {
   background: #ddd;
   border-radius: 20px;
 }
 
 /* Handle */
-.ada_modal_test .modal_body::-webkit-scrollbar-thumb {
-  background: #acacac;
+.ada_modal_test .modal_body::-webkit-scrollbar-thumb,
+#ada-keyboard-shortcuts .modal-body::-webkit-scrollbar-thumb {
+  background: var(--dark-grey);
   border-radius: 2px;
   border: 0 solid #000;
 }
 
-.ada_modal_test .modal_body::-webkit-scrollbar-corner {
+.ada_modal_test .modal_body::-webkit-scrollbar-corner,
+#ada-keyboard-shortcuts .modal-body::-webkit-scrollbar-corner {
   background: 0 0;
 }
 
 /* Handle on hover */
-.ada_modal_test .modal_body::-webkit-scrollbar-thumb:hover {
-  background: #4D4D4D;
+.ada_modal_test .modal_body::-webkit-scrollbar-thumb:hover,
+#ada-keyboard-shortcuts .modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-blue);
 }
 
-.ada_modal_test .modal_body::-webkit-scrollbar-track-piece {
-  background: #ffff;
+.ada_modal_test .modal_body::-webkit-scrollbar-track-piece,
+#ada-keyboard-shortcuts .modal-body::-webkit-scrollbar-track-piece {
+  background: var(--light-blue);
   border-radius: 0px;
 }
+
+
+/* key shortcuts */
+
+
+
+
+#ada-keyboard-shortcuts .modal-content {
+  height: 80vh;
+  max-height: 700px !important;
+  border: #000 solid 1px;
+  -webkit-box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.34);
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.34);
+}
+
+#ada-keyboard-shortcuts .modal_header {
+  background-color: var(--dark-blue) !important;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+  height: 40px !important;
+}
+
+#ada-keyboard-shortcuts .modal_header button.close {
+  font-size: 25px;
+  position: relative;
+  bottom: .7rem;
+}
+
+
 
 .ada-sub-section {
   /* background: white; */
@@ -1950,7 +2058,7 @@ html.translated-ltr #wordspace_icon {
 } */
 
 #navigation-selects {
-  padding: 1.5em .25em;
+  padding: 1em .25em;
 }
 
 
@@ -1997,11 +2105,29 @@ html.translated-ltr #wordspace_icon {
   cursor: pointer;
 }
 
+/* navigation select */
 #select_page {
   width: 100%;
-  max-width: 300px;
+  max-width: 100%;
   /* min-width: 650px; */
 }
+
+/*
+@media screen and (min-width:450px) {
+  #select_page {
+    max-width: 260px;
+  }
+}
+@media screen and (min-width:650px) {
+  #select_page {
+    max-width: 400px;
+  }
+} */
+
+
+
+
+
 
 #ada-language-presets {
   border: none;
@@ -2985,6 +3111,7 @@ html.translated-ltr #tooltip_template {
     height: 60px !important;
   }
 }
+
 @media screen and (min-width:700px) {
   #ADA_widget .modal_body .color_picker_form .form-group {
     width: 140px !important;
@@ -3645,7 +3772,7 @@ background-color: lightgray;
 
   #select_page,
   #keyboard_shortcutsBtn {
-    font-size: 20PX !important;
+    font-size: 17PX !important;
   }
 }
 
@@ -3657,7 +3784,13 @@ background-color: lightgray;
   bottom: 0;
 }
 
+#select_page option:hover {
+  background-color: green!important;
+}
 
+select.decorated option:hover {
+  box-shadow: 0 0 10px 100px green inset!important;
+}
 
 @media screen and (min-width:992px) {
 
@@ -3677,5 +3810,15 @@ background-color: lightgray;
 
   #site-color-presets {
     margin-left: 1rem;
+  }
+}
+
+.goog-te-combo {
+  background: url("../files/img/google.png") no-repeat left .5rem center/15px 15px !important;
+}
+
+@media screen and (min-width:768px) {
+  .goog-te-combo {
+    background: url("../files/img/google.png") no-repeat left .5rem center/20px 20px !important;
   }
 }

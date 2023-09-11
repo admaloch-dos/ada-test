@@ -152,11 +152,11 @@ body.Cursor_Enlarge {
 }
 
 .form-range:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem var(--dark-blue);
 }
 
 .form-range:focus::-moz-range-thumb {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem var(--dark-blue);
 }
 
 .form-range::-moz-focus-outer {
@@ -811,7 +811,9 @@ body.BaskervilleFont {
     border: var(--light-grey) !important;
 }
 
-
+.highcontrast .goog-te-combo {
+    color: white!important;
+}
 
 /************************************************************ Desaturate ************************************************************/
 .desaturated #ADA_widget .modal_content .modal_header {
@@ -1019,6 +1021,8 @@ body.BaskervilleFont {
 
 
 }
+
+
 
 /************************************************************ Invert ************************************************************/
 .inverted h1,
@@ -1301,7 +1305,9 @@ body.BaskervilleFont {
     background-color: var(--grey)!important;
    color: var(--off-white)!important;
 }
-
+.inverted .goog-te-combo {
+    color: white!important;
+}
 
 /************************************************************ High Saturation ************************************************************/
 .highsaturation {
@@ -1708,12 +1714,12 @@ body.HighlightLinks.highcontrast .modal_body .form-check ul li.active a {
 
 
 
-    .fontSizeMedium #ADA_widget .modal_body ul li {
+    /* .fontSizeMedium #ADA_widget .modal_body ul li {
 
         width: 100px !important;
         height: 50px !important;
 
-    }
+    } */
 
 
 

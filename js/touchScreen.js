@@ -1,4 +1,4 @@
-var hasTouchScreen = false;
+let hasTouchScreen = false;
 
 if ("maxTouchPoints" in navigator) {
   hasTouchScreen = navigator.maxTouchPoints > 0;
@@ -19,3 +19,8 @@ if ("maxTouchPoints" in navigator) {
     );
   }
 }
+
+// if(!hasTouchScreen) {
+//   console.log('doesnt have touch screen')
+//   document.html.style.overflowX = "hidden";
+// }
