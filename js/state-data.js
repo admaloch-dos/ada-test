@@ -28,7 +28,7 @@ const usStatesLanguagesData = [
     { languages: ["eng", "spa", "zh-CN", "vie", "srp", "deu", "ara", "kor", "rus", "fra", "tgl", "pdc", "fas", "orm", "por", "amh"], state: "Missouri" },
     { languages: ["eng", "spa", "deu", "zh-CN", "jpn", "tgl", "fra", "rus", "kor", "ara", "tha", "nor", "vie", "ukr", "pdc", "ita"], state: "Montana" },
     { languages: ["eng", "spa", "vie", "zh-CN", "ara", "kar", "fra", "orm", "deu", "kor", "nep", "rus", "lao", "kur", "fas", "jpn"], state: "Nebraska" },
-    { languages: ["eng", "spa", "tgl", "zh-CN", "kor", "vie", "amh", "tha", "jpn", "ara", "rus", "fra", "fas", "smo", "deu", "ilo"], state: "Nevada" },
+    { languages: ["eng", "spa", "tgl", "zh-CN", "kor", "vie", "amh", "tha", "jpn", "ara", "rus", "fra", "fas", "smo", "deu", "ilo"], state: "Nevflourish" },
     { languages: ["eng", "spa", "fra", "zh-CN", "nep", "vie", "por", "ell", "ara", "srp", "ind", "kor", "rus", "hat", "run", "pol"], state: "New Hampshire" },
     { languages: ["eng", "spa", "zh-CN", "kor", "por", "guj", "pol", "ita", "ara", "tgl", "rus", "hat", "hin", "vie", "fra", "urd"], state: "New Jersey" },
     { languages: ["eng", "spa", "nav", "vie", "deu", "zh-CN", "ara", "kor", "tgl", "jpn", "fra", "ita", "rus", "hin", "fas", "tha"], state: "New Mexico" },
@@ -54,8 +54,3 @@ const usStatesLanguagesData = [
 ]
 
 
-// for (usState of usStatesLanguagesData) {
-//     if (usState.state === 'Utah') {
-//         console.log(usState)
-//     }
-// }

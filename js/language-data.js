@@ -9,8 +9,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ZA ZA-NC ZA-WC NA",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "South Africa",
-    FlorishIconfilename: "afr.png"
+    ContinentAndRegion: "Southern Africa",
+    FlorishIconfilename: "afr-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ak",
@@ -22,8 +22,8 @@ const worldLanguageData = [
     LanguageUseCodes: "GH-AH",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "West Africa",
-    FlorishIconfilename: "aka.png"
+    ContinentAndRegion: "Western Africa",
+    FlorishIconfilename: "aka-min.png"
   },
   {
     LanguageCodeGoogleTrans: "am",
@@ -35,8 +35,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ET",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "amh.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "amh-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ar",
@@ -48,8 +48,8 @@ const worldLanguageData = [
     LanguageUseCodes: "DZ BH TD KM DJ EG ER IQ JO KW LB LY MR MA OM PS QA SA SO SD SY TN AE YE TZ-07 TZ-11 TZ-15",
     WorldwideUse: "Worldwide",
     Continent: "Asia",
-    ContinentAndRegion: "Southwest Asia",
-    FlorishIconfilename: "ara.png"
+    ContinentAndRegion: "Southwestern Asia",
+    FlorishIconfilename: "ara-min.png"
   },
   {
     LanguageCodeGoogleTrans: "as",
@@ -61,8 +61,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-AS",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "asm.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "asm-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ay",
@@ -75,7 +75,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "South America",
     ContinentAndRegion: "South America",
-    FlorishIconfilename: "aym.png"
+    FlorishIconfilename: "aym-min.png"
   },
   {
     LanguageCodeGoogleTrans: "az",
@@ -87,8 +87,8 @@ const worldLanguageData = [
     LanguageUseCodes: "AZ RU-DA",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "Southwest Asia",
-    FlorishIconfilename: "aze.png"
+    ContinentAndRegion: "Southwestern Asia",
+    FlorishIconfilename: "aze-min.png"
   },
   {
     LanguageCodeGoogleTrans: "be",
@@ -101,7 +101,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Eastern Europe",
-    FlorishIconfilename: "bel.png"
+    FlorishIconfilename: "bel-min.png"
   },
   {
     LanguageCodeGoogleTrans: "bg",
@@ -114,7 +114,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southeastern Europe",
-    FlorishIconfilename: "bul.png"
+    FlorishIconfilename: "bul-min.png"
   },
   {
     LanguageCodeGoogleTrans: "bho",
@@ -126,8 +126,8 @@ const worldLanguageData = [
     LanguageUseCodes: "FJ IN-JH",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "bho.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "bho-min.png"
   },
   {
     LanguageCodeGoogleTrans: "bm",
@@ -139,8 +139,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ML",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "bam.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "bam-min.png"
   },
   {
     LanguageCodeGoogleTrans: "bn",
@@ -152,8 +152,8 @@ const worldLanguageData = [
     LanguageUseCodes: "BD IN-WB IN-TR IN-JH",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "ben.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "ben-min.png"
   },
   {
     LanguageCodeGoogleTrans: "bs",
@@ -166,7 +166,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southeastern Europe",
-    FlorishIconfilename: "bos.png"
+    FlorishIconfilename: "bos-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ca",
@@ -179,7 +179,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southwestern Europe",
-    FlorishIconfilename: "cat.png"
+    FlorishIconfilename: "cat-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ceb",
@@ -192,7 +192,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "ceb.png"
+    FlorishIconfilename: "ceb-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ckb",
@@ -204,8 +204,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IQ-KR",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "Southwest Asia",
-    FlorishIconfilename: "ckb.png"
+    ContinentAndRegion: "Southwestern Asia",
+    FlorishIconfilename: "ckb-min.png"
   },
   {
     LanguageCodeGoogleTrans: "co",
@@ -218,7 +218,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southern Europe",
-    FlorishIconfilename: "cos.png"
+    FlorishIconfilename: "cos-min.png"
   },
   {
     LanguageCodeGoogleTrans: "cs",
@@ -231,7 +231,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Central Europe",
-    FlorishIconfilename: "ces.png"
+    FlorishIconfilename: "ces-min.png"
   },
   {
     LanguageCodeGoogleTrans: "cy",
@@ -244,7 +244,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Western Europe",
-    FlorishIconfilename: "cym.png"
+    FlorishIconfilename: "cym-min.png"
   },
   {
     LanguageCodeGoogleTrans: "da",
@@ -257,7 +257,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Northern Europe",
-    FlorishIconfilename: "dan.png"
+    FlorishIconfilename: "dan-min.png"
   },
   {
     LanguageCodeGoogleTrans: "de",
@@ -270,7 +270,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Central Europe",
-    FlorishIconfilename: "deu.png"
+    FlorishIconfilename: "deu-min.png"
   },
   {
     LanguageCodeGoogleTrans: "doi",
@@ -282,8 +282,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-JK",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "doi.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "doi-min.png"
   },
   {
     LanguageCodeGoogleTrans: "dv",
@@ -295,8 +295,8 @@ const worldLanguageData = [
     LanguageUseCodes: "MV",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "div.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "div-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ee",
@@ -308,8 +308,8 @@ const worldLanguageData = [
     LanguageUseCodes: "*GH-TV GH-OT BJ-MO TG-M TG-P",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "West Africa",
-    FlorishIconfilename: "ewe.png"
+    ContinentAndRegion: "Western Africa",
+    FlorishIconfilename: "ewe-min.png"
   },
   {
     LanguageCodeGoogleTrans: "el",
@@ -322,7 +322,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southern Europe",
-    FlorishIconfilename: "ell.png"
+    FlorishIconfilename: "ell-min.png"
   },
   {
     LanguageCodeGoogleTrans: "en",
@@ -335,7 +335,7 @@ const worldLanguageData = [
     WorldwideUse: "Worldwide",
     Continent: "Europe",
     ContinentAndRegion: "Western Europe",
-    FlorishIconfilename: "eng.png"
+    FlorishIconfilename: "eng-min.png"
   },
   // {
   //   LanguageCodeGoogleTrans: "en",
@@ -348,7 +348,7 @@ const worldLanguageData = [
   //   WorldwideUse: "Worldwide",
   //Continent: "Europe",
   //   ContinentAndRegion: "Western Europe",
-  //   FlorishIconfilename: "eng-AU.png"
+  //   FlorishIconfilename: "eng-AU-min.png"
   // },
   // {
   //   LanguageCodeGoogleTrans: "en",
@@ -361,7 +361,7 @@ const worldLanguageData = [
   //   WorldwideUse: "Worldwide",
   //Continent: "Europe",
   //   ContinentAndRegion: "Western Europe",
-  //   FlorishIconfilename: "eng-CA.png"
+  //   FlorishIconfilename: "eng-CA-min.png"
   // },
   // {
   //   LanguageCodeGoogleTrans: "en",
@@ -374,7 +374,7 @@ const worldLanguageData = [
   //   WorldwideUse: "Worldwide",
   //Continent: "Europe",
   //   ContinentAndRegion: "Western Europe",
-  //   FlorishIconfilename: "eng-GB.png"
+  //   FlorishIconfilename: "eng-GB-min.png"
   // },
   // {
   //   LanguageCodeGoogleTrans: "en",
@@ -387,7 +387,7 @@ const worldLanguageData = [
   //   WorldwideUse: "Worldwide",
   //Continent: "Europe",
   //   ContinentAndRegion: "Western Europe",
-  //   FlorishIconfilename: "eng-US.png"
+  //   FlorishIconfilename: "eng-US-min.png"
   // },
   {
     LanguageCodeGoogleTrans: "eo",
@@ -400,7 +400,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "",
     ContinentAndRegion: "",
-    FlorishIconfilename: "epo.png"
+    FlorishIconfilename: "epo-min.png"
   },
   // {
   //   LanguageCodeGoogleTrans: "es",
@@ -413,7 +413,7 @@ const worldLanguageData = [
   //   WorldwideUse: "Worldwide",
   //Continent: "Europe",
   //   ContinentAndRegion: "Southwestern Europe",
-  //   FlorishIconfilename: "spa-419.png"
+  //   FlorishIconfilename: "spa-419-min.png"
   // },
   {
     LanguageCodeGoogleTrans: "es",
@@ -426,7 +426,7 @@ const worldLanguageData = [
     WorldwideUse: "Worldwide",
     Continent: "Europe",
     ContinentAndRegion: "Southwestern Europe",
-    FlorishIconfilename: "spa-419.png"
+    FlorishIconfilename: "spa-419-min.png"
   },
   {
     LanguageCodeGoogleTrans: "et",
@@ -439,7 +439,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Eastern Europe",
-    FlorishIconfilename: "est.png"
+    FlorishIconfilename: "est-min.png"
   },
   {
     LanguageCodeGoogleTrans: "eu",
@@ -452,7 +452,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southwestern Europe",
-    FlorishIconfilename: "eus.png"
+    FlorishIconfilename: "eus-min.png"
   },
   {
     LanguageCodeGoogleTrans: "fa",
@@ -464,8 +464,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IR AF TJ RU-DA",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "Southwest Asia",
-    FlorishIconfilename: "fas.png"
+    ContinentAndRegion: "Southwestern Asia",
+    FlorishIconfilename: "fas-min.png"
   },
   {
     LanguageCodeGoogleTrans: "fi",
@@ -478,7 +478,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Northern Europe",
-    FlorishIconfilename: "fin.png"
+    FlorishIconfilename: "fin-min.png"
   },
   {
     LanguageCodeGoogleTrans: "fr",
@@ -491,7 +491,7 @@ const worldLanguageData = [
     WorldwideUse: "Worldwide",
     Continent: "Europe",
     ContinentAndRegion: "Western Europe",
-    FlorishIconfilename: "fra.png"
+    FlorishIconfilename: "fra-min.png"
   },
   {
     LanguageCodeGoogleTrans: "fy",
@@ -504,7 +504,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Western Europe",
-    FlorishIconfilename: "fry.png"
+    FlorishIconfilename: "fry-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ga",
@@ -517,7 +517,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Western Europe",
-    FlorishIconfilename: "gle.png"
+    FlorishIconfilename: "gle-min.png"
   },
   {
     LanguageCodeGoogleTrans: "gd",
@@ -530,7 +530,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Western Europe",
-    FlorishIconfilename: "gla.png"
+    FlorishIconfilename: "gla-min.png"
   },
   {
     LanguageCodeGoogleTrans: "gl",
@@ -543,7 +543,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southwestern Europe",
-    FlorishIconfilename: "glg.png"
+    FlorishIconfilename: "glg-min.png"
   },
   {
     LanguageCodeGoogleTrans: "gn",
@@ -556,7 +556,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "South America",
     ContinentAndRegion: "South America",
-    FlorishIconfilename: "grn.png"
+    FlorishIconfilename: "grn-min.png"
   },
   {
     LanguageCodeGoogleTrans: "gom",
@@ -568,8 +568,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-GA",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "gom.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "gom-min.png"
   },
   {
     LanguageCodeGoogleTrans: "gu",
@@ -581,8 +581,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-GJ IN-DH",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "guj.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "guj-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ha",
@@ -594,8 +594,8 @@ const worldLanguageData = [
     LanguageUseCodes: "NG NE",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "West Africa",
-    FlorishIconfilename: "hau.png"
+    ContinentAndRegion: "Western Africa",
+    FlorishIconfilename: "hau-min.png"
   },
   {
     LanguageCodeGoogleTrans: "haw",
@@ -608,7 +608,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "haw.png"
+    FlorishIconfilename: "haw-min.png"
   },
   {
     LanguageCodeGoogleTrans: "hi",
@@ -620,8 +620,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN",
     WorldwideUse: "Worldwide",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "hin.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "hin-min.png"
   },
   {
     LanguageCodeGoogleTrans: "hmn",
@@ -634,8 +634,8 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     Continent: "Asia",
-    ContinentAndRegion: "Southeast Asia",
-    FlorishIconfilename: "hmn.png"
+    ContinentAndRegion: "Southeastern Asia",
+    FlorishIconfilename: "hmn-min.png"
   },
   {
     LanguageCodeGoogleTrans: "hr",
@@ -648,7 +648,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southeastern Europe",
-    FlorishIconfilename: "hrv.png"
+    FlorishIconfilename: "hrv-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ht",
@@ -661,7 +661,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "North America",
     ContinentAndRegion: "North America",
-    FlorishIconfilename: "hat.png"
+    FlorishIconfilename: "hat-min.png"
   },
   {
     LanguageCodeGoogleTrans: "hu",
@@ -674,7 +674,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Central Europe",
-    FlorishIconfilename: "hun.png"
+    FlorishIconfilename: "hun-min.png"
   },
   {
     LanguageCodeGoogleTrans: "hy",
@@ -686,8 +686,8 @@ const worldLanguageData = [
     LanguageUseCodes: "AM",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "Southwest Asia",
-    FlorishIconfilename: "hye.png"
+    ContinentAndRegion: "Southwestern Asia",
+    FlorishIconfilename: "hye-min.png"
   },
   {
     LanguageCodeGoogleTrans: "id",
@@ -700,7 +700,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "ind.png"
+    FlorishIconfilename: "ind-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ig",
@@ -712,8 +712,8 @@ const worldLanguageData = [
     LanguageUseCodes: "NG",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "West Africa",
-    FlorishIconfilename: "ibo.png"
+    ContinentAndRegion: "Western Africa",
+    FlorishIconfilename: "ibo-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ilo",
@@ -726,7 +726,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "ilo.png"
+    FlorishIconfilename: "ilo-min.png"
   },
   {
     LanguageCodeGoogleTrans: "is",
@@ -739,7 +739,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Northern Europe",
-    FlorishIconfilename: "isl.png"
+    FlorishIconfilename: "isl-min.png"
   },
   {
     LanguageCodeGoogleTrans: "it",
@@ -752,7 +752,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southern Europe",
-    FlorishIconfilename: "ita.png"
+    FlorishIconfilename: "ita-min.png"
   },
   {
     LanguageCodeGoogleTrans: "iw",
@@ -764,8 +764,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IL",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "Southwest Asia",
-    FlorishIconfilename: "heb.png"
+    ContinentAndRegion: "Southwestern Asia",
+    FlorishIconfilename: "heb-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ja",
@@ -777,8 +777,8 @@ const worldLanguageData = [
     LanguageUseCodes: "JP PW",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "East Asia",
-    FlorishIconfilename: "jpn.png"
+    ContinentAndRegion: "Eastern Asia",
+    FlorishIconfilename: "jpn-min.png"
   },
   {
     LanguageCodeGoogleTrans: "jv",
@@ -791,7 +791,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "jav.png"
+    FlorishIconfilename: "jav-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ka",
@@ -803,8 +803,8 @@ const worldLanguageData = [
     LanguageUseCodes: "GE",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "Southwest Asia",
-    FlorishIconfilename: "kat.png"
+    ContinentAndRegion: "Southwestern Asia",
+    FlorishIconfilename: "kat-min.png"
   },
   {
     LanguageCodeGoogleTrans: "kk",
@@ -817,34 +817,34 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     ContinentAndRegion: "Central Asia",
-    FlorishIconfilename: "kaz.png"
+    FlorishIconfilename: "kaz-min.png"
   },
   {
     LanguageCodeGoogleTrans: "km",
     LanguageCode: "khm",
     LanguageEnglish: "Khmer",
     LanguageAutonym: "ភាសាខ្មែរ",
-    LanguageScriptCode: "Latn (215)",
-    LanguageScriptAutonym: "Latin",
+    LanguageScriptCode: "Khmr (355)",
+    LanguageScriptAutonym: "អក្សរខ្មែរ",
     LanguageUseCodes: "KH",
     WorldwideUse: "",
     Continent: "Asia",
     Continent: "Asia",
-    ContinentAndRegion: "Southeast Asia",
-    FlorishIconfilename: "khm.png"
+    ContinentAndRegion: "Southeastern Asia",
+    FlorishIconfilename: "khm-min.png"
   },
   {
     LanguageCodeGoogleTrans: "kn",
     LanguageCode: "kan",
-    LanguageEnglish: "Kannada",
+    LanguageEnglish: "Kannflourish",
     LanguageAutonym: "ಕನ್ನಡ",
-    LanguageScriptCode: "Latn (215)",
-    LanguageScriptAutonym: "Latin",
+    LanguageScriptCode: "Knda (345)",
+    LanguageScriptAutonym: "ಕನ್ನಡ",
     LanguageUseCodes: "IN-KA",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "kan.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "kan-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ko",
@@ -856,8 +856,8 @@ const worldLanguageData = [
     LanguageUseCodes: "KO KP",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "East Asia",
-    FlorishIconfilename: "kor-KO.png"
+    ContinentAndRegion: "Eastern Asia",
+    FlorishIconfilename: "kor-KO-min.png"
   },
   {
     LanguageCodeGoogleTrans: "kri",
@@ -869,8 +869,8 @@ const worldLanguageData = [
     LanguageUseCodes: "SL",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "West Africa",
-    FlorishIconfilename: "kri.png"
+    ContinentAndRegion: "Western Africa",
+    FlorishIconfilename: "kri-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ku",
@@ -882,8 +882,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IQ-KR",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "Southwest Asia",
-    FlorishIconfilename: "kur.png"
+    ContinentAndRegion: "Southwestern Asia",
+    FlorishIconfilename: "kur-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ky",
@@ -896,7 +896,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     ContinentAndRegion: "Central Asia",
-    FlorishIconfilename: "kir.png"
+    FlorishIconfilename: "kir-min.png"
   },
   {
     LanguageCodeGoogleTrans: "la",
@@ -909,7 +909,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southern Europe",
-    FlorishIconfilename: "lat.png"
+    FlorishIconfilename: "lat-min.png"
   },
   {
     LanguageCodeGoogleTrans: "lb",
@@ -922,7 +922,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Western Europe",
-    FlorishIconfilename: "ltz.png"
+    FlorishIconfilename: "ltz-min.png"
   },
   {
     LanguageCodeGoogleTrans: "lg",
@@ -934,8 +934,8 @@ const worldLanguageData = [
     LanguageUseCodes: "UG-C",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "lug.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "lug-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ln",
@@ -948,21 +948,21 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Africa",
     ContinentAndRegion: "Central Africa",
-    FlorishIconfilename: "lin.png"
+    FlorishIconfilename: "lin-min.png"
   },
   {
     LanguageCodeGoogleTrans: "lo",
     LanguageCode: "lao",
     LanguageEnglish: "Lao",
     LanguageAutonym: "ພາສາລາວ",
-    LanguageScriptCode: "Latn (215)",
-    LanguageScriptAutonym: "Latin",
+    LanguageScriptCode: "Laoo (356)",
+    LanguageScriptAutonym: "ອັກສອນລາວ",
     LanguageUseCodes: "LA",
     WorldwideUse: "",
     Continent: "Asia",
     Continent: "Asia",
-    ContinentAndRegion: "Southeast Asia",
-    FlorishIconfilename: "lao.png"
+    ContinentAndRegion: "Southeastern Asia",
+    FlorishIconfilename: "lao-min.png"
   },
   {
     LanguageCodeGoogleTrans: "lt",
@@ -975,7 +975,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Eastern Europe",
-    FlorishIconfilename: "lit.png"
+    FlorishIconfilename: "lit-min.png"
   },
   {
     LanguageCodeGoogleTrans: "lus",
@@ -987,8 +987,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-MZ",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "lus.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "lus-min.png"
   },
   {
     LanguageCodeGoogleTrans: "lv",
@@ -1001,7 +1001,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Eastern Europe",
-    FlorishIconfilename: "lav.png"
+    FlorishIconfilename: "lav-min.png"
   },
   {
     LanguageCodeGoogleTrans: "mai",
@@ -1013,8 +1013,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-JK",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "mai.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "mai-min.png"
   },
   {
     LanguageCodeGoogleTrans: "mg",
@@ -1026,8 +1026,8 @@ const worldLanguageData = [
     LanguageUseCodes: "MG",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "mlg.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "mlg-min.png"
   },
   {
     LanguageCodeGoogleTrans: "mi",
@@ -1040,7 +1040,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "mri.png"
+    FlorishIconfilename: "mri-min.png"
   },
   {
     LanguageCodeGoogleTrans: "mk",
@@ -1053,7 +1053,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southeastern Europe",
-    FlorishIconfilename: "mkd.png"
+    FlorishIconfilename: "mkd-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ml",
@@ -1065,8 +1065,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-KL IN-PY",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "mal.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "mal-min.png"
   },
   {
     LanguageCodeGoogleTrans: "mn",
@@ -1079,7 +1079,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     ContinentAndRegion: "Central Asia",
-    FlorishIconfilename: "mon.png"
+    FlorishIconfilename: "mon-min.png"
   },
   {
     LanguageCodeGoogleTrans: "mni-Mtei",
@@ -1091,8 +1091,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-MN",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "mni.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "mni-min.png"
   },
   {
     LanguageCodeGoogleTrans: "mr",
@@ -1104,8 +1104,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-MH IN-GA",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "mar.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "mar-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ms",
@@ -1118,7 +1118,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "msa.png"
+    FlorishIconfilename: "msa-min.png"
   },
   {
     LanguageCodeGoogleTrans: "mt",
@@ -1131,7 +1131,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southern Europe",
-    FlorishIconfilename: "mlt.png"
+    FlorishIconfilename: "mlt-min.png"
   },
   {
     LanguageCodeGoogleTrans: "my",
@@ -1144,8 +1144,8 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     Continent: "Asia",
-    ContinentAndRegion: "Southeast Asia",
-    FlorishIconfilename: "mya.png"
+    ContinentAndRegion: "Southeastern Asia",
+    FlorishIconfilename: "mya-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ne",
@@ -1157,8 +1157,8 @@ const worldLanguageData = [
     LanguageUseCodes: "NP IN-SK IN-WB",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "nep.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "nep-min.png"
   },
   {
     LanguageCodeGoogleTrans: "nl",
@@ -1171,7 +1171,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Western Europe",
-    FlorishIconfilename: "nld.png"
+    FlorishIconfilename: "nld-min.png"
   },
   {
     LanguageCodeGoogleTrans: "no",
@@ -1184,7 +1184,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Northern Europe",
-    FlorishIconfilename: "nor.png"
+    FlorishIconfilename: "nor-min.png"
   },
   {
     LanguageCodeGoogleTrans: "nso",
@@ -1196,8 +1196,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ZA",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "South Africa",
-    FlorishIconfilename: "nso.png"
+    ContinentAndRegion: "Southern Africa",
+    FlorishIconfilename: "nso-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ny",
@@ -1209,8 +1209,8 @@ const worldLanguageData = [
     LanguageUseCodes: "MW ZW *ZM-03 MZ-A MZ-T",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "nya.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "nya-min.png"
   },
   {
     LanguageCodeGoogleTrans: "om",
@@ -1222,8 +1222,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ET *KE",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "orm.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "orm-min.png"
   },
   {
     LanguageCodeGoogleTrans: "or",
@@ -1235,8 +1235,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-OR IN-JH IN-WB",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "ori.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "ori-min.png"
   },
   {
     LanguageCodeGoogleTrans: "pa",
@@ -1248,8 +1248,8 @@ const worldLanguageData = [
     LanguageUseCodes: "PK-PB IN-PB IN-HR IN-DL IN-WB",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "pan.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "pan-min.png"
   },
   {
     LanguageCodeGoogleTrans: "pl",
@@ -1262,7 +1262,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Central Europe",
-    FlorishIconfilename: "pol.png"
+    FlorishIconfilename: "pol-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ps",
@@ -1274,8 +1274,8 @@ const worldLanguageData = [
     LanguageUseCodes: "AF PK",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "pus.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "pus-min.png"
   },
   {
     LanguageCodeGoogleTrans: "pt",
@@ -1288,7 +1288,7 @@ const worldLanguageData = [
     WorldwideUse: "Worldwide",
     Continent: "Europe",
     ContinentAndRegion: "Southwestern Europe",
-    FlorishIconfilename: "por.png"
+    FlorishIconfilename: "por-min.png"
   },
   {
     LanguageCodeGoogleTrans: "qu",
@@ -1301,7 +1301,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "South America",
     ContinentAndRegion: "South America",
-    FlorishIconfilename: "que.png"
+    FlorishIconfilename: "que-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ro",
@@ -1314,7 +1314,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southeastern Europe",
-    FlorishIconfilename: "ron.png"
+    FlorishIconfilename: "ron-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ru",
@@ -1327,7 +1327,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Eastern Europe",
-    FlorishIconfilename: "rus.png"
+    FlorishIconfilename: "rus-min.png"
   },
   {
     LanguageCodeGoogleTrans: "rw",
@@ -1339,8 +1339,8 @@ const worldLanguageData = [
     LanguageUseCodes: "RW",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "kin.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "kin-min.png"
   },
   {
     LanguageCodeGoogleTrans: "sa",
@@ -1352,8 +1352,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN IN-HP IN-UT",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "san.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "san-min.png"
   },
   {
     LanguageCodeGoogleTrans: "sd",
@@ -1365,8 +1365,8 @@ const worldLanguageData = [
     LanguageUseCodes: "PK-SD IN",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "snd.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "snd-min.png"
   },
   {
     LanguageCodeGoogleTrans: "si",
@@ -1378,8 +1378,8 @@ const worldLanguageData = [
     LanguageUseCodes: "LK",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "sin.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "sin-min.png"
   },
   {
     LanguageCodeGoogleTrans: "sk",
@@ -1392,7 +1392,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Central Europe",
-    FlorishIconfilename: "slk.png"
+    FlorishIconfilename: "slk-min.png"
   },
   {
     LanguageCodeGoogleTrans: "sl",
@@ -1405,7 +1405,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Central Europe",
-    FlorishIconfilename: "slv.png"
+    FlorishIconfilename: "slv-min.png"
   },
   {
     LanguageCodeGoogleTrans: "sm",
@@ -1418,7 +1418,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "smo.png"
+    FlorishIconfilename: "smo-min.png"
   },
   {
     LanguageCodeGoogleTrans: "sn",
@@ -1430,8 +1430,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ZW *MZ",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "sna.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "sna-min.png"
   },
   {
     LanguageCodeGoogleTrans: "so",
@@ -1443,8 +1443,8 @@ const worldLanguageData = [
     LanguageUseCodes: "SO DJ ET *KE",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "som.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "som-min.png"
   },
   {
     LanguageCodeGoogleTrans: "sq",
@@ -1457,7 +1457,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southeastern Europe",
-    FlorishIconfilename: "sqi.png"
+    FlorishIconfilename: "sqi-min.png"
   },
   {
     LanguageCodeGoogleTrans: "sr",
@@ -1470,7 +1470,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Southeastern Europe",
-    FlorishIconfilename: "srp.png"
+    FlorishIconfilename: "srp-min.png"
   },
   {
     LanguageCodeGoogleTrans: "st",
@@ -1482,8 +1482,8 @@ const worldLanguageData = [
     LanguageUseCodes: "LS ZA ZW",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "South Africa",
-    FlorishIconfilename: "sot.png"
+    ContinentAndRegion: "Southern Africa",
+    FlorishIconfilename: "sot-min.png"
   },
   {
     LanguageCodeGoogleTrans: "su",
@@ -1496,7 +1496,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "sun.png"
+    FlorishIconfilename: "sun-min.png"
   },
   {
     LanguageCodeGoogleTrans: "sv",
@@ -1509,7 +1509,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Northern Europe",
-    FlorishIconfilename: "swe.png"
+    FlorishIconfilename: "swe-min.png"
   },
   {
     LanguageCodeGoogleTrans: "sw",
@@ -1521,8 +1521,8 @@ const worldLanguageData = [
     LanguageUseCodes: "TZ RW KE UG *BI CD MZ",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "swa.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "swa-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ta",
@@ -1534,8 +1534,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-TN IN-PY LK SG",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "tam.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "tam-min.png"
   },
   {
     LanguageCodeGoogleTrans: "te",
@@ -1547,8 +1547,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IN-AP IN-TG IN-PY IN-WB",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "tel.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "tel-min.png"
   },
   {
     LanguageCodeGoogleTrans: "tg",
@@ -1561,7 +1561,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     ContinentAndRegion: "Central Asia",
-    FlorishIconfilename: "tgk.png"
+    FlorishIconfilename: "tgk-min.png"
   },
   {
     LanguageCodeGoogleTrans: "th",
@@ -1574,8 +1574,8 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     Continent: "Asia",
-    ContinentAndRegion: "Southeast Asia",
-    FlorishIconfilename: "tha.png"
+    ContinentAndRegion: "Southeastern Asia",
+    FlorishIconfilename: "tha-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ti",
@@ -1587,8 +1587,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ER ET",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "tir.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "tir-min.png"
   },
   {
     LanguageCodeGoogleTrans: "tk",
@@ -1601,7 +1601,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     ContinentAndRegion: "Central Asia",
-    FlorishIconfilename: "tuk.png"
+    FlorishIconfilename: "tuk-min.png"
   },
   {
     LanguageCodeGoogleTrans: "tl",
@@ -1614,7 +1614,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "tgl.png"
+    FlorishIconfilename: "tgl-min.png"
   },
   {
     LanguageCodeGoogleTrans: "tr",
@@ -1626,8 +1626,8 @@ const worldLanguageData = [
     LanguageUseCodes: "TR CY",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "Southwest Asia",
-    FlorishIconfilename: "tur.png"
+    ContinentAndRegion: "Southwestern Asia",
+    FlorishIconfilename: "tur-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ts",
@@ -1639,8 +1639,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ZA ZW *MZ",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "South Africa",
-    FlorishIconfilename: "tso.png"
+    ContinentAndRegion: "Southern Africa",
+    FlorishIconfilename: "tso-min.png"
   },
   {
     LanguageCodeGoogleTrans: "tt",
@@ -1653,7 +1653,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     ContinentAndRegion: "Central Asia",
-    FlorishIconfilename: "tat.png"
+    FlorishIconfilename: "tat-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ug",
@@ -1666,7 +1666,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     ContinentAndRegion: "Central Asia",
-    FlorishIconfilename: "uig.png"
+    FlorishIconfilename: "uig-min.png"
   },
   {
     LanguageCodeGoogleTrans: "uk",
@@ -1679,7 +1679,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Eastern Europe",
-    FlorishIconfilename: "ukr.png"
+    FlorishIconfilename: "ukr-min.png"
   },
   {
     LanguageCodeGoogleTrans: "ur",
@@ -1691,8 +1691,8 @@ const worldLanguageData = [
     LanguageUseCodes: "PK IN-JK IN-JH IN-DL IN-BR IN-UP IN-AR IN-TG\tIN-WB",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "South Asia",
-    FlorishIconfilename: "urd.png"
+    ContinentAndRegion: "Southern Asia",
+    FlorishIconfilename: "urd-min.png"
   },
   {
     LanguageCodeGoogleTrans: "uz",
@@ -1705,7 +1705,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     ContinentAndRegion: "Central Asia",
-    FlorishIconfilename: "uzb.png"
+    FlorishIconfilename: "uzb-min.png"
   },
   {
     LanguageCodeGoogleTrans: "vi",
@@ -1718,8 +1718,8 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     Continent: "Asia",
-    ContinentAndRegion: "Southeast Asia",
-    FlorishIconfilename: "vie.png"
+    ContinentAndRegion: "Southeastern Asia",
+    FlorishIconfilename: "vie-min.png"
   },
   {
     LanguageCodeGoogleTrans: "xh",
@@ -1731,8 +1731,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ZA ZW *BW",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "South Africa",
-    FlorishIconfilename: "xho.png"
+    ContinentAndRegion: "Southern Africa",
+    FlorishIconfilename: "xho-min.png"
   },
   {
     LanguageCodeGoogleTrans: "yi",
@@ -1745,7 +1745,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Europe",
     ContinentAndRegion: "Central Europe",
-    FlorishIconfilename: "yid.png"
+    FlorishIconfilename: "yid-min.png"
   },
   {
     LanguageCodeGoogleTrans: "yo",
@@ -1757,8 +1757,8 @@ const worldLanguageData = [
     LanguageUseCodes: "NG",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "West Africa",
-    FlorishIconfilename: "yor.png"
+    ContinentAndRegion: "Western Africa",
+    FlorishIconfilename: "yor-min.png"
   },
   {
     LanguageCodeGoogleTrans: "zh-CN",
@@ -1770,8 +1770,8 @@ const worldLanguageData = [
     LanguageUseCodes: "CN SG",
     WorldwideUse: "Worldwide",
     Continent: "Asia",
-    ContinentAndRegion: "East Asia",
-    FlorishIconfilename: "zho-CN.png"
+    ContinentAndRegion: "Eastern Asia",
+    FlorishIconfilename: "zho-CN-min.png"
   },
   {
     LanguageCodeGoogleTrans: "zh-TW",
@@ -1783,8 +1783,8 @@ const worldLanguageData = [
     LanguageUseCodes: "TW HK MO",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "East Asia",
-    FlorishIconfilename: "zho-TW.png"
+    ContinentAndRegion: "Eastern Asia",
+    FlorishIconfilename: "zho-TW-min.png"
   },
   {
     LanguageCodeGoogleTrans: "zu",
@@ -1796,8 +1796,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ZA",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "South Africa",
-    FlorishIconfilename: "zul.png"
+    ContinentAndRegion: "Southern Africa",
+    FlorishIconfilename: "zul-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1809,8 +1809,8 @@ const worldLanguageData = [
     LanguageUseCodes: "BI",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "East Africa",
-    FlorishIconfilename: "run.png"
+    ContinentAndRegion: "Eastern Africa",
+    FlorishIconfilename: "run-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1822,8 +1822,8 @@ const worldLanguageData = [
     LanguageUseCodes: "LR CI SL",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "West Africa",
-    FlorishIconfilename: "bsq.png"
+    ContinentAndRegion: "Western Africa",
+    FlorishIconfilename: "bsq-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1835,8 +1835,8 @@ const worldLanguageData = [
     LanguageUseCodes: "ML",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "West Africa",
-    FlorishIconfilename: "ffm.png"
+    ContinentAndRegion: "Western Africa",
+    FlorishIconfilename: "ffm-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1848,8 +1848,8 @@ const worldLanguageData = [
     LanguageUseCodes: "SS",
     WorldwideUse: "",
     Continent: "Africa",
-    ContinentAndRegion: "West Africa",
-    FlorishIconfilename: "din.png"
+    ContinentAndRegion: "Western Africa",
+    FlorishIconfilename: "din-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1862,8 +1862,8 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Asia",
     Continent: "Asia",
-    ContinentAndRegion: "Southeast Asia",
-    FlorishIconfilename: "kar.png"
+    ContinentAndRegion: "Southeastern Asia",
+    FlorishIconfilename: "kar-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1875,8 +1875,8 @@ const worldLanguageData = [
     LanguageUseCodes: "IQ",
     WorldwideUse: "",
     Continent: "Asia",
-    ContinentAndRegion: "Southwest Asia",
-    FlorishIconfilename: "syr.png"
+    ContinentAndRegion: "Southwestern Asia",
+    FlorishIconfilename: "syr-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1889,7 +1889,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "North America",
     ContinentAndRegion: "North America",
-    FlorishIconfilename: "pdc.png"
+    FlorishIconfilename: "pdc-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1902,7 +1902,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "North America",
     ContinentAndRegion: "North America",
-    FlorishIconfilename: "mus.png"
+    FlorishIconfilename: "mus-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1915,7 +1915,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "North America",
     ContinentAndRegion: "North America",
-    FlorishIconfilename: "mik-3.png"
+    FlorishIconfilename: "mik-3-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1928,7 +1928,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "North America",
     ContinentAndRegion: "North America",
-    FlorishIconfilename: "cho.png"
+    FlorishIconfilename: "cho-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1941,7 +1941,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "North America",
     ContinentAndRegion: "North America",
-    FlorishIconfilename: "chr.png"
+    FlorishIconfilename: "chr-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1954,7 +1954,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "North America",
     ContinentAndRegion: "North America",
-    FlorishIconfilename: "nav.png"
+    FlorishIconfilename: "nav-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1967,7 +1967,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "pon.png"
+    FlorishIconfilename: "pon-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1980,7 +1980,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "chk.png"
+    FlorishIconfilename: "chk-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -1993,7 +1993,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "mah.png"
+    FlorishIconfilename: "mah-min.png"
   },
   {
     LanguageCodeGoogleTrans: "",
@@ -2006,7 +2006,7 @@ const worldLanguageData = [
     WorldwideUse: "",
     Continent: "Oceania",
     ContinentAndRegion: "Oceania",
-    FlorishIconfilename: "ton.png"
+    FlorishIconfilename: "ton-min.png"
   }
 ]
 

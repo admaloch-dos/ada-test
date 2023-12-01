@@ -1,24 +1,168 @@
-function googleTranslateElementInit() {
-  try {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      layout: google.translate.TranslateElement
-    }, 'google_translate_element');
-  } catch (error) {
-    console.log(error)
-  }
-
-}
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    // This hides the address bar:
+    window.scrollTo(0, 175);
+  }, 0);
+});
 
 // $(function () {
 //   $('[data-toggle="popover"]').popover()
 // })
 
+
+
+
+
+const setFlourishIconPlacement = () => {
+  const flourishMain = document.querySelector('#flourish-widget-main')
+  if (window.innerWidth < 500) {
+    flourishMain.classList.remove('trigger-medium', 'trigger-large', 'trigger-left')
+    flourishMain.classList.add('trigger-small', 'trigger-right')
+
+  } else if (window.innerWidth > 500 && window.innerWidth < 1200) {
+    flourishMain.classList.remove('trigger-small', 'trigger-large', 'trigger-right')
+    flourishMain.classList.add('trigger-medium', 'trigger-left')
+
+  } else if (window.innerWidth > 1200) {
+    flourishMain.classList.remove('trigger-small', 'trigger-medium', 'trigger-right')
+    flourishMain.classList.add('trigger-large', 'trigger-left')
+
+  }
+}
+
+setFlourishIconPlacement()
+
+const changePopoverPlacement = () => {
+  const flourishMain = document.querySelector('#flourish-widget-main')
+  if (flourishMain.classList.contains('trigger-left')) {
+    $('#toggle-flourish-list').data('placement', 'right');
+  } else {
+    $('#toggle-flourish-list').data('placement', 'left');
+  }
+}
+changePopoverPlacement()
+
+window.addEventListener("resize", () => {
+  setFlourishIconPlacement()
+  changePopoverPlacement()
+});
+
+
+
 $(function () {
-  $('.ada-popover').popover({
-    container: '#ADA_widget'
+  $('.flourish-popover').popover({
+    // container: '#flourish_widget',
+    boundary: 'window',
+    html: true
+    // container: '#ContrastRatingModal'
   })
 })
+
+// $(function () {
+//   $('.flourish-contrast-popover').popover({
+//     container: '#ContrastRatingModal'
+//   })
+// })
+
+var hasTouchScreen = false;
+
+if ("maxTouchPoints" in navigator) {
+  hasTouchScreen = navigator.maxTouchPoints > 0;
+} else if ("msMaxTouchPoints" in navigator) {
+  hasTouchScreen = navigator.msMaxTouchPoints > 0;
+} else {
+  var mQ = window.matchMedia && matchMedia("(pointer:coarse)");
+  if (mQ && mQ.media === "(pointer:coarse)") {
+    hasTouchScreen = !!mQ.matches;
+  } else if ('orientation' in window) {
+    hasTouchScreen = true; // deprecated, but good fallback
+  } else {
+    // Only as a last resort, fall back to user agent sniffing
+    var UA = navigator.userAgent;
+    hasTouchScreen = (
+      /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(UA) ||
+      /\b(Android|Windows Phone|iPad|iPod)\b/i.test(UA)
+    );
+  }
+}
+
+
+setTimeout(() => {
+  if (hasTouchScreen || window.innerWidth < 555) {
+    turnOffItemsOnMobile()
+  }
+}, 500)
+
+addEventListener("resize", (event) => {
+  hideItemsonTouchScreen()
+});
+
+const hideItemsonTouchScreen = () => {
+  if (window.innerWidth < 992) {
+    $('#text-reading-assistance').addClass('d-none')
+  } else {
+    $('#text-reading-assistance').removeClass('d-none')
+  }
+}
+
+hideItemsonTouchScreen()
+
+const turnOffItemsOnMobile = () => {
+  if ($('#ToggleReadingMask').is(':checked')) {
+    $('#ToggleReadingMask').prop('checked', false).trigger('change');
+  }
+  if ($('#ToggleReadingGuide').is(':checked')) {
+    $('#ToggleReadingGuide').prop('checked', false).trigger('change');
+  }
+  $.removeCookie('readingMaskWidth');
+  $.removeCookie('ReadingMask');
+  $.removeCookie('CursorGuide');
+}
+
+
+
+
+
+// if (hasTouchScreen) {
+//   console.log('it is touch screen')
+// } else {
+//   console.log('this is desktop')
+// }
+
+
+
+// if (!hasTouchScreen) {
+//   let fullScreenElement = document.getElementById("flourish-modal-content");
+//   document.getElementById('flourish_icon').addEventListener('click', () => {
+//     if (window.innerWidth < 550 || window.innerHeight > window.innerWidth) {
+//       fullScreenElement.requestFullscreen();
+//     }
+//   })
+
+//   document.getElementById('close-flourish').addEventListener('click', () => {
+//     if (document.fullscreenElement) {
+//       document.exitFullscreen();
+//     }
+//   })
+
+
+//   document.getElementById('flourish-more-languages-btn').addEventListener('click', () => {
+//       fullScreenElement = document.getElementById("all-languages-modal-content");
+//       if (window.innerWidth < 550) {
+//           fullScreenElement.requestFullscreen();
+//       }
+//   })
+//   document.getElementById('close-language-modal').addEventListener('click', () => {
+//       if (document.fullscreenElement) {
+//           document.exitFullscreen();
+//           setTimeout(() => {
+//               fullScreenElement = document.getElementById("flourish-modal-content");
+//               fullScreenElement.requestFullscreen();
+//           }, 1000)
+
+//       }
+//   })
+// }
 
 
 //https://stackoverflow.com/a/36282225/10792033
@@ -32,9 +176,11 @@ $(function () {
 // });
 
 
+
+
 let isWidgetActive = false
 
-const cookiesArr = ['translateLanguage', 'text-magnify-color-swatch', 'reading-mask-reload', 'text-magnify-size-input', 'img-magnify-size-input', 'img-magnify-color-swatch', 'text-magnify-color-swatch', '.img-magnify-color-swatch', 'edit-reading-guide', 'edit-reading-mask', 'TTS_click_enabled', 'googtrans', 'readingMaskVal', 'BackgroundColorCookie', 'TextColorCookie', 'LinkColorCookie', 'TextMagnifier', 'HighlightLinks', 'ImageDescription', 'HighlightHover', 'FontSizeCookie', 'BaskervilleFontCookie', 'DyslexicFontCookie', 'FM_FontTypeCookie', 'CursorEnlargeCookie', 'DarkContrastBackgroundCookie', 'LowSaturationBackgroundCookie', 'InvertBackgroundCookie', 'HighSaturationBackgroundCookie', 'DesaturatedBackgroundCookie', 'DesaturatedBackgroundCookie', 'InvertBackgroundCookie', 'DarkContrastBackgroundCookie', 'SeizureSafe', 'ReadingMask', 'CursorGuide', 'TTS_click_enabled', 'LinpageHeightVal', 'WordSpaceVal', 'LetterSpaceVal', 'speechPitch', 'speechRate', 'speechVol', 'voiceCookie']
+const cookiesArr = ['TTS_click_enabled', 'AEC', '1P_JAR', 'NID', 'DV', 'translateLanguage', 'text-magnify-color-swatch', 'text-magnify-size-input', 'img-magnify-size-input', 'img-magnify-color-swatch', 'text-magnify-color-swatch', '.img-magnify-color-swatch', 'edit-reading-guide', 'edit-reading-mask', 'TTS_click_enabled', 'googtrans', 'readingMaskVal', 'BackgroundColorCookie', 'TextColorCookie', 'LinkColorCookie', 'TextMagnifier', 'HighlightLinks', 'ImageDescription', 'HighlightHover', 'FontSizeCookie', 'BaskervilleFontCookie', 'DyslexicFontCookie', 'FM_FontTypeCookie', 'CursorEnlargeCookie', 'DarkContrastBackgroundCookie', 'LowSaturationBackgroundCookie', 'InvertBackgroundCookie', 'HighSaturationBackgroundCookie', 'DesaturatedBackgroundCookie', 'DesaturatedBackgroundCookie', 'InvertBackgroundCookie', 'DarkContrastBackgroundCookie', 'PhotoSens', 'ReadingMask', 'CursorGuide', 'TTS_click_enabled', 'LinpageHeightVal', 'WordSpaceVal', 'LetterSpaceVal', 'speechPitch', 'speechRate', 'speechVol', 'voiceCookie']
 
 // booleans used to determine if widget is still active
 let widgetItemObj = {
@@ -58,7 +204,7 @@ let widgetItemObj = {
   isTextColorChanged: false,
   isBackColorChanged: false,
   isLinkColorChanged: false,
-  isSeizureSafe: false,
+  isPhotoSens: false,
   isReadingMask: false,
   isReadingGuide: false,
   isSpeech: false,
@@ -84,42 +230,40 @@ const isCookieActive = (input, value) => {
 
 
 const displayModal = () => {
-  const overlay = document.querySelector('#ADA_widget')
+  // mobileScroll()
+
+  const overlay = document.querySelector('#flourish_widget')
   if (overlay.style.display !== "flex") {
-    $("#ada-triggers").fadeOut(700);
-    $("#ADA_widget").css('opacity', '0');
-    $("#ADA_widget").css("display", "flex")
-    $("#ADA_widget").fadeTo(0, 1);
+    $("#flourish-triggers").fadeOut(700);
+    $("#flourish_widget").css('opacity', '0');
+    $("#flourish_widget").css("display", "flex")
+    $("#flourish_widget").fadeTo(0, 1);
     $(".modal_content").fadeToggle(0);
-    // document.body.classList.add("prevent-body-overflow");
-
     $(".modal_body").scrollTop(0);
+    document.body.classList.add("prevent-body-overflow");
 
-    document.body.style.overflow = "hidden"; // ADD THIS LINE
-    document.body.style.height = "100%"; // ADD THIS LINE
-    document.body.style.paddingRight = "5px"; // ADD THIS LINE
-
-
-
-
-    // $('body').css("overflow", "hidden");
-    // $('body').css("overflow", "hidden");
   } else {
-    $("#ADA_widget").fadeTo(400, 0);
+    $("#flourish_widget").fadeTo(400, 0);
     $(".modal_content").fadeToggle(400);
-
     setTimeout(() => {
-      document.body.style.overflow = "auto"; // ADD THIS LINE
-      document.body.style.height = "auto"; // ADD THIS LINE
-      document.body.style.paddingRight = "0"; // ADD THIS LINE
-      $("#ADA_widget").css("display", "none")
-      // document.body.classList.remove("prevent-body-overflow");
-      $("#ada-triggers").fadeIn();
-      // $('body').css("overflow", "auto");
-
-    }, 800);
+      document.body.classList.remove("prevent-body-overflow");
+      $("#flourish_widget").css("display", "none")
+      $("#flourish-triggers").fadeIn();
+    }, 500);
   }
 }
+
+
+// const openModalPreventBodyScroll = () => {
+
+
+//   document.body.style.overflow = "hidden";
+//   document.body.style.height = "100%";
+//   document.body.style.paddingRight = "5px";
+
+
+// }
+
 
 // store scroll positions for forced pageload/cookie removal
 const storeMainScrollPosition = () => {
@@ -134,8 +278,8 @@ const storeModalScrollPosition = () => {
 }
 
 const modalDisplayOpenOrClose = () => {
-  const adaWidget = document.querySelector('#ADA_widget')
-  if (adaWidget.style.display === 'flex') {
+  const flourishWidget = document.querySelector('#flourish_widget')
+  if (flourishWidget.style.display === 'flex') {
     localStorage.setItem("reloadModalOpen", "true");
   } else {
     localStorage.setItem("reloadModalClosed", "true");
@@ -163,13 +307,13 @@ const selectChangeHandler = (icon, iconClass, itemId) => {
 
 
 // it looks awkward when select is at 10 so this fixes that
-const changeIndent = (value, amount, select, indentAmt) => {
-  if (value !== amount) {
-    $(select).css({ "text-indent": indentAmt });
-  } else {
-    $(select).css({ "text-indent": "0px" });
-  }
-}
+// const changeIndent = (value, amount, select, indentAmt) => {
+//   if (value !== amount) {
+//     $(select).css({ "text-indent": indentAmt });
+//   } else {
+//     $(select).css({ "text-indent": "0px" });
+//   }
+// }
 
 
 // change color picker
@@ -180,13 +324,7 @@ const changeColorPicker = (color, cssSelector, hexSelector, inputSelector,) => {
 
 }
 
-//   to grab elements that are loaded asynchronously ex. google translate
-const isElementLoaded = async selector => {
-  while (document.querySelector(selector) === null) {
-    await new Promise(resolve => requestAnimationFrame(resolve))
-  }
-  return document.querySelector(selector);
-};
+
 
 
 
@@ -197,7 +335,7 @@ const isElementLoaded = async selector => {
 //FOR BACKGROUND COLOR CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
 //https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
 $(function () {
-  $('#ADA_widget .bg_form .form-check ul li').click(function () {
+  $('#flourish_widget .bg_form .form-check ul li').click(function () {
     $(this).addClass('active').siblings().removeClass('active');
   });
 });
@@ -208,7 +346,7 @@ $(function () {
 
 // JavaScript Document
 $(document).ready(function () {
-  $("#ADA_widget #DefaultBG_option").addClass("active");
+  $("#flourish_widget #DefaultBG_option").addClass("active");
 }); // end of doc ready
 
 
@@ -223,47 +361,47 @@ $(document).keydown(function (e) {
 });
 
 // Get the modal
-var ADA_widget = document.getElementById("ADA_widget");
+var flourish_widget = document.getElementById("flourish_widget");
 
-// Get the button that opens the ADA_widget
-var OpenADA_widget = document.getElementById("ADA_icon");
+// Get the button that opens the flourish_widget
+var Openflourish_widget = document.getElementById("flourish_icon");
 
-// Get the <span> element that closes the ADA_widget
-var CloseADA_widget = document.getElementsByClassName("ADA_close")[0];
+// Get the <span> element that closes the flourish_widget
+var Closeflourish_widget = document.getElementsByClassName("flourish_close")[0];
 
-// When the user clicks the button, open the ADA_widget
-OpenADA_widget.onclick = function () {
+// When the user clicks the button, open the flourish_widget
+Openflourish_widget.onclick = function () {
   displayModal()
 }
 
-// When the user clicks on <span> (x), close the ADA_widget
-CloseADA_widget.onclick = function () {
+// When the user clicks on <span> (x), close the flourish_widget
+Closeflourish_widget.onclick = function () {
   displayModal()
 }
 
-// When the user clicks anywhere outside of the ADA_widget, close it
+// When the user clicks anywhere outside of the flourish_widget, close it
 window.onclick = function (event) {
-  if (event.target == ADA_widget) {
-    // ADA_widget.style.display = "none";
+  if (event.target == flourish_widget) {
+    // flourish_widget.style.display = "none";
     displayModal()
   }
 }
 
 // eevent listeners for hover/click for icon that toggles item submenu
-const toggleIcon = document.querySelector('#toggle-ada-list')
-var timeout = null;
-toggleIcon.addEventListener('mouseenter', () => {
-  if (toggleIcon.classList.contains('fa-toggle-off')) {
-    timeout = setTimeout(() => {
-      $("#toggle-list-info").show()
-    }, 300);
-  }
-})
+// const toggleIcon = document.querySelector('#toggle-flourish-list')
+// var timeout = null;
+// toggleIcon.addEventListener('mouseenter', () => {
+//   if (toggleIcon.classList.contains('fa-toggle-off')) {
+//     timeout = setTimeout(() => {
+//       $("#toggle-list-info").show()
+//     }, 300);
+//   }
+// })
 
-toggleIcon.addEventListener('mouseleave', () => {
-  $("#toggle-list-info").hide()
-  clearTimeout(timeout)
-})
+// toggleIcon.addEventListener('mouseleave', () => {
+//   $("#toggle-list-info").hide()
+//   clearTimeout(timeout)
+// })
 
 // toggleIcon.addEventListener('click', () => {
 
@@ -272,50 +410,60 @@ toggleIcon.addEventListener('mouseleave', () => {
 // })
 
 const removeDeleteContainer = () => {
-  $("#toggle-ada-list").removeClass("fa-toggle-on");
-  $("#toggle-ada-list").addClass("fa-toggle-off");
+  $("#toggle-flourish-list").attr("src", "./flourish/img/toggle-off.svg");
+  $("#toggle-flourish-list").removeClass('show-active-list')
+  $("#toggle-flourish-list").addClass('hide-active-list')
   $("#item-delete-container").fadeOut()
+  $('.flourish-popover-item').popover('hide');
   $.removeCookie('deleteContainerActive');
+}
+
+const addDeleteContainer = () => {
+  $("#toggle-flourish-list").attr("src", "./flourish/img/toggle-on.svg");
+  $("#toggle-flourish-list").removeClass('hide-active-list')
+  $("#toggle-flourish-list").addClass('show-active-list')
+  $("#item-delete-container").fadeIn()
+  $.cookie("deleteContainerActive", 'true', { expires: 30 });
 }
 
 
 // widget list icon listeners
-let toggleWidgetList = document.getElementById('toggle-ada-list')
+let toggleWidgetList = document.getElementById('toggle-flourish-list')
 toggleWidgetList.addEventListener('click', () => {
-  if (toggleWidgetList.classList.contains('fa-toggle-on')) {
+  if (toggleWidgetList.classList.contains('show-active-list')) {
+    console.log('it contains show-active-list')
     removeDeleteContainer()
   } else {
-    $("#toggle-ada-list").removeClass("fa-toggle-off");
-    $("#toggle-ada-list").addClass("fa-toggle-on");
-    $("#item-delete-container").fadeIn()
-    $.cookie("deleteContainerActive", 'true', { expires: 30 });
-    setTimeout(() => {
-      $("#toggle-list-info").hide()
-    }, 100)
+    addDeleteContainer()
+
   }
 })
 
 if ($.cookie("deleteContainerActive")) {
-
-  $("#toggle-ada-list").removeClass("fa-toggle-off");
-  $("#toggle-ada-list").addClass("fa-toggle-on");
-  $("#item-delete-container").fadeIn()
+  addDeleteContainer()
 }
 
-// // item delete container - close on scroll
-setTimeout(() => {
-  document.addEventListener("scroll", (event) => {
+// close hover popover on click
+document.querySelectorAll('.flourish-popover-item').forEach(item => {
+  item.addEventListener('click', () => {
+    $('.flourish-popover-item').popover('hide');
+  })
+})
 
-    if (toggleWidgetList.classList.contains('fa-toggle-on')) {
-      removeDeleteContainer()
-    }
-  });
-}, 500)
+// item delete container - close on scroll
+
+document.addEventListener("scroll", (event) => {
+
+  if (toggleWidgetList.classList.contains('show-active-list')) {
+    removeDeleteContainer()
+  }
+});
+
 
 
 // item delete container - close on offscreen click
 $('body').click(function (event) {
-  if (toggleWidgetList.classList.contains('fa-toggle-on')) {
+  if (toggleWidgetList.classList.contains('show-active-list')) {
     if (!$(event.target).closest('.item-delete-container-remove').length && !$(event.target).is('.item-delete-container-remove')) {
       removeDeleteContainer()
     }
@@ -349,7 +497,7 @@ const areCookiesSet = () => {
   updateCookies.isTextColorChanged = isCookieActive($.cookie("TextColorCookie"), 'false')
   updateCookies.isBackColorChanged = isCookieActive($.cookie("BackgroundColorCookie"), 'false')
   updateCookies.isLinkColorChanged = isCookieActive($.cookie("LinkColorCookie"), 'false')
-  updateCookies.isSeizureSafe = isCookieActive($.cookie("SeizureSafe"), 'false')
+  updateCookies.isPhotoSens = isCookieActive($.cookie("PhotoSens"), 'false')
   updateCookies.isReadingMask = isCookieActive($.cookie("ReadingMask"), 'false')
   updateCookies.isReadingGuide = isCookieActive($.cookie("CursorGuide"), 'false')
   updateCookies.isSpeech = isCookieActive($.cookie("TTS_click_enabled"), 'false')
@@ -361,27 +509,44 @@ const areCookiesSet = () => {
 widgetItemObj = areCookiesSet()
 
 
-// function to remove background color cookies and reload page
-const resetColorPicker = () => {
-  let bgColor = cache.bgColor.value
-  let textColor = cache.textColor.value
-  let linkColor = cache.linkColor.value
-  if (bgColor !== "#ffffff" || textColor !== "#000000" || linkColor !== "#3863ff") {
-    $.removeCookie('BackgroundColorCookie');
-    $.removeCookie('TextColorCookie');
-    $.removeCookie('LinkColorCookie');
-    //alert("Cookie Removed!");
-    storeModalScrollPosition()
-    storeMainScrollPosition()
-    if (document.querySelector('#ADA_widget').style.display === 'flex') {
-      localStorage.setItem("reloadModalOpen", "true");
-    }
-    removeWidgetControls(['ColorPicker'])
-    forceReload()
 
-  }
-}
 //////////////////////////////////////////////////////////////////////////////// Color Picker ////////////////////////////////////////////////////////////////////////
+
+
+const resetColorInputs = (colorInput, hexInput, hexValue) => {
+  const colorItem = document.querySelector(colorInput)
+  colorItem.value = hexValue
+  colorItem.dispatchEvent(new Event('change'));
+  $(hexInput).html(hexValue);
+}
+
+const restoreDefaultColorPicker = () => {
+  resetColorInputs('#background_color', '#bg_hexVal', defaultBgColor)
+  resetColorInputs('#text_color', '#txt_hexVal', defaultTextColor)
+  resetColorInputs('#link_color', '#link_hexVal', defaultLinkColor)
+
+}
+
+const deactivatePresets = () => {
+  $('#ColorAdjust_option').removeClass('disable-colors')
+  $('#DarkContrastBG_option').addClass('disable-colors')
+  $('#DesaturateBG_option').addClass('disable-colors')
+  $('#InvertBG_option').addClass('disable-colors')
+}
+
+
+const rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`
+
+const defaultLink = document.querySelector("a");
+
+let defaultBgColor = rgb2hex(window.getComputedStyle(document.body, null).getPropertyValue('background-color'));
+let defaultTextColor = rgb2hex(window.getComputedStyle(document.body, null).getPropertyValue('color'));
+let defaultLinkColor = rgb2hex(window.getComputedStyle(defaultLink, null).getPropertyValue('color'));
+
+console.log(defaultBgColor, defaultTextColor, defaultLinkColor)
+
+restoreDefaultColorPicker()
+
 let config = {
   regTextContrast: 5,
   largeTextContrast: 3,
@@ -390,12 +555,9 @@ let config = {
 
 let cache = {};
 
-
-
 //https://www.jquery-az.com/how-to-create-read-and-remove-jquery-cookies-with-3-demos/
-$("#remove_cookie").click(function () {
+$("#reset-color-picker").click(function () {
   resetColorPicker()
-
 });
 
 const setupCache = () => {
@@ -456,7 +618,7 @@ const takeTwoColors = (c1, c2) => {
 
 
 const onInputChange = (e) => {
-  widgetItemObj.isTextChanged = true
+  widgetItemObj.isTextColorChanged = true
   widgetItemObj.isBackColorChanged = true
   widgetItemObj.isLinkColorChanged = true
   addWidgetControls('ColorPicker', 'Custom colors')
@@ -464,10 +626,7 @@ const onInputChange = (e) => {
   if ($('body').hasClass('highcontrast') || $('body').hasClass('inverted') || $('body').hasClass('desaturated')) {
     $("body").removeClass("highcontrast inverted desaturated")
     $.removeCookie('InvertBackgroundCookie');
-    $.removeCookie('InvertBackgroundCookie');
     $.removeCookie('DarkContrastBackgroundCookie');
-    $.removeCookie('DarkContrastBackgroundCookie');
-    $.removeCookie('DesaturatedBackgroundCookie');
     $.removeCookie('DesaturatedBackgroundCookie');
     $("#DefaultBG_option").addClass('active').siblings().removeClass('active');
     removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'InvertBackground'])
@@ -480,28 +639,23 @@ const onInputChange = (e) => {
 
   }
 
-
   const value = e.target.value;
-
 
   //Hide defaultContainer on input change
   $("#defaultContainer").hide();
 
-
-
   // setting defaults if not yet supplied by the user
   if (!cache.bgColor.value) {
-    cache.bgColor.value = '#ffffff';
+    cache.bgColor.value = defaultBgColor;
   }
 
   if (!cache.textColor.value) {
-    cache.textColor.value = '#212529';
+    cache.textColor.value = defaultTextColor;
   }
 
   if (!cache.linkColor.value) {
-    cache.linkColor.value = '#3863FF';
+    cache.linkColor.value = defaultLinkColor;
   }
-
 
   // TODO: handle RGB / hex values
   const bgColor = hexToRGB(cache.bgColor.value);
@@ -509,28 +663,23 @@ const onInputChange = (e) => {
   const linkColor = hexToRGB(cache.linkColor.value);
 
   //Switch selectors to #view, .Footer
-  $('body *').not('#ADA_widget, #ADA_widget *, .modal_content *').css('color', cache.textColor.value);
+  $('body *').not('#flourish_widget, #flourish_widget *, .modal_content *').css('color', cache.textColor.value);
   $('.SearchForm .input-group .input-group-append #submit_search').css('color', cache.textColor.value);
   $('#footerFeat_container, .Footer').css('color', cache.textColor.value);
 
-  $('body').not('[class="ada_modal_test"]').css('background-color', cache.bgColor.value);
+  $('body').not('[class="flourish_modal_test"]').css('background-color', cache.bgColor.value);
   $('#Scroll_btn').attr('style', 'background-color: ' + cache.bgColor.value + '!important');
   $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + cache.bgColor.value + '!important');
   $('#footerFeat_container, .Footer').css('background-color', cache.bgColor.value);
   $('#menudropdown .card-body').css('background-color', cache.bgColor.value);
 
-  $('body a').not("#ADA_widget a").attr('style', 'color: ' + cache.linkColor.value + '!important');
-
-
+  $('body a').not("#flourish_widget a").attr('style', 'color: ' + cache.linkColor.value + '!important');
 
   const bgTextContrast = takeTwoColors(bgColor, textColor);
   const bgLinkContrast = takeTwoColors(bgColor, linkColor);
   const textLinkContrast = takeTwoColors(textColor, linkColor);
 
-
-
   let resultMsg = ``;
-
 
   if (bgTextContrast >= 4.5) {
     $(cache.BgtoText).attr('class', 'pass').text('Pass');
@@ -549,16 +698,44 @@ const onInputChange = (e) => {
   }
 
 
-  const bgTextcontrastValues = `Text to background contrast: ${bgTextContrast}`;
-  const bgLinkCcontrastValues = `Link to background contrast: ${bgLinkContrast}`;
-  const textLinkcontrastValues = `Link to text contrast: ${textLinkContrast}`;
 
-  cache.BgtoText.innerHTML = bgTextcontrastValues;
-  cache.BgtoLink.innerHTML = bgLinkCcontrastValues;
-  cache.TexttoLink.innerHTML = textLinkcontrastValues;
+  // const bgTextcontrastValues = `Text to background contrast: ${bgTextContrast}`;
+  // const bgLinkCcontrastValues = `Link to background contrast: ${bgLinkContrast}`;
+  // const textLinkcontrastValues = `Link to text contrast: ${textLinkContrast}`;
+  // cache.BgtoText.innerHTML = bgTextcontrastValues;
+  // cache.BgtoLink.innerHTML = bgLinkCcontrastValues;
+  // cache.TexttoLink.innerHTML = textLinkcontrastValues;
+  // console.log('cache.BgtoText', cache.BgtoText)
+  passFailStyle(cache.BgtoText, '#text-contrast')
+  passFailStyle(cache.BgtoLink, '#link-contrast')
+  passFailStyle(cache.TexttoLink, '#link-text-contrast')
+
+  $('#text-text').css({ 'color': cache.textColor.value, 'background-color': cache.bgColor.value });
+  $('#link-text').css({ 'color': cache.linkColor.value, 'background-color': cache.bgColor.value });
+  $('#link-text-text').css('background-color', cache.bgColor.value);
+  $('#both-text').css({ 'color': cache.textColor.value });
+  $('#both-link').css({ 'color': cache.linkColor.value });
+
+
+  if (cache.textColor.value === defaultTextColor && cache.linkColor.value === defaultLinkColor && cache.bgColor.value === defaultBgColor) {
+    $('.contrast-section-container ').fadeOut('slow')
+    $('#reset-color-picker').fadeOut('slow')
+
+  } else {
+
+    $('.contrast-section-container ').fadeIn('slow')
+    $('#reset-color-picker').css({ 'display': 'flex' }).hide().fadeIn()
+  }
+
 
 
 };
+
+const passFailStyle = (classItem, changeItem) => {
+  classItem.classList.contains('pass')
+    ? $(changeItem).css('background-color', 'green').text("Pass")
+    : $(changeItem).css('background-color', 'red').text("Fail")
+}
 
 const addEventListeners = () => {
   cache.bgColor.addEventListener('change', onInputChange);
@@ -566,56 +743,66 @@ const addEventListeners = () => {
   cache.linkColor.addEventListener('change', onInputChange);
 };
 
-
-const initAdaListeners = () => {
+const initflourishListeners = () => {
   setupCache();
   addEventListeners();
 }
-initAdaListeners();
+initflourishListeners();
+
+const resetColorPicker = () => {
+  if (widgetItemObj.isTextColorChanged, widgetItemObj.isBackColorChanged, widgetItemObj.isLinkColorChanged) {
+    resetColorInputs('#background_color', '#bg_hexVal', defaultBgColor)
+    resetColorInputs('#text_color', '#txt_hexVal', defaultTextColor)
+    resetColorInputs('#link_color', '#link_hexVal', defaultLinkColor)
+
+    $('body').not('#flourish-widget-main, #flourish-widget-main *').attr('style', 'background: ' + '' + '!important');
+    $('body').not('#flourish-widget-main, #flourish-widget-main *').attr('style', 'background-color:' + '' + '!important');
+    $('body *').not('a, #flourish-widget-main, #flourish-widget-main *').attr('style', 'color: ' + '' + '!important');
+    $('a').not('#flourish-widget-main, #flourish-widget-main *').attr('style', 'color: ' + '' + '!important');
+
+    // document.body.classList.add("reset-color");
+    // document.body.classList.add("reset-bg");
+    // document.querySelectorAll('a').forEach(item => {
+    //   item.classList.add("reset-color");
+    // })
+    // document.body.classList.remove("reset-color");
+    // document.body.classList.remove("reset-bg");
+    // document.querySelectorAll('a').forEach(item => {
+    //   item.classList.remove("reset-color");
+    // })
+
+    // const overlay = document.querySelector('#flourish_widget')
+    // if (overlay.style.display === "flex") {
+    //   openModalPreventBodyScroll()
+    // }
 
 
-
-
-
-
-const resetColors = (color, bgColor, linkColor) => {
-
-  $('body').css('background-color', bgColor);
-  $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + bgColor + '!important');
-  $('#Scroll_btn').attr('style', 'background-color: ' + bgColor + '!important');
-  $('#footerFeat_container, .Footer').css('background-color', bgColor);
-  $('#menudropdown .card-body').css('background-color', bgColor);
-  var hexBackgroundColor = $('body').cssAsHex('background-color');
-  $("#bg_hexVal").html(hexBackgroundColor);
-  $.cookie.raw = true; //to bypass the default cookie value which is encoded/decoded when writing/reading
-  $.cookie('BackgroundColorCookie', bgColor, { expires: 30 });
-
-  $('body *').not('#ADA_widget, #ADA_widget *').css('color', color);
-  $('.SearchForm .input-group .input-group-append #submit_search').css('color', color);
-  $('#footerFeat_container, .Footer').css('color', color);
-  var hexTextColor = $('body *').cssAsHex('color');
-  $("#txt_hexVal").html(hexTextColor);
-  $.cookie.raw = true;
-  $.cookie('TextColorCookie', color, { expires: 30 });
-
-  $('body a').not("#ADA_widget a").attr('style', 'color: ' + linkColor + '!important');
-  var hexLinkColor = $('body a').cssAsHex('color');
-  $("#link_hexVal").html(hexLinkColor);
-  $.cookie.raw = true;
-  $.cookie('LinkColorCookie', linkColor,);
+    $.removeCookie('BackgroundColorCookie');
+    $.removeCookie('TextColorCookie');
+    $.removeCookie('LinkColorCookie');
+    removeWidgetControls(['ColorPicker'])
+    widgetItemObj.isTextColorChanged = false
+    widgetItemObj.isBackColorChanged = false
+    widgetItemObj.isLinkColorChanged = false
+    checkIfWidgetActive()
+    $('#color-scheme-presets').removeClass('disable-colors')
+    $('#DarkContrastBG_option').removeClass('disable-colors')
+    $('#DesaturateBG_option').removeClass('disable-colors')
+    $('#InvertBG_option').removeClass('disable-colors')
+  }
 }
 
 
-///////////////////////////////////////////////////////////////////// NOTE: Switch selectors to #view, .Footer
+
 ///////////////////////////////////////////////////////////////////// NOTE: Switch selectors to #view, .Footer
 $(document).ready(function () {
+
+
 
   //https://stackoverflow.com/a/43384649/10792033
   // RGB TO HEX
   $.fn.cssAsHex = function (colorProp) {
-
     var hexDigits = '0123456789abcdef';
-
     function hex(x) {
       return isNaN(x) ? '00' : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
     };
@@ -625,7 +812,6 @@ $(document).ready(function () {
       var rgbRegex = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
       return '#' + hex(rgbRegex[1]) + hex(rgbRegex[2]) + hex(rgbRegex[3]);
     };
-
     return rgb2hex(this.css(colorProp));
   };
 
@@ -633,95 +819,82 @@ $(document).ready(function () {
 
   //BackgroundColorCookie
   $('#background_color').on("change", function () {
-    $('body *').not('#ada-widget-main *').css('background', 'none');
-    var background_color = $('body').css('background-color');
-    $('body, body *').not('a, #ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, .translate-language-span, .audio_state *').css('background-color', background_color);
+    // $('body *').not('#flourish-widget-main *').css('background', 'none');
+    var background_color = $(this).val()
+    // $('body').not('a, #flourish_widget, #flourish_widget *, #flourish-triggers, #flourish-triggers *, .translate-language-span, .audio_state *').css('background', background_color, '!important')
+    $('body').not('#flourish-widget-main, #flourish-widget-main *').css('background-color', background_color, 'important')
     $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + background_color + '!important');
-    $('#Scroll_btn').attr('style', 'background-color: ' + background_color + '!important');
+    // $('#Scroll_btn').attr('style', 'background-color: ' + background_color + '!important');
     $('#footerFeat_container, .Footer').css('background-color', background_color);
-    $('#menudropdown .card-body').css('background-color', background_color);
+    // $('#menudropdown .card-body').css('background-color', background_color);
     var hexBackgroundColor = $('body').cssAsHex('background-color');
     $("#bg_hexVal").html(hexBackgroundColor);
-
     $.cookie.raw = true; //to bypass the default cookie value which is encoded/decoded when writing/reading
-    $.cookie('BackgroundColorCookie', background_color, { expires: 30 });
-
+    $.cookie('BackgroundColorCookie', hexBackgroundColor, { expires: 30 });
+    deactivatePresets()
   });
   if ($.cookie('BackgroundColorCookie') != undefined) {
-    $('body *').not('#ada-widget-main *').css('background', 'none');
-    $('body, body *').not('a, #ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, .translate-language-span, .audio_state *').css('background-color', $.cookie('BackgroundColorCookie'));
-    $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + $.cookie('BackgroundColorCookie') + '!important');
-    $('#Scroll_btn').attr('style', 'background-color: ' + $.cookie('BackgroundColorCookie') + '!important');
-    $('#footerFeat_container, .Footer').css('background-color', $.cookie('BackgroundColorCookie'));
-    $('#menudropdown .card-body').css('background-color', $.cookie('BackgroundColorCookie'));
-
-    var hexBackgroundColor = $('body').cssAsHex('background-color');
-    $('#background_color').attr('value', hexBackgroundColor);
-    $("#bg_hexVal").html(hexBackgroundColor);
-
-
-    $.cookie.raw = true;
+    setCookieColors('BackgroundColorCookie', '#background_color', "#bg_hexVal")
   }
+
+
 
 
   //TextColorCookie
   $('#text_color').on("change", function () {
-    var text_color = $('body *').css('color');
-    $('p, h1, h2, h3, h4, h5, h6, span').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, #toggle-ada-list-container, #ADA_trigger, .audio_state button, .modal_content, .modal_content *, #ContrastRatingModal, i, .translate-language-span').css('color', text_color);
-    $('#ADA_widget h2, #ADA_widget h3, #ADA_widget label, .hexVal, .translate-language-span, .ada-contact-info-p, .headings, .ada-setting-title').css('color', 'black');
+
+    const noChange = '#flourish_widget h2, #flourish_widget h3, #flourish_widget label, .hexVal, .translate-language-span, .flourish-contact-info-p, .headings, .flourish-setting-title, .filter-header, .lang-filter, .flourish-language-btn, .flourish-accordion-header, .translate-language-span:hover'
+
+    var text_color = $(this).val()
+    $('body *').not('#flourish-widget-main, #flourish-widget-main *, a').css('color', text_color);
+    $('#flourish_widget h2, #flourish_widget h3, #flourish_widget label, .hexVal, .translate-language-span, .flourish-contact-info-p, .headings, .flourish-setting-title, .filter-header, .lang-filter, .flourish-language-btn, .flourish-accordion-header').css('color', 'black');
     $('.translate-language-span:hover').css('background-color', 'white');
-    $('.SearchForm .input-group .input-group-append #submit_search').css('color', text_color);
-    $('#footerFeat_container, .Footer').css('color', text_color);
+    // $('.SearchForm .input-group .input-group-append #submit_search').css('color', text_color);
+    // $('#footerFeat_container, .Footer').css('color', text_color);
     var hexTextColor = $('body *').cssAsHex('color');
     $("#txt_hexVal").html(hexTextColor);
-
     $.cookie.raw = true;
-    $.cookie('TextColorCookie', text_color, { expires: 30 });
+    $.cookie('TextColorCookie', hexTextColor, { expires: 30 });
+    deactivatePresets()
   });
   if ($.cookie('TextColorCookie') != undefined) {
-    $('p, h1, h2, h3, h4, h5, h6, span').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, #toggle-ada-list-container, #ADA_trigger, .audio_state button, .modal_content, .modal_content *, #ContrastRatingModal, i, .translate-language-span').css('color', $.cookie('TextColorCookie'));
-    $('#ADA_widget h2, #ADA_widget h3, #ADA_widget label, .hexVal, .translate-language-span, .ada-setting-title').css('color', 'black');
-    $('.SearchForm .input-group .input-group-append #submit_search').css('color', $.cookie('TextColorCookie'));
-    $('#footerFeat_container, .Footer').css('color', $.cookie('TextColorCookie'));
-
-    var hexTextColor = $('body *').cssAsHex('color');
-    $('#text_color').attr('value', hexTextColor);
-    $("#txt_hexVal").html(hexTextColor);
-
-
-    $.cookie.raw = true;
+    setCookieColors('TextColorCookie', '#text_color', "#txt_hexVal")
   }
-
 
   //LinkColorCookie
   $('#link_color').on("change", function () {
-    var link_color = $('body a').css('color');
-    $('body a').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, .HighlightLinks *, .HighlightHover *, .translate-language-span').attr('style', 'color: ' + link_color + '!important').addClass('ada-link-opacity');;
+
+    var link_color = $(this).val()
+    // $('body a').not('#flourish_widget, #flourish_widget *, #flourish-triggers, #flourish-triggers *, .HighlightLinks *, .HighlightHover *, .translate-language-span').attr('style', 'color: ' + link_color + '!important').addClass('flourish-link-opacity');;
+
+    $('body a').not('#flourish-widget-main, #flourish-widget-main *').css('color', link_color)
+
+
     var hexLinkColor = $('body a').cssAsHex('color');
     $("#link_hexVal").html(hexLinkColor);
 
     $.cookie.raw = true;
-    $.cookie('LinkColorCookie', link_color, { expires: 30 });
+    $.cookie('LinkColorCookie', hexLinkColor, { expires: 30 });
+    deactivatePresets()
   });
   if ($.cookie('LinkColorCookie') != undefined) {
-    $('body a').not('#ADA_widget, #ADA_widget *, #ada-triggers, #ada-triggers *, .HighlightLinks *, .HighlightHover *, .translate-language-span').attr('style', 'color: ' + $.cookie('LinkColorCookie') + '!important').addClass('ada-link-opacity');;
-
-    var hexLinkColor = $('body a').cssAsHex('color');
-    $('#link_color').attr('value', hexLinkColor);
-    $("#link_hexVal").html(hexLinkColor);
-
-    $.cookie.raw = true;
+    setCookieColors('LinkColorCookie', '#link_color', "#link_hexVal")
   }
-
-
-
-
-
 
 }); //end doc ready
 
+
+const setCookieColors = (cookie, input, hex) => {
+  const hexValue = $.cookie(cookie)
+  const colorInput = document.querySelector(input)
+  colorInput.value = hexValue
+  colorInput.dispatchEvent(new Event('change'));
+  $(hex).html(hexValue);
+  $.cookie.raw = true;
+}
+
 $(document).ready(function () {
-  $("#ADA_widget #FS_Default").addClass("active");
+  $("#flourish_widget #FS_Default").addClass("active");
 });
 
 $(function () {
@@ -745,11 +918,11 @@ const restoreDefaultFontSize = () => {
 
 $(document).ready(function () {
   if ($.cookie('FontSizeCookie') == "yes") {
-    $("#ADA_widget #FS_Medium").addClass("active");
+    $("#flourish_widget #FS_Medium").addClass("active");
     $("body").addClass("fontSizeMedium");
-    $("#ADA_widget #FS_Default").removeClass("active");
+    $("#flourish_widget #FS_Default").removeClass("active");
   }
-  $("#ADA_widget a.FontSizeMedium").click(function () {
+  $("#flourish_widget a.FontSizeMedium").click(function () {
     if ($.cookie('FontSizeCookie') == "undefined" || $.cookie('FontSizeCookie') == "no") {
       $.cookie('FontSizeCookie', 'yes', { expires: 30 });
       $("body").addClass("fontSizeMedium");
@@ -763,14 +936,14 @@ $(document).ready(function () {
     checkIfWidgetActive()
   });
   //When 'a.FontSizeDefault' is clicked, removes 'fontSizeMedium' and erases FontSizeCookie
-  $("#ADA_widget a.FontSizeDefault").click(function () {
+  $("#flourish_widget a.FontSizeDefault").click(function () {
     restoreDefaultFontSize()
   });
 });
 
 /////COOKIE SETTING FOR FONT TYPE
 $(document).ready(function () {
-  $("#ADA_widget #FT_Default").addClass("active");
+  $("#flourish_widget #FT_Default").addClass("active");
 });
 
 
@@ -781,7 +954,8 @@ $(document).ready(function () {
 //FOR FONT TYPE CHANGE -- ADDS ACTIVE CLASS TO LI WHEN CLICKED
 //https://stackoverflow.com/questions/3972944/jquery-removeclass-on-parent-sibling-child
 $(function () {
-  $('.font_type_form .form-check ul li').click(function () {
+  $('.font_type_form .form-check ul li').click(function (e) {
+    e.preventDefault()
     $(this).addClass('active').siblings().removeClass('active');
   });
 });
@@ -812,11 +986,11 @@ $(document).ready(function () {
   // Check (onLoad) if DyslexicFontCookie is there and set the class to body if it is
   // Add active class to li
   if ($.cookie('DyslexicFontCookie') == "yes") {
-    $("#ADA_widget #FT_Dyslexic").addClass("active");
+    $("#flourish_widget #FT_Dyslexic").addClass("active");
     $("body").addClass("DyslexicFont");
     $('body').removeClass('BaskervilleFont');
-    $("#ADA_widget #FT_Default").removeClass("active");
-    $("#ADA_widget #FT_Baskerville").removeClass("active");
+    $("#flourish_widget #FT_Default").removeClass("active");
+    $("#flourish_widget #FT_Baskerville").removeClass("active");
     $.cookie('BaskervilleFontCookie') == "no";
     $.cookie('BaskervilleFontCookie') == "undefined";
     $.cookie("BaskervilleFontCookie", null, {
@@ -826,7 +1000,7 @@ $(document).ready(function () {
   }
 
   // When input is clicked save cookie for 30days
-  $("#ADA_widget a.FontTypeDyslexic").click(function () {
+  $("#flourish_widget a.FontTypeDyslexic").click(function () {
     $.cookie("BaskervilleFontCookie", null, {
       expires: 30
     });
@@ -858,10 +1032,10 @@ $(document).ready(function () {
   // Check (onLoad) if BaskervilleFontCookie is there and set the class to body if it is
   // Add active class to li
   if ($.cookie('BaskervilleFontCookie') == "yes") {
-    $("#ADA_widget #FT_Baskerville").addClass("active");
+    $("#flourish_widget #FT_Baskerville").addClass("active");
     $("body").addClass("BaskervilleFont");
-    $("#ADA_widget #FT_Default").removeClass("active");
-    $("#ADA_widget #FT_Dyslexic").removeClass("active");
+    $("#flourish_widget #FT_Default").removeClass("active");
+    $("#flourish_widget #FT_Dyslexic").removeClass("active");
     $('body').removeClass('DyslexicFont');
     $.cookie('DyslexicFontCookie') == "no";
     $.cookie('DyslexicFontCookie') == "undefined";
@@ -870,7 +1044,7 @@ $(document).ready(function () {
   }
 
   // When input is clicked save cookie for 30days
-  $("#ADA_widget a.FontTypeBaskerville").click(function () {
+  $("#flourish_widget a.FontTypeBaskerville").click(function () {
     $.cookie("DyslexicFontCookie", null, {
       expires: 30
     });
@@ -899,13 +1073,13 @@ $(document).ready(function () {
 
 
   //When 'a.FontTypeDefault' is clicked, removes 'DyslexicFont' and erases FontTypeCookie
-  $("#ADA_widget a.FontTypeDefault").click(function () {
+  $("#flourish_widget a.FontTypeDefault").click(function () {
     restoreDefaultFontType()
   });
 });
 
 $(document).ready(function () {
-  $("#ADA_widget #Cur_Default").addClass("active");
+  $("#flourish_widget #Cur_Default").addClass("active");
 });
 
 $(function () {
@@ -934,13 +1108,13 @@ $(document).ready(function () {
   // Check (onLoad) if CursorEnlargeCookie is there and set the class to body if it is
   // Add active class to li
   if ($.cookie('CursorEnlargeCookie') == "yes") {
-    $("#ADA_widget #Cur_Enlarge").addClass("active").siblings().removeClass('active');
+    $("#flourish_widget #Cur_Enlarge").addClass("active").siblings().removeClass('active');
     $("body").addClass("Cursor_Enlarge");
-    // $("#ADA_widget #Cur_Default").removeClass("active");
+    // $("#flourish_widget #Cur_Default").removeClass("active");
   }
 
   // When input is clicked save cookie for 30days
-  $("#ADA_widget a.Cursor_Enlarge_option").click(function () {
+  $("#flourish_widget a.Cursor_Enlarge_option").click(function () {
     if ($.cookie('CursorEnlargeCookie') == "undefined" || $.cookie('CursorEnlargeCookie') == "no") {
       $.cookie('CursorEnlargeCookie', 'yes', { expires: 30 });
       $("body").addClass("Cursor_Enlarge");
@@ -956,56 +1130,56 @@ $(document).ready(function () {
 
 
   //When 'a.Cursor_Default' is clicked, removes 'CursorEnlarge' and erases CursorEnlargeCookie
-  $("#ADA_widget a.Cursor_Default").click(function () {
+  $("#flourish_widget a.Cursor_Default").click(function () {
     restoreDefaultCursorSize()
   });
 
 });
 
 // color contrast modal
-$(document).ready(function () {
-  $("#OpenContrastModal").click(function () {
-    $('#ContrastRatingModal').toggleClass("toast_close");
-  });
+// $(document).ready(function () {
+//   $("#OpenContrastModal").click(function () {
+//     $('#ContrastRatingModal').toggleClass("toast_close");
+//   });
 
-  $(".CloseContrastModal").click(function () {
-    $('#ContrastRatingModal').addClass("toast_close");
-  });
-});
+//   $(".CloseContrastModal").click(function () {
+//     $('#ContrastRatingModal').addClass("toast_close");
+//   });
+// });
 
-const contrastInfoPopup = document.querySelector('#wcagDropdown')
-const contrastModalInfoBtn = document.querySelector('#ada-contrast-info-toggle')
-document.querySelector('#ada-contrast-info-toggle').addEventListener('click', () => {
-  if (contrastInfoPopup.classList.contains('d-none')) {
+// const contrastInfoPopup = document.querySelector('#wcagDropdown')
+// const contrastModalInfoBtn = document.querySelector('#flourish-contrast-info-toggle')
+// document.querySelector('#flourish-contrast-info-toggle').addEventListener('click', () => {
+//   if (contrastInfoPopup.classList.contains('d-none')) {
 
-    $("#wcagDropdown").removeClass("d-none")
+//     $("#wcagDropdown").removeClass("d-none")
 
-  } else {
-    $("#wcagDropdown").addClass("d-none")
-  }
-})
+//   } else {
+//     $("#wcagDropdown").addClass("d-none")
+//   }
+// })
 
 // color contrast modal and popup - close when clicked off screen
-$('body').click(function (event) {
-  if (!$(event.target).closest('.wcag-modal-remove-selector').length && !$(event.target).is('.wcag-modal-remove-selector')) {
-    $("#ContrastRatingModal").addClass("toast_close")
-  }
-  if (!$(event.target).closest('.wcag-popup-info-remove-selector').length && !$(event.target).is('.wcag-popup-info-remove-selector')) {
-    $("#wcagDropdown").addClass("d-none")
-  }
-});
+// $('body').click(function (event) {
+//   if (!$(event.target).closest('.wcag-modal-remove-selector').length && !$(event.target).is('.wcag-modal-remove-selector')) {
+//     $("#ContrastRatingModal").addClass("toast_close")
+//   }
+//   if (!$(event.target).closest('.wcag-popup-info-remove-selector').length && !$(event.target).is('.wcag-popup-info-remove-selector')) {
+//     $("#wcagDropdown").addClass("d-none")
+//   }
+// });
 
-// color contrast modal and popup - close on scroll
-$('.modal_body').on("scroll", function () {
-  $("#ContrastRatingModal").addClass("toast_close")
-  $("#wcagDropdown").addClass("d-none")
-});
+// // color contrast modal and popup - close on scroll
+// $('.modal_body').on("scroll", function () {
+//   $("#ContrastRatingModal").addClass("toast_close")
+//   $("#wcagDropdown").addClass("d-none")
+// });
 
 
 
 // change css properties for letter/word spacing/lineheight
 const setSpacingCss = (value, css) => {
-  $("body p").not('#ADA_widget, #ADA_widget *, i, div').css(css, value); //Selects everything inside body except ada modal and header
+  $("body p").not('#flourish_widget, #flourish_widget *, i, div').css(css, value); //Selects everything inside body except flourish modal and header
   $(".Footer").css(css, value);
 }
 
@@ -1036,18 +1210,18 @@ $(document).ready(function () {
   if (selectedVal) {
     $("#letter_spacing").val(selectedVal);
     $("#letter_spacing").prop("selected", true);
-    $("body p").not('#ADA_widget, #ADA_widget *, i, div').css("letter-spacing", selectedVal); //Selects everything inside body except ada modal and header
+    $("body p").not('#flourish-widget-main, #flourish-widget-main *, i, div, .close-active-text').css("letter-spacing", selectedVal); //Selects everything inside body except flourish modal and header
     $(".Footer").css("letter-spacing", selectedVal);
-    changeIndent(selectedVal, '10px', '#LetterSpacing_option select', '6.5px')
+    // changeIndent(selectedVal, '10px', '#LetterSpacing_option select'close-active-text, '6.5px')
   }
   $("#letter_spacing").on("change", function () {
     var selection1 = $(this).val();
 
     $(selection1).prop("selected", true);
-    $("body p").not('#ADA_widget, #ADA_widget *, i, div').css("letter-spacing", selection1); //Selects everything inside body except ada modal and header
+    $("body p").not('#flourish-widget-main, #flourish-widget-main *, i, div, .close-active-text').css("letter-spacing", selection1); //Selects everything inside body except flourish modal and header
     $(".Footer").css("letter-spacing", selection1);
     $.cookie("LetterSpaceVal", selection1, { expires: 30 })
-    changeIndent(selection1, '10px', '#LetterSpacing_option select', '6.5px')
+    // changeIndent(selection1, '10px', '#LetterSpacing_option select', '6.5px')
 
     widgetItemObj.isLetterSpaceChanged = selection1 === 'inherit' ? false : true
     selection1 === 'inherit' ? removeWidgetControls(['letter_spacing']) : addWidgetControls('letter_spacing', 'Letter spacing')
@@ -1061,16 +1235,16 @@ $(document).ready(function () {
   if (selectedVal2) {
     $("#word_spacing").val(selectedVal2);
     $("#word_spacing").prop("selected", true);
-    $("body p").not('#ADA_widget, #ADA_widget *, i, div').css("word-spacing", selectedVal2); //Selects everything inside body except ada modal and header
-    changeIndent(selectedVal2, '10px', '#WordSpacing_option select', '6.5px')
+    $("body p").not('#flourish-widget-main, #flourish-widget-main *, i, div').css("word-spacing", selectedVal2); //Selects everything inside body except flourish modal and header
+    // changeIndent(selectedVal2, '10px', '#WordSpacing_option select', '6.5px')
   }
   $("#word_spacing").on("change", function () {
     var selection2 = $(this).val();
     $(selection2).prop("selected", true);
-    $("body p").not('#ADA_widget, #ADA_widget *, i, div').css("#word_spacing", selection2); //Selects everything inside body except ada modal and header
+    $("body p").not('#flourish-widget-main, #flourish-widget-main *, i, div').css("#word_spacing", selection2); //Selects everything inside body except flourish modal and header
     $(".Footer").css("#word_spacing", selection2);
     $.cookie("WordSpaceVal", selection2, { expires: 30 })
-    changeIndent(selection2, '10px', '#WordSpacing_option select', '6.5px')
+    // changeIndent(selection2, '10px', '#WordSpacing_option select', '6.5px')
     widgetItemObj.isWordSpaceChanged = selection2 === 'inherit' ? false : true
     selection2 === 'inherit' ? removeWidgetControls(['word_spacing']) : addWidgetControls('word_spacing', 'Word spacing')
     checkIfWidgetActive()
@@ -1082,19 +1256,19 @@ $(document).ready(function () {
   if (selectedVal3) {
     $("#line_height").val(selectedVal3);
     $("#line_height").prop("selected", true);
-    $("body p").not('#ADA_widget, #ADA_widget *, i, div').css("line-height", selectedVal3); //Selects everything inside body except ada modal and header
+    $("body p").not('#flourish-widget-main, #flourish-widget-main *, i, div').css("line-height", selectedVal3); //Selects everything inside body except flourish modal and header
     $(".Footer").css("line-height", selectedVal3);
 
-    changeIndent(selectedVal3, '3.3', '#LineHeight_option select', '6.5px')
+    // changeIndent(selectedVal3, '3.3', '#LineHeight_option select', '6.5px')
   }
   $("#line_height").on("change", function () {
     var selection3 = $(this).val();
     $(selection3).prop("selected", true);
-    $("body p").not('#ADA_widget, #ADA_widget *, i, div').css("line-height", selection3); //Selects everything inside body except ada modal and header
+    $("body p").not('#flourish-widget-main, #flourish-widget-main *, i, div').css("line-height", selection3); //Selects everything inside body except flourish modal and header
     $(".Footer").css("line-height", selection3);
     $.cookie("LinpageHeightVal", selection3, { expires: 30 })
 
-    changeIndent(selection3, '3.3', '#LineHeight_option select', '6.5px')
+    // changeIndent(selection3, '3.3', '#LineHeight_option select', '6.5px')
 
     widgetItemObj.isLineHeightChanged = selection3 === 'inherit' ? false : true
     checkIfWidgetActive()
@@ -1117,29 +1291,30 @@ $(document).ready(function () {
   //////////// Change Letter Spacing ///////////////////
   $("#letter_spacing").on('change', function () {
     var getLetterSpace = $(this).val();
-    $("body *").not('#ADA_widget, #ADA_widget *, i, div').css("letter-spacing", getLetterSpace); //Selects everything inside body except ada modal and header
+    $("body *").not('#flourish_widget, #flourish_widget *, i, div').css("letter-spacing", getLetterSpace); //Selects everything inside body except flourish modal and header
     $(".Footer").css("letter-spacing", getLetterSpace);
   });
 
   //////////// Change Word Spacing ///////////////////
   $("#word_spacing").on('change', function () {
     var getWordSpace = $(this).val();
-    $("body *").not('#ADA_widget, #ADA_widget *, i, div').css("word-spacing", getWordSpace); //Selects everything inside body except ada modal and header
+    $("body *").not('#flourish_widget, #flourish_widget *, i, div').css("word-spacing", getWordSpace); //Selects everything inside body except flourish modal and header
     $(".Footer").css("word-spacing", getWordSpace);
   });
 
 }); //end of doc ready
 
 
+
+
+//////////// Text Magnify ///////////////////
 if ($.cookie('TextMagnifier') == "true") {
   $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
-
-  $('#ToggleTextMagnifier').prop('checked', true).trigger('change')
-
+  setTimeout(() => {
+    $('#ToggleTextMagnifier').prop('checked', true).trigger('change')
+    $('#reset-text-magnify-btn').css("display", "flex").hide().fadeIn('slow');
+  }, 500)
 }
-
-
-
 
 let textMagObj = {
   color: 'rgb(255,255,255)',
@@ -1147,17 +1322,11 @@ let textMagObj = {
   size: '22px',
 }
 
-
-
-
-
-
-
 let textMagY = 65;
 document.addEventListener('scroll', () => {
   const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
-  const adaModal = document.querySelector('#ADA_widget')
-  if (adaModal.style.display !== 'flex') {
+  const flourishModal = document.querySelector('#flourish_widget')
+  if (flourishModal.style.display !== 'flex') {
     if (window.scrollY >= scrollableHeight - 1) { // at bottom of page
       textMagY = 150
     } else if (window.scrollY === 0) { // at top of page
@@ -1168,113 +1337,91 @@ document.addEventListener('scroll', () => {
   }
 })
 
-//////////// Text Magnify ///////////////////
+
 $(document).on('mousemove', function (e) {
-  const textMagnify = document.querySelector('#text_magnify')
+  // console.log(e.pageX)
+  let textMagX = 15
+
+  if (e.pageX > window.innerWidth / 1.3) {
+
+    textMagX = -300
+  }
   $('#text_magnify').css({
-    left: e.pageX + 15,
+    left: e.pageX + textMagX,
     top: e.pageY - textMagY
   });
+
 });
+
 
 const hoverTextFunc = () => {
   //If ToggleTextMagnifier is checked
-  if ($('[id="ToggleTextMagnifier"]').is(':checked')) {
+  if ($('#ToggleTextMagnifier').is(':checked')) {
+    $('#reset-text-magnify-btn').css("display", "flex").hide().fadeIn('slow');
     $('#edit-text-magnify').css("display", "flex").hide().fadeIn();
     $('.text-mag-preview-container').css("display", "flex").hide().fadeIn();
-    var timeout = null;
-    clearTimeout(timeout)
-    $('#text_magnify').attr('style', 'opacity: 1!important');
-    $('#text_magnify').attr('style', 'display: none!important');
     $("body").addClass("TextMagnifier");
-    $('[id="ToggleZoom"]').prop('checked', false);
-
-    // $('#text_magnify').attr('style', 'display: block!important');
-    $('p, a, :header, span, button, td').not('#ada-triggers, #ada-triggers ul, #ada-triggers ul li, #ada-triggers *, #reset-text-magnify-btn, #reset-img-magnify-btn').hover(
-      function (e) {
-        var TextMagnify = $(this).text();
-
-
-
-
-
-        $("#text_magnify").text(TextMagnify);
-        $('#text_magnify').css({ 'color': textMagObj.color, 'background-color': textMagObj.backGroundColor, 'font-size': textMagObj.size });
-
-        timeout = setTimeout(() => {
-          $('#text_magnify').show()
-        }, 500);
-        if ($('#text_magnify').is(':empty') || TextMagnify === '') {
-          $('#text_magnify').attr('style', 'display: none!important');
-          clearTimeout(timeout)
-        }
-      },
-      function (e) {
-        //do the mouseleave things here...
-
-        $('#text_magnify').attr('style', 'display: none!important');
-        clearTimeout(timeout)
+    $('#ToggleZoom').prop('checked', false);
+    var timer;
+    $("p, a, :header, span, button, td").not('#flourish-triggers, #flourish-triggers ul, #flourish-triggers ul li, #flourish-triggers *, #reset-text-magnify-btn, #reset-img-magnify-btn').on("mouseenter", function () {
+      var TextMagnify = $(this).text();
+      if (TextMagnify.length > 1000) {
+        $('#text_magnify').css({ 'max-width': '1000px' });
+      } else {
+        $('#text_magnify').css({ 'max-width': '500px' });
       }
-    );//end of hover
-    $(window).scroll(function () {
-      $('#text_magnify').attr('style', 'display: none!important');
-      clearTimeout(timeout)
+      timer = setTimeout(function () {
+        if (TextMagnify.replaceAll(/\s/g, '') !== '') {
+          $("#text_magnify").text(TextMagnify);
+          $('#text_magnify').css({ 'color': textMagObj.color, 'background-color': textMagObj.backGroundColor, 'font-size': textMagObj.size });
+          if (document.body.classList.contains('TextMagnifier')) {
+            $('#text_magnify').show()
+          }
+        }
+      }, 500);
+    }).on("mouseleave", function () {
+      clearTimeout(timer);
+      $('#text_magnify').hide()
     });
     addWidgetControls('ToggleTextMagnifier', 'Text magnify')
-
     widgetItemObj.isTextMag = true
-  }// if not checked
-
-  else {
+  } else {
+    $('#reset-text-magnify-btn').fadeOut()
     $('#edit-text-magnify').fadeOut()
     $('.text-mag-preview-container').fadeOut()
     $("body").removeClass("TextMagnifier");
-    $('#text_magnify').attr('style', 'display: none!important');
-    clearTimeout(timeout)
+    $('#text_magnify').fadeOut()
     removeWidgetControls(['ToggleTextMagnifier'])
     widgetItemObj.isTextMag = false
   }
   checkIfWidgetActive()
 }
+if (!hasTouchScreen) {
+  $(window).scroll(function () {
+    $('#text_magnify').fadeOut('fast')
+  });
+}
 
 
 
-// Toggle Text Magnifier
 $(function () {
-  $('[id="ToggleTextMagnifier"]').change(function () {
+  $('#ToggleTextMagnifier').change(function () {
     hoverTextFunc()
-  }); //end of change
-}); // end of function
-
-
-
-$(document).ready(function () {
-  // read the current/previous setting
-  $("input.switch-input[type=checkbox]").each(function () {
-    //get name of input
-    var name = $(this).attr('name');
-    if ($.cookie(name) && $.cookie(name) == "true") {
-      $(this).prop('checked', $.cookie(name));
-      $("body").addClass(name);
-      //If ToggleTextMagnifier is checked
-      hoverTextFunc()
-    }// end of if
-  });//end of each
-  // event management
-  $("input.switch-input[type=checkbox]").change(function () {
-    var name = $(this).attr("name");
-    $.cookie(name, $(this).prop('checked'), { expires: 30, })
   });
 });
 
 
+
+
+
+////////////image description section///////////////////
 if ($.cookie('ImageDescription') == "true") {
   $('#ToggleImageDescription').prop('checked', false).trigger('change')
   setTimeout(() => {
     $('#ToggleImageDescription').prop('checked', true).trigger('change')
+    $('#reset-img-magnify-btn').css("display", "flex").hide().fadeIn('slow');
   }, 500);
 }
-
 
 let imgMagObj = {
   color: 'rgb(255,255,255)',
@@ -1284,75 +1431,74 @@ let imgMagObj = {
 
 
 const imgMagFunc = () => {
-  if ($('[id="ToggleImageDescription"]').is(':checked')) {
-
+  //If ToggleTextMagnifier is checked
+  if ($('#ToggleImageDescription').is(':checked')) {
+    $('#reset-img-magnify-btn').css("display", "flex").hide().fadeIn('slow');
     $('#edit-img-magnify').css("display", "flex").hide().fadeIn();
     $('.img-mag-preview-container').css("display", "flex").hide().fadeIn();
-    $('#ImageDescription_magnify').attr('style', 'opacity: 1!important');
-    $('#ImageDescription_magnify').attr('style', 'display: none!important');
     $("body").addClass("ImageDescription");
-    $('img[alt], .feature .img[alt], i.fa[alt]').hover(
-      function (e) {
-        //do the mouseenter things here...
-
-        var ImageDescription = $(this).attr("alt");
-        $("#ImageDescription_magnify").text(ImageDescription);
-        $('#ImageDescription_magnify').show()
-
-        $('#ImageDescription_magnify').css({ 'color': imgMagObj.color, 'background-color': imgMagObj.backGroundColor, 'font-size': imgMagObj.size });
-
-        //If #text_magnify is empty, hide
-        if ($('#ImageDescription_magnify').is(':empty') || ImageDescription === '') {
-          $('#ImageDescription_magnify').attr('style', 'display: none!important');
-        }
-      },
-      function (e) {
-        //do the mouseleave things here...
-        $('#ImageDescription_magnify').attr('style', 'display: none!important');
-      }
-    );
-    $(window).scroll(function () {
-      $('#ImageDescription_magnify').attr('style', 'display: none!important');
-    });
     addWidgetControls('ToggleImageDescription', 'Image description')
     widgetItemObj.isImgMag = true
-  } else {
+    var timer;
+    $('svg[alt], img[alt], i.fa[alt]').not('#toggle-flourish-list').on("mouseenter", function () {
+      var imgHideId = $(this).attr("data-id");
 
+      var imgAltMagnify = $(this).attr("alt");
+      console.log(imgAltMagnify)
+      timer = setTimeout(function () {
+        if (imgAltMagnify.replaceAll(/\s/g, '') !== '') {
+          console.log('this is valid')
+          $("#ImageDescription_magnify").text(imgAltMagnify);
+          $('#ImageDescription_magnify').css({ 'color': imgMagObj.color, 'background-color': imgMagObj.backGroundColor, 'font-size': imgMagObj.size });
+          if (document.body.classList.contains('ImageDescription') && imgHideId !== 'hide-img-hover') {
+            $('#ImageDescription_magnify').show()
+          }
+        }
+      }, 500);
+    }).on("mouseleave", function () {
+      clearTimeout(timer);
+      $('#ImageDescription_magnify').hide()
+    });
+
+  } else {
+    $('#reset-img-magnify-btn').fadeOut()
     $('#edit-img-magnify').fadeOut()
     $('.img-mag-preview-container').fadeOut()
     $("body").removeClass("ImageDescription");
-    $('img[alt], .feature .img[alt], i.fa[alt]').hover(
-      function (e) {
-        //do the mouseleave things here...
-        $('#ImageDescription_magnify').attr('style', 'display: none!important');
-      });
+    $('#ImageDescription_magnify').fadeOut()
     removeWidgetControls(['ToggleImageDescription'])
     widgetItemObj.isImgMag = false
-  } //end of else
+  }
   checkIfWidgetActive()
 }
 
 // Toggle Image Description
 $(function () {
-  $('[id="ToggleImageDescription"]').change(function () {
+  $('#ToggleImageDescription').change(function () {
     imgMagFunc()
-  }); //end of change
-}); // end of function
+  });
+});
 
-// cookie imgDescription
-if ($.cookie('ImageDescription') == "true") {
-  $('#ToggleImageDescription').prop('checked', true).trigger('change')
-}
+$(window).scroll(function () {
+  $('#ImageDescription_magnify').fadeOut('fast')
+});
 
-////////////image description magnify///////////////////
+
 $(document).on('mousemove', function (e) {
+  // console.log(e.pageX)
+  let imgMagX = 15
+
+  if (e.pageX > window.innerWidth / 1.3) {
+    console.log('switch to other side')
+    imgMagX = -200
+  }
   $('#ImageDescription_magnify').css({
-    left: e.pageX + 10,
+    left: e.pageX + imgMagX,
     top: e.pageY - 65
   });
 });
 
-// text and image magnifier COLOR control
+////////////text and img magnifier settings///////////////////
 const textMagColorControls = (colors, preview, cssObj) => {
   const colorPresets = document.querySelectorAll(colors)
   colorPresets.forEach(preset => {
@@ -1465,6 +1611,7 @@ restoreDefaultImageSettings = () => {
 
 //fix bugs caused by reading mask creating an infinite scroll
 const preventPageScroll = () => {
+  $.cookie("readingMaskWidth", document.innerWidth, { expires: 1 });
   var top = 0
   var pageHeight = document.documentElement.scrollHeight;
   var bottom = top + pageHeight - $(window).height();
@@ -1482,20 +1629,11 @@ const preventPageScroll = () => {
   });
 }
 
-// function to create the mask
-const createMaskFunc = () => {
-  widgetItemObj.isReadingMask = true
-  // $("body").addClass("ReadingMask_ON");
-  // $("#top_mask").fadeIn('slow')
-  // $("#bottom_mask").fadeIn('slow')
-  // addWidgetControls('ToggleReadingMask', 'Reading mask')
-  storeModalScrollPosition()
-  modalDisplayOpenOrClose()
-  forceReload()
-}
 
-// function to run when page resized
-const resizeMaskFunc = () => {
+
+// reload page to reset prevent page scroll
+// function runs when readingMask is active
+const resetMaskWhenActive = () => {
   if (document.body.classList.contains('ReadingMask_ON')) {
     $("#top_mask").fadeOut()
     $("#bottom_mask").fadeOut()
@@ -1503,8 +1641,34 @@ const resizeMaskFunc = () => {
       storeModalScrollPosition()
       modalDisplayOpenOrClose()
       forceReload()
-      // createMaskFunc()
     }, 500);
+  }
+}
+//reading mask requires the
+const resetMaskOnWidthChange = () => {
+  if ($.cookie("readingMaskWidth")) {
+    const maskSize = $.cookie("readingMaskWidth")
+    if (window.innerWidth < maskSize) {
+      storeModalScrollPosition()
+      modalDisplayOpenOrClose()
+      forceReload()
+    } else {
+      $.cookie("readingMaskWidth", window.innerWidth, { expires: 1 });
+      $("#top_mask").fadeOut()
+      $("#bottom_mask").fadeOut()
+      if (document.body.classList.contains('ReadingMask_ON')) {
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          preventPageScroll()
+        }, 300)
+
+        setTimeout(() => {
+          $("#top_mask").fadeIn()
+          $("#bottom_mask").fadeIn()
+        }, 700);
+      }
+
+    }
   }
 }
 
@@ -1512,28 +1676,27 @@ const resizeMaskFunc = () => {
 // reload on page resize if reading mask is active
 var resizeId;
 window.addEventListener("resize", (event) => {
-  $.cookie("reading-mask-reload", true, { expires: 30 });
+
   clearTimeout(resizeId);
-  resizeId = setTimeout(resizeMaskFunc, 500);
+  // resizeId = setTimeout(resetMaskWhenActive, 500);
+  resizeId = setTimeout(resetMaskOnWidthChange, 300);
 });
 
-
+$.removeCookie('readingMaskWidth');
 
 
 // Toggle Reading Mask
 $(function () {
   $('[id="ToggleReadingMask"]').change(function () {
     if ($(this).is(':checked')) {
-      $("#edit-reading-mask").css("display", "flex").hide().fadeIn()
-      $.cookie("edit-reading-mask", true, { expires: 30 });
-      widgetItemObj.isReadingMask = true
-      storeModalScrollPosition()
-      modalDisplayOpenOrClose()
-      forceReload()
+
+      showReadingMask()
       // $('body').css({"height": "6px", "margin-top": "110px"});
 
     } else {
+      // $.removeCookie('readingMaskWidth');
 
+      $('#reset-mask-btn').fadeOut()
       $("body").removeClass("ReadingMask_ON");
       $("body").removeClass("ReadingMask ");
       $("#top_mask").fadeOut()
@@ -1547,29 +1710,56 @@ $(function () {
   });
 });
 
-$(document).ready(function () {
-  // read the current/previous setting
-  $("input.switch-input[type=checkbox]").each(function () {
-    //get name of input
-    var name = $(this).attr('name');
-    if ($.cookie(name) && $.cookie(name) == "true") {
-      $(this).prop('checked', $.cookie(name));
-      $("body").addClass(name);
-      //If ToggleReadingMask is checked
-      if ($('[id="ToggleReadingMask"]').is(':checked')) {
-        $("body").addClass(name);
-        $("body").addClass("ReadingMask_ON");
-        $("#top_mask").fadeIn('slow')
-        $("#bottom_mask").fadeIn('slow')
-      }
-    }// end of if
-  });//end of each
-  // event management
-  $("input.switch-input[type=checkbox]").change(function () {
-    var name = $(this).attr("name");
-    $.cookie(name, $(this).prop('checked'), { expires: 30, })
-  });
-});
+const showReadingMask = () => {
+  $.cookie("readingMaskWidth", window.innerWidth, { expires: 1 });
+
+  $('#reset-mask-btn').css("display", "flex").hide().fadeIn('slow');
+  $("#edit-reading-mask").css("display", "flex").hide().fadeIn()
+  $.cookie("edit-reading-mask", true, { expires: 30 });
+  widgetItemObj.isReadingMask = true
+  preventPageScroll()
+  setTimeout(() => {
+    $("body").addClass("ReadingMask_ON");
+    $("#top_mask").fadeIn('slow')
+    $("#bottom_mask").fadeIn('slow')
+    addWidgetControls('ToggleReadingMask', 'Reading mask')
+  }, 500)
+}
+
+// $(document).ready(function () {
+//   // read the current/previous setting
+//   $("input.switch-input[type=checkbox]").each(function () {
+//     //get name of input
+//     var name = $(this).attr('name');
+//     if ($.cookie(name) && $.cookie(name) == "true") {
+//       $(this).prop('checked', $.cookie(name));
+//       $("body").addClass(name);
+//       //If ToggleReadingMask is checked
+//       preventPageScroll()
+//       if (!$.cookie("readingMaskWidth")) {
+//         $.cookie("readingMaskWidth", window.innerWidth, { expires: 1 });
+//       }
+//       setTimeout(() => {
+//         if ($('[id="ToggleReadingMask"]').is(':checked')) {
+//           $("body").addClass(name);
+//           $("body").addClass("ReadingMask_ON");
+//           $("#top_mask").fadeIn('slow')
+//           $("#bottom_mask").fadeIn('slow')
+//         }
+//       }, 500)
+
+//     }// end of if
+//   });//end of each
+//   // event management
+//   $("input.switch-input[type=checkbox]").change(function () {
+//     var name = $(this).attr("name");
+//     $.cookie(name, $(this).prop('checked'), { expires: 30, })
+//   });
+// });
+if ($.cookie('ReadingMask') === 'true') {
+  // $('#ToggleReadingMask').prop('checked', true).trigger('change')
+  showReadingMask()
+}
 
 
 //**************mask settings*******************
@@ -1671,8 +1861,13 @@ const restoreDefaultMaskSettings = () => {
   }
 
   changeColorPicker(defaultColor, '.reading-mask', '#mask_hexVal', "#mask_color")
-  $('#reading-mask-opacity').val(defaultOpacity);
-  $(".reading-mask").css({ "opacity": defaultOpacity })
+  // $('#reading-mask-opacity').val(defaultOpacity);
+  // $(".reading-mask").css({ "opacity": .5 })
+
+  const e = new Event("change");
+  const element = document.querySelector("#reading-mask-opacity")
+  element.value = defaultOpacity;
+  element.dispatchEvent(e);
 
 
   yVal = initialYVal + currHeight
@@ -1687,20 +1882,20 @@ if ($.cookie("edit-reading-mask") === 'true') {
   $("#edit-reading-mask").css("display", "flex").hide().fadeIn()
 }
 
-let reloadCookie = $.cookie("reading-mask-reload")
-if (!reloadCookie) {
-  $.cookie("reading-mask-reload", true, { expires: 30 });
-}
 
+
+if ($.cookie('ReadingMask')) {
+  $('#reset-mask-btn').css("display", "flex").hide().fadeIn('slow');
+}
 
 setTimeout(() => {
   if (document.body.classList.contains('ReadingMask_ON')) {
 
     $('.reading-mask').fadeIn()
     preventPageScroll()
-    $.cookie("reading-mask-reload", false, { expires: 30 });
+
   }
-}, 300);
+}, 100);
 
 
 $(document).ready(function () {
@@ -1732,13 +1927,14 @@ $(document).ready(function () {
 
 if ($.cookie("edit-reading-guide") === 'true') {
   $("#edit-reading-guide").css("display", "flex").hide().fadeIn()
+  $('#reset-guide-btn').css("display", "flex").hide().fadeIn('slow');
 }
 
 // Toggle Reading Guide
 $(function () {
   $('[id="ToggleReadingGuide"]').change(function () {
     if ($(this).is(':checked')) {
-
+      $('#reset-guide-btn').css("display", "flex").hide().fadeIn('slow');
       $("#edit-reading-guide").css("display", "flex").hide().fadeIn()
       $.cookie("edit-reading-guide", true, { expires: 30 });
       $("#tail").hide()
@@ -1747,7 +1943,7 @@ $(function () {
       addWidgetControls('ToggleReadingGuide', 'Reading guide')
       widgetItemObj.isReadingGuide = true
     } else {
-
+      $('#reset-guide-btn').fadeOut()
       $("#edit-reading-guide").fadeOut()
       $.cookie("edit-reading-guide", false, { expires: 30 });
       $("#tail").fadeOut(500)
@@ -1821,21 +2017,21 @@ const restoreDefaultguideSettings = () => {
 }
 
 
-// Toggle Seizure
+// Toggle photo filter
 $(function () {
-  $('[id="ToggleSeizure"]').change(function () {
+  $('[id="TogglePhotoFilter"]').change(function () {
     if ($(this).is(':checked')) {
-      $("html").addClass("SeizureSafe");
-      addWidgetControls('ToggleSeizure', 'Photosensitivity filter')
-      widgetItemObj.isSeizureSafe = true
+      $("html").addClass("PhotoSens");
+      addWidgetControls('TogglePhotoFilter', 'Photosensitivity filter')
+      widgetItemObj.isPhotoSens = true
       if (!widgetItemObj.isLowSat) {
         $("html").addClass("lowsaturation");
       }
     } else {
-      $("html").removeClass("SeizureSafe");
-      $("body").removeClass("SeizureSafe");
-      removeWidgetControls(['ToggleSeizure'])
-      widgetItemObj.isSeizureSafe = false
+      $("html").removeClass("PhotoSens");
+      $("body").removeClass("PhotoSens");
+      removeWidgetControls(['TogglePhotoFilter'])
+      widgetItemObj.isPhotoSens = false
       if (!widgetItemObj.isLowSat) {
         $("html").removeClass("lowsaturation");
       }
@@ -1845,8 +2041,8 @@ $(function () {
 });
 
 
-if ($.cookie('SeizureSafe') == "true") {
-  $('#ToggleSeizure').prop('checked', true).trigger('change')
+if ($.cookie('PhotoSens') == "true") {
+  $('#TogglePhotoFilter').prop('checked', true).trigger('change')
   if (!widgetItemObj.isLowSat) {
     $("html").addClass("lowsaturation");
   }
@@ -1889,13 +2085,13 @@ $(function () {
 $(document).ready(function () {
   /////////////////////////////////////////////////////////  TEXT TO SPEECH - with on click //////////////////////////////////////////////////////////////
   //Hides TTS on Android Devices
-  function getMobileOperatingSystem() {
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (userAgent.match(/Android/i)) {
-      //return 'Android';
-      $('#TTS_option').hide();
-    }
-  }
+  // function getMobileOperatingSystem() {
+  //   var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  //   if (userAgent.match(/Android/i)) {
+  //     //return 'Android';
+  //     $('#TTS_option').hide();
+  //   }
+  // }
 
   const resetSpeech = () => {
     $('.curr-active-item').removeClass('curr-active-item')
@@ -1903,13 +2099,12 @@ $(document).ready(function () {
     $('.play').addClass('audio-inactive')
     // $('.play').find('.fa').removeClass('fa-pause')
     // $('.play').find('.fa').addClass('fa-play ')
-    $('.play').find('.toggle-audio').attr("src","/flourish/img/play.png").removeClass('pr-1').addClass('pr-0');
+    $('.play').find('.toggle-audio').attr("src", "./flourish/img/play.png").removeClass('pr-1').addClass('pr-0');
     synth.cancel();
   }
 
   var speechVol = $.cookie("speechVolCookie");
-  var speechRate = $.cookie("speechRateCookie");
-  var speechPitch = $.cookie("speechPitchCookie");
+
 
   const getCookieVal = (cookie) => {
     let value = 5
@@ -1925,7 +2120,7 @@ $(document).ready(function () {
     $.cookie(item, value, { expires: 30 })
   }
 
-  getMobileOperatingSystem();
+  // getMobileOperatingSystem();
   // roundSlider.js -- https://roundsliderui.com/
   $("#volume").roundSlider({
     sliderType: "min-range",
@@ -2022,6 +2217,10 @@ $(document).ready(function () {
 
   const fullVoiceReset = () => {
     $.removeCookie('voiceCookie');
+    $.removeCookie('speechPitch');
+    $.removeCookie('speechRate');
+    $.removeCookie('speechVol');
+
     resetVoiceSettings()
     resetSpeech()
     resetVoiceDefault()
@@ -2031,8 +2230,8 @@ $(document).ready(function () {
 
 
 
-  const resetVoiceBtn = document.querySelector('#reset-voice-btn')
-  resetVoiceBtn.addEventListener('click', () => {
+
+  document.querySelector('#reset-voice-btn').addEventListener('click', () => {
     fullVoiceReset()
   })
 
@@ -2054,38 +2253,62 @@ $(document).ready(function () {
   // Fetch the list of voices and populate the voice options.
   function loadVoices() {
     // Fetch the available voices.
+    //avoid
 
-    var voiceList = speechSynthesis.getVoices();
+    if (document.querySelector('#voice').length === 0) {
+      var voiceList = speechSynthesis.getVoices();
 
+      // console.log(voiceList)
+      // Loop through each of the voices.
+      voiceList.forEach(function (voice, i) {
+        // if (i !== 0 && i !== 2 && i !== 4 && i !== 5 && i !== 6) return;
+        if (voice.name !== 'Google US English' &&
+          voice.name !== 'Google UK English Male' &&
+          voice.name !== 'Microsoft David - English (United States)' &&
+          voice.name !== 'English United States' &&
+          voice.name !== 'Daniel' &&
+          voice.name !== 'Samantha' &&
+          voice.name !== 'Microsoft Jenny Online (Natural) - English (United States)' &&
+          voice.name !== 'Microsoft Steffan Online (Natural) - English (United States)' &&
+          voice.name !== 'English (USA,DEFAULT)') {
+          return
+        }
+        // console.log(voiceSelect)
+        var option = document.createElement('option');
+        option.value = voice.name;
+        option.innerHTML = voice.name;
+        voiceSelect.appendChild(option);
 
-    // Loop through each of the voices.
-    voiceList.forEach(function (voice, i) {
-      // if (i !== 0 && i !== 2 && i !== 4 && i !== 5 && i !== 6) return;
+      });
+      if (document.querySelector('#voice').length === 0) {
+        voiceList.forEach(function (voice, i) {
+          var option = document.createElement('option');
+          option.value = voice.name;
+          option.innerHTML = voice.name;
+          voiceSelect.appendChild(option);
 
-      if (voice.name !== 'Google US English' && voice.name !== "Microsoft David - English (United States)" && voice.name !== 'Microsoft Zira - English (United States)' && voice.name !== 'Google UK English Male' && voice.name !== 'Google UK English Female') {
-        return
+        });
+      }
+      if (document.querySelector('#voice').length < 2) {
+        $('#voice-settings-header').addClass('d-none')
       }
 
-      //Returns Microsoft Mark, Microsoft Zira & Google US English
-      // Create a new option element.
-      var option = document.createElement('option');
-      // Set the options value and text.
-      option.value = voice.name;
-      option.innerHTML = voice.name;
-      // Add the option to the voice selector.
-      voiceSelect.appendChild(option);
-    });
+    }
+
+
   }
 
   // Execute loadVoices.
-  loadVoices();
+  // loadVoices();
+
 
   // document.addEventListener("DOMContentLoaded", function () {
-  //     let selectElement = document.querySelector(".goog-te-combo");
-  //     selectElement.addEventListener('change', (event) => {
-  //         loadVoices()
-  //     })
+  //   let selectElement = document.querySelector(".goog-te-combo");
+  //   selectElement.addEventListener('change', (event) => {
+  //     loadVoices()
+  //   })
   // });
+
 
 
 
@@ -2129,72 +2352,146 @@ $(document).ready(function () {
     }
   }, 500);
 
-  $('<div class="audio_state">\
-  <button class="play audio-inactive btn " title="Play"><img class="toggle-audio" src="/flourish/img/play.png" alt="toggle speech icon"></button>\
-  <button class="stop btn " title="Cancel"><img class="mr-1" src="/flourish/img/reset.png" alt="reset audio icon"> Reset</button>\
-  </div>').insertAfter("p");
 
-  //https://stackoverflow.com/a/30361156/10792033
-  //Wrapping groups of adjacent siblings
-  $('div.audio_state').each(function () {
-    $(this)
-      .prev()
-      .addBack()
-      .wrapAll('<section class="TTS_content"></section>');
-  });
+  const htmlClickToSpeechFunc = (htmlElem) => {
+    document.querySelectorAll(htmlElem).forEach(item => {
+      item.addEventListener('click', () => {
+        resetSpeech()
+        removeElt()
+        createAudioPlayer(item)
+        playAudioHandler(htmlElem)
+        $(".stop").on("click", function () {
+          resetSpeech()
+        });
+      })
+    })
+  }
+
+  const htmlClickArr = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+
+  $('#ToggleTTS_click').change(function () {
+    if ($('#ToggleTTS_click').is(':checked')) {
+      $("body").addClass("TTS_click_enabled");
+      $("#speech-settings").removeClass("disable");
+      $('#reset-voice-settings').fadeIn()
+      addWidgetControls('ToggleTTS_click', 'Text to speech')
+      widgetItemObj.isSpeech = true
+      for (let i = 0; i < htmlClickArr.length; i++) {
+        htmlClickToSpeechFunc(htmlClickArr[i])
+      }
+    } else {
+      $("#speech-settings").addClass("disable");
+      $('#reset-voice-settings').fadeOut()
+      $(".audio_state").fadeOut(500)
+      setTimeout(() => {
+        $("body").removeClass("TTS_click_enabled");
+        $.cookie('TTS_click_enabled', 'false');
+      }, 500);
+      removeWidgetControls(['ToggleTTS_click'])
+      widgetItemObj.isSpeech = false
+    }
+    checkIfWidgetActive()
+  })
+
+
+
+  if ($.cookie('TTS_click_enabled') == "true") {
+    $("#speech-settings").removeClass("disable");
+    $('#ToggleTTS_click').prop('checked', false).trigger('change')
+    setTimeout(() => {
+      $('#ToggleTTS_click').prop('checked', true).trigger('change')
+    }, 500)
+  }
+
+
+
+  const createAudioPlayer = (item) => {
+    if (document.body.classList.contains('TTS_click_enabled')) {
+
+      const audioState = document.createElement('div')
+      audioState.classList.add('audio_state')
+      audioState.style.opacity = 0
+      setTimeout(() => {
+        audioState.style.opacity = 1
+      }, 100)
+      audioState.innerHTML = `
+      <button class="play btn audio-inactive" title="toggle-audio">
+        <img class="toggle-audio" src="./flourish/img/play.png" alt="toggle speech icon">
+      </button>
+      <button class="stop btn " title="Restart audio">
+        <img class="mr-1" src="./flourish/img/reset.png" alt="reset audio icon">
+        Reset
+      </button>
+      `
+      item.parentNode.insertBefore(audioState, item.nextSibling);
+    }
+
+  }
+
+  function removeElt() {
+    var elements = document.getElementsByClassName("audio_state");
+    while (elements.length > 0) {
+      elements[0].parentNode.removeChild(elements[0]);
+    }
+  }
 
 
   /***** ON Play CLICK *****/
-  $('div.audio_state .play').each(function (index) {
-    $(this).click(function () {
-      if (!$(this).hasClass('curr-active-item')) {
-        resetSpeech()
-        $(this).addClass('curr-active-item')
-      }
-      // $(this).find('.fa').removeClass('fa-pause')
-      // $(this).find('.fa').addClass('fa-play ')
-      $(this).find('.toggle-audio').attr("src","/flourish/img/play.png").removeClass('pr-1').addClass('pr-0');
-      if ($(this).hasClass('audio-playing')) {
-        $(this).removeClass('audio-inactive audio-playing')
-        $(this).addClass('audio-paused')
-        synth.pause()
-      } else {
-        // $(this).find('.fa').removeClass('fa-play');
-        // $(this).find('.fa').addClass('fa-pause');
-        $(this).find('.toggle-audio').attr("src","/flourish/img/pause.png").removeClass('pr-0').addClass('pr-1');
-        if ($(this).hasClass('audio-inactive')) {
-          $('.play').removeClass('audio-inactive audio-paused')
-          synth.cancel();
-          ssu.text = $(this).parent("div.audio_state").prev("p").text();
-          ssu.volume = parseFloat(volumeInput.value / 10);
-          ssu.rate = parseFloat(rateInput.value / 5);
-          ssu.pitch = parseFloat(pitchInput.value / 5 + .01);
-          if (voiceSelect.value) {
-            ssu.voice = speechSynthesis.getVoices().filter(function (voice) {
-              return voice.name == voiceSelect.value;
-            })[0];
-          }
-          $(this).addClass('audio-playing')
-          synth.speak(ssu);
-          ssu.addEventListener("end", (event) => {
-            resetSpeech()
-          });
-        } else if ($(this).hasClass('audio-paused')) {
+  const playAudioHandler = (htmlElem) => {
+    $('div.audio_state .play').each(function (index) {
+      $(this).click(function () {
+        //   window.onbeforeunload = function() {
+        //     return "Dude, are you sure you want to leave? Think of the kittens!";
+        // }
 
-          $(this).removeClass('audio-inactive audio-paused')
-          $(this).addClass('audio-playing')
-          synth.resume()
+
+        if (!$(this).hasClass('curr-active-item')) {
+          resetSpeech()
+          $(this).addClass('curr-active-item')
         }
-      }
+        // $(this).find('.fa').removeClass('fa-pause')
+        // $(this).find('.fa').addClass('fa-play ')
+        $(this).find('.toggle-audio').attr("src", "./flourish/img/play.png").removeClass('pr-1').addClass('pr-0');
+        if ($(this).hasClass('audio-playing')) {
+          $(this).removeClass('audio-inactive audio-playing')
+          $(this).addClass('audio-paused')
+          synth.pause()
+        } else {
+          // $(this).find('.fa').removeClass('fa-play');
+          // $(this).find('.fa').addClass('fa-pause');
+          $(this).find('.toggle-audio').attr("src", "./flourish/img/pause.png").removeClass('pr-0').addClass('pr-1');
+          if ($(this).hasClass('audio-inactive')) {
+            $('.play').removeClass('audio-inactive audio-paused')
+            synth.cancel();
+            ssu.text = $(this).parent("div.audio_state").prev(htmlElem).text();
+            ssu.volume = parseFloat(volumeInput.value / 10);
+            ssu.rate = parseFloat(rateInput.value / 5);
+            ssu.pitch = parseFloat(pitchInput.value / 5 + .01);
+            if (voiceSelect.value) {
+              ssu.voice = speechSynthesis.getVoices().filter(function (voice) {
+                return voice.name == voiceSelect.value;
+              })[0];
+            }
+            $(this).addClass('audio-playing')
+            synth.speak(ssu);
+            ssu.addEventListener("end", (event) => {
+              resetSpeech()
+            });
+          } else if ($(this).hasClass('audio-paused')) {
+
+            $(this).removeClass('audio-inactive audio-paused')
+            $(this).addClass('audio-playing')
+            synth.resume()
+          }
+        }
+      });
     });
-  });
+  }
 
-  //Global Cancels Speech on reset button
-  $(".stop").on("click", function () {
-    resetSpeech()
-  });
 
-  $("#ADA_trigger").click(function () {
+
+
+  $("#Flourish_trigger").click(function () {
 
     resetSpeech()
   });
@@ -2214,98 +2511,28 @@ $(document).ready(function () {
   };
 
 
-  document.querySelector('#ADA_reset').addEventListener('click', () => {
+  document.querySelector('#flourish_reset').addEventListener('click', () => {
     fullVoiceReset()
-    loadVoices()
+    // loadVoices()
   })
-  document.querySelector('#reset-ada').addEventListener('click', () => {
+  document.querySelector('#reset-flourish').addEventListener('click', () => {
     fullVoiceReset()
-    loadVoices()
+    // loadVoices()
   })
+
+
+
 
 
 }); //end of doc ready
 
-if ($.cookie('TTS_click_enabled') == "true") {
-  $("#speech-settings").removeClass("disable");
-}
-
-// Toggle Text-to-Speech click
-$(function () {
-  $('[id="ToggleTTS_click"]').change(function () {
-    if ($(this).is(':checked')) {
-      $(".audio_state").hide()
-      $("body").addClass("TTS_click_enabled");
-      $(".audio_state").fadeIn(600)
-      $("#speech-settings").removeClass("disable");
-      // $("#speech-settings").removeClass("disable-settings");
-      if ($('#ToggleReadingMask').is(':checked')) {
-        storeModalScrollPosition()
-        modalDisplayOpenOrClose()
-        forceReload()
-      }
-      if ($.cookie('ReadingMask')) {
-        if ($.cookie('ReadingMask') === 'false') {
-          $.removeCookie('ReadingMask');
-          storeModalScrollPosition()
-          modalDisplayOpenOrClose()
-          forceReload()
-        }
-      }
-      addWidgetControls('ToggleTTS_click', 'Text to speech')
-      widgetItemObj.isSpeech = true
-    } else {
-      $("#speech-settings").addClass("disable");
-      if ($.cookie('ReadingMask')) {
-        if ($.cookie('ReadingMask') === 'true') {
-
-          storeModalScrollPosition()
-          modalDisplayOpenOrClose()
-          forceReload()
-
-        }
-        $.cookie("reading-mask-reload", true, { expires: 30 });
-      }
-      // $("#speech-settings").addClass("disable-settings");
-      $(".audio_state").fadeOut(500)
-      setTimeout(() => {
-        $("body").removeClass("TTS_click_enabled");
-        $.cookie('TTS_click_enabled', 'false');
-      }, 500);
-      removeWidgetControls(['ToggleTTS_click'])
-      widgetItemObj.isSpeech = false
-    }
-    $.cookie("reading-mask-reload", true, { expires: 30 });
-    checkIfWidgetActive()
-  });
-});
 
 
-$(document).ready(function () {
 
 
-  // read the current/previous setting
-  $("input.switch-input[type=checkbox]").each(function () {
-    //get name of input
-    var name = $(this).attr('name');
-    if ($.cookie(name) && $.cookie(name) == "true") {
-      $(this).prop('checked', $.cookie(name));
-      $("body").addClass(name);
-
-      //If ToggleTTS_click is checked
-      if ($('[id="ToggleTTS_click"]').is(':checked')) {
-        $("body").addClass("TTS_click_enabled");
-      }
 
 
-    }// end of if
-  });//end of each
-  // event management
-  $("input.switch-input[type=checkbox]").change(function () {
-    var name = $(this).attr("name");
-    $.cookie(name, $(this).prop('checked'), { expires: 30, })
-  });
-});
+
 
 // tons of unnecessary duplicated code -- should be refactored to be shorter
 
@@ -2377,6 +2604,10 @@ const colorPresetToDefault = () => {
   widgetItemObj.isInverted = false
   widgetItemObj.isHighSat = false
   widgetItemObj.isLowSat = false
+  $('#ColorAdjust_option').removeClass('disable-colors')
+  // $('#DarkContrastBG_option').removeClass('disable-colors')
+  // $('#DesaturateBG_option').removeClass('disable-colors')
+  // $('#InvertBG_option').removeClass('disable-colors')
   if (!$.cookie('text-magnify-color-swatch') || $.cookie('text-magnify-color-swatch') === "text-mag-color-4") {
     restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
     restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
@@ -2386,12 +2617,18 @@ const colorPresetToDefault = () => {
 
 $(document).ready(function () {
   //When 'a.defaultBackground' is clicked, removes other background cookies and their related classes
-  $("#ADA_widget a.defaultBackground").click(function () {
+  $("#flourish_widget a.defaultBackground").click(function () {
     colorPresetToDefault()
   });
 }); // end of doc ready
 
+const disableColorPicker = () => {
 
+  $('#DarkContrastBG_option').removeClass('disable-colors')
+  $('#DesaturateBG_option').removeClass('disable-colors')
+  $('#InvertBG_option').removeClass('disable-colors')
+  $('#ColorAdjust_option').addClass('disable-colors')
+}
 
 
 $(document).ready(function () {
@@ -2402,13 +2639,13 @@ $(document).ready(function () {
   if ($.cookie('DarkContrastBackgroundCookie') == "yes") {
     maskColorPresetChangeHandler('#ffffff', true)
 
-    $("#ADA_widget #DarkContrastBG_option").addClass("active");
+    $("#flourish_widget #DarkContrastBG_option").addClass("active");
     $("body").addClass("highcontrast");
     $('body').removeClass('desaturated');
     $('body').removeClass('inverted');
     $("html").removeClass("highsaturation");
     $("html").removeClass("lowsaturation");
-    $("#ADA_widget #DefaultBG_option").removeClass("active");
+    $("#flourish_widget #DefaultBG_option").removeClass("active");
     $.cookie('DesaturatedBackgroundCookie') == "no";
     $.cookie('DesaturatedBackgroundCookie') == "undefined";
     $.cookie("DesaturatedBackgroundCookie", null, {
@@ -2429,6 +2666,9 @@ $(document).ready(function () {
     $.cookie("LowSaturationBackgroundCookie", null, {
       expires: 30
     });
+
+
+
     if (!$.cookie('text-magnify-color-swatch') || $.cookie('text-magnify-color-swatch') === "text-mag-color-1") {
 
       restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
@@ -2440,10 +2680,14 @@ $(document).ready(function () {
 
 
   // When 'a.DarkContrastBackground' is clicked remove other background cookies
-  $("#ADA_widget a.DarkContrastBackground").click(function () {
+  $("#flourish_widget a.DarkContrastBackground").click(function () {
 
     maskColorPresetChangeHandler('#ffffff', true)
 
+
+    document.body.style.overflow = "hidden!important"; // ADD THIS LINE
+    document.body.style.height = "100%!important"; // ADD THIS LINE
+    document.body.style.paddingRight = "5px!important"; // ADD THIS LINE
 
 
 
@@ -2481,6 +2725,7 @@ $(document).ready(function () {
     removeWidgetControls(['DesaturateBackground', 'HighSaturationBackground', 'LowSaturationBackground', 'InvertBackground'])
     makeColorPresetsFalse([widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
     widgetItemObj.isDarkContrast = true
+    disableColorPicker()
     if (!$.cookie('text-magnify-color-swatch') || $.cookie('text-magnify-color-swatch') === "text-mag-color-1") {
 
       restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
@@ -2504,13 +2749,13 @@ $(document).ready(function () {
   if ($.cookie('DesaturatedBackgroundCookie') == "yes") {
     maskColorPresetChangeHandler('#363636')
 
-    $("#ADA_widget #DesaturateBG_option").addClass("active");
+    $("#flourish_widget #DesaturateBG_option").addClass("active");
     $("body").addClass("desaturated");
     $('body').removeClass('highcontrast');
     $('body').removeClass('inverted');
     $("html").removeClass("highsaturation");
     $("html").removeClass("lowsaturation");
-    $("#ADA_widget #DefaultBG_option").removeClass("active");
+    $("#flourish_widget #DefaultBG_option").removeClass("active");
     $.cookie('DarkContrastBackgroundCookie') == "no";
     $.cookie('DarkContrastBackgroundCookie') == "undefined";
     $.cookie("DarkContrastBackgroundCookie", null, {
@@ -2537,7 +2782,7 @@ $(document).ready(function () {
 
   // When 'a.DesaturateBackground' is clicked remove other background cookies
   // When input is clicked save cookie for 30days
-  $("#ADA_widget a.DesaturateBackground").click(function () {
+  $("#flourish_widget a.DesaturateBackground").click(function () {
     maskColorPresetChangeHandler('#363636')
 
 
@@ -2577,6 +2822,7 @@ $(document).ready(function () {
     makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isInverted, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
     widgetItemObj.isDesaturated = true
     checkIfWidgetActive()
+    disableColorPicker()
     // restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
     // restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
 
@@ -2597,13 +2843,13 @@ $(document).ready(function () {
     maskColorPresetChangeHandler('#363636')
 
 
-    $("#ADA_widget #HighSaturationBG_option").addClass("active");
+    $("#flourish_widget #HighSaturationBG_option").addClass("active");
     $("html").addClass("highsaturation");
     $('body').removeClass('highcontrast');
     $('body').removeClass('inverted');
     $('body').removeClass('desaturated');
     $("html").removeClass("lowsaturation");
-    $("#ADA_widget #DefaultBG_option").removeClass("active");
+    $("#flourish_widget #DefaultBG_option").removeClass("active");
     $.cookie('DarkContrastBackgroundCookie') == "no";
     $.cookie('DarkContrastBackgroundCookie') == "undefined";
     $.cookie("DarkContrastBackgroundCookie", null, {
@@ -2625,7 +2871,7 @@ $(document).ready(function () {
 
   // When 'a.HighSaturationBackground' is clicked remove other background cookies and their related classes
   // When input is clicked save cookie for 30days
-  $("#ADA_widget a.HighSaturationBackground").click(function () {
+  $("#flourish_widget a.HighSaturationBackground").click(function () {
     maskColorPresetChangeHandler('#363636')
 
 
@@ -2665,6 +2911,8 @@ $(document).ready(function () {
     makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isLowSat])
     widgetItemObj.isHighSat = true
     checkIfWidgetActive()
+    $('#ColorAdjust_option').removeClass('disable-colors')
+
     // restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
     // restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
   });
@@ -2682,13 +2930,13 @@ $(document).ready(function () {
     maskColorPresetChangeHandler('#363636')
 
 
-    $("#ADA_widget #LowSaturationBG_option").addClass("active");
+    $("#flourish_widget #LowSaturationBG_option").addClass("active");
     $("html").addClass("lowsaturation");
     $("html").removeClass("highsaturation");
     $('body').removeClass('highcontrast');
     $('body').removeClass('inverted');
     $('body').removeClass('desaturated');
-    $("#ADA_widget #DefaultBG_option").removeClass("active");
+    $("#flourish_widget #DefaultBG_option").removeClass("active");
     $.cookie('DarkContrastBackgroundCookie') == "no";
     $.cookie('DarkContrastBackgroundCookie') == "undefined";
     $.cookie("DarkContrastBackgroundCookie", null, {
@@ -2715,7 +2963,7 @@ $(document).ready(function () {
 
   // When 'a.HighSaturationBackground' is clicked remove other background cookies and their related classes
   // When input is clicked save cookie for 30days
-  $("#ADA_widget a.LowSaturationBackground").click(function () {
+  $("#flourish_widget a.LowSaturationBackground").click(function () {
     maskColorPresetChangeHandler('#363636')
 
     $.cookie("DesaturatedBackgroundCookie", null, {
@@ -2753,9 +3001,11 @@ $(document).ready(function () {
     removeWidgetControls(['DarkContrastBackground', 'DesaturateBackground', 'HighSaturationBackground', 'InvertBackground'])
     makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isInverted, widgetItemObj.isHighSat])
     widgetItemObj.isLowSat = true
+    $('#ColorAdjust_option').removeClass('disable-colors')
 
     $("#LowSaturationBG_option").addClass('active').siblings().removeClass('active');
     checkIfWidgetActive()
+
     // restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
     // restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
   });
@@ -2775,14 +3025,14 @@ $(document).ready(function () {
     maskColorPresetChangeHandler('#ffffff', true)
 
 
-    $("#ADA_widget #InvertBG_option").addClass("active");
+    $("#flourish_widget #InvertBG_option").addClass("active");
     $("body").addClass("inverted");
     $('body').removeClass('highcontrast');
     $('body').removeClass('desaturated');
     $("html").removeClass("highsaturation");
     $("html").removeClass("lowsaturation");
 
-    $("#ADA_widget #DefaultBG_option").removeClass("active");
+    $("#flourish_widget #DefaultBG_option").removeClass("active");
     $.cookie('DarkContrastBackgroundCookie') == "no";
     $.cookie('DarkContrastBackgroundCookie') == "undefined";
     $.cookie("DarkContrastBackgroundCookie", null, {
@@ -2812,7 +3062,7 @@ $(document).ready(function () {
 
   // When 'a.DesaturateBackground' is clicked remove other background cookies and their related classes
   // When input is clicked save cookie for 30days
-  $("#ADA_widget a.InvertBackground").click(function () {
+  $("#flourish_widget a.InvertBackground").click(function () {
     maskColorPresetChangeHandler('#ffffff', true)
 
 
@@ -2852,6 +3102,7 @@ $(document).ready(function () {
     makeColorPresetsFalse([widgetItemObj.isDarkContrast, widgetItemObj.isDesaturated, widgetItemObj.isHighSat, widgetItemObj.isLowSat])
     widgetItemObj.isInverted = true
     checkIfWidgetActive()
+    disableColorPicker()
     if (!$.cookie('text-magnify-color-swatch') || $.cookie('text-magnify-color-swatch') === "text-mag-color-1") {
 
       restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
@@ -2885,11 +3136,11 @@ document.addEventListener('keydown', (event) => {
     name === "@" && keyTogglerFunc('#ToggleHighlightLinks')
     name === "#" && keyTogglerFunc('#ToggleTextMagnifier')
     name === "$" && keyTogglerFunc('#ToggleImageDescription')
-    name === '%' && keyTogglerFunc('#ToggleSeizure')
+    name === '%' && keyTogglerFunc('#TogglePhotoFilter')
     name === "^" && keyTogglerFunc('#ToggleReadingMask')
     name === '&' && keyTogglerFunc('#ToggleReadingGuide')
     name === '*' && keyTogglerFunc('#ToggleTTS_click')
-    name === 'Q' && resetAdaModal()
+    name === 'Q' && resetflourishModal()
     name === 'A' && displayModal()
   } else {
     return;
@@ -2901,14 +3152,14 @@ document.addEventListener('keydown', (event) => {
 const checkIfWidgetActive = () => {
   if (Object.values(widgetItemObj).indexOf(true) > -1) {
     isWidgetActive = true
-    $('#ADA_check_icon').fadeIn()
-    $('#toggle-ada-list, #reset-ada').fadeIn()
+    $('#flourish_check_icon').fadeIn()
+    $('#toggle-flourish-list, #reset-flourish').fadeIn()
   } else {
     isWidgetActive = false
-    $('#ADA_check_icon').fadeOut()
-    $('#toggle-ada-list, #reset-ada, #item-delete-container').fadeOut()
-    $("#toggle-ada-list").removeClass("fa-toggle-on");
-    $("#toggle-ada-list").addClass("fa-toggle-off");
+    $('#flourish_check_icon').fadeOut()
+    $('#toggle-flourish-list, #reset-flourish, #item-delete-container').fadeOut()
+    $("#toggle-flourish-list").removeClass("fa-toggle-on");
+    $("#toggle-flourish-list").addClass("fa-toggle-off");
     $.removeCookie('deleteContainerActive');
   }
 
@@ -2920,7 +3171,9 @@ const addWidgetControls = (item, text) => {
   if (!document.querySelector(`li.${item}`)) {
     const listItem = document.createElement('li')
     listItem.classList.add(item, 'fade-in', 'close-list-items')
-    listItem.innerHTML = `<i class="fa fa-close close-item"></i> ${text}`
+    listItem.innerHTML = `<svg class="close-active-item" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+  </svg> <span class="close-active-text">${text}</span> `
     widgetList.append(listItem)
   }
   let closeItems = document.querySelectorAll('.close-list-items')
@@ -2944,7 +3197,7 @@ const closeItemHandler = (closeItems) => {
       item.classList.contains('ToggleHighlightLinks') && $('#ToggleHighlightLinks').prop('checked', false).trigger('change')
       item.classList.contains('ToggleTextMagnifier') && $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
       item.classList.contains('ToggleImageDescription') && $('#ToggleImageDescription').prop('checked', false).trigger('change')
-      item.classList.contains('ToggleSeizure') && $('#ToggleSeizure').prop('checked', false).trigger('change')
+      item.classList.contains('TogglePhotoFilter') && $('#TogglePhotoFilter').prop('checked', false).trigger('change')
       item.classList.contains('ToggleReadingMask') && $('#ToggleReadingMask').prop('checked', false).trigger('change')
       item.classList.contains('ToggleReadingGuide') && $('#ToggleReadingGuide').prop('checked', false).trigger('change')
       item.classList.contains('ToggleTTS_click') && $('#ToggleTTS_click').prop('checked', false).trigger('change')
@@ -2954,22 +3207,19 @@ const closeItemHandler = (closeItems) => {
       item.classList.contains('line_height') && restoreSpacingDefault('#line_height', ['line_height'])
       item.classList.contains('Cursor_Enlarge_option') && restoreDefaultCursorSize()
       item.classList.contains('FontSizeMedium') && restoreDefaultFontSize()
-      if (item.classList.contains('google-translate')) {
-        dismissGoogleTranslate()
-      }
-      // item.classList.contains('google-translate') && restoreDefaultFontSize()
+      item.classList.contains('google-translate') && dismissGoogleTranslate()
+      item.classList.contains('FontTypeDyslexic') && restoreDefaultFontType()
+      item.classList.contains('FontTypeBaskerville') && restoreDefaultFontType()
       let colorPreArr = ['DarkContrastBackground', 'DesaturateBackground', 'InvertBackground', 'HighSaturationBackground', 'LowSaturationBackground']
       for (let i = 0; i < colorPreArr.length; i++) {
         if (item.classList.contains(colorPreArr[i])) {
           colorPresetToDefault()
         }
       }
-      if (item.classList.contains('FontTypeDyslexic') || item.classList.contains('FontTypeBaskerville')) {
-        restoreDefaultFontType()
-      }
       checkIfWidgetActive()
     })
   })
+
 }
 
 const addWidgetControlsOnLoad = () => {
@@ -2977,14 +3227,14 @@ const addWidgetControlsOnLoad = () => {
   widgetItemObj.isOutlined && addWidgetControls('ToggleHighlightLinks', 'Highlight all links')
   widgetItemObj.isTextMag && addWidgetControls('ToggleTextMagnifier', 'Magnify text')
   widgetItemObj.isImgMag && addWidgetControls('ToggleImageDescription', 'Image description')
-  widgetItemObj.isSeizureSafe && addWidgetControls('ToggleSeizure', 'Photosensitivity filter')
+  widgetItemObj.isPhotoSens && addWidgetControls('TogglePhotoFilter', 'Photosensitivity filter')
   widgetItemObj.isReadingMask && addWidgetControls('ToggleReadingMask', 'Reading mask')
   widgetItemObj.isReadingGuide && addWidgetControls('ToggleReadingGuide', 'Reading guide')
   widgetItemObj.isSpeech && addWidgetControls('ToggleTTS_click', 'Text to speech')
   widgetItemObj.isLetterSpaceChanged && addWidgetControls('letter_spacing', 'Letter spacing')
   widgetItemObj.isWordSpaceChanged && addWidgetControls('word_spacing', 'Word spacing')
   widgetItemObj.isLineHeightChanged && addWidgetControls('line_height', 'Line height')
-  if (widgetItemObj.isBackColorChanged || widgetItemObj.isTextChanged || widgetItemObj.isLinkColorChanged) {
+  if (widgetItemObj.isBackColorChanged || widgetItemObj.isTextColorChanged || widgetItemObj.isLinkColorChanged) {
     addWidgetControls('ColorPicker', 'Custom colors')
   }
   widgetItemObj.isDarkContrast && addWidgetControls('DarkContrastBackground', 'Dark contrast preset')
@@ -2996,37 +3246,16 @@ const addWidgetControlsOnLoad = () => {
   widgetItemObj.isDyslexicFont && addWidgetControls('FontTypeDyslexic', 'Open-dyslexic font')
   widgetItemObj.isBaskervilleFont && addWidgetControls('FontTypeBaskerville', 'Libre-baskerville font')
   widgetItemObj.isCursorBig && addWidgetControls('Cursor_Enlarge_option', 'Change cursor')
+  // widgetItemObj.isTranslated && setTimeout(() => document.body.style.top = '0px', 1000)
+
+
+
 }
 addWidgetControlsOnLoad()
 
 
 // translateOnLoad()
 
-const dismissGoogleTranslate = () => {
-
-  removeWidgetControls(['google-translate'])
-  widgetItemObj.isTranslated = false
-  $.removeCookie('translateLanguage');
-  checkIfWidgetActive()
-
-  // find `iframe` element with GoogleTranslate select and buttons
-  var iframe = document.getElementsByClassName('goog-te-banner-frame')[0]
-    || document.getElementById(':1.container');
-  if (!iframe) return;
-
-  // search all buttons from the retrieved iframe
-  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-  var restore_el = innerDoc.getElementsByTagName("button");
-
-  // fire `click` event on the `restore` button, that `Shows the origin`
-  for (var i = 0; i < restore_el.length; i++) {
-    if (restore_el[i].id.indexOf("restore") >= 0) {
-      restore_el[i].click();
-      return;
-    }
-  }
-
-}
 
 
 
@@ -3038,13 +3267,14 @@ const dismissGoogleTranslate = () => {
 
 
 
-const resetAdaModal = () => {
+
+const resetflourishModal = () => {
 
   $('#ToggleHighlightHover').prop('checked', false).trigger('change')
   $('#ToggleHighlightLinks').prop('checked', false).trigger('change')
   $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
   $('#ToggleImageDescription').prop('checked', false).trigger('change')
-  $('#ToggleSeizure').prop('checked', false).trigger('change')
+  $('#TogglePhotoFilter').prop('checked', false).trigger('change')
   $('#ToggleReadingMask').prop('checked', false).trigger('change')
   $('#ToggleReadingGuide').prop('checked', false).trigger('change')
   $('#ToggleTTS_click').prop('checked', false).trigger('change')
@@ -3055,10 +3285,12 @@ const resetAdaModal = () => {
   restoreSpacingDefault('#word_spacing', ['word_spacing'])
   restoreSpacingDefault('#line_height', ['line_height'])
   colorPresetToDefault()
-  if (widgetItemObj.isBackColorChanged || widgetItemObj.isTextColorChanged || widgetItemObj.isLinkColorChanged) {
-    resetColorPicker()
-  }
+  // if (widgetItemObj.isBackColorChanged || widgetItemObj.isTextColorChanged || widgetItemObj.isLinkColorChanged) {
+  //   resetColorPicker()
+  // }
+  resetColorPicker()
   restoreDefaultMaskSettings()
+
   restoreDefaultguideSettings()
   dismissGoogleTranslate()
   restoreDefaultMagnify('text', '.text-magnify-color-swatch', '.text-magnify-size-input', textMagObj, '.text-magnifier-preview')
@@ -3067,21 +3299,21 @@ const resetAdaModal = () => {
   restoreDefaultMagnify('text', '.text-magnify-color-swatch', '#text-magnify-size-input', textMagObj)
   restoreDefaultMagnify('img', '.img-magnify-color-swatch', '#img-magnify-size-input', imgMagObj)
   removeAllCookies()
-  $.cookie("reading-mask-reload", false, { expires: 30 });
+
   // restoreGoogleTransDefault()
   setCurrLang('en')
 }
 
-let resetIcon = document.getElementById('reset-ada')
+let resetIcon = document.getElementById('reset-flourish')
 resetIcon.addEventListener('click', () => {
-  resetAdaModal()
+  resetflourishModal()
 })
 
 
 // on load -- session Storage - grab page or widget position or open widget etc
 const reloadStorageFunc = () => {
   if (localStorage.reloadModalOpen) {
-    const adaWidget = document.querySelector('#ADA_widget')
+    const flourishWidget = document.querySelector('#flourish_widget')
     displayModal()
     if (localStorage.modalScrollPosition) {
       $(".modal_body").scrollTop(localStorage.getItem("modalScrollPosition"));
@@ -3096,9 +3328,18 @@ window.onload = function () {
     const scrollPosition = localStorage.getItem("mainScrollPosition")
     $("html, body").scrollTop(scrollPosition);
     localStorage.removeItem("mainScrollPosition")
-    setTimeout(() => reloadStorageFunc(), 500);
+    reloadStorageFunc()
   } else {
     reloadStorageFunc()
   }
 }
 
+
+
+
+
+// document.querySelectorAll('h3').forEach(item => {
+//   item.addEventListener('click', () => {
+//     console.log(item.innerText)
+//   })
+// })
