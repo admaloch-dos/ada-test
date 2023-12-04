@@ -3,7 +3,8 @@
 <b>About this project:</b><br/> 
 This is Flourish, a custom accessibility menu built for the FLorida Memory website. This was a collaboration between the developer who previously held my position, and myself. This menu was built with the intent of improving the experience for users who suffer from disabilities that impair their ability to access the content on our website. It consists of customizable options that allow the user control over how the content of the page is presented, and has a set of tools that allow them to access the content on the page more effectively. Access the menu by clicking on the ADA icon at the bottom of the screen. The rest of the page is a random page pulled from the Florida Memory website for the sake of testing and is not part of this project.
 
-![image](https://github.com/admaloch-dos/flourish-accessibility-menu/assets/133890108/4dac938f-7617-4170-be16-06caba8a8b7a)
+<img style="max-width:400;" src = "![image](https://github.com/admaloch-dos/flourish-accessibility-menu/assets/133890108/c0c3901a-0f9f-41a2-a058-7ba48bcfda98)
+">
 
 
 <b>Features:</b><br/> 
