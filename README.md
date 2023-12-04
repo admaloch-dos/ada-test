@@ -13,9 +13,6 @@ This is Flourish, an accessibility menu. This was a collaboration between the de
 -- Translation: Users gain access to translation features powered by Google Translate, that allows users to search by language, region or script <br/>
 -- Cookies are used to store all changes for 30 days<br/>
 
-![image](https://github.com/admaloch-dos/flourish-accessibility-menu/assets/133890108/34c1f153-4a98-4c2d-8aad-8fbc32d8a140)
-
-
 <b>Technologies used:</b><br/> 
 --Javascript<br/>
 --JQuery<br/>
