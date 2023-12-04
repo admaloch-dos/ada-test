@@ -1,17 +1,20 @@
 # flourish-accessibility-widget
 
 <b>About this project:</b><br/> 
-This is Flourish, an accessibility menu. This was a collaboration between the developer who previously held my position, and myself. This menu was built with the intent of improving the experience for users who suffer from disabilities that impair their ability to access the content on our website. It consists of customizable options that allow the user to determine how the content of the page is presented, and has a set of tools that allow them to access the content on the page more effectively. Access the menu by clicking on the ADA icon at the bottom of the screen. The rest of the page is a random page pulled from the Florida Memory website for the sake of testing and is not part of this project.
+This is Flourish, a custom accessibility menu built for the FLorida Memory website. This was a collaboration between the developer who previously held my position, and myself. This menu was built with the intent of improving the experience for users who suffer from disabilities that impair their ability to access the content on our website. It consists of customizable options that allow the user control over how the content of the page is presented, and has a set of tools that allow them to access the content on the page more effectively. Access the menu by clicking on the ADA icon at the bottom of the screen. The rest of the page is a random page pulled from the Florida Memory website for the sake of testing and is not part of this project.
 
 <b>Features:</b><br/> 
--- Edit text: Users can change font size, font family, letter spacing, word spacing and line height.<br/>
--- Readability: Users can magnify text and img alt tags on hover and create a reading mask or line to emphasize text<br/>
+-- Text: Users can change font size, font family, letter spacing, word spacing and line height.<br/>
+-- Readability: Users can magnify text and img alt tags on hover and create a mask or link around teh cursor to emphasize text<br/>
 -- Navigation: Users can outline all links or add a background on hover<br/>
--- Colors: Users can manually change text, link and background colors, use accessible presets or preset color profiles<br/>
+-- Colors: Users can manually change text, link and background colors, use accessible presets or color profiles<br/>
 -- Animations: Users can remove transitions and animations<br/>
 -- Text-to-speech: Users can click on text to read it aloud and edit voice settings<br/>
--- Translation: Users gain access to translation features powered by Google Translate, that allows users to search by language, region or script <br/>
+-- Translation: Full translation section powered by Google Translate, that allows users to search by language, region or script <br/>
 -- Cookies are used to store all changes for 30 days<br/>
+
+![Uploading flourish-screen-shot.png…]()
+
 
 <b>Technologies used:</b><br/> 
 --Javascript<br/>
