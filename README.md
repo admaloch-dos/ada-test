@@ -9,7 +9,7 @@ This is Flourish, a custom accessibility menu built for the FLorida Memory websi
 -- Navigation: Users can outline all links or add a background on hover<br/>
 -- Colors: Users can manually change text, link and background colors, use accessible presets or color profiles<br/>
 -- Animations: Users can remove transitions and animations<br/>
--- Text-to-speech: Users can click on text to read it aloud and edit voice settings<br/>
+-- Text-to-speech: Users can click on text to read it aloud with a menu for editings voice settings<br/>
 -- Translation: Full translation section powered by Google Translate, that allows users to search by language, region or script <br/>
 -- Cookies are used to store all changes for 30 days<br/>
 
