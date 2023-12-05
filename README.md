@@ -1,3 +1,4 @@
+# Flourish Accessibility Menu
 <b>About this Project:</b><br/>
 Flourish is a custom accessibility menu created for the Florida Memory website. This collaborative effort between my predecessor and me aims to enhance the user experience for individuals facing disabilities that impede their access to our site's content. The menu boasts customizable options, allowing users to control how page content is presented. It also incorporates a suite of tools to facilitate more effective content access. To access the menu, simply click on the ADA icon located at the bottom of the screen. Note that the rest of the page is included for testing purposes and is not part of this project.
 
