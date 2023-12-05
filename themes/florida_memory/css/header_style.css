@@ -1,6 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 
+.fb_hidden {
+  position: absolute;
+  top: -10000px;
+  z-index: 10001
+}
 
 /************************** SCROLL TO TOP BUTTON *******************************/
 #Scroll_btn {
@@ -70,7 +75,7 @@
 	 /*background-color:#C1AC97;
 	 box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 3px;*/
     font-weight: 600;
-	margin-top:3px;
+	/* margin-top:3px; */
 }
 @media screen and (max-width:992px){
 	#main_navbar{
@@ -234,10 +239,10 @@
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px 16px #8a8a8a;
     font-weight: 700;
 }
-#navContainer .dropdown-submenu a.dropdown-item:hover{
+/* #navContainer .dropdown-submenu a.dropdown-item:hover{
 	background-color:transparent;
 	color:#BD5410;
-}
+} */
 #navContainer .dropdown-submenu a.dropdown-item:focus{
 	background-color:transparent;
 	color:#BD5410;
@@ -286,13 +291,14 @@
 }
 .dropdown-header.bottom{
 	font-size:14px!important;
-	margin-top:-10px!important;
+	margin-top:-20px!important;
 	font-weight:normal;
 	text-transform:none;
 	letter-spacing:1px;
 	font-style: italic;
 	color: white;
 	text-shadow:none;
+  margin-left: .5rem;
 }
 .dropdown-header {
     font-size: 14px!important;
@@ -669,4 +675,9 @@
 .DLIS_Logo{
 	-webkit-filter: drop-shadow(-4px 2px 2px #626262);
 	filter: drop-shadow(-4px 2px 2px #626262);
+}
+
+#video a::after,
+#fl_articles a::after {
+  display: none;
 }

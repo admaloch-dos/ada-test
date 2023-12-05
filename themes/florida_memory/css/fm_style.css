@@ -1547,13 +1547,38 @@ div.info-box-bottom{
   .content_header .intro{
     width:100%;
   }
-  .fontSizeMedium .content_header .title{
-	  width:100% !important;
-  }
-  .DyslexicFont .content_header .title{
-	width:100% !important;
+
+
 }
-.DyslexicFont .content_header .intro{
-	width:100%!important;
+
+#photo .alt-link-style:hover {
+  background-color: #663322;
 }
+
+#historical_records .alt-link-style:hover {
+  background-color: #557766;
+}
+
+#maps .alt-link-style:hover {
+  background-color: #423928;
+}
+
+#audio .alt-link-style:hover {
+  background-color: #B35C01;
+}
+
+#about_fm .alt-link-style:hover {
+  background-color: #4F7B99;
+}
+
+#classroom .alt-link-style:hover {
+  background-color: #4F7B99;
+}
+
+#exhibits .alt-link-style:hover {
+  background-color: #334454;
+}
+
+#guides .alt-link-style:hover {
+  background-color: #334454;
 }

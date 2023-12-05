@@ -215,11 +215,13 @@ border-top: #908373 2px solid;
     }
 }
 
+
+
 .footer-link-style,
 .footer-icon-color {
     color: white;
 
-    transition: all .3s ease-in-out;
+
 }
 
 #division-link-style {
