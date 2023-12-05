@@ -1931,8 +1931,14 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
     color: #3863ff !important;
 }
 
+.HighlightLinks a {
+    border: transparent solid 1px !important;
+    padding: 5px 8px;
+}
+
 .HighlightLinks a:hover {
     color: #3863ff !important;
+
     text-decoration: underline !important;
 }
 
@@ -4157,8 +4163,14 @@ body.inverted {
     border: 4px solid #FF9E66;
 }
 
+.highcontrast #header_links_container,
+.highcontrast #header_contents {
+    background-color: #212529;
+}
+
 .inverted #header_links_container ul li.radio_program a {
     color: #FF9E66 !important;
+    background-color: #212529!important;
 }
 
 /**** CUSTOM LIST ****/
@@ -4591,12 +4603,23 @@ body.inverted {
     filter: invert(100%);
 }
 
+.HighlightHover #stickyBreadcrumb a,
+.HighlightLinks #stickyBreadcrumb a{
+padding: 0 0;
+}
+
+.HighlightLinks #flourish-logos a {
+
+    background-color: transparent!important;
+
+}
+
 .inverted .item-delete-footer:hover {
     filter: invert(100%);
 }
 
 .inverted.HighlightLinks a:hover {
-    opacity: .8;
+    opacity: .9;
 }
 
 .inverted #flourish_widget a:hover {
@@ -5567,6 +5590,11 @@ body.highcontrast {
 
 .highcontrast #navContainer .dropdown-submenu a.dropdown-item {
     color: #E6CE20 !important;
+    background-color: transparent;
+}
+.inverted #navContainer .dropdown-submenu a.dropdown-item {
+
+    background-color: transparent;
 }
 
 .highcontrast .dropdown-header.bottom {
@@ -5767,11 +5795,16 @@ body.highcontrast {
     transition: none;
 }
 
-.highcontrast #main_navbar,
-.inverted #main_navbar {
+.highcontrast #main_navbar{
     background-color: #212529;
-    border-top: rgba(255, 255, 255, .1) solid 1px;
-    border-bottom: rgba(255, 255, 255, .1) solid 1px;
+    /* border-top: rgba(0, 0, 0) solid 1px; */
+    border-bottom: rgba(0, 0, 0, .1) solid 1px;
+}
+
+.inverted #main_navbar {
+    background-color: #000;
+    /* border-top: rgba(0, 0, 0) solid 1px; */
+    border-bottom: rgba(0, 0, 0, .1) solid 1px;
 }
 
 .highcontrast #menudropdown .card,
@@ -6074,6 +6107,7 @@ body.HighlightLinks.highcontrast .modal_body .form-check ul li.active a {
 
 /************************************************************ Highlight Links on Hover ************************************************************/
 .HighlightHover a {
+    border: transparent solid 1px !important;
     padding: 5px 8px;
 }
 

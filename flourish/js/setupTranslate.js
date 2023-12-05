@@ -20,11 +20,11 @@ const dismissGoogleTranslate = () => {
 
 function googleTranslateElementInit() {
     setTimeout(() => {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                layout: google.translate.TranslateElement
-            }, 'google_translate_element');
-            isTranslateSuccessful = true
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            layout: google.translate.TranslateElement
+        }, 'google_translate_element');
+        isTranslateSuccessful = true
     }, 1000)
 }
 
@@ -49,11 +49,13 @@ function triggerChange(element) {
 
 const translateWidgetControls = (selectVal, currLanguage) => {
     if (selectVal !== 'en') {
-        if (selectVal !== 'en') {
-            addWidgetControls('google-translate', `Translated to ${currLanguage}`)
+
+            removeWidgetControls(['google-translate'])
+
             widgetItemObj.isTranslated = true
             $.cookie("translateLanguage", currLanguage, { expires: 30 });
-        }
+            setTimeout(()=>{addWidgetControls('google-translate', `Translated to ${currLanguage}`)},500)
+
     } else {
         dismissGoogleTranslate()
     }
@@ -68,6 +70,7 @@ const translatePageHandler = (selector) => {
 
             const selectVal = event.target.value
             const currLanguage = selector.options[selector.selectedIndex].text
+            console.log('currLangueage is',currLanguage)
             translateWidgetControls(selectVal, currLanguage)
         });
         document.querySelectorAll('.lang-translate-selector').forEach(btn => {
@@ -91,13 +94,13 @@ const isElementLoaded = async selector => {
     return document.querySelector(selector);
 };
 
-setTimeout(()=>{
+setTimeout(() => {
     const googTransSelect = document.querySelector('.goog-te-combo')
-    if(!googTransSelect) {
+    if (!googTransSelect) {
         $('.language-section-content').hide()
         $('#translate-failed-message').fadeIn()
     }
-},5000)
+}, 5000)
 
 isElementLoaded('.goog-te-combo').then((selector) => translatePageHandler(selector));
 

@@ -25,7 +25,7 @@ const colorPresetObj = [
       id: 'color-preset-4',
       bgColor: '#D9D3D3',
       textColor: '#000000',
-      linkColor: ['#AD007F', '#225D91', '#426426', '#8F4500', '#7532C8', '#B21515',]
+      linkColor: ['#426426','#AD007F', '#225D91', '#8F4500', '#7532C8', '#B21515',]
     },
     {
       id: 'color-preset-5',
@@ -37,7 +37,7 @@ const colorPresetObj = [
       id: 'color-preset-6',
       bgColor: '#CCF8FF',
       textColor: '#000000',
-      linkColor: ['#C70092', '#0C7A00', '#D51515', '#0B69BC', '#886211', '#B300D6']
+      linkColor: ['#886211','#C70092', '#0C7A00', '#D51515', '#0B69BC', '#B300D6']
     },
     {
       id: 'color-preset-7',
@@ -56,7 +56,7 @@ const colorPresetObj = [
       id: 'color-preset-9',
       bgColor: '#E3CCFF',
       textColor: '#000000',
-      linkColor: ['#AD0088', '#1B691B', '#8B00D6', '#2D57B9', '#B31414', '#2A6365']
+      linkColor: ['#2D57B9','#AD0088', '#1B691B', '#8B00D6', '#B31414', '#2A6365']
     },
     {
       id: 'color-preset-10',
