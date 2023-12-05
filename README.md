@@ -1,9 +1,9 @@
 <b>About this Project:</b><br/>
-Flourish is a custom accessibility menu created for the Florida Memory website. This collaborative effort between my predecessor and me aims to enhance the user experience for individuals facing disabilities that impede their access to our site's content. The menu boasts customizable options, allowing users to control how page content is presented. It also incorporates a suite of tools to facilitate more effective content access. To access the menu, simply click on the ADA icon located at the bottom of the screen. Note that the rest of the page, randomly selected from the Florida Memory website, is included for testing purposes and is not part of this project.
+Flourish is a custom accessibility menu created for the Florida Memory website. This collaborative effort between my predecessor and me aims to enhance the user experience for individuals facing disabilities that impede their access to our site's content. The menu boasts customizable options, allowing users to control how page content is presented. It also incorporates a suite of tools to facilitate more effective content access. To access the menu, simply click on the ADA icon located at the bottom of the screen. Note that the rest of the page is included for testing purposes and is not part of this project.
 
 <b>Features:</b><br/>
 <b>Text:</b> Users can adjust font size, font family, letter spacing, word spacing, and line height.<br/>
-<b>Readability:</b> Magnify text and image alt tags on hover, create a mask, or add a link around the cursor to emphasize text.<br/>
+<b>Readability:</b> Magnify text and image alt tags on hover, create a reading mask line around the cursor to emphasize text.<br/>
 <b>Navigation:</b> Outline all links or add a background on hover for improved navigation.<br/>
 <b>Colors:</b> Manually change text, link, and background colors, or utilize accessible presets and color profiles.<br/>
 <b>Animations:</b> Remove transitions and animations for a smoother experience.<br/>
@@ -15,8 +15,8 @@ Flourish is a custom accessibility menu created for the Florida Memory website. 
 --Javascript<br/>
 --JQuery<br/>
 --Google Translate Javascript API<br/>
---Web Speech API: Text to speech synthesis (<a>https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API</a>)<br/>
---RoundSlider: Stylish jquery rounded slider inputs (<a>https://github.com/soundar24/roundSlider</a>)<br/>
+-- <b><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">Web Speech API:</a></b> Text to speech synthesis<br/>
+-- <b><a href="https://github.com/soundar24/roundSlider">RoundSlider:</a></b> Stylish jQuery rounded slider inputs<br/>
 --HTML<br/>
 --CSS<br/>
 --Bootstrap<br/>
