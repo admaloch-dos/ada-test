@@ -1,17 +1,15 @@
-# flourish-accessibility-widget
+<b>About this Project:</b><br/>
+Flourish is a custom accessibility menu created for the Florida Memory website. This collaborative effort between my predecessor and me aims to enhance the user experience for individuals facing disabilities that impede their access to our site's content. The menu boasts customizable options, allowing users to control how page content is presented. It also incorporates a suite of tools to facilitate more effective content access. To access the menu, simply click on the ADA icon located at the bottom of the screen. Note that the rest of the page, randomly selected from the Florida Memory website, is included for testing purposes and is not part of this project.
 
-<b>About this project:</b><br/> 
-This is Flourish, a custom accessibility menu built for the FLorida Memory website. This was a collaboration between the developer who previously held my position, and myself. This menu was built with the intent of improving the experience for users who suffer from disabilities that impair their ability to access the content on our website. It consists of customizable options that allow the user control over how the content of the page is presented, and has a set of tools that allow them to access the content on the page more effectively. Access the menu by clicking on the ADA icon at the bottom of the screen. The rest of the page is a random page pulled from the Florida Memory website for the sake of testing and is not part of this project.
-
-<b>Features:</b><br/> 
--- Text: Users can change font size, font family, letter spacing, word spacing and line height.<br/>
--- Readability: Users can magnify text and img alt tags on hover and create a mask or link around teh cursor to emphasize text<br/>
--- Navigation: Users can outline all links or add a background on hover<br/>
--- Colors: Users can manually change text, link and background colors, use accessible presets or color profiles<br/>
--- Animations: Users can remove transitions and animations<br/>
--- Text-to-speech: Users can click on text to read it aloud with a menu for editings voice settings<br/>
--- Translation: Full translation section powered by Google Translate, that allows users to search by language, region or script <br/>
--- Cookies are used to store all changes for 30 days<br/>
+<b>Features:</b><br/>
+<b>Text:</b> Users can adjust font size, font family, letter spacing, word spacing, and line height.<br/>
+<b>Readability:</b> Magnify text and image alt tags on hover, create a mask, or add a link around the cursor to emphasize text.<br/>
+<b>Navigation:</b> Outline all links or add a background on hover for improved navigation.<br/>
+<b>Colors:</b> Manually change text, link, and background colors, or utilize accessible presets and color profiles.<br/>
+<b>Animations:</b> Remove transitions and animations for a smoother experience.<br/>
+<b>Text-to-Speech:</b> Click on text to have it read aloud, with a menu for editing voice settings.<br/>
+<b>Translation:</b> A comprehensive translation section powered by the Google Translate API, allowing users to search by language, region, or script.<br/>
+<b>Storage:</b> Cookies store all changes for 30 days.<br/>
 
 <b>Technologies used:</b><br/> 
 --Javascript<br/>
@@ -23,12 +21,11 @@ This is Flourish, a custom accessibility menu built for the FLorida Memory websi
 --CSS<br/>
 --Bootstrap<br/>
 
-<b>Takeaways:</b><br/> 
-The is the biggest project I've worked on to date. The biggest chalenge was trying to understand the needs of people who could benefit from a tool like this. Ex. People who are visually impaired, are hard of hearing, rely on screen readers, are color blind, etc.. Throughout the development process, my ability to understand the needs of and implement features for a diverse set of users improved greatly. In addition, I learned alot about web accessibility standards and can now effectively build web sites and applications with these standards in mind. The other challenge was building it to be as modular as possible so that it could translate to other websites. This process involved a painstaking testing/debugging process. Finally, I learned a lot about using cookies and local storage to allow users to mainain their custom settings.
+<b>Takeaways:</b><br/>
+This project represents my most significant undertaking to date. Understanding the diverse needs of potential users, including those who are visually impaired, hard of hearing, rely on screen readers, or are color-blind, posed a unique challenge. Throughout the development process, my ability to comprehend and implement features for a diverse user base improved significantly. Additionally, I gained extensive knowledge of web accessibility standards, enabling me to construct websites and applications with inclusivity in mind. Another significant challenge was ensuring the project's modularity for seamless integration into other websites, requiring meticulous testing and debugging.
 
-<b>Current status:</b><br/> 
-The project is close to being finished. Once it is complete it will go through final testing for bugs/issues then implemented live on the Florida Memory website. In the future, it may be released as an open source plugin.
+<b>Current Status:</b>
+The project is nearing completion. Once finished, it will undergo final testing for bugs/issues before being implemented live on the Florida Memory website. In the future, there are considerations for releasing it as an open-source plugin.
 
-<b>Note:</b><br/> 
-The Florida Department of State is very security focused and version control software is not allowed so you may not see a much of a detailed git history for this project.
-
+<b>Note:</b>
+The Florida Department of State prioritizes security, and version control software is not allowed, limiting the visibility of detailed Git history for this project.
