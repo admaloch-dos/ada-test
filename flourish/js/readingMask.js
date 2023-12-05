@@ -137,7 +137,7 @@ setTimeout(() => {
 
   var maskSizeCookieVal = $.cookie("readingMaskHeight");
   if (maskSizeCookieVal) {
-    console.log(maskSizeCookieVal)
+
     $("#mask-size-input").val(maskSizeCookieVal);
     maskValue = maskSizeCookieVal
   }

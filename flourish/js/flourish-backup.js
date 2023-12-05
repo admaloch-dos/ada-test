@@ -204,8 +204,7 @@ $(function () {
           }
         }
         checkIfWidgetActive()
-        console.log(widgetItemObj)
-        console.log(isWidgetActive)
+
         if (isWidgetActive) {
           $('#toggle-flourish-list, #reset-flourish').show()
         }
@@ -607,7 +606,7 @@ $(function () {
 
 
       var hexTextColor = $('body *').cssAsHex('color');
-      console.log(hexTextColor)
+
       $("#txt_hexVal").html(hexTextColor);
       $.cookie.raw = true;
       $.cookie('TextColorCookie', hexTextColor, { expires: 30 });
@@ -891,7 +890,7 @@ $(function () {
 
       handleLinkColorOptions()
       if (linkColor) {
-        console.log('link color', linkColor)
+
         document.getElementById(linkColor).click();
       }
     }
@@ -984,7 +983,7 @@ $(function () {
 
   for (let i = 0; i < fontTypeArr.length; i++) {
     if ($.cookie(fontTypeArr[i].id) == "true") {
-      console.log('it does exist')
+
       fontTypeHandler(fontTypeArr[i].id)
       setTimeout(() => {
         $("#FT_Default").removeClass('active')
@@ -1568,7 +1567,7 @@ $(function () {
 
   var maskSizeCookieVal = $.cookie("readingMaskHeight");
   if (maskSizeCookieVal) {
-    console.log(maskSizeCookieVal)
+
     $("#mask-size-input").val(maskSizeCookieVal);
     maskValue = maskSizeCookieVal
   }
@@ -2305,8 +2304,7 @@ $(function () {
   const changeTextMagColors = () => {
     const textColor = $.cookie('text-magnify-color-swatch')
     const imgColor = $.cookie('img-magnify-color-swatch')
-    console.log(textColor)
-    console.log(imgColor)
+
     restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
     restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
 

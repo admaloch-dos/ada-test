@@ -70,6 +70,14 @@ const colorPresetObj = [
       textColor: '#000000',
       linkColor: ['#4054E7', '#D11515', '#C313B4',]
     },
+    // {
+    //   id: 'color-preset-12',
+    //   bgColor: '#9EE5CB',
+    //   textColor: '#000000',
+    //   linkColor: ['#A63636', '#665F00', '#454BBF', '#6B40BA', '#8C4060', '#65585F']
+    // },
+
+
 
 
     {
@@ -78,6 +86,8 @@ const colorPresetObj = [
       textColor: '#FFFFFF',
       linkColor: ['#009DE0', '#E07800', '#1FAC0C', '#9D980B', '#F24AE4']
     },
+
+
 
   ]
 
@@ -178,7 +188,6 @@ const colorPresetObj = [
 
       handleLinkColorOptions()
       if (linkColor) {
-        console.log('link color', linkColor)
         document.getElementById(linkColor).click();
       }
     }

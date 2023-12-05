@@ -67,7 +67,6 @@ const fontTypeArr = [
 
   for (let i = 0; i < fontTypeArr.length; i++) {
     if ($.cookie(fontTypeArr[i].id) == "true") {
-      console.log('it does exist')
       fontTypeHandler(fontTypeArr[i].id)
       setTimeout(() => {
         $("#FT_Default").removeClass('active')

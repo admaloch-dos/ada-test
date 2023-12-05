@@ -1,5 +1,5 @@
 
-// code related to checking cookies/data/if widget is active or not 
+// code related to checking cookies/data/if widget is active or not
 // data to determine if widget is still active / widget active items
 let isWidgetActive = false
 const cookiesArr = ['TTS_click_enabled', 'DarkContrastBackground', 'DesaturateBackground', 'InvertBackground', 'HighSaturationBackground',
@@ -149,8 +149,7 @@ const closeItemHandler = (closeItems) => {
         }
       }
       checkIfWidgetActive()
-      console.log(widgetItemObj)
-      console.log(isWidgetActive)
+
       if (isWidgetActive) {
         $('#toggle-flourish-list, #reset-flourish').show()
       }

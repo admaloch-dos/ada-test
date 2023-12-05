@@ -83,8 +83,6 @@ const colorSchemeArr = [
   const changeTextMagColors = () => {
     const textColor = $.cookie('text-magnify-color-swatch')
     const imgColor = $.cookie('img-magnify-color-swatch')
-    console.log(textColor)
-    console.log(imgColor)
     restoreMagColorDefault('text', '.text-magnify-color-swatch', textMagObj, '.text-magnifier-preview')
     restoreMagColorDefault('img', '.img-magnify-color-swatch', imgMagObj, '.img-magnifier-preview')
 

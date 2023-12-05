@@ -271,7 +271,6 @@ const resetColorInputs = (colorInput, hexInput, hexValue) => {
 
 
       var hexTextColor = $('body *').cssAsHex('color');
-      console.log(hexTextColor)
       $("#txt_hexVal").html(hexTextColor);
       $.cookie.raw = true;
       $.cookie('TextColorCookie', hexTextColor, { expires: 30 });
