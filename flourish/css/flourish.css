@@ -117,7 +117,8 @@ body {
 }
 
 #flourish_widget h3 {
-    font-family: var(--font2)
+    font-family: var(--font2);
+    line-height: 20px;
 }
 
 #flourish_widget p,
@@ -305,9 +306,9 @@ body {
     background-color: var(--off-white);
 }
 
-#flourish-modal-content .description {
+/* #flourish-modal-content .description {
     display: inline !important;
-}
+} */
 
 #select_page,
 #keyboard_shortcutsBtn {
@@ -866,7 +867,7 @@ body {
 }
 
 .flourish-section-header h2 {
-      font-size: 19px;
+    font-size: 19px;
 }
 
 #PhotoSens .flourish_option_title,
@@ -1497,13 +1498,15 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
         padding: 1rem;
     }
 }
-#text-selects{
-    padding: 0!important;
-    margin-top: 0!important;
-    margin-bottom: 0!important;
+
+#text-selects {
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     /* position: relative; */
 
 }
+
 #LetterSpacing_option,
 #WordSpacing_option,
 #LineHeight_option {
@@ -1709,7 +1712,7 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
 }
 
 .flourish_toggleContainer .flourish_content .description {
-    display: block;
+    /* display: block; */
     font-size: 14px;
     color: #3e465d;
     width: auto;
@@ -2915,6 +2918,7 @@ html.translated-ltr #flourish_widget .modal_body #FontSize_option ul li {
     }
 
 }
+
 @media screen and (min-width:1100px) {
     #flourish_widget .modal_body ul li {
         width: 120px !important;
@@ -3949,16 +3953,16 @@ html[lang='xh'] .fontSizeMedium #flourish_widget .modal_body .cursorSwap_form ul
 }
 
 @media screen and (max-width: 992px) {
-#change-link-text, #alt-link-colors {
-margin-bottom: .1rem!important;
+
+    #change-link-text,
+    #alt-link-colors {
+        margin-bottom: .1rem !important;
+    }
 }
-}
 
 
 
-@media screen and (max-width: 768px) {
-
-}
+@media screen and (max-width: 768px) {}
 
 #color-scheme-presets-main {
     /* width: 100%; */
@@ -3999,7 +4003,7 @@ margin-bottom: .1rem!important;
 }
 
 
-.main-color-presets:hover{
+.main-color-presets:hover {
     transform: scale(1.3);
 }
 
@@ -4170,7 +4174,7 @@ body.inverted {
 
 .inverted #header_links_container ul li.radio_program a {
     color: #FF9E66 !important;
-    background-color: #212529!important;
+    background-color: #212529 !important;
 }
 
 /**** CUSTOM LIST ****/
@@ -4366,8 +4370,8 @@ body.inverted {
 }
 
 .inverted .Footer,
-.highcontrast .Footer{
-    border-top: rgba(255, 255, 255, .3) solid 1px!important;
+.highcontrast .Footer {
+    border-top: rgba(255, 255, 255, .3) solid 1px !important;
 }
 
 
@@ -4604,13 +4608,13 @@ body.inverted {
 }
 
 .HighlightHover #stickyBreadcrumb a,
-.HighlightLinks #stickyBreadcrumb a{
-padding: 0 0;
+.HighlightLinks #stickyBreadcrumb a {
+    padding: 0 0;
 }
 
 .HighlightLinks #flourish-logos a {
 
-    background-color: transparent!important;
+    background-color: transparent !important;
 
 }
 
@@ -5592,6 +5596,7 @@ body.highcontrast {
     color: #E6CE20 !important;
     background-color: transparent;
 }
+
 .inverted #navContainer .dropdown-submenu a.dropdown-item {
 
     background-color: transparent;
@@ -5795,7 +5800,7 @@ body.highcontrast {
     transition: none;
 }
 
-.highcontrast #main_navbar{
+.highcontrast #main_navbar {
     background-color: #212529;
     /* border-top: rgba(0, 0, 0) solid 1px; */
     border-bottom: rgba(0, 0, 0, .1) solid 1px;
@@ -7521,16 +7526,42 @@ html.translated-rtl #item-delete-container {
     width: 15px;
     transition: .15s ease-in-out filter;
 }
+#reset-voice-btn {
+    width: 25px;
+    height: 25px;
+    /* padding: .3rem; */
+}
+
+/* #voice-settings-label {
+    height: 100%;
+    display: flex;
+    align-items: center;
+} */
 
 /* #reset-voice-btn img {
     width: 17px;
     padding: .1rem;
 } */
 
+
+
+.flourish-reset-btn {
+    width:25px;
+    height: 25px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
 #reset-voice-settings {
-    position: relative;
-    bottom: .2rem;
+    /* position: relative;
+    bottom: .2rem; */
+
     display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 100%;
 }
 
 .flourish_toggle .audio_state {
@@ -7538,20 +7569,20 @@ html.translated-rtl #item-delete-container {
 }
 
 
-@media screen and (max-width:677px) {
+/* @media screen and (max-width:677px) {
     #reset-voice-settings {
         display: none;
         position: relative;
         top: .9rem;
         right: .3rem;
     }
-}
+} */
 
 
 
-.fontSizeMedium #reset-voice-settings {
+/* .fontSizeMedium #reset-voice-settings {
     margin-top: 1rem;
-}
+} */
 
 .audio_state button {
     display: flex;
@@ -7581,9 +7612,9 @@ html.translated-rtl #item-delete-container {
     margin-right: .5rem;
 }
 
-.fontSizeMedium .flourish-reset-icon {
+/* .fontSizeMedium .flourish-reset-icon {
     transform: scale(1.3);
-}
+} */
 
 #flourish-contrast-info-toggle {
     filter: invert(1);
@@ -8360,6 +8391,7 @@ button:focus {
 #custom-schemes {
     margin-top: 1.1rem;
 }
+
 #preset-schemes {
     margin-top: .5rem;
 }
@@ -8409,6 +8441,14 @@ button:focus {
 .color-section-btn.active {
     background-color: var(--dark-blue);
     color: white;
+}
+.highcontrast .color-section-btn:hover,
+.highcontrast .color-section-btn.active,
+.inverted .color-section-btn:hover,
+.inverted .color-section-btn.active ,
+.desaturated .color-section-btn:hover,
+.desaturated .color-section-btn.active {
+    background-color: black;
 }
 
 .flourish-accordion-header {
@@ -8486,4 +8526,11 @@ button:focus {
 
 .inverted #flourish-statement-section {
     border: white solid 2px !important;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1354px) {
+    .DyslexicFont.fontSizeMedium #WordSpacing_option .flourish_option_title {
+        position: relative;
+        bottom: 2rem !important;
+    }
 }

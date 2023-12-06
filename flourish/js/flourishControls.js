@@ -122,6 +122,22 @@ const removeWidgetControls = (itemArr) => {
   checkIfWidgetActive()
 }
 
+// sometimes when you click to delete active list items it hides the sub menu
+const preventHideActiveList = () => {
+  const closeListItems = document.querySelectorAll('.close-list-items')
+  closeListItems.forEach(item => {
+console.log(closeListItems.length)
+    item.addEventListener('click', () => {
+      const activeItemContainer = document.querySelector('#widget-list')
+      if (item) {
+        console.log('there are still items')
+      } else {
+        console.log('there are no more items')
+      }
+    })
+  })
+}
+
 const closeItemHandler = (closeItems) => {
   closeItems.forEach(item => {
     item.addEventListener('click', (e) => {
@@ -151,10 +167,14 @@ const closeItemHandler = (closeItems) => {
       checkIfWidgetActive()
 
       if (isWidgetActive) {
-        $('#toggle-flourish-list, #reset-flourish').show()
+        // $('#toggle-flourish-list, #reset-flourish').show()
+        console.log('there are still active items')
+      } else {
+        console.log('there are no active')
       }
     })
   })
+  preventHideActiveList()
 }
 
 const addWidgetControlsOnLoad = () => {
@@ -183,3 +203,6 @@ const addWidgetControlsOnLoad = () => {
   widgetItemObj.isCursorBig && addWidgetControls('Cursor_Enlarge_option', 'Change cursor')
 }
 addWidgetControlsOnLoad()
+
+
+

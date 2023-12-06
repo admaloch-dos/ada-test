@@ -2067,7 +2067,7 @@ $(function () {
         $(".audio_state").show()
         $("body").addClass("TTS_click_enabled");
         $("#speech-settings").removeClass("disable");
-        $('#reset-voice-settings').fadeIn()
+        $('#reset-voice-settings').css({ 'display': 'flex' }).hide().fadeIn()
         addWidgetControls('ToggleTTS_click', 'Text to speech')
         widgetItemObj.isSpeech = true
         for (let i = 0; i < htmlClickArr.length; i++) {
