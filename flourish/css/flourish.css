@@ -844,10 +844,14 @@ body {
     }
 }
 
+@media screen and (max-width:768px) {
 #flourish_reset {
     position: relative;
     bottom: .6rem !important;
 }
+}
+
+
 
 #flourish-header-title h1 {
     margin-bottom: none !important;
@@ -1254,6 +1258,14 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
     /* Standard syntax */
 }
 
+#reset-img-magnify-btn,
+#reset-text-magnify-btn,
+#reset-guide-btn {
+    display: none;
+}
+
+
+
 @media screen and (min-width:1200px) {
     .opacity-icons {
         width: 25px;
@@ -1417,15 +1429,15 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
     text-shadow: none;
     font-size: 20px;
     position: relative;
-    bottom: .6rem !important;
+    /* bottom: .2rem !important; */
     color: white;
     max-height: 2rem;
 }
 
 @media screen and (min-width:768px) {
     #flourish_reset {
-        top: .6rem;
-        bottom: 0;
+        /* top: .6rem;
+        bottom: 0; */
         padding: 5px 10px !important;
     }
 }
