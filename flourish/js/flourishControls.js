@@ -126,7 +126,7 @@ const removeWidgetControls = (itemArr) => {
 const preventHideActiveList = () => {
   const closeListItems = document.querySelectorAll('.close-list-items')
   closeListItems.forEach(item => {
-console.log(closeListItems.length)
+// console.log(closeListItems.length)
     item.addEventListener('click', () => {
       const activeItemContainer = document.querySelector('#widget-list')
       if (item) {

@@ -2,36 +2,39 @@
 
 // website color presets ---------------------------->
 const colorPresetObj = [
-    {
-      id: 'color-preset-1',
-      bgColor: '#072664',
-      textColor: '#FFFFFF',
-      linkColor: ['#F06666', '#9D980B', '#E07800', '#009DE0', '#D06CD0', '#1FAC0C', '#F24AE4']
-    },
+  {
+    id: 'color-preset-1',
+    bgColor: '#D9D3D3',
+    textColor: '#000000',
+    linkColor: ['#AD007F','#426426','#8F4500', '#225D91', '#7532C8', '#B21515',]
+  },
     {
       id: 'color-preset-2',
       bgColor: '#FEE543',
       textColor: '#000000',
       linkColor: ['#3A4BE4', '#B62F2F', '#00750E', '#A133A3', '#944F00']
     },
+
+
+
     {
       id: 'color-preset-3',
-      bgColor: '#002E18',
+      bgColor: '#072664',
       textColor: '#FFFFFF',
-      linkColor: ['#578FFF', '#FF5757', '#00A88C', '#999400', '#C966FF', '#00A80B', '#FF3DCB']
+      linkColor: ['#E07800', '#9D980B','#F06666' ,  '#009DE0', '#D06CD0', '#1FAC0C', '#F24AE4']
     },
 
     {
       id: 'color-preset-4',
-      bgColor: '#D9D3D3',
-      textColor: '#000000',
-      linkColor: ['#426426','#AD007F', '#225D91', '#8F4500', '#7532C8', '#B21515',]
-    },
-    {
-      id: 'color-preset-5',
       bgColor: '#1A1A1A',
       textColor: '#FF2929',
       linkColor: ['#F1E0FF', '#F3F4A9', '#A5F8EA', '#FFE6CC', '#BEF4BE', '#FFE0F8']
+    },
+    {
+      id: 'color-preset-5',
+      bgColor: '#002E18',
+      textColor: '#FFFFFF',
+      linkColor: ['#578FFF', '#FF5757', '#00A88C', '#999400', '#C966FF', '#00A80B', '#FF3DCB']
     },
     {
       id: 'color-preset-6',
@@ -98,8 +101,7 @@ const colorPresetObj = [
       if (!btn.classList.contains('active')) {
         colorSectionBtns.forEach((item) => { item.classList.remove('active') })
         btn.classList.add('active')
-      }
-      if (btn.id === 'custom-color-btn') {
+      } if (btn.id === 'custom-color-btn') {
         $('#preset-schemes').hide()
         $('#custom-schemes').fadeIn()
       } else {
@@ -129,6 +131,7 @@ const colorPresetObj = [
       createLinkColorOptions(linkArr)
       handleLinkColorOptions()
       invertFlourishToggle(item)
+      $.removeCookie('customColorChange');
     })
   })
 
@@ -165,7 +168,7 @@ const colorPresetObj = [
   }
   const invertFlourishToggle = (item) => {
     const toggle = document.querySelector('#toggle-flourish-list')
-    if (item.id === 'color-preset-1' || item.id === 'color-preset-3' || item.id === 'color-preset-5' || item.id === 'color-preset-8' || item.id === 'color-preset-12') {
+    if (item.id === 'color-preset-3' || item.id === 'color-preset-4' || item.id === 'color-preset-5' || item.id === 'color-preset-8' || item.id === 'color-preset-12') {
       toggle.classList.add('invert-toggle')
     } else {
       toggle.classList.remove('invert-toggle')
@@ -211,3 +214,4 @@ const colorPresetObj = [
     colorPresetItems.forEach((item) => { item.classList.remove('active') })
     document.querySelectorAll('.alt-link-color').forEach((colorItem) => { colorItem.classList.remove('active') })
   }
+

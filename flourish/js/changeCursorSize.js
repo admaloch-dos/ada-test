@@ -29,3 +29,5 @@ const increaseCursorSize = () => {
       restoreDefaultCursorSize()
     });
   });
+
+

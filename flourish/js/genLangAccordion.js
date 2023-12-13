@@ -6,6 +6,7 @@ const genAccordion = (sectionId) => {
     accordionContainer.id = sectionId
     accordionContainer.classList.add('row', 'flourish-accordion')
     modalBody.append(accordionContainer)
+
 }
 
 const genAccordionItems = (currItem, destination, needsIcons) => {
@@ -35,6 +36,7 @@ const genAccordionItems = (currItem, destination, needsIcons) => {
     accordionPanel.classList.add('flourish-accordion-content')
     accordionRow.append(accordionBtn, accordionPanel)
     destination.append(accordionRow)
+
 }
 
 const genAccordionPanels = (currItem, currItemArr, subItem) => {
@@ -89,4 +91,5 @@ const collapseAllAccordionItems = () => {
         $(this).removeClass('active').next(".flourish-accordion-content").slideUp()
     });
 }
+
 

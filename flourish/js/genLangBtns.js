@@ -98,7 +98,7 @@ const languageBtnHandler = () => {
     document.querySelectorAll('.lang-translate-selector').forEach(item => {
         translateNotSupported(item)
         item.addEventListener('click', () => {
-            if (!item.classList.contains('disable')) {
+            if (!item.classList.contains('disable') && !item.classList.contains('audio_state')) {
                 $('#all-languages-modal').modal('hide')
                 if (document.fullscreenElement) {
                     document.exitFullscreen();
@@ -116,6 +116,7 @@ if (hasTouchScreen) {
 }
 
 const searchLangModalHandler = () => {
+
     const modalSearchInput = document.getElementById('search-lang-modal')
     let searchTerm = (modalSearchInput.value).trim();
     let filteredSearchArr = genFilteredLangResults(searchTerm)
@@ -134,7 +135,16 @@ const searchLangModalHandler = () => {
     } else {
         $('#no-results-error').hide()
     }
+
 }
+
+
+
+var timeoutId = 0;
+document.getElementById('search-lang-modal').addEventListener('input', function (evt) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(resetTextToSpeech, 300);
+})
 
 // generate an array of results based on search input
 const genFilteredLangResults = (searchInput) => {

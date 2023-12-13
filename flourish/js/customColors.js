@@ -230,6 +230,8 @@ const resetColorPicker = () => {
     })
 
   }
+  $.removeCookie('customColorChange');
+  document.getElementById('preset-color-btn').click()
 }
 
 $(document).ready(function () {
@@ -361,3 +363,22 @@ $(document).ready(function () {
     restoreDefaultFontSize()
   });
 });
+
+document.querySelectorAll('.custom-color-input').forEach(item => {
+  item.addEventListener('click', () => {
+    $.cookie('customColorChange', 'true', { expires: 30 });
+    $.removeCookie('main-color-preset');
+  })
+})
+
+setTimeout(() => {
+  $(document).ready(function () {
+    if ($.cookie('customColorChange') == 'true') {
+      document.querySelector('#custom-color-btn').click()
+    }
+
+  });
+}, 500)
+
+
+

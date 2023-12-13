@@ -99,13 +99,16 @@ const colorSchemeArr = [
       $.removeCookie(id);
       removeWidgetControls([id])
       $(location).removeClass(class_);
-      $("#DefaultBG_option").addClass('active').siblings().removeClass('active');
+      // $("#DefaultBG_option").addClass('active').siblings().removeClass('active');
+      document.querySelector('#defaultBackground').click()
     }
   }
 
   const colorPresetHandler = (currItemId) => {
     const currItemTag = `#${currItemId}`
-    $(currItemTag).parent().addClass('active').siblings().removeClass('active');
+    console.log(currItemTag)
+    $(currItemTag).closest('li').addClass('active').siblings().removeClass('active');
+    document.querySelector(currItemTag).click()
     if (currItemId === 'defaultBackground') {
       colorPresetToDefault()
     } else {
