@@ -10,7 +10,7 @@
 
 
     <meta name="theme-color" content="#ffffff">
-    <title>Flourish Florida Memory test page</title>
+    <title>Flourish current</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -82,7 +82,7 @@
                 </div>
                 <div id="item-delete-container" class="item-delete-container-remove">
                     <ul id="widget-list" class="list-unstyled mt-2 mb-2"></ul>
-                    <div id="item-delete-footer d-flex justify-content-center align-items-center">
+                    <div id="item-delete-footer" class="d-flex justify-content-center align-items-center">
                         <button id="reset-flourish" class="w-100 reset-flourish">Reset menu &nbsp<img
                                 class="img-fluid flourish-reset-icon" src="./flourish/img/reset.png"
                                 alt="Restore default settings icon" /></button>
@@ -107,7 +107,8 @@
 
                             <h1 class="nowrap text-center" id="main-modal-title">Accessibility Menu</h1>
                         </div>
-                        <div class="col-12 col-md-6 d-flex flex-wrap justify-content-center justify-content-md-end align-items-md-center">
+                        <div id="default-btn-container"
+                            class="col-12 col-md-6 d-flex flex-wrap justify-content-center justify-content-md-end align-items-md-center">
                             <button onclick="resetflourishModal()" type="button"
                                 class="btn mr-md-4 d-flex justify-content-center align-items-center"
                                 title="Reset Settings" aria-label="Reset Settings" id="flourish_reset">
@@ -131,14 +132,15 @@
 
                             <div id="navigation-selects"
                                 class="row justify-content-between align-items-center menu-selects flourish-sub-section">
-                                <div class="col-12 col-lg-6 d-flex flex-wrap justify-content-center align-items-center mb-1 mb-lg-0"
+                                <div class="col-12 col-lg-6 d-flex flex-wrap justify-content-center align-items-center "
                                     id=" SiteMap_option">
                                     <form
                                         class="siteMap_form form-inline select-container  d-flex flex-wrap justify-content- flex-nowrap">
                                         <img class="img-fluid flourish-icon-style" src="./flourish/img/sitemap.png"
                                             alt="Site map icon" />
                                         <select class="form-control" id="select_page" onchange="location = this.value;">
-                                            <option class="text-center" selected disabled>Website Navigation</option>
+                                            <option class="text-center site-nav-select-title" selected disabled>Website
+                                                Navigation</option>
                                             <option value="https://www.floridamemory.com/" style="font-weight:bold;">
                                                 Homepage</option>
                                             <optgroup label="Discover" id="discover_group">
@@ -634,7 +636,7 @@
                                 <div class="col-12 col-lg-6 d-flex flex-wrap flex-column mb-2" id="ColorAdjust_option">
                                     <section class="color_picker_form text-center">
                                         <div
-                                            class="section-title  d-flex flex-wrap justify-content-center flex-column flex-sm-row justify-content-lg-start align-items-center">
+                                            class="section-title adjust-color-title  d-flex flex-wrap justify-content-center flex-column flex-sm-row justify-content-lg-start align-items-center">
                                             <div class="d-flex mb-1 mb-sm-0 justify-content-center align-items-center">
                                                 <img class="img-fluid flourish-icon-style"
                                                     src="./flourish/img/adjust-color.png" alt="Adjust colors icon" />
@@ -642,10 +644,10 @@
                                                 </h3>
                                             </div>
                                             <div class="d-flex justify-content-center">
-                                                <button id="custom-color-btn"
-                                                    class="color-section-btn active">Custom</button>
                                                 <button id="preset-color-btn"
-                                                    class="color-section-btn ">Presets</button>
+                                                    class="color-section-btn active">Presets</button>
+                                                <button id="custom-color-btn" class="color-section-btn ">Custom</button>
+                                                <span class="hidden-span">Presets, Custom</span>
                                                 <button data-container="#flourish_widget" data-trigger="hover"
                                                     data-toggle="popover" data-placement="top"
                                                     data-content="Reset colors" id="reset-color-picker"
@@ -665,8 +667,9 @@
                                                         <label class="flourish-setting-title " for="Background Color">
                                                             Background
                                                         </label>
-                                                        <input type="color" class="color_swatch" id="background_color"
-                                                            title="Choose Background Color" value="#ffffff">
+                                                        <input type="color" class="color_swatch custom-color-input"
+                                                            id="background_color" title="Choose Background Color"
+                                                            value="#ffffff">
                                                         <div class="hexVal" id="bg_hexVal">#ffffff</div>
                                                     </div>
 
@@ -678,8 +681,8 @@
                                                         <label class="flourish-setting-title " for="Text Color">
                                                             Text
                                                         </label>
-                                                        <input type="color" class="color_swatch" id="text_color"
-                                                            title="Choose Text Color" value="#000000">
+                                                        <input type="color" class="color_swatch custom-color-input"
+                                                            id="text_color" title="Choose Text Color" value="#000000">
                                                         <div class="hexVal" id="txt_hexVal">#000000</div>
                                                     </div>
 
@@ -690,8 +693,8 @@
                                                         <label class="flourish-setting-title " for="Link Color">
                                                             Links
                                                         </label>
-                                                        <input type="color" class="color_swatch" id="link_color"
-                                                            title="Choose Link Color" value="#3863FF">
+                                                        <input type="color" class="color_swatch custom-color-input"
+                                                            id="link_color" title="Choose Link Color" value="#3863FF">
                                                         <div class="hexVal" id="link_hexVal">#3863FF</div>
                                                     </div>
 
@@ -903,7 +906,7 @@
                             </div>
                             <section class="row d-flex flex-wrap flex-column align-items-center flourish-sub-section"
                                 id="language-options">
-                                <h3 class="flourish_option_title text-wrap text-center mb-2 mt-3"> <img
+                                <h3 class="flourish_option_title text-wrap text-center"> <img
                                         class="img-fluid flourish-icon-style " src="./flourish/img/translate.png"
                                         alt="Translate languages icon" />Translate Language:</h3>
                                 <div id="flourish-translate-select"
@@ -919,7 +922,7 @@
                                         <div id="curr-flourish-language-btn"
                                             class="  d-flex justify-content-center align-items-center border">
 
-                                            <span id="curr-language" class="mr-2">Current language: </span>
+                                            <span id="curr-language" class="mr-2">Current: </span>
                                             <img id="curr-language-icon" class=" language-icons"
                                                 src="./flourish/img/language/eng-min.png"
                                                 alt="English-English language icon">
@@ -987,13 +990,13 @@
                                 </div>
 
 
-                                <div class="modal fade" id="all-languages-modal" tabindex="-1"
+                                <div class="modal fade " id="all-languages-modal" tabindex="-1"
                                     aria-labelledby="all-languages-modal" aria-hidden="true">
                                     <div id="lang-modal-container"
                                         class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-                                        <div id="all-languages-modal-content" class="modal-content">
+                                        <div id="all-languages-modal-content" class="modal-content ">
                                             <div id="language-btn-modal-header" class="modal_header  ">
-                                                <button id="close-language-modal" type="button" class="close"
+                                                <button id="close-language-modal" type="button" class="close "
                                                     data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -1005,7 +1008,7 @@
                                             </div>
 
                                             <div
-                                                class="row all-language-modal-search d-flex justify-content-center align-items-center mt-md-1 mt-lg-3">
+                                                class="row all-language-modal-search d-flex justify-content-center align-items-center mt-3 mt-lg-3">
                                                 <form onsubmit="return false;">
                                                     <input type="text" placeholder="Search languages..."
                                                         autocomplete="off" name="query" id="search-lang-modal"
@@ -1016,7 +1019,7 @@
                                             <div id="filter-lang-results"
                                                 class="row d-flex  justify-content-center align-items-center mt-md-1 mb-md-4 mt-lg-3">
                                                 <h4 class="mt-0 filter-header">Filter results:&nbsp</h4>
-                                                <div class="filter-btn-container d-flex ">
+                                                <div class="filter-btn-container d-flex flex-column flex-sm-wrap">
                                                     <div id="all-languages-filter" data-info="All"
                                                         class="lang-filter active d-flex justify-content-center align-items-center">
                                                         <img class="filter-icons"
@@ -1369,7 +1372,7 @@
                                     <div class="form-group  delete-select-icon">
                                         <div class="form-group-heading">
                                             <div
-                                                class="section-title d-flex flex-wrap justify-content-center align-items-center">
+                                                class="section-title d-flex flex-nowrap justify-content-center align-items-center">
                                                 <img class="img-fluid flourish-icon-style"
                                                     src="./flourish/img/letter-spacing.png"
                                                     alt="Change letter spacing icon" />
@@ -1413,7 +1416,7 @@
                                     <div class="form-group ">
                                         <div class="form-group-heading ">
                                             <div
-                                                class="section-title flex-wrap d-flex  justify-content-center  align-items-center">
+                                                class="section-title flex-nowrap d-flex  justify-content-center  align-items-center">
                                                 <img class="img-fluid flourish-icon-style"
                                                     src="./flourish/img/word-spacing.png"
                                                     alt="Change word spacing icon" />
@@ -1457,7 +1460,7 @@
                                     <div class="form-group ">
                                         <div class="form-group-heading ">
                                             <div
-                                                class="section-title flex-wrap d-flex  justify-content-center  align-items-center">
+                                                class="section-title flex-nowrap d-flex  justify-content-center  align-items-center">
                                                 <img class="img-fluid flourish-icon-style"
                                                     src="./flourish/img/line-spacing.png"
                                                     alt="Change line height icon" />
@@ -1662,7 +1665,7 @@
                                                 class="d-flex flex-nowrap  justify-content-center justify-content-lg-start align-items-center">
                                                 <img class="img-fluid flourish-icon-style"
                                                     src="./flourish/img/text-to-speech.png" alt="Text-to-speech icon" />
-                                                <h3 class=" flourish_option_title mr-2 mr-lg-4">Text-to-Speech </h3>
+                                                <h3 class=" flourish_option_title">Text-to-Speech </h3>
                                                 <div class="flourish_toggle " style="margin-left:6px;">
                                                     <label class="switch" title="Toggle On/Off Text-to-Speech">
                                                         <input type="checkbox" class="switch-input" id="ToggleTTS_click"
@@ -1673,12 +1676,13 @@
                                                 </div><!-- flourish_toggle -->
                                             </div>
 
-                                                <p class="description text-center text-lg-left mt-2 mt-lg-0">Click on text to read it
-                                                    aloud.
-                                                    Adjust settings for
-                                                    voice, volume, rate,
-                                                    and
-                                                    pitch</p>
+                                            <p class="description text-center text-lg-left mt-2 mt-lg-0">Click on text
+                                                to read it
+                                                aloud.
+                                                Adjust settings for
+                                                voice, volume, rate,
+                                                and
+                                                pitch</p>
 
 
                                         </div><!-- flourish_content -->
@@ -1814,7 +1818,8 @@
                             <div id="flourish-contact-info"
                                 class="flourish-contact-info d-flex flex-column justify-content-center align-items-center">
 
-                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                <div id="dos-statement"
+                                    class="d-flex flex-column justify-content-center align-items-center">
                                     <img id="flourish-statement-icon" class="img-fluid flourish-icon-style text-center"
                                         src="./flourish/img/flourish-logo-square-notext.png" alt="Flourish logo icon" />
                                     <a class="text-center" id="flourish-statement-link"
@@ -1824,7 +1829,8 @@
                                 </div>
 
 
-                                <div class="d-flex flex-column justify-content-center align-items-center mb-2">
+                                <div id="email-info"
+                                    class="d-flex flex-column justify-content-center align-items-center mb-2">
                                     <img id="flourish-email-icon" class="img-fluid flourish-icon-style "
                                         src="./flourish/img/email.png" alt="Email icon" />
                                     <p class=" flourish-statement-info-p text-center"> For questions and
@@ -2059,11 +2065,11 @@
                             </form>
 
                             <ul class="navbar-nav mr-auto" id="Left_Nav">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="https://www.floridamemory.com/discover/">
+                                <li class="nav-item dropdown main-navbar-item">
+                                    <a class="nav-link dropdown-toggle main-navbar-item-title" href="https://www.floridamemory.com/discover/">
                                         Discover
                                     </a>
-                                    <ul class="dropdown-menu backdrop_hover" aria-labelledby="navbarDropdownMenuLink">
+                                    <ul class="dropdown-menu backdrop_hover primary-nav-links" aria-labelledby="navbarDropdownMenuLink">
 
                                         <li class="dropdown-submenu firstLevel" id="photo"><a
                                                 class="dropdown-item dropdown-toggle"
@@ -2125,7 +2131,7 @@
                                                     <div class="col-sm-12">
                                                         <ul>
 
-                                                            <li>
+                                                            <li class="hist-records-items">
                                                                 <a class="dropdown-item alt-link-style"
                                                                     href="https://www.floridamemory.com/discover/historical_records/election1867/">Voter
                                                                     Registration Rolls, 1867-68</a>
@@ -2133,7 +2139,7 @@
                                                                     voting records</h6>
                                                             </li>
 
-                                                            <li>
+                                                            <li class="hist-records-items">
                                                                 <a class="dropdown-item alt-link-style"
                                                                     href="https://www.floridamemory.com/discover/historical_records/early-autos/">Early
                                                                     Auto Registrations, 1905-1917</a>
@@ -2141,7 +2147,7 @@
                                                                     automobile registrations</h6>
                                                             </li>
 
-                                                            <li>
+                                                            <li class="hist-records-items">
                                                                 <a class="dropdown-item alt-link-style"
                                                                     href="https://www.floridamemory.com/discover/historical_records/constitution/">Florida's
                                                                     Historic Constitutions</a>
@@ -2149,7 +2155,7 @@
                                                                     Florida's political framework</h6>
                                                             </li>
 
-                                                            <li>
+                                                            <li class="hist-records-items">
                                                                 <a class="dropdown-item alt-link-style"
                                                                     href="https://www.floridamemory.com/discover/historical_records/selected_documents/">Selected
                                                                     Documents</a>
@@ -2157,7 +2163,7 @@
                                                                     other historical records</h6>
                                                             </li>
 
-                                                            <li>
+                                                            <li class="hist-records-items">
                                                                 <a class="dropdown-item alt-link-style"
                                                                     href="https://www.floridamemory.com/discover/historical_records/governor-records/">Florida
                                                                     Governors' Records</a>
@@ -2165,7 +2171,7 @@
                                                                     chief executive officers</h6>
                                                             </li>
 
-                                                            <li>
+                                                            <li class="hist-records-items">
                                                                 <a class="dropdown-item alt-link-style"
                                                                     href="https://www.floridamemory.com/discover/historical_records/">VIEW
                                                                     ALL</a>
@@ -2273,11 +2279,11 @@
                                 </li><!-- nav-item dropdown / Learn Option -->
 
 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="https://www.floridamemory.com/learn/">
+                                <li class="nav-item dropdown main-navbar-item">
+                                    <a class="nav-link dropdown-toggle main-navbar-item-title" href="https://www.floridamemory.com/learn/">
                                         Learn
                                     </a>
-                                    <ul class="dropdown-menu backdrop_hover" aria-labelledby="navbarDropdownMenuLink2">
+                                    <ul class="dropdown-menu backdrop_hover primary-nav-links" aria-labelledby="navbarDropdownMenuLink2">
 
                                         <li class="dropdown-submenu firstLevel" id="about_fm"><a
                                                 class="dropdown-item dropdown-toggle"
@@ -2501,11 +2507,11 @@
                                     </ul>
                                 </li>
 
-                                <li class="nav-item dropdown" id="share">
-                                    <a class="nav-link dropdown-toggle" href="https://www.floridamemory.com/share/">
+                                <li class="nav-item dropdown main-navbar-item" id="share">
+                                    <a class="nav-link dropdown-toggle main-navbar-item-title" href="https://www.floridamemory.com/share/">
                                         Share
                                     </a>
-                                    <ul class="dropdown-menu backdrop_hover" aria-labelledby="navbarDropdownMenuLink3">
+                                    <ul class="dropdown-menu backdrop_hover primary-nav-links" aria-labelledby="navbarDropdownMenuLink3">
                                         <li class="dropdown-submenu firstLevel"><a class="dropdown-item"
                                                 href="https://www.floridamemory.com/share/order-info/index.php">Order</a>
                                         </li>
@@ -4306,14 +4312,6 @@
 
 
 
---<i>Text:</i> Users can adjust font size, font family, letter spacing, word spacing, and line height.<br/>
---<i>Readability:</i> Magnify text and image alt tags on hover, create a reading mask line around the cursor to emphasize text.<br/>
---<i>Navigation:</i> Outline all links or add a background on hover for improved navigation.<br/>
---<i>Colors:</i> Manually change text, link, and background colors, or utilize accessible presets and color profiles.<br/>
---<i>Animations:</i> Remove transitions and animations for a smoother experience.<br/>
---<i>Text-to-Speech:</i> Click on text to have it read aloud, with a menu for editing voice settings.<br/>
---<i>Translation:</i> A comprehensive translation section powered by the Google Translate API, allowing users to search by language, region, or script.<br/>
---<i>Storage:</i> Cookies store all changes for 30 days.<br/>
 
 
 
@@ -4354,6 +4352,7 @@
 
 
 
+
                     <script src="./flourish/js/script.js"></script>
                     <script src="./flourish/js/Utility.js"></script>
                     <script src="./flourish/js/changeIconPlacement.js"></script>
@@ -4373,6 +4372,8 @@
                     <script src="./flourish/js/photoFilter.js"></script>
                     <script src="./flourish/js/highlightHover.js"></script>
                     <script src="./flourish/js/outlineLinks.js"></script>
+                    <script src="./flourish/js/edit-speech-synth.js"></script>
+                    <script src="./flourish/js/init-speech-voices.js"></script>
                     <script src="./flourish/js/textToSpeech.js"></script>
                     <script src="./flourish/js/keyCommands.js"></script>
                     <script src="./flourish/js/colorProfile.js"></script>
