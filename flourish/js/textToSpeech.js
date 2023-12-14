@@ -63,10 +63,10 @@ const resetSpeech = () => {
 
 const createSpeechItems = () => {
 
-  $('p, h1, h2, h3, h4, h5, h6, a, button, span, td, th').not("#language-btn-modal-header *").each(function () {
+  $('p, h1, h2, h3, h4, h5, h6, a, button, span, td, th, label').not("#language-btn-modal-header *").each(function () {
     const currTextItem = $(this).text()
-    if (currTextItem.replaceAll(/\s/g, '') !== '') {
-      console.log(currTextItem)
+    if (currTextItem && currTextItem.replaceAll(/\s/g, '') !== '') {
+      // console.log(currTextItem)
       $('<div class="audio_state">\
       <button class="trigger-audio play-pause inactive-item audio-inactive" title="Trigger audio"><img alt="Text-to-speech icon"  class="trigger-audio-icon" src="./flourish/img/trigger-audio.svg" alt="trigger speech"></button>\<button class="trigger-audio reset-audio-btn d-none" title="Cancel"><img  src="./flourish/img/reset.png" alt="Reset text-to-speech icon"></button>\</div>').insertAfter(this);
     }
@@ -82,11 +82,11 @@ const createSpeechItems = () => {
 /***** handler for speech items -- the speech btn and the play/pause/reset all have trigger audio class.. tehse conditionals test whcih one is which *****/
 const speechItemHandler = () => {
   $('div.audio_state .trigger-audio').each(function (index) {
-    const text =
+    
       $(this).click(function (e) {
         if ($(this).hasClass('play-pause')) {
           if (!$(this).hasClass('curr-active-item') && !$(this).hasClass('reset-audio-btn')) {
-            console.log('if it itsnt curently active')
+
             resetSpeech()
             $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/pause.png");
             $(this).addClass('curr-active-item')
@@ -94,18 +94,18 @@ const speechItemHandler = () => {
             $(this).closest('.audio_state').children('.reset-audio-btn').eq(0).removeClass('d-none')
           }
           if ($(this).hasClass('audio-playing')) {
-            console.log('if it has audio playing class')
+
             $(this).removeClass('audio-inactive audio-playing')
             $(this).addClass('audio-paused')
             $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/play.png");
             synth.pause()
           } else if ($(this).hasClass('audio-inactive')) {
-            console.log('if it has audio inactive ')
+
             $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/pause.png");
             $(this).removeClass('audio-inactive audio-paused')
             $(this).addClass('audio-playing')
             synth.cancel();
-            ssu.text = $(this).parent("div.audio_state").prev("p, h1, h2, h3, h4, h5, h6, a, button, span, td, th, li").text();
+            ssu.text = $(this).parent("div.audio_state").prev("p, h1, h2, h3, h4, h5, h6, a, button, span, td, th, label").text();
             ssu.volume = parseFloat(volumeInput.value / 10);
             ssu.rate = parseFloat(rateInput.value / 5);
             ssu.pitch = parseFloat(pitchInput.value / 5 + .01);
@@ -127,8 +127,18 @@ const speechItemHandler = () => {
                 $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/play.png");
               }
             });
+            let r = setInterval(() => {
+
+              if (!speechSynthesis.speaking) {
+                clearInterval(r);
+              } else {
+                speechSynthesis.pause();
+                speechSynthesis.resume();
+              }
+            }, 14000);
+            console.log(ssu.text)
           } else if ($(this).hasClass('audio-paused')) {
-            console.log('if it has audio paused ran')
+
             $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/pause.png");
             $(this).removeClass('audio-inactive audio-paused')
             $(this).addClass('audio-playing')
@@ -246,15 +256,21 @@ const triggerSpeechToggle = (value) => {
   $("#speech-settings").removeClass("disable");
 }
 
+// const resetTextToSpeech = () => {
+//   if (document.body.classList.contains('TTS_click_enabled')) {
+//     keyTogglerFunc('#ToggleTTS_click')
+//     setTimeout(() => {
+//       keyTogglerFunc('#ToggleTTS_click')
+//     }, 600)
+//   }
+// }
 const resetTextToSpeech = () => {
   if (document.body.classList.contains('TTS_click_enabled')) {
-    keyTogglerFunc('#ToggleTTS_click')
+    $('#ToggleTTS_click').prop('checked', false).trigger('change')
     setTimeout(() => {
-      keyTogglerFunc('#ToggleTTS_click')
+      $('#ToggleTTS_click').prop('checked', true).trigger('change')
     }, 600)
   }
-
-
 }
 
 setTimeout(() => {

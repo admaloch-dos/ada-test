@@ -19,3 +19,19 @@ if ("maxTouchPoints" in navigator) {
     );
   }
 }
+
+const makeMagAndMaskWhite = () => {
+  document.querySelector('#text-mag-color-4').click()
+  document.querySelector('#img-mag-color-4').click()
+  triggerEventFunc('#mask_color', '#FFFFFF')
+  triggerEventFunc('#guide_color', '#FFFFFF')
+  triggerEventFunc('#reading-mask-opacity', '.7')
+
+}
+const makeMagAndMaskBlack = () => {
+  document.querySelector('#text-mag-color-1').click()
+  document.querySelector('#img-mag-color-1').click()
+  triggerEventFunc('#mask_color', '#000000')
+  triggerEventFunc('#guide_color', '#000000')
+  triggerEventFunc('#reading-mask-opacity', '.6')
+}

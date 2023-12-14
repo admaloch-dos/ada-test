@@ -252,7 +252,7 @@ $(document).ready(function () {
     $('body *').not('#flourish-widget-main *').css('background-color', 'none');
     var background_color = $(this).val()
     // $('body').not('a, #flourish_widget, #flourish_widget *, #flourish-triggers, #flourish-triggers *, .translate-language-span, .audio_state *').css('background', background_color, '!important')
-    $('body, body *').not('#flourish-widget-main, #flourish-widget-main *').not('.dropdown-menu, .dropdown-menu *').css('background-color', background_color)
+    $('body, body *').not('#flourish-widget-main, #flourish-widget-main *, .audio_state *, .curr-active-item *').not('.dropdown-menu, .dropdown-menu *').css('background-color', background_color)
     $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').css('background-color', background_color)
     $('#Scroll_btn').css('background-color', background_color)
     $('.second-nav li, #menuTitle').css('background-color', background_color)

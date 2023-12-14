@@ -114,7 +114,7 @@ if (hasTouchScreen) {
         document.querySelector(".all-language-modal-search").scrollIntoView();
     });
 }
-
+var wto;
 const searchLangModalHandler = () => {
 
     const modalSearchInput = document.getElementById('search-lang-modal')
@@ -134,17 +134,25 @@ const searchLangModalHandler = () => {
         $('#no-results-error').css("display", "flex")
     } else {
         $('#no-results-error').hide()
+        clearTimeout(wto);
+        wto = setTimeout(() => resetTextToSpeech(), 500);
     }
 
 }
 
 
 
-var timeoutId = 0;
-document.getElementById('search-lang-modal').addEventListener('input', function (evt) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(resetTextToSpeech, 300);
-})
+// var timeoutId = 0;
+// document.getElementById('search-lang-modal').addEventListener('input', function (evt) {
+//     clearTimeout(timeoutId);
+//     timeoutId = setTimeout(resetTextToSpeech, 600);
+// })
+
+
+
+$('#search-lang-modal').change(function () {
+    console.log('this ran')
+});
 
 // generate an array of results based on search input
 const genFilteredLangResults = (searchInput) => {
