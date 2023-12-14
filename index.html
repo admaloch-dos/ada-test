@@ -584,7 +584,7 @@
                                             <img class="img-fluid flourish-icon-style"
                                                 src="./flourish/img/color-presets.png"
                                                 alt="Website color presets icon" />
-                                            <h3 class="flourish_option_title text-wrap text-center  ">Color Scheme
+                                            <h3 class="flourish_option_title text-wrap text-center  ">Color
                                                 Profiles
 
                                             </h3>
@@ -660,7 +660,7 @@
                                             </div>
                                         </div>
                                         <div id="custom-schemes" class="custom-color-schemes ">
-                                            <div
+                                            <div id="custom-color-pickers"
                                                 class=" d-flex flex-wrap flex-md-nowrap justify-content-center justify-content-lg-start align-items-center mb-3 mb-lg-0">
                                                 <div>
                                                     <div class="form-group ">
@@ -670,7 +670,7 @@
                                                         <input type="color" class="color_swatch custom-color-input"
                                                             id="background_color" title="Choose Background Color"
                                                             value="#ffffff">
-                                                        <div class="hexVal" id="bg_hexVal">#ffffff</div>
+                                                        <p class="hexVal" id="bg_hexVal">#ffffff</p>
                                                     </div>
 
 
@@ -683,7 +683,7 @@
                                                         </label>
                                                         <input type="color" class="color_swatch custom-color-input"
                                                             id="text_color" title="Choose Text Color" value="#000000">
-                                                        <div class="hexVal" id="txt_hexVal">#000000</div>
+                                                        <p class="hexVal" id="txt_hexVal">#000000</p>
                                                     </div>
 
                                                 </div>
@@ -695,7 +695,7 @@
                                                         </label>
                                                         <input type="color" class="color_swatch custom-color-input"
                                                             id="link_color" title="Choose Link Color" value="#3863FF">
-                                                        <div class="hexVal" id="link_hexVal">#3863FF</div>
+                                                        <p class="hexVal" id="link_hexVal">#3863FF</p>
                                                     </div>
 
                                                 </div>
@@ -1019,7 +1019,7 @@
                                             <div id="filter-lang-results"
                                                 class="row d-flex  justify-content-center align-items-center mt-md-1 mb-md-4 mt-lg-3">
                                                 <h4 class="mt-0 filter-header">Filter results:&nbsp</h4>
-                                                <div class="filter-btn-container d-flex flex-column flex-sm-wrap">
+                                                <div class="filter-btn-container d-flex flex-column flex-md-row flex-sm-wrap">
                                                     <div id="all-languages-filter" data-info="All"
                                                         class="lang-filter active d-flex justify-content-center align-items-center">
                                                         <img class="filter-icons"
@@ -1262,7 +1262,7 @@
                                         class="section-title  d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center">
                                         <img class="img-fluid flourish-icon-style" src="./flourish/img/font-sizet.png"
                                             alt="Change font size icon" />
-                                        <h3 class="flourish_option_title text-wrap text-center text-center">Change Font
+                                        <h3 class="flourish_option_title text-wrap text-center text-center">Font
                                             Size</h3>
                                     </div>
                                     <div class="form-check">
@@ -1298,7 +1298,7 @@
                                             class="section-title d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center">
                                             <img class="img-fluid flourish-icon-style" src="./flourish/img/font.png"
                                                 alt="Change font family icon" />
-                                            <h3 class="flourish_option_title text-wrap text-center text-lg-left">Change
+                                            <h3 class="flourish_option_title text-wrap text-center text-lg-left">
                                                 Font</h3>
                                         </div>
                                         <div class="form-check">
@@ -1345,7 +1345,7 @@
                                             class="section-title d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center">
                                             <img class="img-fluid flourish-icon-style" src="./flourish/img/cursor.png"
                                                 alt="Change cursor size icon" />
-                                            <h3 class="flourish_option_title text-wrap text-center">Change Cursor Size
+                                            <h3 class="flourish_option_title text-wrap text-center">Cursor Size
                                             </h3>
                                         </div>
                                         <div class="form-check">
@@ -1377,7 +1377,7 @@
                                                     src="./flourish/img/letter-spacing.png"
                                                     alt="Change letter spacing icon" />
                                                 <h3 class="flourish_option_title " for="exampleFormControlSelect1">
-                                                    Change Letter
+                                                    Letter
                                                     Spacing </h3>
                                             </div>
                                         </div>
@@ -1421,7 +1421,7 @@
                                                     src="./flourish/img/word-spacing.png"
                                                     alt="Change word spacing icon" />
                                                 <h3 class="flourish_option_title " for="exampleFormControlSelect1">
-                                                    Change Word
+                                                     Word
                                                     Spacing</h3>
                                             </div>
                                         </div>
@@ -1464,7 +1464,7 @@
                                                 <img class="img-fluid flourish-icon-style"
                                                     src="./flourish/img/line-spacing.png"
                                                     alt="Change line height icon" />
-                                                <h3 class="flourish_option_title  font-weight-bold">Change Line
+                                                <h3 class="flourish_option_title  font-weight-bold">Line
                                                     Height</h3>
                                             </div>
                                         </div>
@@ -1537,7 +1537,7 @@
                                         class=" edit-reading-mask justify-content-start align-items-start disable-settings">
                                         <div id="edit-mask-opacity"
                                             class="input-container d-flex flex-wrap flex-column justify-content-center align-items-center">
-                                            <div class="mb-2">Opacity:</div>
+                                            <label class="mb-2">Opacity:</label>
                                             <div
                                                 class="opacity-select d-flex flex-wrap justify-content-center align-items-center">
                                                 <svg class="opacity-icons  button-icon minus-icon mr-1"
@@ -1571,14 +1571,14 @@
                                         </div>
                                         <div id="edit-mask-color"
                                             class="  color_picker_form d-flex flex-wrap flex-column justify-content-center align-items-center">
-                                            <div class="mb-2" for="mask-color">
+                                            <label class="mb-2" for="mask-color">
                                                 Color:
-                                            </div>
+                                            </label>
                                             <!-- <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"> -->
                                             <input type="color" class="color_swatch mb-0 reading-color-picker"
                                                 id="mask_color" title="Choose Link Color" value="#363636"
                                                 colorpick-eyedropper-active="true">
-                                            <span class="hexVal" id="mask_hexVal">#363636</span>
+                                            <!-- <span class="hexVal" id="mask_hexVal">#363636</span> -->
                                         </div>
                                         <div
                                             class="edit-middle-section d-flex flex-wrap flex-column justify-content-center align-items-center">
@@ -1633,21 +1633,21 @@
                                         class=" edit-reading-guide justify-content-start align-items-start disable-settings mb-3">
                                         <div id="edit-guide-color"
                                             class="ml-4 mr-4 color_picker_form d-flex flex-wrap flex-column justify-content-center align-items-center">
-                                            <h4 class="mb-2 flourish-setting-title" for="guide-color">
+                                            <label for="guide-color">
                                                 Color:
-                                            </h4>
+                                            </label>
                                             <!-- <img style="min-width:16px;min-height:16px;box-sizing:unset;box-shadow:none;background:unset;padding:0 6px 0 0;cursor:pointer;" src="chrome-extension://ohcpnigalekghcmgcdcenkpelffpdolg/img/icon16.png" title="Select with ColorPick Eyedropper - See advanced option: &quot;Add ColorPick Eyedropper near input[type=color] fields on websites&quot;" class="colorpick-eyedropper-input-trigger"> -->
                                             <input type="color" class="color_swatch mb-0 reading-color-picker"
                                                 id="guide_color" title="Choose Link Color" value="#363636"
                                                 colorpick-eyedropper-active="true">
-                                            <span class="hexVal" id="guide_hexVal">#363636</span>
+                                            <!-- <span class="hexVal" id="guide_hexVal">#363636</span> -->
                                         </div>
                                         <div
                                             class="edit-middle-section d-flex flex-wrap flex-column justify-content-center align-items-center">
                                             <div id="edit-guide-size "
                                                 class=" d-flex flex-wrap flex-column justify-content-center align-items-center">
                                                 <label for="customRange"
-                                                    class="form-label mb-0 flourish-setting-title">Size:</label>
+                                                    class="form-label mb-0">Size:</label>
                                                 <input type="range" class="form-range guide-size-input" step="5"
                                                     value="8" min="3" max="98" id="guide-size-input">
                                                 <span id="guide-opacity"></span>
@@ -1682,7 +1682,7 @@
                                                 Adjust settings for
                                                 voice, volume, rate,
                                                 and
-                                                pitch</p>
+                                                pitch </p>
 
 
                                         </div><!-- flourish_content -->
@@ -4283,26 +4283,7 @@
                                                     <div style="text-align: center;"><img class="img-fluid"
                                                             src="https://www.floridamemory.com/themes/florida_memory/images/logos/imls_logo_white.png"
                                                             width="270" alt="IMLS"></div>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                        Consectetur
-                                                        sunt laudantium quos molestiae, sint quaerat! Veritatis, ducimus
-                                                        quidem.
-                                                        Tenetur libero expedita animi rerum fugiat tempora repellat in
-                                                        magnam
-                                                        distinctio quo.
-                                                        Cumque minima explicabo neque illum quaerat odit repudiandae
-                                                        perferendis
-                                                        iure laboriosam minus praesentium culpa fugit illo, voluptate
-                                                        alias,
-                                                        totam id! Ut architecto officiis sint ipsa voluptates qui at aut
-                                                        labore!
-                                                        Rem officia distinctio tempore neque cumque temporibus? Tempore
-                                                        tenetur
-                                                        sit, ipsam exercitationem, aliquam consectetur ad sequi dolorem
-                                                        maxime
-                                                        quos labore sint pariatur nulla, accusamus aut doloribus. Ut
-                                                        iste vel
-                                                        exercitationem!</p>
+                                                    <p>Hello my name is troy and i like pancakes! Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!</p>
                                                 </div>
                                             </div>
                                 </div>
