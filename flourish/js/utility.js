@@ -20,6 +20,13 @@ if ("maxTouchPoints" in navigator) {
   }
 }
 
+const triggerEventFunc = (input, value) => {
+  const e = new Event("change");
+  const element = document.querySelector(input)
+  element.value = value;
+  element.dispatchEvent(e);
+}
+
 const makeMagAndMaskWhite = () => {
   document.querySelector('#text-mag-color-4').click()
   document.querySelector('#img-mag-color-4').click()

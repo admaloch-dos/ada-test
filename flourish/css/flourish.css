@@ -22,13 +22,13 @@ body {
 
 
 
-/* #flourish_widget {
+#flourish_widget {
     display: flex;
 }
 
 .flourish_modal_test .modal_content {
     display: block;
-} */
+}
 
 #all-languages-modal-content {
     overflow-x: hidden;
@@ -179,10 +179,13 @@ body {
     padding-right: 0px !important;
 }
 
-@media screen and (min-width:450px) {
+@media screen and (min-width:500px) {
     .modal_content .container-fluid {
         padding-left: 15px !important;
         padding-right: 15px !important;
+    }
+    #flourish-contact-section {
+        margin-bottom: .4rem!important;
     }
 }
 
@@ -286,19 +289,50 @@ body {
     color: '';
 }
 
-
+.flourish_modal_test .modal_body {
+    overflow: auto;
+    height: 96%;
+}
 
 #flourish_widget .flourish-section-container {
     background-color: var(--light-blue);
-    border: var(--dark-blue) solid 1px;
-    border-radius: 10px;
+
+    /* border-radius: 10px; */
     width: 99.5%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 .25rem .5rem .25rem !important;
-    margin-top: .4rem;
+    padding: 0 .25rem !important;
+    /* margin-top: .4rem; */
+}
+
+#modal-container-item {
+    border: var(--dark-blue) solid 1px;
+}
+
+@media screen and (min-width:500px) {
+    #modal-container-item {
+        border: none;
+    }
+
+    #flourish_widget .flourish-section-container {
+        background-color: var(--light-blue);
+        border: var(--dark-blue) solid 1px;
+        border-radius: 10px;
+        width: 99.5%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.5rem .25rem !important;
+        margin-top: .4rem;
+    }
+
+    .flourish_modal_test .modal_body {
+        padding: .5rem 0rem;
+
+    }
 }
 
 @media screen and (min-width:768px) {
@@ -393,9 +427,8 @@ body {
     border-bottom: var(--med-grey) solid 1px !important;
 }
 
-#FontSize_option {
-    padding-bottom: 0 !important;
-}
+
+
 
 @media screen and (min-width:992px) {
     #language-options {
@@ -423,15 +456,17 @@ body {
 } */
 
 #flourish-statement-section {
-    margin: .4rem .1rem .1rem 0.1rem !important;
+    margin: 0rem !important;
+    width: 100%;
+
 }
 
-@media screen and (min-width:992px) {
-    .flourish-sub-section {
-        padding: .5rem;
-        /* background-color: var(--light-blue); */
-    }
+.flourish-sub-section {
+    padding: .5rem !important;
+    /* background-color: var(--light-blue); */
 }
+
+
 
 .goog-te-gadget a {
     display: none !important;
@@ -611,6 +646,7 @@ body {
 
 #flourish-contact-section {
     font-size: 14px;
+
     /* background-color: white!important; */
 }
 
@@ -737,7 +773,7 @@ body {
 
 
 
-@media screen and (min-width:768px) {
+/* @media screen and (min-width:768px) {
 
     #text-selects .flourish_option_title,
     .BaskervilleFont #text-selects .flourish_option_title,
@@ -763,7 +799,7 @@ body {
 
         margin-bottom: 0rem;
     }
-}
+} */
 
 #flourish-logo-icon {
     height: 50px;
@@ -1333,11 +1369,7 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
     } */
 }
 
-.flourish_modal_test .modal_body {
-    padding: .5rem 0rem;
-    overflow: auto;
-    height: 96%;
-}
+
 
 @media screen and (min-width:320px) {
     .flourish_modal_test .modal_content {
@@ -1391,7 +1423,7 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
 @media screen and (min-width:1500px) {
     .flourish_modal_test .modal_content {
         width: 70%;
-        height: 75%;
+        height: 80%;
     }
 }
 
@@ -1545,15 +1577,15 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
     }
 }
 
-#text-selects {
+/* #text-selects {
     padding: 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     /* position: relative; */
 
-}
 
-#LetterSpacing_option,
+
+*/ #LetterSpacing_option,
 #WordSpacing_option,
 #LineHeight_option {
     position: relative;
@@ -1680,11 +1712,12 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
 }
 
 #flourish-contact-info {
-    padding: 1rem;
+    /* padding: 1rem; */
+
     border: var(--dark-blue) solid 2px;
     background-color: white;
     border-radius: 10px;
-    margin: 0 .35rem;
+    /* margin: 0 .35rem; */
     /* padding-top: .4rem; */
 }
 
@@ -1702,7 +1735,13 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
 
 }
 
+#ColorAdjust_option {
+    padding-bottom: .2rem;
+}
 
+#language-options {
+    padding: 1rem 0 !important;
+}
 
 #navigation-selects,
 #photo-filter,
@@ -1711,6 +1750,8 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
     -webkit-border-radius: 10px 10px 0px 0px;
     border-radius: 10px 10px 0px 0px;
 }
+
+
 
 #link-emphasis,
 #color-schemes,
@@ -1817,16 +1858,16 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
 }
 
 /************************************************************ Sitemap ************************************************************/
-#navigation-selects {
-    padding: .4em .25em;
-}
+
 
 #select_page {
     cursor: pointer;
 }
 
-#text-selects {
-    padding-bottom: .4rem;
+@media screen and (min-width:600px) {
+    #text-selects {
+        padding: 0rem !important;
+    }
 }
 
 #text-selects,
@@ -1943,9 +1984,11 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
     width: 100%;
 }
 
-/* .flourish-language-btn-container{
-    max-width: 150px;
-} */
+.flourish-language-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .translate-language-span {
     color: black !important;
@@ -2047,10 +2090,10 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
 }
 
 .flourish-language-btn {
-    padding: .2rem .5rem;
+    padding: .2rem 0rem;
     cursor: pointer;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-top: .5rem;
     border: var(--grey) solid 2px;
     background-color: var(--grey);
     border-radius: 5px;
@@ -2611,9 +2654,9 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
     }
 }
 
-#flourish_widget .modal_body .form-check {
+/* #flourish_widget .modal_body .form-check {
     margin-top: 8px;
-}
+} */
 
 #flourish_widget .modal_body ul li a div.title {
     font-size: 14px;
@@ -2982,7 +3025,7 @@ html.translated-ltr #flourish_widget .modal_body #FontSize_option ul li {
     }
 
     #flourish_widget .modal_body #site-color-presets ul li {
-        height: 57px !important;
+        height: 61px !important;
     }
 
     .fontSizeMedium #flourish_widget .modal_body #FontSize_option ul li {
@@ -3045,7 +3088,7 @@ html.translated-ltr #flourish_widget .modal_body #FontSize_option ul li {
     }
 
     #flourish_widget .modal_body #site-color-presets ul li {
-        height: 61px !important;
+        height: 63px !important;
     }
 }
 
@@ -3731,6 +3774,8 @@ body.Cursor_Enlarge {
 
 @media screen and (min-width:1200px) {
     #flourish_widget .modal_body .color_picker_form .form-group {
+        position: relative;
+        bottom: .5rem;
         width: 130px;
         height: 130px;
     }
@@ -3956,6 +4001,7 @@ body.BaskervilleFont {
 .highcontrast .failed-message-container {
     border: white solid 1px;
 }
+
 .inverted .failed-message-container {
     border: white solid 1px;
     color: white;
@@ -7460,9 +7506,7 @@ html.translated-rtl #item-delete-container {
     margin-bottom: .2rem;
 }
 
-#language-options {
-    padding-top: .5rem !important;
-}
+
 
 #flourish-contact-info {
     margin-top: .5rem;
@@ -7962,12 +8006,21 @@ html.translated-rtl #item-delete-container {
     width: 100%;
 }
 
+#geo-location-section .flourish-language-btn-container {
+    position: relative;
+    bottom: .5rem;
+}
+#geo-location-section #worldwide-accordion .flourish-language-btn-container {
+    position: relative;
+    bottom: 0rem;
+}
+
 .flourish-search-language-btn {
     padding: .1rem 0rem;
     cursor: pointer;
     min-width: 110px !important;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-top: .5rem;
     border: var(--grey) solid 2px;
     background-color: var(--grey);
     border-radius: 5px;
@@ -8039,9 +8092,7 @@ html.translated-rtl #item-delete-container {
     background-color: white !important;
 }
 
-#curr-flourish-language {
-    padding: 0 1rem 1rem 1rem;
-}
+
 
 #curr-flourish-language-btn {
     padding: .3rem 1.3rem;
@@ -8636,11 +8687,11 @@ button:focus {
 .flourish-accordion-content {
     display: none;
     background-color: var(--see-thru);
-    padding-top: 1.2rem;
+    /* padding-top: 1.2rem; */
 }
 
 .flourish-accordion-content h6 {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     color: black !important;
 }
 
@@ -8689,11 +8740,11 @@ button:focus {
 
 #custom-schemes {
     display: none;
-    margin-top: 1.1rem;
+    /* margin-top: 1.1rem; */
 }
 
 #preset-schemes {
-    margin-top: .5rem;
+    margin-top: .1rem;
 }
 
 @media screen and (max-width: 335px) {
@@ -8808,6 +8859,11 @@ button:focus {
 .color_picker_form .hexVal {
     position: relative;
     top: .3rem;
+}
+
+.space-holder {
+    height: .4rem;
+    width: 100%;
 }
 
 #custom-color-pickers .TTS_content {

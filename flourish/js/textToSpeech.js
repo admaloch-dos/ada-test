@@ -82,76 +82,76 @@ const createSpeechItems = () => {
 /***** handler for speech items -- the speech btn and the play/pause/reset all have trigger audio class.. tehse conditionals test whcih one is which *****/
 const speechItemHandler = () => {
   $('div.audio_state .trigger-audio').each(function (index) {
-    
-      $(this).click(function (e) {
-        if ($(this).hasClass('play-pause')) {
-          if (!$(this).hasClass('curr-active-item') && !$(this).hasClass('reset-audio-btn')) {
 
-            resetSpeech()
-            $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/pause.png");
-            $(this).addClass('curr-active-item')
-            $(this).removeClass('inactive-item')
-            $(this).closest('.audio_state').children('.reset-audio-btn').eq(0).removeClass('d-none')
-          }
-          if ($(this).hasClass('audio-playing')) {
+    $(this).click(function (e) {
+      if ($(this).hasClass('play-pause')) {
+        if (!$(this).hasClass('curr-active-item') && !$(this).hasClass('reset-audio-btn')) {
 
-            $(this).removeClass('audio-inactive audio-playing')
-            $(this).addClass('audio-paused')
-            $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/play.png");
-            synth.pause()
-          } else if ($(this).hasClass('audio-inactive')) {
-
-            $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/pause.png");
-            $(this).removeClass('audio-inactive audio-paused')
-            $(this).addClass('audio-playing')
-            synth.cancel();
-            ssu.text = $(this).parent("div.audio_state").prev("p, h1, h2, h3, h4, h5, h6, a, button, span, td, th, label").text();
-            ssu.volume = parseFloat(volumeInput.value / 10);
-            ssu.rate = parseFloat(rateInput.value / 5);
-            ssu.pitch = parseFloat(pitchInput.value / 5 + .01);
-            if (voiceSelect.value) {
-              ssu.voice = speechSynthesis.getVoices().filter(function (voice) {
-                synth.cancel();
-                $(this).removeClass('audio-paused audio-playing')
-                $(this).addClass('audio-inactive ')
-                return voice.name == voiceSelect.value;
-              })[0];
-            }
-            $(this).addClass('audio-playing')
-            synth.speak(ssu);
-            ssu.addEventListener("end", (event) => {
-              synth.cancel();
-              if ($(this).hasClass('curr-active-item')) {
-                $(this).removeClass('audio-paused audio-playing')
-                $(this).addClass('audio-inactive ')
-                $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/play.png");
-              }
-            });
-            let r = setInterval(() => {
-
-              if (!speechSynthesis.speaking) {
-                clearInterval(r);
-              } else {
-                speechSynthesis.pause();
-                speechSynthesis.resume();
-              }
-            }, 14000);
-            console.log(ssu.text)
-          } else if ($(this).hasClass('audio-paused')) {
-
-            $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/pause.png");
-            $(this).removeClass('audio-inactive audio-paused')
-            $(this).addClass('audio-playing')
-            synth.resume()
-          }
-        } else {
-          synth.cancel()
-          $(this).siblings('.play-pause').removeClass('audio-paused audio-playing')
-          $(this).siblings('.play-pause').addClass('audio-inactive')
-          $(this).siblings('.play-pause').children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/play.png");
+          resetSpeech()
+          $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/pause.png");
+          $(this).addClass('curr-active-item')
+          $(this).removeClass('inactive-item')
+          $(this).closest('.audio_state').children('.reset-audio-btn').eq(0).removeClass('d-none')
         }
-        e.stopPropagation()
-      });
+        if ($(this).hasClass('audio-playing')) {
+
+          $(this).removeClass('audio-inactive audio-playing')
+          $(this).addClass('audio-paused')
+          $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/play.png");
+          synth.pause()
+        } else if ($(this).hasClass('audio-inactive')) {
+
+          $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/pause.png");
+          $(this).removeClass('audio-inactive audio-paused')
+          $(this).addClass('audio-playing')
+          synth.cancel();
+          ssu.text = $(this).parent("div.audio_state").prev("p, h1, h2, h3, h4, h5, h6, a, button, span, td, th, label").text();
+          ssu.volume = parseFloat(volumeInput.value / 10);
+          ssu.rate = parseFloat(rateInput.value / 5);
+          ssu.pitch = parseFloat(pitchInput.value / 5 + .01);
+          if (voiceSelect.value) {
+            ssu.voice = speechSynthesis.getVoices().filter(function (voice) {
+              synth.cancel();
+              $(this).removeClass('audio-paused audio-playing')
+              $(this).addClass('audio-inactive ')
+              return voice.name == voiceSelect.value;
+            })[0];
+          }
+          $(this).addClass('audio-playing')
+          synth.speak(ssu);
+          ssu.addEventListener("end", (event) => {
+            synth.cancel();
+            if ($(this).hasClass('curr-active-item')) {
+              $(this).removeClass('audio-paused audio-playing')
+              $(this).addClass('audio-inactive ')
+              $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/play.png");
+            }
+          });
+          let r = setInterval(() => {
+
+            if (!speechSynthesis.speaking || speechSynthesis.paused) {
+              clearInterval(r);
+            } else {
+              speechSynthesis.pause();
+              speechSynthesis.resume();
+            }
+          }, 14000);
+          console.log(ssu.text)
+        } else if ($(this).hasClass('audio-paused')) {
+
+          $(this).children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/pause.png");
+          $(this).removeClass('audio-inactive audio-paused')
+          $(this).addClass('audio-playing')
+          synth.resume()
+        }
+      } else {
+        synth.cancel()
+        $(this).siblings('.play-pause').removeClass('audio-paused audio-playing')
+        $(this).siblings('.play-pause').addClass('audio-inactive')
+        $(this).siblings('.play-pause').children('.trigger-audio-icon').eq(0).attr("src", "./flourish/img/play.png");
+      }
+      e.stopPropagation()
+    });
   });
 }
 

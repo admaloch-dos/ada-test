@@ -50,11 +50,11 @@ function triggerChange(element) {
 const translateWidgetControls = (selectVal, currLanguage) => {
     if (selectVal !== 'en') {
 
-            removeWidgetControls(['google-translate'])
+        removeWidgetControls(['google-translate'])
 
-            widgetItemObj.isTranslated = true
-            $.cookie("translateLanguage", currLanguage, { expires: 30 });
-            setTimeout(()=>{addWidgetControls('google-translate', `Translated to ${currLanguage}`)},500)
+        widgetItemObj.isTranslated = true
+        $.cookie("translateLanguage", currLanguage, { expires: 30 });
+        setTimeout(() => { addWidgetControls('google-translate', `Translated to ${currLanguage}`) }, 500)
 
     } else {
         dismissGoogleTranslate()
@@ -70,11 +70,21 @@ const translatePageHandler = (selector) => {
 
             const selectVal = event.target.value
             const currLanguage = selector.options[selector.selectedIndex].text
-            console.log('currLangueage is',currLanguage)
+
             translateWidgetControls(selectVal, currLanguage)
         });
         document.querySelectorAll('.lang-translate-selector').forEach(btn => {
             btn.addEventListener('click', () => {
+                console.log(btn.id)
+                let voiceList = speechSynthesis.getVoices();
+                console.log(voiceList)
+                voiceList.forEach(voiceItem => {
+                    const slicedId = voiceItem.lang.split("-")[0];
+                    if (voiceItem.lang === btn.id || slicedId === btn.id) {
+                        triggerEventFunc('#voice', voiceItem.name)
+                    }
+                })
+
                 let newSelectVal = btn.id
                 selector.value = newSelectVal
                 triggerChange(selector);
@@ -167,3 +177,7 @@ const translateNotSupported = (item) => {
 }
 
 document.querySelectorAll('.lang-translate-selector').forEach(item => translateNotSupported(item))
+
+
+
+

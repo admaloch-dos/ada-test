@@ -73,6 +73,7 @@ const genSearchBtns = (arr) => {
 let filterParam = 'All'
 document.querySelectorAll('.lang-filter').forEach(btn => {
     btn.addEventListener('click', () => {
+        console.log(btn)
         if (!btn.classList.contains('active')) {
             $("#all-languages-modal-body").scrollTop(0)
             document.querySelectorAll('.lang-filter').forEach(item => item.classList.remove('active'))
@@ -114,7 +115,7 @@ if (hasTouchScreen) {
         document.querySelector(".all-language-modal-search").scrollIntoView();
     });
 }
-var wto;
+var modalSearchTimer;
 const searchLangModalHandler = () => {
 
     const modalSearchInput = document.getElementById('search-lang-modal')
@@ -134,8 +135,8 @@ const searchLangModalHandler = () => {
         $('#no-results-error').css("display", "flex")
     } else {
         $('#no-results-error').hide()
-        clearTimeout(wto);
-        wto = setTimeout(() => resetTextToSpeech(), 500);
+        clearTimeout(modalSearchTimer);
+        modalSearchTimer = setTimeout(() => resetTextToSpeech(), 500);
     }
 
 }

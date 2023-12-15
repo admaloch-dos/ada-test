@@ -2012,3 +2012,5 @@ const worldLanguageData = [
 
 // console.log(languageData[0]["Florish Icon filename"])
 
+const googIds = worldLanguageData.map(x=>x.LanguageCodeGoogleTrans)
+console.log(googIds)

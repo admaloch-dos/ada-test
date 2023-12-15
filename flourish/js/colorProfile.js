@@ -84,9 +84,7 @@ const colorPresetToDefault = () => {
 }
 
 const colorPresetHandler = (currItemId) => {
-  console.log(currItemId)
   const currItemTag = `#${currItemId}`
-  console.log(currItemTag)
   $(currItemTag).closest('li').addClass('active').siblings().removeClass('active');
   document.querySelector(currItemTag).click()
   if (currItemId === 'defaultBackground') {

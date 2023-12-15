@@ -14,11 +14,11 @@
     var voiceList = speechSynthesis.getVoices();
     // Loop through each of the voices.
     voiceList.forEach(function (voice, i) {
-      if (!hasTouchScreen) {
-        if (voice.name !== 'Google US English' && voice.name !== "Microsoft David - English (United States)" && voice.name !== 'Microsoft Zira - English (United States)' && voice.name !== 'Google UK English Male' && voice.name !== 'Google UK English Female') {
-          return
-        }
-      }
+      // if (!hasTouchScreen) {
+      //   if (voice.name !== 'Google US English' && voice.name !== "Microsoft David - English (United States)" && voice.name !== 'Microsoft Zira - English (United States)' && voice.name !== 'Google UK English Male' && voice.name !== 'Google UK English Female') {
+      //     return
+      //   }
+      // }
       // Create a new option element.
       var option = document.createElement('option');
       option.value = voice.name;
