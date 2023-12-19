@@ -22,13 +22,13 @@ body {
 
 
 
-#flourish_widget {
+/* #flourish_widget {
     display: flex;
 }
 
 .flourish_modal_test .modal_content {
     display: block;
-}
+} */
 
 #all-languages-modal-content {
     overflow-x: hidden;

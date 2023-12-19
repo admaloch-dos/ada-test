@@ -62,6 +62,10 @@ const translateWidgetControls = (selectVal, currLanguage) => {
     checkIfWidgetActive()
 }
 
+const russianStyleLangs = ['az', 'be', 'bg', 'kk', 'ky', 'mk', 'mn', 'sr', 'tg', 'tt', 'uk']
+const hindiStyleLanguages = ['bho', 'doi', 'gom', 'mai', 'mr', 'ne', 'sa']
+const indonesianStyleLanguages = ['jv', 'su']
+
 const translatePageHandler = (selector) => {
     if (selector) {
         handleTranslateCookieLoad()
@@ -75,13 +79,29 @@ const translatePageHandler = (selector) => {
         });
         document.querySelectorAll('.lang-translate-selector').forEach(btn => {
             btn.addEventListener('click', () => {
-                console.log(btn.id)
+
                 let voiceList = speechSynthesis.getVoices();
+                console.log(btn.id)
                 console.log(voiceList)
                 voiceList.forEach(voiceItem => {
                     const slicedId = voiceItem.lang.split("-")[0];
                     if (voiceItem.lang === btn.id || slicedId === btn.id) {
                         triggerEventFunc('#voice', voiceItem.name)
+                    }
+                })
+                russianStyleLangs.forEach(lang=>{
+                    if(btn.id === lang) {
+                        triggerEventFunc('#voice', 'Google русский')
+                    }
+                })
+                hindiStyleLanguages.forEach(lang=>{
+                    if(btn.id === lang) {
+                        triggerEventFunc('#voice', 'Google हिन्दी')
+                    }
+                })
+                indonesianStyleLanguages.forEach(lang=>{
+                    if(btn.id === lang) {
+                        triggerEventFunc('#voice', 'Google Bahasa Indonesia')
                     }
                 })
 

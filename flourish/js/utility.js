@@ -1,4 +1,4 @@
-// func to determine if its desktop or touchscreen
+// determine if its desktop or touchscreen
 var hasTouchScreen = false;
 if ("maxTouchPoints" in navigator) {
   hasTouchScreen = navigator.maxTouchPoints > 0;
@@ -20,6 +20,33 @@ if ("maxTouchPoints" in navigator) {
   }
 }
 
+// return the os
+function getOS() {
+  const userAgent = window.navigator.userAgent,
+      platform = window.navigator?.userAgentData?.platform || window.navigator.platform,
+      macosPlatforms = ['macOS', 'Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+      windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+      iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+  let os = null;
+
+  if (macosPlatforms.indexOf(platform) !== -1) {
+    os = 'Mac OS';
+  } else if (iosPlatforms.indexOf(platform) !== -1) {
+    os = 'iOS';
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+    os = 'Windows';
+  } else if (/Android/.test(userAgent)) {
+    os = 'Android';
+  } else if (/Linux/.test(platform)) {
+    os = 'Linux';
+  }
+
+  return os;
+}
+
+
+
+// trigger change with js
 const triggerEventFunc = (input, value) => {
   const e = new Event("change");
   const element = document.querySelector(input)
@@ -42,3 +69,4 @@ const makeMagAndMaskBlack = () => {
   triggerEventFunc('#guide_color', '#000000')
   triggerEventFunc('#reading-mask-opacity', '.6')
 }
+

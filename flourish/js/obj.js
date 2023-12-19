@@ -22,3 +22,7 @@ const voiceList = [
     { voiceURI: 'Google 粤語（香港）', name: 'Google 粤語（香港）', lang: 'zh-HK', localService: false, default: false },
     { voiceURI: 'Google 國語（臺灣）', name: 'Google 國語（臺灣）', lang: 'zh-TW', localService: false, default: false },
 ]
+
+document.querySelector('#кириллица-accordion').querySelectorAll('.flourish-language-btn').forEach(btn=>{
+    console.log(btn.id)
+})
