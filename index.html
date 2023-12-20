@@ -15,6 +15,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -635,7 +636,7 @@
                                 </div><!-- col-12 col-lg-4 Change Background Color-->
                                 <div class="col-12 col-lg-6 d-flex flex-wrap flex-column" id="ColorAdjust_option">
                                     <section class="color_picker_form text-center">
-                                        <div
+                                        <div id="adjust-colors-title"
                                             class="mt-sm-1  section-title adjust-color-title  d-flex flex-wrap justify-content-center flex-column flex-sm-row justify-content-lg-start align-items-center">
                                             <div class="d-flex mb-1 mb-sm-0 justify-content-center align-items-center">
                                                 <img class="img-fluid flourish-icon-style"
@@ -1019,7 +1020,8 @@
                                             <div id="filter-lang-results"
                                                 class="row d-flex  justify-content-center align-items-center mt-md-1 mb-md-4 mt-lg-3">
                                                 <h4 class="mt-0 filter-header">Filter results:&nbsp</h4>
-                                                <div class="filter-btn-container d-flex flex-column flex-md-row flex-sm-wrap">
+                                                <div
+                                                    class="filter-btn-container d-flex flex-column flex-md-row flex-sm-wrap">
                                                     <div id="all-languages-filter" data-info="All"
                                                         class="lang-filter active d-flex justify-content-center align-items-center">
                                                         <img class="filter-icons"
@@ -1421,7 +1423,7 @@
                                                     src="./flourish/img/word-spacing.png"
                                                     alt="Change word spacing icon" />
                                                 <h3 class="flourish_option_title " for="exampleFormControlSelect1">
-                                                     Word
+                                                    Word
                                                     Spacing</h3>
                                             </div>
                                         </div>
@@ -1646,8 +1648,7 @@
                                             class="edit-middle-section d-flex flex-wrap flex-column justify-content-center align-items-center">
                                             <div id="edit-guide-size "
                                                 class=" d-flex flex-wrap flex-column justify-content-center align-items-center">
-                                                <label for="customRange"
-                                                    class="form-label mb-0">Size:</label>
+                                                <label for="customRange" class="form-label mb-0">Size:</label>
                                                 <input type="range" class="form-range guide-size-input" step="5"
                                                     value="8" min="3" max="98" id="guide-size-input">
                                                 <span id="guide-opacity"></span>
@@ -1658,7 +1659,8 @@
                                 </section><!-- col-12 col-lg-4 -->
                             </div><!-- row -->
                             <section class="row d-flex flex-wrap pt-1 flourish-sub-section" id="TTS_option">
-                                <div class="col-12 col-lg-4 d-flex flex-wrap justify-content-center   ">
+                                <div id="trigger-speech"
+                                    class="col-12 col-lg-4 d-flex flex-wrap justify-content-center   ">
                                     <div class="flourish_toggleContainer " id="TTS_click">
                                         <div class="flourish_content text-sm-center text-lg-left">
                                             <div
@@ -1676,7 +1678,8 @@
                                                 </div><!-- flourish_toggle -->
                                             </div>
 
-                                            <p class="description text-center text-lg-left mt-2 mt-lg-0">Read aloud text with settings for
+                                            <p class="description text-center text-lg-left mt-2 mt-lg-0">Read aloud text
+                                                with settings for
                                                 voice, volume, rate,
                                                 and
                                                 pitch </p>
@@ -2063,10 +2066,12 @@
 
                             <ul class="navbar-nav mr-auto" id="Left_Nav">
                                 <li class="nav-item dropdown main-navbar-item">
-                                    <a class="nav-link dropdown-toggle main-navbar-item-title" href="https://www.floridamemory.com/discover/">
+                                    <a class="nav-link dropdown-toggle main-navbar-item-title"
+                                        href="https://www.floridamemory.com/discover/">
                                         Discover
                                     </a>
-                                    <ul class="dropdown-menu backdrop_hover primary-nav-links" aria-labelledby="navbarDropdownMenuLink">
+                                    <ul class="dropdown-menu backdrop_hover primary-nav-links"
+                                        aria-labelledby="navbarDropdownMenuLink">
 
                                         <li class="dropdown-submenu firstLevel" id="photo"><a
                                                 class="dropdown-item dropdown-toggle"
@@ -2277,10 +2282,12 @@
 
 
                                 <li class="nav-item dropdown main-navbar-item">
-                                    <a class="nav-link dropdown-toggle main-navbar-item-title" href="https://www.floridamemory.com/learn/">
+                                    <a class="nav-link dropdown-toggle main-navbar-item-title"
+                                        href="https://www.floridamemory.com/learn/">
                                         Learn
                                     </a>
-                                    <ul class="dropdown-menu backdrop_hover primary-nav-links" aria-labelledby="navbarDropdownMenuLink2">
+                                    <ul class="dropdown-menu backdrop_hover primary-nav-links"
+                                        aria-labelledby="navbarDropdownMenuLink2">
 
                                         <li class="dropdown-submenu firstLevel" id="about_fm"><a
                                                 class="dropdown-item dropdown-toggle"
@@ -2505,10 +2512,12 @@
                                 </li>
 
                                 <li class="nav-item dropdown main-navbar-item" id="share">
-                                    <a class="nav-link dropdown-toggle main-navbar-item-title" href="https://www.floridamemory.com/share/">
+                                    <a class="nav-link dropdown-toggle main-navbar-item-title"
+                                        href="https://www.floridamemory.com/share/">
                                         Share
                                     </a>
-                                    <ul class="dropdown-menu backdrop_hover primary-nav-links" aria-labelledby="navbarDropdownMenuLink3">
+                                    <ul class="dropdown-menu backdrop_hover primary-nav-links"
+                                        aria-labelledby="navbarDropdownMenuLink3">
                                         <li class="dropdown-submenu firstLevel"><a class="dropdown-item"
                                                 href="https://www.floridamemory.com/share/order-info/index.php">Order</a>
                                         </li>
@@ -2590,7 +2599,7 @@
                                     <li class="nav-item collpase_item" data-toggle="collapse" data-target="#resources"
                                         aria-expanded="true"><a class="nav-link">History Day <i
                                                 class="fa fa-caret-down"></i></a>
-                                        <div id="resources" class="collapse show" >
+                                        <div id="resources" class="collapse show">
                                             <ul class="collapse_list">
                                                 <li class="nav-item"><a class="nav-link"
                                                         href="https://www.floridamemory.com/learn/classroom/history-day/">History
@@ -4282,7 +4291,13 @@
                                                     <div style="text-align: center;"><img class="img-fluid"
                                                             src="https://www.floridamemory.com/themes/florida_memory/images/logos/imls_logo_white.png"
                                                             width="270" alt="IMLS"></div>
-                                                    <p>Hello my name is troy and i like pancakes! Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!Hello my name is troy and i like pancakes!</p>
+                                                    <p>Hello my name is troy and i like pancakes! Hello my name is troy
+                                                        and i like pancakes!Hello my name is troy and i like
+                                                        pancakes!Hello my name is troy and i like pancakes!Hello my name
+                                                        is troy and i like pancakes!Hello my name is troy and i like
+                                                        pancakes!Hello my name is troy and i like pancakes!Hello my name
+                                                        is troy and i like pancakes!Hello my name is troy and i like
+                                                        pancakes!Hello my name is troy and i like pancakes!</p>
                                                 </div>
                                             </div>
                                 </div>
@@ -4333,9 +4348,13 @@
 
 
 
+                    <script src="./flourish/js/data.js"></script>
                     <script src="./flourish/js/script.js"></script>
                     <script src="./flourish/js/Utility.js"></script>
                     <script src="./flourish/js/changeIconPlacement.js"></script>
+                    <script src="./flourish/js/edit-speech-synth.js"></script>
+                    <script src="./flourish/js/init-speech-voices.js"></script>
+                    <script src="./flourish/js/textToSpeech.js"></script>
                     <script src="./flourish/js/flourishControls.js"></script>
                     <script src="./flourish/js/displayModal.js"></script>
                     <script src="./flourish/js/handleSubMenu.js"></script>
@@ -4352,9 +4371,7 @@
                     <script src="./flourish/js/photoFilter.js"></script>
                     <script src="./flourish/js/highlightHover.js"></script>
                     <script src="./flourish/js/outlineLinks.js"></script>
-                    <script src="./flourish/js/edit-speech-synth.js"></script>
-                    <script src="./flourish/js/init-speech-voices.js"></script>
-                    <script src="./flourish/js/textToSpeech.js"></script>
+
                     <script src="./flourish/js/keyCommands.js"></script>
                     <script src="./flourish/js/colorProfile.js"></script>
                     <script src="./flourish/js/resetFlourish.js"></script>
