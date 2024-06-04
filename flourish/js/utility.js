@@ -23,10 +23,10 @@ if ("maxTouchPoints" in navigator) {
 // return the os
 function getOS() {
   const userAgent = window.navigator.userAgent,
-      platform = window.navigator?.userAgentData?.platform || window.navigator.platform,
-      macosPlatforms = ['macOS', 'Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-      windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-      iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+    platform = window.navigator?.userAgentData?.platform || window.navigator.platform,
+    macosPlatforms = ['macOS', 'Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+    windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+    iosPlatforms = ['iPhone', 'iPad', 'iPod'];
   let os = null;
 
   if (macosPlatforms.indexOf(platform) !== -1) {
@@ -54,19 +54,7 @@ const triggerEventFunc = (input, value) => {
   element.dispatchEvent(e);
 }
 
-const makeMagAndMaskWhite = () => {
-  document.querySelector('#text-mag-color-4').click()
-  document.querySelector('#img-mag-color-4').click()
-  triggerEventFunc('#mask_color', '#FFFFFF')
-  triggerEventFunc('#guide_color', '#FFFFFF')
-  triggerEventFunc('#reading-mask-opacity', '.7')
-
+function triggerChange(element) {
+  let changeEvent = new Event('change');
+  element.dispatchEvent(changeEvent);
 }
-const makeMagAndMaskBlack = () => {
-  document.querySelector('#text-mag-color-1').click()
-  document.querySelector('#img-mag-color-1').click()
-  triggerEventFunc('#mask_color', '#000000')
-  triggerEventFunc('#guide_color', '#000000')
-  triggerEventFunc('#reading-mask-opacity', '.6')
-}
-
