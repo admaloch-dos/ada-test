@@ -26,6 +26,8 @@
 </ul>
 <h2>Takeaways:</h2>
 <p>This project represents my most significant undertaking to date. Understanding the diverse needs of potential users, including those who are visually impaired, hard of hearing, rely on screen readers, or are color-blind, posed a unique challenge. Throughout the development process, my ability to comprehend and implement features for a diverse user base improved significantly. Additionally, I gained extensive knowledge of web accessibility standards, enabling me to construct websites and applications with inclusivity in mind. Another significant challenge was ensuring the project's modularity for seamless integration into other websites, requiring meticulous testing and debugging.</p>
+<h2>Issues:</h2>
+<p>The language section uses Google Translate API, which has become increasingly unreliable and has an extremely high failure rate, so we are considering alternatives.</p>
 <h2>Current Status:</h2>
 <p>The project is nearing completion. Once finished, it will undergo final testing for bugs/issues before being implemented live on the Florida Memory website. In the future, there are considerations for releasing it as an open-source plugin.</p>
 <p><b>Note:</b> The Florida Department of State prioritizes security, and version control software is not allowed, limiting the visibility of detailed Git history for this project.</p>
