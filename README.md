@@ -13,7 +13,7 @@
   <li><i>Translation:</i> A comprehensive translation section powered by the Google Translate API, allowing users to search by language, region, or script.</li>
   <li><i>Storage:</i> Cookies store all changes for 30 days.</li>
 </ul>
-<h2>Technologies used:</h2>
+<h2>Technologies Used:</h2>
 <ul>
   <li>Javascript</li>
   <li>JQuery</li>
