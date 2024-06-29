@@ -29,7 +29,7 @@
 <h2>Issues:</h2>
 <p>The language section uses Google Translate API, which has become increasingly unreliable and has an extremely high failure rate, so we are considering alternatives.</p>
 <h2>Current Status:</h2>
-<p>The project is currently being reviewed for approval. Once finished, it will undergo final testing for bugs/issues before being implemented live on the Florida Memory website. In the future, there are plans to release it as an open-source plugin.</p>
+<p>The project is currently being reviewed for approval. Once finished, it will undergo final testing for bugs/issues before being implemented live on the Florida Memory website and the sites of other state entities.</p>
 
 <h3>Note:</h3>
 <p> The Florida Department of State prioritizes security, and version control software is not allowed, limiting the visibility of detailed Git history for this project.</p>
