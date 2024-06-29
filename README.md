@@ -1,7 +1,7 @@
 
 <h1>Flourish Accessibility Menu</h1>
 <h2>About this Project:</h2>
-<p>Flourish Accessibility Menu is a custom accessibility menu created for the Florida Memory website. This collaborative effort between my predecessor and me aims to enhance the user experience for individuals facing disabilities that impede their access to our site's content. The menu boasts customizable options, allowing users to control how page content is presented. It also incorporates a suite of tools to facilitate more effective content access. To access the menu, simply click on the ADA icon located at the bottom of the screen. Note that the rest of the page is included for testing purposes and is not part of this project.</p>
+<p>Flourish Accessibility Menu is a custom accessibility menu created for the Florida Memory website. This collaborative effort between my predecessor and I aims to enhance the user experience for individuals facing disabilities that impede their access to our site's content. The menu boasts customizable options, allowing users to control how page content is presented. It also incorporates a suite of tools to facilitate more effective content access. To access the menu, simply click on the ADA icon located at the bottom of the screen. Note that the rest of the page is included for testing purposes and is not part of this project.</p>
 <h2>Features:</h2>
 <ul>
   <li><i>Text:</i> Users can adjust font size, font family, letter spacing, word spacing, and line height.</li>
