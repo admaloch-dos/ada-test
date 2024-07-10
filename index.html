@@ -10,20 +10,28 @@
 
 
     <meta name="theme-color" content="#ffffff">
-    <title>Flourish github</title>
+    <title>Flourish New</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+    <!-- <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha512-tDXPcamuZsWWd6OsKFyH6nAqh/MjZ/5Yk88T5o+aMfygqNFPan1pLyPFAndRzmOWHKT+jSDzWpJv8krj6x1LMA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css"
         integrity="sha512-yn0icVhhm1DyRYA7C3aEwKLwjyoMlwS+qpEjbowLFnMx/+LXqGGhOdLx+I31SG6rOkyt+PL3fzUIrO6Sr/Xv6w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -31,6 +39,8 @@
     <link rel="stylesheet" href="./themes/florida_memory/css/fm_style.css">
     <link rel="stylesheet" href="./flourish/css/flourish.css">
     <link rel="stylesheet" href="./themes/florida_memory/css/header_style.css">
+    <link rel="stylesheet" href="./flourish/css/add-to-index.css">
+
 
 
 
@@ -53,6 +63,9 @@
         <div id="tail"></div>
         <div class="reading-mask" id="top_mask"></div>
         <div class="reading-mask" id="bottom_mask"></div>
+
+        <div class="mb-2" id="google_translate_element" title="Translate Florida Memory">
+        </div>
 
         <div id="flourish-trigger-container">
             <div id="flourish-triggers" class="flourish-triggers item-delete-container-remove ">
@@ -644,7 +657,7 @@
                                                 <h3 class="flourish_option_title text-wrap text-center">Adjust Colors
                                                 </h3>
                                             </div>
-                                            <div class="d-flex justify-content-center">
+                                            <div class="color-settings-btns d-flex justify-content-center">
                                                 <button id="preset-color-btn"
                                                     class="color-section-btn active">Presets</button>
                                                 <button id="custom-color-btn" class="color-section-btn ">Custom</button>
@@ -913,8 +926,7 @@
                                 <div id="flourish-translate-select"
                                     class="flex-wrap justify-content-center align-items-center mb-4 d-none">
 
-                                    <div class="mb-2" id="google_translate_element" title="Translate Florida Memory">
-                                    </div>
+
                                 </div>
 
                                 <div class="language-section-content flex-column align-items-center">
@@ -1020,8 +1032,7 @@
                                             <div id="filter-lang-results"
                                                 class="row d-flex  justify-content-center align-items-center mt-md-1 mb-md-4 mt-lg-3">
                                                 <h4 class="mt-0 filter-header">Filter results:&nbsp</h4>
-                                                <div
-                                                    class="filter-btn-container d-flex flex-column flex-md-row flex-sm-wrap">
+                                                <div class="filter-btn-container d-flex flex-row flex-sm-wrap">
                                                     <div id="all-languages-filter" data-info="All"
                                                         class="lang-filter active d-flex justify-content-center align-items-center">
                                                         <img class="filter-icons"
@@ -1551,15 +1562,15 @@
                                                 </svg>
                                                 <select class=" opacity-value " name="reading-mask-opacity"
                                                     id="reading-mask-opacity">
-                                                    <option value=".2">1</option>
-                                                    <option value=".3">2</option>
-                                                    <option value=".4">3</option>
-                                                    <option value=".5">4</option>
-                                                    <option selected value=".6">5</option>
-                                                    <option value=".7">6</option>
-                                                    <option value=".8">7</option>
-                                                    <option value=".9">8</option>
-                                                    <option value=".99">9</option>
+                                                    <option value=".11">1</option>
+                                                    <option value=".22">2</option>
+                                                    <option value=".33">3</option>
+                                                    <option value=".44">4</option>
+                                                    <option value=".55">5</option>
+                                                    <option selected value=".66">6</option>
+                                                    <option value=".77">7</option>
+                                                    <option value=".88">8</option>
+                                                    <option value="1">9</option>
                                                     <!-- <option value="1">10</option> -->
                                                 </select>
                                                 <svg class="opacity-icons  button-icon plus-icon ml-1"
@@ -4291,13 +4302,7 @@
                                                     <div style="text-align: center;"><img class="img-fluid"
                                                             src="https://www.floridamemory.com/themes/florida_memory/images/logos/imls_logo_white.png"
                                                             width="270" alt="IMLS"></div>
-                                                    <p>Hello my name is troy and i like pancakes! Hello my name is troy
-                                                        and i like pancakes!Hello my name is troy and i like
-                                                        pancakes!Hello my name is troy and i like pancakes!Hello my name
-                                                        is troy and i like pancakes!Hello my name is troy and i like
-                                                        pancakes!Hello my name is troy and i like pancakes!Hello my name
-                                                        is troy and i like pancakes!Hello my name is troy and i like
-                                                        pancakes!Hello my name is troy and i like pancakes!</p>
+
                                                 </div>
                                             </div>
                                 </div>
@@ -4311,76 +4316,78 @@
 
 
 
-
-
-
-
                         </div>
-                    </div>
-
-                    <!-- js plugins -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-                        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-                    <script
-                        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                        integrity="sha512-TqmAh0/sSbwSuVBODEagAoiUIeGRo8u95a41zykGfq5iPkO9oie8IKCgx7yAr1bfiBjZeuapjLgMdp9UMpCVYQ=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <!-- <script src="./flourish/js/popper.min.js"></script> -->
-                    <!-- <script src="./flourish/js/bootstrap.min.js"></script> -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
-                        integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <!-- <script src="./flourish/js/roundslider.min.js"></script> -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js"
-                        integrity="sha512-8GGAq5KYuHWyCNC5v3Ohfh3nmfVejHvZR7xM75AKq5QU7jFSOO/aCcZEKC+2Re4uGe7KL+h24KeZ8CEdd4FRog=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script type="text/javascript"
-                        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                    <!-- custom js files -->
-
-                    <!-- <script src="./flourish/js/flourish.js"></script>
-                    <script src="./flourish/js/language-data.js"></script>
-                    <script src="./flourish/js/state-data.js"></script>
-                    <script src="./flourish/js/language-icons.js"></script> -->
 
 
 
+                        <!-- js plugins -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+                            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+                            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+                        <script
+                            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                            integrity="sha512-TqmAh0/sSbwSuVBODEagAoiUIeGRo8u95a41zykGfq5iPkO9oie8IKCgx7yAr1bfiBjZeuapjLgMdp9UMpCVYQ=="
+                            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                        <!-- <script src="./flourish/js/popper.min.js"></script> -->
+                        <!-- <script src="./flourish/js/bootstrap.min.js"></script> -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
+                            integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
+                            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                        <!-- <script src="./flourish/js/roundslider.min.js"></script> -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js"
+                            integrity="sha512-8GGAq5KYuHWyCNC5v3Ohfh3nmfVejHvZR7xM75AKq5QU7jFSOO/aCcZEKC+2Re4uGe7KL+h24KeZ8CEdd4FRog=="
+                            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
+                            integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
+                            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-                    <script src="./flourish/js/data.js"></script>
-                    <script src="./flourish/js/script.js"></script>
-                    <script src="./flourish/js/Utility.js"></script>
-                    <script src="./flourish/js/changeIconPlacement.js"></script>
-                    <script src="./flourish/js/edit-speech-synth.js"></script>
-                    <script src="./flourish/js/init-speech-voices.js"></script>
-                    <script src="./flourish/js/textToSpeech.js"></script>
-                    <script src="./flourish/js/flourishControls.js"></script>
-                    <script src="./flourish/js/displayModal.js"></script>
-                    <script src="./flourish/js/handleSubMenu.js"></script>
-                    <script src="./flourish/js/customColors.js"></script>
-                    <script src="./flourish/js/colorPresets.js"></script>
-                    <script src="./flourish/js/changeFontType.js"></script>
-                    <script src="./flourish/js/changeCursorSize.js"></script>
-                    <script src="./flourish/js/changeSpacing.js"></script>
-                    <script src="./flourish/js/textMagnify.js"></script>
-                    <script src="./flourish/js/imgMagnify.js"></script>
-                    <script src="./flourish/js/magnifySettings.js"></script>
-                    <script src="./flourish/js/readingMask.js"></script>
-                    <script src="./flourish/js/readingGuide.js"></script>
-                    <script src="./flourish/js/photoFilter.js"></script>
-                    <script src="./flourish/js/highlightHover.js"></script>
-                    <script src="./flourish/js/outlineLinks.js"></script>
 
-                    <script src="./flourish/js/keyCommands.js"></script>
-                    <script src="./flourish/js/colorProfile.js"></script>
-                    <script src="./flourish/js/resetFlourish.js"></script>
-                    <script src="./flourish/js/language-data.js"></script>
-                    <script src="./flourish/js/state-data.js"></script>
-                    <script src="./flourish/js/setupTranslate.js"></script>
-                    <script src="./flourish/js/genLangBtns.js"></script>
-                    <script src="./flourish/js/genLangAccordion.js"></script>
-                    <script src="./flourish/js/resetLangModal.js"></script>
+                        <script src="./flourish/js/script.js"></script>
+                        <script src="./flourish/js/Utility.js"></script>
+
+                        <script src="./flourish/js/translation/language-data.js"></script>
+                        <script src="./flourish/js/translation/state-data.js"></script>
+                        <script src="./flourish/js/translation/setupTranslate.js"></script>
+                        <script src="./flourish/js/translation/genLangBtns.js"></script>
+                        <script src="./flourish/js/translation/mainModalSearch.js"></script>
+                        <script src="./flourish/js/translation/langModal.js"></script>
+                        <script src="./flourish/js/translation/genLangAccordion.js"></script>
+                        <script src="./flourish/js/translation/resetLangModal.js"></script>
+                        <script src="./flourish/js/various-controls/changeIconPlacement.js"></script>
+                        <script src="./flourish/js/text-to-speech/svgVars.js"></script>
+                        <script src="./flourish/js/text-to-speech/speechUtils.js"></script>
+                        <script src="./flourish/js/text-to-speech/edit-speech-synth.js"></script>
+                        <script src="./flourish/js/text-to-speech/init-speech-voices.js"></script>
+                        <script src="./flourish/js/text-to-speech/texttospeech.js"></script>
+                        <script src="./flourish/js/text-to-speech/textToSpeechCookie.js"></script>
+                        <script src="./flourish/js/text-to-speech/audioPlayers.js"></script>
+                        <script src="./flourish/js/various-controls/flourishControls.js"></script>
+                        <script src="./flourish/js/various-controls/displayModal.js"></script>
+                        <script src="./flourish/js/various-controls/handleSubMenu.js"></script>
+                        <script src="./flourish/js/color-profiles/updateMagAndMaskColors.js"></script>
+                        <script src="./flourish/js/color-profiles/customColors.js"></script>
+                        <script src="./flourish/js/color-profiles/colorPresets.js"></script>
+                        <script src="./flourish/js/edit-text/changeFontType.js"></script>
+                        <script src="./flourish/js/edit-text/changeFontSize.js"></script>
+                        <script src="./flourish/js/cursor-size/changeCursorSize.js"></script>
+                        <script src="./flourish/js/edit-text/spacing/changespacing.js"></script>
+                        <script src="./flourish/js/edit-text/spacing/letterSpacing.js"></script>
+                        <script src="./flourish/js/edit-text/spacing/wordSpacing.js"></script>
+                        <script src="./flourish/js/edit-text/spacing/lineHeight.js"></script>
+                        <script src="./flourish/js/magnify/textMagnify.js"></script>
+                        <script src="./flourish/js/magnify/imgMagnify.js"></script>
+                        <script src="./flourish/js/magnify/magnifySettings.js"></script>
+                        <script src="./flourish/js/reading-features/readingMask.js"></script>
+                        <script src="./flourish/js/reading-features/readingGuide.js"></script>
+                        <script src="./flourish/js/color-profiles/photoFilter.js"></script>
+                        <script src="./flourish/js/links/highlightHover.js"></script>
+                        <script src="./flourish/js/links/outlineLinks.js"></script>
+                        <script src="./flourish/js/various-controls/keyCommands.js"></script>
+                        <script src="./flourish/js/color-profiles/colorProfile.js"></script>
+                        <script src="./flourish/js/various-controls/resetFlourish.js"></script>
+
+
 
 
 
