@@ -8,7 +8,7 @@ $(function () {
   })
 })
 
-var popOverSettings = {
+let popOverSettings = {
   placement: 'top',
   container: 'body',
   html: true,

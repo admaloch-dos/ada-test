@@ -1,15 +1,23 @@
-// if ($.cookie('googtrans')) {
-//     setTimeout(() => {
-//         console.log($.cookie('googtrans'))
-//         const cookieLangVal = $.cookie('googtrans')
-//         const filteredVal = cookieLangVal.replace("/en/", "");
-//         const currLanguageItem = worldLanguageData.filter(lang => lang.LanguageCodeGoogleTrans === filteredVal)[0]
-//         const currLanguageText = currLanguageItem.LanguageEnglish
-//         console.log(currLanguageText)
-//         widgetItemObj.isTranslated = true
-//         addWidgetControls('google-translate', `Translated to ${currLanguageText}`)
-//     }, 3000);
-// }
+if ($.cookie('googtrans')) {
+    setTimeout(() => {
+        //   console.log($.cookie('googtrans'))
+
+
+
+        const cookieLangVal = $.cookie('googtrans')
+        const filteredVal = cookieLangVal.replace("/en/", "");
+        document.querySelector('.goog-te-combo').value = filteredVal
+        const currLanguageItem = worldLanguageData.filter(lang => lang.LanguageCodeGoogleTrans === filteredVal)[0]
+        const currLanguageText = currLanguageItem.LanguageEnglish
+        // console.log(currLanguageText)
+        widgetItemObj.isTranslated = true
+        addWidgetControls('google-translate', `Google translate: ${currLanguageText}`)
+        checkIfWidgetActive()
+    }, 500);
+
+
+
+}
 
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
@@ -17,7 +25,7 @@ function googleTranslateElementInit() {
     let langSelector = document.querySelector(".goog-te-combo");
     langSelector.addEventListener("change", function () {
         let lang = langSelector.value;
-        var newurl =
+        let newurl =
             window.location.protocol +
             "//" +
             window.location.host +
@@ -30,7 +38,7 @@ function googleTranslateElementInit() {
 document.addEventListener("DOMContentLoaded", function () {
     (function () {
         // Cookie.erase("googtrans");
-        var googleTranslateScript = document.createElement("script");
+        let googleTranslateScript = document.createElement("script");
         googleTranslateScript.type = "text/javascript";
         googleTranslateScript.async = true;
         googleTranslateScript.src =
@@ -50,15 +58,9 @@ const triggerTranslateSelect = (googTransCode) => {
     setCurrLangBubble(googTransCode)
 }
 
-const widgetDataHandler = () => {
-    removeWidgetControls(['google-translate'])
-    widgetItemObj.isTranslated = true
-    addWidgetControls('google-translate', `Translated to ${currLanguageItem.LanguageEnglish}`)
-}
 
 //in the main modal - current language icon and text
 const setCurrLangBubble = (googTransCode) => {
-
     const currLanguageItem = worldLanguageData.filter(lang => lang.LanguageCodeGoogleTrans === googTransCode)[0]
     const currLangIcon = document.querySelector('#curr-language-icon')
     const currLangText = document.querySelector('#curr-language-text')
@@ -68,6 +70,7 @@ const setCurrLangBubble = (googTransCode) => {
 
 // translate language section ------------------->
 const dismissGoogleTranslate = () => {
+    // console.log('dismiss google trans ran')
     triggerTranslateSelect('en')
     removeWidgetControls(['google-translate'])
     widgetItemObj.isTranslated = false
@@ -79,7 +82,7 @@ const changeSiteLanguage = (googTransCode) => {
     if (googTransCode !== 'en') {
         const currLanguageItem = worldLanguageData.filter(lang => lang.LanguageCodeGoogleTrans === googTransCode)[0]
         removeWidgetControls(['google-translate'])
-        addWidgetControls('google-translate', `Translated to ${currLanguageItem.LanguageEnglish}`)
+        addWidgetControls('google-translate', `Google translate: ${currLanguageItem.LanguageEnglish}`)
         widgetItemObj.isTranslated = true
         triggerTranslateSelect(googTransCode)
     } else {
@@ -106,45 +109,78 @@ const translateNotSupported = (item) => {
         }
     }
 }
-
-
-const russianStyleLangs = ['az', 'be', 'bg', 'kk', 'ky', 'mk', 'mn', 'sr', 'tg', 'tt', 'uk']
-const hindiStyleLanguages = ['bho', 'doi', 'gom', 'mai', 'mr', 'ne', 'sa']
-const indonesianStyleLanguages = ['jv', 'su']
-
 const langBtnClickHandler = () => {
-    document.querySelectorAll('.lang-translate-selector').forEach(btn => {
+    const langTransBtns = document.querySelectorAll('.lang-translate-selector')
+    langTransBtns.forEach(btn => {
+        translateNotSupported(btn)
         btn.addEventListener('click', () => {
-            const googTransLangId = btn.id
-            changeSiteLanguage(googTransLangId)
-            let voiceList = speechSynthesis.getVoices();
-            voiceList.forEach(voiceItem => {
-                const slicedId = voiceItem.lang.split("-")[0];
-                if (voiceItem.lang === googTransLangId || slicedId === googTransLangId) {
-                    triggerEventFunc('#voice', voiceItem.name)
+            let currLang = document.querySelector(".goog-te-combo").value;
+            if (!currLang) currLang = 'en'
+            console.log('curr lang:', currLang, '---', 'btn.id', btn.id)
+            if (currLang !== btn.id) {
+                changeSiteLanguage(btn.id)
+                let newLang = document.querySelector(".goog-te-combo").value;
+                if (currLang !== newLang) {
+                    handleTranslateSpeechVoiceSelect(btn.id)
+                    translateNotSupported(btn)
+                    closeLangModal(btn)
+                    resetMaskOnTranslate()
                 }
-            })
-            russianStyleLangs.forEach(lang => {
-                if (googTransLangId === lang) {
-                    triggerEventFunc('#voice', 'Google русский')
-                }
-            })
-            hindiStyleLanguages.forEach(lang => {
-                if (googTransLangId === lang) {
-                    triggerEventFunc('#voice', 'Google हिन्दी')
-                }
-            })
-            indonesianStyleLanguages.forEach(lang => {
-                if (googTransLangId === lang) {
-                    triggerEventFunc('#voice', 'Google Bahasa Indonesia')
-                }
-            })
-            resetMaskOnTranslate()
-            translateNotSupported(btn)
+            }
         })
     })
 }
 
+const handleTranslateSpeechVoiceSelect = (googTransLangId) => {
+    //search for a compatible voice/accent on site translate
+    let voiceList = speechSynthesis.getVoices();
+    for (const voiceItem of voiceList) {
+        const slicedId = voiceItem.lang.split("-")[0];
+        if (voiceItem.lang === googTransLangId || slicedId === googTransLangId) {
+            triggerEventFunc('#voice', voiceItem.name);
+            return;
+        }
+    }
+    //if no direct connection found - search for closest compatibility
+    const similarLanguageArr = [
+        ['az', 'be', 'bg', 'kk', 'ky', 'mk', 'mn', 'sr', 'tg', 'tt', 'uk'],
+        ['bho', 'doi', 'gom', 'mai', 'mr', 'ne', 'sa'],
+        ['jv', 'su']
+    ]
+
+    const compatibleAccents = ['Google русский', 'Google हिन्दी', 'Google Bahasa Indonesia']
+
+    for (let i = 0; i < similarLanguageArr.length; i++) {
+        const compatibleAccent = compatibleAccents[i]
+        for (let j = 0; j < similarLanguageArr[i].length; j++) {
+            if (googTransLangId === similarLanguageArr[i][j]) {
+                similarLanguageArr[i][j]
+                triggerEventFunc('#voice', compatibleAccent)
+                return;
+            }
+        }
+    }
+    triggerEventFunc('#voice', 'Google US English')
+}
+
+const resetLangModalSettings = () => {
+    const defaultFilterBtn = document.querySelector('#all-languages-filter')
+    defaultFilterBtn.click()
+    const langModalSearchInput = document.querySelector('#search-lang-modal')
+    langModalSearchInput.value = ''
+}
+
+const closeLangModal = (btn) => {
+    const newLang = document.querySelector(".goog-te-combo").value;
+    if (!btn.classList.contains('disable') &&
+        !btn.classList.contains('audio_state'
+        )) {
+        $('#all-languages-modal').modal('hide')
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        }
+    }
+}
 
 
 

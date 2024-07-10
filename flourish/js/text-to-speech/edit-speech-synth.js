@@ -2,9 +2,9 @@
 
 const editSpeechControls = () => {
   // speech edit controls and round slider etc
-  var speechVol = $.cookie("speechVolCookie");
-  var speechRate = $.cookie("speechRateCookie");
-  var speechPitch = $.cookie("speechPitchCookie");
+  let speechVol = $.cookie("speechVolCookie");
+  let speechRate = $.cookie("speechRateCookie");
+  let speechPitch = $.cookie("speechPitchCookie");
 
   const getCookieVal = (cookie) => {
     let value = 5

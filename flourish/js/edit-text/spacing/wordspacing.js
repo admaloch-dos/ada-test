@@ -1,6 +1,6 @@
 //Word Spacing
 $(document).ready(function () {
-    var selectedVal2 = $.cookie("WordSpaceVal");
+    let selectedVal2 = $.cookie("WordSpaceVal");
     if (selectedVal2) {
         $("#word_spacing").val(selectedVal2);
         $("#word_spacing").prop("selected", true);
@@ -8,7 +8,7 @@ $(document).ready(function () {
         // changeIndent(selectedVal2, '10px', '#WordSpacing_option select', '6.5px')
     }
     $("#word_spacing").on("change", function () {
-        var selection2 = $(this).val();
+        let selection2 = $(this).val();
         $(selection2).prop("selected", true);
         $("body p").not('#flourish-widget-main, #flourish-widget-main *, i, div').css("word-spacing", selection2); //Selects everything inside body except flourish modal and header
         $(".Footer").css("#word_spacing", selection2);

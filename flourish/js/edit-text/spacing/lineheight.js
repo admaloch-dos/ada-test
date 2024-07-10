@@ -1,7 +1,7 @@
 //line height
 $(document).ready(function () {
 
-   var selectedVal3 = $.cookie("LinpageHeightVal");
+  let selectedVal3 = $.cookie("LinpageHeightVal");
    if (selectedVal3) {
      $("#line_height").val(selectedVal3);
      $("#line_height").prop("selected", true);
@@ -9,7 +9,7 @@ $(document).ready(function () {
      $(".Footer").css("line-height", selectedVal3);
    }
    $("#line_height").on("change", function () {
-     var selection3 = $(this).val();
+    let selection3 = $(this).val();
      $(selection3).prop("selected", true);
      $("body p").not('#flourish-widget-main, #flourish-widget-main *, i, div').css("line-height", selection3); //Selects everything inside body except flourish modal and header
      $(".Footer").css("line-height", selection3);

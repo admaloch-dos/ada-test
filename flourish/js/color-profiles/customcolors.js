@@ -56,10 +56,10 @@ const getLuminance = (r, g, b) => {
   const RsRGB = r / 255;
   const GsRGB = g / 255;
   const BsRGB = b / 255;
-  var R = (RsRGB <= 0.03928) ? RsRGB / 12.92 : Math.pow((RsRGB + 0.055) / 1.055, 2.4);
-  var G = (GsRGB <= 0.03928) ? GsRGB / 12.92 : Math.pow((GsRGB + 0.055) / 1.055, 2.4);
-  var B = (BsRGB <= 0.03928) ? BsRGB / 12.92 : Math.pow((BsRGB + 0.055) / 1.055, 2.4);
-  var L = 0.2126 * R + 0.7152 * G + 0.0722 * B;
+  const R = (RsRGB <= 0.03928) ? RsRGB / 12.92 : Math.pow((RsRGB + 0.055) / 1.055, 2.4);
+  const G = (GsRGB <= 0.03928) ? GsRGB / 12.92 : Math.pow((GsRGB + 0.055) / 1.055, 2.4);
+  const B = (BsRGB <= 0.03928) ? BsRGB / 12.92 : Math.pow((BsRGB + 0.055) / 1.055, 2.4);
+  const L = 0.2126 * R + 0.7152 * G + 0.0722 * B;
   return L;
 };
 
@@ -69,7 +69,7 @@ const calculateContrast = (L1, L2) => {
 };
 
 const hexToRGB = (hex) => {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? {
     r: parseInt(result[1], 16),
     g: parseInt(result[2], 16),
@@ -236,12 +236,12 @@ const resetColorPicker = () => {
 
 $(document).ready(function () {
   $.fn.cssAsHex = function (colorProp) {
-    var hexDigits = '0123456789abcdef';
+    let hexDigits = '0123456789abcdef';
     function hex(x) {
       return isNaN(x) ? '00' : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
     };
     function rgb2hex(rgb) {
-      var rgbRegex = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+      let rgbRegex = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
       return '#' + hex(rgbRegex[1]) + hex(rgbRegex[2]) + hex(rgbRegex[3]);
     };
     return rgb2hex(this.css(colorProp));
@@ -250,7 +250,7 @@ $(document).ready(function () {
   //BackgroundColor
   $('#background_color').on("change", function () {
     $('body *').not('#flourish-widget-main *').css('background-color', 'none');
-    var background_color = $(this).val()
+    let background_color = $(this).val()
     // $('body').not('a, #flourish_widget, #flourish_widget *, #flourish-triggers, #flourish-triggers *, .translate-language-span, .audio_state *').css('background', background_color, '!important')
     $('body, body *').not('#flourish-widget-main, #flourish-widget-main *, .audio_state *, .curr-active-item *').not('.dropdown-menu, .dropdown-menu *').css('background-color', background_color)
     $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').css('background-color', background_color)
@@ -260,7 +260,7 @@ $(document).ready(function () {
 
     $('#footerFeat_container, .Footer').css('background-color', background_color);
     $('#menudropdown .card-body').css('background-color', background_color);
-    var hexBackgroundColor = $('body').cssAsHex('background-color');
+    let hexBackgroundColor = $('body').cssAsHex('background-color');
     $("#bg_hexVal").html(hexBackgroundColor);
     $.cookie.raw = true; //to bypass the default cookie value which is encoded/decoded when writing/reading
     $.cookie('BackgroundColorCookie', hexBackgroundColor, { expires: 30 });
@@ -272,7 +272,7 @@ $(document).ready(function () {
 
   //TextColor
   $('#text_color').on("change", function () {
-    var text_color = $(this).val()
+    let text_color = $(this).val()
     $('body *').not('#flourish-widget-main, #flourish-widget-main *, a, i').css('color', text_color);
     $('#search-container').css('border', `solid 1px ${text_color}`);
     $('#flourish_widget h2, #flourish_widget h3, #flourish_widget label, .hexVal, .translate-language-span, .flourish-contact-info-p, .headings, .flourish-setting-title, .filter-header, .lang-filter, .flourish-language-btn, .flourish-accordion-header').css('color', 'black');
@@ -285,7 +285,7 @@ $(document).ready(function () {
 
 
 
-    var hexTextColor = $('body *').cssAsHex('color');
+    let hexTextColor = $('body *').cssAsHex('color');
     $("#txt_hexVal").html(hexTextColor);
     $.cookie.raw = true;
     $.cookie('TextColorCookie', hexTextColor, { expires: 30 });
@@ -297,9 +297,9 @@ $(document).ready(function () {
 
   //LinkColor
   $('#link_color').on("change", function () {
-    var link_color = $('body a').css('color');
+    let link_color = $('body a').css('color');
     $('body a, body i').not('#flourish_widget, #flourish_widget *, #flourish-triggers, #flourish-triggers *, .HighlightLinks *, .HighlightHover *, .translate-language-span').css('color', link_color).addClass('flourish-link-style');
-    var hexLinkColor = $('body a').cssAsHex('color');
+    let hexLinkColor = $('body a').cssAsHex('color');
     $("#link_hexVal").html(hexLinkColor);
     $.cookie.raw = true;
     $.cookie('LinkColorCookie', hexLinkColor, { expires: 30 });

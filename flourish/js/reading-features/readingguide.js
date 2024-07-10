@@ -2,7 +2,7 @@
 // reading guide section --------------------->
 $(document).ready(function () {
     $("input.switch-input[type=checkbox]").each(function () {
-      var name = $(this).attr('name');
+      let name = $(this).attr('name');
       if ($.cookie(name) && $.cookie(name) == "true") {
         $(this).prop('checked', $.cookie(name));
         $("body").addClass(name);
@@ -12,7 +12,7 @@ $(document).ready(function () {
       }
     });
     $("input.switch-input[type=checkbox]").change(function () {
-      var name = $(this).attr("name");
+      let name = $(this).attr("name");
       $.cookie(name, $(this).prop('checked'), { expires: 30, })
     });
   });
@@ -52,7 +52,7 @@ $(document).ready(function () {
   // change guide size
   let guideYVal = 8
 
-  var guideSizeCookieVal = $.cookie("readingGuideHeight");
+  let guideSizeCookieVal = $.cookie("readingGuideHeight");
   if (guideSizeCookieVal) {
     guideYVal = guideSizeCookieVal
     $("#guide-size-input").val(guideYVal).change()
@@ -73,7 +73,7 @@ $(document).ready(function () {
     });
   });
 
-  var guideColorCookieVal = $.cookie("readingGuideColor");
+  let guideColorCookieVal = $.cookie("readingGuideColor");
   if (guideColorCookieVal) {
     changeColorPicker(guideColorCookieVal, '#tail', '#guide_hexVal', "#guide_color")
   }

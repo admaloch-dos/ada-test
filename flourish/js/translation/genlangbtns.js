@@ -35,10 +35,11 @@ const genLanguageBtns = (arr, destination) => {
     }
     const flourishLangSearchBtn = document.getElementById('flourish-language-search')
     flourishLangSearchBtn.parentNode.appendChild(flourishLangSearchBtn)
-    langBtnClickHandler()
-    // console.log('lang btn handler ran')
-    console.trace();
+    // langBtnClickHandler()
+
 }
+
+
 
 const stateBtnIconContainer = document.getElementById('flourish-language-presets')
 

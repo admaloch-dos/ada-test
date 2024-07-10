@@ -102,7 +102,6 @@ const addWidgetControls = (item, text) => {
   const widgetList = document.querySelector('#widget-list')
   const doesItemExist = document.querySelector(`li.${item}`)
   if (!doesItemExist) {
-    console.log('widget controls ran', item, text)
     const listItem = document.createElement('li')
     listItem.classList.add(item, 'fade-in', 'close-list-items')
     listItem.innerHTML = `<svg class="close-active-item" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
@@ -113,12 +112,12 @@ const addWidgetControls = (item, text) => {
   }
   let closeItems = document.querySelectorAll('.close-list-items')
   closeItemHandler(closeItems)
+  // console.log('add widget controls ran')
 }
 
 const removeWidgetControls = (itemArr) => {
-  console.log('remove widget ran')
   itemArr.forEach(item => {
-      $(`li.${item}`).remove();
+    $(`li.${item}`).remove();
   });
   checkIfWidgetActive()
 }
@@ -127,14 +126,9 @@ const removeWidgetControls = (itemArr) => {
 const preventHideActiveList = () => {
   const closeListItems = document.querySelectorAll('.close-list-items')
   closeListItems.forEach(item => {
-// console.log(closeListItems.length)
+    // console.log(closeListItems.length)
     item.addEventListener('click', () => {
       const activeItemContainer = document.querySelector('#widget-list')
-      if (item) {
-        console.log('there are still items')
-      } else {
-        console.log('there are no more items')
-      }
     })
   })
 }
@@ -166,13 +160,6 @@ const closeItemHandler = (closeItems) => {
         }
       }
       checkIfWidgetActive()
-
-      if (isWidgetActive) {
-        // $('#toggle-flourish-list, #reset-flourish').show()
-        console.log('there are still active items')
-      } else {
-        console.log('there are no active')
-      }
     })
   })
   preventHideActiveList()

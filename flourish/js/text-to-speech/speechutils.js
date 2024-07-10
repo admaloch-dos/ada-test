@@ -15,7 +15,6 @@ const triggerSpeechToggle = (value) => {
 
 const resetTextToSpeech = () => {
     if (document.body.classList.contains('TTS_click_enabled')) {
-        console.log('full reset clicked')
         $('#ToggleTTS_click').prop('checked', false).trigger('change')
         setTimeout(() => {
             $('#ToggleTTS_click').prop('checked', true).trigger('change')

@@ -60,5 +60,4 @@ const genSearchBtns = (arr) => {
         searchList.append(searchListItem)
     }
     langBtnClickHandler()
-        console.log('lang btn handler ran')
 }

@@ -2,17 +2,17 @@
 // initialize the speech synthesis library
 let ssu;
 let voices;
-var synth = window.speechSynthesis;
-var voiceSelect = document.getElementById('voice');
-var volumeInput = document.querySelector('.volume_selector');
-var rateInput = document.querySelector('.rate_selector');
-var pitchInput = document.querySelector('.pitch_selector');
+let synth = window.speechSynthesis;
+let voiceSelect = document.getElementById('voice');
+let volumeInput = document.querySelector('.volume_selector');
+let rateInput = document.querySelector('.rate_selector');
+let pitchInput = document.querySelector('.pitch_selector');
 
 // Fetch the list of voices and populate the voice options.
 const loadVoices = () => {
   // Fetch the available voices.
   if (document.querySelector('#voice').length === 0) {
-    var voiceList = speechSynthesis.getVoices();
+    let voiceList = speechSynthesis.getVoices();
 
     // console.log(voiceList)
     // Loop through each of the voices.
@@ -30,7 +30,7 @@ const loadVoices = () => {
       //   return
       // }
       // console.log(voiceSelect)
-      var option = document.createElement('option');
+      let option = document.createElement('option');
       option.value = voice.name;
       option.innerHTML = voice.name;
       voiceSelect.appendChild(option);
@@ -38,7 +38,7 @@ const loadVoices = () => {
     });
     // if (document.querySelector('#voice').length === 0) {
     //   voiceList.forEach(function (voice, i) {
-    //     var option = document.createElement('option');
+    //     let option = document.createElement('option');
     //     option.value = voice.name;
     //     option.innerHTML = voice.name;
     //     voiceSelect.appendChild(option);
@@ -67,7 +67,7 @@ $(document).ready(function () {
 $("#voice").on("change", function (e) {
   resetSpeech()
   let currVoice = $('#voice').find(":selected").text();
-  var voiceCookie = $.cookie("speechVoiceCookie");
+  let voiceCookie = $.cookie("speechVoiceCookie");
   $.cookie("voiceCookie", currVoice, { expires: 30 })
 });
 

@@ -1,6 +1,6 @@
 // letter spacing
 $(document).ready(function () {
-    var selectedVal = $.cookie("LetterSpaceVal");
+    let selectedVal = $.cookie("LetterSpaceVal");
     if (selectedVal) {
         $("#letter_spacing").val(selectedVal);
         $("#letter_spacing").prop("selected", true);
@@ -9,7 +9,7 @@ $(document).ready(function () {
         // changeIndent(selectedVal, '10px', '#LetterSpacing_option select'close-active-text, '6.5px')
     }
     $("#letter_spacing").on("change", function () {
-        var selection1 = $(this).val();
+        let selection1 = $(this).val();
 
         $(selection1).prop("selected", true);
         $("body p").not('#flourish-widget-main, #flourish-widget-main *, i, div, .close-active-text').css("letter-spacing", selection1); //Selects everything inside body except flourish modal and header

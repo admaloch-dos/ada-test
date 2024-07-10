@@ -2,7 +2,6 @@
 let filterParam = 'All'
 document.querySelectorAll('.lang-filter').forEach(btn => {
     btn.addEventListener('click', () => {
-        console.log(btn)
         if (!btn.classList.contains('active')) {
             $("#all-languages-modal-body").scrollTop(0)
             document.querySelectorAll('.lang-filter').forEach(item => item.classList.remove('active'))
@@ -12,21 +11,22 @@ document.querySelectorAll('.lang-filter').forEach(btn => {
             filterParam = btn.dataset.info
             if (filterParam === 'ContinentAndRegion') {
                 setGeoLocationResults(worldLanguageData)
-                languageBtnHandler()
+                // languageBtnHandler()
             } else if (filterParam === 'LanguageScriptAutonym') {
                 setLanguageScriptResults(worldLanguageData)
-                languageBtnHandler()
+                // languageBtnHandler()
             } else {
                 setDefaultModal()
             }
             $('#no-results-error').hide()
         }
+        langBtnClickHandler()
     })
 })
 
 const languageBtnHandler = () => {
     document.querySelectorAll('.lang-translate-selector').forEach(item => {
-        translateNotSupported(item)
+        // translateNotSupported(item)
         item.addEventListener('click', () => {
             if (!item.classList.contains('disable') && !item.classList.contains('audio_state')) {
                 $('#all-languages-modal').modal('hide')
@@ -36,9 +36,6 @@ const languageBtnHandler = () => {
             }
         })
     })
-
-
-
 }
 
 if (hasTouchScreen) {
@@ -48,7 +45,7 @@ if (hasTouchScreen) {
 }
 
 //search for main
-var modalSearchTimer;
+let modalSearchTimer;
 const searchLangModalHandler = () => {
     const modalSearchInput = document.getElementById('search-lang-modal')
     let searchTerm = (modalSearchInput.value).trim();
@@ -62,7 +59,7 @@ const searchLangModalHandler = () => {
     } else {
         setLanguageScriptResults(filteredSearchArr)
     }
-    languageBtnHandler()
+    // languageBtnHandler()
     if (filteredSearchArr.length === 0) {
         $('#no-results-error').css("display", "flex")
     } else {
@@ -70,22 +67,10 @@ const searchLangModalHandler = () => {
         clearTimeout(modalSearchTimer);
         modalSearchTimer = setTimeout(() => resetTextToSpeech(), 500);
     }
+    langBtnClickHandler()
 
 }
 
-
-
-// var timeoutId = 0;
-// document.getElementById('search-lang-modal').addEventListener('input', function (evt) {
-//     clearTimeout(timeoutId);
-//     timeoutId = setTimeout(resetTextToSpeech, 600);
-// })
-
-
-
-$('#search-lang-modal').change(function () {
-    console.log('this ran')
-});
 
 // generate an array of results based on search input
 const genFilteredLangResults = (searchInput) => {
@@ -115,11 +100,11 @@ const setDefaultModal = () => {
     presetsRow.id = "flourish-all-language-presets"
     modalBody.append(presetsRow)
     genLanguageBtns(worldLanguageData, presetsRow)
-    languageBtnHandler()
+    // languageBtnHandler()
 }
-document.querySelector('#flourish-more-languages-btn').addEventListener('click', () =>{
-   setDefaultModal()
-   document.body.style.overflow = 'hidden';
+document.querySelector('#flourish-more-languages-btn').addEventListener('click', () => {
+    setDefaultModal()
+    document.body.style.overflow = 'hidden';
 
 })
 
