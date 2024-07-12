@@ -109,10 +109,13 @@
         </div>
 
         <!-- The Modal -->
-        <div id="flourish_widget" class="flourish_modal_test" aria-labelledby="flourish_widget" aria-hidden="true">
+        <div id="flourish_widget" class="flourish_modal_background" aria-labelledby="flourish_widget"
+            aria-hidden="true">
+
             <!-- Modal content -->
             <main id="flourish-modal-content" class="modal_content">
-                <header class="modal_header">
+<div class="flourish-modal-container d-flex justify-content-center flex-column align-items-center">
+      <header class="modal_header">
                     <img id="flourish-logo-icon" class="img-fluid flourish-icon-style mr-2"
                         src="./flourish/img/flourish-logo-square-sm-white-text.png" alt="Flourish logo icon" />
                     <div class="row flourish-header-row">
@@ -591,7 +594,7 @@
                                 </section><!-- col-12 col-lg-4 -->
                             </div>
                             <div id="color-schemes" class="row flourish-sub-section">
-                                <div class="col-12 col-lg-6  " id="color-scheme-presets">
+                                <div class="col-12 col-md-6  " id="color-scheme-presets">
                                     <section class="bg_form " id="site-color-presets">
                                         <div
                                             class="section-title d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center ">
@@ -647,7 +650,7 @@
                                         </div><!-- form check -->
                                     </section><!-- bg_form -->
                                 </div><!-- col-12 col-lg-4 Change Background Color-->
-                                <div class="col-12 col-lg-6 d-flex flex-wrap flex-column" id="ColorAdjust_option">
+                                <div class="col-12 col-md-6 d-flex flex-wrap flex-column" id="ColorAdjust_option">
                                     <section class="color_picker_form text-center">
                                         <div id="adjust-colors-title"
                                             class="mt-sm-1  section-title adjust-color-title  d-flex flex-wrap justify-content-center flex-column flex-sm-row justify-content-lg-start align-items-center">
@@ -1900,9 +1903,13 @@
                         </footer><!-- row -->
 
                     </div><!-- container fluid -->
+
                 </div><!-- modal_body -->
+
+</div>
+
             </main><!-- modal_content -->
-        </div><!-- id="flourish_widget" class="flourish_modal_test" -->
+        </div><!-- id="flourish_widget" class="flourish_modal_background" -->
     </div>
 
 
@@ -2002,6 +2009,20 @@
             <div class="row d-none d-lg-block" id="header_links_container">
                 <div class="col-sm-12 d-flex justify-content-end">
                     <ul class="nav mr-3 mb-4">
+                        <li class="translate-container">
+
+                            <div class="translate-list-item">
+
+                                <img id="translate-icon" src="./flourish/img/language/eng-min.png" alt="curr-language-icon"
+                                    class="current-language-icon top-lang-icon mr-1"  data-trigger="hover" data-toggle="popover-main" data-placement="bottom"
+                                    data-content="View translation menu">
+                            </div>
+                            <img onclick="dismissGoogleTranslate()" src="./flourish/img/reset.png" alt=""
+                                class="main-reset-icon d-none"  data-trigger="hover" data-toggle="popover-main"
+                                data-placement="bottom" data-content="Turn off translation">
+
+
+                        </li>
                         <li class="nav-item radio_program"><a
                                 href="https://www.floridamemory.com/discover/audio/radio/"><img
                                     src="https://www.floridamemory.com/fpc/memory/audio/images/radio_logo.png"
@@ -4349,11 +4370,13 @@
                         <script src="./flourish/js/translation/language-data.js"></script>
                         <script src="./flourish/js/translation/state-data.js"></script>
                         <script src="./flourish/js/translation/setupTranslate.js"></script>
+                        <script src="./flourish/js/translation/mainTranslate.js"></script>
                         <script src="./flourish/js/translation/genLangBtns.js"></script>
                         <script src="./flourish/js/translation/mainModalSearch.js"></script>
                         <script src="./flourish/js/translation/langModal.js"></script>
                         <script src="./flourish/js/translation/genLangAccordion.js"></script>
                         <script src="./flourish/js/translation/resetLangModal.js"></script>
+                        <script src="./flourish/js/translation/translate-icon.js"></script>
                         <script src="./flourish/js/various-controls/changeIconPlacement.js"></script>
                         <script src="./flourish/js/text-to-speech/svgVars.js"></script>
                         <script src="./flourish/js/text-to-speech/speechUtils.js"></script>
