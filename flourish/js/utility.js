@@ -58,3 +58,7 @@ function triggerChange(element) {
   let changeEvent = new Event('change');
   element.dispatchEvent(changeEvent);
 }
+
+const scrollFunc = ( destination, origin = 'html, body', offset = 0, time = 400) => {
+  $(origin).animate({ scrollTop: $(destination).offset().top - offset }, time);
+}

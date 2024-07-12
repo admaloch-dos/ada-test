@@ -124,7 +124,7 @@ const onInputChange = (e) => {
   $('.SearchForm .input-group .input-group-append #submit_search').css('color', cache.textColor.value);
   $('#footerFeat_container, .Footer').css('color', cache.textColor.value);
 
-  $('body').not('[class="flourish_modal_test"]').css('background-color', cache.bgColor.value);
+  $('body').not('[class="flourish_modal_background"]').css('background-color', cache.bgColor.value);
   $('#Scroll_btn').attr('style', 'background-color: ' + cache.bgColor.value);
   $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').attr('style', 'background-color: ' + cache.bgColor.value);
   $('#footerFeat_container, .Footer').css('background-color', cache.bgColor.value);

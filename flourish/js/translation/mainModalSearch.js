@@ -23,8 +23,13 @@ const langKeySearchHandler = () => {
     }
     document.querySelectorAll('.search-list-item').forEach(item => {
         translateNotSupported(item)
+        let currLang = document.querySelector(".goog-te-combo").value;
         item.addEventListener('click', () => {
-            if (!item.classList.contains('disable')) {
+            let newLang = document.querySelector(".goog-te-combo").value;
+            if (!item.classList.contains('disable') &&
+                newLang &&
+                currLang !== newLang) {
+                    console.log(currLang, newLang)
                 $('.search-list').hide()
                 langSearchInput.value = ''
             }

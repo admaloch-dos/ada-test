@@ -21,9 +21,9 @@ const displayModal = () => {
   }
 
   let flourish_widget = document.getElementById("flourish_widget");
-  let Openflourish_widget = document.getElementById("flourish_icon");
+  let toggleFlourishIcon = document.getElementById("flourish_icon");
   let Closeflourish_widget = document.getElementsByClassName("flourish_close")[0];
-  Openflourish_widget.onclick = function () {
+  toggleFlourishIcon.onclick = function () {
     displayModal()
   }
 
