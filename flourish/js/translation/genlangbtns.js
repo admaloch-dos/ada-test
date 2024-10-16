@@ -39,14 +39,7 @@ const genLanguageBtns = (arr, destination) => {
 
 }
 
-
-
 const stateBtnIconContainer = document.getElementById('flourish-language-presets')
 
 genLanguageBtns(genCurrStateFullData(), stateBtnIconContainer)
-
-
-
-// document.querySelectorAll('.lang-translate-selector').forEach(item => translateNotSupported(item))
-
 

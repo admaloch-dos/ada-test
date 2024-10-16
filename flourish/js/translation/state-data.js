@@ -53,4 +53,3 @@ const usStatesLanguagesData = [
     { languages: ["eng", "spa", "zh-CN", "deu", "tgl", "fra", "kor", "vie", "ita", "rus", "ind", "jpn", "nep", "fas", "guj", "nav"], state: "Wyoming" }
 ]
 
-

@@ -2,14 +2,13 @@
 // reset modal ----------------------------->
 const resetflourishModal = () => {
   const hasTrueValues = Object.values(widgetItemObj).some(val => val === true)
-  if(!hasTrueValues) return;
+  if (!hasTrueValues) return;
 
   const { isHighlighted, isOutlined, isTextMag, isImgMag, isFontBig, isFontChanged, isCursorBig, isLineHeightChanged, isWordSpaceChanged, isLetterSpaceChanged, isDarkContrast, isDesaturated, isInverted, isHighSat, isLowSat, isTextColorChanged, isBackColorChanged, isLinkColorChanged, isPhotoSens, isReadingMask, isReadingGuide, isSpeech, isDyslexicFont, isBaskervilleFont, isTranslated
   } = widgetItemObj;
 
   const isBodyColorChanged = isTextColorChanged || isBackColorChanged || isLinkColorChanged
   const isPresetColorChanged = isDarkContrast || isDesaturated || isInverted || isHighSat || isLowSat
-
 
   if (isTextMag) {
     isTextMag && $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
@@ -51,7 +50,6 @@ let resetIcon = document.getElementById('reset-flourish')
 resetIcon.addEventListener('click', () => {
   resetflourishModal()
 })
-
 
 //   {
 //     "isHighlighted": false,

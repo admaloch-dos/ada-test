@@ -39,7 +39,6 @@ const removeAllCookies = () => {
   }
 }
 
-
 // reset widgetItemObj on cookie load
 const isCookieActive = (input, value) => {
   if (input && input !== value) {
@@ -77,8 +76,6 @@ const areCookiesSet = () => {
   return updateCookies
 }
 widgetItemObj = areCookiesSet()
-
-
 
 // check if widget items eval to true if so  fade in helper box
 const checkIfWidgetActive = () => {
@@ -122,20 +119,11 @@ const removeWidgetControls = (itemArr) => {
   checkIfWidgetActive()
 }
 
-// sometimes when you click to delete active list items it hides the sub menu
-const preventHideActiveList = () => {
-  const closeListItems = document.querySelectorAll('.close-list-items')
-  closeListItems.forEach(item => {
-    // console.log(closeListItems.length)
-    item.addEventListener('click', () => {
-      const activeItemContainer = document.querySelector('#widget-list')
-    })
-  })
-}
+
 
 const closeItemHandler = (closeItems) => {
   closeItems.forEach(item => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener('click', () => {
       item.classList.contains('ToggleHighlightHover') && $('#ToggleHighlightHover').prop('checked', false).trigger('change')
       item.classList.contains('ToggleHighlightLinks') && $('#ToggleHighlightLinks').prop('checked', false).trigger('change')
       item.classList.contains('ToggleTextMagnifier') && $('#ToggleTextMagnifier').prop('checked', false).trigger('change')
@@ -160,9 +148,12 @@ const closeItemHandler = (closeItems) => {
         }
       }
       checkIfWidgetActive()
+      const remainingItems = document.querySelectorAll('.close-list-items');
+      if (remainingItems.length === 0) {
+        removeDeleteContainer()
+      }
     })
   })
-  preventHideActiveList()
 }
 
 const addWidgetControlsOnLoad = () => {
@@ -191,6 +182,4 @@ const addWidgetControlsOnLoad = () => {
   widgetItemObj.isCursorBig && addWidgetControls('Cursor_Enlarge_option', 'Change cursor')
 }
 addWidgetControlsOnLoad()
-
-
 

@@ -19,3 +19,4 @@ let popOverSettings = {
 }
 
 $('body').popover(popOverSettings);
+

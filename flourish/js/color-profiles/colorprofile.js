@@ -54,9 +54,6 @@ const makeColorPresetsFalse = (presetArr) => {
   }
 }
 
-
-
-
 const disableColorPicker = () => {
   $('#DarkContrastBG_option').removeClass('disable-colors')
   $('#DesaturateBG_option').removeClass('disable-colors')

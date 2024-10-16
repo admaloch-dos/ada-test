@@ -79,8 +79,6 @@ const resetVoiceDefault = () => {
   }
 }
 
-
-
 setTimeout(() => {
   if ($.cookie("voiceCookie")) {
     let cookieValue = $.cookie("voiceCookie")

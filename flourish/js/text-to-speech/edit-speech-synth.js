@@ -39,7 +39,6 @@ const editSpeechControls = () => {
     }
   });
 
-
   $("#rate").roundSlider({
     sliderType: "min-range",
     radius: 60,
@@ -73,8 +72,6 @@ const editSpeechControls = () => {
       updateSpeechCookies('speechPitch', e.value)
     }
   });
-
-
 
   // plus/minus for vol/rate/pitch input
   const speechIcon = document.querySelectorAll('.speech-icon')

@@ -39,10 +39,16 @@ document.querySelectorAll('.flourish-popover-item').forEach(item => {
 })
 
 // item delete container - close on offscreen click
+// item delete container - close on offscreen click
+// item delete container - close on offscreen click
 $('body').click(function (event) {
+  // Check if the toggle widget is active
   if (toggleWidgetList.classList.contains('show-active-list')) {
-    if (!$(event.target).closest('.item-delete-container-remove').length && !$(event.target).is('.item-delete-container-remove')) {
-      removeDeleteContainer()
+    // Check if the clicked target is NOT within the item-delete-container-remove class or its children
+    if (!$(event.target).closest('.close-list-items').length && !$(event.target).closest('#toggle-flourish-list-container').length) {
+      console.log('close container')
+      removeDeleteContainer();
     }
   }
 });
+

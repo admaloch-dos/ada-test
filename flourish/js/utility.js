@@ -44,8 +44,6 @@ function getOS() {
   return os;
 }
 
-
-
 // trigger change with js
 const triggerEventFunc = (input, value) => {
   const e = new Event("change");
@@ -59,6 +57,6 @@ function triggerChange(element) {
   element.dispatchEvent(changeEvent);
 }
 
-const scrollFunc = ( destination, origin = 'html, body', offset = 0, time = 400) => {
+const scrollFunc = (destination, origin = 'html, body', offset = 0, time = 400) => {
   $(origin).animate({ scrollTop: $(destination).offset().top - offset }, time);
 }

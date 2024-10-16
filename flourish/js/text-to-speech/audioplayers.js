@@ -86,8 +86,6 @@ const speechItemHandler = () => {
     });
 }
 
-
-
 const initAudioHandler = (item) => {
     console.log('init audio ran')
     resetCurrActiveItem()
@@ -111,8 +109,6 @@ const startAudioBtns = (item) => {
     $(item).children('.trigger-audio-icon').first().html(pauseAudioIcon);
     $(item).removeClass('audio-inactive audio-paused').addClass('audio-playing')
 }
-
-
 
 const forceSpeechInterval = (item) => {
     // on chrome speechSynthesis has a bug where it stops playing if the passage is longer than 15 seconds

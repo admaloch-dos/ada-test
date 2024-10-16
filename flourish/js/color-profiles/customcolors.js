@@ -257,7 +257,6 @@ $(document).ready(function () {
     $('#Scroll_btn').css('background-color', background_color)
     $('.second-nav li, #menuTitle').css('background-color', background_color)
 
-
     $('#footerFeat_container, .Footer').css('background-color', background_color);
     $('#menudropdown .card-body').css('background-color', background_color);
     let hexBackgroundColor = $('body').cssAsHex('background-color');
@@ -281,9 +280,6 @@ $(document).ready(function () {
     $('#footerFeat_container, .Footer').css({ 'color': text_color, 'border-top': `1px solid ${text_color}` });
     $('#menudropdown .card-body').css('border', `1px solid ${text_color}`);
     $('.second-nav h6').css('color', text_color)
-
-
-
 
     let hexTextColor = $('body *').cssAsHex('color');
     $("#txt_hexVal").html(hexTextColor);
@@ -316,9 +312,6 @@ $(document).ready(function () {
     })
   });
 
-
-
-
   if ($.cookie('LinkColorCookie') != undefined) {
     setCookieColors('LinkColorCookie', '#link_color', "#link_hexVal")
   }
@@ -332,8 +325,6 @@ const setCookieColors = (cookie, input, hex) => {
   $(hex).html(hexValue);
   $.cookie.raw = true;
 }
-
-
 
 document.querySelectorAll('.custom-color-input').forEach(item => {
   item.addEventListener('click', () => {
@@ -350,6 +341,4 @@ setTimeout(() => {
 
   });
 }, 500)
-
-
 

@@ -426,7 +426,7 @@ const worldLanguageData = [
     WorldwideUse: "Worldwide",
     Continent: "Europe",
     ContinentAndRegion: "Southwestern Europe",
-    FlorishIconfilename: "spa-419-min.png"
+    FlorishIconfilename: "spa-min.png"
   },
   {
     LanguageCodeGoogleTrans: "et",
