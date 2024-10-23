@@ -25,7 +25,7 @@
   <li>Bootstrap</li>
 </ul>
 <h2>Takeaways:</h2>
-<p>This project represents my most significant undertaking to date. Understanding the diverse needs of potential users, including those who are visually impaired, hard of hearing, rely on screen readers, or are color-blind, posed a unique challenge. Throughout the development process, my ability to comprehend and implement features for a diverse user base improved significantly. Additionally, I gained extensive knowledge of web accessibility standards, enabling me to construct websites and applications with inclusivity in mind. Another significant challenge was ensuring the project's modularity for seamless integration into other websites, requiring meticulous testing and debugging.</p>
+<p>Understanding the diverse needs of potential users, including those who are visually impaired, hard of hearing, rely on screen readers, or are color-blind, posed a unique challenge. Throughout the development process, my ability to comprehend and implement features for a diverse user base improved significantly. Additionally, I gained extensive knowledge of web accessibility standards, enabling me to construct websites and applications with inclusivity in mind. Another significant challenge was ensuring the project's modularity for seamless integration into other websites, requiring meticulous testing and debugging.</p>
 
 <h2>Current Status:</h2>
 <p>The project is currently being reviewed for approval. Once finished, it will undergo final testing for bugs/issues before being implemented live on the Florida Memory website and the sites of other state entities.</p>
