@@ -255,7 +255,7 @@ $(document).ready(function () {
     $('body, body *').not('#flourish-widget-main, #flourish-widget-main *, .audio_state *, .curr-active-item *').not('.dropdown-menu, .dropdown-menu *').css('background-color', background_color)
     $('#navContainer, #navContainer #main_navbar .dropdown-menu.backdrop_hover, #navContainer  #main_navbar .dropdown-menu > .dropdown-submenu.firstLevel').css('background-color', background_color)
     $('#Scroll_btn').css('background-color', background_color)
-    $('.second-nav li, #menuTitle').css('background-color', background_color)
+    $('.second-nav li, .menuTitle').css('background-color', background_color)
 
     $('#footerFeat_container, .Footer').css('background-color', background_color);
     $('#menudropdown .card-body').css('background-color', background_color);

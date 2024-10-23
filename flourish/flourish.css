@@ -261,7 +261,7 @@ body {
     border-radius: 0;
 }
 
-.flourish-modal-container{
+.flourish-modal-container {
     width: 100%;
     height: 100%;
     max-height: 100vh;
@@ -330,7 +330,7 @@ body {
 
     .flourish_modal_background .modal_body {
         padding: .5rem 0rem;
-border-radius: 0 0 10px 10px;
+        border-radius: 0 0 10px 10px;
     }
 }
 
@@ -489,7 +489,8 @@ border-radius: 0 0 10px 10px;
     width: 100%;
     height: 100%;
     height: auto;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto;
+    /* Center horizontally */
 
 }
 
@@ -500,6 +501,7 @@ border-radius: 0 0 10px 10px;
         max-width: 1100px;
     }
 }
+
 @media screen and (min-width:1700px) {
     .flourish_modal_background .modal_content {
         max-width: 1200px;
@@ -3189,7 +3191,7 @@ html.translated-ltr #flourish_widget .modal_body #FontSize_option ul li {
         margin-top: 12px;
     }
 
-   #flourish-widget-main .title {
+    #flourish-widget-main .title {
         font-size: 1.5rem;
     }
 }
@@ -3829,7 +3831,7 @@ body.BaskervilleFont {
     background-color: white;
 }
 
-.highcontrast #menuTitle {
+.highcontrast .menuTitle {
     background-color: #212529 !important;
 }
 
@@ -4237,7 +4239,7 @@ body.inverted {
     filter: invert(100%);
 }
 
-.inverted .mega #menuTitle {
+.inverted .mega .menuTitle {
     filter: invert(100%);
     background-color: #525252 !important;
 }
@@ -4746,7 +4748,7 @@ body.inverted {
     text-shadow: none !important;
 }
 
-.desaturated #navContainer .dropdown-submenu .mega #menuTitle {
+.desaturated #navContainer .dropdown-submenu .mega .menuTitle {
     background-color: #5d5d5d !important;
 }
 
@@ -4762,21 +4764,21 @@ body.inverted {
 }
 
 .desaturated #navContainer .dropdown-submenu .mega a.dropdown-item,
-.desaturated #navContainer .dropdown-submenu .mega #menuTitle a {
+.desaturated #navContainer .dropdown-submenu .mega .menuTitle a {
     color: #fff !important;
 }
 
 .desaturated.HighlightLinks #navContainer .dropdown-submenu .mega a.dropdown-item,
-.desaturated.HighlightLinks #navContainer .dropdown-submenu .mega #menuTitle a,
+.desaturated.HighlightLinks #navContainer .dropdown-submenu .mega .menuTitle a,
 .inverted.HighlightLinks #navContainer .dropdown-submenu .mega a.dropdown-item,
-.inverted.HighlightLinks #navContainer .dropdown-submenu .mega #menuTitle a {
+.inverted.HighlightLinks #navContainer .dropdown-submenu .mega .menuTitle a {
     color: #000 !important;
 }
 
 .desaturated.HighlightLinks.HighlightHover #navContainer .dropdown-submenu .mega a.dropdown-item:hover,
-.desaturated.HighlightLinks.HighlightHover #navContainer .dropdown-submenu .mega #menuTitle a:hover,
+.desaturated.HighlightLinks.HighlightHover #navContainer .dropdown-submenu .mega .menuTitle a:hover,
 .inverted.HighlightLinks.HighlightHover #navContainer .dropdown-submenu .mega a.dropdown-item:hover,
-.inverted.HighlightLinks.HighlightHover #navContainer .dropdown-submenu .mega #menuTitle a:hover {
+.inverted.HighlightLinks.HighlightHover #navContainer .dropdown-submenu .mega .menuTitle a:hover {
     color: #fff !important;
 }
 
@@ -5123,9 +5125,10 @@ body.inverted {
 }
 
 /************************************** HIGHCONTRAST SETTINGS ***********************************/
+body.highcontrast,
 body.highcontrast *:not(#flourish-widget-main *, .interactive-map *, .disable-flourish *) {
     color: white !important;
-    background-color: #151515;
+    background-color: #151515 !important;
 }
 
 .highcontrast a {
@@ -7315,7 +7318,7 @@ html.translated-rtl #item-delete-container {
     background-color: var(--dark-blue) !important;
     color: white !important;
     font-size: .8rem;
-    margin: 0!important;
+    margin: 0 !important;
 }
 
 #flourish-statement-section a {
@@ -7457,7 +7460,7 @@ html.translated-rtl #item-delete-container {
     transform: translate(0px, -10px);
 }
 
-#menuTitle .audio_state {
+.menuTitle .audio_state {
     left: .3rem !important;
 }
 
@@ -8075,7 +8078,7 @@ section {
 
 .search-item-info p {
     font-size: 12px;
-padding: .2rem 0;
+    padding: .2rem 0;
     margin-top: 0.5rem;
     /* font-weight: 600; */
     /* opacity: 0.6; */
@@ -8676,15 +8679,16 @@ button:focus {
 }
 
 .translate-list-item img {
-cursor: pointer;
+    cursor: pointer;
     width: 20px;
     transition: .3s ease-in-out all;
 
 }
-.translate-list-item img:hover {
-transform: scale(1.2);
 
-/* opacity: .7; */
+.translate-list-item img:hover {
+    transform: scale(1.2);
+
+    /* opacity: .7; */
 }
 
 .translate-list-item span {
@@ -8706,4 +8710,4 @@ transform: scale(1.2);
 #ttsInstructions {
     position: absolute;
     left: -9999px;
-  }
+}
