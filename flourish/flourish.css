@@ -3636,9 +3636,13 @@ body.Cursor_Enlarge {
 .TextMagnifier h4,
 .TextMagnifier h5,
 .TextMagnifier h6,
-.TextMagnifier a {
+.TextMagnifier span,
+.TextMagnifier a,
+.TextMagnifier td,
+.TextMagnifier figcaption {
     cursor: zoom-in;
 }
+
 
 .Cursor_Enlarge.TextMagnifier p,
 .Cursor_Enlarge.TextMagnifier h1,
