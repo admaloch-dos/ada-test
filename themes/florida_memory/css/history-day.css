@@ -482,3 +482,13 @@ left: 0; */
     color: #212529;
     font-size: 15px ;
 }
+
+.description {
+    line-height: 15px;
+    font-size: .8rem;
+}
+
+.title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}

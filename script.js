@@ -13,3 +13,19 @@ document.querySelector('#ideas-link').addEventListener('click', (e) => {
     jqueryScroll('#ideas-section', 1000, 150)
 })
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Initialize Vanilla LazyLoad for all images
+    const lazyLoadInstance = new LazyLoad({
+        elements_selector: "img",
+    });
+    // Add error handling for all lazy-loaded images
+    const images = document.querySelectorAll("img.lazyload");
+    images.forEach(function (img) {
+        img.onerror = function () {
+            this.onerror = null; // Prevent infinite loop
+            this.src = './vanilla-lazy-load/failed-icon.svg'; // Replace with your custom error image
+            this.alt = 'Image failed to load'; // Update alt text
+        };
+    });
+});
