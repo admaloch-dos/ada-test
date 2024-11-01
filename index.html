@@ -9,32 +9,33 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="description"
+        content="Discover the 2024 Florida History Day webpage, featuring engaging prompts and resources to inspire students in their historical projects. Explore themes and topics that celebrate Florida's rich history and enhance critical thinking skills.">
     <!-- <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
         integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYh3kQ67/bbV8XaCQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha512-tDXPcamuZsWWd6OsKFyH6nAqh/MjZ/5Yk88T5o+aMfygqNFPan1pLyPFAndRzmOWHKT+jSDzWpJv8krj6x1LMA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Option 1: Include in HTML -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+        media="print" onload="this.media='all'" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css"
         integrity="sha512-yn0icVhhm1DyRYA7C3aEwKLwjyoMlwS+qpEjbowLFnMx/+LXqGGhOdLx+I31SG6rOkyt+PL3fzUIrO6Sr/Xv6w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
 
-    <link rel="stylesheet" href="./themes/florida_memory/css/history-day.css">
-    <link rel="stylesheet" href="./themes/florida_memory/css/fm_style.css">
-    <link rel="stylesheet" href="./flourish/flourish.min.css">
-    <link rel="stylesheet" href="./themes/florida_memory/css/header_style.css">
+    <link rel="stylesheet" href="./themes/florida_memory/css/fl-mem.min.css">
+    <link rel="stylesheet" href="./flourish/flourish.min.css" media="print" onload="this.media='all'" />
 
 </head>
 
@@ -63,11 +64,7 @@
 
                     <div class="row justify-content-center no-gutters">
 
-                        <div class="col-12 col-lg-2 text-center">
-                            <img class="img-fluid DLIS_Logo"
-                                src="https://www.floridamemory.com/themes/florida_memory/images/logos/dlis.png"
-                                alt="DLIS Logo" width="150">
-                        </div>
+
 
                         <div class="col-12 col-lg-3 align-self-center">
                             <h6 class="states_section_title">State Archives of Florida</h6>
@@ -127,30 +124,26 @@
 
         <section class=" d-none d-lg-block" id="header_links_container">
             <div class=" d-flex justify-content-end">
-                <ul class="nav mr-3 mb-4">
+                <ul class="nav mr-3">
                     <li class="translate-container">
 
                         <div class="translate-list-item">
 
-                            <img id="translate-icon" src="./flourish/img/language/eng-min.png" alt="curr-language-icon"
-                                class="current-language-icon top-lang-icon mr-1" data-trigger="hover"
-                                data-toggle="popover-main" data-placement="bottom" data-content="View translation menu">
+                            <img id="translate-icon" src="./flourish/img/language/eng-min.png" width="20" height="20"
+                                alt="curr-language-icon" class="current-language-icon top-lang-icon mr-1"
+                                data-trigger="hover" data-toggle="popover-main" data-placement="bottom"
+                                data-content="View translation menu">
                         </div>
-                        <img onclick="dismissGoogleTranslate()" src="./flourish/img/reset.png" alt=""
-                            class="main-reset-icon d-none" data-trigger="hover" data-toggle="popover-main"
-                            data-placement="bottom" data-content="Turn off translation">
 
                     </li>
                     <li class="nav-item radio_program"><a
-                            href="https://www.floridamemory.com/discover/audio/radio/"><img class="lazyload"
-                                src="./vanilla-lazy-load/loading-icon.svg"
-                                data-src="https://www.floridamemory.com/fpc/memory/audio/images/radio_logo.png"
-                                width="30px">Listen: The Latin Program</a></li>
+                            href="https://www.floridamemory.com/discover/audio/radio/">Listen: The Latin
+                            Program</a></li>
 
                     <li class="nav-item" id="AffilatedSites_btn">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#AffilatedSites"
-                            aria-expanded="false"><img width="35"
-                                src="https://www.floridamemory.com/themes/florida_memory/images/logos/dlis.png"></a>
+                        <button id="collapse-sites" aria-labelledby="AffilatedSites_btn" class="nav-link collapsed"
+                            href="#" data-toggle="collapse" data-target="#AffilatedSites" aria-expanded="false"><img
+                                width="30" height="30" alt="affiliated sites img" src="./img/dlis-small.png"></button>
                     </li>
                 </ul>
             </div>
@@ -159,12 +152,9 @@
         <section>
             <div class="navbar navbar-expand-lg justify-content-md-center" id="header_contents">
                 <a class="navbar-brand" href="https://www.floridamemory.com/">
-                    <img class="img-fluid default_logo lazyload" src="./vanilla-lazy-load/loading-icon.svg"
-                        data-src="https://www.floridamemory.com/themes/florida_memory/images/FM_logo_2020.jpg"
+                    <img class="img-fluid default_logo" width="400" height="75" src="./img/FM_logo_2020-min.jpg"
                         alt="Florida Memory Logo">
-                    <img class="img-fluid highcontrast_logo lazyload" src="./vanilla-lazy-load/loading-icon.svg"
-                        data-src="https://www.floridamemory.com/themes/florida_memory/images/Florida Memory logo 2020 high-contrast.png"
-                        alt="Florida Memory Logo" width="350">
+
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -178,13 +168,13 @@
 
                     <div class="input-group" id="search-container" role="search">
                         <input type="text" class="form-control" name="keywords" id="query" value="" title="Search..."
-                            placeholder="Search..." size="40">
-                        <!--<input type="hidden" name="condition" value="2">-->
+                            placeholder="Search..." size="40" aria-label="Search for keywords">
                         <div class="input-group-append">
-                            <button class="btn" id="submit_search" type="submit" value="Search"><i class="fa fa-search"
-                                    aria-hidden="true"></i></button>
-                        </div><!-- input-group-append -->
-                    </div><!-- class="input-group" id="search-container" role="search"-->
+                            <button class="btn" id="submit_search" type="submit" aria-label="Submit search">
+                                <i class="fa fa-search" aria-hidden="true"></i> Search
+                            </button>
+                        </div>
+                    </div>
                 </form>
             </div><!--header_contents-->
 
@@ -628,7 +618,7 @@
     <header class="cover_image">
         <!--<h2 class="title">Florida History Day</h2>-->
         <figure>
-            <img src="./NHD-2024-new.png" alt="fl history day img">
+            <img src="./img/NHD-2024-new.jpg" width="1350" height="400" alt="fl history day img">
     </header>
 
     <section id="page-content" class="container-fluid">
@@ -647,40 +637,16 @@
 
             <!-- side nav section -->
             <nav class="col-12 col-lg-3 ml-lg-auto">
-                <a id="openNavBtn" data-toggle="collapse" href="#menudropdown" role="button" aria-expanded="false"
-                    aria-controls="collapseExample"><i class="fa fa-fw fa-times"></i>
-                    menu</a>
+                <button id="openNavBtn" data-toggle="collapse" aria-label="show submenu" href="#menudropdown"
+                    role="button" aria-expanded="false" aria-controls="collapseExample"><i
+                        class="fa fa-fw fa-times"></i>
+                    menu</button>
 
                 <div class="collapse show" id="menudropdown">
                     <div class="card card-body mt-3">
                         <ul class="nav flex-column " id="side-nav">
 
-                            <li class="nav-item collpase_item" data-toggle="collapse" data-target="#resources"
-                                aria-expanded="true"><a class="nav-link">History Day <i
-                                        class="fa fa-caret-down"></i></a>
-                                <div id="resources" class="collapse show">
-                                    <ul class="collapse_list">
 
-                                        <li> <span>Previous Years</span> </li>
-                                        <ul class="collapse_list">
-                                            <li class="nav-item"><a class="nav-link"
-                                                    href="https://www.floridamemory.com/learn/classroom/history-day/2024/">2024</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link"
-                                                    href="https://www.floridamemory.com/learn/classroom/history-day/2023/">2023</a>
-                                            </li>
-
-                                            <li class="nav-item"><a class="nav-link"
-                                                    href="https://www.floridamemory.com/learn/classroom/history-day/2022/">2022</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link"
-                                                    href="https://www.floridamemory.com/learn/classroom/history-day/2021/">2021</a>
-                                            </li>
-                                        </ul>
-                                    </ul>
-                                </div>
-
-                            </li>
 
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -753,78 +719,20 @@
 
                 <!-- people section -->
                 <section id="people-section">
-                    <h2 class="text-center text-lg-left">Turning Points: People</h2>
+                    <header>
+                        <h2 class="text-center text-lg-left">Turning Points: People</h2>
+                    </header>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>The Conquistadors</span></strong>
-                                <ul class="secondlevel_customlist">
-                                    <li><span>Florida Memory:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a
-                                                    href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=37&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=38&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Florida%27s+First+Spanish+Colonial+Period+%281513-1763%29">Florida
-                                                    Photographic Collection: Early Florida Maps</a></li>
-                                            <li><a
-                                                    href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=104&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Ponce+de+Leon%2C+Juan%2C+1460%3F-1521&layout=1">Florida
-                                                    Photographic Collection: Juan Ponce de León</a></li>
-                                            <li><a
-                                                    href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=104&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Soto,%20Hernando%20de,%20approximately%201500-1542.&layout=1">Florida
-                                                    Photographic Collection: Hernando de Soto </a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/339354">Document:
-                                                    An Act to Remove the Remains of Ponce de León to Florida</a>
-                                            </li>
-                                            <li><a
-                                                    href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=104&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Men%C3%A9ndez%20de%20Avil%C3%A9s,%20Pedro,%201519-1574&layout=1">Pedro
-                                                    Menéndez de Avilés, Florida Photographic Collection</a></li>
-                                            <li><a
-                                                    href="https://www.floridamemory.com/discover/historical_records/spanishlandgrants/">Documents:
-                                                    Spanish Land Grants</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/342048">Floridiana
-                                                    article:
-                                                    The First Known Christmas in Florida</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/342062">Floridiana
-                                                    article:
-                                                    The Fountain of Youth</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/295233">Floridiana
-                                                    article:
-                                                    Florida Fountains of Youth</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><span>State Library of Florida:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/spanish-colonial-history/">Florida’s
-                                                    Spanish Colonial History Bibliography</a></li>
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/native-americans-in-florida/">Native
-                                                    American Tribes in Florida Bibliography</a></li>
-                                        </ul>
-                                    </li>
-
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <article id="prev-1" class="PreviewContent">
-                            <header class="title">Featured:</header>
-                            <figure>
-                                <a target="_blank" href="https://www.floridamemory.com/items/show/2818">
-                                    <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/prints/pr02978.jpg"
-                                            alt="Drawing of Juan Ponce de León in Florida"></div>
-                                </a>
-                                <figcaption class="description">Drawing of Juan Ponce de León in Florida</figcaption>
-                            </figure>
-                        </article>
-                    </section>
-
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>James Moore and the Destruction of Apalachee</span></strong></li>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>James Moore and the Destruction of Apalachee</h3>
 
                             <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span>
+                                <li>
                                     <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
 
                                         <li><a
                                                 href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=49&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Missions--Florida--Leon%20County--Tallahassee&layout=1">Florida
@@ -838,8 +746,11 @@
 
                                     </ul>
                                 </li>
-                                <li><span>State Library of Florida:</span>
+                                <li>
                                     <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">State Library of Florida:</h4>
+                                        </li>
                                         <li><a
                                                 href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/spanish-colonial-history/">Florida’s
                                                 Spanish Colonial History Bibliography</a></li>
@@ -848,8 +759,11 @@
                                                 American Tribes in Florida Bibliography</a></li>
                                     </ul>
                                 </li>
-                                <li>Other Resources:
+                                <li>
                                     <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Other Resources:</h4>
+                                        </li>
                                         <li><a href="https://www.missionsanluis.org/">Mission San Luis
                                                 website</a></li>
                                         <li><a
@@ -860,524 +774,380 @@
                                 </li>
 
                             </ul>
-                            </li>
-                        </ul>
+                        </div>
 
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/13924">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/prints/pr20396.jpg"
+                                            width="200" height="200" data-src="./img/pr20396.jpg" width="200"
+                                            height="200"
                                             alt="Council house at the San Luis Mission - Tallahassee, Florida">
                                     </div>
                                 </a>
                                 <figcaption class="description">Council house at the San Luis Mission - Tallahassee,
                                     Florida</figcaption>
                             </figure>
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>Jonathan C. Gibbs and Reconstruction</span></strong>
-                                <ul class="secondlevel_customlist">
-                                    <li><span>Florida Memory:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a href="https://www.floridamemory.com/find?keywords=jonathan+c+gibbs">Jonathan
-                                                    C. Gibbs</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/189095">Document:
-                                                    1868 Constitution of Florida</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/350826">Document:
-                                                    Journal of 1868 Constitutional Convention</a></li>
-                                            <li><a
-                                                    href="https://www.floridamemory.com/discover/historical_records/election1867/">Documents:
-                                                    1868 Voter Registrations</a></li>
-                                            <li><a
-                                                    href="https://www.floridamemory.com/learn/classroom/learning-units/civil-war/">Learning
-                                                    Unit: Florida in the Civil War</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><span>State Library of Florida:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/african-american-history/">Florida's
-                                                    Black History Bibliography</a></li>
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/emancipation/">Emancipation
-                                                    and Reconstruction in Florida Bibliography</a></li>
-                                        </ul>
-                                    </li>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>Jonathan C. Gibbs and Reconstruction</h3>
+                            <ul class="secondlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
+                                        <li><a href="https://www.floridamemory.com/find?keywords=jonathan+c+gibbs">Jonathan
+                                                C. Gibbs</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/189095">Document:
+                                                1868 Constitution of Florida</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/350826">Document:
+                                                Journal of 1868 Constitutional Convention</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/discover/historical_records/election1867/">Documents:
+                                                1868 Voter Registrations</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/learn/classroom/learning-units/civil-war/">Learning
+                                                Unit: Florida in the Civil War</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">State Library of Florida:</h4>
+                                        </li>
+                                        <li><a
+                                                href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/african-american-history/">Florida's
+                                                Black History Bibliography</a></li>
+                                        <li><a
+                                                href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/emancipation/">Emancipation
+                                                and Reconstruction in Florida Bibliography</a></li>
+                                    </ul>
+                                </li>
 
-                                </ul>
+                            </ul>
                             </li>
-                        </ul>
+                        </div>
 
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/26607">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/reference/rc02889.jpg"
+                                            width="200" height="200" data-src="./img/rc02889.jpg"
                                             alt="Portrait of Jonathan C. Gibbs"></div>
                                 </a>
                                 <figcaption class="description">Portrait of Jonathan C. Gibbs</figcaption>
                             </figure>
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>Marjory Stoneman Douglas and the Everglades</span></strong>
-                                <ul class="secondlevel_customlist">
-                                    <li><span>Florida Memory:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a
-                                                    href="https://www.floridamemory.com/learn/exhibits/photo_exhibits/everglades/">Photo
-                                                    Exhibit: The Everglades in the Time of Marjory Stoneman
-                                                    Douglas</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/327460">Research
-                                                    Starter: The Florida Everglades</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/340193">Video
-                                                    (29:23):
-                                                    Marjory Stoneman Douglas</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/321986">Floridiana
-                                                    article:
-                                                    Exploring the Everglades</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/295250">Floridiana
-                                                    article:
-                                                    Land by the Gallon</a></li>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>Marjory Stoneman Douglas and the Everglades</h3>
+                            <ul class="secondlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/learn/exhibits/photo_exhibits/everglades/">Photo
+                                                Exhibit: The Everglades in the Time of Marjory Stoneman
+                                                Douglas</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/327460">Research
+                                                Starter: The Florida Everglades</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/340193">Video
+                                                (29:23):
+                                                Marjory Stoneman Douglas</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/321986">Floridiana
+                                                article:
+                                                Exploring the Everglades</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/295250">Floridiana
+                                                article:
+                                                Land by the Gallon</a></li>
 
-                                        </ul>
-                                    </li>
-                                    <li><span>State Library of Florida:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/services-for-state-employees/agency/environmental/">Environmental
-                                                    Science in Florida Bibliography</a></li>
-                                            <li><a
-                                                    href="https://dos.fl.gov/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/women/">Women's
-                                                    History in Florida Bibliography</a></li>
-                                        </ul>
-                                    </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">State Library of Florida:</h4>
+                                        </li>
+                                        <li><a
+                                                href="https://dos.myflorida.com/library-archives/research/services-for-state-employees/agency/environmental/">Environmental
+                                                Science in Florida Bibliography</a></li>
+                                        <li><a
+                                                href="https://dos.fl.gov/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/women/">Women's
+                                                History in Florida Bibliography</a></li>
+                                    </ul>
+                                </li>
 
-                                </ul>
-                            </li>
-                        </ul>
+                            </ul>
 
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        </div>
+
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/157590">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/postcard/pc0050g.jpg"
+                                            width="200" height="200" data-src="./img/pc0050g.jpg"
                                             alt="Wild deer in the Everglades."></div>
                                 </a>
                                 <figcaption class="description">Wild deer in the Everglades.</figcaption>
                             </figure>
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>Mary McLeod Bethune</span></strong>
-                                <ul class="secondlevel_customlist">
-                                    <li><span>Florida Memory:</span>
-                                        <ul class="thirdlevel_customlist">
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>The Tabert Scandal and Convict Leasing</h3>
+                            <ul class="secondlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
+                                        <li><a href="https://www.floridamemory.com/items/show/35907">Photograph:
+                                                Martin Tabert</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/326896">Research
+                                                Starter: Convict Labor Leasing in Florida</a></li>
 
-                                            <li><a
-                                                    href="https://www.floridamemory.com/learn/classroom/learning-units/mary-mcleod-bethune/">Learning
-                                                    Unit: Mary McLeod Bethune</a></li>
-                                            <li><a
-                                                    href="https://www.floridamemory.com/find?keywords=Mary+McLeod+Bethune">Mary
-                                                    McLeod Bethune</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">State Library of Florida:</h4>
+                                        </li>
+                                        <li><a
+                                                href="https://dos.myflorida.com/library-archives/research/services-for-state-employees/agency/law/">Law
+                                                and Justice in Florida Bibliography</a></li>
+                                    </ul>
+                                </li>
 
-                                        </ul>
-                                    </li>
-                                    <li><span>State Library of Florida:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/african-american-history/">Florida's
-                                                    Black History Bibliography</a></li>
-                                            <li><a
-                                                    href="https://dos.fl.gov/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/women/">Women's
-                                                    History in Florida Bibliography</a></li>
-                                        </ul>
-                                    </li>
+                            </ul>
 
-                                </ul>
-                            </li>
-                        </ul>
+                        </div>
 
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
-                            <figure>
-                                <a target="_blank" href="https://www.floridamemory.com/items/show/730">
-                                    <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/msc/MSC3851.jpg"
-                                            alt="Mary McLeod Bethune - Daytona Beach, Florida."></div>
-                                </a>
-                                <figcaption class="description">Mary McLeod Bethune - Daytona Beach, Florida.
-                                </figcaption>
-                            </figure>
-                        </article>
-                    </section>
-
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>The Tabert Scandal and Convict Leasing</span></strong>
-                                <ul class="secondlevel_customlist">
-                                    <li><span>Florida Memory:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a href="https://www.floridamemory.com/items/show/35907">Photograph:
-                                                    Martin Tabert</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/326896">Research
-                                                    Starter: Convict Labor Leasing in Florida</a></li>
-
-                                        </ul>
-                                    </li>
-                                    <li><span>State Library of Florida:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/services-for-state-employees/agency/law/">Law
-                                                    and Justice in Florida Bibliography</a></li>
-                                        </ul>
-                                    </li>
-
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/35907">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/reference/rc13599.jpg"
+                                            width="200" height="200" data-src="./img/rc13599.jpg"
                                             alt="Photo of Martin Tabert"></div>
                                 </a>
                                 <figcaption class="description">Martin Tabert</figcaption>
                             </figure>
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>Gideon v Wainwright</span></strong>
-                                <ul class="secondlevel_customlist">
-                                    <li><span>Florida Memory:</span>
-                                        <ul class="thirdlevel_customlist">
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>Gideon v Wainwright</h3>
+                            <ul class="secondlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
 
-                                            <li><a href="https://www.floridamemory.com/items/show/35169">Photograph:
-                                                    Portrait of Clarence Earl Gideon</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/166307">Photograph:
-                                                    Florida State Prison mug shots of Clarence Earl Gideon</a>
-                                            </li>
-                                            <li><a href="https://www.floridamemory.com/items/show/339321">Document:
-                                                    Judgment from the U.S. Supreme Court Regarding Gideon v.
-                                                    Wainwright, 1963</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/339318">Document:
-                                                    Order of the Florida Supreme Court Regarindg Gideon v.
-                                                    Wainwright, 1963</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/339319">Document:
-                                                    Petition for Writ of Habeas Corpus by Clarence Earl Gideon,
-                                                    1961</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/339320">Document:
-                                                    Response from Florida Supreme Court to Petition for Writ of
-                                                    Habeas Corpus by Clarence Earl Gideon, 1961</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/43966">Photograph:
-                                                    Group Portrait of State Public Defenders</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/35169">Photograph:
+                                                Portrait of Clarence Earl Gideon</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/166307">Photograph:
+                                                Florida State Prison mug shots of Clarence Earl Gideon</a>
+                                        </li>
+                                        <li><a href="https://www.floridamemory.com/items/show/339321">Document:
+                                                Judgment from the U.S. Supreme Court Regarding Gideon v.
+                                                Wainwright, 1963</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/339318">Document:
+                                                Order of the Florida Supreme Court Regarindg Gideon v.
+                                                Wainwright, 1963</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/339319">Document:
+                                                Petition for Writ of Habeas Corpus by Clarence Earl Gideon,
+                                                1961</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/339320">Document:
+                                                Response from Florida Supreme Court to Petition for Writ of
+                                                Habeas Corpus by Clarence Earl Gideon, 1961</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/43966">Photograph:
+                                                Group Portrait of State Public Defenders</a></li>
 
-                                        </ul>
-                                    </li>
-                                    <li><span>State Library of Florida:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/services-for-state-employees/agency/law/">Law
-                                                    and Justice in Florida Bibliography</a></li>
-                                        </ul>
-                                    </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">State Library of Florida:</h4>
+                                        </li>
+                                        <li><a
+                                                href="https://dos.myflorida.com/library-archives/research/services-for-state-employees/agency/law/">Law
+                                                and Justice in Florida Bibliography</a></li>
+                                    </ul>
+                                </li>
 
-                                </ul>
-                            </li>
-                        </ul>
+                            </ul>
 
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        </div>
+
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/35169">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/reference/rc12789.jpg"
+                                            width="200" height="200" data-src="./img/rc12789.jpg"
                                             alt="Portrait of Clarence Earl Gideon"></div>
                                 </a>
                                 <figcaption class="description">Portrait of Clarence Earl Gideon</figcaption>
                             </figure>
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>LeRoy Collins and Civil Rights</span></strong>
-                                <ul class="secondlevel_customlist">
-                                    <li><span>Florida Memory</span>
-                                        <ul class="thirdlevel_customlist">
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>LeRoy Collins and Civil Rights</h3>
+                            <ul class="secondlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
+                                        <li><a href="https://www.floridamemory.com/items/show/243485">Video
+                                                (10:44):
+                                                Selma, Alabama Demonstration</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/253220">Video
+                                                (38:45):
+                                                A Great Floridian</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/253576">Video
+                                                (27:32):
+                                                To Reach for Tomorrow</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/253194">Video
+                                                (08:24):
+                                                Gov. LeRoy Collins on Civil Rights</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/253195">Video
+                                                (09:58):
+                                                Governor LeRoy Collins Comments on Civil Rights</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/232428">Video
+                                                (21:12):
+                                                Interviews With LeRoy Collins for "Great Floridians"</a>
+                                        </li>
+                                        <li><a href="https://www.floridamemory.com/items/show/326632">Floridiana
+                                                article:
+                                                When LeRoy Collins Went to Selma</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/333857">Document:
+                                                Interposition Resoulution in Response to Brown v. Board of
+                                                Education, 1957</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/331504">Document:
+                                                "Facts About the Community Relations Service" Brochure,
+                                                August 1964</a></li>
 
-                                            <li><a href="https://www.floridamemory.com/items/show/243485">Video
-                                                    (10:44):
-                                                    Selma, Alabama Demonstration</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/253220">Video
-                                                    (38:45):
-                                                    A Great Floridian</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/253576">Video
-                                                    (27:32):
-                                                    To Reach for Tomorrow</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/253194">Video
-                                                    (08:24):
-                                                    Gov. LeRoy Collins on Civil Rights</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/253195">Video
-                                                    (09:58):
-                                                    Governor LeRoy Collins Comments on Civil Rights</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/232428">Video
-                                                    (21:12):
-                                                    Interviews With LeRoy Collins for "Great Floridians"</a>
-                                            </li>
-                                            <li><a href="https://www.floridamemory.com/items/show/326632">Floridiana
-                                                    article:
-                                                    When LeRoy Collins Went to Selma</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/333857">Document:
-                                                    Interposition Resoulution in Response to Brown v. Board of
-                                                    Education, 1957</a></li>
-                                            <li><a href="https://www.floridamemory.com/items/show/331504">Document:
-                                                    "Facts About the Community Relations Service" Brochure,
-                                                    August 1964</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">State Library of Florida:</h4>
+                                        </li>
+                                        <li><a
+                                                href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/governors/">Florida
+                                                Governors Bibliography</a></li>
+                                        <li><a
+                                                href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/african-american-history/">Florida's
+                                                Black History Bibliography</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Other Resources:</h4>
+                                        </li>
+                                        <li><a href="https://thegrovemuseum.com/">The Grove Museum
+                                                website</a></li>
+                                    </ul>
+                                </li>
 
-                                        </ul>
-                                    </li>
-                                    <li><span>State Library of Florida:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/governors/">Florida
-                                                    Governors Bibliography</a></li>
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/african-american-history/">Florida's
-                                                    Black History Bibliography</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>Other Resources:
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a href="https://thegrovemuseum.com/">The Grove Museum
-                                                    website</a></li>
-                                        </ul>
-                                    </li>
+                            </ul>
 
-                                </ul>
-                            </li>
-                        </ul>
+                        </div>
 
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/128613">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/reference/gv013572.jpg"
+                                            width="200" height="200" data-src="./img/gv013572.jpg"
                                             alt="Former Governor LeRoy Collins"></div>
                                 </a>
                                 <figcaption class="description">Former Governor LeRoy Collins mediating during rights
                                     march - Selma, Alabama
                             </figure>
 
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>The Stephens Sisters: Civil Rights and the Tallahassee
-                                        CORE</span></strong>
-                                <ul class="secondlevel_customlist">
-                                    <li><span>Florida Memory:</span>
-                                        <ul class="thirdlevel_customlist ">
-
-                                            <li><a
-                                                    href="https://www.floridamemory.com/learn/classroom/learning-units/civil-rights/">Learning
-                                                    Unit: The Civil Rights Movement in Florida</a></li>
-                                            <li id="places-link"><a
-                                                    href="https://www.floridamemory.com/items/show/340481">Primary
-                                                    Source Set: Patricia and Priscilla Stephens and the Congress
-                                                    of Racial Equality</a></li>
-                                            <li><a
-                                                    href="https://www.floridamemory.com/discover/historical_records/stephens_sisters/">Documents:
-                                                    Stephens Sisters Jail-In Papers, 1960</a></li>
-                                            <li><a
-                                                    href="https://www.floridamemory.com/find?advanced[0][joiner]=and&advanced[0][element_id]=100&advanced[0][type]=contains&advanced[0][terms]=Patricia%20Stephens%20Due%20Collection&layout=1">Patricia
-                                                    Stephens Due Photograph Collection</a></li>
-
-                                        </ul>
-                                    </li>
-                                    <li><span>State Library of Florida:</span>
-                                        <ul class="thirdlevel_customlist">
-                                            <li><a
-                                                    href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/african-american-history/">Florida's
-                                                    Black History Bibliography</a></li>
-                                        </ul>
-                                    </li>
-
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
-                            <figure>
-                                <a target="_blank" href="https://www.floridamemory.com/items/show/296275">
-                                    <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/Due/DUE057.jpg"
-                                            alt="Picketing at the Florida Theatre in Tallahassee."></div>
-                                </a>
-                                <figcaption class="description">Picketing at the Florida Theatre in Tallahassee.
-                                </figcaption>
-                            </figure>
-                        </article>
-                    </section>
                 </section>
 
                 <!--places section-->
                 <section id="places-section">
-                    <h2 class="text-center text-lg-left">Turning Points: Places</h2>
+                    <header>
+                        <h2 class="text-center text-lg-left">Turning Points: Places</h2>
+                    </header>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>St. Augustine and Permanent European Settlement</span></strong></li>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>The Adams-Onis Treaty: Florida Becomes a U.S. Territory</h3>
                             <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
+
+                                        <li><a href="https://www.floridamemory.com/items/show/346672">Primary Source
+                                                Set: Florida and the Politics of Westward Expansion</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/161300">Photograph:
+                                                The Change of Flags, July 10, 1821, at Castillo de San Marcos -
+                                                Saint Augustine, Florida</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/346006">Floridiana
+                                                article:
+                                                Joseph M. Hernandez: A Famous Florida First</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/341126">Document:
+                                                Message from the President of the United States, Communicating the
+                                                Correspondence [...]</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/discover/historical_records/territorial-legislative/">Documents:
+                                                Territorial Legislative Council Records, 1822-1845</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/discover/historical_records/spanishlandgrants/">Documents:
+                                                Spanish Land Grants</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/find?advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=38&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Territorial+Florida+%281821-1845%29&advanced%5B2%5D%5Bjoiner%5D=and&advanced%5B2%5D%5Belement_id%5D=240&advanced%5B2%5D%5Btype%5D=is+exactly&advanced%5B2%5D%5Bterms%5D=40">Documents:
+                                                Territorial Period</a></li>
+
+                                    </ul>
+                                <li></li>
                                 <ul class="thirdlevel_customlist">
-
-                                    <li><a href="https://www.floridamemory.com/items/show/295190">Floridiana
-                                            article:
-                                            The Cathedral Basilica of St. Augustine</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/333879?id=1">Document:
-                                            Fort Marion and Fort Matanzas Brochure</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/339332">Document:
-                                            Saint Augustine Map, 1589</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/discover/historical_records/spanishlandgrants/">Documents:
-                                            Spanish Land Grants</a></li>
-
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
-                                <ul class="thirdlevel_customlist">
-                                    <li><a
-                                            href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/spanish-colonial-history/">Florida’s
-                                            Spanish Colonial History Bibliography</a></li>
-                                    <li><a
-                                            href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/native-americans-in-florida/">Native
-                                            American Tribes in Florida Bibliography</a></li>
-                                </ul>
-
-                            </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
-                            <figure>
-                                <a target="_blank" href="https://www.floridamemory.com/items/show/339332">
-                                    <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/FMP/selected_documents/large/m81-21_b002_x01_01.jpg"
-                                            alt="Saint Augustine Map, 1589"></div>
-                                </a>
-                                <figcaption class="description">Saint Augustine Map, 1589</figcaption>
-                            </figure>
-                        </article>
-                    </section>
-
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>Mission San Luis: The Spanish, Native Americans and
-                                        Christianity</span></strong></li>
-                            <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
-
-                                    <li><a
-                                            href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=49&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Missions--Florida--Leon%20County--Tallahassee&layout=1">Florida
-                                            Photographic Collection: Mission San Luis</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/295190">Floridiana
-                                            article:
-                                            The Cathedral Basilica of St. Augustine</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/342048">Floridiana
-                                            article:
-                                            The First Known Christmas in Florida</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/295223">Floridiana
-                                            article:
-                                            Spanish Cattle in Florida</a></li>
-
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
-                                <ul class="thirdlevel_customlist">
-                                    <li><a
-                                            href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/spanish-colonial-history/">Florida’s
-                                            Spanish Colonial History Bibliography</a></li>
-                                    <li><a
-                                            href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/native-americans-in-florida/">Native
-                                            American Tribes in Florida Bibliography</a></li>
-                                </ul>
-                                <li>Other Resources</li>
-                                <ul class="thirdlevel_customlist">
-                                    <li><a href="https://www.missionsanluis.org/">Mission San Luis website</a>
+                                    <li>
+                                        <h4 class="ul-header-style">State Library of Florida:</h4>
                                     </li>
                                     <li><a
-                                            href="https://dos.myflorida.com/historical/preservation/heritage-trails/native-american-heritage-trail/">Florida
-                                            Native American Heritage Trail</a></li>
-                                </ul>
-
-                            </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
-                            <figure>
-                                <a target="_blank" href="https://www.floridamemory.com/items/show/259072">
-                                    <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/Vflorida/VF0406.jpg"
-                                            alt="Costumed men reenacting military muster"></div>
-                                </a>
-                                <figcaption class="description">Costumed men reenacting military muster at historic
-                                    Mission San Luis site in Tallahassee, Florida.</figcaption>
-                            </figure>
-
-                        </article>
-                    </section>
-
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>The Adams-Onis Treaty: Florida Becomes a U.S. Territory</span></strong>
-                            </li>
-                            <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
-
-                                    <li><a href="https://www.floridamemory.com/items/show/346672">Primary Source
-                                            Set: Florida and the Politics of Westward Expansion</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/161300">Photograph:
-                                            The Change of Flags, July 10, 1821, at Castillo de San Marcos -
-                                            Saint Augustine, Florida</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/346006">Floridiana
-                                            article:
-                                            Joseph M. Hernandez: A Famous Florida First</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/341126">Document:
-                                            Message from the President of the United States, Communicating the
-                                            Correspondence [...]</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/discover/historical_records/territorial-legislative/">Documents:
-                                            Territorial Legislative Council Records, 1822-1845</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/discover/historical_records/spanishlandgrants/">Documents:
-                                            Spanish Land Grants</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/find?advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=38&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Territorial+Florida+%281821-1845%29&advanced%5B2%5D%5Bjoiner%5D=and&advanced%5B2%5D%5Belement_id%5D=240&advanced%5B2%5D%5Btype%5D=is+exactly&advanced%5B2%5D%5Bterms%5D=40">Documents:
-                                            Territorial Period</a></li>
-
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
-                                <ul class="thirdlevel_customlist">
-                                    <li><a
                                             href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/spanish-colonial-history/">Florida’s
                                             Spanish Colonial History Bibliography</a></li>
                                     <li><a
@@ -1386,199 +1156,177 @@
                                 </ul>
 
                             </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        </div>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/161300">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/postcard/pc3416.jpg"
+                                            width="200" height="200" data-src="./img/pc3416.jpg"
                                             alt="The change of flags, July 10, 1821."></div>
                                 </a>
                                 <figcaption class="description">The change of flags, July 10, 1821, at Castillo
                                     de Marcos - Saint Augustine, Florida.</figcaption>
                             </figure>
 
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>Florida's Secession Convention of 1861: A Meeting that Changed Florida
-                                        History</span></strong></li>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>The Union Blockade: Turning Point for the Civil War</h3>
                             <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
-                                    <li><a href="https://www.floridamemory.com/items/show/339353">Document:Ordinance
-                                            of Secession, 1861</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/discover/historical_records/callbrevardpapers/">Documents:
-                                            Call and Brevard Family Papers</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/learn/research-tools/guides/civilwarguide/">A
-                                            Guide to Civil War Records</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/learn/classroom/learning-units/civil-war/">Learning
-                                            Unit: Florida in the Civil War</a></li>
-                                    <li><a href="https://www.floridamemory.com/learn/exhibits/civilwar/">Exhibit:
-                                            Distant Storm: Florida's Role in the Civil War</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/252644">Floridaina:
-                                            March 1862: Invasion!</a></li>
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/discover/historical_records/callbrevardpapers/">Documents:
+                                                Call
+                                                and Brevard Family Papers</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/learn/research-tools/guides/civilwarguide/">A
+                                                Guide to Civil War Records</a></li>
+                                        <li><a href="https://www.floridamemory.com/learn/exhibits/civilwar/">Exhibit:
+                                                Distant Storm: Florida's Role in the Civil War</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/241902">Document:
+                                                Contrabands escaping to the United States bark "Kingfisher," off
+                                                the coast of Florida.
+                                            </a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/257945">Floridiana
+                                                article:
+                                                Corn, Not Cotton in the Civil War</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/252644">Floridaina:
+                                                March 1862: Invasion!</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/254520">Floridaina:
+                                                Needs More Salt</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/339296">Documents:
+                                                Letters from Louis James M. Boyd to His Wife, Jannie, 1862</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/learn/classroom/learning-units/civil-war/">Learning
+                                                Unit: Florida in the Civil War</a></li>
 
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
+                                    </ul>
+                                <li></li>
                                 <ul class="thirdlevel_customlist">
+                                    <li>
+                                        <h4 class="ul-header-style">State Library of Florida:</h4>
+                                    </li>
                                     <li><a
                                             href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/civil-war-in-florida/">Civil
                                             War in Florida Bibliography</a></li>
                                 </ul>
 
                             </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
-                            <figure>
-                                <a target="_blank" href="https://www.floridamemory.com/items/show/339353">
-                                    <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fmp/constitutions/large/s972_b001_01_01.jpg"
-                                            alt="Ordinance of Secession, 1861"></div>
-                                </a>
-                                <figcaption class="description">Ordinance of Secession, 1861</figcaption>
-                            </figure>
-                        </article>
-                    </section>
-
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>The Union Blockade: Turning Point for the Civil War</span></strong></li>
-                            <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
-                                    <li><a
-                                            href="https://www.floridamemory.com/discover/historical_records/callbrevardpapers/">Documents:
-                                            Call
-                                            and Brevard Family Papers</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/learn/research-tools/guides/civilwarguide/">A
-                                            Guide to Civil War Records</a></li>
-                                    <li><a href="https://www.floridamemory.com/learn/exhibits/civilwar/">Exhibit:
-                                            Distant Storm: Florida's Role in the Civil War</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/241902">Document:
-                                            Contrabands escaping to the United States bark "Kingfisher," off
-                                            the coast of Florida.
-                                        </a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/257945">Floridiana
-                                            article:
-                                            Corn, Not Cotton in the Civil War</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/252644">Floridaina:
-                                            March 1862: Invasion!</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/254520">Floridaina:
-                                            Needs More Salt</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/339296">Documents:
-                                            Letters from Louis James M. Boyd to His Wife, Jannie, 1862</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/learn/classroom/learning-units/civil-war/">Learning
-                                            Unit: Florida in the Civil War</a></li>
-
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
-                                <ul class="thirdlevel_customlist">
-                                    <li><a
-                                            href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/civil-war-in-florida/">Civil
-                                            War in Florida Bibliography</a></li>
-                                </ul>
-
-                            </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        </div>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/28940">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/reference/rc05597.jpg"
+                                            width="200" height="200" data-src="./img/rc05597.jpg"
                                             alt="The U.S. Gunboat Mohawk"></div>
                                 </a>
                                 <figcaption class="description">The U.S. Gunboat Mohawk chasing the rebel steamer
                                     into the St. Mark's River.</figcaption>
                             </figure>
 
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>Cuba and the Cuban Exodus</span></strong></li>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>Cuba and the Cuban Exodus</h3>
                             <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
 
-                                    <li><a href="https://www.floridamemory.com/items/show/232435">Video (20:56):
-                                            Julio
-                                            26</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/245399">Video (27:50):
-                                            FYI-The
-                                            Plight of Pepito: Cuba's Lost Generation</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/238068">Audio:
-                                            Interview with Director of Latin Americna Studies at the University
-                                            of Florida, Dr. Helen Safa</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/239134">Audio: Marta
-                                            Keen Interview</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/learn/classroom/learning-units/cuban-revolution/">Learning
-                                            Unit: The Cuban Experience in Florida: Revolution and Exodus</a>
+                                        <li><a href="https://www.floridamemory.com/items/show/232435">Video (20:56):
+                                                Julio
+                                                26</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/245399">Video (27:50):
+                                                FYI-The
+                                                Plight of Pepito: Cuba's Lost Generation</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/238068">Audio:
+                                                Interview with Director of Latin Americna Studies at the University
+                                                of Florida, Dr. Helen Safa</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/239134">Audio: Marta
+                                                Keen Interview</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/learn/classroom/learning-units/cuban-revolution/">Learning
+                                                Unit: The Cuban Experience in Florida: Revolution and Exodus</a>
+                                        </li>
+                                        <li><a href="https://www.floridamemory.com/items/show/332816">Floridiana
+                                                article:
+                                                The Mariel Boatlift of 1980</a></li>
+                                        <li><a href="https://www.floridamemory.com/find?keywords=mariel+boatlift">Florida
+                                                Photographic Collection: Mariel Boatlift</a></li>
+
+                                    </ul>
+                                <li></li>
+                                <ul class="thirdlevel_customlist">
+                                    <li>
+                                        <h4 class="ul-header-style">State Library of Florida:</h4>
                                     </li>
-                                    <li><a href="https://www.floridamemory.com/items/show/332816">Floridiana
-                                            article:
-                                            The Mariel Boatlift of 1980</a></li>
-                                    <li><a href="https://www.floridamemory.com/find?keywords=mariel+boatlift">Florida
-                                            Photographic Collection: Mariel Boatlift</a></li>
-
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
-                                <ul class="thirdlevel_customlist">
                                     <li><a
                                             href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/cuban/">Cuban
                                             Heritage Bibliography</a></li>
                                 </ul>
 
                             </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        </div>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/98693">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/dalemcdonald/dm1352.jpg"
+                                            width="200" height="200" data-src="./img/dm1352.jpg"
                                             alt='Photo of the "El Dorado"'></div>
                                 </a>
                                 <figcaption class="description">The "El Dorado" arriving with Cuban refugees
                                     during Mariel Boatlift - Key West, Florida</figcaption>
                             </figure>
 
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>The Tallahassee Bus Boycott</span></strong></li>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>The Tallahassee Bus Boycott</h3>
                             <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
 
-                                    <li id="ideas-link"><a
-                                            href="https://www.floridamemory.com/items/show/340068">Primary
-                                            Source
-                                            Set: Tallahassee Bus Boycott, 1956-57</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/233721">Photograph:
-                                            Statue of C.K. Steele by Artist David Lowe at the Plaza in
-                                            Tallahassee, Florida</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/259734">Floridiana
-                                            article:
-                                            The Tallahassee Bus Boycott</a></li>
+                                        <li id="ideas-link"><a
+                                                href="https://www.floridamemory.com/items/show/340068">Primary
+                                                Source
+                                                Set: Tallahassee Bus Boycott, 1956-57</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/233721">Photograph:
+                                                Statue of C.K. Steele by Artist David Lowe at the Plaza in
+                                                Tallahassee, Florida</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/259734">Floridiana
+                                                article:
+                                                The Tallahassee Bus Boycott</a></li>
 
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
+                                    </ul>
+                                <li></li>
                                 <ul class="thirdlevel_customlist">
+                                    <li>
+                                        <h4 class="ul-header-style">State Library of Florida:</h4>
+                                    </li>
 
                                     <li><a
                                             href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/african-american-history/">Florida's
@@ -1587,120 +1335,77 @@
                                 </ul>
 
                             </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        </div>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/34854">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/reference/rc12419.jpg" alt="Photo of the Reverend C. K. Steele and Reverend H.
+                                            width="200" height="200" data-src="./img/rc12419.jpg" alt="Photo of the Reverend C. K. Steele and Reverend H.
                                                 McNeal Harris"></div>
                                 </a>
                                 <figcaption class="description">Reverend C. K. Steele (center left), and
                                     Reverend McNeal Harris (center right), protesting segregated bus seating in
                                     Tallahassee.</figcaption>
                             </figure>
-
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
                 </section>
 
                 <!--ideas-->
                 <section id="ideas-section">
-                    <h2 class="text-center text-lg-left">Turning Points: Ideas</h2>
-
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>The Cuban Cigar Industry Moves to Florida</span></strong></li>
+                    <header>
+                        <h2 class="text-center text-lg-left">Turning Points: Ideas</h2>
+                    </header>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>The Grand Hotels of Flagler and Plant</h3>
                             <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
 
-                                    <li><a href="https://www.floridamemory.com/learn/exhibits/photo_exhibits/cigar/">Photo
-                                            Exhibit: Florida Cigars</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/learn/classroom/learning-units/cuban-revolution/">Learning
-                                            Unit: The Cuban Experience in Florida: Revolution and Exodus</a>
+                                        <li><a
+                                                href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=104&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Flagler,%20Henry%20Morrison,%201830-1913&layout=1">Florida
+                                                Photographic Collection: Henry Morrison Flagler</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=106&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Florida%20East%20Coast%20Railway&layout=1">Florida
+                                                Photographic Collection: Florida East Coast Railway</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=106&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Flagler%20College.&layout=1">Florida
+                                                Photographic Collection: Flagler College</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/295227">Floridiana
+                                                article:
+                                                Flagler's Royal Poinciana Hotel</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/275771">Floridiana
+                                                article:
+                                                Staying at the Ormond</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/274211">Floridiana
+                                                article:
+                                                The "Shocking" Ponce de Leon Hotel</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/334198">Research
+                                                Starter: Henry Flagler and the Florida East Cost Railway</a>
+                                        </li>
+                                        <li><a href="https://www.floridamemory.com/items/show/297527">Floridiana
+                                                article:
+                                                Room and Board</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=104&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Plant,%20Henry%20Bradley,%201819-1899&layout=1">Florida
+                                                Photographic Collection: Henry Bradley Plant</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=106&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Tampa%20Bay%20Hotel%20(Tampa,%20Fla.)&layout=1">Florida
+                                                Photographic Colletion: Tampa Bay Hotel</a></li>
+
+                                    </ul>
+                                <li></li>
+                                <ul class="thirdlevel_customlist">
+                                    <li>
+                                        <h4 class="ul-header-style">State Library of Florida:</h4>
                                     </li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/learn/classroom/learning-units/cigar-industry/">Learning
-                                            Unit: The Cigar Industry Changes Florida</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/239174">Audio:
-                                            Domingo Rojas interview for the North Florida Folklife
-                                            Project</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/242087">Photograph:
-                                            Cigar Maker Domingo Rojas in St. Augustine, Florida</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=49&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Cigars&layout=1">Florida
-                                            Photographic Collection: Cigars</a></li>
-
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
-                                <ul class="thirdlevel_customlist">
-
-                                    <li><a
-                                            href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/cuban/">Cuban
-                                            Heritage Bibliography</a></li>
-
-                                </ul>
-
-                            </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
-                            <figure>
-                                <a target="_blank" href="https://www.floridamemory.com/items/show/130429">
-                                    <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/general/hr013.jpg"
-                                            alt="Tampa's tobacco industry."></div>
-                                </a>
-                                <figcaption class="description">Tampa's tobacco industry.</figcaption>
-                            </figure>
-                        </article>
-                    </section>
-
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>The Grand Hotels of Flagler and Plant; The First Great Era of
-                                        Florida Tourism</span></strong></li>
-                            <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
-
-                                    <li><a
-                                            href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=104&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Flagler,%20Henry%20Morrison,%201830-1913&layout=1">Florida
-                                            Photographic Collection: Henry Morrison Flagler</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=106&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Florida%20East%20Coast%20Railway&layout=1">Florida
-                                            Photographic Collection: Florida East Coast Railway</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=106&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Flagler%20College.&layout=1">Florida
-                                            Photographic Collection: Flagler College</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/295227">Floridiana
-                                            article:
-                                            Flagler's Royal Poinciana Hotel</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/275771">Floridiana
-                                            article:
-                                            Staying at the Ormond</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/274211">Floridiana
-                                            article:
-                                            The "Shocking" Ponce de Leon Hotel</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/334198">Research
-                                            Starter: Henry Flagler and the Florida East Cost Railway</a>
-                                    </li>
-                                    <li><a href="https://www.floridamemory.com/items/show/297527">Floridiana
-                                            article:
-                                            Room and Board</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=104&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Plant,%20Henry%20Bradley,%201819-1899&layout=1">Florida
-                                            Photographic Collection: Henry Bradley Plant</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=106&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Tampa%20Bay%20Hotel%20(Tampa,%20Fla.)&layout=1">Florida
-                                            Photographic Colletion: Tampa Bay Hotel</a></li>
-
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
-                                <ul class="thirdlevel_customlist">
 
                                     <li><a
                                             href="https://dos.myflorida.com/library-archives/research/explore-our-resources/florida-history-culture-and-heritage/tourism/">History
@@ -1709,44 +1414,51 @@
                                 </ul>
 
                             </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        </div>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/295227">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/reference/rc08574.jpg"
+                                            width="200" height="200" data-src="./img/rc08574.jpg"
                                             alt="Flagler's Royal Poinciana Hotel"></div>
                                 </a>
                                 <figcaption class="description">Flagler's Royal Poinciana Hotel</figcaption>
                             </figure>
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>The Yellow Fever Epidemic and Public Health in Florida</span></strong>
-                            </li>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>The Yellow Fever Epidemic and Public Health in Florida</h3>
                             <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
 
-                                    <li><a
-                                            href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=49&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Yellow%20fever&layout=1">Yellow
-                                            Fever, Florida Photographic Collection</a></li>
-                                    <li><a href="https://www.floridamemory.com/learn/exhibits/medicine/">Exhibit:
-                                            Pestilence, Potions, and Persistence: Early Florida Medicine</a>
+                                        <li><a
+                                                href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=49&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=Yellow%20fever&layout=1">Yellow
+                                                Fever, Florida Photographic Collection</a></li>
+                                        <li><a href="https://www.floridamemory.com/learn/exhibits/medicine/">Exhibit:
+                                                Pestilence, Potions, and Persistence: Early Florida Medicine</a>
+                                        </li>
+                                        <li><a href="https://www.floridamemory.com/items/show/295249">Floridiana
+                                                article:
+                                                The Dreaded Yellow Jack</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/332809">Floridiana
+                                                article:
+                                                Step Aboard for the Gospel of Good Health!</a></li>
+
+                                    </ul>
+                                <li></li>
+                                <ul class="thirdlevel_customlist">
+                                    <li>
+                                        <h4 class="ul-header-style">State Library of Florida:</h4>
                                     </li>
-                                    <li><a href="https://www.floridamemory.com/items/show/295249">Floridiana
-                                            article:
-                                            The Dreaded Yellow Jack</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/332809">Floridiana
-                                            article:
-                                            Step Aboard for the Gospel of Good Health!</a></li>
-
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
-                                <ul class="thirdlevel_customlist">
 
                                     <li><a
                                             href="https://dos.myflorida.com/library-archives/research/services-for-state-employees/agency/public-health/">Public
@@ -1760,40 +1472,48 @@
                                 </ul>
 
                             </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        </div>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/26663">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/reference/rc02948.jpg"
+                                            width="200" height="200" data-src="./img/rc02948.jpg"
                                             alt="Yellow fever drawing"></div>
                                 </a>
                                 <figcaption class="description">Drawing related to Yellow Fever - Gainesville Florida
                                 </figcaption>
                             </figure>
+                        </aside>
+                    </article>
 
-                        </article>
-                    </section>
-
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong> <span>The Great Freeze of 1895 and the Citrus Industry</span> </strong></li>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>The Great Freeze of 1895 and the Citrus Industry</h3>
                             <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
 
-                                    <li><a href="https://www.floridamemory.com/learn/exhibits/photo_exhibits/citrus/">Exhibit:
-                                            The Rise and Fall of the Citrus Industry in Florida</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/257295">Floridana:
-                                            The Great Freeze</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/discover/historical_records/crate-labels/">Documents:
-                                            Florida Crate Lables, 1920s -1950s</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/learn/exhibits/photo_exhibits/citrus/">Exhibit:
+                                                The Rise and Fall of the Citrus Industry in Florida</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/257295">Floridana:
+                                                The Great Freeze</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/discover/historical_records/crate-labels/">Documents:
+                                                Florida Crate Lables, 1920s -1950s</a></li>
 
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
+                                    </ul>
+                                <li></li>
                                 <ul class="thirdlevel_customlist">
+                                    <li>
+                                        <h4 class="ul-header-style">State Library of Florida:</h4>
+                                    </li>
 
                                     <li><a
                                             href="https://dos.myflorida.com/library-archives/research/services-for-state-employees/agency/agriculture/">Agriculture
@@ -1802,61 +1522,70 @@
                                 </ul>
 
                             </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        </div>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/118445">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/frisbie/fr0907.jpg"
-                                            alt="View of Lake Morton - Lakeland, Florida"></div>
+                                            width="200" height="200" data-src="./img/fr0907.jpg"
+                                            alt="View of Lake Morton - Lakeland, Florida">
+                                    </div>
                                 </a>
                                 <figcaption class="description">View of Lake Morton - Lakeland, Florida</figcaption>
                             </figure>
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
-                    <section class="linkPreview">
-                        <ul class="customlist">
-                            <li><strong><span>Florida in World War II, Laying the Foundation for Postwar
-                                        Growth</span></strong></li>
+                    <article class="linkPreview">
+                        <div class="customlist">
+                            <h3>Florida in World War II</h3>
                             <ul class="secondlevel_customlist">
-                                <li><span>Florida Memory:</span></li>
-                                <ul class="thirdlevel_customlist">
+                                <li>
+                                    <ul class="thirdlevel_customlist">
+                                        <li>
+                                            <h4 class="ul-header-style">Florida Memory:</h4>
+                                        </li>
 
-                                    <li><a href="https://www.floridamemory.com/learn/exhibits/wwii/">Exhibit:
-                                            Florida in World War II</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/321972">Floridiana
-                                            article:
-                                            Eyes on the Skies</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/333284">Floridiana
-                                            article:
-                                            Florida's First Lady at War</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/295178">Floridiana
-                                            article:
-                                            Preparing for D-Day: Camp Gordon Johnston near Carrabelle</a>
+                                        <li><a href="https://www.floridamemory.com/learn/exhibits/wwii/">Exhibit:
+                                                Florida in World War II</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/321972">Floridiana
+                                                article:
+                                                Eyes on the Skies</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/333284">Floridiana
+                                                article:
+                                                Florida's First Lady at War</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/295178">Floridiana
+                                                article:
+                                                Preparing for D-Day: Camp Gordon Johnston near Carrabelle</a>
+                                        </li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/learn/classroom/learning-units/wwii/">Learning
+                                                Unit: Florida During World War II</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/341931">Primary
+                                                Source Set: Civil Defense in Florida During WWII</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/341941">Primary
+                                                Source Set: Industry and Agriculture During WWII</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/340236">Primary
+                                                Source Set: Military Training in Florida During WWII</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/333853">Document:
+                                                Blackout Order Issued by Governor Spessard Holland During World
+                                                War II</a></li>
+                                        <li><a
+                                                href="https://www.floridamemory.com/find?query=World%20War%20II%20&advanced[0][joiner]=and&advanced[0][element_id]=240&advanced[0][type]=is%20exactly&advanced[0][terms]=11&layout=1">Florida
+                                                Photographic Collection: World War II</a></li>
+                                        <li><a href="https://www.floridamemory.com/items/show/232383">Video
+                                                (16:37):
+                                                Wakulla Springs & WWII Troop Maneuvers</a></li>
+
+                                    </ul>
+                                <li></li>
+                                <ul class="thirdlevel_customlist">
+                                    <li>
+                                        <h4 class="ul-header-style">State Library of Florida:</h4>
                                     </li>
-                                    <li><a href="https://www.floridamemory.com/learn/classroom/learning-units/wwii/">Learning
-                                            Unit: Florida During World War II</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/341931">Primary
-                                            Source Set: Civil Defense in Florida During WWII</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/341941">Primary
-                                            Source Set: Industry and Agriculture During WWII</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/340236">Primary
-                                            Source Set: Military Training in Florida During WWII</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/333853">Document:
-                                            Blackout Order Issued by Governor Spessard Holland During World
-                                            War II</a></li>
-                                    <li><a
-                                            href="https://www.floridamemory.com/find?query=World%20War%20II%20&advanced[0][joiner]=and&advanced[0][element_id]=240&advanced[0][type]=is%20exactly&advanced[0][terms]=11&layout=1">Florida
-                                            Photographic Collection: World War II</a></li>
-                                    <li><a href="https://www.floridamemory.com/items/show/232383">Video
-                                            (16:37):
-                                            Wakulla Springs & WWII Troop Maneuvers</a></li>
-
-                                </ul>
-                                <li><span>State Library of Florida:</span></li>
-                                <ul class="thirdlevel_customlist">
 
                                     <li><a
                                             href="https://www.floridamemory.com/find?advanced%5B0%5D%5Bjoiner%5D=and&advanced%5B0%5D%5Belement_id%5D=240&advanced%5B0%5D%5Btype%5D=is+exactly&advanced%5B0%5D%5Bterms%5D=11&advanced%5B1%5D%5Bjoiner%5D=and&advanced%5B1%5D%5Belement_id%5D=49&advanced%5B1%5D%5Btype%5D=is+exactly&advanced%5B1%5D%5Bterms%5D=World%20War%20II&layout=1">Florida
@@ -1874,25 +1603,25 @@
                                 </ul>
 
                             </ul>
-                        </ul>
-                        <article class="PreviewContent">
-                            <header class="title">Featured:</header>
+                        </div>
+                        <aside class="PreviewContent">
+                            <header class="title">
+                                <h5>Featured:</h5>
+                            </header>
                             <figure>
                                 <a target="_blank" href="https://www.floridamemory.com/items/show/155559">
                                     <div class="img_wrapper lazyload"><img src="./vanilla-lazy-load/loading-icon.svg"
-                                            data-src="https://www.floridamemory.com/fpc/general/n047658.jpg"
+                                            width="200" height="200" data-src="./img/n047658.jpg"
                                             alt="Soldiers training for war - Camp Gordon Johnston, Florida">
                                     </div>
                                 </a>
                                 <figcaption class="description">Soldiers training for war - Camp Gordon
                                     John Florida</figcaption>
                             </figure>
-
-                        </article>
-                    </section>
+                        </aside>
+                    </article>
 
                 </section>
-
             </div>
         </div>
     </section>
@@ -1903,9 +1632,8 @@
             <div class="d-flex flex-column justify-content-center align-items-center w-100">
 
                 <div class="footer-image">
-                    <img class="img-fluid dlis-logo lazyload " src="./vanilla-lazy-load/loading-icon.svg"
-                        data-src="https://www.floridamemory.com/themes/florida_memory/images/logos/DLIS-H-WebRes-RGB-Rev.png"
-                        alt="Division of Library and Information Services logo" width="350">
+                    <img class="img-fluid dlis-logo lazyload " data-src="./img/DLIS-H-WebRes-RGB-Rev.jpg"
+                        alt="Division of Library and Information Services logo" width="500" height="175">
                 </div>
             </div>
 
@@ -2014,11 +1742,7 @@
                         program financed with federal money is 66%; the federal dollar amount to be spent on the
                         program is $646,422. This program does not receive any non-governmental funding.</p>
 
-                    <div style="text-align: center;"><img class="img-fluid lazyload"
-                            src="./vanilla-lazy-load/loading-icon.svg"
-                            data-src="https://www.floridamemory.com/themes/florida_memory/images/logos/imls_logo_white.png"
-                            width="270" alt="IMLS">
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -2027,30 +1751,24 @@
     <!-- js plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        crossorigin="anonymous" referrerpolicy="no-referrer" ></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"
         integrity="sha512-TqmAh0/sSbwSuVBODEagAoiUIeGRo8u95a41zykGfq5iPkO9oie8IKCgx7yAr1bfiBjZeuapjLgMdp9UMpCVYQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
 
-    <!-- <script src="./flourish/js/popper.min.js"></script> -->
-    <!-- <script src="./flourish/js/bootstrap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
         integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- <script src="./flourish/js/roundslider.min.js"></script> -->
+        crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js"
         integrity="sha512-8GGAq5KYuHWyCNC5v3Ohfh3nmfVejHvZR7xM75AKq5QU7jFSOO/aCcZEKC+2Re4uGe7KL+h24KeZ8CEdd4FRog=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
-        integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./vanilla-lazy-load/vanillaLazyLoad.js"></script>
-    <!-- <script src="./vanilla-lazy-load/initVanillaLazyLoad.js"></script> -->
-    <!-- <script src="./flourish/flourish.min.js"></script> -->
+        crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
 
-    <script src="./flourish/flourish.min.js"></script>
-    <script src="script.js"></script>
+    <script src="./vanilla-lazy-load/vanillalazyload.min.js" ></script>
+    <script src="./flourish/flourish.min.js" async></script>
+    <script src="./js/script.js"></script>
+
 
 </body>
 

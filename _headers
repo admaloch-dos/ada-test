@@ -1,0 +1,26 @@
+/*
+  Cache-Control: public, max-age=604800  # 1 week for HTML files
+/fonts/*
+  Cache-Control: public, max-age=31536000  # 1 year for font files
+/js/*
+  Cache-Control: public, max-age=31536000  # 1 year for JS files
+/img/*
+  Cache-Control: public, max-age=31536000  # 1 year for images
+/*
+  Cache-Control: public, max-age=604800  # 1 week for HTML files
+/flourish/fonts/*
+  Cache-Control: public, max-age=31536000  # 1 year for font files
+/flourish/js/*
+  Cache-Control: public, max-age=31536000  # 1 year for JS files
+/flourish/img/*
+  Cache-Control: public, max-age=31536000  # 1 year for images
+/flourish/img/language/*
+  Cache-Control: public, max-age=31536000  # 1 year for images
+/flourish/*
+    Cache-Control: public, max-age=31536000  # 1 year for images
+/themes/florida_memory/css/*
+  Cache-Control: public, max-age=31536000  # 1 year for CSS files
+/themes/florida_memory/fonts/*
+  Cache-Control: public, max-age=31536000  # 1 year for CSS files
+  /vanilla-lazy-load/*
+  Cache-Control: public, max-age=31536000  # 1 year for CSS files
