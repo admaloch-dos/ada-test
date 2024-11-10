@@ -1900,8 +1900,7 @@ html.translated-ltr #LineHeight_option .flourish_option_title {
 }
 
 .HighlightLinks a:hover {
-    color: #3863ff !important;
-
+    color: #853B0A !important;!!
     text-decoration: underline !important;
 }
 
@@ -7986,9 +7985,7 @@ html.translated-rtl #item-delete-container {
     filter: invert(0);
 }
 
-section {
-    padding: 0 !important;
-}
+
 
 .HighlightLinks .flourish-language-btn:not(.disable):hover {
     opacity: .7;
@@ -8176,7 +8173,7 @@ section {
 
 .lang-filter {
     border: var(--dark-blue) solid 2px;
-    padding: 0rem .8rem;
+    padding: 0rem 1.8rem;
     cursor: pointer;
     margin-bottom: .1rem;
     width: auto;
@@ -8674,7 +8671,7 @@ button:focus {
 .translate-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     background-color: none !important;
 }
 
@@ -8685,6 +8682,7 @@ button:focus {
 .translate-list-item img {
     cursor: pointer;
     width: 20px;
+    height: auto;
     transition: .3s ease-in-out all;
 
 }
