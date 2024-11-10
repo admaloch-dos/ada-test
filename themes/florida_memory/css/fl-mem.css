@@ -49,6 +49,7 @@ a {
   font-size: 1.4rem;
   margin-left: 1.7rem;
   font-weight: bold;
+  line-height: 1.7rem;
 }
 
 .history-day-content h2,
@@ -2426,7 +2427,7 @@ div.info-box-bottom {
 
 @media screen and (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .dropdown-menu {
-    top: 26.5px;
+    top: 25px;
     border-top: solid 1px white;
 
     -webkit-border-radius: 0px 0px 6px 6px;
@@ -2805,6 +2806,7 @@ div.info-box-bottom {
   }
 }
 
+
 #search-container {
   height: 30px;
   width: 400px;
@@ -3004,4 +3006,65 @@ div.info-box-bottom {
 
 .research-li {
   background-color: #1F4D5F
+}
+
+/*********** MEGA MENU BACKGROUND ************/
+#photo .mega{
+	background-image: linear-gradient(90deg, #1A0D09, rgba(0,0,0,0.1)),url(../../../img/photo_thumb.webp);
+    background-repeat: no-repeat;
+    background-size: 123%;
+    background-position: 0% 6%;
+}
+#historical_records .mega{
+	background-image: linear-gradient(90deg, #202D26, rgba(0,0,0,0.3)),url(../../../img/hs_thumb.webp);
+    background-repeat: no-repeat;
+    background-size: 103% 129%;
+    background-position: center -14%;;
+}
+#maps .mega{
+	background-image: linear-gradient(90deg, #211C14, rgba(0,0,0,0.1)),url(../../../img/maps_thumb.webp);
+    background-repeat: no-repeat;
+    background-size: 147%;
+    background-position: center 50%;
+}
+#audio .mega{
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url(../../../img/audio_thumb.webp);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0% 100%;
+}
+#video .mega{
+	background-image: linear-gradient(90deg, #000000, rgba(0,0,0,0.1)),url(../../../img/video_thumb.webp);
+    background-repeat: no-repeat;
+    background-size: 171%;
+    background-position: 22% 100%;
+}
+#about_fm .mega{
+	background-image: linear-gradient(90deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(../../../img/florida_memory_logoSquare.webp);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-color: #5a262b;
+}
+#classroom .mega{
+    background-image: linear-gradient(90deg, #141F26, rgba(0,0,0,0.1)),url(../../../img/classroom_thumb.webp);
+    background-repeat: no-repeat;
+    background-size: 133%;
+    background-position: 33% 29%;
+}
+#exhibits .mega{
+    background-image: linear-gradient(90deg, #0D1115, rgba(0,0,0,0.1)),url(../../../img/flinwwii.webp);
+    background-repeat: no-repeat;
+    background-size: 308%;
+    background-position: 100% 100%;
+}
+#guides .mega{
+    background-image: linear-gradient(90deg, #26333F, rgba(0,0,0,0.1)),url(../../../img/pr12839_.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.footer-image {
+  min-height: 150px;
 }
