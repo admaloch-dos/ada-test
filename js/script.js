@@ -13,12 +13,14 @@ document.querySelector('#ideas-link').addEventListener('click', (e) => {
     jqueryScroll('#ideas-section', 1000, 150)
 })
 
-//init vanilla js
-document.addEventListener("DOMContentLoaded", function () {
+const subMenu = document.getElementById('menudropdown'); // Ensure you have the correct reference to your submenu
 
-    // Initialize Vanilla LazyLoad for all images
-    const lazyLoadInstance = new LazyLoad({
-        elements_selector: "img",
-    });
+const collapseOrShowSubmenu = () => {
+    if (window.innerWidth > 992) {
+        subMenu.classList.add('show');
+    } else {
+        subMenu.classList.remove('show');
+    }
+}
 
-});
+
